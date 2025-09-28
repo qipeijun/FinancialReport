@@ -31,9 +31,9 @@
 
 ## 执行步骤
 1. **创建按月归档目录**：
-   - 顶层：`archive/`
-   - 月份：`archive/YYYY-MM/`（如：`archive/2025-01/`）
-   - 每天与模型目录：`archive/YYYY-MM/YYYY-MM-DD_模型/`（如：`archive/2025-01/2025-01-15_gemini/`）
+   - 顶层：`docs/archive/`
+   - 月份：`docs/archive/YYYY-MM/`（如：`docs/archive/2025-01/`）
+   - 每天与模型目录：`docs/archive/YYYY-MM/YYYY-MM-DD_模型/`（如：`docs/archive/2025-01/2025-01-15_gemini/`）
    - 子文件夹：rss_data/、news_content/、analysis/、reports/
 2. **抓取**: 使用 MCP 访问每个 RSS 源，获取最新 5 篇文章，保存到 rss_data/
 3. **分析**: 抓取文章正文，提取关键信息，保存到 news_content/

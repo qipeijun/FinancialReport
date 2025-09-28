@@ -31,18 +31,30 @@
 ## 🗂️ 项目结构
 
 ```
-分析报告/
-├── README.md                                    # 项目说明文档
-├── mcp_finance_analysis_prompt.md              # 完整版提示词
-├── mcp_finance_analysis_prompt_optimized.md    # 优化版提示词
-├── mcp_finance_analysis_prompt_minimal.md      # 精简版提示词
-├── 2025年9月28日行业分析报告.md                # 示例分析报告
-└── [日期文件夹]/                               # 按日期自动创建
-    ├── rss_data/                               # RSS原始数据
-    ├── news_content/                           # 新闻正文内容
-    ├── analysis/                               # 分析结果
-    └── reports/                                # 最终报告
-        └── 财经分析报告_YYYY-MM-DD.md
+Financial-report/
+├── mkdocs.yml                                  # MkDocs 配置文件
+├── requirements.txt                            # Python 依赖
+├── docs/                                       # 文档源文件目录
+│   ├── index.md                               # 首页
+│   ├── README.md                              # 项目说明文档
+│   ├── DEPLOYMENT.md                          # 部署指南
+│   ├── prompts/                               # 提示词配置
+│   │   ├── mcp_finance_analysis_prompt.md     # 完整版提示词
+│   │   ├── mcp_finance_analysis_prompt_optimized.md  # 优化版提示词
+│   │   └── mcp_finance_analysis_prompt_minimal.md    # 精简版提示词
+│   └── archive/                               # 分析报告存档
+│       └── [YYYY-MM]/                         # 按月份组织
+│           └── [YYYY-MM-DD_model]/            # 按日期和模型组织
+│               ├── rss_data/                  # RSS原始数据
+│               ├── news_content/              # 新闻正文内容
+│               ├── analysis/                  # 分析结果
+│               └── reports/                   # 最终报告
+├── .github/workflows/                         # GitHub Actions
+│   └── deploy-mkdocs.yml                     # 部署工作流
+├── scripts/                                   # 辅助脚本
+│   ├── generate_mkdocs_nav.py                # 导航生成
+│   └── deploy.sh                             # 部署脚本
+└── site/                                      # 构建输出（自动生成）
 ```
 
 ## 📡 数据源

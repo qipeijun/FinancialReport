@@ -1,202 +1,181 @@
-# 🚀 部署说明
+# MkDocs + Material 部署指南
 
-## 📋 部署概览
+## 概述
 
-本项目使用 GitHub Pages + Docsify 进行自动部署，每次推送代码到 master 分支时，系统会自动：
+本项目已配置为使用 MkDocs + Material 主题来构建和部署文档网站。通过 GitHub Actions 自动部署到 GitHub Pages。
 
-1. 🧭 迁移旧结构到按月归档（archive/YYYY-MM/YYYY-MM-DD_模型）
-2. 🔄 自动生成侧边栏目录（基于 archive 扫描）
-3. 🌐 部署到 GitHub Pages
-4. 📱 提供响应式访问界面
-
-## 🛠️ 部署配置
-
-### GitHub Actions 工作流
-
-部署配置位于 `.github/workflows/run-script.yml`，包含以下步骤：
-
-1. **检出代码** - 获取最新代码
-2. **配置 Pages** - 设置 GitHub Pages 环境
-3. **构建网站** - 自动生成侧边栏并复制文件
-4. **上传产物** - 准备部署文件
-5. **部署上线** - 发布到 GitHub Pages
-
-### 自动目录生成
-
-系统会自动扫描 `archive/YYYY-MM/YYYY-MM-DD_模型/` 目录，并生成包含以下内容的侧边栏：
-
-- 📅 **分析报告** - 按日期和AI模型分类
-- 🔍 **分析详情** - 热点分析和潜力分析
-- 📰 **新闻内容** - 按来源分类的新闻文件
-- 📡 **RSS数据源** - 原始RSS数据文件
-- 🛠️ **工具配置** - 提示词文件
-
-## 🌐 访问地址
-
-部署完成后，可通过以下地址访问：
-
-- **GitHub Pages**: `https://your-username.github.io/Financial-report/`
-- **本地测试**: `http://localhost:3000` (使用 `python3 test_local.py`)
-
-## 📁 文件结构
-
-部署后的网站结构（简化）：
+## 系统架构
 
 ```
-_site/
-├── index.html
-├── README.md
-├── _sidebar.md
-├── _coverpage.md
-├── _404.md
-└── archive/
-    └── 2025-09/
-        ├── 2025-09-28_gemini/
-        │   ├── analysis/
-        │   ├── reports/
-        │   ├── news_content/
-        │   └── rss_data/
-        └── 2025-09-28_qwen/
-            ├── analysis/
-            ├── reports/
-            ├── news_content/
-            └── rss_data/
+项目结构
+├── mkdocs.yml              # MkDocs 配置文件
+├── docs/                   # 文档源文件目录
+│   ├── index.md           # 首页
+│   ├── README.md          # 项目说明
+│   ├── archive/           # 分析报告存档
+│   └── prompts/           # 提示词配置
+├── .github/workflows/     # GitHub Actions 工作流
+│   └── deploy-mkdocs.yml  # 部署工作流
+└── scripts/               # 辅助脚本
+    └── generate_mkdocs_nav.py  # 自动生成导航
 ```
 
-## 🔧 本地测试
+## 主要特性
 
-### 方法一：使用测试脚本
+### 🎨 Material 主题
+- **响应式设计**：支持桌面和移动设备
+- **深色/浅色模式**：自动切换主题
+- **中文支持**：完整的中文界面
+- **搜索功能**：全文搜索支持
+- **导航增强**：标签页、章节导航等
+
+### 📊 自动导航生成
+- 自动扫描 `archive` 目录结构
+- 按月份和日期组织报告
+- 动态生成导航菜单
+- 支持多种文件类型
+
+### 🚀 自动化部署
+- GitHub Actions 自动构建
+- 推送到 main 分支自动部署
+- GitHub Pages 自动发布
+- 支持 PR 预览
+
+## 本地开发
+
+### 安装依赖
 
 ```bash
-# 运行本地测试脚本
-python3 test_local.py
+pip install -r requirements.txt
 ```
 
-脚本会自动：
-- 生成侧边栏目录
-- 检查并安装 docsify-cli
-- 启动本地服务器
-- 打开浏览器
-
-### 方法二：手动启动
+### 启动开发服务器
 
 ```bash
-# 1. 生成侧边栏
-python3 generate_sidebar.py
-
-# 2. 安装 docsify-cli (如果未安装)
-npm install -g docsify-cli
-
-# 3. 启动服务器
-docsify serve . --port 3000
+mkdocs serve
 ```
 
-## 📝 自定义配置
+访问 http://127.0.0.1:8000 查看本地预览。
 
-### 修改侧边栏
+### 构建静态网站
 
-编辑 `generate_sidebar.py` 文件来自定义侧边栏生成逻辑：
-
-- 修改显示的文件数量
-- 调整目录结构
-- 添加自定义链接
-
-### 修改主题
-
-编辑 `index.html` 文件中的 Docsify 配置：
-
-```javascript
-window.$docsify = {
-    name: '📊 财经分析报告系统',
-    themeColor: '#42b983',  // 修改主题色
-    // 其他配置...
-}
+```bash
+mkdocs build
 ```
 
-### 添加插件
+生成的静态文件在 `site/` 目录中。
 
-在 `index.html` 中添加更多 Docsify 插件：
+## 部署配置
 
-```html
-<!-- 添加新插件 -->
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/plugin-name.min.js"></script>
+### 1. GitHub Pages 设置
+
+1. 进入仓库的 Settings 页面
+2. 找到 Pages 设置
+3. 选择 "GitHub Actions" 作为源
+
+### 2. 更新仓库信息
+
+在 `mkdocs.yml` 中更新以下配置：
+
+```yaml
+site_url: https://your-username.github.io/Financial-report
+repo_name: your-username/Financial-report
+repo_url: https://github.com/your-username/Financial-report
 ```
 
-## 🚨 故障排除
+### 3. 自动部署
+
+推送代码到 main 分支后，GitHub Actions 会自动：
+
+1. 安装依赖
+2. 构建文档
+3. 部署到 GitHub Pages
+
+## 导航管理
+
+### 自动生成导航
+
+运行以下命令自动生成导航配置：
+
+```bash
+python3 scripts/generate_mkdocs_nav.py
+```
+
+### 手动编辑导航
+
+在 `mkdocs.yml` 中的 `nav` 部分手动编辑：
+
+```yaml
+nav:
+  - 首页: index.md
+  - 项目介绍:
+    - 项目说明: README.md
+  - 分析报告:
+    - 2025年09月:
+      - 2025-09-28:
+        - 财经分析报告: archive/2025-09/2025-09-28_qwen/reports/财经分析报告_20250928.md
+```
+
+## 自定义配置
+
+### 主题配置
+
+在 `mkdocs.yml` 中自定义主题：
+
+```yaml
+theme:
+  name: material
+  language: zh
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: blue
+```
+
+### 插件配置
+
+添加更多插件：
+
+```yaml
+plugins:
+  - search:
+      lang: zh
+  - git-revision-date-localized:
+      enable_creation_date: true
+```
+
+## 故障排除
 
 ### 常见问题
 
-1. **部署失败**
-   - 检查 GitHub Actions 日志
-   - 确认文件路径正确
-   - 验证 Python 脚本语法
+1. **构建失败**：检查 `mkdocs.yml` 语法
+2. **页面404**：确认文件路径正确
+3. **导航不显示**：运行导航生成脚本
+4. **样式问题**：检查 Material 主题配置
 
-2. **侧边栏不显示**
-   - 确认 `_sidebar.md` 文件存在
-   - 检查文件编码为 UTF-8
-   - 验证 Markdown 语法
+### 调试命令
 
-3. **文件无法访问**
-   - 检查文件权限
-   - 确认文件路径正确
-   - 验证文件名不包含特殊字符
+```bash
+# 详细构建信息
+mkdocs build --verbose
 
-### 调试步骤
+# 检查配置
+mkdocs config
 
-1. **查看构建日志**
-   ```bash
-   # 在 GitHub Actions 中查看详细日志
-   ```
+# 清理构建目录
+rm -rf site/
+```
 
-2. **本地测试**
-   ```bash
-   # 使用本地测试脚本
-   python3 test_local.py
-   ```
+## 更新日志
 
-3. **检查文件**
-   ```bash
-   # 检查生成的文件
-   ls -la _site/
-   cat _sidebar.md
-   ```
+- **2025-09-28**：初始 MkDocs + Material 配置
+- **2025-09-28**：添加自动导航生成
+- **2025-09-28**：配置 GitHub Actions 部署
 
-## 📈 性能优化
+## 相关链接
 
-### 文件大小优化
-
-- 压缩大型文本文件
-- 使用 CDN 加速静态资源
-- 启用 Gzip 压缩
-
-### 加载速度优化
-
-- 按需加载分析文件
-- 使用分页显示大量内容
-- 优化图片和媒体文件
-
-## 🔄 更新流程
-
-### 添加新报告
-
-1. 运行分析脚本生成新报告
-2. 提交代码到 GitHub
-3. 系统自动部署更新
-
-### 修改配置
-
-1. 编辑相关配置文件
-2. 测试本地效果
-3. 提交并推送更改
-
-## 📞 技术支持
-
-如遇到部署问题，请：
-
-1. 查看 GitHub Actions 日志
-2. 检查本地测试结果
-3. 提交 Issue 描述问题
-
----
-
-*最后更新：2025-01-15*
+- [MkDocs 官方文档](https://www.mkdocs.org/)
+- [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
+- [GitHub Pages](https://pages.github.com/)
+- [GitHub Actions](https://github.com/features/actions)

@@ -33,11 +33,11 @@
 ## 执行步骤
 
 ### 第一步：创建按月归档的目录结构
-1. **顶层归档目录**：`archive/`
-2. **按月创建文件夹**：`archive/YYYY-MM/`（如：`archive/2025-01/`）
+1. **顶层归档目录**：`docs/archive/`
+2. **按月创建文件夹**：`docs/archive/YYYY-MM/`（如：`docs/archive/2025-01/`）
 3. **按天与模型创建子目录**：在对应月份下，为每天的输出创建目录，建议命名：
-   - `archive/YYYY-MM/YYYY-MM-DD_gemini/`
-   - `archive/YYYY-MM/YYYY-MM-DD_qwen/`
+   - `docs/archive/YYYY-MM/YYYY-MM-DD_gemini/`
+   - `docs/archive/YYYY-MM/YYYY-MM-DD_qwen/`
 4. 在每天的目录内创建子文件夹：
    - `rss_data/` - 存储原始RSS数据
    - `news_content/` - 存储抓取的新闻正文

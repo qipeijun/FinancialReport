@@ -1,0 +1,94 @@
+# GitHub Actions 工作流：自动部署 MkDocs 文档网站
+# 当代码推送到 main/master 分支时，自动构建并部署到 GitHub Pages
+
+name: Deploy MkDocs Site
+
+# 触发条件：代码推送和拉取请求
+on:
+  push:
+    branches:
+      - main      # 主分支推送时触发
+      - master    # 兼容旧的主分支名称
+  pull_request:
+    branches:
+      - main      # 向主分支提交 PR 时触发（用于测试）
+      - master
+
+# 权限设置：允许读取代码、写入 Pages、使用 ID Token
+permissions:
+  contents: read    # 读取仓库内容
+  pages: write      # 写入 GitHub Pages
+  id-token: write   # 使用 OIDC 进行身份验证
+
+# 并发控制：确保同一时间只有一个 Pages 部署任务运行
+concurrency:
+  group: "pages"           # 同一组内的任务互斥
+  cancel-in-progress: false # 不取消正在进行的任务
+
+jobs:
+  # 构建任务：生成静态网站文件
+  build:
+    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 系统
+    
+    steps:
+      # 步骤 1：检出代码
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取完整的 Git 历史（用于 git-revision-date 插件）
+
+      # 步骤 2：设置 Python 环境
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11  # 使用 Python 3.11
+
+      # 步骤 3：缓存依赖包（加速后续构建）
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          key: ${{ github.ref }}  # 基于分支/标签的缓存键
+          path: .cache            # 缓存路径
+
+      # 步骤 4：安装 Python 依赖包
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip  # 升级 pip
+          pip install mkdocs-material          # MkDocs Material 主题
+          pip install mkdocs-git-revision-date-localized-plugin  # Git 时间戳插件
+          pip install pyyaml                   # YAML 处理库
+
+      # 步骤 5：配置 GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      # 步骤 6：生成动态导航菜单
+      # 扫描 archive 目录，自动生成 mkdocs.yml 中的 nav 配置
+      - name: Generate navigation
+        run: python3 scripts/generate_mkdocs_nav.py
+
+      # 步骤 7：使用 MkDocs 构建静态网站
+      - name: Build with MkDocs
+        run: mkdocs build  # 生成静态文件到 site/ 目录
+
+      # 步骤 8：上传构建产物
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./site  # 上传 site/ 目录中的所有文件
+
+  # 部署任务：将构建产物部署到 GitHub Pages
+  deploy:
+    environment:
+      name: github-pages                    # GitHub Pages 环境名称
+      url: ${{ steps.deployment.outputs.page_url }}  # 部署后的网站 URL
+    runs-on: ubuntu-latest
+    needs: build                           # 依赖 build 任务完成
+    # 只在主分支上部署，PR 不部署
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    
+    steps:
+      # 步骤 1：部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

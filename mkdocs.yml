@@ -1,0 +1,82 @@
+site_name: 财经分析报告系统
+site_description: 基于AI的财经分析报告生成系统
+site_author: Financial Report System
+site_url: https://qipeijun.github.io/Financial-report
+docs_dir: docs
+repo_name: qipeijun/Financial-report
+repo_url: https://github.com/qipeijun/Financial-report
+edit_uri: edit/main/docs/
+theme:
+  name: material
+  language: zh
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github
+plugins:
+- search:
+    lang: zh
+- git-revision-date-localized:
+    enable_creation_date: true
+    type: timeago
+    fallback_to_build_date: true
+markdown_extensions:
+- pymdownx.highlight:
+    anchor_linenums: true
+    line_spans: __span
+    pygments_lang_class: true
+- pymdownx.inlinehilite
+- pymdownx.superfences
+- pymdownx.tabbed:
+    alternate_style: true
+- admonition
+- pymdownx.details
+- attr_list
+- md_in_html
+- toc:
+    permalink: true
+nav:
+- 首页: index.md
+- 分析报告:
+  - 2025年09月:
+    - 2025-09-28:
+      - 📊 2025-09-28 财经分析报告: archive/2025-09/2025-09-28/reports/📅 2025-09-28 财经分析报告.md
+      - 🔥 热门话题:
+        - 热门话题1 AI: archive/2025-09/2025-09-28/analysis/热门话题1_AI.md
+        - 热门话题2 美国经济: archive/2025-09/2025-09-28/analysis/热门话题2_美国经济.md
+        - 热门话题3 新能源: archive/2025-09/2025-09-28/analysis/热门话题3_新能源.md
+      - 💎 潜力话题:
+        - 潜力话题1 地缘政治: archive/2025-09/2025-09-28/analysis/潜力话题1_地缘政治.md
+        - 潜力话题2 中国数据: archive/2025-09/2025-09-28/analysis/潜力话题2_中国数据.md
+        - 潜力话题3 房地产: archive/2025-09/2025-09-28/analysis/潜力话题3_房地产.md
+extra:
+  social:
+  - icon: fontawesome/brands/github
+    link: https://github.com/qipeijun
+  version:
+    provider: mike
+copyright: Copyright &copy; 2025 财经分析报告系统

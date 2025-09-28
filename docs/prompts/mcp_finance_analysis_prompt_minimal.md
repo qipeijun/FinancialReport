@@ -35,7 +35,7 @@ MCP抓取财经RSS→分析热点→生成报告
 2. 近3天潜力TOP3行业/主题
 3. 每个热点：催化剂/复盘/展望/相关股票
 4. 股票推荐：每个热点推荐3-5只股票，提供推荐理由和风险评级
-5. 文件管理：在 `archive/YYYY-MM/YYYY-MM-DD_模型/` 下组织内容，包含：rss_data/、news_content/、analysis/、reports/
+5. 文件管理：在 `docs/archive/YYYY-MM/YYYY-MM-DD_模型/` 下组织内容，包含：rss_data/、news_content/、analysis/、reports/
 
 ## 输出格式
 ```markdown
@@ -94,7 +94,7 @@ MCP抓取财经RSS→分析热点→生成报告
 ```
 
 ## 执行要求
-- 使用 `archive/YYYY-MM/YYYY-MM-DD_模型/` 的归档结构
+- 使用 `docs/archive/YYYY-MM/YYYY-MM-DD_模型/` 的归档结构
 - 股票推荐和理由说明
 - 文件保存到对应子文件夹
 
