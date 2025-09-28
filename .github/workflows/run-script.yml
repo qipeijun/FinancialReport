@@ -1,34 +1,36 @@
-name: 部署站点
+name: Deploy Docsify Site
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout 仓库
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2️⃣ 配置 Pages（第一次启用）
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           enablement: true
 
-      - name: Set up Pages output
-        id: pages
-        uses: actions/setup-pages@v3
-
+      # 3️⃣ 构建 Docsify 网站
       - name: Build Docsify site
         run: |
-          mkdir -p ${{ steps.pages.outputs.pages_directory }}
-          cp -r index.html README.md _sidebar.md docs ${{ steps.pages.outputs.pages_directory }}
+          mkdir -p .site
+          cp -r index.html README.md _sidebar.md docs .site
 
-      - name: Deploy to GitHub Pages
+      # 4️⃣ 部署到 GitHub Pages
+      - name: Deploy to Pages
         uses: actions/deploy-pages@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages   # 可选，默认 deploy-pages 会推 gh-pages
+          folder: .site
