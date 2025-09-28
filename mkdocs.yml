@@ -13,29 +13,24 @@ theme:
   palette:
   - media: '(prefers-color-scheme: light)'
     scheme: default
-    primary: teal
-    accent: cyan
+    primary: white
+    accent: blue
     toggle:
       icon: material/brightness-7
       name: 切换到深色模式
   - media: '(prefers-color-scheme: dark)'
     scheme: slate
-    primary: teal
-    accent: cyan
+    primary: black
+    accent: blue
     toggle:
       icon: material/brightness-4
       name: 切换到浅色模式
   features:
   - navigation.tabs
-  - navigation.sections
-  - navigation.expand
-  - navigation.path
   - navigation.top
   - search.highlight
-  - search.share
   - search.suggest
   - content.code.copy
-  - content.code.annotate
   icon:
     repo: fontawesome/brands/github
   font:
@@ -65,6 +60,7 @@ markdown_extensions:
     permalink: true
 nav:
 - 首页: index.md
+- 设计预览: design-preview.md
 - 分析报告:
   - 2025年09月:
     - '2025-09-28':

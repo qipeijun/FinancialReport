@@ -1,24 +1,241 @@
-/* 清新简洁的财经分析报告系统样式 */
+/* Apple 风格 - 简洁优雅的财经分析报告系统 */
 
-/* 优化阅读体验 */
-.md-content {
-  line-height: 1.8;
+:root {
+  /* Apple 风格色彩系统 */
+  --apple-blue: #007AFF;
+  --apple-gray-1: #F2F2F7;
+  --apple-gray-2: #AEAEB2;
+  --apple-gray-6: #8E8E93;
+  --apple-green: #34C759;
+  --apple-red: #FF3B30;
+  --apple-text: #1D1D1F;
+  --apple-text-secondary: #86868B;
 }
 
-/* 简单的表格增强 */
-.md-typeset table:not([class]) {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+/* 全局字体优化 - Apple 风格 */
+.md-typeset {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.52947;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  color: var(--apple-text);
+}
+
+/* 内容区域 - Apple 极简风格 */
+.md-content__inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+/* 标题系统 - Apple Typography */
+.md-typeset h1 {
+  font-size: 48px;
+  line-height: 1.08349;
+  font-weight: 600;
+  letter-spacing: -0.003em;
+  color: var(--apple-text);
+  margin: 0 0 20px 0;
+  border: none;
+}
+
+.md-typeset h2 {
+  font-size: 32px;
+  line-height: 1.125;
+  font-weight: 600;
+  letter-spacing: 0.004em;
+  color: var(--apple-text);
+  margin: 60px 0 20px 0;
+}
+
+.md-typeset h3 {
+  font-size: 24px;
+  line-height: 1.16667;
+  font-weight: 600;
+  letter-spacing: 0.009em;
+  color: var(--apple-text);
+  margin: 40px 0 16px 0;
+}
+
+.md-typeset h4, 
+.md-typeset h5, 
+.md-typeset h6 {
+  font-size: 19px;
+  line-height: 1.21053;
+  font-weight: 600;
+  letter-spacing: 0.012em;
+  color: var(--apple-text);
+  margin: 32px 0 12px 0;
+}
+
+/* 段落优化 */
+.md-typeset p {
+  margin: 0 0 21px 0;
+  color: var(--apple-text);
+}
+
+/* 链接 - Apple 风格 */
+.md-typeset a {
+  color: var(--apple-blue);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.md-typeset a:hover {
+  opacity: 0.8;
+}
+
+/* 列表优化 */
+.md-typeset ul,
+.md-typeset ol {
+  margin: 0 0 21px 0;
+  padding-left: 0;
+}
+
+.md-typeset li {
+  margin: 8px 0;
+  padding-left: 28px;
+  position: relative;
+}
+
+.md-typeset ul li::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 4px;
+  height: 4px;
+  background: var(--apple-text);
+  border-radius: 50%;
+}
+
+/* 表格 - Apple 极简风格 */
+.md-typeset table {
+  width: 100%;
+  margin: 40px 0;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.42857;
+}
+
+.md-typeset table th {
+  background: var(--apple-gray-1);
+  color: var(--apple-text);
+  font-weight: 600;
+  padding: 16px 20px;
+  text-align: left;
+  border: none;
+  font-size: 14px;
+}
+
+.md-typeset table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #D2D2D7;
+  color: var(--apple-text);
+}
+
+.md-typeset table tr:last-child td {
+  border-bottom: none;
+}
+
+/* 代码 - Apple 风格 */
+.md-typeset code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  background: var(--apple-gray-1);
+  color: var(--apple-text);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.md-typeset pre {
+  background: var(--apple-gray-1);
   border-radius: 8px;
-  overflow: hidden;
+  padding: 20px;
+  margin: 24px 0;
+  overflow-x: auto;
+}
+
+.md-typeset pre code {
+  background: none;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 提示框 - Apple Card 风格 */
+.md-typeset .admonition {
+  background: #FBFBFD;
+  border: 1px solid #D2D2D7;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 32px 0;
+}
+
+.md-typeset .admonition-title {
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--apple-text);
 }
 
 /* 财务数据样式 */
 .positive {
-  color: #28a745;
+  color: var(--apple-green);
   font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 
 .negative {
-  color: #dc3545;
+  color: var(--apple-red);
   font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 响应式设计 */
+@media (max-width: 1068px) {
+  .md-content__inner {
+    padding: 0 22px;
+  }
+  
+  .md-typeset h1 {
+    font-size: 40px;
+    line-height: 1.1;
+  }
+  
+  .md-typeset h2 {
+    font-size: 28px;
+    line-height: 1.14286;
+  }
+}
+
+@media (max-width: 734px) {
+  .md-content__inner {
+    padding: 0 16px;
+  }
+  
+  .md-typeset {
+    font-size: 17px;
+    line-height: 1.47059;
+  }
+  
+  .md-typeset h1 {
+    font-size: 32px;
+    line-height: 1.125;
+    margin: 0 0 16px 0;
+  }
+  
+  .md-typeset h2 {
+    font-size: 24px;
+    line-height: 1.16667;
+    margin: 48px 0 16px 0;
+  }
+  
+  .md-typeset h3 {
+    font-size: 20px;
+    line-height: 1.2;
+    margin: 32px 0 12px 0;
+  }
 }
