@@ -158,6 +158,50 @@
   color: var(--apple-text);
 }
 
+/* 嵌套有序列表样式 */
+.md-typeset ol ol {
+  counter-reset: subitem;
+  margin: 8px 0;
+}
+
+.md-typeset ol ol li {
+  counter-increment: subitem;
+  margin: 8px 0;
+  padding-left: 28px;
+}
+
+.md-typeset ol ol li::before {
+  content: counter(item) '.' counter(subitem) '. ';
+  position: absolute;
+  left: 4px;
+  top: 0;
+  font-weight: 600;
+  color: var(--apple-text);
+  font-size: 0.9em;
+}
+
+/* 三级嵌套有序列表 */
+.md-typeset ol ol ol {
+  counter-reset: subsubitem;
+  margin: 6px 0;
+}
+
+.md-typeset ol ol ol li {
+  counter-increment: subsubitem;
+  margin: 6px 0;
+  padding-left: 24px;
+}
+
+.md-typeset ol ol ol li::before {
+  content: counter(item) '.' counter(subitem) '.' counter(subsubitem) '. ';
+  position: absolute;
+  left: 4px;
+  top: 0;
+  font-weight: 600;
+  color: var(--apple-text);
+  font-size: 0.85em;
+}
+
 /* 表格 - Apple 极简风格 */
 .md-typeset table {
   width: 100%;
@@ -382,6 +426,29 @@
     font-size: 14px;
   }
   
+  /* 移动端嵌套有序列表 */
+  .md-typeset ol ol li {
+    margin: 8px 0;
+    padding-left: 24px;
+  }
+  
+  .md-typeset ol ol li::before {
+    left: 2px;
+    top: 0;
+    font-size: 13px;
+  }
+  
+  .md-typeset ol ol ol li {
+    margin: 6px 0;
+    padding-left: 20px;
+  }
+  
+  .md-typeset ol ol ol li::before {
+    left: 2px;
+    top: 0;
+    font-size: 12px;
+  }
+  
   /* 移动端表格优化 */
   .md-typeset table {
     font-size: 14px;
@@ -499,6 +566,29 @@
     font-size: 13px;
   }
   
+  /* 小屏嵌套有序列表 */
+  .md-typeset ol ol li {
+    margin: 6px 0;
+    padding-left: 20px;
+  }
+  
+  .md-typeset ol ol li::before {
+    left: 0px;
+    top: 0;
+    font-size: 12px;
+  }
+  
+  .md-typeset ol ol ol li {
+    margin: 4px 0;
+    padding-left: 16px;
+  }
+  
+  .md-typeset ol ol ol li::before {
+    left: 0px;
+    top: 0;
+    font-size: 11px;
+  }
+  
   /* 小屏表格优化 */
   .md-typeset table {
     font-size: 12px;
@@ -599,6 +689,14 @@
   }
   
   .md-typeset ol li::before {
+    color: var(--apple-text);
+  }
+  
+  .md-typeset ol ol li::before {
+    color: var(--apple-text);
+  }
+  
+  .md-typeset ol ol ol li::before {
     color: var(--apple-text);
   }
 
