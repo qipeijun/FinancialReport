@@ -32,13 +32,48 @@ jobs:
       - name: Build Docsify site
         run: |
           mkdir -p _site
-          # 只复制存在的文件
+          
+          # 迁移旧目录到 archive 按月归档
+          if [ -f "scripts/organize_reports.py" ]; then
+            echo "🔄 迁移旧目录到 archive..."
+            python3 scripts/organize_reports.py
+          fi
+          
+          # 自动生成侧边栏目录
+          echo "🔄 生成侧边栏目录..."
+          python3 scripts/generate_sidebar.py
+          
+          # 复制核心文件
+          echo "📁 复制核心文件..."
           cp index.html README.md _site/
-          # 复制其他存在的文档文件
-          find . -name "*.md" -not -path "./_site/*" -not -path "./.git/*" -not -name "README.md" -exec cp {} _site/ \;
-          # 如果有其他目录需要复制，可以添加
-          if [ -d "docs" ]; then cp -r docs _site/; fi
-          if [ -f "_sidebar.md" ]; then cp _sidebar.md _site/; fi
+          
+          # 复制侧边栏和封面
+          if [ -f "web/_sidebar.md" ]; then 
+            cp web/_sidebar.md _site/
+            echo "✅ 复制侧边栏"
+          fi
+          if [ -f "web/_coverpage.md" ]; then 
+            cp web/_coverpage.md _site/
+            echo "✅ 复制封面页"
+          fi
+          if [ -f "web/_404.md" ]; then 
+            cp web/_404.md _site/
+            echo "✅ 复制404页面"
+          fi
+
+          # 复制归档目录（新结构）
+          if [ -d "archive" ]; then 
+            cp -r archive _site/
+            echo "✅ 复制归档目录"
+          else
+            echo "⚠️ 未找到 archive 目录"
+          fi
+          
+          # 显示构建结果
+          echo "📊 构建完成，文件统计："
+          find _site -type f | wc -l | xargs echo "总文件数："
+          echo "📁 目录结构："
+          find _site -type d | head -10
 
       # 4️⃣ 上传构建产物
       - name: Upload Pages artifact

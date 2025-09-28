@@ -30,13 +30,17 @@
 - **Thomson Reuters**: `https://ir.thomsonreuters.com/rss/news-releases.xml`
 
 ## 执行步骤
-1. **创建文件夹**: 按当天日期创建文件夹（YYYY-MM-DD），包含子文件夹：rss_data/、news_content/、analysis/、reports/
+1. **创建按月归档目录**：
+   - 顶层：`archive/`
+   - 月份：`archive/YYYY-MM/`（如：`archive/2025-01/`）
+   - 每天与模型目录：`archive/YYYY-MM/YYYY-MM-DD_模型/`（如：`archive/2025-01/2025-01-15_gemini/`）
+   - 子文件夹：rss_data/、news_content/、analysis/、reports/
 2. **抓取**: 使用 MCP 访问每个 RSS 源，获取最新 5 篇文章，保存到 rss_data/
 3. **分析**: 抓取文章正文，提取关键信息，保存到 news_content/
 4. **归类**: 按日期和来源整理新闻
 5. **AI分析**: 作为财经分析师，找出热点行业/主题，分析催化剂、复盘、展望、相关股票
 6. **股票推荐**: 为每个热点推荐3-5只股票，提供推荐理由和风险评级
-7. **生成报告**: 保存分析结果到 analysis/，最终报告到 reports/
+7. **生成报告**: 保存分析结果到对应日期目录下的 analysis/，最终报告到 reports/
 
 ## 分析框架
 对每个热点提供：
@@ -109,7 +113,7 @@
 
 ## 要求
 - 使用 MCP 工具抓取
-- 按当天日期创建文件夹归类（YYYY-MM-DD）
+- 使用 `archive/YYYY-MM/YYYY-MM-DD_模型/` 的目录结构归档内容
 - 专业财经分析
 - 股票推荐和理由说明
 - 1500字内摘要
