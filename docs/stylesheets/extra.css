@@ -119,7 +119,7 @@
   position: relative;
 }
 
-.md-typeset ul {
+.md-typeset ul li{
   list-style: none; /* 移除默认的列表符号 */
 }
 
