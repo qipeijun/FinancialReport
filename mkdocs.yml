@@ -58,7 +58,6 @@ markdown_extensions:
     permalink: true
 nav:
 - 首页: index.md
-- 设计预览: design-preview.md
 - 分析报告:
   - 2025年09月:
     - '2025-09-28':
