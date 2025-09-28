@@ -65,6 +65,7 @@ markdown_extensions:
     permalink: true
 nav:
 - 首页: index.md
+- 样式展示: style-showcase.md
 - 分析报告:
   - 2025年09月:
     - '2025-09-28':
