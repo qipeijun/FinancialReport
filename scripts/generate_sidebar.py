@@ -93,13 +93,13 @@ def format_date_name(date_str):
         return date_str
 
 def generate_sidebar():
-    """生成美观的侧边栏内容"""
-    sidebar_content = """# 📊 财经分析报告系统
+    """生成简洁的侧边栏内容"""
+    sidebar_content = """# 财经分析报告系统
 
-## 📋 项目介绍
-- [📖 项目说明](README.md)
+## 项目介绍
+- [项目说明](README.md)
 
-## 📅 分析报告
+## 分析报告
 
 """
     
@@ -110,14 +110,14 @@ def generate_sidebar():
             # 格式化月份显示
             year, month_num = month.split('-')
             month_display = f"{year}年{month_num}月"
-            sidebar_content += f"### 📆 {month_display}\n\n"
+            sidebar_content += f"### {month_display}\n\n"
             
             for date_path in archive[month]:
                 files = get_analysis_files(date_path.as_posix())
                 date_name = format_date_name(date_path.name)
                 
                 # 为每个日期创建分组
-                sidebar_content += f"#### 📅 {date_name}\n"
+                sidebar_content += f"#### {date_name}\n"
                 
                 # 显示报告文件
                 if files['reports']:
@@ -126,15 +126,15 @@ def generate_sidebar():
                         # 美化报告名称
                         report_name = report_file.replace('.md', '').replace('📅 ', '').replace('财经分析报告_', '').replace('_', ' ')
                         if not report_name or report_name == date_name:
-                            report_name = "📊 财经分析报告"
-                        sidebar_content += f"  - [📈 {report_name}]({report_path})\n"
+                            report_name = "财经分析报告"
+                        sidebar_content += f"  - [{report_name}]({report_path})\n"
                 
                 # 显示分析文件
                 if files['analysis']:
                     for analysis_file in files['analysis']:
                         analysis_path = f"{date_path.as_posix()}/analysis/{analysis_file}"
                         analysis_name = analysis_file.replace('.md', '').replace('_', ' ')
-                        sidebar_content += f"  - [🔍 {analysis_name}]({analysis_path})\n"
+                        sidebar_content += f"  - [{analysis_name}]({analysis_path})\n"
                 
                 sidebar_content += "\n"
             
@@ -143,7 +143,7 @@ def generate_sidebar():
         # 旧结构兼容
         date_dirs = get_date_directories()
         if not date_dirs:
-            sidebar_content += "> 📝 暂无分析报告\n"
+            sidebar_content += "> 暂无分析报告\n"
             return sidebar_content
         
         years = {}
@@ -152,36 +152,36 @@ def generate_sidebar():
             years.setdefault(year, []).append(date_dir)
         
         for year in sorted(years.keys(), reverse=True):
-            sidebar_content += f"### 📆 {year}年\n\n"
+            sidebar_content += f"### {year}年\n\n"
             for date_dir in years[year]:
                 files = get_analysis_files(date_dir)
                 date_name = format_date_name(date_dir)
                 
-                sidebar_content += f"#### 📅 {date_name}\n"
+                sidebar_content += f"#### {date_name}\n"
                 
                 if files['reports']:
                     for report_file in files['reports']:
                         report_path = f"{date_dir}/reports/{report_file}"
                         report_name = report_file.replace('.md', '').replace('📅 ', '').replace('财经分析报告_', '').replace('_', ' ')
                         if not report_name or report_name == date_name:
-                            report_name = "📊 财经分析报告"
-                        sidebar_content += f"  - [📈 {report_name}]({report_path})\n"
+                            report_name = "财经分析报告"
+                        sidebar_content += f"  - [{report_name}]({report_path})\n"
                 
                 if files['analysis']:
                     for analysis_file in files['analysis']:
                         analysis_path = f"{date_dir}/analysis/{analysis_file}"
                         analysis_name = analysis_file.replace('.md', '').replace('_', ' ')
-                        sidebar_content += f"  - [🔍 {analysis_name}]({analysis_path})\n"
+                        sidebar_content += f"  - [{analysis_name}]({analysis_path})\n"
                 
                 sidebar_content += "\n"
             
             sidebar_content += "---\n\n"
     
     # 添加工具配置部分
-    sidebar_content += """## 🛠️ 工具配置
-- [📝 完整版提示词](prompts/mcp_finance_analysis_prompt.md)
-- [⚡ 优化版提示词](prompts/mcp_finance_analysis_prompt_optimized.md)
-- [🎯 精简版提示词](prompts/mcp_finance_analysis_prompt_minimal.md)
+    sidebar_content += """## 工具配置
+- [完整版提示词](prompts/mcp_finance_analysis_prompt.md)
+- [优化版提示词](prompts/mcp_finance_analysis_prompt_optimized.md)
+- [精简版提示词](prompts/mcp_finance_analysis_prompt_minimal.md)
 
 ---
 *最后更新: {datetime.now().strftime('%Y-%m-%d %H:%M')}*
