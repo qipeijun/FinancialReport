@@ -79,7 +79,7 @@ def get_analysis_files(date_dir):
     return files
 
 def generate_sidebar():
-    """生成侧边栏内容"""
+    """生成简化的侧边栏内容"""
     sidebar_content = """# 📊 财经分析报告
 
 ## 📋 项目介绍
@@ -120,82 +120,6 @@ def generate_sidebar():
                     report_name = report_file.replace('.md', '').replace('📅 ', '').replace('财经分析报告_', '')
                     sidebar_content += f"- [{report_name}]({report_path})\n"
             sidebar_content += "\n"
-    
-    # 添加详细分析部分
-    sidebar_content += "## 🔍 分析详情\n\n"
-    
-    # 收集最近5个日期路径
-    recent_date_paths = []
-    if archive:
-        for month in archive.keys():
-            for p in archive[month]:
-                recent_date_paths.append(p)
-        recent_date_paths = recent_date_paths[:5]
-    else:
-        recent_date_paths = [Path(p) for p in get_date_directories()[:5]]
-
-    for date_path in recent_date_paths:
-        files = get_analysis_files(date_path.as_posix())
-        date_name = date_path.name.replace('_', ' ').title()
-        
-        sidebar_content += f"### {date_name}\n"
-        
-        # 分析文件
-        if files['analysis']:
-            for analysis_file in files['analysis']:
-                analysis_path = f"{date_path.as_posix()}/analysis/{analysis_file}"
-                analysis_name = analysis_file.replace('.md', '').replace('_', ' ').title()
-                sidebar_content += f"- [{analysis_name}]({analysis_path})\n"
-        
-        # 报告文件
-        if files['reports']:
-            for report_file in files['reports']:
-                report_path = f"{date_path.as_posix()}/reports/{report_file}"
-                report_name = report_file.replace('.md', '').replace('📅 ', '').replace('财经分析报告_', '')
-                sidebar_content += f"- [报告: {report_name}]({report_path})\n"
-        
-        sidebar_content += "\n"
-    
-    # 添加新闻内容部分
-    sidebar_content += "## 📰 新闻内容\n\n"
-    
-    for date_path in recent_date_paths[:3]:  # 只显示最近3个日期的新闻
-        files = get_analysis_files(date_path.as_posix())
-        date_name = date_path.name.replace('_', ' ').title()
-        
-        sidebar_content += f"### {date_name}\n"
-        
-        if files['news']:
-            for news_file in files['news'][:5]:  # 只显示前5个新闻文件
-                news_path = f"{date_path.as_posix()}/news_content/{news_file}"
-                news_name = news_file.replace('.txt', '').replace('_', ' ').title()
-                sidebar_content += f"- [{news_name}]({news_path})\n"
-        
-        sidebar_content += "\n"
-    
-    # 添加RSS数据部分
-    sidebar_content += "## 📡 RSS数据源\n\n"
-    
-    for date_path in recent_date_paths[:3]:  # 只显示最近3个日期的RSS
-        files = get_analysis_files(date_path.as_posix())
-        date_name = date_path.name.replace('_', ' ').title()
-        
-        sidebar_content += f"### {date_name}\n"
-        
-        if files['rss']:
-            for rss_file in files['rss'][:8]:  # 只显示前8个RSS文件
-                rss_path = f"{date_path.as_posix()}/rss_data/{rss_file}"
-                rss_name = rss_file.replace('.txt', '').replace('_', ' ').title()
-                sidebar_content += f"- [{rss_name}]({rss_path})\n"
-        
-        sidebar_content += "\n"
-    
-    # 添加工具配置部分
-    sidebar_content += """## 🛠️ 工具配置
-- [完整版提示词](prompts/mcp_finance_analysis_prompt.md)
-- [优化版提示词](prompts/mcp_finance_analysis_prompt_optimized.md)
-- [精简版提示词](prompts/mcp_finance_analysis_prompt_minimal.md)
-"""
     
     return sidebar_content
 
