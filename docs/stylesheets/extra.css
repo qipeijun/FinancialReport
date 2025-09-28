@@ -1,0 +1,161 @@
+/* 自定义样式文件 - 财经分析报告系统 */
+
+/* 1. 全局样式 */
+:root {
+  /* 自定义颜色变量 */
+  --md-primary-fg-color: #1976d2;
+  --md-primary-fg-color--light: #42a5f5;
+  --md-primary-fg-color--dark: #1565c0;
+  --md-accent-fg-color: #ff4081;
+  
+  /* 自定义字体 */
+  --md-text-font: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  --md-code-font: "Roboto Mono", "Consolas", monospace;
+}
+
+/* 2. 导航栏样式 */
+.md-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.md-header__title {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* 3. 侧边栏样式 */
+.md-nav__title {
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+}
+
+.md-nav__item--nested > .md-nav__link {
+  font-weight: 500;
+}
+
+/* 4. 内容区域样式 */
+.md-content {
+  line-height: 1.7;
+}
+
+.md-content h1 {
+  color: var(--md-primary-fg-color);
+  border-bottom: 2px solid var(--md-primary-fg-color--light);
+  padding-bottom: 0.5rem;
+}
+
+.md-content h2 {
+  color: var(--md-primary-fg-color--dark);
+  margin-top: 2rem;
+}
+
+/* 5. 代码块样式 */
+.md-typeset pre > code {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+}
+
+/* 6. 表格样式 */
+.md-typeset table:not([class]) {
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--md-primary-fg-color--light);
+  color: white;
+  font-weight: 600;
+}
+
+.md-typeset table:not([class]) td {
+  border-color: #e9ecef;
+}
+
+/* 7. 按钮样式 */
+.md-button {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.md-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* 8. 卡片样式 */
+.md-typeset .admonition {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 9. 搜索框样式 */
+.md-search__form {
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+/* 10. 响应式设计 */
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title {
+    background: var(--md-primary-fg-color);
+    color: white;
+  }
+}
+
+/* 11. 自定义动画 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.md-content__inner {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* 12. 财经主题特殊样式 */
+.financial-highlight {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.financial-card {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin: 1rem 0;
+  transition: transform 0.3s ease;
+}
+
+.financial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* 13. 打印样式 */
+@media print {
+  .md-header,
+  .md-nav,
+  .md-footer {
+    display: none;
+  }
+  
+  .md-content {
+    margin: 0;
+    padding: 0;
+  }
+}
