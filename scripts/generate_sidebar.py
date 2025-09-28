@@ -78,12 +78,26 @@ def get_analysis_files(date_dir):
     
     return files
 
+def format_date_name(date_str):
+    """格式化日期显示名称"""
+    if len(date_str) == 8 and date_str.isdigit():
+        # 处理 20250928 格式
+        year = date_str[:4]
+        month = date_str[4:6]
+        day = date_str[6:8]
+        return f"{year}-{month}-{day}"
+    elif '-' in date_str:
+        # 处理 2025-09-28 格式
+        return date_str
+    else:
+        return date_str
+
 def generate_sidebar():
-    """生成简化的侧边栏内容"""
-    sidebar_content = """# 📊 财经分析报告
+    """生成美观的侧边栏内容"""
+    sidebar_content = """# 📊 财经分析报告系统
 
 ## 📋 项目介绍
-- [项目说明](README.md)
+- [📖 项目说明](README.md)
 
 ## 📅 分析报告
 
@@ -93,33 +107,85 @@ def generate_sidebar():
     if archive:
         # 新结构：按月份→日期列出报告
         for month in archive.keys():
-            sidebar_content += f"### {month} 报告\n"
+            # 格式化月份显示
+            year, month_num = month.split('-')
+            month_display = f"{year}年{month_num}月"
+            sidebar_content += f"### 📆 {month_display}\n\n"
+            
             for date_path in archive[month]:
                 files = get_analysis_files(date_path.as_posix())
-                for report_file in files['reports']:
-                    report_path = f"{date_path.as_posix()}/reports/{report_file}"
-                    report_name = report_file.replace('.md', '').replace('📅 ', '').replace('财经分析报告_', '')
-                    sidebar_content += f"- [{report_name}]({report_path})\n"
-            sidebar_content += "\n"
+                date_name = format_date_name(date_path.name)
+                
+                # 为每个日期创建分组
+                sidebar_content += f"#### 📅 {date_name}\n"
+                
+                # 显示报告文件
+                if files['reports']:
+                    for report_file in files['reports']:
+                        report_path = f"{date_path.as_posix()}/reports/{report_file}"
+                        # 美化报告名称
+                        report_name = report_file.replace('.md', '').replace('📅 ', '').replace('财经分析报告_', '').replace('_', ' ')
+                        if not report_name or report_name == date_name:
+                            report_name = "📊 财经分析报告"
+                        sidebar_content += f"  - [📈 {report_name}]({report_path})\n"
+                
+                # 显示分析文件
+                if files['analysis']:
+                    for analysis_file in files['analysis']:
+                        analysis_path = f"{date_path.as_posix()}/analysis/{analysis_file}"
+                        analysis_name = analysis_file.replace('.md', '').replace('_', ' ')
+                        sidebar_content += f"  - [🔍 {analysis_name}]({analysis_path})\n"
+                
+                sidebar_content += "\n"
+            
+            sidebar_content += "---\n\n"
     else:
         # 旧结构兼容
         date_dirs = get_date_directories()
         if not date_dirs:
-            sidebar_content += "暂无分析报告\n"
+            sidebar_content += "> 📝 暂无分析报告\n"
             return sidebar_content
+        
         years = {}
         for date_dir in date_dirs:
             year = date_dir[:4]
             years.setdefault(year, []).append(date_dir)
+        
         for year in sorted(years.keys(), reverse=True):
-            sidebar_content += f"### {year}年报告\n"
+            sidebar_content += f"### 📆 {year}年\n\n"
             for date_dir in years[year]:
                 files = get_analysis_files(date_dir)
-                for report_file in files['reports']:
-                    report_path = f"{date_dir}/reports/{report_file}"
-                    report_name = report_file.replace('.md', '').replace('📅 ', '').replace('财经分析报告_', '')
-                    sidebar_content += f"- [{report_name}]({report_path})\n"
-            sidebar_content += "\n"
+                date_name = format_date_name(date_dir)
+                
+                sidebar_content += f"#### 📅 {date_name}\n"
+                
+                if files['reports']:
+                    for report_file in files['reports']:
+                        report_path = f"{date_dir}/reports/{report_file}"
+                        report_name = report_file.replace('.md', '').replace('📅 ', '').replace('财经分析报告_', '').replace('_', ' ')
+                        if not report_name or report_name == date_name:
+                            report_name = "📊 财经分析报告"
+                        sidebar_content += f"  - [📈 {report_name}]({report_path})\n"
+                
+                if files['analysis']:
+                    for analysis_file in files['analysis']:
+                        analysis_path = f"{date_dir}/analysis/{analysis_file}"
+                        analysis_name = analysis_file.replace('.md', '').replace('_', ' ')
+                        sidebar_content += f"  - [🔍 {analysis_name}]({analysis_path})\n"
+                
+                sidebar_content += "\n"
+            
+            sidebar_content += "---\n\n"
+    
+    # 添加工具配置部分
+    sidebar_content += """## 🛠️ 工具配置
+- [📝 完整版提示词](prompts/mcp_finance_analysis_prompt.md)
+- [⚡ 优化版提示词](prompts/mcp_finance_analysis_prompt_optimized.md)
+- [🎯 精简版提示词](prompts/mcp_finance_analysis_prompt_minimal.md)
+
+---
+*最后更新: {datetime.now().strftime('%Y-%m-%d %H:%M')}*
+"""
     
     return sidebar_content
 
