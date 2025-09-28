@@ -10,6 +10,16 @@
   --apple-red: #FF3B30;
   --apple-text: #1D1D1F;
   --apple-text-secondary: #86868B;
+  
+  /* 移动端优化色彩 */
+  --mobile-bg: #FAFAFA;
+  --mobile-text: #1A1A1A;
+  --mobile-text-secondary: #6B6B6B;
+  --mobile-border: #E5E5E7;
+  --mobile-accent: #007AFF;
+  --mobile-success: #30D158;
+  --mobile-warning: #FF9F0A;
+  --mobile-error: #FF453A;
 }
 
 /* 全局字体优化 - Apple 风格 */
@@ -107,6 +117,10 @@
   margin: 8px 0;
   padding-left: 28px;
   position: relative;
+}
+
+.md-typeset ul {
+  list-style: none; /* 移除默认的列表符号 */
 }
 
 .md-typeset ul li::before {
@@ -220,49 +234,244 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* 响应式设计 */
+/* 响应式设计 - 平板端优化 */
 @media (max-width: 1068px) {
   .md-content__inner {
-    padding: 0 22px;
+    padding: 0 24px;
+    max-width: 100%;
   }
   
   .md-typeset h1 {
-    font-size: 40px;
+    font-size: 42px;
     line-height: 1.1;
+    margin: 0 0 24px 0;
   }
   
   .md-typeset h2 {
-    font-size: 28px;
-    line-height: 1.14286;
+    font-size: 30px;
+    line-height: 1.15;
+    margin: 60px 0 20px 0;
+  }
+  
+  .md-typeset h3 {
+    font-size: 22px;
+    line-height: 1.18;
+    margin: 40px 0 16px 0;
+  }
+  
+  /* 平板端表格优化 */
+  .md-typeset table {
+    font-size: 15px;
+    margin: 32px 0;
+  }
+  
+  .md-typeset table th,
+  .md-typeset table td {
+    padding: 12px 16px;
   }
 }
 
-@media (max-width: 734px) {
+/* 移动端优化 - 主要手机屏幕 */
+@media (max-width: 768px) {
   .md-content__inner {
     padding: 0 16px;
   }
   
   .md-typeset {
-    font-size: 17px;
-    line-height: 1.5; /* 移动端优化 */
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--mobile-text);
   }
   
   .md-typeset h1 {
     font-size: 32px;
-    line-height: 1.125;
+    line-height: 1.1;
     margin: 0 0 16px 0;
   }
   
   .md-typeset h2 {
     font-size: 24px;
-    line-height: 1.16667;
-    margin: 48px 0 16px 0;
+    line-height: 1.15;
+    margin: 32px 0 12px 0;
   }
   
   .md-typeset h3 {
     font-size: 20px;
     line-height: 1.2;
-    margin: 32px 0 12px 0;
+    margin: 24px 0 8px 0;
+  }
+  
+  .md-typeset h4, 
+  .md-typeset h5, 
+  .md-typeset h6 {
+    font-size: 18px;
+    line-height: 1.25;
+    margin: 20px 0 6px 0;
+  }
+  
+  /* 移动端段落优化 */
+  .md-typeset p {
+    margin: 0 0 1em 0;
+    text-align: left;
+  }
+  
+  /* 移动端列表优化 */
+  .md-typeset ul,
+  .md-typeset ol {
+    margin: 0 0 16px 0;
+    padding-left: 0;
+  }
+  
+  .md-typeset li {
+    margin: 6px 0;
+    padding-left: 24px;
+    line-height: 1.4;
+  }
+  
+  .md-typeset ul li::before {
+    left: 8px;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+  }
+  
+  /* 移动端表格优化 */
+  .md-typeset table {
+    font-size: 14px;
+    margin: 16px 0;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .md-typeset table th {
+    background: var(--mobile-bg);
+    color: var(--mobile-text);
+    font-weight: 600;
+    padding: 8px 10px;
+  }
+  
+  .md-typeset table td {
+    padding: 8px 10px;
+    min-width: 70px;
+    color: var(--mobile-text);
+  }
+  
+  /* 移动端代码块优化 */
+  .md-typeset pre {
+    padding: 12px;
+    margin: 16px 0;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  
+  .md-typeset code {
+    font-size: 13px;
+    padding: 2px 4px;
+  }
+  
+  /* 移动端引用块优化 */
+  .md-typeset blockquote {
+    margin: 0 0 16px 0;
+    padding: 10px 12px;
+    border-left: 3px solid var(--apple-blue);
+  }
+  
+  /* 移动端提示框优化 */
+  .md-typeset .admonition {
+    padding: 12px;
+    margin: 16px 0;
+  }
+  
+  .md-typeset .admonition-title {
+    font-size: 16px;
+    margin: 0 0 6px 0;
+  }
+}
+
+/* 小屏手机优化 */
+@media (max-width: 480px) {
+  .md-content__inner {
+    padding: 0 12px;
+  }
+  
+  .md-typeset {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  
+  .md-typeset h1 {
+    font-size: 28px;
+    line-height: 1.1;
+    margin: 0 0 12px 0;
+  }
+  
+  .md-typeset h2 {
+    font-size: 22px;
+    line-height: 1.15;
+    margin: 24px 0 10px 0;
+  }
+  
+  .md-typeset h3 {
+    font-size: 18px;
+    line-height: 1.2;
+    margin: 20px 0 8px 0;
+  }
+  
+  .md-typeset h4, 
+  .md-typeset h5, 
+  .md-typeset h6 {
+    font-size: 16px;
+    line-height: 1.25;
+    margin: 16px 0 6px 0;
+  }
+  
+  /* 小屏列表优化 */
+  .md-typeset li {
+    margin: 4px 0;
+    padding-left: 20px;
+  }
+  
+  .md-typeset ul li::before {
+    left: 6px;
+    top: 6px;
+    width: 3px;
+    height: 3px;
+  }
+  
+  /* 小屏表格优化 */
+  .md-typeset table {
+    font-size: 12px;
+    margin: 12px 0;
+  }
+  
+  .md-typeset table th,
+  .md-typeset table td {
+    padding: 6px 8px;
+    min-width: 60px;
+  }
+  
+  /* 小屏代码优化 */
+  .md-typeset pre {
+    padding: 10px;
+    margin: 12px 0;
+    font-size: 12px;
+  }
+  
+  .md-typeset code {
+    font-size: 12px;
+    padding: 1px 3px;
+  }
+  
+  /* 小屏引用和提示框优化 */
+  .md-typeset blockquote {
+    padding: 8px 10px;
+    margin: 0 0 12px 0;
+  }
+  
+  .md-typeset .admonition {
+    padding: 10px;
+    margin: 12px 0;
   }
 }
 
@@ -290,6 +499,10 @@
   .md-typeset .admonition {
     background: #2C2C2E;
     border: 1px solid #48484A;
+  }
+  
+  .md-typeset ul {
+    list-style: none; /* 确保夜间模式也移除默认列表符号 */
   }
   
   .md-typeset ul li::before {
