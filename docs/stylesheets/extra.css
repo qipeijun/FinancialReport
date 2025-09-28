@@ -16,7 +16,7 @@
 .md-typeset {
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
   font-size: 17px;
-  line-height: 1.52947;
+  line-height: 1.6; /* 优化行高 */
   font-weight: 400;
   letter-spacing: -0.022em;
   color: var(--apple-text);
@@ -24,7 +24,7 @@
 
 /* 内容区域 - Apple 极简风格 */
 .md-content__inner {
-  max-width: 980px;
+  max-width: 800px; /* 优化阅读行长 */
   margin: 0 auto;
   padding: 0 22px;
 }
@@ -46,7 +46,7 @@
   font-weight: 600;
   letter-spacing: 0.004em;
   color: var(--apple-text);
-  margin: 60px 0 20px 0;
+  margin: 80px 0 24px 0; /* 增加章节间距 */
 }
 
 .md-typeset h3 {
@@ -55,7 +55,7 @@
   font-weight: 600;
   letter-spacing: 0.009em;
   color: var(--apple-text);
-  margin: 40px 0 16px 0;
+  margin: 60px 0 20px 0; /* 增加小节间距 */
 }
 
 .md-typeset h4, 
@@ -71,8 +71,17 @@
 
 /* 段落优化 */
 .md-typeset p {
-  margin: 0 0 21px 0;
+  margin: 0 0 1.2em 0; /* 使用em单位，更具弹性 */
   color: var(--apple-text);
+  text-align: justify; /* 两端对齐，提升阅读感 */
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+.md-typeset p:last-child {
+    margin-bottom: 0;
 }
 
 /* 链接 - Apple 风格 */
@@ -84,6 +93,7 @@
 
 .md-typeset a:hover {
   opacity: 0.8;
+  text-decoration: underline; /* 悬停时更清晰 */
 }
 
 /* 列表优化 */
@@ -165,6 +175,22 @@
   line-height: 1.6;
 }
 
+/* 引用块 - 增加视觉区分 */
+.md-typeset blockquote {
+  margin: 0 0 24px 0;
+  padding: 16px 24px;
+  border-left: 4px solid var(--apple-blue);
+  background: var(--apple-gray-1);
+  color: var(--apple-text-secondary);
+  border-radius: 0 8px 8px 0;
+}
+
+.md-typeset blockquote p {
+  margin-bottom: 0;
+  text-align: left; /* 引用内文字左对齐 */
+}
+
+
 /* 提示框 - Apple Card 风格 */
 .md-typeset .admonition {
   background: #FBFBFD;
@@ -218,7 +244,7 @@
   
   .md-typeset {
     font-size: 17px;
-    line-height: 1.47059;
+    line-height: 1.5; /* 移动端优化 */
   }
   
   .md-typeset h1 {
@@ -238,4 +264,98 @@
     line-height: 1.2;
     margin: 32px 0 12px 0;
   }
+}
+
+/* 夜间模式 - Slate a.k.a. Dark Mode */
+[data-md-color-scheme="slate"] {
+  --apple-text: #F2F2F7;
+  --apple-text-secondary: #AEAEB2;
+  --apple-gray-1: #2C2C2E;
+  --apple-gray-2: #636366;
+  --apple-gray-6: #8E8E93;
+  --apple-blue: #0A84FF;
+  --apple-green: #30D158;
+  --apple-red: #FF453A;
+
+  .md-typeset table th {
+    background: #3A3A3C;
+    color: var(--apple-text);
+  }
+
+  .md-typeset table td {
+    border-bottom: 1px solid #48484A;
+    color: var(--apple-text);
+  }
+
+  .md-typeset .admonition {
+    background: #2C2C2E;
+    border: 1px solid #48484A;
+  }
+  
+  .md-typeset ul li::before {
+    background: var(--apple-text);
+  }
+
+  .md-typeset blockquote {
+    border-left-color: var(--apple-blue);
+    background: #3A3A3C;
+    color: var(--apple-text-secondary);
+  }
+}
+
+/* 头部 - Glassmorphism 效果 */
+.md-header {
+  position: sticky !important; /* Ensure it stays on top */
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/* Light Mode Header */
+[data-md-color-scheme="default"] .md-header {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-md-color-scheme="default"] .md-tabs {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+[data-md-color-scheme="default"] .md-header .md-header__topic,
+[data-md-color-scheme="default"] .md-header .md-nav__link,
+[data-md-color-scheme="default"] .md-header .md-icon,
+[data-md-color-scheme="default"] .md-tabs .md-tabs__link {
+    color: var(--apple-text);
+}
+
+/* Dark Mode Header */
+[data-md-color-scheme="slate"] .md-header {
+  background: rgba(28, 28, 30, 0.7); /* Darker glass with more opacity for contrast */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+[data-md-color-scheme="slate"] .md-tabs {
+    background: rgba(28, 28, 30, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+[data-md-color-scheme="slate"] .md-header .md-header__topic,
+[data-md-color-scheme="slate"] .md-header .md-nav__link,
+[data-md-color-scheme="slate"] .md-header .md-icon,
+[data-md-color-scheme="slate"] .md-tabs .md-tabs__link,
+[data-md-color-scheme="slate"] .md-search__input {
+    color: var(--apple-text);
+}
+
+/* Ensure search placeholder is visible in dark mode */
+[data-md-color-scheme="slate"] .md-search__input::placeholder {
+    color: var(--apple-text-secondary);
 }
