@@ -3,34 +3,50 @@ name: Deploy Docsify Site
 on:
   push:
     branches:
-      - main
+      - master  # 修正分支名称
+  workflow_dispatch:  # 允许手动触发
+
+# 添加必要的权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       # 1️⃣ Checkout 仓库
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ 配置 Pages（第一次启用）
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          enablement: true
+      # 2️⃣ 配置 Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
       # 3️⃣ 构建 Docsify 网站
       - name: Build Docsify site
         run: |
-          mkdir -p .site
-          cp -r index.html README.md _sidebar.md docs .site
+          mkdir -p _site
+          # 只复制存在的文件
+          cp index.html README.md _site/
+          # 复制其他存在的文档文件
+          find . -name "*.md" -not -path "./_site/*" -not -path "./.git/*" -not -name "README.md" -exec cp {} _site/ \;
+          # 如果有其他目录需要复制，可以添加
+          if [ -d "docs" ]; then cp -r docs _site/; fi
+          if [ -f "_sidebar.md" ]; then cp _sidebar.md _site/; fi
 
-      # 4️⃣ 部署到 GitHub Pages
-      - name: Deploy to Pages
-        uses: actions/deploy-pages@v2
+      # 4️⃣ 上传构建产物
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages   # 可选，默认 deploy-pages 会推 gh-pages
-          folder: .site
+          path: _site
+
+      # 5️⃣ 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
