@@ -1,4 +1,4 @@
-/* 财经分析报告系统 - 优化样式表 */
+/* 财经分析报告系统 - 简化版样式表 */
 
 :root {
   /* Apple 风格色彩系统 */
@@ -10,10 +10,6 @@
   --apple-red: #FF3B30;
   --apple-text: #1D1D1F;
   --apple-text-secondary: #86868B;
-  
-  /* 头部样式变量 */
-  --header-height: 60px;
-  --header-height-mobile: 56px;
 }
 
 /* 全局字体优化 */
@@ -252,172 +248,81 @@
 }
 
 /* =============================================================================
-   头部样式 - 重构优化版本
+   头部样式 - 最小化修复版本
    ============================================================================= */
 
-/* 头部基础样式 */
+/* 仅修复头部背景和基本样式，不破坏原有布局 */
 .md-header {
-  position: sticky !important;
-  top: 0;
-  z-index: 100;
-  width: 100%;
-  height: var(--header-height);
-  min-height: var(--header-height);
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-}
-
-/* 头部内容布局 */
-.md-header__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* 头部按钮 */
-.md-header__button {
-  padding: 8px;
-  margin: 0 4px;
-  border-radius: 8px;
-  transition: background-color 0.2s ease;
-  z-index: 101;
-}
-
-.md-header__button:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-/* 头部标题 */
-.md-header__title {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.2;
-  z-index: 101;
-  flex: 1;
-  text-align: center;
-}
-
-/* 导航标签 */
-.md-tabs {
-  position: sticky;
-  top: var(--header-height);
-  z-index: 99;
-  width: 100%;
-}
-
-/* 浅色模式头部 */
-[data-md-color-scheme="default"] .md-header {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-[data-md-color-scheme="default"] .md-tabs {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-[data-md-color-scheme="default"] .md-header .md-header__title,
-[data-md-color-scheme="default"] .md-header .md-nav__link,
-[data-md-color-scheme="default"] .md-header .md-icon,
-[data-md-color-scheme="default"] .md-tabs .md-tabs__link {
-  color: var(--apple-text);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
 /* 深色模式头部 */
 [data-md-color-scheme="slate"] .md-header {
-  background: rgba(28, 28, 30, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(28, 28, 30, 0.95) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
-[data-md-color-scheme="slate"] .md-tabs {
-  background: rgba(28, 28, 30, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+/* 头部按钮优化 */
+.md-header__button {
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
-[data-md-color-scheme="slate"] .md-header .md-header__title,
-[data-md-color-scheme="slate"] .md-header .md-nav__link,
-[data-md-color-scheme="slate"] .md-header .md-icon,
-[data-md-color-scheme="slate"] .md-tabs .md-tabs__link {
-  color: #E5E5E7;
+.md-header__button:hover {
+  background: rgba(0, 0, 0, 0.06);
+  transform: scale(1.05);
 }
 
 [data-md-color-scheme="slate"] .md-header__button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* 标题样式优化 */
+.md-header__title {
+  font-weight: 600;
+}
+
+.md-header__topic {
+  font-weight: 600;
+}
+
+/* GitHub源码链接样式 */
+.md-source {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.md-source:hover {
+  background: rgba(0, 0, 0, 0.06);
+  transform: scale(1.02);
+}
+
+[data-md-color-scheme="slate"] .md-source:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* =============================================================================
-   响应式设计
+   响应式设计 - 简化版
    ============================================================================= */
-
-/* 平板端优化 */
-@media (max-width: 1068px) {
-  .md-content__inner {
-    padding: 0 24px;
-    max-width: 100%;
-  }
-  
-  .md-header__inner {
-    padding: 0 20px;
-  }
-  
-  .md-typeset h1 {
-    font-size: 42px;
-    line-height: 1.1;
-  }
-  
-  .md-typeset h2 {
-    font-size: 30px;
-    line-height: 1.15;
-  }
-  
-  .md-typeset h3 {
-    font-size: 22px;
-    line-height: 1.18;
-  }
-}
 
 /* 移动端优化 */
 @media (max-width: 768px) {
-  :root {
-    --header-height: var(--header-height-mobile);
-  }
-  
   .md-content__inner {
     padding: 0 16px;
   }
   
-  .md-header {
-    height: var(--header-height-mobile);
-    min-height: var(--header-height-mobile);
-  }
-  
-  .md-header__inner {
-    padding: 0 16px;
-  }
-  
-  .md-header__title {
-    font-size: 16px;
-    font-weight: 600;
+  /* 移动端隐藏GitHub链接节省空间 */
+  .md-header__source {
+    display: none;
   }
   
   .md-header__button {
-    padding: 6px;
-    margin: 0 2px;
-  }
-  
-  .md-tabs {
-    top: var(--header-height-mobile);
+    border-radius: 6px;
   }
   
   /* 移动端排版优化 */
@@ -476,14 +381,6 @@
 @media (max-width: 480px) {
   .md-content__inner {
     padding: 0 12px;
-  }
-  
-  .md-header__inner {
-    padding: 0 12px;
-  }
-  
-  .md-header__title {
-    font-size: 15px;
   }
   
   .md-typeset {
@@ -553,15 +450,6 @@
 /* 导航菜单优化 */
 .md-nav {
   z-index: 50;
-}
-
-.md-nav__title {
-  font-weight: 600;
-  z-index: 51;
-}
-
-.md-nav__button {
-  z-index: 51;
 }
 
 /* 移动端导航优化 */
