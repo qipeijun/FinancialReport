@@ -56,7 +56,7 @@
   font-weight: 600;
   letter-spacing: 0.004em;
   color: var(--apple-text);
-  margin: 80px 0 24px 0; /* 增加章节间距 */
+  margin: 48px 0 16px 0; /* 减少章节间距 */
 }
 
 .md-typeset h3 {
@@ -65,7 +65,7 @@
   font-weight: 600;
   letter-spacing: 0.009em;
   color: var(--apple-text);
-  margin: 60px 0 20px 0; /* 增加小节间距 */
+  margin: 32px 0 12px 0; /* 减少小节间距 */
 }
 
 .md-typeset h4, 
@@ -76,12 +76,12 @@
   font-weight: 600;
   letter-spacing: 0.012em;
   color: var(--apple-text);
-  margin: 32px 0 12px 0;
+  margin: 24px 0 8px 0;
 }
 
 /* 段落优化 */
 .md-typeset p {
-  margin: 0 0 1.2em 0; /* 使用em单位，更具弹性 */
+  margin: 0 0 1em 0; /* 减少段落间距 */
   color: var(--apple-text);
   text-align: justify; /* 两端对齐，提升阅读感 */
   -webkit-hyphens: auto;
@@ -109,25 +109,26 @@
 /* 列表优化 */
 .md-typeset ul,
 .md-typeset ol {
-  margin: 0 0 21px 0;
+  margin: 0 0 16px 0;
   padding-left: 0;
 }
 
 .md-typeset li {
-  margin: 8px 0;
-  padding-left: 28px;
+  margin: 6px 0;
+  padding-left: 20px;
   position: relative;
+  line-height: 1.5;
 }
 
-.md-typeset ul li{
+.md-typeset ul {
   list-style: none; /* 移除默认的列表符号 */
 }
 
 .md-typeset ul li::before {
   content: '';
   position: absolute;
-  left: 12px;
-  top: 12px;
+  left: 4px;
+  top: 10px;
   width: 4px;
   height: 4px;
   background: var(--apple-text);
@@ -137,7 +138,7 @@
 /* 表格 - Apple 极简风格 */
 .md-typeset table {
   width: 100%;
-  margin: 40px 0;
+  margin: 24px 0;
   border-collapse: collapse;
   font-size: 14px;
   line-height: 1.42857;
@@ -177,8 +178,8 @@
 .md-typeset pre {
   background: var(--apple-gray-1);
   border-radius: 8px;
-  padding: 20px;
-  margin: 24px 0;
+  padding: 16px;
+  margin: 16px 0;
   overflow-x: auto;
 }
 
@@ -191,8 +192,8 @@
 
 /* 引用块 - 增加视觉区分 */
 .md-typeset blockquote {
-  margin: 0 0 24px 0;
-  padding: 16px 24px;
+  margin: 0 0 16px 0;
+  padding: 12px 16px;
   border-left: 4px solid var(--apple-blue);
   background: var(--apple-gray-1);
   color: var(--apple-text-secondary);
@@ -210,8 +211,8 @@
   background: #FBFBFD;
   border: 1px solid #D2D2D7;
   border-radius: 12px;
-  padding: 24px;
-  margin: 32px 0;
+  padding: 16px;
+  margin: 20px 0;
 }
 
 .md-typeset .admonition-title {
@@ -275,6 +276,16 @@
 @media (max-width: 768px) {
   .md-content__inner {
     padding: 0 16px;
+    margin-top: 0;
+  }
+  
+  /* 确保内容不被头部遮挡 */
+  .md-main__inner {
+    margin-top: 0;
+  }
+  
+  .md-content {
+    margin-top: 0;
   }
   
   .md-typeset {
@@ -323,14 +334,14 @@
   }
   
   .md-typeset li {
-    margin: 6px 0;
-    padding-left: 24px;
-    line-height: 1.4;
+    margin: 8px 0;
+    padding-left: 20px;
+    line-height: 1.5;
   }
   
   .md-typeset ul li::before {
-    left: 8px;
-    top: 8px;
+    left: 4px;
+    top: 10px;
     width: 4px;
     height: 4px;
   }
@@ -428,13 +439,13 @@
   
   /* 小屏列表优化 */
   .md-typeset li {
-    margin: 4px 0;
-    padding-left: 20px;
+    margin: 6px 0;
+    padding-left: 18px;
   }
   
   .md-typeset ul li::before {
-    left: 6px;
-    top: 6px;
+    left: 2px;
+    top: 8px;
     width: 3px;
     height: 3px;
   }
@@ -477,14 +488,24 @@
 
 /* 夜间模式 - Slate a.k.a. Dark Mode */
 [data-md-color-scheme="slate"] {
-  --apple-text: #F2F2F7;
-  --apple-text-secondary: #AEAEB2;
-  --apple-gray-1: #2C2C2E;
-  --apple-gray-2: #636366;
+  --apple-text: #FFFFFF;
+  --apple-text-secondary: #B0B0B0;
+  --apple-gray-1: #1C1C1E;
+  --apple-gray-2: #48484A;
   --apple-gray-6: #8E8E93;
   --apple-blue: #0A84FF;
   --apple-green: #30D158;
   --apple-red: #FF453A;
+  
+  /* 移动端暗黑模式优化色彩 */
+  --mobile-bg: #000000;
+  --mobile-text: #FFFFFF;
+  --mobile-text-secondary: #B0B0B0;
+  --mobile-border: #333333;
+  --mobile-accent: #0A84FF;
+  --mobile-success: #30D158;
+  --mobile-warning: #FF9F0A;
+  --mobile-error: #FF453A;
 
   .md-typeset table th {
     background: #3A3A3C;
@@ -514,15 +535,81 @@
     background: #3A3A3C;
     color: var(--apple-text-secondary);
   }
+  
+  /* 暗黑模式移动端优化 */
+  @media (max-width: 768px) {
+    .md-content__inner {
+      background: var(--mobile-bg);
+    }
+    
+    .md-typeset {
+      color: var(--mobile-text);
+    }
+    
+    .md-typeset h1,
+    .md-typeset h2,
+    .md-typeset h3,
+    .md-typeset h4,
+    .md-typeset h5,
+    .md-typeset h6 {
+      color: var(--mobile-text);
+    }
+    
+    .md-typeset p {
+      color: var(--mobile-text);
+    }
+    
+    .md-typeset table th {
+      background: #2C2C2E;
+      color: var(--mobile-text);
+    }
+    
+    .md-typeset table td {
+      color: var(--mobile-text);
+      border-bottom: 1px solid var(--mobile-border);
+    }
+    
+    .md-typeset ul li::before {
+      background: var(--mobile-text);
+    }
+  }
 }
 
 /* 头部 - Glassmorphism 效果 */
 .md-header {
-  position: sticky !important; /* Ensure it stays on top */
+  position: sticky !important;
   top: 0;
   z-index: 10;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
+  height: auto;
+  min-height: 60px;
+}
+
+/* 确保logo不被遮挡 */
+.md-header__button {
+  z-index: 11;
+}
+
+.md-header__title {
+  z-index: 11;
+}
+
+/* 移动端头部优化 */
+@media (max-width: 768px) {
+  .md-header {
+    min-height: 56px;
+    padding: 0 16px;
+  }
+  
+  .md-header__title {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  
+  .md-header__button {
+    padding: 8px;
+  }
 }
 
 /* Light Mode Header */
