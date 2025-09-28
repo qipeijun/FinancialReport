@@ -92,3 +92,28 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # 步骤 2：输出部署信息
+      - name: Display deployment info
+        run: |
+          # 获取动态部署 URL 和仓库信息
+          DEPLOY_URL="${{ steps.deployment.outputs.page_url }}"
+          REPO_OWNER="${{ github.repository_owner }}"
+          REPO_NAME="${{ github.event.repository.name }}"
+          BASE_URL="https://$REPO_OWNER.github.io/$REPO_NAME"
+          
+          echo "🚀 部署成功！"
+          echo "📊 网站地址：$BASE_URL/"
+          echo "🔗 部署 URL：$DEPLOY_URL"
+          echo ""
+          echo "📋 主要页面链接："
+          echo "  🏠 首页：$BASE_URL/"
+          echo "  📊 分析报告：$BASE_URL/archive/2025-09/2025-09-28/"
+          echo "  🔥 热门话题：$BASE_URL/archive/2025-09/2025-09-28/analysis/"
+          echo "  💎 潜力话题：$BASE_URL/archive/2025-09/2025-09-28/analysis/"
+          echo ""
+          echo "📝 部署信息："
+          echo "  ⏰ 部署时间：$(date '+%Y-%m-%d %H:%M:%S')"
+          echo "  🌿 分支：${{ github.ref_name }}"
+          echo "  🔄 自动更新：每次推送到 main 分支都会自动重新部署"
+          echo "  🌐 仓库地址：https://github.com/${{ github.repository }}"
