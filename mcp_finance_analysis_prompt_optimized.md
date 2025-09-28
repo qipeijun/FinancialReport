@@ -5,29 +5,29 @@
 
 ## RSS 源
 
-### 🇨🇳 中国财经
+### 💲 华尔街见闻
 - **华尔街见闻**: `https://dedicated.wallstreetcn.com/rss.xml`
-- **36氪**: `https://36kr.com/feed`
-- **东方财富**: `http://rss.eastmoney.com/rss_partener.xml`
-- **百度股票**: `http://news.baidu.com/n?cmd=1&class=stock&tn=rss&sub=0`
-- **中新网**: `https://www.chinanews.com.cn/rss/finance.xml`
-- **国家统计局**: `https://www.stats.gov.cn/sj/zxfb/rss.xml`
-- **财新网（RSSHub）**: `https://rsshub.app/caixin/latest`
-- **新浪财经**: `https://rss.sina.com.cn/finance/latest/all.xml`
 
-### 🇺🇸 美国财经
-- **ZeroHedge**: `https://feeds.feedburner.com/zerohedge/feed`
+### 💻 36氪
+- **36氪**: `https://36kr.com/feed`
+
+### 🇨🇳 中国经济
+- **东方财富**: `http://rss.eastmoney.com/rss_partener.xml`
+- **百度股票焦点**: `http://news.baidu.com/n?cmd=1&class=stock&tn=rss&sub=0`
+- **中新网**: `https://www.chinanews.com.cn/rss/finance.xml`
+- **国家统计局-最新发布**: `https://www.stats.gov.cn/sj/zxfb/rss.xml`
+
+### 🇺🇸 美国经济
+- **ZeroHedge华尔街新闻**: `https://feeds.feedburner.com/zerohedge/feed`
 - **ETF Trends**: `https://www.etftrends.com/feed/`
-- **MarketWatch**: `https://www.marketwatch.com/rss/topstories`
-- **Wall Street Journal**: `https://feeds.a.dj.com/rss/RSSWorldNews.xml`
 - **Federal Reserve Board**: `https://www.federalreserve.gov/feeds/press_all.xml`
 
-### 🌍 国际财经
-- **BBC经济**: `http://feeds.bbci.co.uk/news/business/rss.xml`
+### 🌍 世界经济
+- **BBC全球经济**: `http://feeds.bbci.co.uk/news/business/rss.xml`
 - **FT中文网**: `https://www.ftchinese.com/rss/feed`
+- **Wall Street Journal**: `https://feeds.a.dj.com/rss/RSSWorldNews.xml`
 - **Investing.com**: `https://www.investing.com/rss/news.rss`
 - **Thomson Reuters**: `https://ir.thomsonreuters.com/rss/news-releases.xml`
-- **IMF Publications**: `https://www.imf.org/en/News/rss`
 
 ## 执行步骤
 1. **创建文件夹**: 按当天日期创建文件夹（YYYY-MM-DD），包含子文件夹：rss_data/、news_content/、analysis/、reports/
@@ -53,7 +53,7 @@
 # 📅 2025-XX-XX 财经分析报告
 
 ## 📊 数据概览
-- 成功源: X/18 | 新闻: XX条 | 分析: XX篇
+- 成功源: X/13 | 新闻: XX条 | 分析: XX篇
 
 ## 🔥 市场热点
 
@@ -104,7 +104,7 @@
 - **重点关注**: [政策事件/数据发布/公司公告]
 
 ---
-*生成时间: 2025-XX-XX | 数据源: 18个财经RSS*
+*生成时间: 2025-XX-XX | 数据源: 13个财经RSS*
 ```
 
 ## 要求

@@ -6,29 +6,29 @@
 ## RSS 源配置
 请按以下 RSS 源抓取财经新闻：
 
-### 🇨🇳 中国财经
+### 💲 华尔街见闻
 - **华尔街见闻**: `https://dedicated.wallstreetcn.com/rss.xml`
+
+### 💻 36氪
 - **36氪**: `https://36kr.com/feed`
+
+### 🇨🇳 中国经济
 - **东方财富**: `http://rss.eastmoney.com/rss_partener.xml`
 - **百度股票焦点**: `http://news.baidu.com/n?cmd=1&class=stock&tn=rss&sub=0`
 - **中新网**: `https://www.chinanews.com.cn/rss/finance.xml`
 - **国家统计局-最新发布**: `https://www.stats.gov.cn/sj/zxfb/rss.xml`
-- **财新网（RSSHub）**: `https://rsshub.app/caixin/latest`
-- **新浪财经**: `https://rss.sina.com.cn/finance/latest/all.xml`
 
-### 🇺🇸 美国财经
+### 🇺🇸 美国经济
 - **ZeroHedge华尔街新闻**: `https://feeds.feedburner.com/zerohedge/feed`
 - **ETF Trends**: `https://www.etftrends.com/feed/`
-- **MarketWatch**: `https://www.marketwatch.com/rss/topstories`
-- **Wall Street Journal**: `https://feeds.a.dj.com/rss/RSSWorldNews.xml`
 - **Federal Reserve Board**: `https://www.federalreserve.gov/feeds/press_all.xml`
 
-### 🌍 国际财经
+### 🌍 世界经济
 - **BBC全球经济**: `http://feeds.bbci.co.uk/news/business/rss.xml`
 - **FT中文网**: `https://www.ftchinese.com/rss/feed`
+- **Wall Street Journal**: `https://feeds.a.dj.com/rss/RSSWorldNews.xml`
 - **Investing.com**: `https://www.investing.com/rss/news.rss`
 - **Thomson Reuters**: `https://ir.thomsonreuters.com/rss/news-releases.xml`
-- **IMF Publications**: `https://www.imf.org/en/News/rss`
 
 ## 执行步骤
 
@@ -115,7 +115,7 @@
 # 📅 2025-XX-XX 财经新闻分析报告
 
 ## 📊 数据抓取概览
-- 成功抓取源：X/18 个
+- 成功抓取源：X/13 个
 - 总新闻数量：XX 条
 - 分析文章数量：XX 篇
 
@@ -311,7 +311,7 @@
 
 ---
 *报告生成时间：2025-XX-XX XX:XX:XX*
-*数据来源：华尔街见闻、36氪、东方财富、百度股票、中新网、国家统计局、财新网、新浪财经、ZeroHedge、ETF Trends、MarketWatch、华尔街日报、美联储、BBC、FT中文网、Investing.com、路透社、IMF*
+*数据来源：华尔街见闻、36氪、东方财富、百度股票焦点、中新网、国家统计局、ZeroHedge、ETF Trends、美联储、BBC、FT中文网、华尔街日报、Investing.com、路透社*
 ```
 
 ## 技术要求
