@@ -54,9 +54,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip  # 升级 pip
-          pip install mkdocs-material          # MkDocs Material 主题
-          pip install mkdocs-git-revision-date-localized-plugin  # Git 时间戳插件
-          pip install pyyaml                   # YAML 处理库
+          pip install -r requirements.txt     # 安装项目依赖
 
       # 步骤 5：配置 GitHub Pages
       - name: Setup Pages

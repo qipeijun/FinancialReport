@@ -75,9 +75,6 @@ def generate_nav_structure():
     """生成导航结构"""
     nav = [
         {"首页": "index.md"},
-        {"项目介绍": [
-            {"项目说明": "README.md"}
-        ]},
         {"分析报告": []}
     ]
     
@@ -97,7 +94,7 @@ def generate_nav_structure():
                 # 添加报告文件
                 if files['reports']:
                     for report_file in files['reports']:
-                        report_path = f"{date_path.as_posix()}/reports/{report_file}"
+                        report_path = f"archive/{month}/{date_path.name}/reports/{report_file}"
                         report_name = report_file.replace('.md', '').replace('📅 ', '').replace('财经分析报告_', '').replace('_', ' ')
                         if not report_name or report_name == date_name:
                             report_name = "财经分析报告"
@@ -106,7 +103,7 @@ def generate_nav_structure():
                 # 添加分析文件
                 if files['analysis']:
                     for analysis_file in files['analysis']:
-                        analysis_path = f"{date_path.as_posix()}/analysis/{analysis_file}"
+                        analysis_path = f"archive/{month}/{date_path.name}/analysis/{analysis_file}"
                         analysis_name = analysis_file.replace('.md', '').replace('_', ' ')
                         date_nav[date_name].append({analysis_name: analysis_path})
                 
@@ -114,14 +111,9 @@ def generate_nav_structure():
                     month_nav[month_display].append(date_nav)
             
             if month_nav[month_display]:  # 只有当有内容时才添加
-                nav[2]["分析报告"].append(month_nav)
+                nav[1]["分析报告"].append(month_nav)
     
-    # 添加工具配置部分
-    nav.append({"工具配置": [
-        {"完整版提示词": "prompts/mcp_finance_analysis_prompt.md"},
-        {"优化版提示词": "prompts/mcp_finance_analysis_prompt_optimized.md"},
-        {"精简版提示词": "prompts/mcp_finance_analysis_prompt_minimal.md"}
-    ]})
+    # 不添加工具配置部分，只保留分析报告
     
     return nav
 
