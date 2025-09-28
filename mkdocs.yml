@@ -1,8 +1,9 @@
 site_name: 财经分析报告系统
 site_description: 基于AI的财经分析报告生成系统
 site_author: Financial Report System
-site_url: https://qipeijun.github.io/Financial-report
+site_url: https://qipeijun.github.io/Financial-report/
 docs_dir: docs
+use_directory_urls: true
 repo_name: qipeijun/Financial-report
 repo_url: https://github.com/qipeijun/Financial-report
 edit_uri: edit/main/docs/
