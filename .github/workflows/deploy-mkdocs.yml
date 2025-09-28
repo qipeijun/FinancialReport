@@ -73,7 +73,7 @@ jobs:
 
       # 步骤 8：上传构建产物
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./site  # 上传 site/ 目录中的所有文件
 
@@ -91,4 +91,4 @@ jobs:
       # 步骤 1：部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
