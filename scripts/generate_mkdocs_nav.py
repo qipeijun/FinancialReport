@@ -75,6 +75,7 @@ def generate_nav_structure():
     """生成导航结构"""
     nav = [
         {"首页": "index.md"},
+        {"设计预览": "design-preview.md"},
         {"分析报告": []}
     ]
     
@@ -137,7 +138,7 @@ def generate_nav_structure():
                     month_nav[month_display].append(date_nav)
             
             if month_nav[month_display]:  # 只有当有内容时才添加
-                nav[1]["分析报告"].append(month_nav)
+                nav[2]["分析报告"].append(month_nav)
     
     return nav
 
