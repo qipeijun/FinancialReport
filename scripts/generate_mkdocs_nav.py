@@ -80,13 +80,18 @@ def generate_nav_structure():
     
     archive = get_archive_structure()
     if archive:
-        # 新结构：按月份→日期列出报告
-        for month in archive.keys():
+        # 按月份排序（最新的在前）
+        sorted_months = sorted(archive.keys(), reverse=True)
+        
+        for month in sorted_months:
             year, month_num = month.split('-')
             month_display = f"{year}年{month_num}月"
             month_nav = {month_display: []}
             
-            for date_path in archive[month]:
+            # 按日期排序（最新的在前）
+            sorted_dates = sorted(archive[month], key=lambda x: x.name, reverse=True)
+            
+            for date_path in sorted_dates:
                 files = get_analysis_files(date_path.as_posix())
                 date_name = format_date_name(date_path.name)
                 date_nav = {date_name: []}
@@ -97,23 +102,42 @@ def generate_nav_structure():
                         report_path = f"archive/{month}/{date_path.name}/reports/{report_file}"
                         report_name = report_file.replace('.md', '').replace('📅 ', '').replace('财经分析报告_', '').replace('_', ' ')
                         if not report_name or report_name == date_name:
-                            report_name = "财经分析报告"
+                            report_name = "📊 2025-09-28 财经分析报告"
                         date_nav[date_name].append({report_name: report_path})
                 
-                # 添加分析文件
+                # 分组分析文件：热门话题和潜力话题
+                hot_topics = []
+                potential_topics = []
+                
                 if files['analysis']:
                     for analysis_file in files['analysis']:
                         analysis_path = f"archive/{month}/{date_path.name}/analysis/{analysis_file}"
                         analysis_name = analysis_file.replace('.md', '').replace('_', ' ')
-                        date_nav[date_name].append({analysis_name: analysis_path})
+                        
+                        if '热门话题' in analysis_name:
+                            hot_topics.append({analysis_name: analysis_path})
+                        elif '潜力话题' in analysis_name:
+                            potential_topics.append({analysis_name: analysis_path})
+                        else:
+                            # 其他分析文件直接添加
+                            date_nav[date_name].append({analysis_name: analysis_path})
+                
+                # 添加分组的话题
+                if hot_topics:
+                    # 按数字排序热门话题
+                    hot_topics.sort(key=lambda x: list(x.keys())[0])
+                    date_nav[date_name].append({"🔥 热门话题": hot_topics})
+                
+                if potential_topics:
+                    # 按数字排序潜力话题
+                    potential_topics.sort(key=lambda x: list(x.keys())[0])
+                    date_nav[date_name].append({"💎 潜力话题": potential_topics})
                 
                 if date_nav[date_name]:  # 只有当有内容时才添加
                     month_nav[month_display].append(date_nav)
             
             if month_nav[month_display]:  # 只有当有内容时才添加
                 nav[1]["分析报告"].append(month_nav)
-    
-    # 不添加工具配置部分，只保留分析报告
     
     return nav
 

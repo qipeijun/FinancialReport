@@ -34,8 +34,6 @@ jobs:
       # 步骤 1：检出代码
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # 获取完整的 Git 历史（用于 git-revision-date 插件）
 
       # 步骤 2：设置 Python 环境
       - name: Setup Python
@@ -47,8 +45,8 @@ jobs:
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
-          key: ${{ github.ref }}  # 基于分支/标签的缓存键
-          path: .cache            # 缓存路径
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}  # 基于依赖文件的缓存键
+          path: ~/.cache/pip  # pip 缓存路径
 
       # 步骤 4：安装 Python 依赖包
       - name: Install dependencies
@@ -68,6 +66,15 @@ jobs:
       # 步骤 7：使用 MkDocs 构建静态网站
       - name: Build with MkDocs
         run: mkdocs build  # 生成静态文件到 site/ 目录
+
+      # 步骤 7.5：验证构建结果
+      - name: Verify build output
+        run: |
+          echo "📁 检查构建输出..."
+          ls -la site/
+          echo "📊 构建统计："
+          find site/ -name "*.html" | wc -l
+          echo "✅ 构建验证完成"
 
       # 步骤 8：上传构建产物
       - name: Upload artifact
@@ -90,3 +97,12 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      
+      # 步骤 2：验证部署结果
+      - name: Verify deployment
+        run: |
+          echo "🚀 部署完成！"
+          echo "📊 网站地址：https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+          echo "🔗 部署 URL：${{ steps.deployment.outputs.page_url }}"
+          echo "⏰ 部署时间：$(date '+%Y-%m-%d %H:%M:%S')"
+          echo "🌿 分支：${{ github.ref_name }}"
