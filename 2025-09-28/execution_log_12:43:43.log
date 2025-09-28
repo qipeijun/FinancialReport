@@ -1,0 +1,28 @@
+[0;34m[INFO][0m 开始执行财经分析任务...
+[0;34m[INFO][0m 检查 Gemini CLI 安装状态...
+[0;32m[SUCCESS][0m Gemini CLI 已安装
+[0;34m[INFO][0m 检查提示词文件...
+[0;32m[SUCCESS][0m 提示词文件存在
+[0;34m[INFO][0m 创建日期文件夹结构...
+[0;32m[SUCCESS][0m 文件夹结构创建完成
+[0;34m[INFO][0m 日期文件夹: /Users/qipeijun/Library/Mobile Documents/com~apple~CloudDocs/我的/分析报告/2025-09-28
+[0;34m[INFO][0m RSS数据文件夹: /Users/qipeijun/Library/Mobile Documents/com~apple~CloudDocs/我的/分析报告/2025-09-28/rss_data
+[0;34m[INFO][0m 新闻内容文件夹: /Users/qipeijun/Library/Mobile Documents/com~apple~CloudDocs/我的/分析报告/2025-09-28/news_content
+[0;34m[INFO][0m 分析结果文件夹: /Users/qipeijun/Library/Mobile Documents/com~apple~CloudDocs/我的/分析报告/2025-09-28/analysis
+[0;34m[INFO][0m 报告文件夹: /Users/qipeijun/Library/Mobile Documents/com~apple~CloudDocs/我的/分析报告/2025-09-28/reports
+[0;34m[INFO][0m 开始执行财经分析任务...
+[0;34m[INFO][0m 使用提示词文件: /Users/qipeijun/Library/Mobile Documents/com~apple~CloudDocs/我的/分析报告/mcp_finance_analysis_prompt_optimized.md
+[0;34m[INFO][0m 正在调用 Gemini CLI...
+[0;32m[SUCCESS][0m Gemini CLI 执行成功
+[0;32m[SUCCESS][0m 分析报告已保存到: /Users/qipeijun/Library/Mobile Documents/com~apple~CloudDocs/我的/分析报告/2025-09-28/reports/财经分析报告_2025-09-28.md
+[0;34m[INFO][0m 生成执行摘要...
+[0;32m[SUCCESS][0m 执行摘要已保存到: /Users/qipeijun/Library/Mobile Documents/com~apple~CloudDocs/我的/分析报告/2025-09-28/执行摘要_12:43:43.txt
+==========================================
+[0;32m[SUCCESS][0m 🎉 财经分析任务执行完成！
+==========================================
+[0;34m[INFO][0m 📁 结果文件位置: /Users/qipeijun/Library/Mobile Documents/com~apple~CloudDocs/我的/分析报告/2025-09-28
+[0;34m[INFO][0m 📊 分析报告: /Users/qipeijun/Library/Mobile Documents/com~apple~CloudDocs/我的/分析报告/2025-09-28/reports/财经分析报告_2025-09-28.md
+[0;34m[INFO][0m 📝 执行日志: /Users/qipeijun/Library/Mobile Documents/com~apple~CloudDocs/我的/分析报告/2025-09-28/execution_log_12:43:43.log
+==========================================
+是否打开分析报告文件？(y/n): 
+[0;32m[SUCCESS][0m 已打开分析报告
