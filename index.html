@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的文档</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+</head>
+<body>
+<div id="app"></div>
+
+<!-- Docsify 核心库 -->
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+<!-- Docsify 侧边栏 -->
+<script>
+    window.$docsify = {
+        name: '我的文档',
+        repo: '你的用户名/仓库名',
+        loadSidebar: true,   // 自动加载 _sidebar.md
+        subMaxLevel: 2,      // 侧边栏显示层级
+        coverpage: true       // 显示首页封面
+    }
+</script>
+</body>
+</html>
