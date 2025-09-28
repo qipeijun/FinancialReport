@@ -60,7 +60,7 @@ graph TD
 
 - 📧 邮箱：your-email@example.com
 - 🐛 问题反馈：[GitHub Issues](https://github.com/your-username/Financial-report/issues)
-- 📖 文档：[项目文档](README.md)
+- 📖 文档：[项目文档](https://github.com/qipeijun/Financial-report)
 
 ---
 

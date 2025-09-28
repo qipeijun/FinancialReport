@@ -95,7 +95,7 @@ mkdocs build                            # 构建文档
 ```
 docs/
 ├── index.md                    # 网站首页
-├── README.md                   # 项目说明
+├── index.md                    # 首页
 ├── DEPLOYMENT.md              # 部署指南
 ├── prompts/                   # 提示词配置
 │   ├── mcp_finance_analysis_prompt.md           # 完整版
@@ -328,7 +328,7 @@ mkdocs build --verbose
 
 - 📧 邮箱：your-email@example.com
 - 🐛 问题反馈：[GitHub Issues](https://github.com/your-username/Financial-report/issues)
-- 📖 项目文档：[项目文档](README.md)
+- 📖 项目文档：[项目说明](https://github.com/qipeijun/Financial-report)
 
 ## 🔄 更新日志
 

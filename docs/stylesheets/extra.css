@@ -1,4 +1,4 @@
-/* Apple 风格 - 简洁优雅的财经分析报告系统 */
+/* 财经分析报告系统 - 优化样式表 */
 
 :root {
   /* Apple 风格色彩系统 */
@@ -11,35 +11,29 @@
   --apple-text: #1D1D1F;
   --apple-text-secondary: #86868B;
   
-  /* 移动端优化色彩 */
-  --mobile-bg: #FAFAFA;
-  --mobile-text: #1A1A1A;
-  --mobile-text-secondary: #6B6B6B;
-  --mobile-border: #E5E5E7;
-  --mobile-accent: #007AFF;
-  --mobile-success: #30D158;
-  --mobile-warning: #FF9F0A;
-  --mobile-error: #FF453A;
+  /* 头部样式变量 */
+  --header-height: 60px;
+  --header-height-mobile: 56px;
 }
 
-/* 全局字体优化 - Apple 风格 */
+/* 全局字体优化 */
 .md-typeset {
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
   font-size: 17px;
-  line-height: 1.6; /* 优化行高 */
+  line-height: 1.6;
   font-weight: 400;
   letter-spacing: -0.022em;
   color: var(--apple-text);
 }
 
-/* 内容区域 - Apple 极简风格 */
+/* 内容区域 */
 .md-content__inner {
-  max-width: 800px; /* 优化阅读行长 */
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 22px;
 }
 
-/* 标题系统 - Apple Typography */
+/* 标题系统 */
 .md-typeset h1 {
   font-size: 48px;
   line-height: 1.08349;
@@ -56,7 +50,7 @@
   font-weight: 600;
   letter-spacing: 0.004em;
   color: var(--apple-text);
-  margin: 48px 0 16px 0; /* 减少章节间距 */
+  margin: 48px 0 16px 0;
 }
 
 .md-typeset h3 {
@@ -65,7 +59,7 @@
   font-weight: 600;
   letter-spacing: 0.009em;
   color: var(--apple-text);
-  margin: 32px 0 12px 0; /* 减少小节间距 */
+  margin: 32px 0 12px 0;
 }
 
 .md-typeset h4, 
@@ -81,9 +75,9 @@
 
 /* 段落优化 */
 .md-typeset p {
-  margin: 0 0 1em 0; /* 减少段落间距 */
+  margin: 0 0 1em 0;
   color: var(--apple-text);
-  text-align: justify; /* 两端对齐，提升阅读感 */
+  text-align: justify;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
@@ -91,10 +85,10 @@
 }
 
 .md-typeset p:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
-/* 链接 - Apple 风格 */
+/* 链接样式 */
 .md-typeset a {
   color: var(--apple-blue);
   text-decoration: none;
@@ -103,7 +97,7 @@
 
 .md-typeset a:hover {
   opacity: 0.8;
-  text-decoration: underline; /* 悬停时更清晰 */
+  text-decoration: underline;
 }
 
 /* 列表优化 */
@@ -118,12 +112,12 @@
   padding-left: 20px;
   position: relative;
   line-height: 1.5;
-  display: block; /* 确保列表项正确换行 */
+  display: block;
 }
 
-/* 无序列表样式 */
+/* 无序列表 */
 .md-typeset ul {
-  list-style: none; /* 移除默认的列表符号 */
+  list-style: none;
 }
 
 .md-typeset ul li::before {
@@ -137,15 +131,15 @@
   border-radius: 50%;
 }
 
-/* 有序列表样式 */
+/* 有序列表 */
 .md-typeset ol {
-  list-style: none; /* 移除默认的列表符号 */
+  list-style: none;
   counter-reset: item;
 }
 
 .md-typeset ol li {
   counter-increment: item;
-  margin: 12px 0; /* 有序列表项间距更大 */
+  margin: 12px 0;
   padding-left: 32px;
 }
 
@@ -158,51 +152,7 @@
   color: var(--apple-text);
 }
 
-/* 嵌套有序列表样式 */
-.md-typeset ol ol {
-  counter-reset: subitem;
-  margin: 8px 0;
-}
-
-.md-typeset ol ol li {
-  counter-increment: subitem;
-  margin: 8px 0;
-  padding-left: 28px;
-}
-
-.md-typeset ol ol li::before {
-  content: counter(item) '.' counter(subitem) '. ';
-  position: absolute;
-  left: 4px;
-  top: 0;
-  font-weight: 600;
-  color: var(--apple-text);
-  font-size: 0.9em;
-}
-
-/* 三级嵌套有序列表 */
-.md-typeset ol ol ol {
-  counter-reset: subsubitem;
-  margin: 6px 0;
-}
-
-.md-typeset ol ol ol li {
-  counter-increment: subsubitem;
-  margin: 6px 0;
-  padding-left: 24px;
-}
-
-.md-typeset ol ol ol li::before {
-  content: counter(item) '.' counter(subitem) '.' counter(subsubitem) '. ';
-  position: absolute;
-  left: 4px;
-  top: 0;
-  font-weight: 600;
-  color: var(--apple-text);
-  font-size: 0.85em;
-}
-
-/* 表格 - Apple 极简风格 */
+/* 表格样式 */
 .md-typeset table {
   width: 100%;
   margin: 24px 0;
@@ -231,7 +181,7 @@
   border-bottom: none;
 }
 
-/* 代码 - Apple 风格 */
+/* 代码样式 */
 .md-typeset code {
   font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
   background: var(--apple-gray-1);
@@ -257,7 +207,7 @@
   line-height: 1.6;
 }
 
-/* 引用块 - 增加视觉区分 */
+/* 引用块 */
 .md-typeset blockquote {
   margin: 0 0 16px 0;
   padding: 12px 16px;
@@ -269,11 +219,10 @@
 
 .md-typeset blockquote p {
   margin-bottom: 0;
-  text-align: left; /* 引用内文字左对齐 */
+  text-align: left;
 }
 
-
-/* 提示框 - Apple Card 风格 */
+/* 提示框 */
 .md-typeset .admonition {
   background: #FBFBFD;
   border: 1px solid #D2D2D7;
@@ -302,63 +251,179 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* 响应式设计 - 平板端优化 */
+/* =============================================================================
+   头部样式 - 重构优化版本
+   ============================================================================= */
+
+/* 头部基础样式 */
+.md-header {
+  position: sticky !important;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: var(--header-height);
+  min-height: var(--header-height);
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 头部内容布局 */
+.md-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 头部按钮 */
+.md-header__button {
+  padding: 8px;
+  margin: 0 4px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  z-index: 101;
+}
+
+.md-header__button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* 头部标题 */
+.md-header__title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  z-index: 101;
+  flex: 1;
+  text-align: center;
+}
+
+/* 导航标签 */
+.md-tabs {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 99;
+  width: 100%;
+}
+
+/* 浅色模式头部 */
+[data-md-color-scheme="default"] .md-header {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-md-color-scheme="default"] .md-tabs {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+[data-md-color-scheme="default"] .md-header .md-header__title,
+[data-md-color-scheme="default"] .md-header .md-nav__link,
+[data-md-color-scheme="default"] .md-header .md-icon,
+[data-md-color-scheme="default"] .md-tabs .md-tabs__link {
+  color: var(--apple-text);
+}
+
+/* 深色模式头部 */
+[data-md-color-scheme="slate"] .md-header {
+  background: rgba(28, 28, 30, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+[data-md-color-scheme="slate"] .md-tabs {
+  background: rgba(28, 28, 30, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+[data-md-color-scheme="slate"] .md-header .md-header__title,
+[data-md-color-scheme="slate"] .md-header .md-nav__link,
+[data-md-color-scheme="slate"] .md-header .md-icon,
+[data-md-color-scheme="slate"] .md-tabs .md-tabs__link {
+  color: #E5E5E7;
+}
+
+[data-md-color-scheme="slate"] .md-header__button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* =============================================================================
+   响应式设计
+   ============================================================================= */
+
+/* 平板端优化 */
 @media (max-width: 1068px) {
   .md-content__inner {
     padding: 0 24px;
     max-width: 100%;
   }
   
+  .md-header__inner {
+    padding: 0 20px;
+  }
+  
   .md-typeset h1 {
     font-size: 42px;
     line-height: 1.1;
-    margin: 0 0 24px 0;
   }
   
   .md-typeset h2 {
     font-size: 30px;
     line-height: 1.15;
-    margin: 60px 0 20px 0;
   }
   
   .md-typeset h3 {
     font-size: 22px;
     line-height: 1.18;
-    margin: 40px 0 16px 0;
-  }
-  
-  /* 平板端表格优化 */
-  .md-typeset table {
-    font-size: 15px;
-    margin: 32px 0;
-  }
-  
-  .md-typeset table th,
-  .md-typeset table td {
-    padding: 12px 16px;
   }
 }
 
-/* 移动端优化 - 主要手机屏幕 */
+/* 移动端优化 */
 @media (max-width: 768px) {
+  :root {
+    --header-height: var(--header-height-mobile);
+  }
+  
   .md-content__inner {
     padding: 0 16px;
-    margin-top: 0;
   }
   
-  /* 确保内容不被头部遮挡 */
-  .md-main__inner {
-    margin-top: 0;
+  .md-header {
+    height: var(--header-height-mobile);
+    min-height: var(--header-height-mobile);
   }
   
-  .md-content {
-    margin-top: 0;
+  .md-header__inner {
+    padding: 0 16px;
   }
   
+  .md-header__title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .md-header__button {
+    padding: 6px;
+    margin: 0 2px;
+  }
+  
+  .md-tabs {
+    top: var(--header-height-mobile);
+  }
+  
+  /* 移动端排版优化 */
   .md-typeset {
     font-size: 16px;
     line-height: 1.5;
-    color: var(--mobile-text);
   }
   
   .md-typeset h1 {
@@ -387,66 +452,8 @@
     margin: 20px 0 6px 0;
   }
   
-  /* 移动端段落优化 */
   .md-typeset p {
-    margin: 0 0 1em 0;
     text-align: left;
-  }
-  
-  /* 移动端列表优化 */
-  .md-typeset ul,
-  .md-typeset ol {
-    margin: 0 0 16px 0;
-    padding-left: 0;
-  }
-  
-  .md-typeset li {
-    margin: 8px 0;
-    padding-left: 20px;
-    line-height: 1.5;
-    display: block; /* 确保列表项正确换行 */
-  }
-  
-  .md-typeset ul li::before {
-    left: 4px;
-    top: 10px;
-    width: 4px;
-    height: 4px;
-  }
-  
-  /* 移动端有序列表优化 */
-  .md-typeset ol li {
-    margin: 10px 0;
-    padding-left: 28px;
-  }
-  
-  .md-typeset ol li::before {
-    left: 2px;
-    top: 0;
-    font-size: 14px;
-  }
-  
-  /* 移动端嵌套有序列表 */
-  .md-typeset ol ol li {
-    margin: 8px 0;
-    padding-left: 24px;
-  }
-  
-  .md-typeset ol ol li::before {
-    left: 2px;
-    top: 0;
-    font-size: 13px;
-  }
-  
-  .md-typeset ol ol ol li {
-    margin: 6px 0;
-    padding-left: 20px;
-  }
-  
-  .md-typeset ol ol ol li::before {
-    left: 2px;
-    top: 0;
-    font-size: 12px;
   }
   
   /* 移动端表格优化 */
@@ -458,48 +465,10 @@
     white-space: nowrap;
   }
   
-  .md-typeset table th {
-    background: var(--mobile-bg);
-    color: var(--mobile-text);
-    font-weight: 600;
-    padding: 8px 10px;
-  }
-  
+  .md-typeset table th,
   .md-typeset table td {
     padding: 8px 10px;
     min-width: 70px;
-    color: var(--mobile-text);
-  }
-  
-  /* 移动端代码块优化 */
-  .md-typeset pre {
-    padding: 12px;
-    margin: 16px 0;
-    font-size: 13px;
-    line-height: 1.4;
-  }
-  
-  .md-typeset code {
-    font-size: 13px;
-    padding: 2px 4px;
-  }
-  
-  /* 移动端引用块优化 */
-  .md-typeset blockquote {
-    margin: 0 0 16px 0;
-    padding: 10px 12px;
-    border-left: 3px solid var(--apple-blue);
-  }
-  
-  /* 移动端提示框优化 */
-  .md-typeset .admonition {
-    padding: 12px;
-    margin: 16px 0;
-  }
-  
-  .md-typeset .admonition-title {
-    font-size: 16px;
-    margin: 0 0 6px 0;
   }
 }
 
@@ -509,124 +478,7 @@
     padding: 0 12px;
   }
   
-  .md-typeset {
-    font-size: 15px;
-    line-height: 1.5;
-  }
-  
-  .md-typeset h1 {
-    font-size: 28px;
-    line-height: 1.1;
-    margin: 0 0 12px 0;
-  }
-  
-  .md-typeset h2 {
-    font-size: 22px;
-    line-height: 1.15;
-    margin: 24px 0 10px 0;
-  }
-  
-  .md-typeset h3 {
-    font-size: 18px;
-    line-height: 1.2;
-    margin: 20px 0 8px 0;
-  }
-  
-  .md-typeset h4, 
-  .md-typeset h5, 
-  .md-typeset h6 {
-    font-size: 16px;
-    line-height: 1.25;
-    margin: 16px 0 6px 0;
-  }
-  
-  /* 小屏列表优化 */
-  .md-typeset li {
-    margin: 6px 0;
-    padding-left: 18px;
-    display: block; /* 确保列表项正确换行 */
-  }
-  
-  .md-typeset ul li::before {
-    left: 2px;
-    top: 8px;
-    width: 3px;
-    height: 3px;
-  }
-  
-  /* 小屏有序列表优化 */
-  .md-typeset ol li {
-    margin: 8px 0;
-    padding-left: 24px;
-  }
-  
-  .md-typeset ol li::before {
-    left: 0px;
-    top: 0;
-    font-size: 13px;
-  }
-  
-  /* 小屏嵌套有序列表 */
-  .md-typeset ol ol li {
-    margin: 6px 0;
-    padding-left: 20px;
-  }
-  
-  .md-typeset ol ol li::before {
-    left: 0px;
-    top: 0;
-    font-size: 12px;
-  }
-  
-  .md-typeset ol ol ol li {
-    margin: 4px 0;
-    padding-left: 16px;
-  }
-  
-  .md-typeset ol ol ol li::before {
-    left: 0px;
-    top: 0;
-    font-size: 11px;
-  }
-  
-  /* 小屏表格优化 */
-  .md-typeset table {
-    font-size: 12px;
-    margin: 12px 0;
-  }
-  
-  .md-typeset table th,
-  .md-typeset table td {
-    padding: 6px 8px;
-    min-width: 60px;
-  }
-  
-  /* 小屏代码优化 */
-  .md-typeset pre {
-    padding: 10px;
-    margin: 12px 0;
-    font-size: 12px;
-  }
-  
-  .md-typeset code {
-    font-size: 12px;
-    padding: 1px 3px;
-  }
-  
-  /* 小屏引用和提示框优化 */
-  .md-typeset blockquote {
-    padding: 8px 10px;
-    margin: 0 0 12px 0;
-  }
-  
-  .md-typeset .admonition {
-    padding: 10px;
-    margin: 12px 0;
-  }
-  
-  /* 小屏手机头部优化 */
-  .md-header {
-    min-height: 52px;
+  .md-header__inner {
     padding: 0 12px;
   }
   
@@ -634,17 +486,30 @@
     font-size: 15px;
   }
   
-  .md-header__button {
-    padding: 6px;
-    left: 12px;
+  .md-typeset {
+    font-size: 15px;
   }
   
-  .md-header__button:last-child {
-    right: 12px;
+  .md-typeset h1 {
+    font-size: 28px;
+    margin: 0 0 12px 0;
+  }
+  
+  .md-typeset h2 {
+    font-size: 22px;
+    margin: 24px 0 10px 0;
+  }
+  
+  .md-typeset h3 {
+    font-size: 18px;
+    margin: 20px 0 8px 0;
   }
 }
 
-/* 夜间模式 - Slate a.k.a. Dark Mode */
+/* =============================================================================
+   深色模式优化
+   ============================================================================= */
+
 [data-md-color-scheme="slate"] {
   --apple-text: #E5E5E7;
   --apple-text-secondary: #8E8E93;
@@ -654,257 +519,77 @@
   --apple-blue: #0A84FF;
   --apple-green: #30D158;
   --apple-red: #FF453A;
-  
-  /* 移动端暗黑模式优化色彩 */
-  --mobile-bg: #1C1C1E;
-  --mobile-text: #E5E5E7;
-  --mobile-text-secondary: #8E8E93;
-  --mobile-border: #48484A;
-  --mobile-accent: #0A84FF;
-  --mobile-success: #30D158;
-  --mobile-warning: #FF9F0A;
-  --mobile-error: #FF453A;
-
-  .md-typeset table th {
-    background: #3A3A3C;
-    color: var(--apple-text);
-  }
-
-  .md-typeset table td {
-    border-bottom: 1px solid #48484A;
-    color: var(--apple-text);
-  }
-
-  .md-typeset .admonition {
-    background: #2C2C2E;
-    border: 1px solid #48484A;
-  }
-  
-  .md-typeset ul {
-    list-style: none; /* 确保夜间模式也移除默认列表符号 */
-  }
-  
-  .md-typeset ul li::before {
-    background: var(--apple-text);
-  }
-  
-  .md-typeset ol li::before {
-    color: var(--apple-text);
-  }
-  
-  .md-typeset ol ol li::before {
-    color: var(--apple-text);
-  }
-  
-  .md-typeset ol ol ol li::before {
-    color: var(--apple-text);
-  }
-
-  .md-typeset blockquote {
-    border-left-color: var(--apple-blue);
-    background: #3A3A3C;
-    color: var(--apple-text-secondary);
-  }
-  
-  /* 暗黑模式移动端优化 */
-  @media (max-width: 768px) {
-    .md-content__inner {
-      background: var(--mobile-bg);
-    }
-    
-    .md-typeset {
-      color: var(--mobile-text);
-    }
-    
-    .md-typeset h1,
-    .md-typeset h2,
-    .md-typeset h3,
-    .md-typeset h4,
-    .md-typeset h5,
-    .md-typeset h6 {
-      color: var(--mobile-text);
-    }
-    
-    .md-typeset p {
-      color: var(--mobile-text);
-    }
-    
-    .md-typeset table th {
-      background: #2C2C2E;
-      color: var(--mobile-text);
-    }
-    
-    .md-typeset table td {
-      color: var(--mobile-text);
-      border-bottom: 1px solid var(--mobile-border);
-    }
-    
-    .md-typeset ul li::before {
-      background: var(--mobile-text);
-    }
-  }
 }
 
-/* 头部 - Glassmorphism 效果 */
-.md-header {
-  position: sticky !important;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: auto;
-  min-height: 60px;
+[data-md-color-scheme="slate"] .md-typeset table th {
+  background: #3A3A3C;
+  color: var(--apple-text);
 }
 
-/* 确保logo不被遮挡 */
-.md-header__button {
-  z-index: 11;
+[data-md-color-scheme="slate"] .md-typeset table td {
+  border-bottom: 1px solid #48484A;
+  color: var(--apple-text);
 }
 
-.md-header__title {
-  z-index: 11;
+[data-md-color-scheme="slate"] .md-typeset .admonition {
+  background: #2C2C2E;
+  border: 1px solid #48484A;
 }
 
-/* 导航菜单层级优化 */
+[data-md-color-scheme="slate"] .md-typeset ul li::before {
+  background: var(--apple-text);
+}
+
+[data-md-color-scheme="slate"] .md-typeset ol li::before {
+  color: var(--apple-text);
+}
+
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+  border-left-color: var(--apple-blue);
+  background: #3A3A3C;
+  color: var(--apple-text-secondary);
+}
+
+/* 导航菜单优化 */
 .md-nav {
-  z-index: 20 !important;
+  z-index: 50;
 }
 
 .md-nav__title {
-  z-index: 21 !important;
+  font-weight: 600;
+  z-index: 51;
 }
 
 .md-nav__button {
-  z-index: 21 !important;
+  z-index: 51;
 }
 
-/* 移动端导航菜单优化 */
+/* 移动端导航优化 */
 @media (max-width: 768px) {
-  .md-nav {
-    z-index: 25 !important;
-  }
-  
-  .md-nav__title {
-    z-index: 26 !important;
-  }
-  
-  .md-nav__button {
-    z-index: 26 !important;
-  }
-  
-  /* 确保导航菜单在头部之上 */
   .md-nav--primary {
-    z-index: 30 !important;
+    z-index: 200;
   }
   
   .md-nav__title {
     background: var(--apple-gray-1);
     border-bottom: 1px solid var(--apple-gray-2);
   }
-}
-
-/* 移动端头部优化 */
-@media (max-width: 768px) {
-  .md-header {
-    min-height: 56px;
-    padding: 0 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   
-  .md-header__title {
-    font-size: 16px;
-    line-height: 1.2;
-    text-align: center;
-    flex: 1;
-    margin: 0 auto;
-  }
-  
-  .md-header__button {
-    padding: 8px;
-    position: absolute;
-    left: 16px;
-  }
-  
-  .md-header__button:last-child {
-    right: 16px;
-    left: auto;
-  }
-  
-  /* 确保标题在按钮之间居中 */
-  .md-header__inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    position: relative;
-  }
-}
-
-/* Light Mode Header */
-[data-md-color-scheme="default"] .md-header {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-[data-md-color-scheme="default"] .md-tabs {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-[data-md-color-scheme="default"] .md-header .md-header__topic,
-[data-md-color-scheme="default"] .md-header .md-nav__link,
-[data-md-color-scheme="default"] .md-header .md-icon,
-[data-md-color-scheme="default"] .md-tabs .md-tabs__link {
+  [data-md-color-scheme="slate"] .md-nav__title {
+    background: var(--apple-gray-1);
+    border-bottom: 1px solid var(--apple-gray-2);
     color: var(--apple-text);
-}
-
-/* Dark Mode Header */
-[data-md-color-scheme="slate"] .md-header {
-  background: rgba(28, 28, 30, 0.7); /* Darker glass with more opacity for contrast */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-[data-md-color-scheme="slate"] .md-tabs {
-    background: rgba(28, 28, 30, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
-
-[data-md-color-scheme="slate"] .md-header .md-header__topic,
-[data-md-color-scheme="slate"] .md-header .md-nav__link,
-[data-md-color-scheme="slate"] .md-header .md-icon,
-[data-md-color-scheme="slate"] .md-tabs .md-tabs__link,
-[data-md-color-scheme="slate"] .md-search__input {
+  }
+  
+  [data-md-color-scheme="slate"] .md-nav__button {
     color: var(--apple-text);
-}
-
-/* Ensure search placeholder is visible in dark mode */
-[data-md-color-scheme="slate"] .md-search__input::placeholder {
-    color: var(--apple-text-secondary);
-}
-
-/* 暗黑模式导航菜单优化 */
-[data-md-color-scheme="slate"] .md-nav__title {
-  background: var(--apple-gray-1);
-  border-bottom: 1px solid var(--apple-gray-2);
-  color: var(--apple-text);
-}
-
-[data-md-color-scheme="slate"] .md-nav__button {
-  color: var(--apple-text);
-}
-
-[data-md-color-scheme="slate"] .md-nav__link {
-  color: var(--apple-text);
-}
-
-[data-md-color-scheme="slate"] .md-nav__link:hover {
-  color: var(--apple-blue);
+  }
+  
+  [data-md-color-scheme="slate"] .md-nav__link {
+    color: var(--apple-text);
+  }
+  
+  [data-md-color-scheme="slate"] .md-nav__link:hover {
+    color: var(--apple-blue);
+  }
 }

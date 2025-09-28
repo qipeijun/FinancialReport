@@ -11,7 +11,7 @@
 ├── mkdocs.yml              # MkDocs 配置文件
 ├── docs/                   # 文档源文件目录
 │   ├── index.md           # 首页
-│   ├── README.md          # 项目说明
+│   ├── index.md           # 首页
 │   ├── archive/           # 分析报告存档
 │   └── prompts/           # 提示词配置
 ├── .github/workflows/     # GitHub Actions 工作流
@@ -109,7 +109,7 @@ python3 scripts/generate_mkdocs_nav.py
 nav:
   - 首页: index.md
   - 项目介绍:
-    - 项目说明: README.md
+    - 项目介绍: https://github.com/qipeijun/Financial-report
   - 分析报告:
     - 2025年09月:
       - 2025-09-28:
