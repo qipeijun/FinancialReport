@@ -124,13 +124,13 @@ def generate_nav_structure():
                 
                 # 添加分组的话题
                 if hot_topics:
-                    # 按数字排序热门话题
-                    hot_topics.sort(key=lambda x: list(x.keys())[0])
+                    # 按数字排序热门话题（提取数字进行排序）
+                    hot_topics.sort(key=lambda x: int(re.search(r'热门话题(\d+)', list(x.keys())[0]).group(1)) if re.search(r'热门话题(\d+)', list(x.keys())[0]) else 999)
                     date_nav[date_name].append({"🔥 热门话题": hot_topics})
                 
                 if potential_topics:
-                    # 按数字排序潜力话题
-                    potential_topics.sort(key=lambda x: list(x.keys())[0])
+                    # 按数字排序潜力话题（提取数字进行排序）
+                    potential_topics.sort(key=lambda x: int(re.search(r'潜力话题(\d+)', list(x.keys())[0]).group(1)) if re.search(r'潜力话题(\d+)', list(x.keys())[0]) else 999)
                     date_nav[date_name].append({"💎 潜力话题": potential_topics})
                 
                 if date_nav[date_name]:  # 只有当有内容时才添加
