@@ -77,6 +77,25 @@ jobs:
         with:
           path: ./site  # 上传 site/ 目录中的所有文件
 
+      # 步骤 9：输出构建信息
+      - name: Display build info
+        run: |
+          REPO_OWNER="${{ github.repository_owner }}"
+          REPO_NAME="${{ github.event.repository.name }}"
+          BASE_URL="https://$REPO_OWNER.github.io/$REPO_NAME"
+          
+          echo ""
+          echo "=========================================="
+          echo "✅ 构建完成！"
+          echo "=========================================="
+          echo ""
+          echo "📊 网站地址：$BASE_URL/"
+          echo "📝 构建时间：$(date '+%Y-%m-%d %H:%M:%S')"
+          echo "🌿 分支：${{ github.ref_name }}"
+          echo ""
+          echo "⏳ 正在部署到 GitHub Pages..."
+          echo "=========================================="
+
   # 部署任务：将构建产物部署到 GitHub Pages
   deploy:
     environment:
@@ -97,14 +116,16 @@ jobs:
       - name: Display deployment info
         run: |
           # 获取动态部署 URL 和仓库信息
-          DEPLOY_URL="${{ steps.deployment.outputs.page_url }}"
           REPO_OWNER="${{ github.repository_owner }}"
           REPO_NAME="${{ github.event.repository.name }}"
           BASE_URL="https://$REPO_OWNER.github.io/$REPO_NAME"
           
+          echo ""
+          echo "=========================================="
           echo "🚀 部署成功！"
+          echo "=========================================="
+          echo ""
           echo "📊 网站地址：$BASE_URL/"
-          echo "🔗 部署 URL：$DEPLOY_URL"
           echo ""
           echo "📋 主要页面链接："
           echo "  🏠 首页：$BASE_URL/"
@@ -117,3 +138,7 @@ jobs:
           echo "  🌿 分支：${{ github.ref_name }}"
           echo "  🔄 自动更新：每次推送到 main 分支都会自动重新部署"
           echo "  🌐 仓库地址：https://github.com/${{ github.repository }}"
+          echo ""
+          echo "=========================================="
+          echo "🎉 访问您的网站：$BASE_URL/"
+          echo "=========================================="
