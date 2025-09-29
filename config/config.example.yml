@@ -1,0 +1,11 @@
+# 可提交的示例配置，请复制为 config/config.yml 并填写真实值
+
+api_keys:
+  gemini: "REPLACE_WITH_YOUR_GEMINI_API_KEY"
+
+notify:
+  server_chan_keys:
+    - "REPLACE_WITH_SCT_KEY_1"
+    - "REPLACE_WITH_SCT_KEY_2"
+
+
