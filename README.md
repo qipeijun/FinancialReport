@@ -78,34 +78,73 @@ Financial-report/
 ### 🌍 世界经济
 - **BBC全球经济**: `http://feeds.bbci.co.uk/news/business/rss.xml`
 
-## 🚀 使用方法
+## 🚀 使用方法（脚本化）
 
-### 1. 选择提示词版本
+### 1) 准备配置（必要）
 
-根据需求选择合适的提示词文件：
+项目提供可提交模板：`config/config.example.yml`
 
-- **`mcp_finance_analysis_prompt.md`** - 完整版，包含详细说明和完整输出格式
-- **`mcp_finance_analysis_prompt_optimized.md`** - 优化版，平衡详细度和简洁性
-- **`mcp_finance_analysis_prompt_minimal.md`** - 精简版，快速执行版本
+```bash
+cp config/config.example.yml config/config.yml
+# 编辑 config/config.yml，填入真实密钥
+```
 
-### 2. 执行分析任务
+最小配置仅需两部分：
 
-将选定的提示词内容提供给支持MCP的AI助手，系统将自动：
+```yaml
+api_keys:
+  gemini: "YOUR_GEMINI_API_KEY"
 
-1. **创建文件夹**：按当天日期创建文件夹结构
-2. **抓取数据**：访问9个RSS源，获取最新新闻
-3. **内容分析**：抓取新闻正文，提取关键信息
-4. **AI分析**：识别热点，分析催化剂、复盘、展望
-5. **股票推荐**：为每个热点推荐相关股票
-6. **生成报告**：输出专业的财经分析报告
+notify:
+  server_chan_keys:
+    - "SCT_xxx_1"
+    - "SCT_xxx_2"
+```
 
-### 3. 查看结果
+注意：实际配置文件 `config/config.yml` 已加入 `.gitignore`，不会被提交。
 
-分析完成后，可在对应日期文件夹中查看：
-- `rss_data/` - 原始RSS数据
-- `news_content/` - 新闻正文内容
-- `analysis/` - 分析结果
-- `reports/` - 最终分析报告
+### 2) 数据抓取（收集RSS 并入库）
+
+```bash
+python3 scripts/rss_finance_analyzer.py                # 仅抓取摘要
+python3 scripts/rss_finance_analyzer.py --fetch-content  # 抓取正文写入数据库 content（推荐）
+# 可选限制正文最大长度（默认0不限制，仅当>0时截断）
+python3 scripts/rss_finance_analyzer.py --fetch-content --content-max-length 8000
+```
+
+输出：
+- `data/news_data.db`（主库）
+- `docs/archive/YYYY-MM/YYYY-MM-DD/rss_data/`、`news_content/`、`collected_data.json`
+
+### 3) 数据查询（导出为表格/CSV/JSON）
+
+```bash
+# 当天数据（表格输出）
+python3 scripts/query_news_by_date.py
+
+# JSON 导出（包含正文 content，用于RAG/深度分析）
+python3 scripts/query_news_by_date.py --format json --output /tmp/news_with_content.json --include-content
+
+# CSV 导出（包含正文）
+python3 scripts/query_news_by_date.py --format csv --output /tmp/news_with_content.csv --include-content
+```
+
+### 4) AI 分析（生成 Markdown 报告）
+
+```bash
+# 使用 config/config.yml 中的密钥，分析当天（默认使用专业版提示词 pro）
+python3 scripts/ai_analyze.py
+
+# 指定日期范围并导出 JSON（summary + 元数据）：
+python3 scripts/ai_analyze.py --start 2025-09-28 --end 2025-09-29 --output-json /tmp/analysis.json
+
+# 指定自定义配置路径（默认 config/config.yml）：
+python3 scripts/ai_analyze.py --config /path/to/config.yml
+```
+
+说明：
+- `ai_analyze.py` 优先使用数据库中的 `content`，回退 `summary`；默认通过 `config/config.yml` 读取密钥。
+- 提示词使用 `task/financial_analysis_prompt_pro.md` 的专业版金融分析框架。
 
 ## 📊 报告内容
 

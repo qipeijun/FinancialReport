@@ -110,6 +110,18 @@ python3 scripts/query_news_by_date.py --format csv --output /tmp/news_with_conte
 - `--fetch-content`：抓取正文并写入数据库 `content` 字段
 - `--content-max-length`：正文最大存储长度，默认0表示不限制，仅当>0时截断
 
+### AI 分析脚本（ai_analyze.py）
+
+用法示例：
+
+```bash
+# 默认使用专业版提示词，读取 config/config.yml 的密钥
+python3 scripts/ai_analyze.py
+
+# 指定配置路径
+python3 scripts/ai_analyze.py --config config/config.yml
+```
+
 ## JSON数据格式
 
 生成的 `collected_data.json` 包含以下字段：

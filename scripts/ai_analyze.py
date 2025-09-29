@@ -51,7 +51,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--output-json', type=str, help='可选：将结果（summary+文章元数据）导出为 JSON 文件')
     parser.add_argument('--max-chars', type=int, default=200000, help='传入模型的最大字符数上限，用于控制成本，0 表示不限制')
     parser.add_argument('--api-key', type=str, help='可选：显式传入 Gemini API Key（默认从配置/环境读取）')
-    parser.add_argument('--config', type=str, help='可选：配置文件路径（默认项目根 config.yml）')
+    parser.add_argument('--config', type=str, help='可选：配置文件路径（默认 config/config.yml）')
     return parser.parse_args()
 
 
@@ -122,8 +122,10 @@ def query_articles(conn: sqlite3.Connection, start: str, end: str, order: str, l
     return results
 
 
-def build_corpus(articles: List[Dict[str, Any]], max_chars: int) -> str:
-    """构造传给模型的语料，优先 content 回退 summary，并控制最大长度。"""
+def build_corpus(articles: List[Dict[str, Any]], max_chars: int) -> Tuple[str, int]:
+    """构造传给模型的语料，优先 content 回退 summary，并控制最大长度。
+    返回 (裁剪后的文本, 原始长度)。
+    """
     parts: List[str] = []
     for a in articles:
         body = a.get('content') or a.get('summary') or ''
@@ -133,10 +135,10 @@ def build_corpus(articles: List[Dict[str, Any]], max_chars: int) -> str:
         link = a.get('link') or ''
         parts.append(f"【{title}】\n来源: {source} | 时间: {published}\n链接: {link}\n{body}\n\n")
 
-    text = ''.join(parts)
-    if max_chars and max_chars > 0 and len(text) > max_chars:
-        return text[:max_chars]
-    return text
+    text_full = ''.join(parts)
+    if max_chars and max_chars > 0 and len(text_full) > max_chars:
+        return text_full[:max_chars], len(text_full)
+    return text_full, len(text_full)
 
 
 def call_gemini(api_key: str, content: str) -> str:
@@ -152,8 +154,9 @@ def call_gemini(api_key: str, content: str) -> str:
     ]
 
     genai.configure(api_key=api_key)
+    print(f'🤖 正在生成报告（输入长度 {len(content)} 字符）')
 
-    # 读取专业版提示词
+    # 读取提示词（固定使用专业版）
     prompt_path = PROJECT_ROOT / 'task' / 'financial_analysis_prompt_pro.md'
     if not prompt_path.exists():
         raise SystemExit(f'提示词文件不存在: {prompt_path}')
@@ -163,8 +166,10 @@ def call_gemini(api_key: str, content: str) -> str:
     last_error: Optional[Exception] = None
     for model_name in model_names:
         try:
+            print(f'→ 尝试模型: {model_name}')
             model = genai.GenerativeModel(model_name)
             resp = model.generate_content([system_prompt, content])
+            print(f'✅ 模型成功: {model_name}')
             return resp.text
         except Exception as e:  # 尝试下一个
             last_error = e
@@ -200,6 +205,7 @@ def write_json(path: Path, summary_md: str, articles: List[Dict[str, Any]]):
 def main():
     args = parse_args()
     start, end = resolve_date_range(args)
+    print(f'🚀 开始 AI 分析：日期范围 {start} → {end}')
 
     # 解析配置文件，优先顺序：config.yml > --api-key > 环境变量
     config_path = Path(args.config) if args.config else (PROJECT_ROOT / 'config' / 'config.yml')
@@ -213,8 +219,11 @@ def main():
                 (cfg.get('api_keys') or {}).get('gemini')
                 or (cfg.get('gemini') or {}).get('api_key')
             )
+            print(f'🔧 使用配置文件：{config_path}')
         except Exception as e:
             print(f'⚠️ 读取配置失败（{config_path}）：{e}，将尝试使用命令行或环境变量。')
+    else:
+        print(f'⚠️ 未找到配置文件：{config_path}，将尝试使用命令行或环境变量。')
 
     if not api_key:
         api_key = args.api_key or os.getenv('GEMINI_API_KEY')
@@ -230,9 +239,12 @@ def main():
     if not rows:
         print('（无结果）未找到指定日期范围的文章，终止分析。')
         return
+    print(f'📥 已读取文章：{len(rows)} 条')
 
-    corpus = build_corpus(rows, args.max_chars)
-    print(f'🔎 语料长度: {len(corpus)} 字符（max={args.max_chars}）')
+    corpus, total_len = build_corpus(rows, args.max_chars)
+    print(f'🔎 语料长度: {len(corpus)} 字符（原始 {total_len}，max={args.max_chars}）')
+    if args.max_chars and args.max_chars > 0 and total_len > args.max_chars:
+        print(f'✂️ 语料已按上限截断：{total_len} → {len(corpus)}')
 
     try:
         summary_md = call_gemini(api_key, corpus)
