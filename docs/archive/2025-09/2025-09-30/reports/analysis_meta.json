@@ -1,0 +1,10 @@
+{
+  "date_range": {
+    "start": "2025-09-30",
+    "end": "2025-09-30"
+  },
+  "articles_used": 51,
+  "chunks": 86,
+  "model_usage": {},
+  "prompt_file": "/Users/qipeijun/code/githubProject/Financial-report/task/financial_analysis_prompt_pro.md"
+}

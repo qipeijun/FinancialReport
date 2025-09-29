@@ -1,0 +1,90 @@
+{
+  "http://rss.eastmoney.com/rss_partener.xml": {
+    "etag": "\"04e46656031dc1:0\"",
+    "last_modified": "Mon, 29 Sep 2025 16:45:00 GMT"
+  },
+  "https://36kr.com/feed": {
+    "etag": null,
+    "last_modified": null
+  },
+  "https://www.thepaper.cn/rss_news.jsp?category=Finance": {
+    "etag": null,
+    "last_modified": null
+  },
+  "https://dedicated.wallstreetcn.com/rss.xml": {
+    "etag": null,
+    "last_modified": null
+  },
+  "http://news.baidu.com/n?cmd=1&class=stock&tn=rss&sub=0": {
+    "etag": null,
+    "last_modified": null
+  },
+  "https://www.chinanews.com.cn/rss/finance.xml": {
+    "etag": "\"68daac17-4433\"",
+    "last_modified": "Mon, 29 Sep 2025 15:56:07 GMT"
+  },
+  "https://www.ftchinese.com/rss/feed": {
+    "etag": "W/\"2adc-UFvZXUoPqIk3GnDEuaP4S7G3m1w\"",
+    "last_modified": null
+  },
+  "https://www.economist.com/finance-and-economics/rss.xml": {
+    "etag": "W/\"3d9a906032a8e992d788029385ecd0ae\"",
+    "last_modified": "Mon, 29 Sep 2025 07:53:54 GMT"
+  },
+  "https://www.investing.com/rss/news.rss": {
+    "etag": "W/\"1120-63ff32f1290b3\"",
+    "last_modified": "Mon, 29 Sep 2025 16:32:39 GMT"
+  },
+  "http://feeds.bbci.co.uk/news/business/rss.xml": {
+    "etag": null,
+    "last_modified": null
+  },
+  "https://feeds.a.dj.com/rss/RSSWorldNews.xml": {
+    "etag": "W/\"4af2feceebacee87160ab5c387fb1931\"",
+    "last_modified": "Mon, 27 Jan 2025 19:24:55 GMT"
+  },
+  "https://www.etftrends.com/feed/": {
+    "etag": null,
+    "last_modified": "Mon, 29 Sep 2025 16:23:05 GMT"
+  },
+  "https://www.cnbc.com/id/100003114/device/rss/rss.html": {
+    "etag": null,
+    "last_modified": null
+  },
+  "https://feeds.feedburner.com/zerohedge/feed": {
+    "etag": null,
+    "last_modified": "Mon, 29 Sep 2025 15:54:20 GMT"
+  },
+  "https://www.bloomberg.com/feed/podcast/etf-report.xml": {
+    "etag": null,
+    "last_modified": "Wed, 24 Sep 2025 19:35:54 GMT"
+  },
+  "https://www.federalreserve.gov/feeds/press_all.xml": {
+    "etag": "W/\"cec84a24e2edc1:0\"",
+    "last_modified": "Thu, 25 Sep 2025 19:00:17 GMT"
+  },
+  "https://www.sec.gov/news/pressreleases.rss": {
+    "etag": "\"1759164374\"",
+    "last_modified": "Mon, 29 Sep 2025 16:46:14 GMT"
+  },
+  "https://www.stats.gov.cn/sj/zxfb/rss.xml": {
+    "etag": "\"68da2e83-4c3511\"",
+    "last_modified": "Mon, 29 Sep 2025 07:00:19 GMT"
+  },
+  "https://www.huxiu.com/rss/0.xml": {
+    "etag": null,
+    "last_modified": null
+  },
+  "https://www.tmtpost.com/feed": {
+    "etag": null,
+    "last_modified": null
+  },
+  "https://decrypt.co/feed": {
+    "etag": null,
+    "last_modified": "Mon, 29 Sep 2025 16:46:11 GMT"
+  },
+  "https://www.coindesk.com/arc/outboundfeeds/rss/": {
+    "etag": null,
+    "last_modified": null
+  }
+}

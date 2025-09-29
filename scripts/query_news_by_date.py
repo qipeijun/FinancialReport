@@ -41,6 +41,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--end', type=str, help='结束日期（YYYY-MM-DD），默认为当天')
     parser.add_argument('--source', type=str, help='按来源名称过滤（如：华尔街见闻）')
     parser.add_argument('--keyword', type=str, help='关键字搜索标题与摘要（LIKE 模糊匹配）')
+    parser.add_argument('--search', type=str, help='全文检索（FTS5，需先建立虚表），在 title/summary/content 中搜索')
     parser.add_argument('--format', choices=['table', 'json', 'csv'], default='table', help='输出格式')
     parser.add_argument('--limit', type=int, default=100, help='最多返回多少条记录（0表示不限制）')
     parser.add_argument('--output', type=str, help='当格式为csv或json时，输出到该文件路径')
@@ -77,7 +78,7 @@ def open_connection(db_path: Path) -> sqlite3.Connection:
     return conn
 
 
-def build_query(source: Optional[str], keyword: Optional[str], order: str, limit: int, include_content: bool) -> (str, list):
+def build_query(source: Optional[str], keyword: Optional[str], order: str, limit: int, include_content: bool, search: Optional[str]) -> (str, list):
     select_cols = ['a.id', 'a.collection_date', 'a.title', 'a.link', 'a.published', 'a.summary', 's.source_name']
     if include_content:
         select_cols.append('a.content')
@@ -96,6 +97,11 @@ def build_query(source: Optional[str], keyword: Optional[str], order: str, limit
         sql.append('AND (a.title LIKE ? OR a.summary LIKE ?)')
         like = f'%{keyword}%'
         params.extend([like, like])
+    if search:
+        # 依赖 FTS5 虚表 news_articles_fts(id, title, summary, content)
+        sql.insert(1, 'JOIN news_articles_fts fts ON fts.rowid = a.id')
+        sql.append('AND fts MATCH ?')
+        params.append(search)
 
     # Order by: prefer published if present, fallback created_at
     order_dir = 'DESC' if order.lower() == 'desc' else 'ASC'
@@ -108,8 +114,8 @@ def build_query(source: Optional[str], keyword: Optional[str], order: str, limit
     return '\n'.join(sql), params
 
 
-def query_articles(conn: sqlite3.Connection, start: str, end: str, source: Optional[str], keyword: Optional[str], order: str, limit: int, include_content: bool) -> List[Dict[str, Any]]:
-    sql, params_tail = build_query(source, keyword, order, limit, include_content)
+def query_articles(conn: sqlite3.Connection, start: str, end: str, source: Optional[str], keyword: Optional[str], order: str, limit: int, include_content: bool, search: Optional[str]) -> List[Dict[str, Any]]:
+    sql, params_tail = build_query(source, keyword, order, limit, include_content, search)
     params = [start, end] + params_tail
     cur = conn.execute(sql, params)
     rows = cur.fetchall()
@@ -176,7 +182,7 @@ def main():
     conn = open_connection(DB_PATH)
     try:
         include_content = bool(args.include_content and args.format in ['csv', 'json'])
-        rows = query_articles(conn, start, end, args.source, args.keyword, args.order, args.limit, include_content)
+        rows = query_articles(conn, start, end, args.source, args.keyword, args.order, args.limit, include_content, args.search)
     finally:
         conn.close()
 

@@ -1,0 +1,1853 @@
+{
+  "collection_date": "2025-09-30",
+  "total_sources": 23,
+  "successful_sources": 20,
+  "failed_sources": [
+    "澎湃新闻财经",
+    "彭博 Bloomberg",
+    "Thomson Reuters"
+  ],
+  "total_articles": 100,
+  "articles": [
+    {
+      "title": "9月29日东方财富财经晚报（附新闻联播）",
+      "link": "http://finance.eastmoney.com/news/1353,202509293526547070.html",
+      "published": "Mon, 29 Sep 2025 21:00:00 +0800",
+      "summary": "<center><img src=\"https://np-newspic.dfcfw.com/download/D24998411753880528410_w1240h918.jpg\" style=\"border: #d1d1d1 1px solid; padding: 3px; margin: 5px 0;\" width=\"580\" /></center><h3 class=\"emh3\">　　<strong>热点聚焦</strong></h3><p>　　<strong>中共中央政治局会议：</strong></p><p>　　中共中央政治局9月29日召开会议，<strong><span style=\"color: #ea5504;\">研究制定国民经济和社会发展第十五个五年规划重大问题</span></strong>。中共中央总书记习近平主持会议。会议决定，中国共产党第二十届中央委员会第四次全体会议于10月20日至23日在北京召开。中共中央政治局听取了《中共中央关于制定国民经济和社会发展第十五个五年规划的建议》稿在党内外一定范围征求意见的情况报告，决定根据这次会议讨论的意见进行修改后将文件稿提请二十届四中全会审议。</p><p>　　<strong>发改委新闻发布会</strong>：</p><p>　　国家发改委政策研究室副主任、新闻发言人李超在新闻发布会上表示，外部环境严峻且内需回升基础不牢，<strong><span style=\"color: #ea5504;\">宏观政策将持续发力</span></strong>并“适时加力”以巩固向好势头。政策发力点高度聚焦科技与AI产业，<strong><span style=\"color: #ea5504;\">将制定智能终端和智能体发展指引</span></strong>、开放行业场景、发放算力补贴，并特别支持民营企业深度参与“<span id=\"bk_90.BK0800\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0800\">人工智能</a></span><span id=\"bkquote_90.BK0800\"></span>+”行动。此外提到<strong><span style=\"color: #ea5504;\">新型政策性金融工具规模共5000亿元，全部用于补充项目的资本金</span></strong>。国家发展改革委正在会同有关方面，抓紧把新型政策性金融工具资金投入到具体项目上。</p><p>　　<strong>DeepSeek</strong>：</p><p>　　9月29日晚间，DeepSeek宣布官方App、网页端、小程序均已同步更新为DeepSeek-V3.2-Exp。DeepSeek介绍，得益于新模型服务成本的大幅降低，官方API价格也相应下调，新价格即刻生效。在新的价格政策下，<strong><span style=\"color: #ea5504;\">开发者调用DeepSeekAPI的成本将降低50%以上</span></strong>。</p><p>　　<strong>机械行业</strong>：</p><p>　　工信部等六部门印发《机械行业稳增长工作方案（2025—2026年）》。其中提到，2025—2026年，机械行业运行保持平稳向好态势，重点产业链供应链韧性和安全水平持续提升，发展质量效益迈上新台阶，<strong><span style=\"color: #ea5504;\">力争营业收入年均增速达到3.5%左右，营业收入突破10万亿元</span></strong>。重点细分行业规模稳中有升，新质生产力加快培育，企业竞争力进一步增强，优质装备供给能力显著提高，培育一批具有竞争力的中小企业特色产业集群和具有国际竞争力的产业集群。</p><p>　　<strong>卫星通信</strong>：</p><p>　　按照《关于优化业务准入促进卫星通信产业发展的指导意见》有关部署，<strong><span style=\"color: #ea5504;\">工业和信息化部近日向<span id=\"stock_1.600941\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.600941\">中国移动</a></span><span id=\"quote_1.600941\"></span>通信集团有限公司（以下简称<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/1.600941\">中国移动</span>）颁发卫星移动通信业务经营许可</span></strong>。目前，继<span id=\"stock_1.601728\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.601728\">中国电信</a></span><span id=\"quote_1.601728\"></span>之后，<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/1.600941\">中国移动</span>、<span id=\"stock_1.600050\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.600050\">中国联通</a></span><span id=\"quote_1.600050\"></span>两家基础电信企业也已获得卫星移动通信业务经营资质，可依法开展手机直连卫星等业务，深化应急通信、海事通信、偏远地区通信等场景应用，丰富<span id=\"bk_90.BK0736\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0736\">通信服务</a></span><span id=\"bkquote_90.BK0736\"></span>与产品供给。</p><p>　　<strong>人才签证</strong>：</p><p>　　9月29日，外交部发言人郭嘉昆主持例行记者会。有记者就中国推出“K字签证”相关问题提问。对此，郭嘉昆表示，为促进中外青年科技人才交流与合作，<strong><span style=\"color: #ea5504;\">中方决定在普通签证类别下，增设青年科技人才签证即“K字签证”</span>。</strong></p><p>　　<strong>日本出口管制</strong>：</p><p>　　商务部新闻发言人就日将我多家实体列入出口管制“最终用户清单”事答记者问。有记者问：我们注意到9月29日，日本经济产业省更新出口管制“最终用户清单”，其中增列多家中国企业，并将2家中国企业移出清单，请问中方对此有何评论？答：中方注意到有关情况，日方在缺乏事实依据的情况下，将中国企业无理列单，损害两国企业利益，中方对此坚决反对。<strong><span style=\"color: #ea5504;\">中方敦促日方，立即停止列单中国企业的错误做法</span></strong>。</p><p>　　<strong>券商异动</strong>：</p><p>　　分析人士认为，券商股是少有的景气度处于显著提升期又没有大涨过的板块，此前一直处于被压制的状态。在个别板块进入泡沫期之后，券商股此时爆发对于市场有一定支撑作用。这可能是券商今天爆发的主要原因。另外，<strong><span style=\"color: #ea5504;\">关于券商“反内卷”的传闻亦不断刷屏</span></strong>。与此同时，花旗将中国股票评级调至“增持”。</p><p>　　<strong>小米手机</strong>：</p><p>　　天风国际分析师郭明錤今日发文称，据其最新的产业调查，<strong><span style=\"color: #ea5504;\">小米17系列总出货量显著下修20%（原定目标约1000万台）</span></strong>，若后续无更积极的价格策略或营销活动，17系列总出货量可能会低于15系列的约800万部。郭明錤发布下调出货量报告的同日，小米集团总裁卢伟冰发文称，小米17系列首销虽才过2天，但销量已经非常不错，“小米17系列有信心销量会比上代小米15系列更多。”</p><p>　　<strong>黄金</strong>：</p><p>　　在美联储降息、地缘风险加剧等背景下，<span id=\"bk_90.BK0732\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0732\">贵金属</a></span><span id=\"bkquote_90.BK0732\"></span>市场迎来一轮前所未有的强劲行情。9月29日，<strong><span style=\"color: #ea5504;\">COMEX黄金再创历史新高，盘中最高涨至3849美元/盎司</span></strong>。今年每盎司黄金已累计上涨超1200美元，累计涨幅近46%。</p><p style=\"text-align: center;\"><a href=\"https://acttg.eastmoney.com/pub/xxlout_khmbdfcfappnew_random_0007467a\"><img class=\"em_handle_adv_close\" src=\"https://np-newspic.dfcfw.com/download/D25753173264126031117_w690h389.jpg\" /></a></p><h3 class=\"emh3\">　　<strong>主题机会</strong></h3><p>　　<strong><span id=\"bk_90.BK0968\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0968\">固态电池</a></span><span id=\"bkquote_90.BK0968\"></span></strong>：</p><p>　　日前，清华大学化工系教授张强领衔的团队通过提出“富阴离子溶剂化结构”设计新策略，成功开发出一种新型含氟聚醚电解质。该电解质通过热引发原位聚合技术，有效增强了固态界面的物理接触与离子传导能力，显著提升了<span id=\"bk_90.BK0574\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0574\">锂电池</a></span><span id=\"bkquote_90.BK0574\"></span>的耐高压性能和界面稳定性，相关成果已在线发表于《自然》。<strong><span style=\"color: #ea5504;\">该研究为开发实用化的高安全性、高能量密度固态<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0574\">锂电池</span>提供了新思路与技术支撑</span></strong>。</p><p>　　截至9月29日收盘，<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0968\">固态电池</span>概念上涨2.96%，板块内，228股上涨，<span id=\"stock_1.688275\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.688275\">万润新能</a></span><span id=\"quote_1.688275\"></span>20%涨停，<span id=\"stock_0.002709\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002709\">天赐材料</a></span><span id=\"quote_0.002709\"></span>、<span id=\"stock_1.603810\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.603810\">丰山集团</a></span><span id=\"quote_1.603810\"></span>、<span id=\"stock_0.002125\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002125\">湘潭电化</a></span><span id=\"quote_0.002125\"></span>等涨停，<span id=\"stock_0.301358\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.301358\">湖南裕能</a></span><span id=\"quote_0.301358\"></span>、<span id=\"stock_1.688411\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.688411\">海博思创</a></span><span id=\"quote_1.688411\"></span>、<span id=\"stock_0.833284\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.833284\">灵鸽科技</a></span><span id=\"quote_0.833284\"></span>等涨幅居前，分别上涨18.29%、15.02%、14.39%。跌幅居前的有<span id=\"stock_0.300088\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300088\">长信科技</a></span><span id=\"quote_0.300088\"></span>、<span id=\"stock_1.605100\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.605100\">华丰股份</a></span><span id=\"quote_1.605100\"></span>、<span id=\"stock_0.300450\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300450\">先导智能</a></span><span id=\"quote_0.300450\"></span>等，分别下跌4.73%、3.75%、3.59%。</p><p>　　资金面上看，今日<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0968\">固态电池</span>概念板块获主力资金净流入13.88亿元，其中，152股获主力资金净流入，14股主力资金净流入超亿元，净流入资金居首的是<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.002709\">天赐材料</span>，今日主力资金净流入9.83亿元，净流入资金居前的还有<span id=\"stock_0.002460\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002460\">赣锋锂业</a></span><span id=\"quote_0.002460\"></span>、<span id=\"stock_0.002407\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002407\">多氟多</a></span><span id=\"quote_0.002407\"></span>、<span id=\"stock_0.300750\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300750\">宁德时代</a></span><span id=\"quote_0.300750\"></span>等，主力资金分别净流入5.51亿元、4.97亿元、4.64亿元。</p><p>　　<strong>超导</strong>：</p><p>　　据央视新闻，从中国科学院合肥物质院等离子体物理研究所获悉，由该研究所牵头，联合国内多家科研机构与大学共同研制的全超导磁体，近日实现了35.1<span id=\"stock_105.TSLA\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.TSLA\">特斯拉</a></span><span id=\"quote_105.TSLA\"></span>中心稳态磁场，创造了新的世界纪录。<strong><span style=\"color: #ea5504;\">本次成果实现了超高场全超导稳态磁体领域国际共同面临的关键技术突破</span></strong>，实现了关键材料、工艺、制备100%自主可控。</p><p>　　据数据统计，截至9月29日收盘，机构给予“积极型”评级（含买入、增持、强烈推荐等）家数最多的A股<span id=\"bk_90.BK0679\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0679\">超导概念</a></span><span id=\"bkquote_90.BK0679\"></span>股是<span id=\"stock_1.600522\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.600522\">中天科技</a></span><span id=\"quote_1.600522\"></span>，机构评级家数靠前的<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0679\">超导概念</span>股还有<span id=\"stock_1.688122\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.688122\">西部超导</a></span><span id=\"quote_1.688122\"></span>、<span id=\"stock_0.000657\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.000657\">中钨高新</a></span><span id=\"quote_0.000657\"></span>、<span id=\"stock_1.601137\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.601137\">博威合金</a></span><span id=\"quote_1.601137\"></span>、<span id=\"stock_1.600595\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.600595\">中孚实业</a></span><span id=\"quote_1.600595\"></span>、<span id=\"stock_1.688186\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.688186\">广大特材</a></span><span id=\"quote_1.688186\"></span>等。资金面上，截至9月26日收盘，9月以来融资净买入超1亿元的<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0679\">超导概念</span>股有8只，包括<span id=\"stock_0.002130\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002130\">沃尔核材</a></span><span id=\"quote_0.002130\"></span>、<span id=\"stock_1.601727\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.601727\">上海电气</a></span><span id=\"quote_1.601727\"></span>、<span id=\"stock_1.600105\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.600105\">永鼎股份</a></span><span id=\"quote_1.600105\"></span>、<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/1.600522\">中天科技</span>、<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/1.688122\">西部超导</span>等。<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.002130\">沃尔核材</span>9月以来融资净买入13.84亿元，居首位。</p><h3 class=\"emh3\">　　<strong>公司新闻</strong></h3><p>　　<strong><span id=\"stock_0.002759\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002759\">天际股份</a></span><span id=\"quote_0.002759\"></span></strong>：公司正在<strong><span style=\"color: #ea5504;\">推动硫化锂材料制备专利的产业化</span></strong>，该项目由7名研发人员组成，其中核心研发人员3名，目前已投入研发费用约500万元。该项目现已基本通过小型试验，但目前公司技术开发过程仍处于早期阶段。此外，公司控股股东汕头天际在股票交易异常波动期间（2025年9月26日、2025年9月29日）<strong><span style=\"color: #ea5504;\">通过大宗交易减持公司股票450万股</span></strong>，截至本公告披露日，本次减持计划尚未履行完毕。</p><p>　　<strong><span id=\"stock_1.688109\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.688109\">品茗科技</a></span><span id=\"quote_1.688109\"></span></strong>：如公司股票交易持续异常波动，可能出现以下情况：<strong><span style=\"color: #ea5504;\">公司可能按照相关规则要求申请停牌核查</span></strong>，公司股票可能被上海<span id=\"bk_90.BK0473\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0473\">证券</a></span><span id=\"bkquote_90.BK0473\"></span>交易所重点监控，异常交易相关投资者账户可能被暂停交易等。</p><p>　　<strong><span id=\"stock_0.002600\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002600\">领益智造</a></span><span id=\"quote_0.002600\"></span></strong>：公司正在筹划<strong><span style=\"color: #ea5504;\">境外发行股份（H股）并在香港联合交易所有限公司上市事项</span></strong>，以推动国际化战略落地，加强海外业务布局，拓宽海内外并购和融资渠道，提高公司国际知名度和整体竞争力。</p><p>　　<strong><span id=\"stock_1.688778\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.688778\">厦钨新能</a></span><span id=\"quote_1.688778\"></span></strong>：公司与<span id=\"stock_0.300919\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300919\">中伟股份</a></span><span id=\"quote_0.300919\"></span>于2025年9月29日签署《战略合作框架协议》，双方在产品供销、矿产资源开发、产品研发、信息合作等层面建立战略合作伙伴关系，包括就<strong><span style=\"color: #ea5504;\"><span id=\"bk_90.BK1037\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1037\">消费电子</a></span><span id=\"bkquote_90.BK1037\"></span>、动力、低空及AI、<span id=\"stock_0.300024\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300024\">机器人</a></span><span id=\"quote_0.300024\"></span>等领域<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0574\">锂电池</span>用三元材料、钴酸锂、固态锂电材料、半固态锂电材料、富锂锰基等产品</span></strong>的原材料供应链建立长期合作伙伴关系。</p><p>　　<strong><span id=\"stock_0.002846\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002846\">英联股份</a></span><span id=\"quote_0.002846\"></span></strong>：预计归属于上市公司股东的净利润为3450万元–3750万元，比上年<strong><span style=\"color: #ea5504;\">同期增长1531.13%–1672.97%</span></strong>。报告期内，公司快消品金属包装易开盖板块收入和利润贡献显著，市场占有率提升推动营收增长。</p><p>　　<strong><span id=\"stock_1.688381\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.688381\">帝奥微</a></span><span id=\"quote_1.688381\"></span></strong>：公司正在<strong><span style=\"color: #ea5504;\">筹划以发行股份及支付现金的方式购买荣湃<span id=\"bk_90.BK1036\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1036\">半导体</a></span><span id=\"bkquote_90.BK1036\"></span>(上海)有限公司股权</span></strong>，尚无法确定本次交易是否构成重大资产重组。公司股票已于2025年9月29日开市起停牌，并将于9月30日继续停牌，预计停牌（累计）时间不超过10个交易日。</p><p>　　<strong><span id=\"stock_0.300432\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300432\">富临精工</a></span><span id=\"quote_0.300432\"></span></strong>：为进一步提升公司与<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.300750\">宁德时代</span>的战略合作关系，加快推进江西升华在优质磷酸铁锂产品研发与生产、国际化拓展、供应链升级及<span id=\"bk_90.BK0989\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0989\">储能</a></span><span id=\"bkquote_90.BK0989\"></span>市场发展等方面进程，公司与<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.300750\">宁德时代</span>拟共同对公司子公司江西升华增资扩股，公司拟增资10亿元，认购江西升华新增注册资本8.13亿元，<span id=\"Info.116.03750\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/116.03750\">宁德时代</a></span>拟增资25.63亿元，认购江西升华新增注册资本20.84亿元。本次交易完成后，<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/116.03750\">宁德时代</span>持有江西升华的股权比例为51%，公司持有江西升华的股权比例为47.4096%。<strong><span style=\"color: #ea5504;\">本次交易预计构成重大资产重组</span></strong>。</p><p>　　<strong><span id=\"stock_1.688166\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.688166\">博瑞医药</a></span><span id=\"quote_1.688166\"></span></strong>：公司获美国FDA批准开展BGM1812注射液<strong><span style=\"color: #ea5504;\">用于超重或肥胖治疗的I期临床</span></strong>。BGM1812注射液是公司优化设计的新型长效Amylin类似物，具有良好的分子活性和药学稳定性。截至本公告披露日，全球尚无同类靶点制剂减重适应症获批上市。</p><p>　　<strong><span id=\"stock_0.002140\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002140\">东华科技</a></span><span id=\"quote_0.002140\"></span></strong>：公司作为EPC总承包商承建的西藏扎布耶盐湖绿色综合开发利用万吨<span id=\"bk_90.BK1033\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1033\">电池</a></span><span id=\"bkquote_90.BK1033\"></span>级碳酸锂项目，于2025年9月20日至24日顺利完成120小时的功能考核。公司于9月26日发布《关于西藏扎布耶盐湖绿色综合开发利用万吨<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK1033\">电池</span>级碳酸锂EPC总承包项目进展的公告》。<strong><span style=\"color: #ea5504;\">完成功能考核是项目建设的正常进展，标志着该项目将正式投产</span></strong>。</p><p>　　<strong><span id=\"stock_0.000883\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.000883\">湖北能源</a></span><span id=\"quote_0.000883\"></span></strong>：公司与襄阳市人民政府（简称“襄阳市政府”）签署了《深化合作协议》。“十五五”期间，<strong><span style=\"color: #ea5504;\">计划将在襄阳市清洁能源及产业链上下游投资267亿元</span></strong>，建设一批风光火储及综合能源项目。具体项目包括建设南漳张家坪<span id=\"bk_90.BK1003\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1003\">抽水蓄能</a></span><span id=\"bkquote_90.BK1003\"></span>电站项目、建设宜城电厂二期项目、建设<span id=\"bk_90.BK0493\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0493\">新能源</a></span><span id=\"bkquote_90.BK0493\"></span>百万千瓦基地项目、建设绿色零碳（低碳）园区和社区。</p><h3 class=\"emh3\">　　<strong>央视新闻联播</strong></h3><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_Video_Start --><center style=\"text-align: left;\"><div class=\"em_lk_video\" style=\"display: none;\"> </div> </center><!-- EM_Video_End --><p>　　今天（9月29日）上午，国务院新闻办举行高质量完成“十四五”规划系列主题发布会。水利部相关负责人介绍，“十四五”期间我国水利发展取得新成效。<br /></p><p>　　“十四五”期间，我国大力推进水利基础设施建设，2022年<span id=\"bk_90.BK0597\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0597\">水利建设</a></span><span id=\"bkquote_90.BK0597\"></span>完成投资首次迈上万亿元大台阶并连续3年突破历史纪录，2024年达13529亿元，预计“十四五”<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0597\">水利建设</span>完成投资超5.4万亿元，是“十三五”的1.6倍。</p><p>　　“十四五”以来，我国“南北调配、东西互济”的水资源配置格局加快形成，预计到今年底国家水网覆盖率达到80.3%，重点河湖生态流量达标率达98.6%，预计新增水土流失治理面积34万平方公里、水土保持率达73%。近5年，我国实施了1959处大中型灌区现代化改造，新增恢复和改善灌溉面积超2亿亩。“十四五”以来，灌区用水效率连年提高，单方灌溉水的粮食生产力保持在3.6斤以上，充分发挥了灌区粮食生产主力军作用。</p><p>　　文化和旅游部相关负责人介绍，“十四五”期间，文化遗产工作开创新局，中华文明探源工程等项目成果丰硕，非遗系统性保护水平持续提升，文化生态保护区建设加快推进，国家文化公园建设成效明显。文旅产业发展蓬勃兴旺，文旅融合深入推进，扩大内需、带动消费，2024年文化产业实现营业收入19.14万亿元，比2020年增长37.7%。“以文塑旅、以旅彰文”的双向赋能为文旅产业培育新动能、塑造新优势，国际交流合作进一步走深走实。</p><p>　　记者从国铁集团获悉，铁路国庆中秋假期运输今天（9月29日）启动，至10月10日结束，为期12天，全国铁路预计发送旅客约2.19亿人次，日均开行旅客列车约1.3万列。今天至10月2日，10月7日至9日，热门线路加开夜间高铁列车。10月1日起，全国铁路客运全面使用电子发票，并继续提供纸质行程信息提示单，方便旅客出行。</p><p>　　今天（9月29日），温州市中级人民法院对明家犯罪集团案一审公开宣判。明国平、明珍珍等11人被判处死刑，杨正喜等28人分别被判处死缓至5年不等有期徒刑，并处罚金、没收财产、驱逐出境等附加刑。</p><p>　　中国物流与采购联合会今天（9月29日）公布，今年1—8月份，全国社会物流总额，即物流运行中的实物商品价值总和为229.4万亿元，同比增长5.2%。工业领域高端化、智能化物流需求增长显著。电子、电气机械、汽车等行业拉动作用明显。消费相关物流需求增长有所加快。综合来看，我国物流运行呈“总量平稳、结构升级、质效提升”的发展态势。</p><p>　　记者从国家发展改革委今天（9月29日）举行的新闻发布会上了解到，我国将加大力度，支持各类企业深度参与“<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0800\">人工智能</span>+”行动。加大“两新”政策对企业的支持力度，推动国有企业将更多战略意义强、经济收益高、民生关联紧的场景向民营企业开放，支持民营企业积极参与应用中试基地等<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0800\">人工智能</span>重大项目建设。</p><p>　　今天（9月29日）11时，我国在西昌卫星发射中心使用长征二号丁运载火箭，成功将试验三十号卫星01、02星发射升空。本次发射是长二丁火箭的第100次发射，长二丁也成为我国第二型突破百发的单一型号运载火箭。</p><p>　　今天（9月29日），内蒙古库布其沙漠中北部<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0493\">新能源</span>大基地全面开工建设。项目规划<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0493\">新能源</span>装机1200万千瓦，配套建设“内蒙古<span id=\"stock_1.600295\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.600295\">鄂尔多斯</a></span><span id=\"quote_1.600295\"></span>至河北沧州”<span id=\"bk_90.BK0918\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0918\">特高压</a></span><span id=\"bkquote_90.BK0918\"></span>通道，基地计划2027年投运，投运后每年可为华北电网输送清洁电能超210亿千瓦时。</p><p>　　昨天（9月28日），国家“十四五”规划重点工程——青藏联网二期扩建工程正式投运。投运后，青海与西藏之间的输电能力将提高一倍，每年可外送西藏绿电21亿千瓦时。",
+      "source": {
+        "title": "东方财富Choice数据"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        13,
+        0,
+        0,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "9月29日晚间上市公司利好消息一览(附名单)",
+      "link": "http://finance.eastmoney.com/news/1353,202509293526546981.html",
+      "published": "Mon, 29 Sep 2025 20:33:01 +0800",
+      "summary": "<p>　　沪深两市多家上市公司9月29日晚间发布重要公告，以下为利好的消息汇总：</p><p>　　<strong><span id=\"stock_0.002759\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002759\">天际股份</a></span><span id=\"quote_0.002759\"></span>：硫化锂材料制备专利产业化项目现已基本通过小型试验</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.002759\">天际股份</span>发布股票交易异常波动的公告，公司正在推动硫化锂材料制备专利的产业化，该项目由7名研发人员组成，其中核心研发人员3名，目前已投入研发费用约500万元。该项目现已基本通过小型试验，后续公司还需先进行放大试验对候选工艺进行成本、工业难易程度分析，以确定种子工艺，再进入中试阶段对种子工艺进一步放大，全面验证生产过程的稳定性、设备的适配性，并完成客户送样。目前公司技术开发过程仍处于早期阶段，从专利到稳定、批量生产的商业化产品，需要经历漫长的工艺优化和验证过程。如果未来出现更优越、成本更低的固态电解质技术路线，可能会削弱硫化锂技术的竞争优势。</p><p>　　<strong>二连板<span id=\"stock_0.002140\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002140\">东华科技</a></span><span id=\"quote_0.002140\"></span>：西藏扎布耶盐湖绿色综合开发利用万吨<span id=\"bk_90.BK1033\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1033\">电池</a></span><span id=\"bkquote_90.BK1033\"></span>级碳酸锂项目将正式投产</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.002140\">东华科技</span>发布股票交易异常波动公告称，公司作为EPC总承包商承建的西藏扎布耶盐湖绿色综合开发利用万吨<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK1033\">电池</span>级碳酸锂项目，于2025年9月20日至24日顺利完成120小时的功能考核。公司于9月26日发布《关于西藏扎布耶盐湖绿色综合开发利用万吨<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK1033\">电池</span>级碳酸锂EPC总承包项目进展的公告》。完成功能考核是项目建设的正常进展，标志着该项目将正式投产。</p><p>　　<strong><span id=\"stock_0.300432\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300432\">富临精工</a></span><span id=\"quote_0.300432\"></span>：拟与<span id=\"stock_0.300750\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300750\">宁德时代</a></span><span id=\"quote_0.300750\"></span>共同参与江西升华增资扩股</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.300432\">富临精工</span>公告，公司、<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.300750\">宁德时代</span>拟共同对公司子公司江西升华增资扩股，公司拟增资10亿元，认购江西升华新增注册资本8.13亿元，<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.300750\">宁德时代</span>拟增资25.63亿元，认购江西升华新增注册资本20.84亿元。本次交易完成后，<span id=\"Info.116.03750\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/116.03750\">宁德时代</a></span>持有江西升华的股权比例为51%，公司持有江西升华的股权比例为47.4096%。本次交易完成后，将会导致公司合并报表范围发生变化，江西升华将成为<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/116.03750\">宁德时代</span>的控股子公司。</p><p>　　<strong><span id=\"stock_0.002080\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002080\">中材科技</a></span><span id=\"quote_0.002080\"></span>：公司超低损耗低介电纤维布已完成头部客户认证及批量供货</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.002080\">中材科技</span>9月29日在互动平台表示，公司超低损耗低介电纤维布已完成头部客户的认证及批量供货，直接下游为高频高速覆铜板企业，新产能会随项目建成而陆续释放。</p><p>　　<strong><span id=\"stock_1.688007\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.688007\">光峰科技</a></span><span id=\"quote_1.688007\"></span>：完成与国内外一流主流AR眼镜C端品牌客户的光机对接</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/1.688007\">光峰科技</span>(688007)9月29日在互动平台表示，截至目前，公司积极拓展国内外核心AR眼镜品牌厂商，完成了与国内外一流主流AR眼镜C端品牌客户的光机对接；另一方面，公司与<span id=\"stock_1.688608\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.688608\">恒玄科技</a></span><span id=\"quote_1.688608\"></span>（上海）股份有限公司、海南天智丰和智慧科技有限公司达成战略合作，共同建筑智能AR眼镜生态，推进高性价比、强性能AR眼镜的开发及落地量产，AR眼镜整机有望在年底推出；此外，公司还完成与专业AR眼镜品牌客户的AR眼镜方案对接，正在全力积极推进AR眼镜业务中。</p><p>　　<strong><span id=\"stock_1.600380\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.600380\">健康元</a></span><span id=\"quote_1.600380\"></span>：间接持有摩尔线程股权 最终持股比例极低</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/1.600380\">健康元</span>9月29日在互动平台表示，公司通过全资子公司太太药业参与投资了前海股权投资基金（前海母基金），根据公开信息，前海母基金持有摩尔线程少量股权，公司对摩尔线程的持股系通过该多层投资结构间接实现，且最终持股比例极低。上述间接持股对公司整体经营、财务状况及业绩表现暂无重大影响。在此提醒投资者，请勿过度解读，同时注意投资风险。</p><p>　　<strong><span id=\"stock_0.002053\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002053\">云南能投</a></span><span id=\"quote_0.002053\"></span>：所属公司2025年度累计获得国家可再生能源电价附加资金补助总计6.18亿元</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.002053\">云南能投</span>(002053)9月29日公告，公司的全资子公司石林云电投<span id=\"bk_90.BK0493\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0493\">新能源</a></span><span id=\"bkquote_90.BK0493\"></span>开发有限公司、会泽云能投<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0493\">新能源</span>开发有限公司、马龙云能投<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0493\">新能源</span>开发有限公司及控股子公司泸西县云能投风电开发有限公司于日前收到云南电网有限责任公司拨付的可再生能源电价附加资金补助合计2700.44万元。截至目前，公司所属公司2025年度累计获得国家可再生能源电价附加资金补助总计6.18亿元。</p><p>　　<strong><span id=\"stock_0.002846\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002846\">英联股份</a></span><span id=\"quote_0.002846\"></span>：前三季度净利同比预增1531.13%—1672.97%</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.002846\">英联股份</span>发布2025年前三季度业绩预告，预计公司前三季度实现归属于上市公司股东的净利润3450万元—3750万元，同比增长1531.13%—1672.97%。报告期内，公司营收和利润均实现增长，主要来自于快消品金属包装易开盖板块的贡献。</p><p>　　<strong><span id=\"stock_1.603799\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.603799\">华友钴业</a></span><span id=\"quote_1.603799\"></span>：子公司衢州新能源与LGES签订《三元前驱体供应协议》</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/1.603799\">华友钴业</span>(603799)9月29日公告，近日，公司子公司华友新能源科技（衢州）有限公司（简称“衢州新能源”）与LG Energy Solution, Ltd.（简称“LGES”）签订了《三元前驱体供应协议》。协议约定，2026年至2030年期间，衢州新能源预计向LGES及其指定采购商供应三元前驱体产品合计约7.6万吨。同时，公司子公司成都巴莫科技有限责任公司（简称“成都巴莫”）、BAMOTECHNOLOGY HUNGARY KFT.（简称“匈牙利巴莫”）与LGES及其子公司LGEnergy Solution Wroclaw Sp. Z.o.o.（简称“LGES波兰工厂”）签订三元正极材料《基本采购合同》。合同约定，2026年至2030年期间，匈牙利巴莫预计向LGES及其子公司LGES波兰工厂销售电池三元正极材料合计约8.8万吨。上述产品预计销量均为初步约定，实际需求量将根据LGES及LGES波兰工厂的需求调整更新，最终采购量以双方后续签订的采购订单为准。</p><p>　　<strong><span id=\"stock_0.301095\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.301095\">广立微</a></span><span id=\"quote_0.301095\"></span>：拟与浙江大学签署硅光技术及量测装备联合研发中心共建协议</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.301095\">广立微</span>(301095)9月29日公告，公司拟与浙江大学签署《共建“浙江大学-<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.301095\">广立微</span>硅光技术及量测装备联合研发中心”协议》，共同开展晶圆级硅光测试设备、硅光器件良率提升解决方案以及硅光高效量产光电监控方案研发，并建立校企深度融合联动的人才引进与培养机制。公司计划3年内投入中心的资金规模不低于1500万元。</p><p>　　<strong><span id=\"stock_0.000039\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.000039\">中集集团</a></span><span id=\"quote_0.000039\"></span>：拟3亿元—5亿元回购A股股份</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.000039\">中集集团</span>(000039)9月29日公告，公司拟使用自有资金，以集中竞价交易方式回购公司部分A股股份，拟回购金额不超过5亿元（含），不低于3亿元（含）；回购价格不超过12.01元/股（含）。</p><p>　　<strong><span id=\"stock_0.002324\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002324\">普利特</a></span><span id=\"quote_0.002324\"></span>：拟投资建设年产6GWh<span id=\"bk_90.BK0988\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0988\">钠离子电池</a></span><span id=\"bkquote_90.BK0988\"></span>生产基地</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.002324\">普利特</span>(002324)9月29日公告，公司控股孙公司广东海四达钠星技术有限公司（简称“海四达钠星”）与内江经济技术开发区管理委员会签订《海四达钠星年产6GWh<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0988\">钠离子电池</span>生产基地项目投资协议》。双方就海四达钠星拟在内江经开区成立子公司新建年产6GWh<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0988\">钠离子电池</span>生产基地项目等相关条款达成一致。本项目拟规划的主要建设内容为投资建设6GWh钠离子电池生产基地项目，其中一期设计产能2GWh；二期扩建产能4GWh，预计在一期项目投产后24个月内启动建设。</p><p>　　<strong><span id=\"stock_0.000004\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.000004\">*ST国华</a></span><span id=\"quote_0.000004\"></span>：全资子公司预中标“克融云智算中心二期三标段”项目</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.000004\">*ST国华</span>(000004)9月29日公告，公司全资子公司北京智游网安科技有限公司于近日参与了“克融云智算中心二期三标段”项目的投标，招标单位为新疆克融云算数字科技有限公司。2025年9月29日，中国招标投标公共服务平台发布了相关中标候选人公示。第一名中标候选人为北京智游网安科技有限公司，投标报价约为2.36亿元。</p><p>　　<strong><span id=\"stock_0.002708\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002708\">光洋股份</a></span><span id=\"quote_0.002708\"></span>：拟投资设立<span id=\"stock_0.300024\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300024\">机器人</a></span><span id=\"quote_0.300024\"></span>业务公司</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.002708\">光洋股份</span>(002708)9月29日公告，公司于9月28日召开第五届董事会第十六次会议审议通过了《关于投资设立<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.300024\">机器人</span>业务公司的议案》，公司全资子公司黄山光洋传动科技有限公司（简称“光洋传动科技”），拟以货币资金及非货币资产出资设立其全资子公司黄山光洋<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.300024\">机器人</span>有限公司（简称“光洋机器人公司”，暂定名），光洋机器人公司注册资本为1亿元。公司在安徽省黄山高新区内投资10亿元建设年产6000万套高端新能源汽车及机器人用精密零部件项目，全资子公司光洋传动科技为投资建设主体。为加速公司机器人用精密零部件项目的研发进程和业务布局，公司设立光洋机器人公司作为独立运营主体，持续加大公司在机器人业务方面的研发装备投入。</p><p class=\"em_media\">（文章来源：<span id=\"stock_0.300059\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300059\">东方财富</a></span><span id=\"quote_0.300059\"></span>研究中心）",
+      "source": {
+        "title": "东方财富研究中心"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        12,
+        33,
+        1,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "A股三大指数收涨：创业板指涨近3% 证券与电池板块大涨",
+      "link": "http://finance.eastmoney.com/news/1345,202509293526305867.html",
+      "published": "Mon, 29 Sep 2025 15:00:38 +0800",
+      "summary": "<p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/sh000001.html\" target=\"_blank\"><img alt=\"K图 000001_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=1.000001&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/sz399001.html\" target=\"_blank\"><img alt=\"K图 399001_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=0.399001&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/sz399006.html\" target=\"_blank\"><img alt=\"K图 399006_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=0.399006&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p>　　A股三大指数今日集体上涨，截止收盘，沪指涨0.90%，收报3862.53点；深证成指涨2.05%，收报13479.43点；创业板指涨2.74%，收报3238.01点。沪深两市成交额达到21615亿，较上一交易日放量146亿。<br /></p><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_Promo_Module_Start --><center style=\"text-align: left;\"><div class=\"em_promo_module\" name=\"%u725B%u718A%u98CE%u5411%u6807%282025-09-29%29\" style=\"display: none;\"> </div> </center><!-- EM_Promo_Module_End --><p style=\"display: none; height: 1px; overflow: hidden;\"> </p><!-- EM_Promo_Module_Start --><center style=\"text-align: left;\"><div class=\"em_promo_module\" name=\"%u5927%u76D8%u5F02%u52A8%282025-09-29%29\" style=\"display: none;\"> </div> </center><p>　　行业板块多数收涨，<span>能源金属、</span>证券、电池、贵金属板块大涨，<span>钢铁行业</span>、多元金融、有色金属、保险板块涨幅居前，教育板块跌幅居前。</p><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/90.BK0473\" target=\"_blank\"><img alt=\"K图 BK0473_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=90.BK0473&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/90.BK1033\" target=\"_blank\"><img alt=\"K图 BK1033_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=90.BK1033&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p>　　个股方面，上涨股票数量超过3500只，逾60只股票涨停。大金融板块集体爆发，<span id=\"stock_0.002670\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002670\">国盛金控</a></span><span id=\"quote_0.002670\"></span>涨停创新高，<span id=\"stock_0.000776\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.000776\">广发证券</a></span><span id=\"quote_0.000776\"></span>、<span id=\"stock_1.601688\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.601688\">华泰证券</a></span><span id=\"quote_1.601688\"></span>双双涨停。<span id=\"bk_90.BK0493\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0493\">新能源</a></span><span id=\"bkquote_90.BK0493\"></span>板块走强，其中绿色甲醇概念股表现活跃，<span id=\"stock_0.002140\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002140\">东华科技</a></span><span id=\"quote_0.002140\"></span>2连板，<span id=\"stock_0.002911\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002911\">佛燃能源</a></span><span id=\"quote_0.002911\"></span>首板涨停。<span id=\"bk_90.BK0989\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0989\">储能</a></span><span id=\"bkquote_90.BK0989\"></span>概念股反弹，<span id=\"stock_0.002150\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002150\">通润装备</a></span><span id=\"quote_0.002150\"></span>4天2板。<span id=\"bk_90.BK0478\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0478\">有色金属</a></span><span id=\"bkquote_90.BK0478\"></span>板块全天走高，<span id=\"stock_0.000426\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.000426\">兴业银锡</a></span><span id=\"quote_0.000426\"></span>首板涨停。此外<span id=\"bk_90.BK1036\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1036\">半导体</a></span><span id=\"bkquote_90.BK1036\"></span>产业链午后回暖，<span id=\"stock_0.300604\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300604\">长川科技</a></span><span id=\"quote_0.300604\"></span>大涨续创历史新高。<br /></p><p style=\"text-align: center;\"><a href=\"https://acttg.eastmoney.com/pub/xxlout_khmbdfcfappnew_random_0007467a\"><img class=\"em_handle_adv_close\" src=\"https://np-newspic.dfcfw.com/download/D25753173264126031117_w690h389.jpg\" /></a></p><p>　　<strong>行业资金流向：81.52亿净流入<span id=\"bk_90.BK0473\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0473\">证券</a></span><span id=\"bkquote_90.BK0473\"></span></strong></p><p>　　行业资金方面，截至收盘，<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0473\">证券</span>、<span id=\"bk_90.BK0447\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0447\">互联网服务</a></span><span id=\"bkquote_90.BK0447\"></span>、<span id=\"bk_90.BK1037\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1037\">消费电子</a></span><span id=\"bkquote_90.BK1037\"></span>等净流入排名靠前，其中<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0473\">证券</span>净流入81.52亿。</p><center><img src=\"https://np-newspic.dfcfw.com/download/D25194155741916452790_w868h365.jpg\" style=\"border: #d1d1d1 1px solid; padding: 3px; margin: 5px 0;\" width=\"580\" /></center><p>　　净流出方面，<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK1036\">半导体</span>、<span id=\"bk_90.BK0448\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0448\">通信设备</a></span><span id=\"bkquote_90.BK0448\"></span>、<span id=\"bk_90.BK0465\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0465\">化学制药</a></span><span id=\"bkquote_90.BK0465\"></span>等净流出排名靠前，其中<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK1036\">半导体</span>净流出53.81亿元。</p><center><img src=\"https://np-newspic.dfcfw.com/download/D24751975990559743913_w868h363.jpg\" style=\"border: #d1d1d1 1px solid; padding: 3px; margin: 5px 0;\" width=\"580\" /></center><p>　　<strong>今日要闻</strong></p><p>　　<a href=\"http://finance.eastmoney.com/a/202509293526286631.html\"><strong>中共中央政治局召开会议 讨论拟提请二十届四中全会审议的文件</strong></a></p><p>　　中共中央政治局9月29日召开会议，研究制定国民经济和社会发展第十五个五年规划重大问题。会议决定，中国共产党第二十届中央委员会第四次全体会议于10月20日至23日在北京召开。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202509293526234728.html\"><strong>发生了什么？“牛市旗手”突然大涨</strong></a></p><p>　　消息面上，近日，央行会议指出，要落实落细适度宽松的货币政策，引导金融机构加大货币信贷投放力度，用好证券、基金、<span id=\"bk_90.BK0474\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0474\">保险</a></span><span id=\"bkquote_90.BK0474\"></span>公司互换便利和股票回购增持再贷款。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202509293526177915.html\"><strong>两大利好重磅驱动！固态电池概念飙升！</strong></a></p><p>　　据科技日报，清华大学化工系教授张强领衔的团队日前在<span id=\"bk_90.BK0574\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0574\">锂电池</a></span><span id=\"bkquote_90.BK0574\"></span>聚合物电解质研究领域取得重要进展，相关成果已在线发表于《自然》（Nature）上；有机构指出，<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0989\">储能</span>爆发直接推高锂电景气度，锂电材料价格谈判已率先启动，铁锂反馈大厂开始抢货锁定明年产能。</p><p>　　<a href=\"https://finance.eastmoney.com/a/202509293525722430.html\"><strong>终端价普涨！茅台9月动销同比增20% 机构称白酒行业底部愈发清晰</strong></a></p><p>　　酒业独立评论人肖竹青近日对澎湃新闻记者表示，尽管整体市场疲软，茅台在近期动销表现强劲，多地出货量环比增长15%-35%，部分区域甚至超过去年同期。</p><p><strong>　　机构观点</strong></p><p>　　<strong><span id=\"stock_1.601788\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.601788\">光大证券</a></span><span id=\"quote_1.601788\"></span>：节前指数或维持震荡格局</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/1.601788\">光大证券</span>认为，沪指目前仍在区间震荡的格局，节前大概率延续震荡之势；市场风格方面，科技赛道短期休整，不改中期上行趋势。方向上，合肥国际<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0493\">新能源</span>汽车大会9月29日开幕，计划投入消费券及补贴超1亿元，或将刺激<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0493\">新能源</span>汽车相关概念。</p><p>　　<strong><span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/1.601688\">华泰证券</span>：适度向低位板块做切换，10月将迎来政策及业绩布局窗口期</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/1.601688\">华泰证券</span>研报表示，近期A股市场进入上行平台期，结合日历效应来看，节前投资者情绪或以避险为主，但考虑到资金正反馈仍在持续、基本面改善仍在蓄势，市场或偏向缩量震荡。节后，宏观不确定性减弱，投资者交投意愿存在回暖动力，市场进入政策及业绩布局的窗口期。配置上，考虑到上周TMT板块成交额占比回升、季末资金存在风格调整需求，建议投资者小幅调整仓位，关注主线低位板块，如港股科技、国产算力、<span id=\"stock_0.300024\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300024\">机器人</a></span><span id=\"quote_0.300024\"></span>，“反内卷”中化工、<span id=\"bk_90.BK1033\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1033\">电池</a></span><span id=\"bkquote_90.BK1033\"></span>及大众消费龙头。</p><p>　　<strong><span id=\"stock_1.601995\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.601995\">中金公司</a></span><span id=\"quote_1.601995\"></span>：中美信用周期或再迎拐点</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/1.601995\">中金公司</span>研报认为，中美信用周期可能会迎来各自的拐点，这对于未来中美两地市场和资产走向有重要启示。简言之，美国信用周期在美联储降息后可能重启修复，甚至存在“过热”风险；中国信用周期经历了一年的修复后受高基数影响可能震荡甚至走弱，需要政策加大对冲力度。如果说三季度还不明显的话，四季度随着美联储降息落地和“924”行情一周年，这一效果将开始逐步显现，值得重视。</p><p>　　<strong><span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.000776\">广发证券</span>：Q4日历效应显现，看好顺周期行业及高增长板块</strong></p><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/0.000776\">广发证券</span>发布研报称，进入四季度，市场板块结构上存在一个重要特征：05年至今，顺周期行业在四季度的上涨概率超过65%，且有超过60%的概率跑赢沪深300。但需要满足一定条件，即“顺周期”行业在四季度的“日历效应”基于宏观经济基本面变好的预期。在宏观基本面亮点不多，但产业赛道活跃年份，四季度股价对来年指引作用更强，业绩真空期提前演绎来年高增长板块。</p><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_Module_Extend_Start --><center style=\"text-align: left;\"><div class=\"em_module_extend\" style=\"display: none;\"> </div></center>",
+      "source": {
+        "title": "东方财富Choice数据"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        7,
+        0,
+        38,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "一年三募累计超168亿港元 地平线资金“饥渴症”背后",
+      "link": "http://finance.eastmoney.com/news/1354,202509283525642131.html",
+      "published": "Mon, 29 Sep 2025 00:35:58 +0800",
+      "summary": "<p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/116.09660\" target=\"_blank\"><img alt=\"K图 09660_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=116.09660&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p>　　地平线<span id=\"stock_0.300024\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300024\">机器人</a></span><span id=\"quote_0.300024\"></span>（09660.HK，以下简称“地平线”）再度开启“输血”模式。9月26日，地平线公告称，拟以每股9.99港元配售超6亿股，净筹资约63.4亿港元（约58亿元人民币）。<br /></p><p>　　这已是地平线自2024年10月港股IPO（首次公开募股）募资58.7亿港元后，一年内的第三次融资——6月刚完成46.7亿港元配售，三次累计募资超168亿港元。</p><p>　　频繁融资背后，是地平线持续亏损、并加大对Robotaxi赛道前所未有的激进押注。就在募资公告前半个月，地平线刚刚与哈啰出行签署战略合作协议，双方宣布以“技术基座公司+运营商”模式联合开发Robotaxi，目标2026年实现前装车型量产，2027年部署超5万辆。</p><p>　　<strong>一年三募</strong></p><p>　　地平线此次配售价较公告前一日收盘价10.6港元折让5.75%，较截至及包括最后交易日的最后5个连续交易日在香港联交所所报平均收盘价每股约10.364港元折让3.61%；及截至及包括最后交易日的最后10个连续交易日在联交所所报平均收盘价每股约10.36港元折让约3.57%。</p><p>　　这一消息直接让地平线的股价在公告当日进一步下跌，截至9月26日收盘，地平线股价9.7港元，降8.49%，甚至低于此次的配售价。</p><p>　　根据公告，资金将主要用于四大方向：扩大海外市场业务；投资研发中高阶辅助驾驶解决方案；投资Robotaxi等新兴领域；对上下游合作伙伴进行策略性投资。</p><p>　　而从融资节奏看，地平线已成为2025年港股增发市场最“急”的玩家之一。</p><p>　　2024年10月完成IPO募资后，6月，地平线再完成一轮配售，每股配售价6.93港元，募资净额46.74亿港元。截至2025年6月，公司IPO加上6月配售的未动用资金超80亿港元，相当于2024年营收的3倍多。</p><p>　　此次再融63.4亿港元，亦引发市场对地平线“刚上市就圈钱”“烧钱无底洞”等质疑。但地平线的财务状况显示，即使公司营收快速增长，但亏损持续扩大。</p><p>　　2021-2023年，地平线分别亏损20.64亿元、87.2亿元及67.39亿元，三年累计亏损超175亿元。即便2024年全年实现盈利，归母净利润23.47亿元，但主要是优先股等金融负债公允价值变动收益增加，2024年经调整亏损净额为16.81亿元，同比扩大2.8%。</p><p>　　地平线8月下旬发布的2025年上半年财报显示，营收15.67亿元，同比增长67.6%；期内亏损从去年同期的50.98亿元扩大至52.33亿元；经调整经营亏损同比增长34.9%至11.11亿元。毛利润达10.24亿元，综合毛利率65.4%；截至6月底，现金储备161亿元。</p><p>　　研发及销售投入是烧钱主因。2025年上半年，地平线研发开支同比增加62%至23亿元，销售及营销开支同比增加37.1%至2.72亿元，二者之和远超同期收入。</p><p style=\"text-align: center;\"><a href=\"https://acttg.eastmoney.com/pub/xxlout_khmbdfcfappnew_random_0007467a\"><img class=\"em_handle_adv_close\" src=\"https://np-newspic.dfcfw.com/download/D25753173264126031117_w690h389.jpg\" /></a></p><p>　　<strong>重注Robotaxi</strong></p><p>　　“不造车”的地平线此时再融资，也体现了公司对Robotaxi的“破釜沉舟”。地平线创始人余凯曾对外阐释布局Robotaxi的逻辑——“技术拐点已至”。</p><p>　　之前受访，余凯曾表示“前面10年是蛰伏期，但未来5年肯定不是，成本下降、无图技术突破正带来泛化效率提升”。2025年初，余凯还曾提出“3年handsoff（脱手）、5年eyesoff（闭眼）、10年mindoff（无需动脑）”的自动驾驶发展路径。</p><p>　　市场前景数据支撑余凯的判断。瑞银报告预测，到本世纪30年代后期，中国Robotaxi服务市场的潜在规模将达到1830亿美元，届时全国将有约400万辆Robotaxi投入运营。<span id=\"stock_1.601555\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.601555\">东吴证券</a></span><span id=\"quote_1.601555\"></span>研报预计，到2030年，Robotaxi市场规模将达2000亿元，占B端共享出行比例有望提升至36%左右。</p><p>　　技术与产品成熟度也是地平线下注的底气。</p><p>　　截至2025年8月，地平线征程系列芯片前装量产出货已突破1000万套，积累了覆盖超过3万种场景的数据集。其最新HSD系统采用一段式端到端算法，从“光子输入”到“轨迹生成”直接映射，感知、预测、规划模块全链路融合为统一模型。</p><p>　　而作为首款搭载地平线征程6P及HSD城区辅助驾驶系统的车型，星途ET5将于2025年11月上市。随着星途ET5即将推向市场，地平线HSD商业化步伐也正加速中。</p><p>　　然而，技术理想的背后，地平线面临着现实的生存压力。</p><p>　　客户结构过度集中一直是其痛点。2025年上半年，地平线前五大客户收入占比仍高达52.48%，其中第一大客户占比19.7%。2021年至2024年上半年，其前五大客户收入占比均超50%，2024年上半年甚至达到77.9%。</p><p>　　更严峻的是，车企客户纷纷自研芯片，地平线的市场空间被挤压。除了<span id=\"stock_0.002594\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002594\">比亚迪</a></span><span id=\"quote_0.002594\"></span>（002594.SZ）还在通过“天神之眼”方案推出“地平线芯片+自研算法”的混合模式外，<span id=\"stock_105.LI\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.LI\">理想汽车</a></span><span id=\"quote_105.LI\"></span>（02015.HK）自研智驾芯片M100已于2025年一季度样片回片，<span id=\"stock_106.NIO\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.NIO\">蔚来</a></span><span id=\"quote_106.NIO\"></span>（NIO）、小鹏（09868.HK）等也都在自研<span id=\"bk_90.BK1127\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1127\">AI芯片</a></span><span id=\"bkquote_90.BK1127\"></span>。</p><p>　　地平线的融资紧迫感，也藏着余凯对行业窗口期的判断。国内智驾芯片国产化率太低，Robotaxi商业化还有3-5年空窗期，现在不把技术、市场、生态的壁垒筑起来，等<span id=\"stock_105.NVDA\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.NVDA\">英伟达</a></span><span id=\"quote_105.NVDA\"></span>（NVDA）、<span id=\"stock_105.TSLA\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.TSLA\">特斯拉</a></span><span id=\"quote_105.TSLA\"></span>（TSLA）把“坑”占满，再进场就只能喝汤。</p><p>　　<strong>再亏多久</strong></p><p>　　地平线重注选择的Robotaxi合作伙伴哈啰出行，本身也刚刚入局这一赛道。</p><p>　　6月，哈啰联合蚂蚁集团、<span id=\"Info.116.03750\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/116.03750\">宁德时代</a></span>（300750）成立造父智能科技有限公司，聚焦L4级自动驾驶研发，三方首期合计出资超过30亿元。9月11日，2025Inclusion·外滩大会上，哈啰又与地平线签署战略合作协议，计划基于Robotaxi运营场景，联合打造低成本、高安全的智能驾驶技术，推动商业化落地。9月17日，哈啰宣布获得<span id=\"stock_106.BABA\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.BABA\">阿里巴巴</a></span><span id=\"quote_106.BABA\"></span>（09988.HK）战略投资。</p><p>　　哈啰对Robotaxi的定位是打造“多层次可接入运营平台”，成为Robotaxi界的“安卓”。哈啰联合创始人兼CEO杨磊表示：“我们现在是两条腿走路，一条是以哈啰全栈自研的技术方案产品为主，另外一条是跟地平线联合开发的L4产品。”</p><p>　　双方在合作中的定位也十分清晰，地平线为“技术基座公司”，而哈啰则是“运营商”。</p><p>　　但这种合作模式可能存在隐患。外滩大会上，哈啰发布的首款前装量产Robotaxi车型“HR1”基于东风启辰VX6冗余底盘平台打造，与此前合作的<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/116.03750\">宁德时代</span>并无关联。有分析指出，哈啰当前的模式本质上仍停留在“系统集成”层面，远非真正意义上的全链条自主研发。</p><p>　　相应地，除了此次与哈啰的合作外，地平线的野心更不止于国内。此次融资部分资金将用于扩大海外市场业务，但出海仍面临竞品围剿与技术管制。</p><p>　　全球智驾芯片市场头部卡位显著，<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/105.NVDA\">英伟达</span>、Mobileye等都是深耕市场十余年的老玩家。地平线要么和博世这类行业顶流深度绑定，要么绕过中间商直接和车企谈，但那样又回到“谁掌握技术”的问题。</p><p>　　同时，美国对高算力芯片的出口限制卡着脖子，地平线的高算力芯片想进欧美市场得先过合规审批，更要规避进入限制清单。</p><p>　　目前Robotaxi赛道仍没跑出一家真正成功的公司。<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/105.TSLA\">特斯拉</span>（TSLA）FSD（完全自动驾驶）8月遭遇7名车主因“功能未兑现”起诉，要求退钱加三倍赔偿，案件已正式立案。<span id=\"stock_105.BIDU\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.BIDU\">百度</a></span><span id=\"quote_105.BIDU\"></span>（09888.HK）萝卜快跑虽已在上海<span id=\"stock_1.600639\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.600639\">浦东金桥</a></span><span id=\"quote_1.600639\"></span>实现“主驾无人”常态化运营，但非纯视觉技术路线，也让<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/105.BIDU\">百度</span>创始人李彦宏在年中会反思。</p><p>　　监管层也对智能驾驶频频提示风险。在车企都开始谨言慎行时，地平线押注海外和Robotaxi风险可想而知。更重要的是，尽管营收增加，但地平线亏损未减反而有所扩大：投资人在10年陪伴后，还愿意忍受地平线“战略性亏损”到几时？</p><p class=\"em_media\">（文章来源：财中社）",
+      "source": {
+        "title": "财中社"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        28,
+        16,
+        35,
+        58,
+        6,
+        271,
+        0
+      ]
+    },
+    {
+      "title": "英法德：联合国已对伊朗恢复实施制裁！欧盟宣布：将立即恢复！伊朗军方：已准备好应对任何威胁",
+      "link": "http://finance.eastmoney.com/news/1351,202509283525675537.html",
+      "published": "Mon, 29 Sep 2025 00:35:42 +0800",
+      "summary": "<p>　　央视新闻消息，当地时间9月28日，欧盟对外行动署发表声明宣布，<strong>欧盟将立即着手重新实施所有先前解除的对伊朗核相关制裁。</strong></p><p>　　欧盟称，制裁的恢复是因伊朗未履行《联合全面行动计划》承诺而触发的“快速恢复制裁”机制所致。</p><p>　　为施压伊朗与美国恢复核谈判，英国、法国和德国8月28日以伊朗未能履行伊核协议为由，通知安理会，依据第2231号决议启动“快速恢复制裁”机制。如果安理会未能在30天内就延长对伊制裁豁免期限通过决议，相关制裁将恢复。</p><p>　　9月19日，因美、英、法等9国投反对票，安理会未能通过继续解除对伊朗制裁措施的决议草案。<strong>9月26日，联合国安理会就中国和俄罗斯提出的延长伊核协议制裁豁免的决议草案进行表决，相关决议草案未能通过。</strong>根据伊核协议及安理会第2231号决议的相关规定，针对伊朗的制裁在美东时间9月27日恢复生效。</p><p>　　美东时间9月27日，<strong>英国、法国和德国表示，联合国已对伊朗恢复实施制裁。</strong></p><p>　　英国、法国和德国三国在一份联合声明中表示，重新实施联合国制裁并不意味着外交的终结。三国敦促伊朗避免采取任何升级行动，并重新遵守其具有法律约束力的保障监督义务。</p><p>　　<strong>伊朗军方：已准备好应对任何威胁</strong></p><p>　　当地时间28日，伊朗武装部队总参谋长穆萨维在会见伊朗伊斯兰革命卫队总司令帕克普尔时表示，团结是维护伊朗领土完整的保障 。穆萨维表示，武装部队已做好充分准备，以有力的方式应对任何威胁和潜在的侵略。</p><p>　　帕克普尔也表示，革命卫队已完全准备好对任何威胁和冒险行为作出回应。</p><p>　　伊朗武装部队高级发言人谢卡尔希表示，美方无权干涉伊朗导弹射程。</p><p>　　<strong>伊朗外交部：英法德美滥用争端解决机制</strong></p><p>　　当地时间9月28日，伊朗外交部发布关于欧洲三国和美国声称恢复联合国安理会已终止的对伊制裁决议声明。</p><center><img src=\"https://np-newspic.dfcfw.com/download/D25368395884150561590_w798h448.jpg\" style=\"border: #d1d1d1 1px solid; padding: 3px; margin: 5px 0;\" /></center><p style=\"text-align: center;\">图片来源：央视新闻</p><p style=\"text-align: center;\"><a href=\"https://acttg.eastmoney.com/pub/xxlout_khmbdfcfappnew_random_0007467a\"><img class=\"em_handle_adv_close\" src=\"https://np-newspic.dfcfw.com/download/D25753173264126031117_w690h389.jpg\" /></a></p><p>　　声明表示，英国、德国、法国三国及美国滥用《联合全面行动计划》（伊朗核协议）和联合国安理会第2231号决议中规定的争端解决机制，企图恢复已废止的对伊制裁决议，此举非法且毫无根据。伊朗外交部强调，第2231号决议所涉及的对伊朗和平核计划的限制应在规定期限2025年10月18日如期终结。</p><p>　　声明说，英法德在美国的煽动与施压下启动所谓“快速恢复制裁”机制，但这些国家未能履行其在伊核协议下的承诺，英法德支持或默许以色列与美国对伊朗在核协议框架下并受国际原子能机构监管的核设施发动袭击，严重违反国际法，违背了伊核协议的实质与精神。</p><p>　　声明指责欧洲三国与美国一样，出于明显恶意，持续严重违反了协议的条款与精神，并且在处理争端过程中毫无善意。</p><p>　　同时，声明重申伊朗严格履行了伊核协议义务，并提出了多项倡议与建议，旨在推动各方全面重返履约，或达成新的经谈判的谅解来解决核问题，但均因美欧国家缺乏诚意和善意而以失败告终。</p><p class=\"em_media\">（文章来源：每日经济新闻）",
+      "source": {
+        "title": "每日经济新闻"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        28,
+        16,
+        35,
+        42,
+        6,
+        271,
+        0
+      ]
+    },
+    {
+      "title": "小米涨价，远超iPhone",
+      "link": "https://36kr.com/p/3487769626680199?f=rss",
+      "published": "2025-09-29 20:24:31  +0800",
+      "summary": "<p><strong>作者&nbsp;|&nbsp;</strong>宋婉心</p>\n  <p><strong>编辑&nbsp;|&nbsp;</strong>张帆</p>\n  <p><strong>封面来源&nbsp;|&nbsp;</strong>视觉中国</p>\n  <p>2021年底，小米首次宣布在产品上对标苹果、学习苹果。如今五年探索之后，小米17系列产品线全面对齐苹果。</p>\n  <p>值得注意的是，小米17定价4499起，标准版保持了上一代小米15的定价水平，高端配置则分别较上一代涨价200元至500元。</p>\n  <p>小米手机的十余代产品以来，从一开始的性价比定位到高端定位，其手机定价步步高升，甚至超过了苹果的同期涨幅。与此同时，尤其近五年来，苹果则“加量不加价”。</p>\n  <p><strong>01 价格涨幅大于苹果</strong></p>\n  <p>梳理从小米1的定价涨幅，可以发现，从小米6首次提价开始，此后其每年定价涨幅几乎均超过10%——小米6提价15%、小米8提价17.4%、小米9提价11.1%。</p>\n  <p>2020年，小米发布小米10手机，这一代开始，小米开始冲击高端市场，价格直接从2999元起跃升至3999元起，涨幅达1000元，同比涨幅更是超过30%，是幅度最大的一次调整。</p>\n  <p>此后，3999起的定价维持了三年，去年的小米15起价定价再次上调12.5%至4499元起，并在小米17维持了这一定价。可以看出，小米数字系列在4000元至5000元价位段的高端定位已经稳固。</p>\n  <p>总体趋势上，小米数字系列的价格在经过小米10系列冲高后，在4000元档位（小米10-14）经历了长期的稳定和巩固期。从小米15开始，价格基准线成功上移至4500元档位，并由此开启新的阶段。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250929/v2_2f62aa74cef34ab19480d0f015acb8e7@5238126_oswg9761oswg753oswg532_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">（制图：36氪）</p>\n  <p>同期的苹果定价来看，在小米6涨价15%的2017年，苹果的iPhone8仅涨价9.3%，除却iPhoneX十周年纪念版大幅涨价，iPhone12抬升至6299元起后，iPhone13降价至5999元，且这一水平维持至今。<br />&nbsp;</p>\n  <p>因此，如果单看数字系列标准版的起售价，苹果的涨价幅度远低于小米的价格上探幅度，近年来更是多次呈现 “加量不加价” 的态势。</p>\n  <p>可以看出，即使在苹果的市场上升期（iPhone7-11），苹果也维持了较为稳定的价格上涨节奏，进入5G时代后，iPhone 12因支持5G和屏幕更换等因素价格有所上调，但从 iPhone 13开始，苹果继续执行了极其稳定的定价策略。</p>\n  <p>眼下，5999元起的iPhone和4499元起的小米，定价差距已经缩小至1500元。而在2011年，iPhone 4S定价4988元起，比1999元的小米1高出近3000元。</p>\n  <p><strong>02 小米苹果近身肉搏</strong></p>\n  <p>涨价伴随着阵痛。<strong>过往小米大幅提价的节点，短期销量都会出现不同程度的下滑。</strong></p>\n  <p>据有关报告显示，在小米10发布的2020年，第二季度小米销量暴跌35%，在国内市场下滑至第五位。 在海外市场，尤其是贡献海外市场营收近一半的印度，根据Canalys数据，当期小米第二季度智能手机市场整体萎缩48%，出货量几乎腰斩。</p>\n  <p>在此之前，2016年小米也出现过显著的销量下滑，那年被看作小米的低谷。IDC数据显示，2016年小米手机全年出货量同比下跌达36%，市场份额也从2015年的15.1%下跌至8.9%。</p>\n  <p>为了扭转局势，雷军才在2017年推出了首次提价的小米6，虽然该机型被称为“神机”，但受限于供应链问题，销量仅550万部。</p>\n  <p>虽然每代手机短期内销量会受提价影响，但拉长时间来看，<strong>小米手机的销量走势并没有因为持续提价而崩溃，尤其在转向高端定位后，销量反而稳步上升</strong>——小米14预计在生命周期内的销量为880万至1200万台，而小米15仅上市两个月便近200万销量。</p>\n  <p>据Canalys数据，小米在高端化后的第二年，也就是2021年，第二季度全球智能手机市场销量超越了苹果，首次晋升全球第二。</p>\n  <p><strong>此外，盈利能力是小米涨价策略的核心胜利。</strong>冲击高端最直接的成果就是毛利率和单机利润的大幅提升。尽管雷军曾在2018年时承诺，小米的硬件综合净利润率不会超过5%。</p>\n  <p>财报显示，小米手机业务的毛利率已从早期的2%左右提升至近年来的两位数水平，2016年小米手机业务毛利率为3.45%，高端化后，2021年该数据突破了10%，近三年维持在12%左右。</p>\n  <p>比较而言，苹果的硬件毛利率则长期稳定在30%至40%，在硬件行业中处于顶端水平。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250929/v2_96838a409b64464690cf3526aef1a056@5238126_oswg151046oswg770oswg480_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">（小米手机业务毛利率趋势图&nbsp;制图：36氪）</p>\n  <p>不过今年iPhone17一经发布，竞争局势或许面临改变。</p>\n  <p>过往多年，iPhone在涨价幅度不高的背景下，采取“挤牙膏”的配置升级策略，以维持高毛利率。但随着近年苹果在中国市场份额不断下滑，iPhone17结束了长期的挤牙膏策略，背后是苹果试图挽救丢失的份额，而这当然也意味着将牺牲毛利。</p>\n  <p><strong>从“保毛利”转向“保份额”，苹果开始发力保护其高端市场，小米和苹果可以说站到了近身肉搏的位置。输赢无定。</strong></p>\n  <p><strong>03 估值与手机业务正在“脱钩”</strong></p>\n  <p>近年来，小米集团的估值逻辑正在经历一场深刻的重塑。<strong>其核心智能手机业务的毛利率波动，与公司整体市值的变化呈现出一种从 “强相关” 到 “逐渐脱钩” 的演变趋势。</strong></p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250929/v2_7abfe190f831447ea48bd729ee916449@5238126_oswg426058oswg1080oswg708_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">（小米上市至今股价趋势&nbsp;来源：Wind）</p>\n  <p>在小米发展初期以及2023年之前，投资者普遍将其视为一家互联网硬件公司，但其估值核心仍高度依赖硬件业务的规模和效率。</p>\n  <p>这一阶段，高毛利率通常意味着高端化战略成功（如小米 10、11 系列时期），会提振市场信心，推动估值上升。低毛利率则会被市场解读为 “以价换量”、缺乏核心竞争力，可能导致估值承压。</p>\n  <p>具体来看，在小米10时期，公司高端化初成，估值开启了上行通道。2020年年初，小米股价约在10至11港元区间，而到 2020 年年底，其股价已站上30港元。<strong>这意味着在小米10的生命周期内，公司市值增长了约2倍。</strong></p>\n  <p>这一时期，市场对小米的看法从“低端性价比手机厂商”开始向“具备高端能力和生态潜力的科技公司” 转变。</p>\n  <p>而到了小米11时期，其承接了小米10的成功，小米11系列在2021年初发布初期声势浩大，首销数据创下新高，随即小米股价在2021年1月一度触及35.9港元的历史高点，公司市值突破9000亿港元。</p>\n  <p><strong>但今年以来，小米估值逻辑与手机业务表现正在发生“脱钩”。</strong></p>\n  <p>今年中报，小米手机业务毛利率出现同比下滑，但小米的股价在2025年迄今涨幅超50%，并创下了历史新高的季度利润（调整后净利润108.3亿元）。这清晰地表明，当前资本市场对小米的估值逻辑已经不再单一地依赖于手机业务的毛利率。</p>\n  <p>这一现象背后的重要原因自然是小米汽车业务的爆发。除了汽车营收增长，更关键的是其毛利率高达26.4%，环比大幅提升3.3个百分点，不仅远高于手机业务，甚至开始接近公司整体毛利率（22.5%）。</p>\n  <p><strong>如今，手机毛利率不再是驱动小米估值变化的核心引擎，但仍是重要的健康度参考指标。其长期持续恶化仍会引起担忧，但短期的、有明确原因的波动已被市场宽容看待。</strong></p>\n  <p>小米的估值驱动主力，已从手机业务的盈利能力转向了电动汽车业务的增长前景和市场份额。资本市场正在用一套针对新能源科技公司的估值模型来重新评估小米。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250929/v2_36285735a6664b828c3ba14eaeea2f67@5238126_oswg787274oswg1000oswg634_img_png?x-oss-process=image/quality,q_90/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">关注获取更多资讯</p>",
+      "source": {
+        "title": "36氪"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        12,
+        24,
+        31,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "氪星晚报｜光线传媒积极探索微短剧市场并筹划组建相关公司 ；DeepSeek V3.2、GLM4.6等大模型即将发布；工信部等六部门印发《机械行业稳增长工作方案（2025-2026年）》",
+      "link": "https://36kr.com/p/3487509112232834?f=rss",
+      "published": "2025-09-29 19:37:01  +0800",
+      "summary": "<h2><strong>大公司：</strong></h2>\n  <p><a href=\"https://36kr.com/newsflashes/3487483104222340\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>OPPO回应做手持云台相机：产品已启动，计划于2026年内发布</strong></a></p>\n  <p>9月29日，OPPO表示，OPPO已启动新形态影像产品系列。新产品系列将基于OPPO在手机影像超过17年的技术积累，进一步拓展移动影像的体验，为影像创作提供更多的可能性。该系列新品计划于2026年内发布。（界面）</p>\n  <p><a href=\"https://36kr.com/newsflashes/3487436455091077\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>安德玛户外中国首家旗舰店于上海新天地启幕</strong></a></p>\n  <p>36氪获悉，9月29日，安德玛户外（Under Armour Explor）中国首家旗舰店于上海太平洋新天地正式启幕。据了解，安德玛户外已进驻22个省份和直辖市的高端购物中心与核心商圈，包括上海港汇恒隆广场、杭州万象城、深圳壹方城等地标性商业体。</p>\n  <p><a href=\"https://36kr.com/newsflashes/3487570074967177\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>厦钨新能：与中伟新材料股份有限公司签署《战略合作框架协议》</strong></a></p>\n  <p>36氪获悉，厦钨新能公告，公司与中伟股份于2025年9月29日签署《战略合作框架协议》。根据协议，自协议签署之日至2028年9月30日，双方预计四氧化三钴产品的供需量约为40,000吨/年；三元前驱体产品的供需量约为50,000吨/年；碳酸锂/磷酸锂的供需量约为15,000吨/年；回收料的供需量约为10,000吨/年。</p>\n  <p><a href=\"https://36kr.com/newsflashes/3487582117895045\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>东华科技：西藏扎布耶盐湖绿色综合开发利用万吨电池级碳酸锂项目将正式投产</strong></a></p>\n  <p>36氪获悉，东华科技公告，公司作为EPC总承包商承建的西藏扎布耶盐湖绿色综合开发利用万吨电池级碳酸锂项目，于2025年9月20日至24日顺利完成120小时的功能考核。公司于9月26日发布《关于西藏扎布耶盐湖绿色综合开发利用万吨电池级碳酸锂EPC总承包项目进展的公告》。完成功能考核是项目建设的正常进展，标志着该项目将正式投产。</p>\n  <p><a href=\"https://36kr.com/newsflashes/3487613165837446\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>光线传媒：积极探索微短剧市场并筹划组建相关公司</strong></a></p>\n  <p>36氪获悉，光线传媒在互动平台表示，公司始终高度关注微短剧市场发展趋势，目前正在结合自身资源优势积极探索该领域并已筹划投资组建相关公司。同时也请广大投资者理性对待市场热点，注意投资风险。</p>\n  <h2><strong>新产品：</strong></h2>\n  <p><a href=\"https://36kr.com/newsflashes/3487574966344577\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>DeepSeek V3.2、GLM4.6等大模型即将发布</strong></a></p>\n  <p>DeepSeek-V3.2即将发布，据了解，v3.2-base已上传至DeepSeek的HuggingFace官方页面，模型文件正在上传中，不过目前已下线。同时，智谱的GLM-4.6也即将发布，在Z.ai官网可以看到，GLM-4.5标识为上一代旗舰模型。（证券时报）</p>\n  <h2><strong>投融资：</strong></h2>\n  <p><a href=\"https://36kr.com/newsflashes/3487456213556102\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>“智策领航”完成天使+轮战略融资</strong></a></p>\n  <p>36氪获悉，近日，智策领航宣布完成天使+轮战略融资，由徐汇资本领投。本轮融资将主要用于人工智能技术研发、产品迭代和市场拓展。截至目前，公司累计融资额已达数千万元。</p>\n  <p><a href=\"https://36kr.com/newsflashes/3487352254585989\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>“灵猴机器人”完成超亿元A轮融资</strong></a></p>\n  <p>36氪获悉，近日，“灵猴机器人”宣布成功完成超亿元A轮融资。本轮融资由金鼎资本、博原资本、TCL创投共同领投，同时引入苏创投、东运创投、财通资本、银杏谷资本多家投资机构。本轮融资资金将主要用于工业自动化及通用机器人等领域核心零部件的研发、实验室建设以及产能的扩充。</p>\n  <p><a href=\"https://36kr.com/newsflashes/3487345328823169\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>名创优品旗下Top Toy或通过香港IPO募集约3亿美元</strong></a></p>\n  <p>据IFR援引知情人士报道，名创优品旗下Top Toy International可能通过在香港IPO筹集约3亿美元。（新浪财经）</p>\n  <p><a href=\"https://36kr.com/newsflashes/3487509067357061\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>九丰能源：拟投资不超过34.55亿元建设新疆煤制天然气项目</strong></a></p>\n  <p>36氪获悉，九丰能源公告，公司拟作为产业投资人，与新疆庆华、河南未来丝路清清洁能源合伙企业共同投资建设新疆庆华年产55亿立方米煤制天然气示范项目二期工程（年产40亿方煤制天然气项目），公司累计出资不超过34.55亿元，资金来源为自有或自筹，项目建设周期不超过36个月。公司将持有二期工程项目50%的权益（对应年产20亿方天然气）。</p>\n  <p><a href=\"https://36kr.com/newsflashes/3487669490932609\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>“迈科科技”获亿元级A轮融资</strong></a></p>\n  <p>36氪获悉，近日，“迈科科技”获亿元级A轮融资，本轮投资方为元禾璞华、隐山资本（普洛斯）、成都金控、成都高投创投、励石创投。资金将用于加大TGV工艺研发及生产。</p>\n  <h2><strong>今日观点：</strong></h2>\n  <p><a href=\"https://36kr.com/newsflashes/3487356766968966\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>富达国际：全球投资者对中国资产兴趣明显增加，在不断增持中国股票</strong></a></p>\n  <p>高盛表示，全球对冲基金上个月在中国境内股票市场的活跃度为近年来最高，与2021年时形成鲜明对比，当时一些客户认为中国市场“不可投资”。品浩表示，投资者从担心风险转向更怕踏空。官方数据显示，各类资产的外资流入都在增加，这种同步增长的现象过去十年仅出现过三次。总的来看，这些迹象表明中国市场正在好转。今年中国境内股票市场高达2.7万亿美元的涨势让人刮目相看，且无法忽视，而全球基金目前仍处于低配状态，意味着仍有大量空间可以加仓。“全球投资者对中国资产的兴趣明显增加，”富达国际的投资组合经理Joseph Zhang表示，他在不断增持中国股票。“今年的情况有所不同，对中国资产的重估不再是政策带动的热情使然，而是由基本面改善所驱动。投资者信心可能还会增强。”（新浪财经）</p>\n  <h2><strong>其他值得关注的新闻：</strong></h2>\n  <p><a href=\"https://36kr.com/newsflashes/3487486569831302\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>外交部：中方将增设青年科技人才签证即“K字签证”</strong></a></p>\n  <p>外交部发言人郭嘉昆主持例行记者会。有记者就中国推出“K字签证”相关问题提问。郭嘉昆表示，为促进中外青年科技人才交流与合作，中方决定在普通签证类别下，增设青年科技人才签证即“K字签证”。关于申办“K字签证”的具体事宜，请关注中国驻外使领馆即将发布的相关信息。（央视新闻）</p>\n  <p><a href=\"https://36kr.com/newsflashes/3487484955597956\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>国家发改委：支持民营企业等深度参与“人工智能+”行动</strong></a></p>\n  <p>国家发展改革委政策研究室副主任、新闻发言人李超9月29日表示，民营企业是参与“人工智能+”行动的主力军，以今年一季度为例，我国新设立人工智能软件研发类民营企业25.4万户。从成效看，民营企业是推动人工智能落地应用的先锋队，不少民营企业已经率先把人工智能运用到其生产工艺和业务流程当中。下一步，国家发展改革委将会同相关部门多措并举，支持包括民营企业在内的各类企业深度参与“人工智能+”行动。（中国网）</p>\n  <p><a href=\"https://36kr.com/newsflashes/3487465794247558\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>工信部等六部门印发《机械行业稳增长工作方案（2025-2026年）》</strong></a></p>\n  <p>36氪获悉，工信部等六部门印发《机械行业稳增长工作方案（2025-2026年）》。2025-2026年，机械行业运行保持平稳向好态势，重点产业链供应链韧性和安全水平持续提升，发展质量效益迈上新台阶，力争营业收入年均增速达到3.5%左右，营业收入突破10万亿元。重点细分行业规模稳中有升，新质生产力加快培育，企业竞争力进一步增强，优质装备供给能力显著提高，培育一批具有竞争力的中小企业特色产业集群和具有国际竞争力的产业集群。</p>",
+      "source": {
+        "title": "36氪"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        11,
+        37,
+        1,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "智驾“新人”印奇，和他的“AI+车”百亿产值目标",
+      "link": "https://36kr.com/p/3487609918086025?f=rss",
+      "published": "2025-09-29 19:22:38  +0800",
+      "summary": "<p>文｜周鑫雨</p>\n  <p>编辑｜苏建勋</p>\n  <p>低调了一年的智驾公司“千里科技”，正式对外做了品牌发布。</p>\n  <p>2025年9月28日，千里科技成立背后最重要的两人——千里科技董事长印奇、吉利汽车创始人李书福宣布，千里科技新的品牌英文名“AFARI”和品牌标识。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250929/v2_ce1351e1d38c41cebeaba3b0b6b0ab09@5783683_oswg160015oswg1708oswg1280_img_jpg?x-oss-process=image/quality,q_100/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">中：吉利汽车创始人李书福，右：千里科技董事长印奇。图源：作者拍摄</p>\n  <p>在这场首秀上，印奇将千里的业务进展和计划，浓缩成了两个关键词：<strong>商业化、国际化</strong>。</p>\n  <p>2025年8月，千里科技发布的2025年半年报显示，上半年公司实现营业收入41.84亿元，同比增长40.04%。</p>\n  <p>强劲的增长，实则主要来自前身“力帆科技”的汽车、摩托车业务，“AI+车”的杠杆之力还未体现。</p>\n  <p>关于“AI+车”的商业化，印奇的预期是：<strong>今年突破百亿元的产值，明年形成规模化的收入</strong>。</p>\n  <p>目前，千里科技旗下共有三大业务现：千里智驾（L2+到L4级智能驾驶方案）、千里智舱（自然交互座舱体验）、千里智行（Robotaxi）。</p>\n  <p>印奇告诉媒体，作为千里首个AI解决方案，智能辅助驾驶方案在明年能够形成规模化的商业收入；千里的座舱产品、Robotaxi业务，在明年也会有明确的进展。</p>\n  <p>第二个关键词，则是国际化。</p>\n  <p>早在2025年5月，印奇就在访谈中提到，千里科技与华为有两个差异，一个是开放，另一个则是国际化：“结合吉利的国际化积累，海外车企会是我们的重点。”</p>\n  <p>在品牌发布会上，千里智驾董事长兼CEO、千里科技联席总裁王军将国际化视作抢占市场份额的必要动作：“<strong>在全球能够达到三分天下有其一的份额，我们不能仅仅在国内参与竞争，一定要出海。</strong>”</p>\n  <p>印奇衡量智驾方案的标尺，是“含模量”，也就是大模型在“模型、规则、地图”体系中的占比。</p>\n  <p>他告诉媒体，目前，海外头部智驾解决方案的含模量，能达到80%-90%，国内大部分方案只有50%。千里的目标，则是在接下来6个月的时间里，将含模量提到海外头部水平。</p>\n  <p>如今，千里在国际化布局上，除了依托吉利的海外资源，还引入了全球化车企的资本——2025年9月25日，千里科技公告称，奔驰以约13.39亿元的价格受让千里3%的股份，成为其第五大股东。</p>\n  <p>奔驰的入股，意味着千里的全球化布局，有了一个坚实的工业体系后盾。在品牌见面会上，印奇回应奔驰的入股：“后续我们会跟奔驰，在质量和质控上进行紧密的战略合作。”</p>\n  <p>从创立旷视科技起，印奇在AI领域已有超过10年的经验。但对于智驾行业而言，他自称“新人”。</p>\n  <p>不过他认为，在智驾领域，先发的人往往有技术路线的包袱，千里对技术方案的心态更为开放：只要降低成本，且能规模化，就能采用，“<strong>我们第一次感受到有后发优势</strong>”。</p>\n  <p>在媒体群访中，围绕智驾的技术阶段、海外的业务布局、智驾的行业格局、千里的商业化和全球业务布局等问题，千里科技4名高管做出了回应。他们是：</p>\n  <ul>\n   <li>千里科技董事长印奇；</li>\n   <li>千里智驾董事长兼CEO、千里科技联席总裁王军；</li>\n   <li>千里智驾联席CEO、吉利控股集团首席智驾科学家陈奇；</li>\n   <li>千里智驾CTO杨沐。</li>\n  </ul>\n  <p>《智能涌现》对部分观点进行了整理：</p>\n  <ul>\n   <li>智驾的历史上有两条路线：一条是以特斯拉为代表的纯视觉模型方案，一条是以早期Waymo为代表的以“高清地图+规则”为核心的激光雷达系统。</li>\n  </ul>\n  <p>这两条路线今天已经非常收敛。未来最终的智驾系统，一定是以视觉感知为核心，加上更大的大模型为底层逻辑，在不同的场景下叠加特殊传感器去确保安全边界。但底层一定是一个“含模量”极高的大模型。</p>\n  <ul>\n   <li>现在市面上所有的智驾系统可以总结为“汉堡包理论”：最内核是一个模型，上层是基于规则的一套专家系统，在上层是地图体系。“含模量”指的就是模型、规则、地图在“汉堡包”中的比例。</li>\n  </ul>\n  <p><strong>市面上主流的智驾方案，总含模量可能不到50%。</strong>在国外，行业的标杆含模量能到80%-90%。我有信心在接下来6个月的时间里，千里的含模量达到80%-90%。</p>\n  <ul>\n   <li>团队合作模式在整个智驾范畴内经历过很多次不同的思潮。</li>\n  </ul>\n  <p>第一个阶段，一定是纯AI经历的团队才能做；第二个阶段，OEM的厂商都很自信，一定要自己来做才可控，现在到了一个理性和开放的状态。</p>\n  <p>在行业内，未来会涌现几个不同解决方案的体系，这些体系都会跟一些OEM厂商形成相对比较深度的关系。因为所有的AI系统，灵魂是数据，只有形成深度的链接，而不仅仅是甲乙方的关系</p>\n  <ul>\n   <li>中国的智驾已经发展了10多年，<strong>最终可能会逐渐呈现相对头部化的格局。我们不需要那么多智驾方案，因为智驾方案很多时候都在重复造轮子。</strong></li>\n  </ul>\n  <p>在一个大的OEM体系下，基本上不会超过三家供应商。在同一个体系下的供应商，如果他们各自非常优秀，就会研发更多个性化的产品创意，包括座舱，包括更多其他产品。</p>\n  <ul>\n   <li>在智能辅助领域、AI领域这么多年，我们第一次感到有<strong>后发优势</strong>。因为先发的人是有包袱的，他说做纯视觉，就不好意思加一个激光雷达。</li>\n  </ul>\n  <p>我（印奇）是技术出身，在技术论断上比较决断。我认为“<strong>以大模型为驱动的，纯视觉为核心</strong>”的方案，一定是未来所有智能辅助驾驶的终极方案，这是一个确定性。</p>\n  <p>在传感器的使用上，未来一定是复合传感器，不光是激光，包括4D毫米波，甚至未来有更多创新的传感器，只要它能够在一些极端的案例情况下有助于降低成本，且可规模化，未来智能辅助驾驶里面都可以使用。</p>\n  <p>有基本原则，同时未来有叠加的方案，这是很清晰，也是一个确定性的论断，大家未来可以验证。</p>\n  <ul>\n   <li>L2+到L4一定是同一个技术框架，这是技术性的问题，因为要复用数据，如果没有L2+的话，其实很难在L3、L4里面真的大规模去替代。</li>\n  </ul>\n  <p><strong>从L2+到L4一定需要有差异化的不同侧重</strong>。比如在L4里面，未来一个更高效的地图体系也非常重要。</p>\n  <ul>\n   <li>智能驾驶解决方案一定要提供一套完整软件+硬件的解决方案，这样的方案才能对未来的价值和体验提供帮助。</li>\n   <li>芯片上，我们一定会选择相对开放的芯片生态，最终真正有竞争力和成本有优势的芯片我们都会选择。</li>\n  </ul>\n  <p>现在最大的问题还有两个：一个是算力，一个是数据。现在车端的算力，虽然有800Tops、1000Tops，其实相比较我们在云侧的算力还是有非常大的局限性。</p>\n  <p>大家在未来一定会看到整个车端智能辅助驾驶领域算力的提升，以及更多的多模态大模型在端侧的应用。这个趋势也很确定。</p>\n  <ul>\n   <li>出海一个核心的问题是数据。</li>\n   <li>关于芯片上大家有点过度关注。AI芯片比传统的CPU和GPU芯片在设计上都更简单，这就为什么会有这么多的芯片体系。</li>\n  </ul>\n  <p>芯片最终一定是要寻求可持续的商业模式，能够规模化。<strong>一个厂商有100万辆车，但这个数据在芯片里面非常小。芯片领域如果一年没有一亿颗芯片就无法真正去持续迭代。</strong></p>\n  <ul>\n   <li><strong>基模未来会场景化实现行业模型，其实没有那么多行业模型，大家一定要意识到这一点。</strong></li>\n  </ul>\n  <p>行业模型跟这波大模型本质上是相反的。这波大模型的特点是通用性，未来会有很多行业数据、行业技术诀窍加进来，但还是以通用性为主的模型。</p>\n  <p>所以千里非常清楚，千里不做基模，千里跟最好的基模合作伙伴阶跃星辰一起来实现基模的战略协同。</p>\n  <ul>\n   <li>为什么强调L2+、L3、L4一定是同一个框架？<strong>这才是未来商业模式能跑通的，因为它的研发成本是共享的，它的数据是共享的</strong>。</li>\n   <li>Robotaxi还在早期的探索阶段，没有到商业化阶段，产品和体验还没闭环。<strong>我们做过一个简单的测算，当有1000辆车常规化运营，才能进入到真正的规模商业化落地阶段。</strong>现在全球还没有任何一家企业做到。</li>\n  </ul>\n  <p>互联网已经发展了30年，互联网只要在有人、有流量的地方，就有无数的增值业务和变现的可能。未来Robotaxi的商业化大家不用担心，大家关心的是怎么尽早地做出更加安全、更好的Robotaxi。</p>\n  <ul>\n   <li>Robotaxi一个很重要的问题是跟就业相关，Robotaxi如何创造更多的就业，不是AI替代人，而是AI要创造更好的服务，创造更多的就业，无论是出租车、网约车司机，在这个浪潮里工作更轻松，赚得更多，这是非常关键的。</li>\n   <li>目前团队已经有将近2000人。当然一个智驾团队不一定人越多越好，但千里做的是从L2+到L3到L4的整体解决方案，2000人能做更多的事。</li>\n   <li><strong>前段时间千里智驾有三波人马的调整，迈驰、极氪，还有研究院的整合。</strong>这个整合是神来之笔。</li>\n  </ul>\n  <p>智能辅助驾驶系统是需要两类组织基因：一类是具有非常强的AI模型原生基因，每个模型的数据迭代、模型驱动需要有非常棒的AI团队。另一类是非常强大的工程化体系团队。这两个团队缺一不可。</p>\n  <p>千里智驾从商业模式上看可能是可复制的，但从团队、产业窗口期的角度，也没那么好复制。这三个团队合在一起是非常互补的。</p>\n  <p>团队的融合其实比新建一个团队更难。核心有两点：<strong>第一，目标必须一致，第二，无论几个团队，但核心的版本、主干版本就一条，我们再围绕主干版本去分配人才，才能真正形成团队融合</strong>。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250929/v2_320bd77c859746d6889f4a3b06b8265b@5783683_oswg649725oswg1389oswg517_img_png?x-oss-process=image/quality,q_90/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">欢迎交流！</p>",
+      "source": {
+        "title": "36氪"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        11,
+        22,
+        38,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "金秋鹭岛逐梦！2025厦大火炬创业成长营开营，36支硬科技团队共启创新征程",
+      "link": "https://36kr.com/p/3487675426364553?f=rss",
+      "published": "2025-09-29 18:48:13  +0800",
+      "summary": "<p>九月的厦门，风携桂香，也载着一群创业者的滚烫初心。9 月 26 日，【2025 厦门大学火炬创业成长营暨南强创业营】入营仪式如期启幕，来自全国的硬科技创业者、高校与园区领航者、投资界伙伴齐聚一堂，在这场充满热忱的相聚里，共同翻开创新成长的崭新篇章。</p>\n  <p>厦门火炬高新区管委会总工程师吴志伟、厦门火炬高新区管委会创新创业处四级调研员朱雯静、厦门大学校友总会副秘书长陈运动、厦门高新技术创业中心有限公司总经理郑巩固、厦门高新技术创业中心有限公司副总经理刘爱钦、厦门高新科创天使创业投资有限公司董事长林志超、厦门大学校友总会郑怡、交通银行厦门分行普惠部/科技金融总经理张旭、交通银行厦门分行大唐支行行长洪晓念等嘉宾共同出席本次活动，与各方代表围绕产业创新趋势、优质项目孵化、资本精准对接展开深度交流与资源链接。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250929/v2_bd48f33246b44f049cf8ac41a5eef6e5@5865643_oswg134579oswg1080oswg720_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p><strong>多方助力：护航项目长远发展</strong></p>\n  <p>2025 厦门大学火炬创业成长营暨南强创业营由厦门大学、厦门火炬高新区管委会、厦门大学创新创业教育领导小组指导，厦门大学校友总会秘书处、厦门大学创新创业教育办公室、厦门高新技术创业中心有限公司主办，厦门高新科创天使创业投资有限公司等单位承办。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250929/v2_3505d3c09cb94a7e96fee9fbc872693e@5865643_oswg78739oswg1080oswg608_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p><strong>2025 厦门大学火炬创业成长营暨南强创业营</strong>，核心宗旨始终聚焦于早中期硬科技项目的扶持。在领域布局上，其着重关注<strong>先进制造、新能源、新材料、生物医药医疗、智能传感半导体及电子信息</strong>等关键赛道。今年 5 月，创业营正式开启项目招募工作，凭借对硬科技领域的精准定位与专业化配套支持，成功吸引了来自全国的近三百个项目参与报名。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250929/v2_f22a1e5bb78f40dbba6cf2a6f3b73475@5865643_oswg103274oswg1080oswg720_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">厦门火炬高新区管委会总工程师 吴志伟</p>\n  <p><strong>厦门火炬高新区管委会总工程师吴志伟</strong>在致辞中介绍到厦门火炬高新区作1991年全国首批国家级高新区，30多年来已长成厦门创新的“主引擎”—— 近 3.5 万家企业在此扎根，超 2000 家国家级高新技术企业、69 家境内外上市公司从这里起步，用不到厦门 3% 的土地贡献了超 40% 的工业产值。</p>\n  <p>他诚邀入营项目入驻，承诺提供全方位服务保障助力企业发展。在厦门火炬高新区不用愁配套、不用忧支持，只管安心把硬科技项目做扎实！</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250929/v2_cad6c6d752eb4ed296bcc8e7b7266537@5865643_oswg106614oswg1080oswg720_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">厦门大学校友总会副秘书长 陈运动</p>\n  <p>厦门大学作为国家“双一流”高校，已向社会输送 60 多万人才。” 厦门大学校友总会副秘书长陈运动的话语里满是情怀。他指出，厦大火炬创业营不仅为硬科技创业项目搭建了展示、交流、合作的平台，也为推动科技成果转化，构建良好的创新创业生态，促进教育、人才、产业、创新四链深度融合提供了助力。</p>\n  <p>期待创业者能在这里找到同频的伙伴，把握机会、潜心学习，将创新梦想转化为产业成果，为国家高水平科技自立自强与厦门社会经济高质量发展贡献 “厦大 - 火炬” 力量。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250929/v2_c5cd9eb9824248c88d8ab1c9fb894f41@5865643_oswg101376oswg1080oswg720_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">厦门大学校友总会副秘书长 陈运动</p>\n  <p><strong>厦门高新技术创业中心有限公司总经理郑巩固</strong>致辞时表示，本届创业营旨在凝聚高校科创力量、深化校企合作，推动科技成果转化与创业资源融合，助力厦门争创 “全国高校区域技术转移转化中心”。</p>\n  <p>他介绍，厦门创新创业园 1996 年始建，总建筑面积 140 万平方米，形成 “苗圃 — 孵化器 — 加速器 — 产业园” 全链条体系，拥有多个国家级平台，目前在孵企业超 3400 家、毕业超千家，聚集 90% 来厦创业留学人才。同时。向入营项目团队发出了诚挚的入园兴业邀请，且着重强调，创业中心将切实履行服务保障职责，提供有力支持。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250929/v2_65153c41e3764c9e9828df558cec1978@5865643_oswg95348oswg1080oswg720_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">厦门高新科创天使创业投资有限公司董事长林志超</p>\n  <p>本届创业营“操盘手”<strong>厦门高新科创天使创业投资有限公司董事长林志超</strong>向与会嘉宾介绍了【2025厦门大学火炬创业成长营暨南强创业营】情况。厦门高新投与厦门大学的双向奔赴真正点燃了“火炬”，本届创业营于7月陆续在北京、苏州、广州、厦门四地举办线下路演选拔，优中选优，最终36个硬科技项目成功入营。创业营将提供系统性培训与资源对接，全程参与培训的项目还能获得入营“奖学金”，<strong>同时有机会获得500-1000万元的直接股权投资。更有5亿成果转化专项基金支持，往届已有20多个项目在培训后获得超3亿元的股权融资。</strong></p>\n  <p><strong>开营现场：创业热情持续升温</strong></p>\n  <p>致辞结束后，镜头定格下珍贵的合影 —— 领导、导师与 36 支团队的笑脸，成了当天最动人的画面。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250929/v2_8e9f8829daf048dba62ff9324d9ce1d8@5865643_oswg112044oswg1080oswg608_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p>破冰环节里，5 分钟的组内畅谈后，“介绍右手边的同伴” 成了最温暖的互动，一句话的介绍里，陌生感渐渐消散，合作的种子悄然发芽。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250929/v2_afd5a6073027472188feba0a02733ca0@5865643_oswg116679oswg1080oswg720_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p>上午，厦门高新科创天使创业投资有限公司董事长林志超带来的《如何写好商业计划书》分享，成了创业者的 “及时雨”—— 从结构拆解到细节技巧，每一个建议都戳中融资路上的关键点。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250929/v2_f6be0d228d6343959f70bee94f07c020@5865643_oswg107432oswg1080oswg720_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p>下午的分组路演更像是 “精准把脉”，国兴投资投资总监卢成浩、七晟资本副总裁曹海啸、赛富基金合伙人公舒怡、道远资本合伙人章达峰、清大海峡总经理绳上、厦门高新投总经理蒋鸿翔等六位投资人，没有单向评判，而是以专业视角与学员团队深度交流：既帮他们提炼项目的核心闪光点，也共同探讨待优化的方向。一句句真诚的点拨，让学员们在互动中收获满满，对项目的认知也更清晰。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250929/v2_1ea78290b6be4d419195a5431c32796c@5865643_oswg105761oswg1080oswg720_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p>待到夜幕降临，“从德州桌牌游戏看创业和投资的选择” 的团建，把氛围推向高潮。大家在牌桌上模拟资源管理、风险决策，在轻松的互动里，不仅加深了情谊，更读懂了 “每一步选择都要理性” 的创业哲思。</p>\n  <p><strong>厦大火炬创业营</strong></p>\n  <p>这场开营仪式，不是终点，而是 36 支硬科技团队逐梦的新起点。有高校的智慧、园区的支持、资本的助力，相信在接下来的时光里，这些创新的种子终将在厦门这片沃土上，长成支撑硬科技产业的参天大树。</p>\n  <p><strong>成长营咨询</strong></p>\n  <p>黄女士：18650800627</p>\n  <p>李女士：18340895071</p>\n  <p>（微信同号）</p>\n  <p class=\"editor-note\">本文来自微信公众号<a href=\"https://mp.weixin.qq.com/s/MB6BiddXww05ht7za-RU4Q\" rel=\"noopener noreferrer\" target=\"_blank\">“厦门高新投”</a>，36氪经授权发布。</p>",
+      "source": {
+        "title": "36氪"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        10,
+        48,
+        13,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "首个潮流IP入驻上海博物馆，巨星传奇打造“周同学”主题艺术秀｜最前线",
+      "link": "https://36kr.com/p/3487635829021831?f=rss",
+      "published": "2025-09-29 18:07:29  +0800",
+      "summary": "<p>36氪获悉，为配合第36届上海旅游节的举办，9月29日下午，“了不起的老祖宗——周同学的时空奇遇记”主题艺术秀在上海博物馆人民广场馆开幕。本次主题艺术秀由上海市文化和旅游局指导，上海博物馆和巨星传奇主办、久事文传协办，并特别邀请方文山先生担任文化创意顾问。</p>\n  <p>艺术秀以周杰伦官方二次元IP形象“周同学”为主线，结合数字光影、全息投影、机器人互动、NFC数字抽卡等科技手段，呈现上海博物馆十二件珍贵文物，打造沉浸式文化体验。<strong>这也是上海博物馆继与动漫《江南百景图》、游戏《原神》等IP合作后，首度尝试以潮流形式推广传统文化。</strong></p>\n  <p>巨星传奇集团作为周杰伦IP的重要运营方，集团主席马心婷指出，此次合作不仅是IP与文物的简单叠加，更是借助“周同学”的叙事能力，让传统文化以更亲切的方式触达年轻群体。</p>\n  <p>上海博物馆馆长褚晓波表示，希望通过年轻化的表达，让玉器、青铜、青花瓷、粉彩等文物走出展柜，与当代观众产生情感共鸣。艺术秀不仅呈现文物之美，更探索其在现代语境中的新生命力。</p>\n  <p>近年来，上海博物馆持续推动“文物活化”，先后与多个流行文化IP展开合作，如联合出品文创产品、举办数字展览等，逐步打破博物馆与年轻人之间的认知壁垒。此次引入“周同学”，进一步拓展了博物馆在内容表达与观众互动方面的可能性。</p>\n  <p>据了解，艺术秀设置多个主题展区，包括“玉见未来”“青铜跨时代”“青花武馆”“粉彩浪漫”等，每一单元均围绕特定文物展开创意转译。例如，玉神人形象被赋予未来感设计，青铜器纹样融入机甲造型，青花瓷元素出现在功夫机器人身上，粉彩文物则与周杰伦标志性的粉色主题结合，营造出浪漫氛围。</p>\n  <p>展览还设有“潮流密码”版画区、“周游记沉浸空间”、“嘉年华奇幻岛”等互动区域，并推出VR文物修复体验，观众可化身修复师，在虚拟场景中收集文化能量，完成互动任务。</p>\n  <p>展览为收费项目，设有全价票、平日票、优惠票及VR体验票等多种票型，并针对老年人、学生、儿童、军人等群体推出优待政策。观众可通过上海博物馆官方小程序及携程APP购票。此外，艺术秀亦与“乐游上海·寻找周同学”城市活动联动，于上海六个地标设置打卡点，进一步拉近文化与公众的距离。该活动将持续至2025年10月12日。</p>",
+      "source": {
+        "title": "36氪"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        10,
+        7,
+        29,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "贸易战打到文化战：特朗普威胁对海外制片征100%关税，好莱坞懵了",
+      "link": "https://wallstreetcn.com/articles/3756501",
+      "published": "Tue, 30 Sep 2025 00:43:44 +0800",
+      "summary": "<p>美国总统特朗普再次威胁要将贸易保护政策扩展至文化产业，这一政策若实施将挑战好莱坞的全球化商业模式。</p>\n<p>据央视新闻，当地时间9月29日周一，特朗普在社交媒体“真实社交”上发文表示，美国的电影制作业“被其他国家从美国偷走了”，就像“从婴儿手里偷糖果”一样。特朗普称，加州州长“软弱无能”，遭受的打击尤其严重。为了解决这个“长期存在且永无止境”的问题，将对所有在美国境外制作的电影征收100%关税。</p>\n<p>市场对这一威胁反应分化。周一美股早盘，AMC院线（AMC）一度涨逾6.2%，迪士尼（DIS）曾涨近1.2%，奈飞（NFLX）盘初下跌1.9%后转涨，而华纳兄弟探索（WBD）曾跌2.1%。</p>\n<p>分析认为，特朗普未经测试的政策面临诸多执行难题。投资者对特朗普实施该关税的法律权限和执行方式存疑。白宫未立即回应相关询问。</p>\n<p>媒体指出，业内高管此前就对关税如何执行感到\"困惑\"，因为现代电影制作往往涉及跨国合作，包括制片、融资、后期制作和视觉效果等环节分布在多个国家。</p>\n<div>\n<h2 id=\"4460e84a\">重申5月威胁 政策细节模糊</h2>\n</div>\n<p>此次是特朗普时隔将近五个月再次发出征收100%电影关税的威胁。和上次一样，特朗普这次也未明确关税的具体实施时间和方式，且未说明，将使用何种法律权限来征收这一针对服务业而非商品的关税。</p>\n<p>央视新闻提到，当地时间5月4日，特朗普就曾在社交媒体上发文表示，他将授权美国商务部和美国贸易代表立即启动程序，对所有进入美国、在外国制作的电影征收100%关税。此举当时就引发了美国电影业内人士和相关专家的担忧。</p>\n<p>在本周一的社交媒体发文中，特朗普特别点名加州，称该州州长\"软弱无能\"，遭受的打击尤其严重。他此前曾指责其他国家提供税收优惠吸引制片商前往海外拍摄。</p>\n<p>白宫未回应媒体关于关税实施方式的置评请求。华纳兄弟探索、派拉蒙天幕和Netflix等顶级美国制片厂均未立即回应置评请求。康卡斯特拒绝置评。</p>\n<div>\n<h2 id=\"8a1fadc7\">业内质疑执行关税可行性</h2>\n</div>\n<p>好莱坞目前越来越依赖加拿大、英国和澳大利亚等海外制片中心，这些地区的税收优惠政策吸引了从超级英雄大片到流媒体剧集的大预算拍摄项目。与外国制片厂的合拍项目也变得更加普遍，特别是在亚洲和欧洲，当地合作伙伴提供融资、市场准入和发行网络。</p>\n<p>娱乐业高管对特朗普电影关税政策的可行性表示质疑。</p>\n<p>好莱坞顶级经纪公司之一United Talent Agency（UTA）的副董事长Jay Sures此前对媒体评论称：\"美国演员和导演通常更愿意在离家近的地方工作。但事实是，好莱坞制片厂支付所有人的机票和酒店费用更便宜，因为海外的劳动力成本、缺乏退税以及在海外制作的能力要便宜得多。\"</p>\n<p>一位业内人士今年5月告诉媒体：\"乍一看，这很令人震惊，几乎意味着制作的完全停止。但实际上，他没有管辖权这样做，而且执行起来过于复杂。\"</p>\n<p>PP Foresight分析师Paolo Pescatore表示：\"存在太多不确定性，这一最新举措提出的问题比答案还多。目前来看，成本可能会增加，这最终将转嫁给消费者。\"</p>\n<div>\n<h2 id=\"59e2099b\">美国电影业面临多重挑战</h2>\n</div>\n<p>美国电影业正面临票房下滑的挑战。新冠疫情以来，院线发行的主要影片数量大幅减少，消费者观影习惯也转向流媒体平台居家观看。</p>\n<p>美国票房总收入在2018年达到近120亿美元的峰值，2020年许多影院疫情期间关闭，票房因此暴跌至仅20亿美元。虽然此后影院已经恢复营业，但上映影片数量仅为2019年的一半左右，国内票房总收入自那以后从未超过90亿美元。</p>\n<div> </div>\n<p>今年初以来，华纳兄弟探索的全球票房收入已达40亿美元，成为首家达到这一水平的制片厂。</p>\n<h2>特朗普发出家具关税威胁</h2>\n<p>除电影关税外，特朗普政府还准备实施一系列其他关税措施。上周四特朗普在社交媒体宣布了下月将实行的一系列关税。</p>\n<p>据央视，当地时间9月25日，特朗普在其社交媒体宣布，自10月1日起，美国将对多类进口产品实施新一轮高额关税。措施包括：对厨房橱柜、浴室洗手台及相关建材征收50%关税；对进口家具征收30%关税；对专利及品牌药品加征100%关税。</p>\n<p>本周一，特朗普又在社交媒体称，他将对“所有不在美国生产家具的国家”征收高额关税。媒体暗示，这类关税具体实施可能有难度，因为家具是由企业而非国家生产的，而且关税是针对特定进口产品而非各国政府征收的。</p><p>本文来自华尔街见闻，欢迎下载APP查看更多</p>",
+      "source": {
+        "title": "华尔街见闻"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        43,
+        44,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "美国8月成屋签约销售创五个月新高，按揭贷款利率下降提振住房市场",
+      "link": "https://wallstreetcn.com/articles/3756496",
+      "published": "Mon, 29 Sep 2025 22:32:33 +0800",
+      "summary": "<p>由于按揭贷款利率下降，低迷的美国房地产市场得到了急需的提振，美国8月成屋签约销售上升至五个月来的最高水平。</p>\n<p>根据美国全国房地产经纪人协会（NAR）周一公布的数据，衡量签约量的指数8月环比上涨4%，达到74.7，预期为环比持平，前值为环比下跌0.4%。美国8月成屋签约销售指数同比上涨0.5%，前值为上涨0.3%。</p>\n<p>本次成屋签约销售数据超出媒体调查的所有经济学家的预估。在疫情时期美国火热的房地产市场中，该指数曾远高于100。</p>\n<p>媒体分析称，这一超预期的增长延续了上月新屋购买量意外攀升的势头，表明美国房地产市场可能正处于摆脱多年低迷的早期阶段。按揭贷款利率已降至一年来最低的6.34%，鼓励许多美国人入市，也让一些屋主终于挂牌出售房屋。</p>\n<p>NAR首席经济学家Lawrence Yun在一份声明中表示：</p>\n<blockquote>\n<p>更低的按揭贷款利率让更多购房者能够签订合同。这在中西部地区尤为明显，该地区的销售额8月跳涨近9%，创下自2023年初以来的最大增幅。南部和西部的签约量也有所上升。</p>\n</blockquote>\n<p>尽管按揭贷款利率下降令人欣慰，但数以百万计的美国人仍然享有远低于当前水平的房贷利率，不愿搬家，这压制了市场供应并维持了高企的房价。与此同时，自2010年代初以来最低的招聘率之一也在抑制工作调动和房地产活动，</p>\n<p>成屋签约销售往往是成屋交易的领先指标，因为房屋通常在成交前一两个月签约。此前NAR数据显示，8月成屋成交量略有下降，而且在过去两年半的大部分时间里，它们一直停留在低迷区间。</p><p>本文来自华尔街见闻，欢迎下载APP查看更多</p>",
+      "source": {
+        "title": "华尔街见闻"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        14,
+        32,
+        33,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "交易规模超520亿美元！游戏巨头EA或将以每股210美元私有化",
+      "link": "https://wallstreetcn.com/articles/3756493",
+      "published": "Mon, 29 Sep 2025 21:48:25 +0800",
+      "summary": "<p>游戏巨头EA（Electronic Arts Inc.）正接近达成一项里程碑式的私有化协议，该交易不仅将成为本年度全球规模最大的交易之一，更可能以超过520亿美元的估值成为有记录以来规模最大的杠杆收购案。</p>\n<p>据媒体29日援引知情人士透露，<strong>EA正与一个包括Silver Lake Management、沙特公共投资基金（Public Investment Fund）和Jared Kushner的Affinity Partners在内的投资者财团进行深入谈判。</strong></p>\n<p>根据谈判，<strong>收购价格约为每股210美元，</strong>较上周四（该潜在交易消息首次传出前的最后一个交易日）的收盘价溢价约25%。知情人士称，协议最早可能于本周一宣布。截至发稿，EA股价涨至203美元。</p>\n<p><img class=\" wscnph\" src=\"https://wpimg-wscn.awtmt.com/12bc3bf2-02be-4375-99db-14aa08779079.png\" /></p>\n<p>若达成，这将成为今年全球最大交易之一。不过，该知情人士也表示，相关商议仍在进行中，交易的确切时间和价格仍可能发生变化。</p>\n<h2><strong>年度最大交易之一！游戏行业整合再添一例</strong></h2>\n<p>若以每股210美元计算，EA的股权价值将超过520亿美元。根据媒体汇编的数据，<strong>这将使其成为本年度全球规模最大的交易之一，同时也是有记录以来最大的杠杆收购案。</strong></p>\n<p>成立于1982年的EA是全球最大的视频游戏发行商之一，也是过去数年间加入行业整合浪潮的最新一家公司。</p>\n<p><strong>随着行业日趋成熟，巨头之间的并购整合已成为重要趋势。</strong>在此之前，射击游戏《使命召唤》的开发商动视暴雪，已于两年前被微软公司收购。EA的这笔交易若能完成，将成为游戏行业整合的又一重要标志。</p><p>本文来自华尔街见闻，欢迎下载APP查看更多</p>",
+      "source": {
+        "title": "华尔街见闻"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        13,
+        48,
+        25,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "\"昂贵\"就是新标准？华尔街开始接受股市估值\"新常态\"",
+      "link": "https://wallstreetcn.com/articles/3756491",
+      "published": "Mon, 29 Sep 2025 21:14:39 +0800",
+      "summary": "<p>正当市场怀疑论者警告股市估值已飙升至危险高位时，华尔街一股日益壮大的声音却在主张，是时候重新审视对“昂贵”的定义了。</p>\n<p>越来越多华尔街分析师建议，投资者或许应该抛开对传统市盈率的固有认知。美国银行的策略师上周就表达了类似观点，<strong>认为应将当前的高估值视为“新常态”，而非期待其均值回归到“逝去的时代”。</strong>分析师指出，标普500指数的估值中枢已结构性上移，是由于美国经济衰退减少、向技术或服务业转型、利润稳定性提高等多重因素支撑。</p>\n<p>这呼应了资深华尔街策略师Jim Paulsen近期的分析。Paulsen的分析显示，<strong>标普500指数的估值中枢在过去几十年持续上移，他认为这削弱了将当前人工智能狂潮与上世纪90年代末互联网泡沫直接类比的悲观论调。</strong></p>\n<p>这一转变引出了两个核心问题：投资者应如何判断一个持续移动的估值目标？它是否会继续以相似的速度进入“未知领域”？这场关于估值范式的辩论，正深刻影响着投资者对未来市场回报的预期。</p>\n<h2>估值中枢的结构性上移</h2>\n<p>数据显示，美国股市的估值范围在本世纪已发生显著飞跃。根据Jim Paulsen的分析，<strong>标普500指数过去30年的滚动平均市盈率，已从上世纪90年代初的约14倍，上升至如今的约19.5倍。</strong>而在1900年至90年代中期的近一个世纪里，该比率一直稳定在13.5倍至15.5倍的狭窄区间内。</p>\n<p>Paulsen表示：</p>\n<blockquote>\n<p>“估值相较于以往正发生一些奇怪的变化——即估值范围存在持续上行的趋势。”</p>\n</blockquote>\n<p>Paulsen认为，<strong>估值中枢的上移并非偶然，背后有多重因素支撑。</strong>他指出，美国经济的衰退频率已大幅下降，战前约42%的发生概率在过去30年降至仅10%左右。同时，美国经济已从工业主导转型为技术与服务业主导，市场本身也更偏重于那些能支撑更高估值的成长股。</p>\n<p>此外，其他结构性变化也起到了推动作用。<strong>电子交易的普及，以及个人和国际投资者参与度的提高，改善了股市的流动性。</strong>被Paulsen称为“利润生产率”（即每单位就业所创造的实际利润）的永久性提升，也为估值提供了向上的偏向。最后，历史进程中不断加速的创新周期，同样是推高估值的动力之一。</p>\n<h2>成分股变化支持高估值</h2>\n<p>Paulsen并非唯一认为高估值有其合理性的市场观察者。美国银行的策略师也在近期呼应了这一前提。美银股票与量化策略主管Savita Subramanian在9月24日给客户的报告中写道，<strong>当前标普500指数成分股的内在属性，为不断膨胀的估值倍数提供了支撑。</strong></p>\n<p>Subramanian指出，与过去几十年相比，如今指数中的公司具有更低的财务杠杆、更低的盈利波动性、更高的效率以及更稳定的利润率。她强调：</p>\n<blockquote>\n<p>“该指数与80年代、90年代和21世纪初相比已发生显著变化。或许我们应该将今天的估值倍数作为新常态的锚点，而不是期望均值回归到一个早已逝去的时代。”</p>\n</blockquote>\n<h2>“重新锚定”而非无限上涨</h2>\n<p>然而，并非所有人都认为估值会无限期地持续攀升。Seaport Research Partners的首席股票策略师Jonathan Golub提出了一个更为温和的看法，<strong>他认为市场并非处于“估值持续向上漂移”的状态，而是“重新锚定在一个更高的水平”。</strong></p>\n<p>Golub解释称，上世纪70和80年代估值之所以如此之低，部分原因是当时极高的利率推高了资本成本，威胁到企业的运营能力。他认为，如果未来借贷成本出现类似的大幅飙升，估值倍数可能会回落至几十年前的平均水平。不过，他补充说，目前并未看到这种风险。</p><p>本文来自华尔街见闻，欢迎下载APP查看更多</p>",
+      "source": {
+        "title": "华尔街见闻"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        13,
+        14,
+        39,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "互联网平台外卖员、快递员等人员年入12万元以下基本无需纳税",
+      "link": "https://wallstreetcn.com/articles/3756490",
+      "published": "Mon, 29 Sep 2025 21:07:32 +0800",
+      "summary": "<p style=\"text-align: left;\">据中新网，今年10月1日起，按照国务院发布的《互联网平台企业涉税信息报送规定》有关要求，互联网平台企业将首次正式报送平台内经营者和从业人员的身份信息、收入信息。</p><p style=\"text-align: left;\">外卖员、快递员等各类“小哥”无需报送收入信息，税负不会增加。吉林财经大学税务学院院长张巍介绍，《规定》明确互联网平台内从事配送、运输、家政等便民劳务活动的从业人员，依法享受税收优惠或者不需要纳税的，无需报送其收入信息。这就意味着，《规定》实施不会对各类“小哥”、家政人员的日常工作、收入和税负产生影响，各类“小哥”、家政人员也不会因此增加税收负担。</p><p style=\"text-align: left;\">平台内从业人员将享受办税便利和减负带来的利好。《规定》实施后，为减轻平台内从业人员在个人所得税预扣预缴环节的负担，国家税务总局还专门制发《规定》的配套公告——《关于互联网平台企业为平台内从业人员办理扣缴申报、代办申报若干事项的公告》(以下简称《公告》)，对包括外卖员、快递员等各类“小哥”在内的平台内从业人员取得的劳务报酬所得，采用累计预扣法来预扣预缴税款，即扣除20%的费用和每月5000元的减除费用后，再按3%-45%的七级累进预扣率来计算预扣预缴的税款。</p><p style=\"text-align: left;\">该计税方式具体有哪些好处？中国政法大学财税法研究中心主任施正文介绍，通常劳务报酬的预缴方法，是按次用收入减除800元或20%的费用后，乘以20%-40%的三级累进预扣率计算预扣预缴税款，预扣税款会相对多一些。与之相比，平台从业人员新的累计预扣法不仅扣除金额高，而且适用预扣率低，明显更为利好。按照《公告》规定的累计预扣法来计算，对实际月收入在6250元以下的平台上各类“小哥”无需预扣税款。即便月收入高于6250元被暂时预扣了小额税款，在次年的年度汇算时，大部分“小哥”还可以进一步申报享受3岁以下婴幼儿照护、子女教育、赡养老人、住房租金等扣除项目，并依法申请退税。全年来看，年收入12万元以下的“小哥”在扣除减除费用和法定的扣除项目后，基本无需缴纳个税。</p><p style=\"text-align: left;\">施正文同时介绍，累计预扣法并不是一个新的预扣预缴方法，目前该方法在工资薪金所得、保险营销员和证券经纪人的劳务报酬所得等预扣预缴中被广泛使用，是一种已被证实的便捷高效且能较好体现量能负担的扣缴方法。这次将累计预扣法适用于平台上的“小哥”等从业人员，可以大幅减轻这部分人员预扣预缴税款的负担。</p><p style=\"text-align: left;\">除个人所得税外，《公告》还细化了增值税及附加税费代办申报相关规定，从业人员自互联网平台企业取得的服务收入可按规定享受增值税小规模纳税人月销售额10万元以下免征增值税等税费优惠政策，不需再按次申报缴纳增值税，进一步减轻了平台从业人员的税收负担。</p><p style=\"text-align: left;\">依法查处个别平台借机向“小哥”变相收费等违法违规行为。记者了解到，有一些“小哥”担心平台在代扣代缴过程中变相多扣费用，或借此转嫁涉税义务增加其税收负担。对此，国家税务总局征管和科技发展司负责人表示，根据《税收征管法》《个人所得税法》等相关法律法规的规定，互联网平台应当依法履行代扣代缴税款义务，引导平台内经营者和从业人员依法合规享受税收优惠和履行纳税义务，不得以任何形式将平台企业的涉税义务转嫁给平台内的从业人员，更不得以代扣代缴为借口向从业人员额外收取费用。对于平台各类涉税违法违规行为，税务部门将依法查处，切实保护平台内从业人员合法权益，促进平台经济持续健康发展。</p><p style=\"text-align: left;\"><span style=\"color: rgb(102, 102, 102);\">本文作者：李金磊，来源：</span><a href=\"https://www.chinanews.com/cj/2025/09-29/10491916.shtml\" rel=\"noopener noreferrer nofollow\" target=\"_self\"><span style=\"color: rgb(102, 102, 102);\">中国新闻网</span></a><span style=\"color: rgb(102, 102, 102);\">，原文标题《互联网平台外卖员、快递员等人员年入12万元以下基本无需纳税》</span></p><p>本文来自华尔街见闻，欢迎下载APP查看更多</p>",
+      "source": {
+        "title": "华尔街见闻"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        13,
+        7,
+        32,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "美股2025超级牛股希捷、西部数据再度拉涨 大摩解..",
+      "link": "http://baijiahao.baidu.com/s?id=1844615813258755489",
+      "published": "2025-09-29T16:45:25.000Z",
+      "summary": "<a href=\"http://baijiahao.baidu.com/s?id=1844615813258755489\" target=\"_blank\"><img border=\"0\" src=\"http://t1.baidu.com/it/u=http%3A%2F%2Ft11.baidu.com%2Fit%2Fu%3D1319431222%2C277510478%26fm%3D30%26app%3D106%26f%3DJPEG%3Fw%3D312%26h%3D208%26s%3D0EA8782293304C221AFDF1DA000010B1&amp;fm=30\" /></a><br />财联社9月30日讯（编辑史正丞）美股周一开盘后，美股硬盘驱动器（HDD）概念股西部数据涨超7%、希捷科技也涨近5%，双双刷新盘中历史新高。（西部数据、希捷科技日线图，来源：TradingView）作为<br />",
+      "source": {},
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        45,
+        25,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "赛力斯：拟每10股派发3.10元现金红利",
+      "link": "http://baijiahao.baidu.com/s?id=1844601250321047344",
+      "published": "2025-09-29T16:45:25.000Z",
+      "summary": "【赛力斯：拟每10股派发3.10元现金红利】财联社9月29日电，赛力斯(601127.SH)公告称，公司2025年半年度实现归属于上市公司股东的净利润为29.41亿元。公司拟以实施权益分派股权登记日登<br />",
+      "source": {},
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        45,
+        25,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "就市论市｜指数中期上行趋势不改？科技仍是绝对主线？",
+      "link": "http://baijiahao.baidu.com/s?id=1844567528206604988",
+      "published": "2025-09-29T16:45:25.000Z",
+      "summary": "节前市场震荡主要是消化假日预期的可能风险，但数据显示机构高仓位过节，表明对后市积极预期。市场关注点正逐步从估值修复转向盈利验证，节后或更加关注公司业绩表现。市场人士王章亮认为，指数中期上行趋势不改，投<br />",
+      "source": {},
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        45,
+        25,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "长春高新：已向香港联交所递交H股发行上市申请",
+      "link": "http://baijiahao.baidu.com/s?id=1844589673372097811",
+      "published": "2025-09-29T16:45:25.000Z",
+      "summary": "长春高新公告，公司已于2025年9月29日向香港联交所递交了发行境外上市外资股（H股）股票并在香港联交所主板上市的申请，并于同日在香港联交所网站刊登了本次发行上市的申请资料。(本文来自第一财经)<br />",
+      "source": {},
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        45,
+        25,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "把握利率下行投资机会，2024年地方养老基金投资收..",
+      "link": "http://baijiahao.baidu.com/s?id=1844564102682819383",
+      "published": "2025-09-29T16:45:25.000Z",
+      "summary": "<a href=\"http://baijiahao.baidu.com/s?id=1844564102682819383\" target=\"_blank\"><img border=\"0\" src=\"http://t1.baidu.com/it/u=http%3A%2F%2Ft10.baidu.com%2Fit%2Fu%3D2282586907%2C277462341%26fm%3D30%26app%3D106%26f%3DJPEG%3Fw%3D312%26h%3D208%26s%3D3BC2CF10BEEB5A191234FDDE030030B1&amp;fm=30\" /></a><br />2025年9月29日，全国社会保障基金理事会发布了2024年度基本养老保险基金运行情况。数据显示，2024年，地方养老基金投资收益额超过1000亿元。据介绍，基本养老保险基金分为地方养老基金和风险基金<br />",
+      "source": {},
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        45,
+        25,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "金价创历史新高后 美国黄金储备总价值突破1万亿美元",
+      "link": "http://www.chinanews.com/cj/2025/09-29/10492027.shtml",
+      "published": "Mon, 29 Sep 2025 23:55:44 +0800",
+      "summary": "中新网9月29日电(记者 张乃月)据彭博社报道，当地时间29日，黄金价格突破每盎司3824.5美元。随着金价创下历史新高，美国财政部的黄金储备总价值已超过1万亿美元。",
+      "source": "中新网",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        15,
+        55,
+        44,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "中国互联网平台涉税信息报送新规实施在即 业界解疑释惑",
+      "link": "http://www.chinanews.com/cj/2025/09-29/10492010.shtml",
+      "published": "Mon, 29 Sep 2025 23:03:59 +0800",
+      "summary": "中新社北京9月29日电 (记者 赵建华)10月1日起，按照《互联网平台企业涉税信息报送规定》(下称《规定》)，中国互联网平台企业将首次正式报送平台内经营者和从业人员的身份信息、收入信息。",
+      "source": "中新网",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        15,
+        3,
+        59,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "稳投资稳经济，5000亿元新型政策性金融工具落地",
+      "link": "http://www.chinanews.com/cj/2025/09-29/10492012.shtml",
+      "published": "Mon, 29 Sep 2025 22:57:20 +0800",
+      "summary": "政策工具箱又上新！5000亿元新型政策性金融工具来了。",
+      "source": "中新网",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        14,
+        57,
+        20,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "云南与132个国家（地区）建立跨境人民币结算渠道",
+      "link": "http://www.chinanews.com/cj/2025/09-29/10491997.shtml",
+      "published": "Mon, 29 Sep 2025 22:09:29 +0800",
+      "summary": "中新网昆明9月29日电(时文枝 李临艳)29日，记者从云南省高质量完成“十四五”规划系列新闻发布会·面向南亚东南亚辐射中心专场获悉，“十四五”以来，云南有序推进跨境人民币业务，实现已建交南亚东南亚国家全覆盖。截至今年8月，云南已同132个国家(地区)建立跨境人民币结算渠道，累计结算金额超9343亿元，人民币区域国际化进程不断加速。",
+      "source": "中新网",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        14,
+        9,
+        29,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "科技助力小米粉成“大产业” 中国“粉圈”谋划“圈粉”海外",
+      "link": "http://www.chinanews.com/cj/2025/09-29/10491991.shtml",
+      "published": "Mon, 29 Sep 2025 22:08:33 +0800",
+      "summary": "中新网柳州9月29日电 (林馨)9月29日，2025中国米粉企业产需对接大会在广西柳州市召开。中国专家学者、各类米粉企业代表共谋小米粉如何成为“大产业”，并加速布局“出海”。",
+      "source": "中新网",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        14,
+        8,
+        33,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "新股选择太多了 “量化派”还是留给风险投资者吧",
+      "link": "https://www.ftchinese.com/story/001107785",
+      "published": "Sun, 28 Sep 2025 16:00:00 GMT",
+      "summary": "“羊小咩”的母公司量化派，六次尝试申请上市均铩羽而回，近日再接再励，在港递交上市申请。",
+      "source": "FT中文网",
+      "published_parsed": [
+        2025,
+        9,
+        28,
+        16,
+        0,
+        0,
+        6,
+        271,
+        0
+      ]
+    },
+    {
+      "title": "摩尔多瓦亲欧盟政党赢得议会选举",
+      "link": "https://www.ftchinese.com/story/001107784",
+      "published": "Sun, 28 Sep 2025 16:00:00 GMT",
+      "summary": "总统桑杜领导的执政党行动与团结党有望在101个议席的议会中获得55个席位，达到继续推进加入欧盟目标所需的多数席位。",
+      "source": "FT中文网",
+      "published_parsed": [
+        2025,
+        9,
+        28,
+        16,
+        0,
+        0,
+        6,
+        271,
+        0
+      ]
+    },
+    {
+      "title": "投资者该如何押注人工智能？",
+      "link": "https://www.ftchinese.com/story/001107781",
+      "published": "Sun, 28 Sep 2025 16:00:00 GMT",
+      "summary": "佩雷斯：从过去的创新周期来看，很少有公司能在变革的前沿屹立超过五年。没人知道哪些公司会在下一轮市场聚焦中成为赢家，最好还是分散押注。",
+      "source": "FT中文网",
+      "published_parsed": [
+        2025,
+        9,
+        28,
+        16,
+        0,
+        0,
+        6,
+        271,
+        0
+      ]
+    },
+    {
+      "title": "亲欧还是亲俄 摩尔多瓦举行关键选举",
+      "link": "https://www.ftchinese.com/story/001107776",
+      "published": "Sun, 28 Sep 2025 16:00:00 GMT",
+      "summary": "这场选举将决定该国的未来发展方向。选民将在进一步融入欧盟与重新同俄罗斯结盟之间做出选择。俄罗斯被指在干预这场选举。",
+      "source": "FT中文网",
+      "published_parsed": [
+        2025,
+        9,
+        28,
+        16,
+        0,
+        0,
+        6,
+        271,
+        0
+      ]
+    },
+    {
+      "title": "“地缘经济”的影响日益上升",
+      "link": "https://www.ftchinese.com/story/001107780",
+      "published": "Sun, 28 Sep 2025 16:00:00 GMT",
+      "summary": "埃里安：当前金融市场中的异象是又一个征兆，凸显了政治因素正如何影响着经济政策和市场走势。",
+      "source": "FT中文网",
+      "published_parsed": [
+        2025,
+        9,
+        28,
+        16,
+        0,
+        0,
+        6,
+        271,
+        0
+      ]
+    },
+    {
+      "title": "The economics of self-driving taxis",
+      "link": "https://www.economist.com/finance-and-economics/2025/09/28/the-economics-of-self-driving-taxis",
+      "published": "Sun, 28 Sep 2025 13:10:07 +0000",
+      "summary": "Waymo is a case study in automation",
+      "source": "经济学人 Economist",
+      "published_parsed": [
+        2025,
+        9,
+        28,
+        13,
+        10,
+        7,
+        6,
+        271,
+        0
+      ]
+    },
+    {
+      "title": "The AI talent war is becoming fiercer",
+      "link": "https://www.economist.com/finance-and-economics/2025/09/25/the-ai-talent-war-is-becoming-fiercer",
+      "published": "Thu, 25 Sep 2025 10:08:31 +0000",
+      "summary": "How other countries hope to challenge America",
+      "source": "经济学人 Economist",
+      "published_parsed": [
+        2025,
+        9,
+        25,
+        10,
+        8,
+        31,
+        3,
+        268,
+        0
+      ]
+    },
+    {
+      "title": "Investing like the ultra-rich is easier than ever",
+      "link": "https://www.economist.com/finance-and-economics/2025/09/24/investing-like-the-ultra-rich-is-easier-than-ever",
+      "published": "Wed, 24 Sep 2025 19:19:24 +0000",
+      "summary": "And that worries regulators",
+      "source": "经济学人 Economist",
+      "published_parsed": [
+        2025,
+        9,
+        24,
+        19,
+        19,
+        24,
+        2,
+        267,
+        0
+      ]
+    },
+    {
+      "title": "Will Dubai’s super-hot property market avoid a crash?",
+      "link": "https://www.economist.com/finance-and-economics/2025/09/24/will-dubais-super-hot-property-market-avoid-a-crash",
+      "published": "Wed, 24 Sep 2025 16:18:15 +0000",
+      "summary": "Despite fears of a reckoning, its fundamentals look solid",
+      "source": "经济学人 Economist",
+      "published_parsed": [
+        2025,
+        9,
+        24,
+        16,
+        18,
+        15,
+        2,
+        267,
+        0
+      ]
+    },
+    {
+      "title": "How to spot a genius",
+      "link": "https://www.economist.com/finance-and-economics/2025/09/23/how-to-spot-a-genius",
+      "published": "Tue, 23 Sep 2025 17:31:41 +0000",
+      "summary": "In an age of artificial intelligence, the human kind is increasingly important",
+      "source": "经济学人 Economist",
+      "published_parsed": [
+        2025,
+        9,
+        23,
+        17,
+        31,
+        41,
+        1,
+        266,
+        0
+      ]
+    },
+    {
+      "title": "CorVel Corp stock hits 52-week low at $77.64",
+      "link": "https://www.investing.com/news/company-news/corvel-corp-stock-hits-52week-low-at-7764-93CH-4261466",
+      "published": "2025-09-29 16:45:01",
+      "summary": "N/A",
+      "source": "Investing.com",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        45,
+        1,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Interactive Brokers Group stock hits all-time high at 68.09 USD",
+      "link": "https://www.investing.com/news/company-news/interactive-brokers-group-stock-hits-alltime-high-at-6809-usd-93CH-4261465",
+      "published": "2025-09-29 16:44:35",
+      "summary": "N/A",
+      "source": "Investing.com",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        44,
+        35,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Morgan Stanley materially lifts HDD price targets and forecasts",
+      "link": "https://www.investing.com/news/stock-market-news/morgan-stanley-materially-lifts-hdd-price-targets-and-forecasts-4261464",
+      "published": "2025-09-29 16:43:47",
+      "summary": "N/A",
+      "source": "Investing.com",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        43,
+        47,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "AstraZeneca plans full US listing while defusing fears of UK exit",
+      "link": "https://www.investing.com/news/stock-market-news/astrazeneca-switches-to-direct-us-listing-keeps-uk-listing-4259578",
+      "published": "2025-09-29 16:43:16",
+      "summary": "N/A",
+      "source": "Investing.com",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        43,
+        16,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "TD bank reinstates medium term growth target, focuses on high fee segments",
+      "link": "https://www.investing.com/news/stock-market-news/td-bank-reinstates-medium-term-growth-target-focuses-on-high-fee-segments-4261463",
+      "published": "2025-09-29 16:42:54",
+      "summary": "N/A",
+      "source": "Investing.com",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        42,
+        54,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Faisal Islam: Reeves pre-emptively justifies tax rises",
+      "link": "https://www.bbc.com/news/articles/cj6x07j9e43o?at_medium=RSS&at_campaign=rss",
+      "published": "Mon, 29 Sep 2025 16:36:04 GMT",
+      "summary": "The chancellor linked tough decisions \"in coming months\" to global headwinds and OBR productivity reassessment.",
+      "source": "BBC全球经济",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        36,
+        4,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Reeves warns of harder choices to come as she hints at tax rises",
+      "link": "https://www.bbc.com/news/articles/cy041perldwo?at_medium=RSS&at_campaign=rss",
+      "published": "Mon, 29 Sep 2025 16:38:28 GMT",
+      "summary": "The chancellor says choices have been made \"harder\" by international events and the \"long-term damage\" done to the economy.",
+      "source": "BBC全球经济",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        38,
+        28,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Trump renews threat to impose 100% tariffs on non-US made movies",
+      "link": "https://www.bbc.com/news/articles/c4g78e809zqo?at_medium=RSS&at_campaign=rss",
+      "published": "Mon, 29 Sep 2025 16:26:30 GMT",
+      "summary": "The president believes the American film-making industry has been \"stolen\" by other countries.",
+      "source": "BBC全球经济",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        26,
+        30,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "JLR to resume some manufacturing in coming days after cyber-attack",
+      "link": "https://www.bbc.com/news/articles/cwydxpdgx61o?at_medium=RSS&at_campaign=rss",
+      "published": "Mon, 29 Sep 2025 11:55:32 GMT",
+      "summary": "It's understood that production will resume at the Wolverhampton engine facility on 6 October.",
+      "source": "BBC全球经济",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        11,
+        55,
+        32,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Rescue deal saves Claire's but 1,000 jobs remain at risk",
+      "link": "https://www.bbc.com/news/articles/cder59gzx5xo?at_medium=RSS&at_campaign=rss",
+      "published": "Mon, 29 Sep 2025 11:44:36 GMT",
+      "summary": "Modella Capital has agreed to purchase \"substantially most\" of Claire's UK.",
+      "source": "BBC全球经济",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        11,
+        44,
+        36,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Palestinians Stream Back to Northern Gaza on Foot",
+      "link": "https://www.wsj.com/articles/palestinians-flock-back-to-northern-gaza-on-foot-after-hostage-release-breakthrough-3f60e2db",
+      "published": "Mon, 27 Jan 2025 14:23:00 -0500",
+      "summary": "Israel allowed displaced Gazans to begin crossing a military zone that bisects the enclave after a deadlock over hostage releases was broken.",
+      "source": "Wall Street Journal",
+      "published_parsed": [
+        2025,
+        1,
+        27,
+        19,
+        23,
+        0,
+        0,
+        27,
+        0
+      ]
+    },
+    {
+      "title": "Leading China Property Developer Reports Huge loss, in Sign of Widening Real-Estate Woes",
+      "link": "https://www.wsj.com/articles/even-chinas-property-stalwart-isnt-immune-from-the-crisis-19799863",
+      "published": "Mon, 27 Jan 2025 12:32:00 -0500",
+      "summary": "Troubles at Vanke raise questions about the continued spread of the property crisis and whether the Chinese state will step in.",
+      "source": "Wall Street Journal",
+      "published_parsed": [
+        2025,
+        1,
+        27,
+        17,
+        32,
+        0,
+        0,
+        27,
+        0
+      ]
+    },
+    {
+      "title": "Freed Israeli Hostages Still Had Shrapnel in Their Bodies From Oct. 7 Attack",
+      "link": "https://www.wsj.com/articles/freed-israeli-hostages-still-had-shrapnel-in-their-bodies-from-oct-7-attack-3de8cd1e",
+      "published": "Mon, 27 Jan 2025 12:12:00 -0500",
+      "summary": "Some of the women were held alone for extended periods and spent eight months in tunnels, an Israeli medical official said.",
+      "source": "Wall Street Journal",
+      "published_parsed": [
+        2025,
+        1,
+        27,
+        17,
+        12,
+        0,
+        0,
+        27,
+        0
+      ]
+    },
+    {
+      "title": "Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
+      "link": "https://www.wsj.com/articles/suspected-sabotage-of-deep-sea-cable-triggers-first-nato-led-response-337119ba",
+      "published": "Mon, 27 Jan 2025 11:22:00 -0500",
+      "summary": "The alliance mounted its first coordinated response to a suspected sabotage campaign against critical infrastructure after another cable was severed in the Baltic Sea.",
+      "source": "Wall Street Journal",
+      "published_parsed": [
+        2025,
+        1,
+        27,
+        16,
+        22,
+        0,
+        0,
+        27,
+        0
+      ]
+    },
+    {
+      "title": "Rwanda-Backed Rebels Enter Congo's Safe-Haven City",
+      "link": "https://www.wsj.com/articles/rwanda-backed-rebels-enter-congo-safe-haven-city-aid-hub-09fdccb8",
+      "published": "Mon, 27 Jan 2025 10:07:00 -0500",
+      "summary": "Residents of Goma reported gunfire and shelling after rebels overran Congolese troops. U.N. officials estimated that more than one million displaced people were now inside the city.",
+      "source": "Wall Street Journal",
+      "published_parsed": [
+        2025,
+        1,
+        27,
+        15,
+        7,
+        0,
+        0,
+        27,
+        0
+      ]
+    },
+    {
+      "title": "Smaller Stocks May Be Ready for Bigger Things",
+      "link": "https://www.etftrends.com/megatrends-channel/smaller-stocks-ready-bigger-things/",
+      "published": "Mon, 29 Sep 2025 12:45:58 +0000",
+      "summary": "<p>Likely to the chagrin of frustrated investors, the Russell 2000 Index is only modestly higher since the Federal Reserve lowered interest rates. That confirms that patience will be required in order to realize big gains with smaller stocks. Investors can alleviate some of that burden with ETFs such as the Neuberger Berman Small-Mid Cap ETF [...]</p>\n<p>The post <a href=\"https://www.etftrends.com/megatrends-channel/smaller-stocks-ready-bigger-things/\" rel=\"nofollow\">Smaller Stocks May Be Ready for Bigger Things</a> appeared first on <a href=\"https://www.etftrends.com\" rel=\"nofollow\">ETF Trends</a>.</p>",
+      "source": "ETF Trends",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        12,
+        45,
+        58,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Managed Futures Can Rebound",
+      "link": "https://www.etftrends.com/portfolio-strategies-channel/managed-futures-rebound/",
+      "published": "Mon, 29 Sep 2025 12:15:24 +0000",
+      "summary": "<p>Managed futures strategies have struggled this year, plagued by the slumping dollar and volatile U.S. trade policy, among other factors. However, advisors shouldn’t be hasty in writing off these alternative investments. The group could be primed to shine anew. Should that rebound materialize, the Unlimited HFMF Managed Futures ETF (HFMF) — one of the newest [...]</p>\n<p>The post <a href=\"https://www.etftrends.com/portfolio-strategies-channel/managed-futures-rebound/\" rel=\"nofollow\">Managed Futures Can Rebound</a> appeared first on <a href=\"https://www.etftrends.com\" rel=\"nofollow\">ETF Trends</a>.</p>",
+      "source": "ETF Trends",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        12,
+        15,
+        24,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Nvidia OpenAI Deal Could Propel This ETF",
+      "link": "https://www.etftrends.com/leveraged-inverse-channel/nvidia-openai-deal-could-propel-etf/",
+      "published": "Mon, 29 Sep 2025 12:00:47 +0000",
+      "summary": "<p>The seemingly unrelenting stream of artificial intelligence (AI)-related headlines extended in a big way on Monday, Sept. 22 when Nvidia (NVDA) and OpenAI unveiled a letter of intent under which the ChatGPT parent will deploy a minimum of 10 gigawatts of Nvidia systems to underpin its AI infrastructure. Under the terms of the agreement, the [...]</p>\n<p>The post <a href=\"https://www.etftrends.com/leveraged-inverse-channel/nvidia-openai-deal-could-propel-etf/\" rel=\"nofollow\">Nvidia OpenAI Deal Could Propel This ETF</a> appeared first on <a href=\"https://www.etftrends.com\" rel=\"nofollow\">ETF Trends</a>.</p>",
+      "source": "ETF Trends",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        12,
+        0,
+        47,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "This Sector Could Be Epicenter of AI Adoption",
+      "link": "https://www.etftrends.com/etf-education-channel/sector-epicenter-ai-adoption/",
+      "published": "Mon, 29 Sep 2025 12:00:39 +0000",
+      "summary": "<p>In what represents a positive trend for investors engaged with ETFs such as the Invesco QQQ Trust (QQQ) and the Invesco NASDAQ 100 ETF (QQQM), the AI adoption conversation continues gaining importance and momentum. That includes what sectors and industries make for credible long-term AI adopters. Healthcare has already earned a place in that conversation. [...]</p>\n<p>The post <a href=\"https://www.etftrends.com/etf-education-channel/sector-epicenter-ai-adoption/\" rel=\"nofollow\">This Sector Could Be Epicenter of AI Adoption</a> appeared first on <a href=\"https://www.etftrends.com\" rel=\"nofollow\">ETF Trends</a>.</p>",
+      "source": "ETF Trends",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        12,
+        0,
+        39,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Advisors Favoring Active ETFs: PIMCO & Vanguard Weigh In",
+      "link": "https://www.etftrends.com/fixed-income-channel/advisors-favoring-active-etfs-pimco-vanguard-weigh/",
+      "published": "Mon, 29 Sep 2025 11:00:51 +0000",
+      "summary": "<p>Active fixed income ETFs have been quite popular thus far in 2025. However, following the Fed’s rate cut, we expect demand to persist into year-end and into 2026.  I have written a lot of words on this platform about active fixed income ETFs in 2025 as the category of ETFs swells in size. Not only is [...]</p>\n<p>The post <a href=\"https://www.etftrends.com/fixed-income-channel/advisors-favoring-active-etfs-pimco-vanguard-weigh/\" rel=\"nofollow\">Advisors Favoring Active ETFs: PIMCO &#038; Vanguard Weigh In</a> appeared first on <a href=\"https://www.etftrends.com\" rel=\"nofollow\">ETF Trends</a>.</p>",
+      "source": "ETF Trends",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        11,
+        0,
+        51,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "EA going private in $55 billion deal that will pay shareholders $210 a share",
+      "link": "https://www.cnbc.com/2025/09/29/ea-shareholders-will-get-210-per-share-in-deal-to-take-company-private.html",
+      "published": "Mon, 29 Sep 2025 15:50:33 GMT",
+      "summary": "Electronic Arts said it has agreed to be acquired by PIF, Silver Lake and Affinity Partners in an all-cash deal worth $55 billion.",
+      "source": "CNBC",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        15,
+        50,
+        33,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Labor Department won't release Friday's key jobs report, other data, in case of a shutdown",
+      "link": "https://www.cnbc.com/2025/09/29/bls-wont-be-releasing-data-including-fridays-key-jobs-report-in-case-of-a-shutdown.html",
+      "published": "Mon, 29 Sep 2025 16:19:44 GMT",
+      "summary": "The Department is preparing for what would amount to a news and data blackout should the government suspend operations.",
+      "source": "CNBC",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        19,
+        44,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Trump ‘Truths’ about tariffs on films and furniture raise questions on details",
+      "link": "https://www.cnbc.com/2025/09/29/trump-movie-furniture-tariffs.html",
+      "published": "Mon, 29 Sep 2025 15:11:51 GMT",
+      "summary": "Trump last week said that steep tariffs on upholstered furniture, and kitchen and bathroom vanities would take effect on Wednesday.",
+      "source": "CNBC",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        15,
+        11,
+        51,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Cleveland Fed’s Hammack warns of 'challenging time' amid inflation worries",
+      "link": "https://www.cnbc.com/2025/09/29/cleveland-feds-beth-hammack-on-interest-rates-inflation-and-tariffs.html",
+      "published": "Mon, 29 Sep 2025 13:58:22 GMT",
+      "summary": "\"On the inflation side right now, I continue to be worried,\" Cleveland Federal Reserve President Beth Hammack Hammack told CNBC's \"Squawk Box Europe.\"",
+      "source": "CNBC",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        13,
+        58,
+        22,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Comcast names Mike Cavanagh as co-CEO alongside Brian Roberts",
+      "link": "https://www.cnbc.com/2025/09/29/comcast-roberts-cavanagh-co-ceos.html",
+      "published": "Mon, 29 Sep 2025 14:46:37 GMT",
+      "summary": "Cavanagh previously served as chief financial officer of Comcast before being promoted to president in 2022.",
+      "source": "CNBC",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        14,
+        46,
+        37,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Shutdown Odds Spike After House GOP Refuse To Bring Chamber Into Session: Report",
+      "link": "https://www.zerohedge.com/political/republican-democratic-leaders-dig-shutdown-standoff-ahead-meeting-trump",
+      "published": "Mon, 29 Sep 2025 15:45:14 +0000",
+      "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">Shutdown Odds Spike After House GOP Refuse To Bring Chamber Into Session: Report</span>\n\n            <div class=\"clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item\"><p><em><strong>Update (11450ET): </strong></em>It seems like everyone wants a shutdown this time. As Democrat leaders are being pressured by a coalition of federal unions to 'hold the line' and fight back against budget cuts to 'critical public services' even if it leads to a shutdown and mass layoffs, <strong>Republicans appear to have called their bluff ahead of a Sept. 1 deadline.</strong></p>\n<a href=\"https://cms.zerohedge.com/s3/files/inline-images/image_80%28178%29_0.jpg?itok=klnrGYEa\"><figure class=\"caption caption-img inline-images image-style-inline-images\"><img alt=\"\" height=\"333\" src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/image_80%28178%29_0.jpg?itok=klnrGYEa\" width=\"500\" /><figcaption><em>(L–R) House Speaker Mike Johnson (R-La.), Senate Majority Leader Chuck Schumer (D-N.Y.), and House Minority Leader Hakeem Jeffries (D-NY) listen during a Hanukkah reception at the U.S. Capitol Building in Washington on Dec. 17, 2024. Anna Moneymaker/Getty Images</em></figcaption></figure></a>\n\n<p>According to <em>Punchbowl News</em>' Jake Sherman, <strong>House Republicans on today's conference call indicated that House and Senate GOP leadership will have a joint <em>news conference</em> Wednesday morning</strong> - the day of the shutdown - and they won't bring the House back into session until next week. </p>\n\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">House GOP leadership seems unlikely to bring the chamber into session at all this week - -shutdown week. <a href=\"https://t.co/UlGyFZsavY\">https://t.co/UlGyFZsavY</a></p>\n— Jake Sherman (@JakeSherman) <a href=\"https://twitter.com/JakeSherman/status/1972685326121304327?ref_src=twsrc%5Etfw\">September 29, 2025</a></blockquote>\n<p>The White House, meanwhile, tells <a href=\"https://www.politico.com/live-updates/2025/09/29/congress/leavitt-democrats-reasonable-00584410\"><em>Politico</em></a> that President Trump will push congressional Democrats to back a House-passed stopgap bill during an Oval Office sitdown Monday, less than 48 hours before the shutdown. </p>\n\n<p>\"Let me be very clear about the president and the White House’s position: All we are asking for is a common-sense, clean funding resolution, a continuing resolution to keep the government open,\" Press Secretary Karoline Leavitt said during a Monday interview on Fox News. \"The president is giving Democrat leadership one last chance to be reasonable, to come to the White House today to try to talk about this,\" she added.</p>\n\n<p>Yet, <strong>according to Sherman, and <a href=\"https://polymarket.com/event/us-government-shutdown-by-october-1\">Polymarket</a>, a shutdown is in the cards</strong>. </p>\n\n<p><a href=\"https://cms.zerohedge.com/s3/files/inline-images/image%2812%29_0.png?itok=6YiZA-vw\"><img alt=\"\" class=\"inline-images image-style-inline-images\" height=\"279\" src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/image%2812%29_0.png?itok=6YiZA-vw\" width=\"500\" /></a></p>\n\n<p><em>*  *  *</em></p>\n\n<p><em><a href=\"https://www.theepochtimes.com/us/house-senate-leaders-in-shutdown-standoff-ahead-of-meeting-with-trump-5921456\">Authored by Jacob Burg via The Epoch Times</a> (emphasis ours),</em></p>\n\n<p><strong>Democratic and Republican congressional leaders are digging their heels in ahead of a critical meeting with President Donald Trump to avoid a potential government shutdown this week</strong>, each pinning the blame for any negotiations that fail tomorrow on the opposing party.</p>\n\n<p>Trump agreed to meet with Senate and House leaders of both parties on Sept. 29 to hopefully broker a deal to pass a continuing resolution to keep the government funded until a long-term spending bill can be passed.</p>\n\n<p><strong>Democrats say that Republicans need to agree to extend certain tax <a href=\"http://www.theepochtimes.com/us/health-care-subsidies-a-sticking-point-in-shutdown-standoff-what-to-know-5920226\">subsidies</a> for the Affordable Care Act Marketplace—also known as Obamacare</strong>—that were passed in 2021 as part of the American Rescue Plan and are set to expire at the end of the year.</p>\n\n<p>Republicans are countering by saying the tax subsidy discussion can occur after passing a continuing resolution to keep the government afloat in the short term, saying the Affordable Care Act is beset by “waste, fraud, and abuse.”</p>\n\n<p>A government shutdown is “totally up to the Democrats,” Senate Majority Leader John Thune (R-S.D.) told NBC’s “Meet the Press” on Sept. 27.</p>\n\n<p>“<strong>The ball is in their court</strong>,” he said. “So this decision, in my judgment, at this point in time, is up to a handful of Democrats. We need eight Democrats to pass it through the Senate, something that 13 times, when the Democrats had the majority over the last four years and President [Joe] Biden was in the White House, Republicans helped Democrats do.”</p>\n\n<p>He said the tax credits don’t expire until the end of the year and that Democrats need to “release the hostage” on refusing to approve the continuing resolution before having that conversation on health care.</p>\n\n<p>“That particular program is desperately in need of reform. It’s fraught with waste, fraud, and abuse, so we are going to have to have reforms if we take action there,” Thune said. “But I think there’s potentially a path forward.”</p>\n\n<p>Senate Minority Leader Chuck Schumer (D-N.Y.) said his coalition has been pushing for a meeting and “real negotiation” with Trump present, saying “we need the president as part of it.”</p>\n\n<p>“<strong>We need Speaker Johnson; let the four leaders and the president sit down,</strong>” he told NBC’s “Meet the Press” on Sept. 28, referring to House Speaker Mike Johnson (R-La.) and the meeting with Trump scheduled for 2 p.m. on Sept. 29.</p>\n\n<p>Schumer said the Democrats are focused on health care.</p>\n\n<p>“Rural hospitals are closing. People are going to get notices of $4,000-a-year increase in their premiums. So our job is to represent the people of America,” he said. “So far, they’ve stonewalled and said we’re not discussing any of that, and we'll see if it changes.”</p>\n\n<p>Johnson said Trump is always open to talks but wants to “operate in good faith, so he decided to bring us all in.”</p>\n\n<p>“He wants to talk with Chuck Schumer and Hakeem Jeffries and just try to convince them to follow common sense and do what’s right by the American people,” Johnson told CNN’s “State of the Union” on Sept. 28. “It’s important to point out the only thing we are trying to do is buy a little time.”</p>\n\n<p><strong>House Minority Leader Hakeem Jeffries (D-N.Y.) said in a statement that negotiations would hinge on “find[ing] a path forward to actually fix the health care system that Republicans have broken for the good of everyone.”</strong> He was referring to the expiring tax credits and cuts to Medicaid included in Trump’s One Big Beautiful Bill Act earlier this year.</p>\n\n<p><strong>Johnson called the statement “absolutely absurd.”</strong></p>\n\n<p>“The [topic of] Obamacare subsidies is a policy debate that has to be determined by the end of the year, Dec. 31,” Johnson said. “Not right now, while we’re simply trying to keep the government open so we can have all these debates.”</p>\n\n<p>CNN’s Jake Tapper asked Johnson about health care experts who have said that Americans’ premiums could increase by as much as 75 percent—as early as October—if the Obamacare subsidies expire without extension, and pressed the House leader if he’s “worried at all that those people might blame Republicans for those health care costs, for the insurance costs going up.”</p>\n\n<p><strong>“No, they’re not being truthful about that</strong>,” Johnson said. “The program doesn’t expire until the end of December, so we have time to have all those discussions and debates.”</p>\n\n<p><em>Lawrence Wilson contributed to this report.</em></p>\n</div>\n      <span class=\"field field--name-uid field--type-entity-reference field--label-hidden\" rel=\"schema:author\"><a class=\"username\" href=\"https://cms.zerohedge.com/users/tyler-durden\" lang=\"\" title=\"View user profile.\" xml:lang=\"\">Tyler Durden</a></span>\n<span class=\"field field--name-created field--type-created field--label-hidden\">Mon, 09/29/2025 - 11:45</span>",
+      "source": "ZeroHedge",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        15,
+        45,
+        14,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Case Closed! Obama CIA Boss John Brennan Clears Himself Of Any Wrongdoing",
+      "link": "https://www.zerohedge.com/political/case-closed-obama-cia-boss-john-brennan-clears-himself-any-wrongdoing",
+      "published": "Mon, 29 Sep 2025 15:40:00 +0000",
+      "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">Case Closed! Obama CIA Boss John Brennan Clears Himself Of Any Wrongdoing</span>\n\n            <div class=\"clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item\"><p><em>Authored by <a href=\"https://headlineusa.com/author/lcornelio\">Luis Cornelio</a> via <a href=\"https://headlineusa.com/subscribe/\">Headline USA</a>,</em></p>\n\n<p><em><strong>Embattled former<a href=\"https://headlineusa.com/tag/cia\"> CIA</a> Director<a href=\"https://headlineusa.com/tag/John-brennan\"> John Brennan</a> boasted on MSNBC over the weekend that he investigated himself and found no wrongdoing. </strong></em></p>\n\n<p><a href=\"https://cms.zerohedge.com/s3/files/inline-images/brennan-i-stand-very-much-by-the.jpg?itok=kwmikhfa\"><img alt=\"\" class=\"inline-images image-style-inline-images\" height=\"277\" src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/brennan-i-stand-very-much-by-the.jpg?itok=kwmikhfa\" width=\"500\" /></a></p>\n\n<p>Brennan made the claims on <a href=\"https://www.youtube.com/watch?v=cBBRuM5snn0\">Saturday’s edition of </a><em>The Weekend</em> in response to legacy media reports falsely claiming that DNI Tulsi Gabbard may have hampered the criminal case against him after she revoked the security clearances of potential witnesses. </p>\n\n<p><strong>“I don’t see any case against me. </strong>I have looked back on all of my actions and decisions, and with John Durham, the special counsel, and others that have looked at what we did — they were certainly consistent with our legal authorities and with the law,” Brennan said. </p>\n\n<p>His remarks quickly circulated online, with critics mocking him for seemingly acting as his own judge and jury. In a sarcastic X post that garnered more than one million views, popular page Western Lensman wrote,<strong> “Well, that settles it then.” </strong></p>\n\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">John Brennan says after a thorough review of his own actions, he’s concluded that “I just don’t see any case against me.\"<br /><br />\nWell, that settles it then. <a href=\"https://t.co/9ycyn7i93G\">pic.twitter.com/9ycyn7i93G</a></p>\n— Western Lensman (@WesternLensman) <a href=\"https://twitter.com/WesternLensman/status/1971986599262195932?ref_src=twsrc%5Etfw\">September 27, 2025</a></blockquote>\n<p>Another account replied that <strong>Brennan “literally became the meme,” </strong>sharing an image captioned: “We’ve investigated ourselves and found we did nothing wrong.” </p>\n\n<p>A third page added, <em><strong>“‘After careful consideration and examination of the evidence and lack thereof, I hereby find myself… Not guilty.’”</strong></em></p>\n\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">John Brennan literally did the meme. <a href=\"https://t.co/IVFcsCiY8U\">pic.twitter.com/IVFcsCiY8U</a></p>\n— Emergent Perspective (@_emergent_) <a href=\"https://twitter.com/_emergent_/status/1972017335067435394?ref_src=twsrc%5Etfw\">September 27, 2025</a></blockquote>\n<p>Brennan’s comments come as he faces a criminal investigation into his role in promoting the debunked conspiracy theory that President Donald Trump colluded with Russia to win the 2016 election. </p>\n\n<p>The probe was opened at the referral of current CIA Director John Ratcliffe, who found that Brennan may have lied to Congress about the origins of the 2016 investigation into Russian meddling and the role the Steele Dossier played.  </p>\n\n<p><strong>Brennan had long insisted the dossier played only a minor role, but newly declassified documents showed otherwise. </strong></p>\n\n<p>Files previously reported by Headline USA suggest the Obama administration systematically bypassed procedures in a rushed effort to paint Trump as a Russian asset following his election. According to Gabbard, this was carried out at the direction of then-President Barack Obama. </p>\n\n<p>Legacy media <a href=\"https://www.axios.com/2025/09/24/tulsi-gabbard-undermines-probe-trump-russia\">have</a> <a href=\"https://www.nytimes.com/2025/09/24/us/politics/john-brennan-tulsi-gabbard-cia-trump.html\">claimed</a> that Gabbard’s actions may have stalled Brennan’s potential prosecution by making key witnesses less willing to participate. Those reports omit, however, that the DOJ can still compel their testimony through subpoenas. </p>\n\n<p>Brennan himself acknowledged this during his MSNBC interview. </p>\n\n<p>“Individuals who used to work in the government, even if their security clearances were revoked, they could be subpoenaed. They could be called to provide testimony in support of whatever allegations they have. I just – I don’t see a case there,” he stated.</p>\n</div>\n      <span class=\"field field--name-uid field--type-entity-reference field--label-hidden\" rel=\"schema:author\"><a class=\"username\" href=\"https://cms.zerohedge.com/users/tyler-durden\" lang=\"\" title=\"View user profile.\" xml:lang=\"\">Tyler Durden</a></span>\n<span class=\"field field--name-created field--type-created field--label-hidden\">Mon, 09/29/2025 - 11:40</span>",
+      "source": "ZeroHedge",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        15,
+        40,
+        0,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Hegseth Sends 200 National Guard Troops Into Portland As Antifa Targets ICE",
+      "link": "https://www.zerohedge.com/political/hegseth-sends-200-national-guard-troops-portland-antifa-targets-ice",
+      "published": "Mon, 29 Sep 2025 15:20:00 +0000",
+      "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">Hegseth Sends 200 National Guard Troops Into Portland As Antifa Targets ICE</span>\n\n            <div class=\"clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item\"><p>On Sunday, Secretary of War Pete Hegseth <strong>officially deployed the National Guard to Portland</strong>, Oregon, to <a href=\"https://www.zerohedge.com/political/assets-mobilizing-counter-radical-lefts-campaign-terrorism-against-ice-agents-facilities\">counter far-left groups</a> targeting Immigration and Customs Enforcement (ICE) agents and facilities. The state of Oregon immediately filed a lawsuit seeking to block the deployment. This move comes as <strong>dark-money-funded leftist NGOs, far-left groups, and radicalized leftist lone wolves resort to violence this year</strong>, with some of this mayhem referred to as \"<a href=\"https://www.zerohedge.com/political/trump-directs-task-force-counter-rogue-ngos-leftist-groups-sowing-chaos\" target=\"_blank\">civil terrorism</a>\" ... and attacks have intensified this month.</p>\n\n<p>Hegseth wrote in a memo, \"<strong>This memorandum further implements the President's directive. 200 members of the Oregon National Guard will be called into Federal service immediately as part of the previously authorized call</strong>.\" </p>\n\n<p><a href=\"https://cms.zerohedge.com/s3/files/inline-images/G198X1NXoAAXAvh-1.png?itok=iK7k5qxN\"><img alt=\"\" class=\"inline-images image-style-inline-images\" height=\"601\" src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/G198X1NXoAAXAvh-1.png?itok=iK7k5qxN\" width=\"500\" /></a></p>\n\n<p>Then followed the suit by Democrats in Oregon, which named President Donald Trump, Defense Secretary Mark Esper, and the Department of Defense, as well as Homeland Security Secretary Kristi Noem and the Department of Homeland Security, as defendants. The <strong>suit asked the federal court in Portland to halt Trump's deployment of troops and declare it unlawful</strong>. </p>\n\n<p>NBC News quoted White House spokesperson Abigail Jackson as saying that <strong>Trump's actions were \"lawful\"</strong> and that they would \"make Portland safer.\"</p>\n\n<p>\"<strong>President Trump is using his lawful authority to direct the National Guard to protect federal assets and personnel in Portland following months of violent riots where officers have been assaulted and doxxed by left-wing rioters</strong>,\" Jackson explained. </p>\n\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">🚨 JUST IN: A resident near ICE Portland PRAISES President Trump for sending reinforcements to the city<br /><br />\n“I am SO happy that President Trump is deploying the National Guard. We have been asking for help for months!”<br /><br />\nREAL AMERICANS are BEGGING for this! <a href=\"https://t.co/Kxj1u45OfL\">pic.twitter.com/Kxj1u45OfL</a></p>\n— Nick Sortor (@nicksortor) <a href=\"https://twitter.com/nicksortor/status/1972447841470837035?ref_src=twsrc%5Etfw\">September 28, 2025</a></blockquote>\n<p>Overnight, at least <strong>one cell of the <a href=\"https://www.zerohedge.com/political/antifa-designated-domestic-terror-group-white-house-declares-war-radical-leftist-groups\">domestic terror group Antifa</a> </strong>attempted to disrupt operations at the ICE facility in Portland. </p>\n\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">BREAKING - Antifa agitators are now being drug into the Portland ICE facility as if they were rag dolls.<a href=\"https://t.co/C7kPKLpPAe\">pic.twitter.com/C7kPKLpPAe</a></p>\n— Right Angle News Network (@Rightanglenews) <a href=\"https://twitter.com/Rightanglenews/status/1972500592061972916?ref_src=twsrc%5Etfw\">September 29, 2025</a></blockquote>\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">In a shocking display of senseless violence, a black man was viciously assaulted and beaten to the ground by a mob of Antifa militants during a chaotic riot outside an ICE detention facility in Portland. <a href=\"https://t.co/wW6ihvOSeP\">pic.twitter.com/wW6ihvOSeP</a></p>\n— Ian Miles Cheong (@stillgray) <a href=\"https://twitter.com/stillgray/status/1972562793812611195?ref_src=twsrc%5Etfw\">September 29, 2025</a></blockquote>\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">NEW: As the sun sets, hundreds of far-left activists remain outside the Portland ICE building. More Antifa militants dressed in black bloc are now showing up. This is when the mayhem and violence usually escalates.<br />\nOfficers are trying to clear the driveway. <a href=\"https://twitter.com/choeshow?ref_src=twsrc%5Etfw\">@choeshow</a>|<a href=\"https://twitter.com/TPUSA?ref_src=twsrc%5Etfw\">@TPUSA</a> <a href=\"https://t.co/avruTcMX9R\">pic.twitter.com/avruTcMX9R</a></p>\n— FRONTLINES (@FrontlinesTPUSA) <a href=\"https://twitter.com/FrontlinesTPUSA/status/1972491661419876626?ref_src=twsrc%5Etfw\">September 29, 2025</a></blockquote>\n<p>Earlier, <strong>leftist Oregon Gov. Tina Kotek was spotted leading the \"50501\" movement, part of the Democratic Party's protest industrial complex funded by dark-money NGOs and leftist billionaires</strong>. These rogue NGOs orchestrated and spread chaos nationwide earlier this year and throughout the summer via color revolution-style operations, with many of the protests/riots directed at Trump and Elon Musk.</p>\n\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">Trump, please do something about this gay shit. Signed, a reasonable lesbian. <a href=\"https://t.co/jme5TxPN1a\">pic.twitter.com/jme5TxPN1a</a></p>\n— Heidi (@HeidiBriones) <a href=\"https://twitter.com/HeidiBriones/status/1972456667825795166?ref_src=twsrc%5Etfw\">September 29, 2025</a></blockquote>\n<p><strong>Democrats are mobilizing their protest industrial complex, funded by leftist billionaires</strong> and even some foreign entities, to counter the Trump administration and 'America First' agenda. Many of these dark networks are now under federal investigation as the White House takes an all-of-government approach to counter political violence emanating from Democrats. </p>\n\n<p>Last week, a New York Times report revealed that Soros' Open Society Foundation funneled <a href=\"https://www.zerohedge.com/markets/new-report-reveals-soros-open-society-funneled-80-million-pro-terror-groups\">$80 million into pro-terror groups</a>. Meanwhile, <a href=\"http://mayor\">China-linked Marxist tycoon</a> Neville Roy Singham is also under investigation for financing chaos, as Antifa and other radical left groups openly declare war on Trump. </p>\n\n<ul><li>\n\t<p><em><a href=\"https://www.zerohedge.com/political/war-against-ice-anarcho-communist-website-calls-mobilization-across-us\">\"War Against ICE\": Anarcho-Communist Website Calls For Mobilization Across U.S.</a></em></p>\n\t</li>\n\t<li>\n\t<p><em><a href=\"https://www.zerohedge.com/political/planning-war-against-fascists-socialist-rifle-association-boasts-10000-members\">\"Planning War Against Fascists\" - Socialist Rifle Association Boasts 10,000 Members</a></em></p>\n\t</li>\n</ul><p><strong>This isn't your parents' Democratic Party</strong>; it's an elitist political machine that <strong>bankrolls organized violence, hate, and socialism/Marxism</strong>, with the ultimate aim of overthrowing Trump and dismantling the nation for a socialist reconstruction. If that reconstruction is blocked, the fallback goal is the total destruction of the West. This is civil terrorism, and what we are witnessing now is the rise of <a href=\"https://www.zerohedge.com/political/trump-directs-task-force-counter-rogue-ngos-leftist-groups-sowing-chaos\" target=\"_blank\">nihilistic accelerationism from the left</a>.</p>\n</div>\n      <span class=\"field field--name-uid field--type-entity-reference field--label-hidden\" rel=\"schema:author\"><a class=\"username\" href=\"https://cms.zerohedge.com/users/tyler-durden\" lang=\"\" title=\"View user profile.\" xml:lang=\"\">Tyler Durden</a></span>\n<span class=\"field field--name-created field--type-created field--label-hidden\">Mon, 09/29/2025 - 11:20</span>",
+      "source": "ZeroHedge",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        15,
+        20,
+        0,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "What's That Weird Smell Coming From Nvidia",
+      "link": "https://www.zerohedge.com/markets/whats-weird-smell-coming-nvidia",
+      "published": "Mon, 29 Sep 2025 15:00:00 +0000",
+      "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">What's That Weird Smell Coming From Nvidia</span>\n\n            <div class=\"clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item\"><p><em>Submitted by <a href=\"https://quoththeraven.substack.com/p/nvidia-is-starting-to-smell-a-little\">QTR's Fringe Finance</a></em></p>\n\n<p>At some point last week, I put down whatever article I was reading about AAA commercial real estate defaults, “Fartcoin”, the subprime auto market imploding, student debt delinquencies skyrocketing, or unaudited stablecoins being threaded into the fabric of the Treasury market to read <em>The Information’s</em> <a href=\"https://quoththeraven.substack.com/p/nvidia-is-starting-to-smell-a-little\" rel=\"\">piece</a> about Nvidia discussing a new chip-leasing business model with OpenAI.</p>\n\n<p>Familiarizing myself with the details, I could only let out an exhausted sigh.</p>\n\n<p>The general story is that OpenAI could lease GPUs instead of buying them outright, saving an estimated 10 to 15 percent on costs while avoiding heavy capex and depreciation. Nvidia, meanwhile, would keep ownership of the hardware — possibly through a financing vehicle — and turn racks of GPUs into collateral.</p>\n\n<p>On the surface, it sounds like clever financial engineering. But I’ve been doing this long enough — more than a decade as a professional short seller and now as just a general nuisance that writes a column— to know when something doesn’t smell right. And this doesn’t.</p>\n\n<p><a href=\"https://substackcdn.com/image/fetch/$s_!F7SE!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F137a2308-1574-4863-ad99-546f5a14a4ee_1326x818.jpeg\" rel=\"\" target=\"_blank\"><img alt=\"\" src=\"https://www.zerohedge.com/src\" /></a></p>\n\n<p>I tend to think businesses don’t reinvent themselves as financiers because things are running smoothly. They do it when customers can’t or won’t keep up with the spending binge, and when management wants to paper over cracks with accounting gymnastics. Or, when an announcement absolutely has to hit the market as a PR before it tangibly takes hold.</p>\n\n<p>We’ve all seen it before: telecom leasebacks in the dot-com era, mortgage-backed securities before 2008, all that bullshit — all sold as “innovation” until the music stopped.</p>\n\n<p>My regular readers know this isn’t the first time Nvidia has set off my radar. Back in September 2023, I wrote a piece called <em>As the Market’s Black Swan Just Arrived?</em> In addition to arguing we were nearing a top because a semiconductor executive was signing tits like he was f*cking Jon Bon Jovi…</p>\n\n<p><a href=\"https://substackcdn.com/image/fetch/$s_!8xrT!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F05bf0304-ba1f-473a-8444-f66d4f60007f_1496x1232.jpeg\" rel=\"\" target=\"_blank\"><img alt=\"\" src=\"https://www.zerohedge.com/src\" /></a></p>\n\n<p>…I also pointed out the circular economics in Nvidia’s relationship with CoreWeave (first brought to light by people like <a href=\"https://x.com/SamanthaLaDuc\" rel=\"\">Samantha LaDuc</a> and others) — Nvidia investing in a startup that depended on its chips, which then used those very same chips as collateral to borrow money… to buy more Nvidia chips.</p>\n\n<p>My line at the time was: “Nvidia invested in CoreWeave, which is reliant on Nvidia products, and now those Nvidia products are being used as collateral to buy… what is most likely more Nvidia products. Fantastic.”</p>\n\n<p>Fast forward to July 2025, and I then wrote <em>One Tech Stock I’m Hell Bent on Avoiding</em> — again about CoreWeave. CoreWeave’s IPO was so weak there was no real demand at $40. Nvidia had to backstop it with a $250 million “rescue” order just to get it out the door. And then, a few months later, CoreWeave is trading at $120.</p>\n\n<p>Am I really supposed to believe investor demand materialized out of nowhere in that short a time? What <em>rational</em> explanation is there for this? And, more importantly, <em>does anyone even give a f*ck?</em></p>\n\n<p><a href=\"https://substackcdn.com/image/fetch/$s_!8Kvl!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8ac083c7-fedd-406b-a27c-a265b9f6d5c7_1682x1500.jpeg\" rel=\"\" target=\"_blank\"><img alt=\"\" src=\"https://www.zerohedge.com/src\" /></a></p>\n\n<p>Now, add this past week’s leasing story to that backdrop. It looks like the same playbook: potentially circular economics dressed up as innovation. First with CoreWeave, now with OpenAI.</p>\n\n<p>And the entanglements don’t stop there. Nvidia has been spraying money around the sector. Nvidia has combined strategic investments in partners such as OpenAI, Intel, and ElevenLabs. By my count, in 2025 alone, Nvidia made at least six major moves—three acquisitions (Gretel, Lepton AI, CentML) and three strategic investments (Intel, OpenAI, ElevenLabs). Why spread yourself in so many directions, so quickly? How is it possible to even <em>effectuate </em>these deals and partnerships that feel like they are coming literally every other day?</p>\n\n<p>This would be interesting to watch in any company, but Nvidia isn’t just any company. It’s one of the so-called Magnificent Seven, a stock so heavily weighted in ETFs and indices that nearly every investor — pensions, retirement accounts, mom-and-pop 401(k)s — owns it whether they know it or not.</p>\n\n<hr /><p>🔥 <strong>50% OFF FOR LIFE:</strong> Using this coupon entitles you to 50% off an annual subscription to <em>Fringe Finance </em>for life: <strong><a href=\"https://quoththeraven.substack.com/subscribe?coupon=d8097c43\" rel=\"\">Get 50% off forever</a></strong></p>\n\n<hr /><p>Nvidia has become the market’s bellwether, and its success or failure dictates the broader market’s moves. If confidence ever cracks in the name, it won’t just be Nvidia’s stock price that falls — it could destabilize the whole market.</p>\n\n<p>Yes, leasing works in some industries. Aircraft engines are offered “power by the hour.” Software went subscription years ago. But GPUs aren’t aircraft engines or software licenses. They’re fast-depreciating, quickly outdated hardware — made even more so by Nvidia itself, which has shortened its product cycles to one year. Leasing them doesn’t align incentives; it traps customers on a treadmill, while Nvidia squeezes them for rent.</p>\n\n<p>OpenAI’s motive is obvious — it’s likely burning cash and still leaning on Microsoft to keep the lights on. Nvidia’s motive is just as clear: keep the demand story alive at all costs. But when the “innovation” at the center of the AI boom shifts from new chips to new financing gimmicks, I don’t see progress. I see late-cycle behavior.</p>\n\n<p>I’ve said before that I wasn’t sure AI was a bubble. But with CoreWeave’s failed IPO magically tripling in months, with Nvidia underwriting its own customers, and now with this talk of chip leasing, I’ve changed my mind. This is what bubbles look like — distorted incentives, circular economics, and financial engineering that papers over weaknesses.</p>\n\n<p>And when the company carrying the entire market on its back decides its next great idea is lease accounting, that might not just be a red flag. It could be a warning flare.</p>\n\n<p><a href=\"https://substackcdn.com/image/fetch/$s_!lX65!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F7b4f0b11-cdb4-4f89-9600-5faf882f9b35_66x52.png\" rel=\"\" target=\"_blank\"><img alt=\"\" src=\"https://www.zerohedge.com/src\" /></a></p>\n\n<p><em>QTR’s Disclaimer</em>: <em>Please read my full legal disclaimer <a href=\"https://quoththeraven.substack.com/about\" rel=\"\">on my About page here</a></em>. <em>This post represents my opinions only.</em> <em>In addition, please understand I am an idiot and often get things wrong and lose money. I may own or transact in any names mentioned in this piece at any time without warning. Contributor posts and aggregated posts have been hand selected by me, have not been fact checked and are the opinions of their authors. They are either submitted to QTR by their author, reprinted under a <a href=\"https://creativecommons.org/share-your-work/\" rel=\"\">Creative Commons license</a> with my best effort to uphold what the license asks, or with the permission of the author.</em></p>\n\n<p><em>This is not a recommendation to buy or sell any stocks or securities, just my opinions. I often lose money on positions I trade/invest in. I may add any name mentioned in this article and sell any name mentioned in this piece at any time, without further warning. None of this is a solicitation to buy or sell securities. I may or may not own names I write about and are watching. Sometimes I’m bullish without owning things, sometimes I’m bearish and do own things. Just assume my positions could be exactly the opposite of what you think they are just in case. If I’m long I could quickly be short and vice versa. I won’t update my positions. All positions can change immediately as soon as I publish this, with or without notice and at any point I can be long, short or neutral on any position. You are on your own. Do not make decisions based on my blog. I exist on the fringe. If you see numbers and calculations of any sort, assume they are wrong and double check them. I failed Algebra in 8th grade and topped off my high school math accolades by getting a D- in remedial Calculus my senior year, before becoming an English major in college so I could bullshit my way through things easier.</em></p>\n\n<p><em>The publisher does not guarantee the accuracy or completeness of the information provided in this page. These are not the opinions of any of my employers, partners, or associates. I did my best to be honest about my disclosures but can’t guarantee I am right; I write these posts after a couple beers sometimes. I edit after my posts are published because I’m impatient and lazy, so if you see a typo, check back in a half hour. Also, I just straight up get shit wrong a lot. I mention it twice because it’s that important.</em></p>\n</div>\n      <span class=\"field field--name-uid field--type-entity-reference field--label-hidden\" rel=\"schema:author\"><a class=\"username\" href=\"https://cms.zerohedge.com/users/tyler-durden\" lang=\"\" title=\"View user profile.\" xml:lang=\"\">Tyler Durden</a></span>\n<span class=\"field field--name-created field--type-created field--label-hidden\">Mon, 09/29/2025 - 11:00</span>",
+      "source": "ZeroHedge",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        15,
+        0,
+        0,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "'Everybody Wants A Deal': Trump Presses Netanyahu On Gaza Peace In 4th WH Visit",
+      "link": "https://www.zerohedge.com/geopolitical/everybody-wants-deal-trump-presses-netanyahu-gaza-peace-4th-wh-visit",
+      "published": "Mon, 29 Sep 2025 14:40:00 +0000",
+      "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">'Everybody Wants A Deal': Trump Presses Netanyahu On Gaza Peace In 4th WH Visit</span>\n\n            <div class=\"clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item\"><p>President Trump is once again hosting Israeli Prime Minister Benjamin Netanyahu at the White House on Monday, in order to mull the US president's Gaza peace proposal amid mounting support among Western nations for Palestinian statehood. It remains that of course neither Washington nor Israel is on board with such recognition, but Trump has wanted to see a swift resolution as the war approaches its two-year mark next week.</p>\n\n<p>This will be Netanyahu's<strong> fourth White House visit </strong>since Trump returned to office in January. Despite the red carpet constantly being rolled out for him in Washington, he faces growing international isolation, especially in Europe.</p>\n\n<p>During his last <a href=\"https://www.zerohedge.com/geopolitical/netanyahu-touts-regime-change-across-middle-east-un-speech-thanks-america\">Friday speech</a> before the UN General Assembly in New York, he <strong>lashed out at the leaders of France, Great Britain, Australia, Canada</strong>, and other countries for \"unconditionally\" recognizing a Palestinian state. At the same time he thanked America for its firm pro-Israel stance.</p>\n\n<p>But Trump is optimistic that a deal with Hamas to secure the release of all hostages can be salvaged. He told <em>Reuters</em> on Sunday that he hopes to gain Netanyahu's support for a peace framework that would end the conflict in Gaza. \"We're getting a very good response because Bibi wants to make the deal too,\" Trump said in a phone interview. <strong>\"Everybody wants to make the deal.\"</strong></p>\n<a href=\"https://cms.zerohedge.com/s3/files/inline-images/trumpbibfile.jpg?itok=3RH_V8im\"><figure class=\"caption caption-img inline-images image-style-inline-images\"><img alt=\"\" height=\"324\" src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/trumpbibfile.jpg?itok=3RH_V8im\" width=\"500\" /><figcaption><em>Via Reuters</em></figcaption></figure></a>\n\n<p>Regional powers have reportedly been involved, including including Saudi Arabia, Qatar, the UAE, Jordan, and Egypt - in planning and backing the agreement, which is crucial for its chances of success.</p>\n\n<p>\"It’s called peace in the Middle East - more than Gaza. Gaza is part of it, but it’s peace in the Middle East,\" Trump said. Per the published schedule for <a href=\"https://www.timesofisrael.com/liveblog_entry/netanyahus-white-house-visit-to-include-lunch-meeting-press-conference/\">Monday</a>:</p>\n\n<blockquote>\n<p><em>The meeting is scheduled to begin at 11 a.m. local time (6 p.m. in Israel), when Trump will greet Netanyahu, according to the itinerary. The two men will then hold a meeting and sit for a meal together, followed by the press conference, scheduled for 1:15 p.m.</em></p>\n</blockquote>\n\n<p>White House press secretary Karoline Leavitt has previewed to reporters that <strong>\"both sides have to give up a little bit and might leave the table a little bit unhappy</strong>.<strong>\" </strong>But it seems this conversation is only being had with one side, given no signs of direct Hamas involvement in these discussions. </p>\n\n<p>The reality is that this month's Israeli attack on Hamas officials in Doha was likely the straw that broke the camel's back in terms of ending the possibility of negotiations. Hamas says its negotiating team was lured to Qatar precisely with the promise of a new deal on the horizon, only to be attacked in a brazen Israeli operation, leaving five dead, as as well as a Qatari security guard.</p>\n\n<p>So despite Trump's optimism for the future, <strong>chances aren't great</strong>, also at a time the IDF is pursuing the total takeover of Gaza City.</p>\n\n<p><strong>Hamas has meanwhile made clear that it won't negotiate its own demise</strong>, while also wanting a full Israeli military withdrawal before all remaining hostages are released, but Netanyahu is still pledging to not end IDF operations until the complete eradication of Hamas is realized.</p>\n\n<p>Trump reportedly wants to see an immediate halt to all military operations, but will Israel comply? Will Hamas comply? Both seem remain locked in a <strong>zero sum fight</strong> at this point, so it seems increasingly unlikely.</p>\n\n<p>Earlier, we previewed the president's <a href=\"https://www.zerohedge.com/geopolitical/trumps-21-point-plan-ending-gaza-war-revealed-first-time\">21-point plan for ending the Gaza war</a>, which was first revealed over the weekend in Israeli media sources.</p>\n</div>\n      <span class=\"field field--name-uid field--type-entity-reference field--label-hidden\" rel=\"schema:author\"><a class=\"username\" href=\"https://cms.zerohedge.com/users/tyler-durden\" lang=\"\" title=\"View user profile.\" xml:lang=\"\">Tyler Durden</a></span>\n<span class=\"field field--name-created field--type-created field--label-hidden\">Mon, 09/29/2025 - 10:40</span>",
+      "source": "ZeroHedge",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        14,
+        40,
+        0,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Federal Reserve Board issues enforcement action with former employee of Dacotah Bank",
+      "link": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20250925a.htm",
+      "published": "Thu, 25 Sep 2025 19:00:00 GMT",
+      "summary": "Federal Reserve Board issues enforcement action with former employee of Dacotah Bank",
+      "source": "Federal Reserve Board",
+      "published_parsed": [
+        2025,
+        9,
+        25,
+        19,
+        0,
+        0,
+        3,
+        268,
+        0
+      ]
+    },
+    {
+      "title": "Federal Reserve Board publishes agenda for its community bank conference, which will take place on Thursday, October 9",
+      "link": "https://www.federalreserve.gov/newsevents/pressreleases/other20250919a.htm",
+      "published": "Fri, 19 Sep 2025 16:00:00 GMT",
+      "summary": "Federal Reserve Board publishes agenda for its community bank conference, which will take place on Thursday, October 9",
+      "source": "Federal Reserve Board",
+      "published_parsed": [
+        2025,
+        9,
+        19,
+        16,
+        0,
+        0,
+        4,
+        262,
+        0
+      ]
+    },
+    {
+      "title": "Federal Reserve Board issues enforcement actions with former employee of First Horizon Bank and former employee of Manufacturers and Traders Trust Company",
+      "link": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20250918a.htm",
+      "published": "Thu, 18 Sep 2025 15:00:00 GMT",
+      "summary": "Federal Reserve Board issues enforcement actions with former employee of First Horizon Bank and former employee of Manufacturers and Traders Trust Company",
+      "source": "Federal Reserve Board",
+      "published_parsed": [
+        2025,
+        9,
+        18,
+        15,
+        0,
+        0,
+        3,
+        261,
+        0
+      ]
+    },
+    {
+      "title": "Federal Reserve issues FOMC statement",
+      "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20250917a.htm",
+      "published": "Wed, 17 Sep 2025 18:00:00 GMT",
+      "summary": "Federal Reserve issues FOMC statement",
+      "source": "Federal Reserve Board",
+      "published_parsed": [
+        2025,
+        9,
+        17,
+        18,
+        0,
+        0,
+        2,
+        260,
+        0
+      ]
+    },
+    {
+      "title": "Federal Reserve Board and Federal Open Market Committee release economic projections from the September 16-17 FOMC meeting",
+      "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20250917b.htm",
+      "published": "Wed, 17 Sep 2025 18:00:00 GMT",
+      "summary": "Federal Reserve Board and Federal Open Market Committee release economic projections from the September 16-17 FOMC meeting",
+      "source": "Federal Reserve Board",
+      "published_parsed": [
+        2025,
+        9,
+        17,
+        18,
+        0,
+        0,
+        2,
+        260,
+        0
+      ]
+    },
+    {
+      "title": "SEC Seeks Public Comment to Improve Rules on Residential Mortgage-Backed Securities and Asset-Backed Securities",
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-126-sec-seeks-public-comment-improve-rules-residential-mortgage-backed-securities-asset-backed",
+      "published": "Fri, 26 Sep 2025 14:35:00 -0400",
+      "summary": "The Securities and Exchange Commission today published a concept release soliciting public comment on how to improve current SEC rules governing residential mortgage-backed securities (RMBS) and certain aspects of asset-backed securities (ABS) generally…",
+      "source": "美国证监会-新闻发布",
+      "published_parsed": [
+        2025,
+        9,
+        26,
+        18,
+        35,
+        0,
+        4,
+        269,
+        0
+      ]
+    },
+    {
+      "title": "SEC Announces Departure of Chief Operating Officer Ken Johnson",
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-125-sec-announces-departure-chief-operating-officer-ken-johnson",
+      "published": "Wed, 24 Sep 2025 14:02:29 -0400",
+      "summary": "The Securities and Exchange Commission today announced that Ken Johnson, who has been serving as Chief Operating Officer (COO) since December 2017, will retire from the agency in December.\n\n“Ken has been an integral leader at the SEC for more than two…",
+      "source": "美国证监会-新闻发布",
+      "published_parsed": [
+        2025,
+        9,
+        24,
+        18,
+        2,
+        29,
+        2,
+        267,
+        0
+      ]
+    },
+    {
+      "title": "SEC Announces Agenda, Panelists for SEC-CFTC Roundtable on Regulatory Harmonization Efforts",
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-124-sec-announces-agenda-panelists-sec-cftc-roundtable-regulatory-harmonization-efforts",
+      "published": "Wed, 24 Sep 2025 11:45:14 -0400",
+      "summary": "The Securities and Exchange Commission and the Commodity Futures Trading Commission have announced the&nbsp;agenda and panelists for their joint September 29 roundtable on regulatory harmonization efforts.\n\nThe roundtable, announced earlier this month,…",
+      "source": "美国证监会-新闻发布",
+      "published_parsed": [
+        2025,
+        9,
+        24,
+        15,
+        45,
+        14,
+        2,
+        267,
+        0
+      ]
+    },
+    {
+      "title": "Jon Kroeper Named Deputy Director of the Division of Trading and Markets",
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-123-jon-kroeper-named-deputy-director-division-trading-markets",
+      "published": "Wed, 24 Sep 2025 10:58:00 -0400",
+      "summary": "The Securities and Exchange Commission today announced that Jon Kroeper has been named deputy director of the agency’s Division of Trading and Markets, effective Sept. 29.\n\nMr. Kroeper twice served at the SEC before joining the Financial Industry…",
+      "source": "美国证监会-新闻发布",
+      "published_parsed": [
+        2025,
+        9,
+        24,
+        14,
+        58,
+        0,
+        2,
+        267,
+        0
+      ]
+    },
+    {
+      "title": "Small Business Forum Report to Congress Highlights Recommendations to Improve Capital Raising",
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-122-small-business-forum-report-congress-highlights-recommendations-improve-capital-raising",
+      "published": "Mon, 22 Sep 2025 14:55:00 -0400",
+      "summary": "The Securities and Exchange Commission released a report to Congress summarizing policy recommendations made during the SEC’s 44th Annual Small Business Forum.\n\nThe report provides a summary of the forum proceedings, recommendations developed by…",
+      "source": "美国证监会-新闻发布",
+      "published_parsed": [
+        2025,
+        9,
+        22,
+        18,
+        55,
+        0,
+        0,
+        265,
+        0
+      ]
+    },
+    {
+      "title": "2024年全国科技经费投入统计公报",
+      "link": "https://www.stats.gov.cn/sj/zxfb/202509/t20250929_1961429.html",
+      "published": "2025-09-29 03:00:02",
+      "summary": "2024年全国科技经费投入统计公报[1]国家统计局 科学技术部 财政部2025年9月29日 　　2024年，全国研究与试验发展（R&amp;D）经费投入保持稳定增长，投入强度较快提升，基础研究投入取得新突破，国家财政科技支出稳步增加。 　　一、研究与试验发展（R&amp;D）经费情况 　　2024年，全国共投入研究与试验发展（R&amp;D）经费36326....",
+      "source": {},
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        3,
+        0,
+        2,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "社会事业向好发展　民生福祉不断增进——“十四五”以来社会民生统计报告",
+      "link": "https://www.stats.gov.cn/sj/zxfb/202509/t20250928_1961404.html",
+      "published": "2025-09-28 09:30:00",
+      "summary": "社会事业向好发展　民生福祉不断增进 ——“十四五”以来社会民生统计报告 　　中国式现代化，民生为大。以习近平同志为核心的党中央高度重视社会民生事业，将人民对美好生活的向往作为奋斗目标，“十四五”以来，各地区各部门认真贯彻落实党中央决策部署，扎实推进人口高质量发展，着力在发展中保障和改善民生，着力...",
+      "source": {},
+      "published_parsed": [
+        2025,
+        9,
+        28,
+        9,
+        30,
+        0,
+        6,
+        271,
+        0
+      ]
+    },
+    {
+      "title": "2025年1—8月份全国规模以上工业企业利润增长0.9%",
+      "link": "https://www.stats.gov.cn/sj/zxfb/202509/t20250927_1961400.html",
+      "published": "2025-09-27 09:30:02",
+      "summary": "1—8月份，全国规模以上工业企业实现利润总额46929.7亿元，同比增长0.9%（按可比口径计算，详见附注二）。 　　1—8月份，规模以上工业企业中，国有控股企业实现利润总额15156.5亿元，同比下降1.7%；股份制企业实现利润总额34931.9亿元，增长1.1%；外商及港澳台投资企业实现利润总额11723.6亿元，增长0.9%；私营企...",
+      "source": {},
+      "published_parsed": [
+        2025,
+        9,
+        27,
+        9,
+        30,
+        2,
+        5,
+        270,
+        0
+      ]
+    },
+    {
+      "title": "2025年9月中旬流通领域重要生产资料市场价格变动情况",
+      "link": "https://www.stats.gov.cn/sj/zxfb/202509/t20250923_1961330.html",
+      "published": "2025-09-24 09:30:00",
+      "summary": "中国统计信息服务中心　卓创资讯 　　据对全国流通领域9大类50种重要生产资料市场价格的监测显示，2025年9月中旬与9月上旬相比，25种产品价格上涨，23种下降，2种持平。 2025年9月中旬流通领域重要生产资料市场价格变动情况 产品名称单位本期价格（元）比上期价格涨跌（元）涨跌幅(%)一、黑色金属    螺纹钢（Φ2...",
+      "source": {},
+      "published_parsed": [
+        2025,
+        9,
+        24,
+        9,
+        30,
+        0,
+        2,
+        267,
+        0
+      ]
+    },
+    {
+      "title": "8月份国民经济运行总体平稳、稳中有进",
+      "link": "https://www.stats.gov.cn/sj/zxfb/202509/t20250915_1961181.html",
+      "published": "2025-09-15 10:00:06",
+      "summary": "（2025年9月15日）国家统计局 　　8月份，在以习近平同志为核心的党中央坚强领导下，各地区各部门认真贯彻落实党中央、国务院决策部署，坚持稳中求进工作总基调，完整准确全面贯彻新发展理念，加快构建新发展格局，积极强化宏观政策调节，纵深推进全国统一大市场建设，着力做强国内大循环，生产需求基本平稳，就业物价...",
+      "source": {},
+      "published_parsed": [
+        2025,
+        9,
+        15,
+        10,
+        0,
+        6,
+        0,
+        258,
+        0
+      ]
+    },
+    {
+      "title": "印奇：市场上主流厂商的“含模量”可能不到50%",
+      "link": "http://www.huxiu.com/article/4787142.html?f=wangzhan",
+      "published": "Mon, 29 Sep 2025 22:41:08 +0800",
+      "summary": "<img src=\"https://img.huxiucdn.com/article/cover/202509/29/222113117178.jpg\" />\n<p>出品丨虎嗅汽车组</p><p>作者丨肖漫</p><p>头图丨千里科技</p><p><br /></p><p>“我当时在全国寻找聪明人，偶然有一次见到印奇，一见如故、相见恨晚、一拍即合。”在昨天千里科技的发布会上，李书福说，自己的目标就是找到一个聪明人，印奇就是这个聪明人。</p><p>&nbsp;</p><p>为了支持印奇，李书福既给钱又给人。去年 7 月，吉利把 19.91% 的力帆科技股份转让给印奇旗下公司，随后印奇入主力帆科技，后改名千里科技。今年 8 月初，极氪、吉利研究院近千名员工合并到千里科技，以第三方供应商的身份继续服务吉利的智驾板块。</p><p>&nbsp;</p><p>千里科技旗目前有三个业务：L2+到L4级智能驾驶方案、智能座舱、Robotaxi。李书福不是只想找一个外包的智驾供应商，印奇也想做更大的事情。</p><p>&nbsp;</p><p>印奇给千里科技描绘了一个围绕 AI 的宏伟蓝图，千里不光要做第二家“华为引望”，还要做AI 大脑、操作系统、新的 AI 终端。车只是整个计划的一部分。</p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/29/222229562233.png?imageView2/2/w/1000/format/png/interlace/1/q/85\" /></p><p class=\"text-img-note\" label=\"图片备注\">印奇描绘的“千里计划”（“the Afari Plan”）</p><p>&nbsp;</p><p>印奇讲的故事听起来很像特斯拉的 master plan，只是少了机器人。自从特斯拉开始转向机器人和 Robotaxi 后，很多汽车业从业者都会说汽车也是机器人，自动驾驶车就是第一个具身智能。这个故事没有错，但去持续讲这个故事的前提，是印奇得把吉利的智能驾驶先搞好。</p><p>&nbsp;</p><p>以下是虎嗅汽车等媒体和千里科技高管<span class=\"text-remarks\" label=\"备注\">（千里科技董事长印奇、千里智驾董事长兼CEO王军、千里智驾联席CEO陈奇、千里智驾CTO杨沐）</span>的对谈实录，有删改。</p><p><br /></p><p class=\"text-big-title\" label=\"大标题\">从明年开始，千里智驾 AI 解决方案能够有规模化的商业收入</p><p><br /></p><p><strong>Q：前段时间千里智驾进行了整合，多个团队整合后如何进行分工，如何形成合力？</strong></p><p>&nbsp;</p><p>印奇：我觉得这个组合可以说是“神来之笔”，我过去三年深度参与到智驾系统里面，我觉得需要具备两类组织基因：一类是要有非常强的 AI native（AI 原生）、AI模型，每一个模型的数据迭代、模型驱动效率会很强；另外还需要有一个非常强大的工程化能力，这两个能力缺一不可。</p><p>&nbsp;</p><p>团队融合一定是需要一些时间，我们目前已经形成非常统一的脉络和框架。</p><p>&nbsp;</p><p>王军：团队的融合其实比新建一个团队更难，团队融合核心有两点：一是目标一致，大家做智驾已经做了好多年，都憋着一股劲儿，我们希望能够做到世界上最好的一个智驾。</p><p>&nbsp;</p><p>千里智驾无论L2+到L3，还是L4，就只是一个版本，围绕这个版本需要什么样的人才再针对性去配，才形成了团队融合。在这个过程当中，大家有一些顾虑，但是真正的最后围绕目标，围绕同一个版本，我相信他们很快能够完成（融合），最后检验的就是我们这个版本的效果。</p><p>&nbsp;</p><p><strong>Q：千里智驾、座舱后续的业务战略规划是什么？</strong></p><p>&nbsp;</p><p>印奇：我们认为“AI+车”是一个整体，所以聚焦的三大场景是智驾、智舱和robotaxi，这也是我们未来三年希望能够快速落地解决的三大行业问题。</p><p>&nbsp;</p><p>王军：整合工作完成只是第一步。我们会持续地发布产品解决方案，包括今年年底的L3、明年下半年发布应用于 Robotaxi 的 L4 方案。</p><p>&nbsp;</p><p>目前我们团队已经有将近2000人，我们能够做更多的事情，千里智驾会做从L2到L3到L4的一个整体解决方案。</p><p>&nbsp;</p><p><strong>Q：千里科技在智驾技术的研发投入占比是多少，目前的商业化落地的进度，以及公司预计未来2到3年的营收规划是多少？</strong></p><p>&nbsp;</p><p>印奇：我们是上市公司，预期不能随便讲。</p><p>&nbsp;</p><p>千里是个非常好的平台。千里不是从零开始，不管是智驾、座舱和Robotaxi，我们都有非常有经验的团队，最后在千里这个平台形成整合。千里科技从一个传统的制造型的上市公司，转变成一个真正AI驱动的公司，研发是重中之重。</p><p>&nbsp;</p><p>从商业化角度，我认为一个新的技术方向需要达成共识，节奏也非常重要。我们大的商业化结果是希望从明年开始，智驾的 AI 解决方案能够形成一些规模化的商业收入。未来18个月，我们的Robotaxi上也会有一个比较明确的KPI。同时，明年也能看到我们座舱的产品能够进入从0到1的阶段。</p><p><br /></p><p class=\"text-big-title\" label=\"大标题\">市场上主流厂商的“含模量”可能不到50%</p><p><br /></p><p><strong>Q：你今天在发布会上提出“含模量”，能否详细解释一下？</strong></p><p>&nbsp;</p><p>印奇：智驾历史上有两条路线。一条路线是以特斯拉为代表的纯视觉加模型的方法。第二个就是当年早期Waymo为代表的高清地图加规则的系统。这两条路线已经非常收敛。</p><p>&nbsp;</p><p>我认为，最终AI大模型的演进和诞生，未来的智驾系统，不管是L2/L3/L4，一定是以视觉感知为核心，加上端到端大模型这样的技术框架作为底层逻辑，会叠加一些特殊场景，确保它的安全边界会更高，例如我们在一些场景下叠加了地图的内容，但最终底层一定是一个含模量极高的端到端大模型。</p><p>&nbsp;</p><p><strong>Q：“含模量”的衡量标准是什么？</strong></p><p>&nbsp;</p><p>印奇：我之前分享过一个“三层汉堡包理论”，现在市面上所有的智驾系统可以分成三层，最内部的是模型，中间是一个规则系统，最上面是地图。我们讲的“含模量”，就是模型、规则、地图的比例。</p><p>&nbsp;</p><p><strong>Q：其他厂商的含模量是什么水平，千里智驾的“含模量”已经达到多少？</strong></p><p>&nbsp;</p><p>印奇：无论现在市场上主流智驾厂商讲多么fancy的大模型概念，整个含模量可能不到50%。从整个国际市场来看，行业标杆的“含模量”能达到 80%-90%。</p><p>&nbsp;</p><p>我们很有信心，在未来六个月时间把千里智驾的“含模量”提高到 80%-90%。</p><p>&nbsp;</p><p><strong>Q：今年理想、元戎开始走VLA路线，华为做的是WEWA，您怎么看智驾技术上的分野？</strong></p><p><strong>&nbsp;</strong></p><p>印奇：我其实觉得智驾这个行业很多名词都不重要，跟实际的方案还是有一定差距。</p><p>&nbsp;</p><p>千里智驾想避免去讲专业名词，VLA也好，世界模型也好，现在在大模型领域都非常地不成熟，更谈不上用到智驾领域。</p><p>&nbsp;</p><p>我们应该更加务实地把感知做好、规划做好、端到端做好，我们这次发布会也其实给大家一个方向，一个智驾好不好，去试驾一辆车是最好的（检验）方式。</p><p><br /></p><p class=\"text-big-title\" label=\"大标题\">以大模型为驱动，纯视觉为核心是未来智驾的终极方案</p><p><br /></p><p>Q：特斯拉给 Robotaxi 赛道极大的震动，传统的L4玩家都跳出来为自己辩护，他们认为靠大模型的能力永远也达不到无人驾驶的水平，千里科技如何看待这一说法？</p><p>&nbsp;</p><p>印奇：我在 AI 领域这么多年，我第一次感受到有一点点后发优势。因为先发的人是有包袱的，有的厂商说做纯视觉，他就不好意思加激光雷达了。</p><p>&nbsp;</p><p>在技术的论断上我是比较决断的，我认为一定是以大模型为驱动，纯视觉为核心的方案是未来所有智驾的终极方案，都不用折腾。</p><p>&nbsp;</p><p>第二，我们在AI的所有领域里面，不仅仅是要达到人的水平，未来要超越人。所以完全不用纠结在传感器的选择，未来一定是复合传感器。不光是激光雷达，包括4D毫米波雷达等传感器，只要能够在一些极端的安全情况下有助力，且成本可控，未来的智驾里面都会使用。</p><p>&nbsp;</p><p>Q：千里科技如何权衡 L4 的研发体系和 L2+的量产智驾的研发？</p><p>&nbsp;</p><p>印奇：L2+到L4一定是同一个技术栈。因为要复用数据，如果没有L2+的数据的话，很难在L3、L4里面真正去大规模迭代。</p><p>&nbsp;</p><p>第二点，从L2+到L4就一定需要有差异化，有不同的侧重，比如在L4里面，我们会把更高效的地图加进去。</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/29/221755890548.png?imageView2/2/w/1000/format/png/interlace/1/q/85\" /></p><p class=\"text-img-note\" label=\"图片备注\">千里科技的Robotaxi布局规划</p><p class=\"text-img-note\" label=\"图片备注\"><span style=\"color: rgb(51, 51, 51); font-size: 16px;\">&nbsp;</span></p><p><strong>Q：您前面强调AI和视觉化是智驾未来核心的技术路线，但现在大模型还没有明显代际差，这是限制这条技术路线的重要原因吗？</strong></p><p>&nbsp;</p><p>印奇：大家要意识到，现在智驾里用的模型比OpenAI 的ChatGPT，或者其他的大语言模型要落后很多，模型的参数量是两个数量级。接下来最大的一个增量是把大语言模型、多模态大模型、强化学习、世界模型这些应用到智驾领域，这有非常大增量，远远没有被挖掘。</p><p>&nbsp;</p><p>现在最大的问题是算力和数据，虽然现在的车端算了可以达到 1000 TOPS，但相比云端算力还有非常大的局限性，未来车端智驾算法会提升，更多大模型在端侧应用，这个是很确定的。</p><p>&nbsp;</p><p>不光是智驾，大语言模型在座舱的应用对提升人机交互更为直接，所以未来一定会看到端侧模型参数量的Scaling law（规模化法则）。</p><p>&nbsp;</p><p><strong>Q：千里科技如何看待得有自研的芯片才能做好智驾的说法？</strong></p><p>&nbsp;</p><p>印奇：我们认为智能驾驶的解决方案提供商一定需要提供一套完整的软硬一体的解决方案，这样才能够对未来的成本和体验提供帮助。</p><p>&nbsp;</p><p>芯片上，我们会相对开放，真正有竞争力、有成本优势的方案我们都会选择。</p><p>&nbsp;</p><p>AI芯片相对于传统的CPU芯片在设计上更简单，这也是为什么会有那么多的芯片体系。芯片最终一定不是一代芯片，而是要有可持续商业模式让它可以规模化。大家可能觉得一个厂商有100万辆车已经很大了，这个规模在芯片领域非常小，一个芯片平台一年有 1 亿颗芯片可能都无法支撑起持续迭代。</p><p>&nbsp;</p><p class=\"text-big-title\" label=\"大标题\">有很多智驾方案都是重复造轮子</p><p>&nbsp;</p><p><strong>Q：你们说要打造一个开放的第三方平台，千里科技的发展方向是否对标华为引望？</strong></p><p>&nbsp;</p><p>印奇：华为是中国非常优秀的企业，是我们的学习榜样，我们（和华为）的基因、能力和战略都不太一样。第一，我们还是以AI基因的解决方案为主；第二，我们构建了开放性的商业联盟和国际化市场。</p><p>&nbsp;</p><p><strong>Q：在您看来，千里科技和吉利的合作模式对其他主机厂商来说，有哪些可复制性，有哪些是不可复制性？</strong></p><p>&nbsp;</p><p>印奇：这是一个很好的模式，我们真正把终端厂商、AI团队、智驾团队形成一个更加你中有我的模式。</p><p>&nbsp;</p><p>行业在整个智驾范畴内是经历过很多次思考。第一个阶段大家会觉得一定要自研，车厂都很自信地说，一定要自己做才可控，到现在大家更加理性和开放的状态，未来行业内回涌现几个不同的解决方案体系，这些体系都会跟一些 OEM 厂商形成相对紧密的关系。</p><p>&nbsp;</p><p>所有AI系统的灵魂是数据，这会形成深度的链接，而不仅仅是个甲乙方的关系。原来智驾厂商会有白盒交付、黑盒交付，AI的系统从来不是个交付系统，它首先是需要有交付系统的安全性和可靠性和工程化能力，同时它是一个活的系统。所以它一定需要OEM和解决方案公司形成一个很深度的数据链接，这一定是最值得借鉴的。</p><p>&nbsp;</p><p>千里智驾的模式是可复制的，但从产业的窗口期角度来看，也没有那么好复制。</p><p>&nbsp;</p><p><strong>Q：未来智驾场上会形成什么格局？</strong></p><p>&nbsp;</p><p>印奇：中国的智驾已经发展了十年多，最终我觉得可能呈现一个相对比较头部化的这样一个格局，我们也不需要那么多的智驾方案，其实有很多智驾方案都是重复造轮子。</p><p>&nbsp;</p><p>我自己在AI领域一直做 to b，我们既是车的供应链企业，也是手机的供应链企业。通常情况下，一家OEM厂商在一个大的品类上会有超过三家在同一个体系下的供应商，所以我想未来只会有几家智驾供应商。</p><p>&nbsp;</p><p><strong>Q：目前出海是一个大趋势，千里智驾在出海方面有怎样的考量和规划，现在面临什么难题？</strong></p><p>&nbsp;</p><p>王军：千里智驾的核心是开放，开放的意味着我们可以服务全球所有的客户。出海有一个核心的问题就是数据，但这个问题是可以被解决的，这也是千里科技相对于其他的解决方案（提供商）的优势所在。</p><p>&nbsp;</p><p>我们的目标是希望在全球智驾领域达到三分天下有其一的份额，这决定了不能仅仅是在国内，一定要做海外，国际化是千里智驾最核心的战略之一，不管有多大的困难，我相信我们一定能够做到。</p><p><a href=\"http://huxiu.link/ulxE\"><strong>下载虎嗅APP</strong></a>，第一时间获取深度独到的商业科技资讯，连接更多创新人群与线下活动</p>",
+      "source": {
+        "title": "肖漫"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        14,
+        41,
+        8,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "这家国产GPU公司，凭什么拳打AMD，脚踢英伟达？",
+      "link": "http://www.huxiu.com/article/4786287.html?f=wangzhan",
+      "published": "Mon, 29 Sep 2025 15:00:00 +0800",
+      "summary": "<img src=\"https://img.huxiucdn.com/article/cover/202509/28/120327011984.png\" />\n<p>为什么一家成立仅5年的GPU公司，能以88天的火箭速度完成科创板IPO审核，成为今年最快过会的企业？为什么它三年亏掉超50亿，但仍让移动、红杉、字节等86家公司机构挤破头抢着投钱？</p><p><a href=\"http://huxiu.link/ulxE\"><strong>下载虎嗅APP</strong></a>，第一时间获取深度独到的商业科技资讯，连接更多创新人群与线下活动</p>",
+      "source": {
+        "title": "北大研哥"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        7,
+        0,
+        0,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "失眠速来，关于5分钟内入睡的几个方法",
+      "link": "http://www.huxiu.com/article/4783418.html?f=wangzhan",
+      "published": "Sun, 28 Sep 2025 20:00:55 +0800",
+      "summary": "<img src=\"https://img.huxiucdn.com/article/cover/202509/22/214755334784.jpg\" />\n<p>凌晨两点仍清醒？咖啡依赖却越喝越疲惫？其实当代年轻人的睡眠困境远比想象中严峻。这期视频我想拆解失眠背后的两大核心因素——睡眠压力与昼夜节律，并实测三类实用技巧。</p><p><a href=\"http://huxiu.link/ulxE\"><strong>下载虎嗅APP</strong></a>，第一时间获取深度独到的商业科技资讯，连接更多创新人群与线下活动</p>",
+      "source": {
+        "title": "罐装鱼丸"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        28,
+        12,
+        0,
+        55,
+        6,
+        271,
+        0
+      ]
+    },
+    {
+      "title": "儿童套餐竟成后妈严选？黑公关单图爆杀西贝",
+      "link": "http://www.huxiu.com/article/4786079.html?f=wangzhan",
+      "published": "Sun, 28 Sep 2025 19:00:58 +0800",
+      "summary": "<img src=\"https://img.huxiucdn.com/article/cover/202509/27/200908312523.jpg\" />\n<p>西贝荣登后妈必吃榜第一？梗图让家长集体破防？西贝这波危机，最狠的黑公关不是吐槽预制菜，而是一张“后妈严选”梗图，精准戳破了“家庭友好餐厅”的人设，把家长拉成“后妈”，直击基本盘。</p><p><a href=\"http://huxiu.link/ulxE\"><strong>下载虎嗅APP</strong></a>，第一时间获取深度独到的商业科技资讯，连接更多创新人群与线下活动</p>",
+      "source": {
+        "title": "一个凡老师"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        28,
+        11,
+        0,
+        58,
+        6,
+        271,
+        0
+      ]
+    },
+    {
+      "title": "在直播如此火爆的今天，为什么明星们不敢搞线上演唱会直播？",
+      "link": "http://www.huxiu.com/article/4785866.html?f=wangzhan",
+      "published": "Sun, 28 Sep 2025 19:00:07 +0800",
+      "summary": "<img src=\"https://img.huxiucdn.com/article/cover/202509/27/004118395768.jpg\" />\n<p>9月27日是刘德华64岁的生日，他一场线上两个半小时的演唱会，超8200万人的观看，算是一个不错的生日礼物吧。不过有人说他英雄迟暮，流量断崖式下跌......那么在直播如此火爆的今天，为什么明星们都不敢搞线上演唱会直播？</p><p><a href=\"http://huxiu.link/ulxE\"><strong>下载虎嗅APP</strong></a>，第一时间获取深度独到的商业科技资讯，连接更多创新人群与线下活动</p>",
+      "source": {
+        "title": "北大研哥"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        28,
+        11,
+        0,
+        7,
+        6,
+        271,
+        0
+      ]
+    },
+    {
+      "title": "白云山“旧路新走”：一心堂减值余波未消，旗下基金撒7.5亿再押医药流通",
+      "link": "https://www.tmtpost.com/7710882.html",
+      "published": "Mon, 29 Sep 2025 23:38:49 +0800",
+      "summary": "作为李小军2024年接任广药集团党委书记、董事长后，首单落地的大型战略投资，白云山的华东故事能不能讲圆，或许需先捋清两个问题。",
+      "source": "钛媒体",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        15,
+        38,
+        49,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "鸿星科技撤回 IPO：注册制下的理性适配与主业深耕的长远布局",
+      "link": "https://www.tmtpost.com/7710904.html",
+      "published": "Mon, 29 Sep 2025 22:37:54 +0800",
+      "summary": "当资本市场规则随改革深化而调整，企业选择更契合自身发展特征的资本路径，既是对注册制差异化定位逻辑的尊重，更是聚焦主业、谋划长远的战略选择。​",
+      "source": "钛媒体",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        14,
+        37,
+        54,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "福达合金“父买子”并购后续：交易性质反转，高溢价面临低补偿｜并购一线",
+      "link": "https://www.tmtpost.com/7710349.html",
+      "published": "Mon, 29 Sep 2025 22:25:18 +0800",
+      "summary": "光伏行业阵痛期，搭“家族班车”高溢价“追光”的合理性。",
+      "source": "钛媒体",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        14,
+        25,
+        18,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "10万亿智能汽车的未来，被千里科技用 AI 画出来了",
+      "link": "https://www.tmtpost.com/7705196.html",
+      "published": "Mon, 29 Sep 2025 20:45:25 +0800",
+      "summary": "千里科技持续以“AI+车”为战略，聚焦智能驾驶、智能座舱和智能出行三大核心业务，通过千里智驾、千里智舱、智能出行核心业务，打造从L2+到L4级的智能汽车方案，并逐步扩展到Robotaxi领域。",
+      "source": "钛媒体",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        12,
+        45,
+        25,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "比亚迪储能新帅上任烧起“第一把火”，核弹级新品猛烈砸向整个行业",
+      "link": "https://www.tmtpost.com/7709578.html",
+      "published": "Mon, 29 Sep 2025 19:20:01 +0800",
+      "summary": "现在摆在两大阵营面前的现实问题是，到底跟不跟？",
+      "source": "钛媒体",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        11,
+        20,
+        1,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "What is the Fusaka Upgrade? Ethereum’s Biggest Scaling Bet Yet",
+      "link": "https://decrypt.co/resources/what-is-the-fusaka-upgrade-ethereums-biggest-scaling-bet-yet",
+      "published": "Mon, 29 Sep 2025 16:32:35 +0000",
+      "summary": "The Q4 2025 upgrade promises to increase Ethereum's data capacity eightfold, adding tougher defenses, and new developer tools.",
+      "source": "Decrypt",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        32,
+        35,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "What Happens to Bitcoin If the US Government Shuts Down?",
+      "link": "https://decrypt.co/341928/bitcoin-us-government-shutdown",
+      "published": "Mon, 29 Sep 2025 15:34:19 +0000",
+      "summary": "Government shutdown threat could delay jobs data Bitcoin traders need to predict Fed rate cuts, spiking crypto volatility this week.",
+      "source": "Decrypt",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        15,
+        34,
+        19,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "CRYPTO REBOUNDS, ASTER METRICS SOAR, PLASMA HITS $13B",
+      "link": "https://decrypt.co/videos/interviews/9egO3SLE/crypto-rebounds-aster-metrics-soar-plasma-hits-13b",
+      "published": "Mon, 29 Sep 2025 15:15:54 +0000",
+      "summary": "ETH, HYPE & BNB lead bounce in top L1s. ETH ETFs saw ATH outflows last week. Swift to launch blockchain in response to stablecoins. ASTER flips Tether in fees, Binance for perp volume. SEC’s Pierce urges quick progress in crypto. Stablecoin supply hits ATH over $300b. Plasma briefly hits $13b amid stablecoin surge. Kraken in talks to raise funds at $20b valuation. Vanguard considers crypto ETF access to clients. Revolut weighs $75b dual listing in NY, London. UK Banks to pilot tokenised GBP deposits. Hyperliquid season 2 points appear to be over. Hyperliquid launches permissionless stablecoins. Turkey to let watchdog freeze crypto accounts. QNB adopts blockchain for USD payments.",
+      "source": "Decrypt",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        15,
+        15,
+        54,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Strategy Notches Third Smallest Bitcoin Purchase in 2025 as Dividend Payments Approach",
+      "link": "https://decrypt.co/341929/strategy-third-smallest-bitcoin-purchase-2025-dividend-payments",
+      "published": "Mon, 29 Sep 2025 15:04:14 +0000",
+      "summary": "Strategy is scheduled to pay a dividend on STRD for the first time on Tuesday.",
+      "source": "Decrypt",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        15,
+        4,
+        14,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "BitMine Stock Climbs as Tom Lee's Firm Boosts Ethereum Holdings to $11 Billion",
+      "link": "https://decrypt.co/341906/bitmine-stock-climbs-tom-lee-firm-boosts-ethereum-holdings-11-billion",
+      "published": "Mon, 29 Sep 2025 14:14:25 +0000",
+      "summary": "BMNR is on the rise as BitMine adds nearly $1 billion in Ethereum, further cementing its status as the top ETH treasury firm.",
+      "source": "Decrypt",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        14,
+        14,
+        25,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "XLM Surges 3.7% as Final-Hour Breakout Drives Fresh Momentum",
+      "link": "https://www.coindesk.com/markets/2025/09/29/xlm-surges-3-7-as-final-hour-breakout-drives-fresh-momentum",
+      "published": "Mon, 29 Sep 2025 16:23:44 +0000",
+      "summary": "",
+      "source": "CoinDesk",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        23,
+        44,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Firedancer Devs From Jump Crypto Push Solana Toward Bigger Blocks",
+      "link": "https://www.coindesk.com/tech/2025/09/29/firedancer-devs-from-jump-crypto-pushes-solana-toward-bigger-blocks",
+      "published": "Mon, 29 Sep 2025 16:15:40 +0000",
+      "summary": "",
+      "source": "CoinDesk",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        15,
+        40,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Leveraged Bitcoin Longs are Back in Force, Trading Firm Says",
+      "link": "https://www.coindesk.com/markets/2025/09/30/leveraged-bitcoin-longs-are-back-in-force-trading-firm-says",
+      "published": "Mon, 29 Sep 2025 16:13:14 +0000",
+      "summary": "",
+      "source": "CoinDesk",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        13,
+        14,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "HBAR Climbs on Strong Volume, Testing Resistance Near $0.217",
+      "link": "https://www.coindesk.com/markets/2025/09/29/hbar-climbs-on-strong-volume-testing-resistance-near-usd0-217",
+      "published": "Mon, 29 Sep 2025 16:08:11 +0000",
+      "summary": "",
+      "source": "CoinDesk",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        8,
+        11,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "FTX Payouts, U.S. Tariffs, Nonfarm Payrolls: Crypto Week Ahead",
+      "link": "https://www.coindesk.com/markets/2025/09/29/ftx-payouts-u-s-tariffs-nonfarm-payrolls-crypto-week-ahead",
+      "published": "Mon, 29 Sep 2025 15:31:22 +0000",
+      "summary": "",
+      "source": "CoinDesk",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        15,
+        31,
+        22,
+        0,
+        272,
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+Title: What's That Weird Smell Coming From Nvidia
+Link: https://www.zerohedge.com/markets/whats-weird-smell-coming-nvidia
+Source: ZeroHedge
+Published: Mon, 29 Sep 2025 15:00:00 +0000
+Summary: <span class="field field--name-title field--type-string field--label-hidden">What's That Weird Smell Coming From Nvidia</span>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><em>Submitted by <a href="https://quoththeraven.substack.com/p/nvidia-is-starting-to-smell-a-little">QTR's Fringe Finance</a></em></p>
+
+<p>At some point last week, I put down whatever article I was reading about AAA commercial real estate defaults, “Fartcoin”, the subprime auto market imploding, student debt delinquencies skyrocketing, or unaudited stablecoins being threaded into the fabric of the Treasury market to read <em>The Information’s</em> <a href="https://quoththeraven.substack.com/p/nvidia-is-starting-to-smell-a-little" rel="">piece</a> about Nvidia discussing a new chip-leasing business model with OpenAI.</p>
+
+<p>Familiarizing myself with the details, I could only let out an exhausted sigh.</p>
+
+<p>The general story is that OpenAI could lease GPUs instead of buying them outright, saving an estimated 10 to 15 percent on costs while avoiding heavy capex and depreciation. Nvidia, meanwhile, would keep ownership of the hardware — possibly through a financing vehicle — and turn racks of GPUs into collateral.</p>
+
+<p>On the surface, it sounds like clever financial engineering. But I’ve been doing this long enough — more than a decade as a professional short seller and now as just a general nuisance that writes a column— to know when something doesn’t smell right. And this doesn’t.</p>
+
+<p><a href="https://substackcdn.com/image/fetch/$s_!F7SE!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F137a2308-1574-4863-ad99-546f5a14a4ee_1326x818.jpeg" rel="" target="_blank"><img alt="" src="https://www.zerohedge.com/src" /></a></p>
+
+<p>I tend to think businesses don’t reinvent themselves as financiers because things are running smoothly. They do it when customers can’t or won’t keep up with the spending binge, and when management wants to paper over cracks with accounting gymnastics. Or, when an announcement absolutely has to hit the market as a PR before it tangibly takes hold.</p>
+
+<p>We’ve all seen it before: telecom leasebacks in the dot-com era, mortgage-backed securities before 2008, all that bullshit — all sold as “innovation” until the music stopped.</p>
+
+<p>My regular readers know this isn’t the first time Nvidia has set off my radar. Back in September 2023, I wrote a piece called <em>As the Market’s Black Swan Just Arrived?</em> In addition to arguing we were nearing a top because a semiconductor executive was signing tits like he was f*cking Jon Bon Jovi…</p>
+
+<p><a href="https://substackcdn.com/image/fetch/$s_!8xrT!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F05bf0304-ba1f-473a-8444-f66d4f60007f_1496x1232.jpeg" rel="" target="_blank"><img alt="" src="https://www.zerohedge.com/src" /></a></p>
+
+<p>…I also pointed out the circular economics in Nvidia’s relationship with CoreWeave (first brought to light by people like <a href="https://x.com/SamanthaLaDuc" rel="">Samantha LaDuc</a> and others) — Nvidia investing in a startup that depended on its chips, which then used those very same chips as collateral to borrow money… to buy more Nvidia chips.</p>
+
+<p>My line at the time was: “Nvidia invested in CoreWeave, which is reliant on Nvidia products, and now those Nvidia products are being used as collateral to buy… what is most likely more Nvidia products. Fantastic.”</p>
+
+<p>Fast forward to July 2025, and I then wrote <em>One Tech Stock I’m Hell Bent on Avoiding</em> — again about CoreWeave. CoreWeave’s IPO was so weak there was no real demand at $40. Nvidia had to backstop it with a $250 million “rescue” order just to get it out the door. And then, a few months later, CoreWeave is trading at $120.</p>
+
+<p>Am I really supposed to believe investor demand materialized out of nowhere in that short a time? What <em>rational</em> explanation is there for this? And, more importantly, <em>does anyone even give a f*ck?</em></p>
+
+<p><a href="https://substackcdn.com/image/fetch/$s_!8Kvl!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8ac083c7-fedd-406b-a27c-a265b9f6d5c7_1682x1500.jpeg" rel="" target="_blank"><img alt="" src="https://www.zerohedge.com/src" /></a></p>
+
+<p>Now, add this past week’s leasing story to that backdrop. It looks like the same playbook: potentially circular economics dressed up as innovation. First with CoreWeave, now with OpenAI.</p>
+
+<p>And the entanglements don’t stop there. Nvidia has been spraying money around the sector. Nvidia has combined strategic investments in partners such as OpenAI, Intel, and ElevenLabs. By my count, in 2025 alone, Nvidia made at least six major moves—three acquisitions (Gretel, Lepton AI, CentML) and three strategic investments (Intel, OpenAI, ElevenLabs). Why spread yourself in so many directions, so quickly? How is it possible to even <em>effectuate </em>these deals and partnerships that feel like they are coming literally every other day?</p>
+
+<p>This would be interesting to watch in any company, but Nvidia isn’t just any company. It’s one of the so-called Magnificent Seven, a stock so heavily weighted in ETFs and indices that nearly every investor — pensions, retirement accounts, mom-and-pop 401(k)s — owns it whether they know it or not.</p>
+
+<hr /><p>🔥 <strong>50% OFF FOR LIFE:</strong> Using this coupon entitles you to 50% off an annual subscription to <em>Fringe Finance </em>for life: <strong><a href="https://quoththeraven.substack.com/subscribe?coupon=d8097c43" rel="">Get 50% off forever</a></strong></p>
+
+<hr /><p>Nvidia has become the market’s bellwether, and its success or failure dictates the broader market’s moves. If confidence ever cracks in the name, it won’t just be Nvidia’s stock price that falls — it could destabilize the whole market.</p>
+
+<p>Yes, leasing works in some industries. Aircraft engines are offered “power by the hour.” Software went subscription years ago. But GPUs aren’t aircraft engines or software licenses. They’re fast-depreciating, quickly outdated hardware — made even more so by Nvidia itself, which has shortened its product cycles to one year. Leasing them doesn’t align incentives; it traps customers on a treadmill, while Nvidia squeezes them for rent.</p>
+
+<p>OpenAI’s motive is obvious — it’s likely burning cash and still leaning on Microsoft to keep the lights on. Nvidia’s motive is just as clear: keep the demand story alive at all costs. But when the “innovation” at the center of the AI boom shifts from new chips to new financing gimmicks, I don’t see progress. I see late-cycle behavior.</p>
+
+<p>I’ve said before that I wasn’t sure AI was a bubble. But with CoreWeave’s failed IPO magically tripling in months, with Nvidia underwriting its own customers, and now with this talk of chip leasing, I’ve changed my mind. This is what bubbles look like — distorted incentives, circular economics, and financial engineering that papers over weaknesses.</p>
+
+<p>And when the company carrying the entire market on its back decides its next great idea is lease accounting, that might not just be a red flag. It could be a warning flare.</p>
+
+<p><a href="https://substackcdn.com/image/fetch/$s_!lX65!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F7b4f0b11-cdb4-4f89-9600-5faf882f9b35_66x52.png" rel="" target="_blank"><img alt="" src="https://www.zerohedge.com/src" /></a></p>
+
+<p><em>QTR’s Disclaimer</em>: <em>Please read my full legal disclaimer <a href="https://quoththeraven.substack.com/about" rel="">on my About page here</a></em>. <em>This post represents my opinions only.</em> <em>In addition, please understand I am an idiot and often get things wrong and lose money. I may own or transact in any names mentioned in this piece at any time without warning. Contributor posts and aggregated posts have been hand selected by me, have not been fact checked and are the opinions of their authors. They are either submitted to QTR by their author, reprinted under a <a href="https://creativecommons.org/share-your-work/" rel="">Creative Commons license</a> with my best effort to uphold what the license asks, or with the permission of the author.</em></p>
+
+<p><em>This is not a recommendation to buy or sell any stocks or securities, just my opinions. I often lose money on positions I trade/invest in. I may add any name mentioned in this article and sell any name mentioned in this piece at any time, without further warning. None of this is a solicitation to buy or sell securities. I may or may not own names I write about and are watching. Sometimes I’m bullish without owning things, sometimes I’m bearish and do own things. Just assume my positions could be exactly the opposite of what you think they are just in case. If I’m long I could quickly be short and vice versa. I won’t update my positions. All positions can change immediately as soon as I publish this, with or without notice and at any point I can be long, short or neutral on any position. You are on your own. Do not make decisions based on my blog. I exist on the fringe. If you see numbers and calculations of any sort, assume they are wrong and double check them. I failed Algebra in 8th grade and topped off my high school math accolades by getting a D- in remedial Calculus my senior year, before becoming an English major in college so I could bullshit my way through things easier.</em></p>
+
+<p><em>The publisher does not guarantee the accuracy or completeness of the information provided in this page. These are not the opinions of any of my employers, partners, or associates. I did my best to be honest about my disclosures but can’t guarantee I am right; I write these posts after a couple beers sometimes. I edit after my posts are published because I’m impatient and lazy, so if you see a typo, check back in a half hour. Also, I just straight up get shit wrong a lot. I mention it twice because it’s that important.</em></p>
+</div>
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden" rel="schema:author"><a class="username" href="https://cms.zerohedge.com/users/tyler-durden" lang="" title="View user profile." xml:lang="">Tyler Durden</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Mon, 09/29/2025 - 11:00</span>
+--------------------------------------------------
+Full Content: <span class="field field--name-title field--type-string field--label-hidden">What's That Weird Smell Coming From Nvidia</span>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><em>Submitted by <a href="https://quoththeraven.substack.com/p/nvidia-is-starting-to-smell-a-little">QTR's Fringe Finance</a></em></p>
+
+<p>At some point last week, I put down whatever article I was reading about AAA commercial real estate defaults, “Fartcoin”, the subprime auto market imploding, student debt delinquencies skyrocketing, or unaudited stablecoins being threaded into the fabric of the Treasury market to read <em>The Information’s</em> <a href="https://quoththeraven.substack.com/p/nvidia-is-starting-to-smell-a-little" rel="">piece</a> about Nvidia discussing a new chip-leasing business model with OpenAI.</p>
+
+<p>Familiarizing myself with the details, I could only let out an exhausted sigh.</p>
+
+<p>The general story is that OpenAI could lease GPUs instead of buying them outright, saving an estimated 10 to 15 percent on costs while avoiding heavy capex and depreciation. Nvidia, meanwhile, would keep ownership of the hardware — possibly through a financing vehicle — and turn racks of GPUs into collateral.</p>
+
+<p>On the surface, it sounds like clever financial engineering. But I’ve been doing this long enough — more than a decade as a professional short seller and now as just a general nuisance that writes a column— to know when something doesn’t smell right. And this doesn’t.</p>
+
+<p><a href="https://substackcdn.com/image/fetch/$s_!F7SE!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F137a2308-1574-4863-ad99-546f5a14a4ee_1326x818.jpeg" rel="" target="_blank"><img alt="" src="https://www.zerohedge.com/src" /></a></p>
+
+<p>I tend to think businesses don’t reinvent themselves as financiers because things are running smoothly. They do it w...

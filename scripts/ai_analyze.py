@@ -47,6 +47,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--start', type=str, help='开始日期（YYYY-MM-DD），默认为当天')
     parser.add_argument('--end', type=str, help='结束日期（YYYY-MM-DD），默认为当天')
     parser.add_argument('--limit', type=int, default=0, help='最多读取多少条记录（0表示不限制）')
+    parser.add_argument('--max-articles', type=int, help='可选：对参与分析的文章再控量（优先级高于 --limit）')
+    parser.add_argument('--filter-source', type=str, help='仅分析指定来源（逗号分隔）')
+    parser.add_argument('--filter-keyword', type=str, help='仅分析标题/摘要包含关键词的文章（逗号分隔，OR语义）')
     parser.add_argument('--order', choices=['asc', 'desc'], default='desc', help='排序方向，基于 published 优先、否则 created_at')
     parser.add_argument('--output-json', type=str, help='可选：将结果（summary+文章元数据）导出为 JSON 文件')
     parser.add_argument('--max-chars', type=int, default=200000, help='传入模型的最大字符数上限，用于控制成本，0 表示不限制')
@@ -122,26 +125,63 @@ def query_articles(conn: sqlite3.Connection, start: str, end: str, order: str, l
     return results
 
 
-def build_corpus(articles: List[Dict[str, Any]], max_chars: int) -> Tuple[str, int]:
-    """构造传给模型的语料，优先 content 回退 summary，并控制最大长度。
-    返回 (裁剪后的文本, 原始长度)。
-    """
-    parts: List[str] = []
+def chunk_text(text: str, max_chars: int = 4000) -> List[str]:
+    """简单字符级分块（近似 500-1500 tokens）。可替换成更智能的语义切分。"""
+    if not text:
+        return []
+    if max_chars <= 0:
+        return [text]
+    chunks: List[str] = []
+    start = 0
+    n = len(text)
+    while start < n:
+        end = min(n, start + max_chars)
+        # 尝试在段落边界截断
+        boundary = text.rfind('\n\n', start, end)
+        if boundary == -1 or boundary <= start + int(max_chars * 0.5):
+            boundary = end
+        chunks.append(text[start:boundary])
+        start = boundary
+    return chunks
+
+
+def build_corpus(articles: List[Dict[str, Any]], max_chars: int, per_chunk_chars: int = 3000) -> Tuple[List[Tuple[Dict[str, Any], List[str]]], int]:
+    """构造分块语料：返回 [(article_meta, [chunks...])...] 与原始总长度。"""
+    pairs: List[Tuple[Dict[str, Any], List[str]]] = []
+    total_len = 0
     for a in articles:
         body = a.get('content') or a.get('summary') or ''
         title = a.get('title') or ''
         source = a.get('source') or ''
         published = a.get('published') or ''
         link = a.get('link') or ''
-        parts.append(f"【{title}】\n来源: {source} | 时间: {published}\n链接: {link}\n{body}\n\n")
+        header = f"【{title}】\n来源: {source} | 时间: {published}\n链接: {link}\n"
+        text = header + body
+        total_len += len(text)
+        chunks = chunk_text(text, per_chunk_chars)
+        pairs.append((a, chunks))
 
-    text_full = ''.join(parts)
-    if max_chars and max_chars > 0 and len(text_full) > max_chars:
-        return text_full[:max_chars], len(text_full)
-    return text_full, len(text_full)
+    # 上限控制（粗略按字符裁剪）：仅在 max_chars > 0 时生效
+    if max_chars and max_chars > 0:
+        acc = 0
+        trimmed: List[Tuple[Dict[str, Any], List[str]]] = []
+        for meta, chunks in pairs:
+            kept: List[str] = []
+            for c in chunks:
+                if acc + len(c) <= max_chars:
+                    kept.append(c)
+                    acc += len(c)
+                else:
+                    break
+            if kept:
+                trimmed.append((meta, kept))
+            if acc >= max_chars:
+                break
+        return trimmed, total_len
+    return pairs, total_len
 
 
-def call_gemini(api_key: str, content: str) -> str:
+def call_gemini(api_key: str, content: str) -> Tuple[str, Dict[str, Any]]:
     """按优先级尝试多个模型，返回 Markdown 文本。"""
     if genai is None:
         raise SystemExit('未安装 google-generativeai，请先安装或在环境中提供。')
@@ -170,7 +210,17 @@ def call_gemini(api_key: str, content: str) -> str:
             model = genai.GenerativeModel(model_name)
             resp = model.generate_content([system_prompt, content])
             print(f'✅ 模型成功: {model_name}')
-            return resp.text
+            usage = {}
+            try:
+                usage = {
+                    'model': model_name,
+                    'prompt_tokens': getattr(resp, 'usage_metadata', {}).get('prompt_token_count'),
+                    'candidates_tokens': getattr(resp, 'usage_metadata', {}).get('candidates_token_count'),
+                    'total_tokens': getattr(resp, 'usage_metadata', {}).get('total_token_count')
+                }
+            except Exception:
+                pass
+            return resp.text, usage
         except Exception as e:  # 尝试下一个
             last_error = e
             continue
@@ -190,6 +240,16 @@ def save_markdown(date_str: str, markdown_text: str) -> Path:
         f.write(content)
     print(f"✅ 报告已保存到: {report_file}")
     return report_file
+
+
+def save_metadata(date_str: str, meta: Dict[str, Any]):
+    year_month = date_str[:7]
+    report_dir = PROJECT_ROOT / 'docs' / 'archive' / year_month / date_str / 'reports'
+    report_dir.mkdir(parents=True, exist_ok=True)
+    meta_file = report_dir / 'analysis_meta.json'
+    with open(meta_file, 'w', encoding='utf-8') as f:
+        json.dump(meta, f, ensure_ascii=False, indent=2)
+    print(f'🧾 元数据已保存到: {meta_file}')
 
 
 def write_json(path: Path, summary_md: str, articles: List[Dict[str, Any]]):
@@ -241,19 +301,45 @@ def main():
         return
     print(f'📥 已读取文章：{len(rows)} 条')
 
-    corpus, total_len = build_corpus(rows, args.max_chars)
-    print(f'🔎 语料长度: {len(corpus)} 字符（原始 {total_len}，max={args.max_chars}）')
-    if args.max_chars and args.max_chars > 0 and total_len > args.max_chars:
-        print(f'✂️ 语料已按上限截断：{total_len} → {len(corpus)}')
+    # 过滤来源与关键词（可控量）
+    selected = rows
+    if args.filter_source:
+        sources = {s.strip() for s in args.filter_source.split(',') if s.strip()}
+        selected = [r for r in selected if (r.get('source') or '') in sources]
+    if args.filter_keyword:
+        kws = {k.strip() for k in args.filter_keyword.split(',') if k.strip()}
+        def match_kw(r: Dict[str, Any]) -> bool:
+            text = f"{r.get('title','')} {r.get('summary','')}".lower()
+            return any(k.lower() in text for k in kws)
+        selected = [r for r in selected if match_kw(r)]
+    if args.max_articles and args.max_articles > 0:
+        selected = selected[:args.max_articles]
 
+    pairs, total_len = build_corpus(selected, args.max_chars, per_chunk_chars=3000)
+    current_len = sum(len(c) for _, chunks in pairs for c in chunks)
+    print(f'🔎 语料长度: {current_len} 字符（原始 {total_len}，max={args.max_chars}）')
+    if args.max_chars and args.max_chars > 0 and total_len > args.max_chars:
+        print(f'✂️ 语料已按上限截断：{total_len} → {current_len}')
+
+    # 简单 RAG：将分块串接一次性生成（可升级为先召回再生成）
+    joined = '\n\n'.join(c for _, chunks in pairs for c in chunks)
     try:
-        summary_md = call_gemini(api_key, corpus)
+        summary_md, usage = call_gemini(api_key, joined)
     except Exception as e:
         print(f'❌ 模型调用失败: {e}')
         return
 
     # 保存 Markdown 报告（按 end 日期命名，更贴近日报语义）
     saved_path = save_markdown(end, summary_md)
+    # 元数据持久化
+    meta = {
+        'date_range': {'start': start, 'end': end},
+        'articles_used': len(selected),
+        'chunks': sum(len(ch) for _, ch in pairs),
+        'model_usage': usage,
+        'prompt_file': str((PROJECT_ROOT / 'task' / 'financial_analysis_prompt_pro.md').resolve())
+    }
+    save_metadata(end, meta)
 
     # 可选导出 JSON
     if args.output_json:

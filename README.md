@@ -9,20 +9,19 @@
 - 一键调用大模型生成 Markdown 报告
 - 交互式脚本简化上手
 
-## 快速开始（3 步）
-1) 安装依赖
+## 快速开始（优先按一键脚本）
+方式A（一键脚本，推荐）
 ```bash
-pip3 install -r requirements.txt
+bash scripts/setup.sh
+python3 scripts/interactive_runner.py
 ```
 
-2) 配置密钥
+方式B（手动）
 ```bash
+# Python ≥ 3.10
+pip3 install -r requirements.txt
 cp config/config.example.yml config/config.yml
 # 编辑 config/config.yml，填写你的 Gemini API Key
-```
-
-3) 交互式运行（推荐）
-```bash
 python3 scripts/interactive_runner.py
 ```
 - 若今天已抓取过数据，可直接选择“AI 分析”。
@@ -33,17 +32,23 @@ python3 scripts/interactive_runner.py
 ```bash
 python3 scripts/rss_finance_analyzer.py                  # 仅摘要
 python3 scripts/rss_finance_analyzer.py --fetch-content  # 抓取正文写入 content（推荐）
+# 仅抓取指定来源（与 scripts/config/rss.json 名称一致，逗号分隔）
+python3 scripts/rss_finance_analyzer.py --only-source "华尔街见闻,36氪"
 ```
 - 查询与导出
 ```bash
 python3 scripts/query_news_by_date.py                               # 表格查看当天
 python3 scripts/query_news_by_date.py --format json --output news.json --include-content
 python3 scripts/query_news_by_date.py --format csv  --output news.csv  --include-content
+# 全文检索（需 FTS5，匹配 title/summary/content）
+python3 scripts/query_news_by_date.py --search "新能源 OR AI" --format json --output search.json
 ```
 - AI 分析（生成 Markdown 报告）
 ```bash
 python3 scripts/ai_analyze.py                                      # 分析当天
 python3 scripts/ai_analyze.py --start 2025-09-28 --end 2025-09-29   # 指定范围
+# 控量/过滤（降成本）
+python3 scripts/ai_analyze.py --filter-source "华尔街见闻,36氪" --filter-keyword "新能源,AI" --max-articles 50 --max-chars 150000
 ```
 
 ## 结果位置
@@ -99,6 +104,7 @@ Financial-report/
 - 抓取正文可显著提升 AI 分析质量；体量大时可先用摘要筛选再分析命中样本。
 - 如遇长文本过大，可用 `--content-max-length` 控制成本；导出时再加 `--include-content`。
 - 需要自动化/定时任务，可将命令接入 CI/定时器。
+- 依赖环境：`requirements.txt` 已固定小版本并标注 `python_version e= 3.10`，建议使用虚拟环境或一键脚本安装。
 
 ## 许可与声明
 - License：MIT

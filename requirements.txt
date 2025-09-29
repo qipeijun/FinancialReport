@@ -1,14 +1,16 @@
+python_version>="3.10"
+
 # 文档与站点
-mkdocs-material>=9.0.0
+mkdocs-material~=9.5.0
 
 # 基础工具
-pyyaml>=6.0
-requests>=2.31.0
-feedparser>=6.0.10
-pytz>=2024.1
+pyyaml~=6.0.1
+requests~=2.32.3
+feedparser~=6.0.11
+pytz~=2024.1
 
 # AI 分析
-google-generativeai>=0.7.2
+google-generativeai~=0.7.2
 
 # 可选：本地运行/表格美化（当前脚本未强依赖，仅预留）
-# rich>=13.7.0
+# rich~=13.7.1

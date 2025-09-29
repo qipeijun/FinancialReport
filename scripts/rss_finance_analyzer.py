@@ -45,6 +45,81 @@ import re
 from urllib.parse import urlparse
 import html as html_lib
 import sqlite3
+def load_http_cache(cache_path: Path) -> dict:
+    """加载HTTP缓存（ETag/Last-Modified）。"""
+    if cache_path.exists():
+        try:
+            with open(cache_path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
+
+
+def save_http_cache(cache_path: Path, cache: dict):
+    """保存HTTP缓存。"""
+    try:
+        cache_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(cache_path, 'w', encoding='utf-8') as f:
+            json.dump(cache, f, ensure_ascii=False, indent=2)
+    except Exception:
+        pass
+
+
+def normalize_link(raw_url: str) -> str:
+    """规范化链接：去除常见追踪参数、统一大小写域名、去除片段与尾部斜杠。"""
+    if not raw_url:
+        return raw_url
+    try:
+        from urllib.parse import urlparse, urlunparse, parse_qsl, urlencode
+
+        parsed = urlparse(raw_url)
+        # 归一化域名小写
+        netloc = (parsed.netloc or '').lower()
+        # 去除常见追踪参数
+        tracked_params = {'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'spm', 'from', 'ref', 'ref_src'}
+        q = [(k, v) for k, v in parse_qsl(parsed.query, keep_blank_values=True) if k not in tracked_params]
+        query = urlencode(q, doseq=True)
+        # 去除片段与尾部斜杠
+        path = parsed.path.rstrip('/')
+        normalized = urlunparse((parsed.scheme, netloc, path, '', query, ''))
+        return normalized
+    except Exception:
+        return raw_url
+
+
+def normalize_title(title: str) -> str:
+    """标题规范化：去除多余空白与常见包裹符号。"""
+    if not title:
+        return ''
+    t = title.strip()
+    # 合并空白
+    t = re.sub(r'\s+', ' ', t)
+    # 清理左右包裹符号
+    t = re.sub(r'^[\-\s·【\[]+', '', t)
+    t = re.sub(r'[\-\s·】\]]+$', '', t)
+    return t
+
+
+def enhance_text_quality(text: str) -> str:
+    """增强文本清洗：移除模板尾注/营销用语等常见噪音。"""
+    if not text:
+        return ''
+    cleaned = text
+    patterns = [
+        r'点击(阅读|查看).*?(原文|全文).*',
+        r'本文(来源|转载).*',
+        r'免责声明[:：].*',
+        r'责任编辑[:：].*',
+        r'微信公众.*',
+        r'版权.*(所有|归原作者所有).*',
+    ]
+    for p in patterns:
+        cleaned = re.sub(p, '', cleaned, flags=re.IGNORECASE)
+    # 再次压缩空白
+    cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+    return cleaned
+
 
 def load_rss_sources():
     """从配置文件加载RSS源"""
@@ -165,25 +240,60 @@ def init_database(db_path):
     cursor.execute('CREATE INDEX IF NOT EXISTS idx_articles_link ON news_articles(link)')
     cursor.execute('CREATE INDEX IF NOT EXISTS idx_tags_article ON news_tags(article_id)')
     cursor.execute('CREATE INDEX IF NOT EXISTS idx_tags_value ON news_tags(tag_value)')
+
+    # 创建 FTS5 虚表（若支持），用于全文检索。与主表内容联动，rowid 对应 news_articles.id
+    try:
+        cursor.execute('''
+            CREATE VIRTUAL TABLE IF NOT EXISTS news_articles_fts USING fts5(
+                title, summary, content, content='news_articles', content_rowid='id'
+            )
+        ''')
+    except Exception:
+        # 某些 SQLite 构建可能不包含 FTS5，忽略错误
+        pass
     
     conn.commit()
     return conn
 
 
-def fetch_rss_feed(url, source_name, limit=5):
-    """获取RSS源内容"""
+def fetch_rss_feed(url, source_name, limit=5, cache: dict | None = None):
+    """获取RSS源内容（支持条件GET与重试）。"""
     try:
         print(f"🔍 正在抓取 {source_name} RSS 源...")
-        response = requests.get(url, timeout=10)
-        response.raise_for_status()
-        
-        feed = feedparser.parse(response.content)
-        
-        # 只取最新的limit篇文章
-        entries = feed.entries[:limit] if len(feed.entries) > limit else feed.entries
-        
-        print(f"📊 从 {source_name} 获取到 {len(entries)} 篇文章")
-        return entries
+        headers = {'User-Agent': 'Mozilla/5.0 (compatible; FinanceBot/1.0)'}
+        # 条件 GET
+        if cache is not None:
+            entry = cache.get(url) or {}
+            if entry.get('etag'):
+                headers['If-None-Match'] = entry['etag']
+            if entry.get('last_modified'):
+                headers['If-Modified-Since'] = entry['last_modified']
+
+        last_err = None
+        for attempt in range(1, 4):
+            try:
+                response = requests.get(url, timeout=10, headers=headers)
+                if response.status_code == 304:
+                    print(f"🟡 未修改（304），使用上次数据占位：{source_name}")
+                    return []
+                response.raise_for_status()
+                # 更新缓存
+                if cache is not None:
+                    cache[url] = {
+                        'etag': response.headers.get('ETag'),
+                        'last_modified': response.headers.get('Last-Modified')
+                    }
+                feed = feedparser.parse(response.content)
+                entries = feed.entries[:limit] if len(feed.entries) > limit else feed.entries
+                print(f"📊 从 {source_name} 获取到 {len(entries)} 篇文章")
+                return entries
+            except Exception as e:
+                last_err = e
+                wait = min(10, 2 ** (attempt - 1))
+                print(f"⚠️ 第 {attempt} 次尝试失败，{wait}s 后重试：{e}")
+                time.sleep(wait)
+        print(f"❌ 抓取 {source_name} 失败: {str(last_err)}")
+        return None
     except Exception as e:
         print(f"❌ 抓取 {source_name} 失败: {str(e)}")
         return None
@@ -261,26 +371,57 @@ def save_to_database(all_entries, collection_date, db_path, rss_sources, fetch_c
             if content_text and content_max_length and content_max_length > 0:
                 content_text = content_text[:content_max_length]
 
+            # 文本质量增强
+            summary_text = enhance_text_quality(entry.get('summary', 'N/A') or '')
+            if content_text:
+                content_text = enhance_text_quality(content_text)
+
+            # 规范化标题与链接
+            norm_title = normalize_title(entry.get('title', 'N/A'))
+            norm_link = normalize_link(entry.get('link', 'N/A'))
+
             # 准备文章数据
             article_data = (
                 collection_date,  # 添加收集日期字段
-                entry.get('title', 'N/A'),
-                entry.get('link', 'N/A'),
+                norm_title,
+                norm_link,
                 source_id,
                 published,
                 published_parsed,
-                entry.get('summary', 'N/A'),
+                summary_text,
                 (content_text if fetch_content else None),  # content 字段
                 None   # category 字段
             )
             
             try:
+                # 额外的基于标题的去重：同源、同日、同标题则跳过
+                cursor.execute(
+                    'SELECT 1 FROM news_articles WHERE collection_date = ? AND source_id = ? AND title = ? LIMIT 1',
+                    (collection_date, source_id, norm_title)
+                )
+                if cursor.fetchone():
+                    continue
                 cursor.execute('''
                     INSERT OR IGNORE INTO news_articles 
                     (collection_date, title, link, source_id, published, published_parsed, summary, content, category)
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ''', article_data)
-                inserted_count += cursor.rowcount
+                if cursor.rowcount:
+                    inserted_count += cursor.rowcount
+                    # 同步写入/更新 FTS（若虚表存在）
+                    try:
+                        # 获取刚插入的 id（link UNIQUE 保障 row 存在）
+                        cursor.execute('SELECT id FROM news_articles WHERE link = ?', (norm_link,))
+                        row = cursor.fetchone()
+                        if row:
+                            article_id = row[0]
+                            cursor.execute(
+                                'INSERT INTO news_articles_fts(rowid, title, summary, content) VALUES (?, ?, ?, ?)',
+                                (article_id, norm_title, summary_text, (content_text if fetch_content else ''))
+                            )
+                    except Exception:
+                        # 若环境不支持 FTS5 或虚表未创建，跳过
+                        pass
             except sqlite3.IntegrityError:
                 # 如果链接已存在，跳过
                 continue
@@ -339,6 +480,7 @@ def main():
     parser = argparse.ArgumentParser(description='RSS财经新闻数据收集工具')
     parser.add_argument('--fetch-content', action='store_true', help='抓取正文并写入数据库content字段')
     parser.add_argument('--content-max-length', type=int, default=0, help='正文最大存储长度，默认0表示不限制，仅当>0时截断')
+    parser.add_argument('--only-source', type=str, help='仅抓取指定来源（逗号分隔，与配置文件中的名称一致）')
     args = parser.parse_args()
     print("🚀 开始执行财经新闻数据收集任务...")
     
@@ -363,6 +505,8 @@ def main():
     data_dir = project_root / "data"
     data_dir.mkdir(parents=True, exist_ok=True)  # 创建data目录
     main_db_path = data_dir / "news_data.db"
+    http_cache_path = data_dir / 'http_cache.json'
+    http_cache = load_http_cache(http_cache_path)
     
     # 加载RSS源配置
     rss_sources = load_rss_sources()
@@ -378,8 +522,16 @@ def main():
     # 获取所有RSS源
     total_sources = len(rss_sources)
     
-    for source_name, url in rss_sources.items():
-        entries = fetch_rss_feed(url, source_name)
+    selected_sources = rss_sources
+    if args.only_source:
+        names = {s.strip() for s in args.only_source.split(',') if s.strip()}
+        selected_sources = {k: v for k, v in rss_sources.items() if k in names}
+        if not selected_sources:
+            print('⚠️ 未匹配到任何来源名称，退出。')
+            return
+
+    for source_name, url in selected_sources.items():
+        entries = fetch_rss_feed(url, source_name, cache=http_cache)
         
         if entries:
             # 为每个条目添加源信息
@@ -424,6 +576,9 @@ def main():
         content_max_length=max(0, args.content_max_length)
     )
     
+    # 写回HTTP缓存
+    save_http_cache(http_cache_path, http_cache)
+
     # 同时导出JSON作为备用（可选）
     export_to_json(all_entries, base_path, total_sources, successful_sources, failed_sources)
     
