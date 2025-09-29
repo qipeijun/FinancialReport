@@ -122,6 +122,18 @@ python3 scripts/ai_analyze.py
 python3 scripts/ai_analyze.py --config config/config.yml
 ```
 
+### 交互式运行器（interactive_runner.py）
+
+无需记忆参数，按提示完成抓取与分析：
+
+```bash
+python3 scripts/interactive_runner.py
+```
+
+流程说明：
+- 自动检测今天是否已有数据；若已存在，可直接选择是否进行 AI 分析。
+- 若未抓取，询问是否立即抓取（可选择抓取正文），完成后再询问是否立即分析。
+
 ## JSON数据格式
 
 生成的 `collected_data.json` 包含以下字段：
