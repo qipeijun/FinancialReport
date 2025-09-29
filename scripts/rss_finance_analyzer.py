@@ -3,6 +3,27 @@
 """
 RSS财经新闻数据收集工具
 抓取多个财经RSS源，保存原始数据到单一SQLite数据库供AI分析
+
+用法示例：
+  - 直接运行，收集今日数据并写入 `data/news_data.db`，同时在 `docs/archive/YYYY-MM/YYYY-MM-DD/` 下生成文件：
+      python3 scripts/rss_finance_analyzer.py
+
+输出内容：
+  - docs/archive/YYYY-MM/YYYY-MM-DD/rss_data/*.txt   # 各源RSS条目摘要
+  - docs/archive/YYYY-MM/YYYY-MM-DD/news_content/*   # 简要内容文件
+  - docs/archive/YYYY-MM/YYYY-MM-DD/collected_data.json  # 汇总JSON
+  - data/news_data.db                                 # 主SQLite数据库（推荐查询来源）
+
+数据库关键表结构（参见 init_database）：
+  - rss_sources(id, source_name, rss_url, created_at)
+  - news_articles(id, collection_date, title, link[unique], source_id, published, summary, created_at, ...)
+    · 常用查询日期字段：collection_date = YYYY-MM-DD
+    · 常用连接：news_articles.source_id -> rss_sources.id
+
+注意：
+  - 抓取数量为每源最新若干条（见 fetch_rss_feed(limit)）。
+  - 如果多次运行同一天，数据库会去重 `link`（INSERT OR IGNORE）。
+  - 配合 `scripts/query_news_by_date.py` 可进行日期范围/关键词/来源的查询。
 """
 
 import os

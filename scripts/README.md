@@ -51,6 +51,43 @@ docs/archive/
 python3 rss_finance_analyzer.py
 ```
 
+### 按日期范围查询工具
+
+新增 `query_news_by_date.py` 脚本，可按日期范围从 `data/news_data.db` 查询新闻，默认查询当天。
+
+```bash
+# 查询当天
+python3 scripts/query_news_by_date.py
+
+# 指定某天
+python3 scripts/query_news_by_date.py --date 2025-09-29
+
+# 指定范围（含端点）
+python3 scripts/query_news_by_date.py --start 2025-09-28 --end 2025-09-29
+
+# 按来源过滤
+python3 scripts/query_news_by_date.py --source 华尔街见闻 --limit 20
+
+# 标题/摘要关键字搜索
+python3 scripts/query_news_by_date.py --keyword 人工智能
+
+# 输出为 JSON 到文件
+python3 scripts/query_news_by_date.py --format json --output /tmp/news.json
+
+# 输出为 CSV 到文件
+python3 scripts/query_news_by_date.py --format csv --output /tmp/news.csv
+```
+
+参数说明：
+
+- `--date`：指定单日（与 `--start=day --end=day` 等价）
+- `--start`/`--end`：开始/结束日期（YYYY-MM-DD），默认均为当天
+- `--source`：来源名称精确匹配（见 `rss_sources.source_name`）
+- `--keyword`：在 `title` 与 `summary` 中模糊匹配
+- `--format`：`table`（默认）/`json`/`csv`
+- `--limit`：返回记录上限，0 表示不限制
+- `--order`：排序方向（`asc`/`desc`），基于 `published` 优先、否则 `created_at`
+
 ## JSON数据格式
 
 生成的 `collected_data.json` 包含以下字段：
