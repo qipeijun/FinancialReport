@@ -1,0 +1,35 @@
+{
+  "国内财经": {
+    "东方财富网": "http://rss.eastmoney.com/rss_partener.xml",
+    "36氪": "https://36kr.com/feed",
+    "澎湃新闻财经": "https://www.thepaper.cn/rss_news.jsp?category=Finance",
+    "华尔街见闻": "https://dedicated.wallstreetcn.com/rss.xml",
+    "百度股票焦点": "http://news.baidu.com/n?cmd=1&class=stock&tn=rss&sub=0",
+    "中新网": "https://www.chinanews.com.cn/rss/finance.xml"
+  },
+  "国际财经": {
+    "FT中文网": "https://www.ftchinese.com/rss/feed",
+    "经济学人 Economist": "https://www.economist.com/finance-and-economics/rss.xml",
+    "Investing.com": "https://www.investing.com/rss/news.rss",
+    "BBC全球经济": "http://feeds.bbci.co.uk/news/business/rss.xml",
+    "Wall Street Journal": "https://feeds.a.dj.com/rss/RSSWorldNews.xml",
+    "ETF Trends": "https://www.etftrends.com/feed/",
+    "CNBC": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
+    "ZeroHedge": "https://feeds.feedburner.com/zerohedge/feed",
+    "彭博 Bloomberg": "https://www.bloomberg.com/feed/podcast/etf-report.xml",
+    "Thomson Reuters": "https://ir.thomsonreuters.com/rss/news-releases.xml"
+  },
+  "政府组织与宏观经济": {
+    "Federal Reserve Board": "https://www.federalreserve.gov/feeds/press_all.xml",
+    "美国证监会-新闻发布": "https://www.sec.gov/news/pressreleases.rss",
+    "国家统计局-最新发布": "https://www.stats.gov.cn/sj/zxfb/rss.xml"
+  },
+  "科技创投": {
+    "虎嗅网": "https://www.huxiu.com/rss/0.xml",
+    "钛媒体": "https://www.tmtpost.com/feed"
+  },
+  "区块链与数字货币": {
+    "Decrypt": "https://decrypt.co/feed",
+    "CoinDesk": "https://www.coindesk.com/arc/outboundfeeds/rss/"
+  }
+}

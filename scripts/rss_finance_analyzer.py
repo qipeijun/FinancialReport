@@ -38,23 +38,35 @@ import re
 from urllib.parse import urlparse
 import sqlite3
 
-# 添加RSS源列表
-RSS_SOURCES = {
-    "华尔街见闻": "https://dedicated.wallstreetcn.com/rss.xml",
-    "36氪": "https://36kr.com/feed",
-    "东方财富": "http://rss.eastmoney.com/rss_partener.xml",
-    "百度股票焦点": "http://news.baidu.com/n?cmd=1&class=stock&tn=rss&sub=0",
-    "中新网": "https://www.chinanews.com.cn/rss/finance.xml",
-    "国家统计局-最新发布": "https://www.stats.gov.cn/sj/zxfb/rss.xml",
-    "ZeroHedge华尔街新闻": "https://feeds.feedburner.com/zerohedge/feed",
-    "ETF Trends": "https://www.etftrends.com/feed/",
-    "Federal Reserve Board": "https://www.federalreserve.gov/feeds/press_all.xml",
-    "BBC全球经济": "http://feeds.bbci.co.uk/news/business/rss.xml",
-    "FT中文网": "https://www.ftchinese.com/rss/feed",
-    "Wall Street Journal": "https://feeds.a.dj.com/rss/RSSWorldNews.xml",
-    "Investing.com": "https://www.investing.com/rss/news.rss",
-    "Thomson Reuters": "https://ir.thomsonreuters.com/rss/news-releases.xml"
-}
+def load_rss_sources():
+    """从配置文件加载RSS源"""
+    config_path = Path(__file__).parent / "config" / "rss.json"
+    
+    try:
+        with open(config_path, 'r', encoding='utf-8') as f:
+            config = json.load(f)
+        
+        # 将分类结构扁平化为单一字典
+        rss_sources = {}
+        for category, sources in config.items():
+            for source_name, url in sources.items():
+                rss_sources[source_name] = url
+        
+        print(f"✅ 从配置文件加载了 {len(rss_sources)} 个RSS源")
+        return rss_sources
+        
+    except FileNotFoundError:
+        print(f"❌ 配置文件未找到: {config_path}")
+        print("使用默认RSS源配置...")
+        # 备用默认配置
+        return {
+            "华尔街见闻": "https://dedicated.wallstreetcn.com/rss.xml",
+            "36氪": "https://36kr.com/feed",
+            "东方财富": "http://rss.eastmoney.com/rss_partener.xml"
+        }
+    except Exception as e:
+        print(f"❌ 读取配置文件失败: {str(e)}")
+        return {}
 
 def create_directory_structure(base_path):
     """创建目录结构"""
@@ -142,7 +154,7 @@ def fetch_rss_feed(url, source_name, limit=5):
         return None
 
 
-def save_rss_data(entries, source_name, output_dir):
+def save_rss_data(entries, source_name, source_url, output_dir):
     """保存RSS数据到文件"""
     try:
         # 清理文件名中的特殊字符
@@ -151,7 +163,7 @@ def save_rss_data(entries, source_name, output_dir):
         
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(f"RSS源: {source_name}\n")
-            f.write(f"URL: {RSS_SOURCES[source_name]}\n")
+            f.write(f"URL: {source_url}\n")
             f.write(f"获取时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write("-" * 50 + "\n\n")
             
@@ -170,7 +182,7 @@ def save_rss_data(entries, source_name, output_dir):
         return False
 
 
-def save_to_database(all_entries, collection_date, db_path):
+def save_to_database(all_entries, collection_date, db_path, rss_sources):
     """保存所有收集的数据到单一SQLite数据库"""
     try:
         conn = init_database(db_path)
@@ -178,10 +190,10 @@ def save_to_database(all_entries, collection_date, db_path):
         
         # 插入或获取数据源ID
         source_map = {}
-        for source_name in RSS_SOURCES.keys():
+        for source_name, source_url in rss_sources.items():
             cursor.execute(
                 "INSERT OR IGNORE INTO rss_sources (source_name, rss_url) VALUES (?, ?)",
-                (source_name, RSS_SOURCES[source_name])
+                (source_name, source_url)
             )
             cursor.execute("SELECT id FROM rss_sources WHERE source_name = ?", (source_name,))
             source_id = cursor.fetchone()[0]
@@ -280,10 +292,15 @@ def main():
     """主函数 - 仅收集数据并保存到单一SQLite数据库"""
     print("🚀 开始执行财经新闻数据收集任务...")
     
+    # 获取脚本所在目录的父目录（项目根目录）
+    script_dir = Path(__file__).parent
+    project_root = script_dir.parent
+    
     # 获取当前日期并创建目录
     today = datetime.now().strftime('%Y-%m-%d')
     
-    base_path = Path("docs/archive") / f"{today[:7]}" / today
+    # 确保在项目根目录下创建目录结构
+    base_path = project_root / "docs" / "archive" / f"{today[:7]}" / today
     create_directory_structure(base_path)
     
     # 设置目录和使用单一数据库
@@ -293,9 +310,15 @@ def main():
     reports_dir = base_path / "reports"
     
     # 使用单一主数据库，存储在data目录
-    data_dir = Path("data")
+    data_dir = project_root / "data"
     data_dir.mkdir(parents=True, exist_ok=True)  # 创建data目录
     main_db_path = data_dir / "news_data.db"
+    
+    # 加载RSS源配置
+    rss_sources = load_rss_sources()
+    if not rss_sources:
+        print("❌ 未能加载RSS源配置，程序退出")
+        return
     
     # 初始化结果统计
     successful_sources = 0
@@ -303,9 +326,9 @@ def main():
     all_entries = []
     
     # 获取所有RSS源
-    total_sources = len(RSS_SOURCES)
+    total_sources = len(rss_sources)
     
-    for source_name, url in RSS_SOURCES.items():
+    for source_name, url in rss_sources.items():
         entries = fetch_rss_feed(url, source_name)
         
         if entries:
@@ -315,7 +338,7 @@ def main():
                     entry.source = source_name
             
             # 保存RSS数据
-            if save_rss_data(entries, source_name, rss_data_dir):
+            if save_rss_data(entries, source_name, url, rss_data_dir):
                 successful_sources += 1
                 all_entries.extend(entries)
                 
@@ -342,7 +365,7 @@ def main():
             failed_sources.append(source_name)
     
     # 保存所有收集的数据到单一数据库
-    save_to_database(all_entries, today, main_db_path)
+    save_to_database(all_entries, today, main_db_path, rss_sources)
     
     # 同时导出JSON作为备用（可选）
     export_to_json(all_entries, base_path, total_sources, successful_sources, failed_sources)
