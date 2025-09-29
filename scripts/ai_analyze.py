@@ -337,7 +337,7 @@ def main():
         'articles_used': len(selected),
         'chunks': sum(len(ch) for _, ch in pairs),
         'model_usage': usage,
-        'prompt_file': str((PROJECT_ROOT / 'task' / 'financial_analysis_prompt_pro.md').resolve())
+#         'prompt_file': str((PROJECT_ROOT / 'task' / 'financial_analysis_prompt_pro.md').resolve())
     }
     save_metadata(end, meta)
 
