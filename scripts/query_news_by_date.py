@@ -17,7 +17,7 @@
   - 输出格式：
       python3 scripts/query_news_by_date.py --format table   # 默认
       python3 scripts/query_news_by_date.py --format json
-      python3 scripts/query_news_by_date.py --format csv --output /tmp/news.csv
+      python3 scripts/query_news_by_date.py --format csv --output news.csv  # 将在项目根目录创建文件
 """
 
 import argparse
@@ -45,6 +45,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--limit', type=int, default=100, help='最多返回多少条记录（0表示不限制）')
     parser.add_argument('--output', type=str, help='当格式为csv或json时，输出到该文件路径')
     parser.add_argument('--order', choices=['asc', 'desc'], default='desc', help='按发布时间或创建时间排序方向')
+    parser.add_argument('--include-content', action='store_true', help='当导出为 CSV/JSON 时包含 content 字段（表格视图不显示正文）')
     return parser.parse_args()
 
 
@@ -76,9 +77,12 @@ def open_connection(db_path: Path) -> sqlite3.Connection:
     return conn
 
 
-def build_query(source: Optional[str], keyword: Optional[str], order: str, limit: int) -> (str, list):
+def build_query(source: Optional[str], keyword: Optional[str], order: str, limit: int, include_content: bool) -> (str, list):
+    select_cols = ['a.id', 'a.collection_date', 'a.title', 'a.link', 'a.published', 'a.summary', 's.source_name']
+    if include_content:
+        select_cols.append('a.content')
     sql = [
-        'SELECT a.id, a.collection_date, a.title, a.link, a.published, a.summary, s.source_name',
+        'SELECT ' + ', '.join(select_cols),
         'FROM news_articles a',
         'JOIN rss_sources s ON a.source_id = s.id',
         'WHERE a.collection_date BETWEEN ? AND ?'
@@ -104,14 +108,14 @@ def build_query(source: Optional[str], keyword: Optional[str], order: str, limit
     return '\n'.join(sql), params
 
 
-def query_articles(conn: sqlite3.Connection, start: str, end: str, source: Optional[str], keyword: Optional[str], order: str, limit: int) -> List[Dict[str, Any]]:
-    sql, params_tail = build_query(source, keyword, order, limit)
+def query_articles(conn: sqlite3.Connection, start: str, end: str, source: Optional[str], keyword: Optional[str], order: str, limit: int, include_content: bool) -> List[Dict[str, Any]]:
+    sql, params_tail = build_query(source, keyword, order, limit, include_content)
     params = [start, end] + params_tail
     cur = conn.execute(sql, params)
     rows = cur.fetchall()
     results: List[Dict[str, Any]] = []
     for r in rows:
-        results.append({
+        row_obj: Dict[str, Any] = {
             'id': r['id'],
             'collection_date': r['collection_date'],
             'title': r['title'],
@@ -119,7 +123,11 @@ def query_articles(conn: sqlite3.Connection, start: str, end: str, source: Optio
             'source': r['source_name'],
             'published': r['published'],
             'summary': r['summary']
-        })
+        }
+        if include_content:
+            # 若查询中包含 content，则行应包含该列
+            row_obj['content'] = r['content'] if 'content' in r.keys() else None
+        results.append(row_obj)
     return results
 
 
@@ -143,8 +151,10 @@ def print_table(rows: List[Dict[str, Any]]):
         print(line)
 
 
-def write_csv(rows: List[Dict[str, Any]], path: Path):
+def write_csv(rows: List[Dict[str, Any]], path: Path, include_content: bool):
     fieldnames = ['id', 'collection_date', 'source', 'title', 'published', 'link', 'summary']
+    if include_content:
+        fieldnames.append('content')
     with open(path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
@@ -165,7 +175,8 @@ def main():
 
     conn = open_connection(DB_PATH)
     try:
-        rows = query_articles(conn, start, end, args.source, args.keyword, args.order, args.limit)
+        include_content = bool(args.include_content and args.format in ['csv', 'json'])
+        rows = query_articles(conn, start, end, args.source, args.keyword, args.order, args.limit, include_content)
     finally:
         conn.close()
 
@@ -174,10 +185,16 @@ def main():
     elif args.format == 'csv':
         if not args.output:
             raise SystemExit('CSV 输出需要 --output 指定文件路径')
-        write_csv(rows, Path(args.output))
+        output_path = Path(args.output)
+        if not output_path.is_absolute():
+            output_path = PROJECT_ROOT / output_path
+        write_csv(rows, output_path, include_content)
     elif args.format == 'json':
         if args.output:
-            write_json(rows, Path(args.output))
+            output_path = Path(args.output)
+            if not output_path.is_absolute():
+                output_path = PROJECT_ROOT / output_path
+            write_json(rows, output_path)
         else:
             print(json.dumps(rows, ensure_ascii=False, indent=2))
 

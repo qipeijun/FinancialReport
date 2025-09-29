@@ -8,6 +8,11 @@ RSS财经新闻数据收集工具
   - 直接运行，收集今日数据并写入 `data/news_data.db`，同时在 `docs/archive/YYYY-MM/YYYY-MM-DD/` 下生成文件：
       python3 scripts/rss_finance_analyzer.py
 
+可选参数：
+  - 抓取正文并入库（默认仅摘要）：
+      python3 scripts/rss_finance_analyzer.py --fetch-content [--content-max-length N]
+        · content-max-length 默认为 0 表示不限制，仅当 N>0 时才截断
+
 输出内容：
   - docs/archive/YYYY-MM/YYYY-MM-DD/rss_data/*.txt   # 各源RSS条目摘要
   - docs/archive/YYYY-MM/YYYY-MM-DD/news_content/*   # 简要内容文件
@@ -16,7 +21,7 @@ RSS财经新闻数据收集工具
 
 数据库关键表结构（参见 init_database）：
   - rss_sources(id, source_name, rss_url, created_at)
-  - news_articles(id, collection_date, title, link[unique], source_id, published, summary, created_at, ...)
+  - news_articles(id, collection_date, title, link[unique], source_id, published, summary, content, created_at, ...)
     · 常用查询日期字段：collection_date = YYYY-MM-DD
     · 常用连接：news_articles.source_id -> rss_sources.id
 
@@ -24,11 +29,13 @@ RSS财经新闻数据收集工具
   - 抓取数量为每源最新若干条（见 fetch_rss_feed(limit)）。
   - 如果多次运行同一天，数据库会去重 `link`（INSERT OR IGNORE）。
   - 配合 `scripts/query_news_by_date.py` 可进行日期范围/关键词/来源的查询。
+  - 若开启 `--fetch-content`，将尝试抓取文章正文写入 `content`，失败则回退为 `summary`。
 """
 
 import os
 import sys
 import time
+import argparse
 import requests
 import feedparser
 from datetime import datetime
@@ -36,6 +43,7 @@ from pathlib import Path
 import json
 import re
 from urllib.parse import urlparse
+import html as html_lib
 import sqlite3
 
 def load_rss_sources():
@@ -67,6 +75,33 @@ def load_rss_sources():
     except Exception as e:
         print(f"❌ 读取配置文件失败: {str(e)}")
         return {}
+
+
+def clean_html_to_text(raw_html: str) -> str:
+    """将HTML内容粗略清洗为纯文本（无外部依赖）。"""
+    if not raw_html:
+        return ''
+    # 去除脚本和样式
+    raw_html = re.sub(r'<(script|style)[\s\S]*?>[\s\S]*?</\1>', ' ', raw_html, flags=re.IGNORECASE)
+    # 去标签
+    text = re.sub(r'<[^>]+>', ' ', raw_html)
+    # HTML实体反转义
+    text = html_lib.unescape(text)
+    # 压缩空白
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
+
+
+def fetch_article_content(url: str, timeout: int = 10) -> str:
+    """抓取文章正文HTML并清洗为文本，失败返回空字符串。"""
+    try:
+        resp = requests.get(url, timeout=timeout, headers={
+            'User-Agent': 'Mozilla/5.0 (compatible; FinanceBot/1.0)'
+        })
+        resp.raise_for_status()
+        return clean_html_to_text(resp.text)
+    except Exception:
+        return ''
 
 def create_directory_structure(base_path):
     """创建目录结构"""
@@ -182,7 +217,7 @@ def save_rss_data(entries, source_name, source_url, output_dir):
         return False
 
 
-def save_to_database(all_entries, collection_date, db_path, rss_sources):
+def save_to_database(all_entries, collection_date, db_path, rss_sources, fetch_content: bool = False, content_max_length: int = 5000):
     """保存所有收集的数据到单一SQLite数据库"""
     try:
         conn = init_database(db_path)
@@ -215,6 +250,17 @@ def save_to_database(all_entries, collection_date, db_path, rss_sources):
             if hasattr(entry, 'published_parsed') and entry.published_parsed:
                 published_parsed = json.dumps(list(entry.published_parsed))
             
+            # 抓取正文（可选）
+            content_text = ''
+            if fetch_content:
+                content_text = fetch_article_content(entry.get('link', ''))
+                if not content_text:
+                    # 回退为摘要
+                    content_text = entry.get('summary', 'N/A') or ''
+            # 截断长度（仅当显式给出正数上限时）
+            if content_text and content_max_length and content_max_length > 0:
+                content_text = content_text[:content_max_length]
+
             # 准备文章数据
             article_data = (
                 collection_date,  # 添加收集日期字段
@@ -223,8 +269,8 @@ def save_to_database(all_entries, collection_date, db_path, rss_sources):
                 source_id,
                 published,
                 published_parsed,
-                entry.get('summary', 'N/A')[:5000],  # 限制摘要长度
-                None,  # content 字段
+                entry.get('summary', 'N/A'),
+                (content_text if fetch_content else None),  # content 字段
                 None   # category 字段
             )
             
@@ -290,6 +336,10 @@ def export_to_json(all_entries, output_dir, total_sources, successful_sources, f
 
 def main():
     """主函数 - 仅收集数据并保存到单一SQLite数据库"""
+    parser = argparse.ArgumentParser(description='RSS财经新闻数据收集工具')
+    parser.add_argument('--fetch-content', action='store_true', help='抓取正文并写入数据库content字段')
+    parser.add_argument('--content-max-length', type=int, default=0, help='正文最大存储长度，默认0表示不限制，仅当>0时截断')
+    args = parser.parse_args()
     print("🚀 开始执行财经新闻数据收集任务...")
     
     # 获取脚本所在目录的父目录（项目根目录）
@@ -365,7 +415,14 @@ def main():
             failed_sources.append(source_name)
     
     # 保存所有收集的数据到单一数据库
-    save_to_database(all_entries, today, main_db_path, rss_sources)
+    save_to_database(
+        all_entries,
+        today,
+        main_db_path,
+        rss_sources,
+        fetch_content=args.fetch_content,
+        content_max_length=max(0, args.content_max_length)
+    )
     
     # 同时导出JSON作为备用（可选）
     export_to_json(all_entries, base_path, total_sources, successful_sources, failed_sources)

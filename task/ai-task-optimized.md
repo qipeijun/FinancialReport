@@ -14,6 +14,12 @@
 在项目根目录运行：
 ```bash
 python3 scripts/rss_finance_analyzer.py
+
+# 可选：抓取正文并写入数据库 content（建议用于AI分析/RAG）
+python3 scripts/rss_finance_analyzer.py --fetch-content
+
+# 可选：限制正文最大长度（默认0表示不限制，仅当>0时截断）
+python3 scripts/rss_finance_analyzer.py --fetch-content --content-max-length 8000
 ```
 
 **预期输出**：
@@ -42,13 +48,16 @@ python3 scripts/rss_finance_analyzer.py
 #### 2.1 基础数据查询
 在项目根目录运行：
 ```bash
-python3 scripts/query_news_by_date.py --format json --output /tmp/news_today.json --limit 500 --order desc
+python3 scripts/query_news_by_date.py --format json --output news_today.json --limit 500 --order desc
+
+# 若下游需要正文（content）供向量化/RAG/深度分析
+python3 scripts/query_news_by_date.py --format json --output news_today_with_content.json --limit 500 --order desc --include-content
 ```
 
 **可选参数**：
 - 关键词过滤：`--keyword "人工智能,新能源,宏观经济"`
 - 来源筛选：`--source "华尔街见闻,财新网,证券时报"`
-- 时间范围：`--days 3`（查询近3天数据）
+- 时间范围：`--start 2025-09-27 --end 2025-09-29`（查询指定日期范围）
 
 #### 2.2 数据预处理
 **标准化处理**：
@@ -172,7 +181,7 @@ python3 scripts/query_news_by_date.py --format json --output /tmp/news_today.jso
 #### 4.3 输出质量控制
 
 **内容完整性检查**：
-- [ ] 基于`/tmp/news_today.json`数据进行分析
+- [ ] 基于`news_today.json`数据进行分析
 - [ ] 包含热点TOP3和潜力TOP3
 - [ ] 覆盖催化剂、复盘、展望、股票推荐
 - [ ] 风险提示和操作建议完整
@@ -320,7 +329,7 @@ python3 scripts/query_news_by_date.py --format json --output /tmp/news_today.jso
 ## 文件保存路径
 - **主报告**：`docs/archive/YYYY-MM/YYYY-MM-DD/reports/📊 YYYY-MM-DD 财经分析报告.md`
 - **JSON摘要**：`docs/archive/YYYY-MM/YYYY-MM-DD/reports/analysis_summary.json`
-- **备份副本**：`/tmp/financial_analysis_[timestamp].json`
+- **数据备份**：`financial_analysis_[timestamp].json`（项目根目录）
 
 ## 执行命令示例
 
@@ -329,17 +338,27 @@ python3 scripts/query_news_by_date.py --format json --output /tmp/news_today.jso
 # 1. 数据抓取
 python3 scripts/rss_finance_analyzer.py
 
-# 2. 数据查询（标准）
-python3 scripts/query_news_by_date.py --format json --output /tmp/news_today.json --limit 500
+# 1b. 建议抓取正文以便后续分析
+python3 scripts/rss_finance_analyzer.py --fetch-content
 
-# 3. 数据查询（指定关键词）
-python3 scripts/query_news_by_date.py --format json --output /tmp/news_today.json --limit 500 --keyword "人工智能,新能源" --days 3
+# 2. 数据查询（标准）
+python3 scripts/query_news_by_date.py --format json --output news_today.json --limit 500
+
+# 2b. 数据查询（包含正文，供RAG/摘要/抽取）
+python3 scripts/query_news_by_date.py --format json --output news_today_with_content.json --limit 500 --include-content
+
+# 3. 数据查询（指定关键词和日期范围）
+python3 scripts/query_news_by_date.py --format json --output news_today.json --limit 500 --keyword "人工智能,新能源" --start 2025-09-27 --end 2025-09-29
 ```
 
 ### 故障处理模式
 如果步骤1失败，使用历史数据：
 ```bash
-python3 scripts/query_news_by_date.py --format json --output /tmp/news_today.json --limit 500 --days 7 --fallback
+# 查询近7天数据作为备用（macOS）
+python3 scripts/query_news_by_date.py --format json --output news_today.json --limit 500 --start $(date -v-7d +%Y-%m-%d) --end $(date +%Y-%m-%d)
+
+# 或者手动指定日期范围
+python3 scripts/query_news_by_date.py --format json --output news_today.json --limit 500 --start 2025-09-22 --end 2025-09-29
 ```
 
 ## 启动执行

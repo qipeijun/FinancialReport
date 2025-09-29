@@ -9,7 +9,7 @@
 - 收集14个财经RSS源的数据
 - 按日期创建归档目录
 - 保存原始RSS数据
-- 保存新闻内容摘要
+- 保存新闻内容（摘要/正文，可选抓取）
 - 生成单一SQLite数据库供AI分析（推荐）
 - 生成JSON数据文件作为备份
 - 所有数据集中存储于单一数据库，便于跨日期查询和分析
@@ -22,7 +22,7 @@ docs/archive/
 └── YYYY-MM/
     └── YYYY-MM-DD/
         ├── rss_data/          # 原始RSS数据
-        ├── news_content/      # 新闻内容摘要
+        ├── news_content/      # 新闻内容（摘要/正文）
         ├── analysis/          # AI分析结果
         ├── reports/           # 最终报告
         └── collected_data.json # 统一数据文件
@@ -51,6 +51,16 @@ docs/archive/
 python3 rss_finance_analyzer.py
 ```
 
+可选参数（采集端）：
+
+```bash
+# 抓取正文写入数据库 content 字段（推荐用于AI分析）
+python3 scripts/rss_finance_analyzer.py --fetch-content
+
+# 限制正文最大长度（默认0表示不限制，仅当>0时截断）
+python3 scripts/rss_finance_analyzer.py --fetch-content --content-max-length 8000
+```
+
 ### 按日期范围查询工具
 
 新增 `query_news_by_date.py` 脚本，可按日期范围从 `data/news_data.db` 查询新闻，默认查询当天。
@@ -74,8 +84,14 @@ python3 scripts/query_news_by_date.py --keyword 人工智能
 # 输出为 JSON 到文件
 python3 scripts/query_news_by_date.py --format json --output /tmp/news.json
 
+# 输出为 JSON 到文件（包含正文 content，用于AI/RAG）
+python3 scripts/query_news_by_date.py --format json --output /tmp/news_with_content.json --include-content
+
 # 输出为 CSV 到文件
 python3 scripts/query_news_by_date.py --format csv --output /tmp/news.csv
+
+# 输出为 CSV 到文件（包含正文 content）
+python3 scripts/query_news_by_date.py --format csv --output /tmp/news_with_content.csv --include-content
 ```
 
 参数说明：
@@ -87,6 +103,12 @@ python3 scripts/query_news_by_date.py --format csv --output /tmp/news.csv
 - `--format`：`table`（默认）/`json`/`csv`
 - `--limit`：返回记录上限，0 表示不限制
 - `--order`：排序方向（`asc`/`desc`），基于 `published` 优先、否则 `created_at`
+- `--include-content`：当输出为 `json`/`csv` 时，包含数据库中的 `content` 字段（表格视图不显示正文）
+
+采集端额外参数：
+
+- `--fetch-content`：抓取正文并写入数据库 `content` 字段
+- `--content-max-length`：正文最大存储长度，默认0表示不限制，仅当>0时截断
 
 ## JSON数据格式
 
@@ -101,7 +123,7 @@ python3 scripts/query_news_by_date.py --format csv --output /tmp/news.csv
 
 ## 数据库结构
 
-单一SQLite数据库 (docs/news_data.db) 包含以下表：
+单一SQLite数据库 (data/news_data.db) 包含以下表：
 
 - `rss_sources`: RSS数据源信息
   - id: 主键
