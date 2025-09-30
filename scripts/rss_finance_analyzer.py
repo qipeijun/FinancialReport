@@ -45,6 +45,11 @@ import re
 from urllib.parse import urlparse
 import html as html_lib
 import sqlite3
+
+from utils.print_utils import (
+    print_header, print_success, print_warning, print_error, 
+    print_info, print_progress, print_step, print_statistics
+)
 def load_http_cache(cache_path: Path) -> dict:
     """加载HTTP缓存（ETag/Last-Modified）。"""
     if cache_path.exists():
@@ -135,12 +140,12 @@ def load_rss_sources():
             for source_name, url in sources.items():
                 rss_sources[source_name] = url
         
-        print(f"✅ 从配置文件加载了 {len(rss_sources)} 个RSS源")
+        print_success(f"从配置文件加载了 {len(rss_sources)} 个RSS源")
         return rss_sources
         
     except FileNotFoundError:
-        print(f"❌ 配置文件未找到: {config_path}")
-        print("使用默认RSS源配置...")
+        print_error(f"配置文件未找到: {config_path}")
+        print_info("使用默认RSS源配置...")
         # 备用默认配置
         return {
             "华尔街见闻": "https://dedicated.wallstreetcn.com/rss.xml",
@@ -148,7 +153,7 @@ def load_rss_sources():
             "东方财富": "http://rss.eastmoney.com/rss_partener.xml"
         }
     except Exception as e:
-        print(f"❌ 读取配置文件失败: {str(e)}")
+        print_error(f"读取配置文件失败: {str(e)}")
         return {}
 
 
@@ -183,7 +188,7 @@ def create_directory_structure(base_path):
     subdirs = ['rss_data', 'news_content', 'analysis', 'reports']
     for subdir in subdirs:
         (base_path / subdir).mkdir(parents=True, exist_ok=True)
-    print(f"✅ 目录结构创建完成: {base_path}")
+    print_success(f"目录结构创建完成: {base_path}")
 
 
 def init_database(db_path):
@@ -482,7 +487,7 @@ def main():
     parser.add_argument('--content-max-length', type=int, default=0, help='正文最大存储长度，默认0表示不限制，仅当>0时截断')
     parser.add_argument('--only-source', type=str, help='仅抓取指定来源（逗号分隔，与配置文件中的名称一致）')
     args = parser.parse_args()
-    print("🚀 开始执行财经新闻数据收集任务...")
+    print_header("财经新闻数据收集系统")
     
     # 获取脚本所在目录的父目录（项目根目录）
     script_dir = Path(__file__).parent
@@ -511,7 +516,7 @@ def main():
     # 加载RSS源配置
     rss_sources = load_rss_sources()
     if not rss_sources:
-        print("❌ 未能加载RSS源配置，程序退出")
+        print_error("未能加载RSS源配置，程序退出")
         return
     
     # 初始化结果统计
@@ -527,7 +532,7 @@ def main():
         names = {s.strip() for s in args.only_source.split(',') if s.strip()}
         selected_sources = {k: v for k, v in rss_sources.items() if k in names}
         if not selected_sources:
-            print('⚠️ 未匹配到任何来源名称，退出。')
+            print_warning('未匹配到任何来源名称，退出。')
             return
 
     for source_name, url in selected_sources.items():
@@ -582,13 +587,20 @@ def main():
     # 同时导出JSON作为备用（可选）
     export_to_json(all_entries, base_path, total_sources, successful_sources, failed_sources)
     
-    print(f"✅ 数据收集完成: 成功处理 {successful_sources}/{total_sources} 个RSS源")
-    print(f"📊 总共收集到 {len(all_entries)} 篇文章")
+    print_success(f"数据收集完成: 成功处理 {successful_sources}/{total_sources} 个RSS源")
+    
+    # 打印统计信息
+    stats = {
+        '成功源数': f"{successful_sources}/{total_sources}",
+        '收集文章数': len(all_entries),
+        '失败源数': len(failed_sources)
+    }
+    print_statistics(stats)
     
     if failed_sources:
-        print(f"⚠️ 以下源抓取失败: {', '.join(failed_sources)}")
+        print_warning(f"以下源抓取失败: {', '.join(failed_sources)}")
 
-    print("\n💡 数据已保存到:")
+    print_info("数据已保存到:")
     print(f"   - RSS数据: {rss_data_dir}")
     print(f"   - 新闻内容: {news_content_dir}")
     print(f"   - 主数据库: {main_db_path}")

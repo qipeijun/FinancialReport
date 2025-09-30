@@ -17,6 +17,11 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 
+from utils.print_utils import (
+    print_header, print_success, print_warning, print_error, 
+    print_info, print_progress
+)
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DB_PATH = PROJECT_ROOT / 'data' / 'news_data.db'
@@ -35,6 +40,26 @@ def ask_yes_no(prompt: str, default: bool | None = None) -> bool:
         print('请输入 y/n')
 
 
+def ask_content_field() -> str:
+    """询问用户选择分析字段"""
+    print_info('请选择分析字段：')
+    print('  1. summary - 摘要优先（推荐，内容简洁）')
+    print('  2. content - 正文优先（详细，但可能包含冗余信息）')
+    print('  3. auto - 智能选择（根据内容长度自动选择）')
+    
+    while True:
+        choice = input('请选择 [1/2/3，默认auto]: ').strip()
+        if not choice:
+            return 'auto'
+        if choice == '1':
+            return 'summary'
+        elif choice == '2':
+            return 'content'
+        elif choice == '3':
+            return 'auto'
+        print_warning('请输入 1、2 或 3')
+
+
 def has_today_data(db_path: Path, today: str) -> bool:
     if not db_path.exists():
         return False
@@ -49,21 +74,26 @@ def has_today_data(db_path: Path, today: str) -> bool:
 
 
 def run_script(cmd: list[str]) -> int:
-    exe = 'py' if os.name == 'nt' else 'python3'
+    # 使用虚拟环境中的Python
+    venv_python = PROJECT_ROOT / 'venv' / 'bin' / 'python'
+    if not venv_python.exists():
+        venv_python = PROJECT_ROOT / 'venv' / 'Scripts' / 'python.exe'  # Windows
+    
     if cmd and cmd[0] in ('python3', 'python', 'py'):
-        cmd[0] = exe
-    print('> 执行命令:', ' '.join(cmd))
+        cmd[0] = str(venv_python)
+    print_progress(f'执行命令: {" ".join(cmd)}')
     proc = subprocess.run(cmd)
     return proc.returncode
 
 
 def main():
     today = datetime.now().strftime('%Y-%m-%d')
-    print(f'📅 今天日期：{today}')
+    print_header("财经新闻分析系统")
+    print_info(f'今天日期：{today}')
 
     exists = has_today_data(DB_PATH, today)
     if exists:
-        print('✅ 检测到今天的数据已存在于 data/news_data.db')
+        print_success('检测到今天的数据已存在于 data/news_data.db')
         # 允许用户选择重新抓取（覆盖式追加新增内容）
         if ask_yes_no('是否重新抓取今天的数据（追加最新内容）？', default=False):
             fetch_content = ask_yes_no('抓取正文写入数据库（推荐）？', default=True)
@@ -72,9 +102,9 @@ def main():
                 cmd.append('--fetch-content')
             code = run_script(cmd)
             if code != 0:
-                print('❌ 重新抓取失败，请查看日志后重试。')
+                print_error('重新抓取失败，请查看日志后重试。')
                 return
-            print('✅ 重新抓取完成。')
+            print_success('重新抓取完成。')
 
         # 分支：仅分析指定范围/来源/关键词
         if ask_yes_no('是否仅分析指定范围/来源/关键词？', default=False):
@@ -96,18 +126,24 @@ def main():
             maxa = input('最多文章数（可空）: ').strip()
             if maxa.isdigit():
                 cmd += ['--max-articles', maxa]
+            # 添加字段选择
+            content_field = ask_content_field()
+            cmd += ['--content-field', content_field]
             code = run_script(cmd)
         elif ask_yes_no('是否立即进行 AI 分析？', default=True):
-            code = run_script(['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze.py')])
+            # 添加字段选择
+            content_field = ask_content_field()
+            cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze.py'), '--content-field', content_field]
+            code = run_script(cmd)
             if code == 0:
-                print('🎉 分析完成。')
+                print_success('分析完成。')
             else:
-                print('❌ 分析失败，请查看上方日志。')
+                print_error('分析失败，请查看上方日志。')
         else:
-            print('ℹ️ 已跳过分析。')
+            print_info('已跳过分析。')
         return
 
-    print('⚠️ 未检测到今天的数据。')
+    print_warning('未检测到今天的数据。')
     if ask_yes_no('是否现在开始抓取今天的数据？', default=True):
         fetch_content = ask_yes_no('抓取正文写入数据库（推荐）？', default=True)
         only_src = input('仅抓取某些来源（逗号分隔，可空）: ').strip()
@@ -118,21 +154,24 @@ def main():
             cmd += ['--only-source', only_src]
         code = run_script(cmd)
         if code != 0:
-            print('❌ 抓取失败，请重试或检查网络。')
+            print_error('抓取失败，请重试或检查网络。')
             return
-        print('✅ 抓取完成。')
+        print_success('抓取完成。')
 
         # 抓取成功后再次确认是否分析
         if ask_yes_no('是否立即进行 AI 分析？', default=True):
-            code = run_script(['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze.py')])
+            # 添加字段选择
+            content_field = ask_content_field()
+            cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze.py'), '--content-field', content_field]
+            code = run_script(cmd)
             if code == 0:
-                print('🎉 分析完成。')
+                print_success('分析完成。')
             else:
-                print('❌ 分析失败，请查看上方日志。')
+                print_error('分析失败，请查看上方日志。')
         else:
-            print('ℹ️ 已跳过分析。')
+            print_info('已跳过分析。')
     else:
-        print('ℹ️ 已取消抓取与分析。')
+        print_info('已取消抓取与分析。')
 
 
 if __name__ == '__main__':

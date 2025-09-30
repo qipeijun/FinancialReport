@@ -23,12 +23,18 @@ import argparse
 import json
 import os
 import sqlite3
+import sys
 from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
 
 import pytz
 import yaml
+
+from utils.print_utils import (
+    print_header, print_success, print_warning, print_error, 
+    print_info, print_progress, print_step, print_statistics
+)
 
 try:
     import google.generativeai as genai
@@ -52,9 +58,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--filter-keyword', type=str, help='仅分析标题/摘要包含关键词的文章（逗号分隔，OR语义）')
     parser.add_argument('--order', choices=['asc', 'desc'], default='desc', help='排序方向，基于 published 优先、否则 created_at')
     parser.add_argument('--output-json', type=str, help='可选：将结果（summary+文章元数据）导出为 JSON 文件')
-    parser.add_argument('--max-chars', type=int, default=200000, help='传入模型的最大字符数上限，用于控制成本，0 表示不限制')
+    parser.add_argument('--max-chars', type=int, default=400000, help='传入模型的最大字符数上限，用于控制成本，0 表示不限制')
     parser.add_argument('--api-key', type=str, help='可选：显式传入 Gemini API Key（默认从配置/环境读取）')
     parser.add_argument('--config', type=str, help='可选：配置文件路径（默认 config/config.yml）')
+    parser.add_argument('--content-field', choices=['summary', 'content', 'auto'], default='auto', help='选择分析字段：summary(摘要优先)、content(正文优先)、auto(智能选择)')
     return parser.parse_args()
 
 
@@ -145,12 +152,23 @@ def chunk_text(text: str, max_chars: int = 4000) -> List[str]:
     return chunks
 
 
-def build_corpus(articles: List[Dict[str, Any]], max_chars: int, per_chunk_chars: int = 3000) -> Tuple[List[Tuple[Dict[str, Any], List[str]]], int]:
+def build_corpus(articles: List[Dict[str, Any]], max_chars: int, per_chunk_chars: int = 3000, content_field: str = 'auto') -> Tuple[List[Tuple[Dict[str, Any], List[str]]], int]:
     """构造分块语料：返回 [(article_meta, [chunks...])...] 与原始总长度。"""
     pairs: List[Tuple[Dict[str, Any], List[str]]] = []
     total_len = 0
     for a in articles:
-        body = a.get('content') or a.get('summary') or ''
+        if content_field == 'summary':
+            body = a.get('summary') or a.get('content') or ''
+        elif content_field == 'content':
+            body = a.get('content') or a.get('summary') or ''
+        else:  # auto - 智能选择
+            summary = a.get('summary', '')
+            content = a.get('content', '')
+            # 如果content太长（>5000字符），优先使用summary
+            if len(content) > 5000 and summary:
+                body = summary
+            else:
+                body = content or summary or ''
         title = a.get('title') or ''
         source = a.get('source') or ''
         published = a.get('published') or ''
@@ -194,7 +212,7 @@ def call_gemini(api_key: str, content: str) -> Tuple[str, Dict[str, Any]]:
     ]
 
     genai.configure(api_key=api_key)
-    print(f'🤖 正在生成报告（输入长度 {len(content)} 字符）')
+    print_progress(f'正在生成报告（输入长度 {len(content):,} 字符）')
 
     # 读取提示词（固定使用专业版）
     prompt_path = PROJECT_ROOT / 'task' / 'financial_analysis_prompt_pro.md'
@@ -204,12 +222,12 @@ def call_gemini(api_key: str, content: str) -> Tuple[str, Dict[str, Any]]:
         system_prompt = f.read()
 
     last_error: Optional[Exception] = None
-    for model_name in model_names:
+    for i, model_name in enumerate(model_names, 1):
         try:
-            print(f'→ 尝试模型: {model_name}')
+            print_step(i, len(model_names), f'尝试模型: {model_name}')
             model = genai.GenerativeModel(model_name)
             resp = model.generate_content([system_prompt, content])
-            print(f'✅ 模型成功: {model_name}')
+            print_success(f'模型调用成功: {model_name}')
             usage = {}
             try:
                 usage = {
@@ -238,7 +256,7 @@ def save_markdown(date_str: str, markdown_text: str) -> Path:
     report_file = report_dir / f"📅 {date_str} 财经分析报告.md"
     with open(report_file, 'w', encoding='utf-8') as f:
         f.write(content)
-    print(f"✅ 报告已保存到: {report_file}")
+    print_success(f"报告已保存到: {report_file}")
     return report_file
 
 
@@ -249,7 +267,7 @@ def save_metadata(date_str: str, meta: Dict[str, Any]):
     meta_file = report_dir / 'analysis_meta.json'
     with open(meta_file, 'w', encoding='utf-8') as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)
-    print(f'🧾 元数据已保存到: {meta_file}')
+    print_info(f'元数据已保存到: {meta_file}')
 
 
 def write_json(path: Path, summary_md: str, articles: List[Dict[str, Any]]):
@@ -259,13 +277,19 @@ def write_json(path: Path, summary_md: str, articles: List[Dict[str, Any]]):
     }
     with open(path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f'✅ 已导出 JSON: {path}')
+    print_success(f'已导出 JSON: {path}')
 
 
 def main():
     args = parse_args()
     start, end = resolve_date_range(args)
-    print(f'🚀 开始 AI 分析：日期范围 {start} → {end}')
+    
+    print_header("AI 财经分析系统")
+    print_info(f"分析日期范围: {start} → {end}")
+    print_info(f"字段选择模式: {args.content_field}")
+    if args.max_chars > 0:
+        print_info(f"字符数限制: {args.max_chars:,}")
+    print()
 
     # 解析配置文件，优先顺序：config.yml > --api-key > 环境变量
     config_path = Path(args.config) if args.config else (PROJECT_ROOT / 'config' / 'config.yml')
@@ -279,11 +303,11 @@ def main():
                 (cfg.get('api_keys') or {}).get('gemini')
                 or (cfg.get('gemini') or {}).get('api_key')
             )
-            print(f'🔧 使用配置文件：{config_path}')
+            print_success(f'使用配置文件：{config_path}')
         except Exception as e:
-            print(f'⚠️ 读取配置失败（{config_path}）：{e}，将尝试使用命令行或环境变量。')
+            print_warning(f'读取配置失败（{config_path}）：{e}，将尝试使用命令行或环境变量。')
     else:
-        print(f'⚠️ 未找到配置文件：{config_path}，将尝试使用命令行或环境变量。')
+        print_warning(f'未找到配置文件：{config_path}，将尝试使用命令行或环境变量。')
 
     if not api_key:
         api_key = args.api_key or os.getenv('GEMINI_API_KEY')
@@ -297,9 +321,9 @@ def main():
         conn.close()
 
     if not rows:
-        print('（无结果）未找到指定日期范围的文章，终止分析。')
+        print_warning('未找到指定日期范围的文章，终止分析。')
         return
-    print(f'📥 已读取文章：{len(rows)} 条')
+    print_info(f'已读取文章：{len(rows):,} 条')
 
     # 过滤来源与关键词（可控量）
     selected = rows
@@ -315,18 +339,18 @@ def main():
     if args.max_articles and args.max_articles > 0:
         selected = selected[:args.max_articles]
 
-    pairs, total_len = build_corpus(selected, args.max_chars, per_chunk_chars=3000)
+    pairs, total_len = build_corpus(selected, args.max_chars, per_chunk_chars=3000, content_field=args.content_field)
     current_len = sum(len(c) for _, chunks in pairs for c in chunks)
-    print(f'🔎 语料长度: {current_len} 字符（原始 {total_len}，max={args.max_chars}）')
+    print_info(f'语料长度: {current_len:,} 字符（原始 {total_len:,}，限制={args.max_chars:,}）')
     if args.max_chars and args.max_chars > 0 and total_len > args.max_chars:
-        print(f'✂️ 语料已按上限截断：{total_len} → {current_len}')
+        print_warning(f'语料已按上限截断：{total_len:,} → {current_len:,}')
 
     # 简单 RAG：将分块串接一次性生成（可升级为先召回再生成）
     joined = '\n\n'.join(c for _, chunks in pairs for c in chunks)
     try:
         summary_md, usage = call_gemini(api_key, joined)
     except Exception as e:
-        print(f'❌ 模型调用失败: {e}')
+        print_error(f'模型调用失败: {e}')
         return
 
     # 保存 Markdown 报告（按 end 日期命名，更贴近日报语义）
@@ -348,7 +372,18 @@ def main():
             out_path = PROJECT_ROOT / out_path
         write_json(out_path, summary_md, rows)
 
-    print('🎉 分析完成。')
+    print_success('分析完成！')
+    
+    # 打印统计信息
+    stats = {
+        '分析日期范围': f"{start} → {end}",
+        '处理文章数': len(selected),
+        '语料块数': sum(len(ch) for _, ch in pairs),
+        '最终字符数': f"{current_len:,}",
+        '使用模型': usage.get('model', '未知'),
+        'Token消耗': f"{usage.get('total_tokens', 0):,}" if usage.get('total_tokens') else '未知'
+    }
+    print_statistics(stats)
 
 
 if __name__ == '__main__':

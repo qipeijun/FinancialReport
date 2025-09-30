@@ -1,4 +1,4 @@
-python_version>="3.10"
+# Python version requirement: >=3.10
 
 # 文档与站点
 mkdocs-material~=9.5.0
