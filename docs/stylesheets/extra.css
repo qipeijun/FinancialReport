@@ -10,6 +10,7 @@
   --apple-red: #FF3B30;
   --apple-text: #1D1D1F;
   --apple-text-secondary: #86868B;
+  --md-footer-bg-color: #00000030;
 }
 
 /* 全局字体优化 */
@@ -26,7 +27,8 @@
 .md-content__inner {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 22px;
+  padding: 50px 10px;
+  padding-bottom: 100px;
 }
 
 /* 标题系统 */
@@ -304,6 +306,10 @@
 
 [data-md-color-scheme="slate"] .md-source:hover {
   background: rgba(255, 255, 255, 0.08);
+}
+
+.md-footer{
+  background: #333 !important;
 }
 
 /* =============================================================================

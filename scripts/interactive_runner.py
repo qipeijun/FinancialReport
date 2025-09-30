@@ -86,6 +86,33 @@ def run_script(cmd: list[str]) -> int:
     return proc.returncode
 
 
+def run_mkdocs_deploy():
+    """运行MkDocs部署"""
+    print_info('开始生成文档网站...')
+    
+    # 运行部署脚本
+    deploy_script = PROJECT_ROOT / 'scripts' / 'deploy.sh'
+    if deploy_script.exists():
+        print_progress('执行MkDocs部署脚本...')
+        code = subprocess.run(['bash', str(deploy_script)]).returncode
+        if code == 0:
+            print_success('文档网站生成成功！')
+            
+            # 询问是否启动预览服务器
+            if ask_yes_no('是否启动本地预览服务器？', default=True):
+                print_info('启动MkDocs预览服务器...')
+                print_info('访问地址: http://127.0.0.1:8000')
+                print_info('按 Ctrl+C 停止服务器')
+                try:
+                    subprocess.run(['mkdocs', 'serve'], cwd=PROJECT_ROOT)
+                except KeyboardInterrupt:
+                    print_info('预览服务器已停止')
+        else:
+            print_error('文档网站生成失败')
+    else:
+        print_error(f'部署脚本不存在: {deploy_script}')
+
+
 def main():
     today = datetime.now().strftime('%Y-%m-%d')
     print_header("财经新闻分析系统")
@@ -137,6 +164,9 @@ def main():
             code = run_script(cmd)
             if code == 0:
                 print_success('分析完成。')
+                # 询问是否生成文档网站
+                if ask_yes_no('是否生成并预览文档网站？', default=True):
+                    run_mkdocs_deploy()
             else:
                 print_error('分析失败，请查看上方日志。')
         else:
@@ -166,6 +196,9 @@ def main():
             code = run_script(cmd)
             if code == 0:
                 print_success('分析完成。')
+                # 询问是否生成文档网站
+                if ask_yes_no('是否生成并预览文档网站？', default=True):
+                    run_mkdocs_deploy()
             else:
                 print_error('分析失败，请查看上方日志。')
         else:
