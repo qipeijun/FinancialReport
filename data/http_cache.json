@@ -1,7 +1,7 @@
 {
   "http://rss.eastmoney.com/rss_partener.xml": {
-    "etag": "W/\"4267cfa2aa31dc1:0\"",
-    "last_modified": "Tue, 30 Sep 2025 01:36:25 GMT"
+    "etag": "\"0ba312fb231dc1:0\"",
+    "last_modified": "Tue, 30 Sep 2025 02:30:28 GMT"
   },
   "https://36kr.com/feed": {
     "etag": null,
@@ -20,11 +20,11 @@
     "last_modified": null
   },
   "https://www.chinanews.com.cn/rss/finance.xml": {
-    "etag": "\"68db31c4-3f70\"",
-    "last_modified": "Tue, 30 Sep 2025 01:26:28 GMT"
+    "etag": "\"68db4058-3da9\"",
+    "last_modified": "Tue, 30 Sep 2025 02:28:40 GMT"
   },
   "https://www.ftchinese.com/rss/feed": {
-    "etag": "W/\"2bd8-uEgK08VGzZbnDxkiIte1bkxoGyE\"",
+    "etag": "W/\"2be0-k7Y1bPUp9XUt0aPYdpKJ0944CUA\"",
     "last_modified": null
   },
   "https://www.economist.com/finance-and-economics/rss.xml": {
@@ -32,8 +32,8 @@
     "last_modified": "Mon, 29 Sep 2025 23:48:27 GMT"
   },
   "https://www.investing.com/rss/news.rss": {
-    "etag": "W/\"10a5-63ffaa3945325\"",
-    "last_modified": "Tue, 30 Sep 2025 01:26:19 GMT"
+    "etag": "W/\"1089-63ffb67faa3ca\"",
+    "last_modified": "Tue, 30 Sep 2025 02:21:14 GMT"
   },
   "http://feeds.bbci.co.uk/news/business/rss.xml": {
     "etag": null,
@@ -53,7 +53,7 @@
   },
   "https://feeds.feedburner.com/zerohedge/feed": {
     "etag": null,
-    "last_modified": "Tue, 30 Sep 2025 00:58:21 GMT"
+    "last_modified": "Tue, 30 Sep 2025 01:57:10 GMT"
   },
   "https://www.bloomberg.com/feed/podcast/etf-report.xml": {
     "etag": null,
@@ -64,8 +64,8 @@
     "last_modified": "Thu, 25 Sep 2025 19:00:17 GMT"
   },
   "https://www.sec.gov/news/pressreleases.rss": {
-    "etag": "\"1759183661\"",
-    "last_modified": "Mon, 29 Sep 2025 22:07:41 GMT"
+    "etag": "\"1759191520\"",
+    "last_modified": "Tue, 30 Sep 2025 00:18:40 GMT"
   },
   "https://www.stats.gov.cn/sj/zxfb/rss.xml": {
     "etag": "\"68db32ab-4c2aa6\"",
@@ -81,7 +81,7 @@
   },
   "https://decrypt.co/feed": {
     "etag": null,
-    "last_modified": "Tue, 30 Sep 2025 01:38:33 GMT"
+    "last_modified": "Tue, 30 Sep 2025 02:32:07 GMT"
   },
   "https://www.coindesk.com/arc/outboundfeeds/rss/": {
     "etag": null,

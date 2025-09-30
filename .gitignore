@@ -51,4 +51,4 @@ Thumbs.db
 *.temp
 
 # 新闻备份文件
-docs/archive/*.txt
+docs/archive/**/*.txt

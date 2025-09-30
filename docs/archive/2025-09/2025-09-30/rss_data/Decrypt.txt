@@ -1,40 +1,40 @@
 RSS源: Decrypt
 URL: https://decrypt.co/feed
-获取时间: 2025-09-30 09:38:37
+获取时间: 2025-09-30 10:32:07
 --------------------------------------------------
 
 文章 1:
+标题: New Study Shows AI Outpaces Humans in Game Testing
+链接: https://decrypt.co/342085/study-ai-outpaces-humans-game-testing
+发布时间: Tue, 30 Sep 2025 02:00:49 +0000
+摘要: NetEase-backed study shows language model agents may detect bugs faster and with greater coverage than existing tools.
+------------------------------
+
+文章 2:
 标题: Anthropic Claims 'Best Coding Model in the World' With Claude Sonnet 4.5—We Tested It
 链接: https://decrypt.co/342055/anthropic-claims-best-coding-model-world-claude-sonnet-4-5-tested
 发布时间: Tue, 30 Sep 2025 00:45:59 +0000
 摘要: Anthropic's Claude Sonnet 4.5 now scores 77% on a key software engineering benchmark and can work autonomously for over 30 hours on complex tasks.
 ------------------------------
 
-文章 2:
+文章 3:
 标题: Bitcoin Whale Awakens After 12 Years to Move $44 Million in BTC
 链接: https://decrypt.co/342016/bitcoin-whale-awakens-after-12-years-move-44-million-btc
 发布时间: Mon, 29 Sep 2025 22:01:04 +0000
 摘要: An old address holding 400 Bitcoin worth over $44 million has moved their "digital gold" for the first time since 2013.
 ------------------------------
 
-文章 3:
+文章 4:
 标题: Crypto Regulator Adrienne Harris Resigns as Head of DYDFS
 链接: https://decrypt.co/342079/crypto-regulator-adrienne-harris-resigns
 发布时间: Mon, 29 Sep 2025 21:39:26 +0000
 摘要: Top New York financial regulator Adrienne Harris is leaving her post.
 ------------------------------
 
-文章 4:
+文章 5:
 标题: Woman Pleads Guilty to $7 Billion Bitcoin Fraud Scheme in UK
 链接: https://decrypt.co/342050/woman-pleads-guilty-7-billion-bitcoin-fraud-scheme-in-uk
 发布时间: Mon, 29 Sep 2025 21:01:02 +0000
 摘要: A Chinese national pleaded guilty in a nearly $7 billion fraud scheme in which 61,000 Bitcoin were seized by the UK government.
-------------------------------
-
-文章 5:
-标题: AI Study Finds Chatbots Can Strategically Lie—And Current Safety Tools Can't Catch Them
-链接: https://decrypt.co/341978/ai-study-chatbots-strategically-lie-current-safety-tools-cant-catch-them
-发布时间: Mon, 29 Sep 2025 20:25:50 +0000
-摘要: A new study shows major AI models lied strategically in a controlled test while safety tools failed to detect or stop the deception.
 ------------------------------
 
