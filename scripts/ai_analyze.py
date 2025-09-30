@@ -345,10 +345,38 @@ def main():
     if args.max_chars and args.max_chars > 0 and total_len > args.max_chars:
         print_warning(f'语料已按上限截断：{total_len:,} → {current_len:,}')
 
+    # 收集统计信息
+    source_stats = {}
+    for article in selected:
+        source = article.get('source', '未知来源')
+        source_stats[source] = source_stats.get(source, 0) + 1
+    
+    # 计算数据质量信息
+    total_articles = len(selected)
+    content_articles = sum(1 for a in selected if a.get('content'))
+    content_ratio = (content_articles / total_articles * 100) if total_articles > 0 else 0
+    
+    # 构建统计信息
+    stats_info = f"""
+=== 数据统计信息 ===
+分析日期范围: {start} 至 {end}
+处理文章总数: {total_articles}篇
+内容类型: {args.content_field}
+数据完整性: {content_ratio:.1f}%的文章包含完整内容
+
+新闻源统计:
+"""
+    for source, count in sorted(source_stats.items()):
+        stats_info += f"- {source}: {count}篇\n"
+    
+    stats_info += f"\n总计: {total_articles}篇新闻文章\n"
+    
     # 简单 RAG：将分块串接一次性生成（可升级为先召回再生成）
     joined = '\n\n'.join(c for _, chunks in pairs for c in chunks)
+    full_content = stats_info + "\n\n" + joined
+    
     try:
-        summary_md, usage = call_gemini(api_key, joined)
+        summary_md, usage = call_gemini(api_key, full_content)
     except Exception as e:
         print_error(f'模型调用失败: {e}')
         return
