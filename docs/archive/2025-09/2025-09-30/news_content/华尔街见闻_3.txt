@@ -1,23 +1,49 @@
-Title: 交易规模超520亿美元！游戏巨头EA或将以每股210美元私有化
-Link: https://wallstreetcn.com/articles/3756493
+Title: Sora 2做“AI版抖音”，Agent做“AI版亚马逊”，OpenAI力推“AI应用”
+Link: https://wallstreetcn.com/articles/3756514
 Source: 华尔街见闻
-Published: Mon, 29 Sep 2025 21:48:25 +0800
-Summary: <p>游戏巨头EA（Electronic Arts Inc.）正接近达成一项里程碑式的私有化协议，该交易不仅将成为本年度全球规模最大的交易之一，更可能以超过520亿美元的估值成为有记录以来规模最大的杠杆收购案。</p>
-<p>据媒体29日援引知情人士透露，<strong>EA正与一个包括Silver Lake Management、沙特公共投资基金（Public Investment Fund）和Jared Kushner的Affinity Partners在内的投资者财团进行深入谈判。</strong></p>
-<p>根据谈判，<strong>收购价格约为每股210美元，</strong>较上周四（该潜在交易消息首次传出前的最后一个交易日）的收盘价溢价约25%。知情人士称，协议最早可能于本周一宣布。截至发稿，EA股价涨至203美元。</p>
-<p><img class=" wscnph" src="https://wpimg-wscn.awtmt.com/12bc3bf2-02be-4375-99db-14aa08779079.png" /></p>
-<p>若达成，这将成为今年全球最大交易之一。不过，该知情人士也表示，相关商议仍在进行中，交易的确切时间和价格仍可能发生变化。</p>
-<h2><strong>年度最大交易之一！游戏行业整合再添一例</strong></h2>
-<p>若以每股210美元计算，EA的股权价值将超过520亿美元。根据媒体汇编的数据，<strong>这将使其成为本年度全球规模最大的交易之一，同时也是有记录以来最大的杠杆收购案。</strong></p>
-<p>成立于1982年的EA是全球最大的视频游戏发行商之一，也是过去数年间加入行业整合浪潮的最新一家公司。</p>
-<p><strong>随着行业日趋成熟，巨头之间的并购整合已成为重要趋势。</strong>在此之前，射击游戏《使命召唤》的开发商动视暴雪，已于两年前被微软公司收购。EA的这笔交易若能完成，将成为游戏行业整合的又一重要标志。</p><p>本文来自华尔街见闻，欢迎下载APP查看更多</p>
+Published: Tue, 30 Sep 2025 08:30:47 +0800
+Summary: <p style="text-align: right;"><span style="color: #b3b3b3;">本文作者：龙玥</span></p>
+<p style="text-align: right;"><span style="color: #b3b3b3;">来源：硬AI</span></p>
+<p style="text-align: left;">OpenAI在下一盘大棋，其正兵分两路，一边准备推出一款由其最新视频模型Sora 2驱动的社交应用，另一边则已在ChatGPT中集成了即时购物功能。这家人工智能巨头的战略重心正从技术提供商向应用平台服务商加速转变。</p>
+<p style="text-align: left;">据《连线》杂志最新报道，OpenAI正准备发布一款独立的Sora 2应用程序。该应用在设计上与TikTok高度相似，<strong>采用垂直视频流和滑动浏览的交互方式</strong>，但所有内容均由AI生成。据报道，该应用上周已在公司内部推出，并获得了员工的积极反馈。</p>
+<p style="text-align: left;">与此同时，在商业应用领域，OpenAI近日宣布与电商平台Etsy和Shopify达成合作，在美国市场推出即时结账功能。用户可在ChatGPT的对话中直接完成商品购买，无需跳转至外部网站。此举被市场视为电商行业的重大变革，消息公布后，Etsy股价收盘飙升近16%，Shopify股价也上涨超过6%。</p>
+<p style="text-align: left;">然而，OpenAI的雄心勃勃的应用计划并非没有阻力。其Sora 2应用在版权处理上的策略——默认使用版权内容，除非权利方主动“选择退出”——已经引发了内容创作者和影视公司的强烈担忧，预示着一场围绕AI与知识产权的激烈博弈即将展开。</p>
+<h2 style="text-align: left;"><strong>Sora 2：高仿TikTok的AI短视频平台？</strong></h2>
+<p style="text-align: left;">据报道，<strong>Sora 2应用将允许用户生成最长10秒的视频片段，并在推送右侧提供点赞、评论和再创作（remix）等社交功能。应用还包含一个由推荐算法驱动的“为你推荐”页面。</strong></p>
+<p style="text-align: left;">值得注意的是，该应用不允许用户从手机相册或其他应用上传现有视频或照片，旨在打造一个纯粹的AI生成内容生态。</p>
+<p style="text-align: left;">该应用还包含一项身份验证功能，用户在验证后便可以在视频中使用自己的肖像，其他用户也可以标记并使用其肖像进行创作。知情人士透露，即使用户的肖像被用于一个从未发布的草稿视频中，本人也会收到通知。</p>
+<p style="text-align: left;">OpenAI此举被认为意在复制ChatGPT在文本领域的成功，通过一款颠覆性的应用让公众直观体验AI视频的潜力。OpenAI于去年12月正式推出Sora。最初，人们只能通过网页访问它，但很快它就直接被整合到ChatGPT应用程序中。</p>
+<p style="text-align: left;">同时，内部人士认为，在TikTok美国业务前景不明朗的背景下，这对OpenAI而言是一个独特的机遇。此举也让OpenAI直接进入了与Meta和谷歌的竞争赛道，后两者近期分别推出了AI视频平台Vibes和集成了Veo 3模型的YouTube。</p>
+<h2 style="text-align: left;"><strong>AI Agent：联手电商巨头开启“即时购物”</strong></h2>
+<p style="text-align: left;">在另一条战线上，OpenAI的商业化落地更为直接。</p>
+<p style="text-align: left;"><a href="https://wallstreetcn.com/articles/3756507#from=android" rel="noopener" target="_blank">华尔街见闻</a>写道，通过与Etsy和Shopify的合作，<strong>超过一百万Shopify商家，包括Glossier和SKIMS等知名品牌，将能够通过ChatGPT直接向消费者销售商品。</strong></p>
+<p style="text-align: left;">这项功能基于OpenAI与支付公司Stripe合作开发的代理商务协议，旨在将ChatGPT庞大的对话流量无缝转化为商业交易。</p>
+<p style="text-align: left;">据OpenAI透露，其应用8月份的周活跃用户已超700万，其中相当一部分提问与购物相关。OpenAI产品负责人Michelle Fradin表示：“我们对ChatGPT的愿景是，它不仅为用户提供信息，还帮助用户在现实世界中完成事务。”</p>
+<p style="text-align: left;">目前该功能仅支持单件商品购买且面向美国用户，但OpenAI计划未来推出多商品购物车并扩展服务区域。公司将对通过ChatGPT完成的交易收取费用，但具体费率包含在保密合同中，用户端则无需支付额外费用。</p>
+<h2 style="text-align: left;"><strong>“先用后退”：版权争议成最大隐忧</strong></h2>
+<p style="text-align: left;">尽管应用前景广阔，但OpenAI在版权问题上的处理方式正成为其最大的潜在风险。</p>
+<p style="text-align: left;"><a href="https://wallstreetcn.com/articles/3756508#from=android" rel="noopener" target="_blank">华尔街见闻</a>提及，知情人士称，OpenAI已开始通知各大经纪公司和影视公司，告知他们Sora 2即将发布，并说明了如何通过“选择退出”（opt-out）流程来保护其版权内容。</p>
+<p style="text-align: left;">这意味着，<strong>除非电影公司等知识产权持有者主动告知OpenAI，否则其受版权保护的角色和内容可能会被Sora 2用于生成视频。</strong>OpenAI首席战略官Jason Kwon表示，公司一贯将人物肖像权和版权问题分开处理，新版Sora不会在未经允许的情况下使用公众人物的形象。</p>
+<p style="text-align: left;">然而，OpenAI不打算接受“整包式”的版权排除请求，<strong>权利方必须在发现侵权内容后逐一举报。</strong>这一做法引发了业界的普遍担忧。AI授权平台Vermillio的首席执行官Dan Neely表示，此举印证了行业长期以来的担忧。</p>
+<p style="text-align: left;">这场争议正值AI公司与好莱坞关系紧张之际。创作者们一直要求AI公司在使用其作品训练模型时应获得许可并支付报酬。尽管近期有法院裁决部分支持AI公司对版权内容的“合理使用”，但迪士尼等巨头已就类似问题起诉了AI公司Midjourney，显示出内容行业的强硬立场。OpenAI的版权策略无疑将使其成为新一轮法律和舆论风暴的中心。</p>
+<p style="text-align: left;"> </p>
+<p>本文来自<a href="https://mp.weixin.qq.com/s/2rfpVmedXuAVybneRhpkIg" rel="noopener" target="_blank">微信公众号“硬AI”</a>，关注更多AI前沿资讯请<a href="https://mp.weixin.qq.com/s/2rfpVmedXuAVybneRhpkIg" rel="noopener" target="_blank">移步这里</a></p>
+<p><img src="https://wpimg-wscn.awtmt.com/a2d73611-121b-4320-b724-153afec77339.png" style="height: auto; width: 680px;" width="640" /></p><p>本文来自华尔街见闻，欢迎下载APP查看更多</p>
 --------------------------------------------------
-Full Content: <p>游戏巨头EA（Electronic Arts Inc.）正接近达成一项里程碑式的私有化协议，该交易不仅将成为本年度全球规模最大的交易之一，更可能以超过520亿美元的估值成为有记录以来规模最大的杠杆收购案。</p>
-<p>据媒体29日援引知情人士透露，<strong>EA正与一个包括Silver Lake Management、沙特公共投资基金（Public Investment Fund）和Jared Kushner的Affinity Partners在内的投资者财团进行深入谈判。</strong></p>
-<p>根据谈判，<strong>收购价格约为每股210美元，</strong>较上周四（该潜在交易消息首次传出前的最后一个交易日）的收盘价溢价约25%。知情人士称，协议最早可能于本周一宣布。截至发稿，EA股价涨至203美元。</p>
-<p><img class=" wscnph" src="https://wpimg-wscn.awtmt.com/12bc3bf2-02be-4375-99db-14aa08779079.png" /></p>
-<p>若达成，这将成为今年全球最大交易之一。不过，该知情人士也表示，相关商议仍在进行中，交易的确切时间和价格仍可能发生变化。</p>
-<h2><strong>年度最大交易之一！游戏行业整合再添一例</strong></h2>
-<p>若以每股210美元计算，EA的股权价值将超过520亿美元。根据媒体汇编的数据，<strong>这将使其成为本年度全球规模最大的交易之一，同时也是有记录以来最大的杠杆收购案。</strong></p>
-<p>成立于1982年的EA是全球最大的视频游戏发行商之一，也是过去数年间加入行业整合浪潮的最新一家公司。</p>
-<p><strong>随着行业日趋成熟，巨头之间的并购整合已成为重要趋势。</strong>在此之前，射击游戏《使命召唤》的开发商动视暴雪，已于两年前被微软公司收购。EA的这笔交易若能完成，将成为游戏行业整合的又一重要标志。</p><p>本文来自华尔街见闻，欢迎下载APP查看更多</p>...
+Full Content: <p style="text-align: right;"><span style="color: #b3b3b3;">本文作者：龙玥</span></p>
+<p style="text-align: right;"><span style="color: #b3b3b3;">来源：硬AI</span></p>
+<p style="text-align: left;">OpenAI在下一盘大棋，其正兵分两路，一边准备推出一款由其最新视频模型Sora 2驱动的社交应用，另一边则已在ChatGPT中集成了即时购物功能。这家人工智能巨头的战略重心正从技术提供商向应用平台服务商加速转变。</p>
+<p style="text-align: left;">据《连线》杂志最新报道，OpenAI正准备发布一款独立的Sora 2应用程序。该应用在设计上与TikTok高度相似，<strong>采用垂直视频流和滑动浏览的交互方式</strong>，但所有内容均由AI生成。据报道，该应用上周已在公司内部推出，并获得了员工的积极反馈。</p>
+<p style="text-align: left;">与此同时，在商业应用领域，OpenAI近日宣布与电商平台Etsy和Shopify达成合作，在美国市场推出即时结账功能。用户可在ChatGPT的对话中直接完成商品购买，无需跳转至外部网站。此举被市场视为电商行业的重大变革，消息公布后，Etsy股价收盘飙升近16%，Shopify股价也上涨超过6%。</p>
+<p style="text-align: left;">然而，OpenAI的雄心勃勃的应用计划并非没有阻力。其Sora 2应用在版权处理上的策略——默认使用版权内容，除非权利方主动“选择退出”——已经引发了内容创作者和影视公司的强烈担忧，预示着一场围绕AI与知识产权的激烈博弈即将展开。</p>
+<h2 style="text-align: left;"><strong>Sora 2：高仿TikTok的AI短视频平台？</strong></h2>
+<p style="text-align: left;">据报道，<strong>Sora 2应用将允许用户生成最长10秒的视频片段，并在推送右侧提供点赞、评论和再创作（remix）等社交功能。应用还包含一个由推荐算法驱动的“为你推荐”页面。</strong></p>
+<p style="text-align: left;">值得注意的是，该应用不允许用户从手机相册或其他应用上传现有视频或照片，旨在打造一个纯粹的AI生成内容生态。</p>
+<p style="text-align: left;">该应用还包含一项身份验证功能，用户在验证后便可以在视频中使用自己的肖像，其他用户也可以标记并使用其肖像进行创作。知情人士透露，即使用户的肖像被用于一个从未发布的草稿视频中，本人也会收到通知。</p>
+<p style="text-align: left;">OpenAI此举被认为意在复制ChatGPT在文本领域的成功，通过一款颠覆性的应用让公众直观体验AI视频的潜力。OpenAI于去年12月正式推出Sora。最初，人们只能通过网页访问它，但很快它就直接被整合到ChatGPT应用程序中。</p>
+<p style="text-align: left;">同时，内部人士认为，在TikTok美国业务前景不明朗的背景下，这对OpenAI而言是一个独特的机遇。此举也让OpenAI直接进入了与Meta和谷歌的竞争赛道，后两者近期分别推出了AI视频平台Vibes和集成了Veo 3模型的YouTube。</p>
+<h2 style="text-align: left;"><strong>AI Agent：联手电商巨头开启“即时购物”</strong></h2>
+<p style="text-align: left;">在另一条战线上，OpenAI的商业化落地更为直接。</p>
+<p style="text-align: left;"><a href="https://wallstreetcn.com/articles/3756507#from=android" rel="noopener" target="_blank">华尔街见闻</a>写道，通过与Etsy和Shopify的合作，<strong>超过一百万Shopify商家，包括Glossier和SKIMS等知名品牌，将能够通过ChatGPT直接向消费者销售商品。</strong></p>
+<p style="text-align: left;">这项功能基于OpenAI与支付公司Stripe合作开发的代理商务协议，旨在将ChatGPT庞大的对话流量无缝转化为商业交易。</p>
+<...
