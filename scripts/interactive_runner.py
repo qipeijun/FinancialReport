@@ -158,6 +158,7 @@ def main():
         print_info('🎯 分析选项：')
         print('  1. 自定义分析 - 可以指定日期范围、新闻来源、关键词等')
         print('  2. 标准分析 - 分析当天的所有新闻（推荐）')
+        print('  3. 选择模型 - Gemini 或 DeepSeek')
         print()
         if ask_yes_no('是否仅分析指定范围/来源/关键词？', default=False):
             print_info('📋 自定义分析参数配置：')
@@ -167,7 +168,15 @@ def main():
             print()
             
             date_mode = ask_yes_no('仅分析当天？（否则可指定起止日期）', default=True)
-            cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze.py')]
+            # 选择模型
+            print_info('🤖 选择AI模型（回车默认 Gemini）：')
+            print('   • 1 = Gemini')
+            print('   • 2 = DeepSeek')
+            model_choice = input('选择模型 [1/2]: ').strip()
+            if model_choice == '2':
+                cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek.py')]
+            else:
+                cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze.py')]
             
             if not date_mode:
                 print_info('📅 日期范围设置：')
@@ -225,9 +234,17 @@ def main():
             print('  • 生成完整的财经分析报告')
             print('  • 包含热门话题和潜力话题分析')
             print()
+            # 模型选择
+            print_info('🤖 选择AI模型（回车默认 Gemini）：')
+            print('  • 1 = Gemini')
+            print('  • 2 = DeepSeek')
+            model_choice = input('选择模型 [1/2]: ').strip()
             # 添加字段选择
             content_field = ask_content_field()
-            cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze.py'), '--content-field', content_field]
+            if model_choice == '2':
+                cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek.py'), '--content-field', content_field]
+            else:
+                cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze.py'), '--content-field', content_field]
             print_info('🚀 开始执行标准分析...')
             print(f'   命令：{" ".join(cmd)}')
             print()

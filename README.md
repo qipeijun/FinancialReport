@@ -8,6 +8,7 @@
 - **智能字段选择**：AI分析时可选择摘要优先、正文优先或智能选择
 - **便捷查询导出**：按日期/来源/关键词查询并导出 CSV/JSON
 - **AI 分析报告**：一键调用大模型生成专业 Markdown 报告
+- **多模型支持**：支持 Gemini 与 DeepSeek，可在交互脚本中选择
 - **虚拟环境支持**：完整的 Python 虚拟环境配置，确保依赖隔离
 - **交互式体验**：简化上手的交互式脚本，支持字段选择界面
 
@@ -15,16 +16,16 @@
 
 ### 方式A：使用虚拟环境（推荐）
 ```bash
-# 1. 激活虚拟环境（自动安装依赖）
+# 1. 激活虚拟环境（自动安装依赖 + 依赖校验）
 ./activate.sh                    # Linux/macOS
 # 或
 activate.bat                     # Windows
 
 # 2. 配置API密钥
 cp config/config.example.yml config/config.yml
-# 编辑 config/config.yml，填写你的 Gemini API Key
+# 编辑 config/config.yml，填写你的 Gemini 与/或 DeepSeek API Key
 
-# 3. 运行交互式脚本
+# 3. 运行交互式脚本（可选择 Gemini 或 DeepSeek 模型）
 python scripts/interactive_runner.py
 ```
 
@@ -39,7 +40,7 @@ python3 scripts/interactive_runner.py
 # Python ≥ 3.10
 pip3 install -r requirements.txt
 cp config/config.example.yml config/config.yml
-# 编辑 config/config.yml，填写你的 Gemini API Key
+# 编辑 config/config.yml，填写你的 Gemini 与/或 DeepSeek API Key
 python3 scripts/interactive_runner.py
 ```
 - 若今天已抓取过数据，可直接选择“AI 分析”。
@@ -107,6 +108,10 @@ python scripts/ai_analyze.py --filter-source "华尔街见闻,36氪" --filter-ke
 python scripts/ai_analyze.py --content-field summary    # 摘要优先（推荐）
 python scripts/ai_analyze.py --content-field content    # 正文优先
 python scripts/ai_analyze.py --content-field auto       # 智能选择（默认）
+
+# 使用 DeepSeek 模型（可直接运行 DeepSeek 版本脚本）
+python scripts/ai_analyze_deepseek.py                   # 使用 config.yml 的 api_keys.deepseek
+python scripts/ai_analyze_deepseek.py --model deepseek-chat --base-url https://api.deepseek.com/v3.1_terminus_expires_on_20251015
 ```
 
 ## 结果位置
@@ -123,6 +128,7 @@ python scripts/ai_analyze.py --content-field auto       # 智能选择（默认�
 ```yaml
 api_keys:
   gemini: "YOUR_GEMINI_API_KEY"
+  deepseek: "YOUR_DEEPSEEK_API_KEY"
 
 notify:
   server_chan_keys:
@@ -139,9 +145,12 @@ notify:
   - 读取数据库，支持字段选择（`--content-field`：`summary`/`content`/`auto`）
   - 固定提示词 `task/financial_analysis_prompt_pro.md`，生成 Markdown 报告
   - 智能内容选择：当正文过长时自动使用摘要
+- `scripts/ai_analyze_deepseek.py`
+  - 与 `ai_analyze.py` 相同逻辑，但调用 DeepSeek（OpenAI SDK）
+  - 从 `config/config.yml` 读取 `api_keys.deepseek` 或 `deepseek.api_key`（不再读取环境变量）
 - `scripts/interactive_runner.py`
   - 交互式问答：检测 → 抓取 → 分析，一站式体验
-  - 支持字段选择交互界面
+  - 支持字段选择与模型选择（Gemini/DeepSeek）
 
 ## 目录结构
 ```
@@ -172,6 +181,12 @@ Financial-report/
 - **推荐使用虚拟环境**：避免依赖冲突，确保环境一致性
 - **激活虚拟环境**：每次使用前执行 `./activate.sh`（Linux/macOS）或 `activate.bat`（Windows）
 - **详细指南**：查看 `VENV_README.md` 了解虚拟环境的完整使用方法
+
+### 依赖安装与校验
+- `activate.sh` 会自动：
+  - 升级 pip
+  - 安装 `requirements.txt` 全部依赖
+  - 执行 `pip check` 完成依赖一致性校验
 
 ### 数据分析优化
 - **字段选择**：新增 `--content-field` 参数，可选择 `summary`（摘要优先）、`content`（正文优先）或 `auto`（智能选择）

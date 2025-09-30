@@ -11,6 +11,7 @@ pytz~=2024.1
 
 # AI 分析
 google-generativeai~=0.7.2
+openai>=1.40.0
 
 # 可选：本地运行/表格美化（当前脚本未强依赖，仅预留）
 # rich~=13.7.1

@@ -1,29 +1,28 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AI 分析脚本（基于数据库）
+AI 分析脚本（DeepSeek 版本，基于数据库）
 
 功能：
 - 从 `data/news_data.db` 读取指定日期范围内的文章
 - 语料构造优先使用 `content`（正文），为空则回退 `summary`
-- 调用 Gemini 模型生成 Markdown 分析（多模型兜底）
+- 调用 DeepSeek 模型生成 Markdown 分析
 - 将报告保存到 `docs/archive/YYYY-MM/YYYY-MM-DD/reports/` 下
 - 可选导出 JSON（包含 summary 与文章元数据）
 
 示例：
   - 分析当天：
-      python3 scripts/ai_analyze.py
+      python3 scripts/ai_analyze_deepseek.py
   - 指定日期：
-      python3 scripts/ai_analyze.py --date 2025-09-29
+      python3 scripts/ai_analyze_deepseek.py --date 2025-09-29
   - 指定范围并导出 JSON：
-      python3 scripts/ai_analyze.py --start 2025-09-28 --end 2025-09-29 --output-json /tmp/analysis.json
+      python3 scripts/ai_analyze_deepseek.py --start 2025-09-28 --end 2025-09-29 --output-json /tmp/analysis.json
 """
 
 import argparse
 import json
 import os
 import sqlite3
-import sys
 from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
@@ -37,9 +36,9 @@ from utils.print_utils import (
 )
 
 try:
-    import google.generativeai as genai
-except Exception:  # 允许环境缺失时先行提示
-    genai = None
+    from openai import OpenAI
+except Exception:
+    OpenAI = None  # type: ignore
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -47,7 +46,7 @@ DB_PATH = PROJECT_ROOT / 'data' / 'news_data.db'
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description='从数据库读取新闻并调用 Gemini 生成分析报告')
+    parser = argparse.ArgumentParser(description='从数据库读取新闻并调用 DeepSeek 生成分析报告')
     date_group = parser.add_mutually_exclusive_group()
     date_group.add_argument('--date', type=str, help='指定单日（YYYY-MM-DD）')
     parser.add_argument('--start', type=str, help='开始日期（YYYY-MM-DD），默认为当天')
@@ -59,9 +58,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--order', choices=['asc', 'desc'], default='desc', help='排序方向，基于 published 优先、否则 created_at')
     parser.add_argument('--output-json', type=str, help='可选：将结果（summary+文章元数据）导出为 JSON 文件')
     parser.add_argument('--max-chars', type=int, default=500000, help='传入模型的最大字符数上限，用于控制成本，0 表示不限制')
-    parser.add_argument('--api-key', type=str, help='可选：显式传入 Gemini API Key（默认从配置/环境读取）')
+    parser.add_argument('--api-key', type=str, help='可选：显式传入 DeepSeek API Key（默认仅从配置读取）')
     parser.add_argument('--config', type=str, help='可选：配置文件路径（默认 config/config.yml）')
     parser.add_argument('--content-field', choices=['summary', 'content', 'auto'], default='auto', help='选择分析字段：summary(摘要优先)、content(正文优先)、auto(智能选择)')
+    parser.add_argument('--model', type=str, default='deepseek-chat', help='DeepSeek 模型名称（默认 deepseek-chat）')
+    parser.add_argument('--base-url', type=str, default='https://api.deepseek.com/v3.1_terminus_expires_on_20251015', help='DeepSeek API Base URL')
     return parser.parse_args()
 
 
@@ -133,7 +134,6 @@ def query_articles(conn: sqlite3.Connection, start: str, end: str, order: str, l
 
 
 def chunk_text(text: str, max_chars: int = 4000) -> List[str]:
-    """简单字符级分块（近似 500-1500 tokens）。可替换成更智能的语义切分。"""
     if not text:
         return []
     if max_chars <= 0:
@@ -143,7 +143,6 @@ def chunk_text(text: str, max_chars: int = 4000) -> List[str]:
     n = len(text)
     while start < n:
         end = min(n, start + max_chars)
-        # 尝试在段落边界截断
         boundary = text.rfind('\n\n', start, end)
         if boundary == -1 or boundary <= start + int(max_chars * 0.5):
             boundary = end
@@ -153,7 +152,6 @@ def chunk_text(text: str, max_chars: int = 4000) -> List[str]:
 
 
 def build_corpus(articles: List[Dict[str, Any]], max_chars: int, per_chunk_chars: int = 3000, content_field: str = 'auto') -> Tuple[List[Tuple[Dict[str, Any], List[str]]], int]:
-    """构造分块语料：返回 [(article_meta, [chunks...])...] 与原始总长度。"""
     pairs: List[Tuple[Dict[str, Any], List[str]]] = []
     total_len = 0
     for a in articles:
@@ -161,10 +159,9 @@ def build_corpus(articles: List[Dict[str, Any]], max_chars: int, per_chunk_chars
             body = a.get('summary') or a.get('content') or ''
         elif content_field == 'content':
             body = a.get('content') or a.get('summary') or ''
-        else:  # auto - 智能选择
+        else:
             summary = a.get('summary', '')
             content = a.get('content', '')
-            # 如果content太长（>5000字符），优先使用summary
             if len(content) > 5000 and summary:
                 body = summary
             else:
@@ -179,7 +176,6 @@ def build_corpus(articles: List[Dict[str, Any]], max_chars: int, per_chunk_chars
         chunks = chunk_text(text, per_chunk_chars)
         pairs.append((a, chunks))
 
-    # 上限控制（粗略按字符裁剪）：仅在 max_chars > 0 时生效
     if max_chars and max_chars > 0:
         acc = 0
         trimmed: List[Tuple[Dict[str, Any], List[str]]] = []
@@ -199,51 +195,46 @@ def build_corpus(articles: List[Dict[str, Any]], max_chars: int, per_chunk_chars
     return pairs, total_len
 
 
-def call_gemini(api_key: str, content: str) -> Tuple[str, Dict[str, Any]]:
-    """按优先级尝试多个模型，返回 Markdown 文本。"""
-    if genai is None:
-        raise SystemExit('未安装 google-generativeai，请先安装或在环境中提供。')
+def call_deepseek(api_key: str, base_url: str, model_name: str, content: str) -> Tuple[str, Dict[str, Any]]:
+    if OpenAI is None:
+        raise SystemExit('未安装 openai，请先安装或在环境中提供。')
 
-    model_names = [
-        'models/gemini-2.5-pro',
-        'models/gemini-2.5-flash',
-        'models/gemini-2.0-flash',
-        'models/gemini-pro-latest'
-    ]
-
-    genai.configure(api_key=api_key)
     print_progress(f'正在生成报告（输入长度 {len(content):,} 字符）')
 
-    # 读取提示词（固定使用专业版）
     prompt_path = PROJECT_ROOT / 'task' / 'financial_analysis_prompt_pro.md'
     if not prompt_path.exists():
         raise SystemExit(f'提示词文件不存在: {prompt_path}')
     with open(prompt_path, 'r', encoding='utf-8') as f:
         system_prompt = f.read()
 
-    last_error: Optional[Exception] = None
-    for i, model_name in enumerate(model_names, 1):
-        try:
-            print_step(i, len(model_names), f'尝试模型: {model_name}')
-            model = genai.GenerativeModel(model_name)
-            resp = model.generate_content([system_prompt, content])
-            print_success(f'模型调用成功: {model_name}')
-            usage = {}
-            try:
-                usage = {
-                    'model': model_name,
-                    'prompt_tokens': getattr(resp, 'usage_metadata', {}).get('prompt_token_count'),
-                    'candidates_tokens': getattr(resp, 'usage_metadata', {}).get('candidates_token_count'),
-                    'total_tokens': getattr(resp, 'usage_metadata', {}).get('total_token_count')
-                }
-            except Exception:
-                pass
-            return resp.text, usage
-        except Exception as e:  # 尝试下一个
-            last_error = e
-            continue
+    client = OpenAI(api_key=api_key, base_url=base_url)
 
-    raise RuntimeError(f'所有模型调用失败，最后错误：{last_error}')
+    try:
+        print_step(1, 1, f'调用模型: {model_name}')
+        resp = client.chat.completions.create(
+            model=model_name,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": content},
+            ],
+            stream=False
+        )
+        print_success(f'模型调用成功: {model_name}')
+        usage = {}
+        try:
+            # OpenAI SDK usage 结构可能不同，这里做容错访问
+            usage = {
+                'model': getattr(resp, 'model', model_name),
+                'prompt_tokens': getattr(getattr(resp, 'usage', {}), 'prompt_tokens', None) or (resp.usage.get('prompt_tokens') if isinstance(resp.usage, dict) else None),
+                'completion_tokens': getattr(getattr(resp, 'usage', {}), 'completion_tokens', None) or (resp.usage.get('completion_tokens') if isinstance(resp.usage, dict) else None),
+                'total_tokens': getattr(getattr(resp, 'usage', {}), 'total_tokens', None) or (resp.usage.get('total_tokens') if isinstance(resp.usage, dict) else None),
+            }
+        except Exception:
+            pass
+        text = resp.choices[0].message.content if resp and resp.choices else ''
+        return text, usage
+    except Exception as e:
+        raise RuntimeError(f'DeepSeek 模型调用失败：{e}')
 
 
 def save_markdown(date_str: str, markdown_text: str) -> Path:
@@ -284,35 +275,36 @@ def main():
     args = parse_args()
     start, end = resolve_date_range(args)
 
-    print_header("AI 财经分析系统")
+    print_header("AI 财经分析系统（DeepSeek）")
     print_info(f"分析日期范围: {start} → {end}")
     print_info(f"字段选择模式: {args.content_field}")
     if args.max_chars > 0:
         print_info(f"字符数限制: {args.max_chars:,}")
     print()
 
-    # 解析配置文件，优先顺序：config.yml > --api-key > 环境变量
+    # 解析配置文件，优先顺序：config.yml > --api-key（不再使用环境变量）
     config_path = Path(args.config) if args.config else (PROJECT_ROOT / 'config' / 'config.yml')
     api_key: Optional[str] = None
     if config_path.exists():
         try:
             with open(config_path, 'r', encoding='utf-8') as f:
                 cfg = yaml.safe_load(f) or {}
-            # 常见层级兼容：api_keys.gemini 或 gemini.api_key
+            # 支持 api_keys.deepseek 或 deepseek.api_key
             api_key = (
-                (cfg.get('api_keys') or {}).get('gemini')
-                or (cfg.get('gemini') or {}).get('api_key')
+                (cfg.get('api_keys') or {}).get('deepseek')
+                or (cfg.get('deepseek') or {}).get('api_key')
             )
-            print_success(f'使用配置文件：{config_path}')
+            if api_key:
+                print_success(f'使用配置文件：{config_path}')
         except Exception as e:
             print_warning(f'读取配置失败（{config_path}）：{e}，将尝试使用命令行或环境变量。')
     else:
         print_warning(f'未找到配置文件：{config_path}，将尝试使用命令行或环境变量。')
 
     if not api_key:
-        api_key = args.api_key or os.getenv('GEMINI_API_KEY')
+        api_key = args.api_key  # 仅允许命令行覆盖，不再从环境变量读取
     if not api_key:
-        raise SystemExit("未在配置/参数/环境中找到 Gemini API Key。可在 config.yml 的 api_keys.gemini 或 gemini.api_key 配置，或使用 --api-key / GEMINI_API_KEY。")
+        raise SystemExit("未在配置或命令行参数中找到 DeepSeek API Key。请在 config.yml 的 api_keys.deepseek 或 deepseek.api_key 配置，或使用 --api-key。")
 
     conn = open_connection(DB_PATH)
     try:
@@ -325,7 +317,6 @@ def main():
         return
     print_info(f'已读取文章：{len(rows):,} 条')
 
-    # 过滤来源与关键词（可控量）
     selected = rows
     if args.filter_source:
         sources = {s.strip() for s in args.filter_source.split(',') if s.strip()}
@@ -345,18 +336,15 @@ def main():
     if args.max_chars and args.max_chars > 0 and total_len > args.max_chars:
         print_warning(f'语料已按上限截断：{total_len:,} → {current_len:,}')
 
-    # 收集统计信息
     source_stats = {}
     for article in selected:
         source = article.get('source', '未知来源')
         source_stats[source] = source_stats.get(source, 0) + 1
 
-    # 计算数据质量信息
     total_articles = len(selected)
     content_articles = sum(1 for a in selected if a.get('content'))
     content_ratio = (content_articles / total_articles * 100) if total_articles > 0 else 0
 
-    # 构建统计信息
     stats_info = f"""
 === 数据统计信息 ===
 分析日期范围: {start} 至 {end}
@@ -371,29 +359,24 @@ def main():
 
     stats_info += f"\n总计: {total_articles}篇新闻文章\n"
 
-    # 简单 RAG：将分块串接一次性生成（可升级为先召回再生成）
     joined = '\n\n'.join(c for _, chunks in pairs for c in chunks)
     full_content = stats_info + "\n\n" + joined
 
     try:
-        summary_md, usage = call_gemini(api_key, full_content)
+        summary_md, usage = call_deepseek(api_key, args.base_url, args.model, full_content)
     except Exception as e:
         print_error(f'模型调用失败: {e}')
         return
 
-    # 保存 Markdown 报告（按 end 日期命名，更贴近日报语义）
     saved_path = save_markdown(end, summary_md)
-    # 元数据持久化
     meta = {
         'date_range': {'start': start, 'end': end},
         'articles_used': len(selected),
         'chunks': sum(len(ch) for _, ch in pairs),
         'model_usage': usage,
-#         'prompt_file': str((PROJECT_ROOT / 'task' / 'financial_analysis_prompt_pro.md').resolve())
     }
     save_metadata(end, meta)
 
-    # 可选导出 JSON
     if args.output_json:
         out_path = Path(args.output_json)
         if not out_path.is_absolute():
@@ -402,13 +385,12 @@ def main():
 
     print_success('分析完成！')
 
-    # 打印统计信息
     stats = {
         '分析日期范围': f"{start} → {end}",
         '处理文章数': len(selected),
         '语料块数': sum(len(ch) for _, ch in pairs),
         '最终字符数': f"{current_len:,}",
-        '使用模型': usage.get('model', '未知'),
+        '使用模型': usage.get('model', args.model),
         'Token消耗': f"{usage.get('total_tokens', 0):,}" if usage.get('total_tokens') else '未知'
     }
     print_statistics(stats)

@@ -3,7 +3,12 @@
     "start": "2025-09-30",
     "end": "2025-09-30"
   },
-  "articles_used": 124,
-  "chunks": 201,
-  "model_usage": {}
+  "articles_used": 159,
+  "chunks": 253,
+  "model_usage": {
+    "model": "deepseek-v3.1-terminus",
+    "prompt_tokens": 103720,
+    "completion_tokens": 1909,
+    "total_tokens": 105629
+  }
 }

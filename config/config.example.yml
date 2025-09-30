@@ -2,6 +2,7 @@
 
 api_keys:
   gemini: "REPLACE_WITH_YOUR_GEMINI_API_KEY"
+  deepseek: "REPLACE_WITH_YOUR_DEEPSEEK_API_KEY"
 
 notify:
   server_chan_keys:
