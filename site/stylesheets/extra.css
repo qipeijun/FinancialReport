@@ -1,0 +1,489 @@
+/* 财经分析报告系统 - 简化版样式表 */
+
+:root {
+  /* Apple 风格色彩系统 */
+  --apple-blue: #007AFF;
+  --apple-gray-1: #F2F2F7;
+  --apple-gray-2: #AEAEB2;
+  --apple-gray-6: #8E8E93;
+  --apple-green: #34C759;
+  --apple-red: #FF3B30;
+  --apple-text: #1D1D1F;
+  --apple-text-secondary: #86868B;
+  --md-footer-bg-color: #00000030;
+}
+
+/* 全局字体优化 */
+.md-typeset {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  color: var(--apple-text);
+}
+
+/* 内容区域 */
+.md-content__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 10px;
+  padding-bottom: 100px;
+}
+
+/* 标题系统 */
+.md-typeset h1 {
+  font-size: 48px;
+  line-height: 1.08349;
+  font-weight: 600;
+  letter-spacing: -0.003em;
+  color: var(--apple-text);
+  margin: 0 0 20px 0;
+  border: none;
+}
+
+.md-typeset h2 {
+  font-size: 32px;
+  line-height: 1.125;
+  font-weight: 600;
+  letter-spacing: 0.004em;
+  color: var(--apple-text);
+  margin: 48px 0 16px 0;
+}
+
+.md-typeset h3 {
+  font-size: 24px;
+  line-height: 1.16667;
+  font-weight: 600;
+  letter-spacing: 0.009em;
+  color: var(--apple-text);
+  margin: 32px 0 12px 0;
+}
+
+.md-typeset h4, 
+.md-typeset h5, 
+.md-typeset h6 {
+  font-size: 19px;
+  line-height: 1.21053;
+  font-weight: 600;
+  letter-spacing: 0.012em;
+  color: var(--apple-text);
+  margin: 24px 0 8px 0;
+}
+
+/* 段落优化 */
+.md-typeset p {
+  margin: 0 0 1em 0;
+  color: var(--apple-text);
+  text-align: justify;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+.md-typeset p:last-child {
+  margin-bottom: 0;
+}
+
+/* 链接样式 */
+.md-typeset a {
+  color: var(--apple-blue);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.md-typeset a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* 列表优化 */
+.md-typeset ul,
+.md-typeset ol {
+  margin: 0 0 16px 0;
+  padding-left: 0;
+}
+
+.md-typeset li {
+  margin: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+  display: block;
+}
+
+/* 无序列表 */
+.md-typeset ul {
+  list-style: none;
+}
+
+.md-typeset ul li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 10px;
+  width: 4px;
+  height: 4px;
+  background: var(--apple-text);
+  border-radius: 50%;
+}
+
+/* 有序列表 */
+.md-typeset ol {
+  list-style: none;
+  counter-reset: item;
+}
+
+.md-typeset ol li {
+  counter-increment: item;
+  margin: 12px 0;
+  padding-left: 32px;
+}
+
+.md-typeset ol li::before {
+  content: counter(item) '. ';
+  position: absolute;
+  left: 4px;
+  top: 0;
+  font-weight: 600;
+  color: var(--apple-text);
+}
+
+/* 表格样式 */
+.md-typeset table {
+  width: 100%;
+  margin: 24px 0;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.42857;
+}
+
+.md-typeset table th {
+  background: var(--apple-gray-1);
+  color: var(--apple-text);
+  font-weight: 600;
+  padding: 16px 20px;
+  text-align: left;
+  border: none;
+  font-size: 14px;
+}
+
+.md-typeset table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #D2D2D7;
+  color: var(--apple-text);
+}
+
+.md-typeset table tr:last-child td {
+  border-bottom: none;
+}
+
+/* 代码样式 */
+.md-typeset code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  background: var(--apple-gray-1);
+  color: var(--apple-text);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.md-typeset pre {
+  background: var(--apple-gray-1);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  overflow-x: auto;
+}
+
+.md-typeset pre code {
+  background: none;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 引用块 */
+.md-typeset blockquote {
+  margin: 0 0 16px 0;
+  padding: 12px 16px;
+  border-left: 4px solid var(--apple-blue);
+  background: var(--apple-gray-1);
+  color: var(--apple-text-secondary);
+  border-radius: 0 8px 8px 0;
+}
+
+.md-typeset blockquote p {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+/* 提示框 */
+.md-typeset .admonition {
+  background: #FBFBFD;
+  border: 1px solid #D2D2D7;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 20px 0;
+}
+
+.md-typeset .admonition-title {
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--apple-text);
+}
+
+/* 财务数据样式 */
+.positive {
+  color: var(--apple-green);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.negative {
+  color: var(--apple-red);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* =============================================================================
+   头部样式 - 最小化修复版本
+   ============================================================================= */
+
+/* 仅修复头部背景和基本样式，不破坏原有布局 */
+.md-header {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 深色模式头部 */
+[data-md-color-scheme="slate"] .md-header {
+  background: rgba(28, 28, 30, 0.95) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 头部按钮优化 */
+.md-header__button {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.md-header__button:hover {
+  background: rgba(0, 0, 0, 0.06);
+  transform: scale(1.05);
+}
+
+[data-md-color-scheme="slate"] .md-header__button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* 标题样式优化 */
+.md-header__title {
+  font-weight: 600;
+}
+
+.md-header__topic {
+  font-weight: 600;
+}
+
+/* GitHub源码链接样式 */
+.md-source {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.md-source:hover {
+  background: rgba(0, 0, 0, 0.06);
+  transform: scale(1.02);
+}
+
+[data-md-color-scheme="slate"] .md-source:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.md-footer{
+  background: #333 !important;
+}
+
+/* =============================================================================
+   响应式设计 - 简化版
+   ============================================================================= */
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .md-content__inner {
+    padding: 0 16px;
+  }
+  
+  /* 移动端隐藏GitHub链接节省空间 */
+  .md-header__source {
+    display: none;
+  }
+  
+  .md-header__button {
+    border-radius: 6px;
+  }
+  
+  /* 移动端排版优化 */
+  .md-typeset {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .md-typeset h1 {
+    font-size: 32px;
+    line-height: 1.1;
+    margin: 0 0 16px 0;
+  }
+  
+  .md-typeset h2 {
+    font-size: 24px;
+    line-height: 1.15;
+    margin: 32px 0 12px 0;
+  }
+  
+  .md-typeset h3 {
+    font-size: 20px;
+    line-height: 1.2;
+    margin: 24px 0 8px 0;
+  }
+  
+  .md-typeset h4, 
+  .md-typeset h5, 
+  .md-typeset h6 {
+    font-size: 18px;
+    line-height: 1.25;
+    margin: 20px 0 6px 0;
+  }
+  
+  .md-typeset p {
+    text-align: left;
+  }
+  
+  /* 移动端表格优化 */
+  .md-typeset table {
+    font-size: 14px;
+    margin: 16px 0;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .md-typeset table th,
+  .md-typeset table td {
+    padding: 8px 10px;
+    min-width: 70px;
+  }
+}
+
+/* 小屏手机优化 */
+@media (max-width: 480px) {
+  .md-content__inner {
+    padding: 0 12px;
+  }
+  
+  .md-typeset {
+    font-size: 15px;
+  }
+  
+  .md-typeset h1 {
+    font-size: 28px;
+    margin: 0 0 12px 0;
+  }
+  
+  .md-typeset h2 {
+    font-size: 22px;
+    margin: 24px 0 10px 0;
+  }
+  
+  .md-typeset h3 {
+    font-size: 18px;
+    margin: 20px 0 8px 0;
+  }
+}
+
+/* =============================================================================
+   深色模式优化
+   ============================================================================= */
+
+[data-md-color-scheme="slate"] {
+  --apple-text: #E5E5E7;
+  --apple-text-secondary: #8E8E93;
+  --apple-gray-1: #1C1C1E;
+  --apple-gray-2: #48484A;
+  --apple-gray-6: #8E8E93;
+  --apple-blue: #0A84FF;
+  --apple-green: #30D158;
+  --apple-red: #FF453A;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table th {
+  background: #3A3A3C;
+  color: var(--apple-text);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table td {
+  border-bottom: 1px solid #48484A;
+  color: var(--apple-text);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition {
+  background: #2C2C2E;
+  border: 1px solid #48484A;
+}
+
+[data-md-color-scheme="slate"] .md-typeset ul li::before {
+  background: var(--apple-text);
+}
+
+[data-md-color-scheme="slate"] .md-typeset ol li::before {
+  color: var(--apple-text);
+}
+
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+  border-left-color: var(--apple-blue);
+  background: #3A3A3C;
+  color: var(--apple-text-secondary);
+}
+
+/* 导航菜单优化 */
+.md-nav {
+  z-index: 50;
+}
+
+/* 移动端导航优化 */
+@media (max-width: 768px) {
+  .md-nav--primary {
+    z-index: 200;
+  }
+  
+  .md-nav__title {
+    background: var(--apple-gray-1);
+    border-bottom: 1px solid var(--apple-gray-2);
+  }
+  
+  [data-md-color-scheme="slate"] .md-nav__title {
+    background: var(--apple-gray-1);
+    border-bottom: 1px solid var(--apple-gray-2);
+    color: var(--apple-text);
+  }
+  
+  [data-md-color-scheme="slate"] .md-nav__button {
+    color: var(--apple-text);
+  }
+  
+  [data-md-color-scheme="slate"] .md-nav__link {
+    color: var(--apple-text);
+  }
+  
+  [data-md-color-scheme="slate"] .md-nav__link:hover {
+    color: var(--apple-blue);
+  }
+}
