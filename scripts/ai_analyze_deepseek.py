@@ -195,6 +195,54 @@ def build_corpus(articles: List[Dict[str, Any]], max_chars: int, per_chunk_chars
     return pairs, total_len
 
 
+def _normalize_source_name(name: str) -> str:
+    if not name:
+        return '未知来源'
+    name = name.strip()
+    mapping = {
+        '东方财富网': '东方财富',
+        '国家统计局-最新发布': '国家统计局',
+        '中新社': '中新网',
+        '中国新闻网': '中新网',
+        'Wall Street CN': '华尔街见闻',
+        'WallstreetCN': '华尔街见闻',
+    }
+    return mapping.get(name, name)
+
+
+def build_source_stats_block(selected: List[Dict[str, Any]], content_field: str, start: str, end: str) -> str:
+    tracked = ['华尔街见闻', '36氪', '东方财富', '国家统计局', '中新网']
+    counters: Dict[str, int] = {k: 0 for k in tracked}
+    other_count = 0
+
+    for article in selected:
+        raw = (article.get('source') or '').strip()
+        norm = _normalize_source_name(raw)
+        if norm in counters:
+            counters[norm] += 1
+        else:
+            other_count += 1
+
+    total_articles = len(selected)
+    content_articles = sum(1 for a in selected if a.get('content'))
+    content_ratio = (content_articles / total_articles * 100) if total_articles > 0 else 0
+
+    stats_info = f"""
+=== 数据统计信息 ===
+分析日期范围: {start} 至 {end}
+处理文章总数: {total_articles}篇
+内容类型: {content_field}
+数据完整性: {content_ratio:.1f}%的文章包含完整内容
+
+新闻源统计:
+本次分析基于以下新闻源：
+"""
+    for k in tracked:
+        stats_info += f"- {k}：{counters[k]}篇\n"
+    stats_info += f"- 其他来源：{other_count}篇\n\n"
+    stats_info += f"总计: {total_articles}篇新闻文章\n"
+    return stats_info
+
 def call_deepseek(api_key: str, base_url: str, model_name: str, content: str) -> Tuple[str, Dict[str, Any]]:
     if OpenAI is None:
         raise SystemExit('未安装 openai，请先安装或在环境中提供。')
@@ -336,28 +384,7 @@ def main():
     if args.max_chars and args.max_chars > 0 and total_len > args.max_chars:
         print_warning(f'语料已按上限截断：{total_len:,} → {current_len:,}')
 
-    source_stats = {}
-    for article in selected:
-        source = article.get('source', '未知来源')
-        source_stats[source] = source_stats.get(source, 0) + 1
-
-    total_articles = len(selected)
-    content_articles = sum(1 for a in selected if a.get('content'))
-    content_ratio = (content_articles / total_articles * 100) if total_articles > 0 else 0
-
-    stats_info = f"""
-=== 数据统计信息 ===
-分析日期范围: {start} 至 {end}
-处理文章总数: {total_articles}篇
-内容类型: {args.content_field}
-数据完整性: {content_ratio:.1f}%的文章包含完整内容
-
-新闻源统计:
-"""
-    for source, count in sorted(source_stats.items()):
-        stats_info += f"- {source}: {count}篇\n"
-
-    stats_info += f"\n总计: {total_articles}篇新闻文章\n"
+    stats_info = build_source_stats_block(selected, args.content_field, start, end)
 
     joined = '\n\n'.join(c for _, chunks in pairs for c in chunks)
     full_content = stats_info + "\n\n" + joined
