@@ -1,14 +1,14 @@
 {
   "http://rss.eastmoney.com/rss_partener.xml": {
-    "etag": "\"0ba312fb231dc1:0\"",
-    "last_modified": "Tue, 30 Sep 2025 02:30:28 GMT"
+    "etag": "\"803c85b3b431dc1:0\"",
+    "last_modified": "Tue, 30 Sep 2025 02:48:29 GMT"
   },
   "https://36kr.com/feed": {
     "etag": null,
     "last_modified": null
   },
   "https://www.thepaper.cn/rss_news.jsp?category=Finance": {
-    "etag": null,
+    "etag": "\"14m7wnu720j17u7\"",
     "last_modified": null
   },
   "https://dedicated.wallstreetcn.com/rss.xml": {
@@ -20,8 +20,8 @@
     "last_modified": null
   },
   "https://www.chinanews.com.cn/rss/finance.xml": {
-    "etag": "\"68db4058-3da9\"",
-    "last_modified": "Tue, 30 Sep 2025 02:28:40 GMT"
+    "etag": "\"68db426e-3dca\"",
+    "last_modified": "Tue, 30 Sep 2025 02:37:34 GMT"
   },
   "https://www.ftchinese.com/rss/feed": {
     "etag": "W/\"2be0-k7Y1bPUp9XUt0aPYdpKJ0944CUA\"",
@@ -32,8 +32,8 @@
     "last_modified": "Mon, 29 Sep 2025 23:48:27 GMT"
   },
   "https://www.investing.com/rss/news.rss": {
-    "etag": "W/\"1089-63ffb67faa3ca\"",
-    "last_modified": "Tue, 30 Sep 2025 02:21:14 GMT"
+    "etag": "W/\"10cd-63ffb9951afdf\"",
+    "last_modified": "Tue, 30 Sep 2025 02:35:01 GMT"
   },
   "http://feeds.bbci.co.uk/news/business/rss.xml": {
     "etag": null,
@@ -81,7 +81,7 @@
   },
   "https://decrypt.co/feed": {
     "etag": null,
-    "last_modified": "Tue, 30 Sep 2025 02:32:07 GMT"
+    "last_modified": "Tue, 30 Sep 2025 02:51:32 GMT"
   },
   "https://www.coindesk.com/arc/outboundfeeds/rss/": {
     "etag": null,

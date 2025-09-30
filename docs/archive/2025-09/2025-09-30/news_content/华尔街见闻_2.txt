@@ -1,64 +1,66 @@
-Title: 到2033年建成250GW数据中心！OpenAI的“野心”现实吗？
-Link: https://wallstreetcn.com/articles/3756513
+Title: AI专家：对AI的质疑是对“指数级增长趋势”的“自欺欺人”
+Link: https://wallstreetcn.com/articles/3756522
 Source: 华尔街见闻
-Published: Tue, 30 Sep 2025 09:59:16 +0800
-Summary: <p style="text-align: left;">OpenAI计划到2033年建成250GW数据中心。CEO Altman将此视为通往通用人工智能的"暴力工业化"路径，但仍面临电力供应、万亿美元资金需求和供应链瓶颈等巨大挑战。</p>
-<p style="text-align: left;"><a href="https://wallstreetcn.com/articles/3756135" rel="noopener noreferrer nofollow" target="_blank">上周华尔街见闻提及</a>，德克萨斯州阿比林市的旗舰数据中心站点正式投运，作为OpenAI和甲骨文推进5000亿美元星际之门项目，OpenAI CEO Altman向媒体展示了这一雄心勃勃项目的初步成果。</p>
-<p style="text-align: center;"><img alt="" class="wscnph" src="https://wpimg-wscn.awtmt.com/4d1b9985-4ea8-4fcd-8d03-d47aaab6b417.png" title="" />（OpenAI CEO Sam Altman 在德克萨斯州阿比林星际之门数据中心）</p>
-<p style="text-align: left;">这个占地800英亩的建设工地上，6400名工人正在紧张施工，仅光纤电缆的铺设长度就足以绕地球16圈。Altman表示：</p>
+Published: Tue, 30 Sep 2025 10:00:14 +0800
+Summary: <p style="text-align: left;">一位来自AI研究前沿的专家坚定反驳了当前普遍存在的“AI泡沫论”。</p>
+<p style="text-align: left;">AI明星公司Anthropic的研究员Julian Schrittwieser在其个人博客中撰文警告，当前对AI“泡沫”或“平台期”的普遍质疑，是对技术指数级增长趋势的严重误读，这种心态与新冠疫情初期对指数级传播的忽视如出一辙。</p>
 <blockquote>
-<p style="text-align: left;">这个庞大的工地只是未来规模的一小部分，甚至不足以满足ChatGPT的需求。</p>
+<p style="text-align: left;">当前围绕AI进步和所谓“泡沫”的讨论，让我想起了新冠疫情的最初几周。当指数趋势已经清晰预示了全球大流行的到来及其规模时，政客、记者和大多数公众评论员却仍将其视为一种遥远的可能性或局部现象。</p>
 </blockquote>
-<p style="text-align: left;">而据OpenAI内部披露的信息，<strong>公司预计2025年底建造数据中心容量超过2GW，并计划在2033年达到250GW的惊人规模，这一目标规模约占目前美国全国总发电装机容量（约1200GW）的四分之一。</strong></p>
-<p style="text-align: left;">Altman的策略核心是"规模化计算"。这并非指算法突破，而是指<strong>通过数百万芯片、大型数据中心园区、千兆瓦级电力以及大量冷却用水的"暴力工业化"方式，推动人工智能向通用人工智能(AGI)和超级人工智能(ASI)发展。</strong></p>
-<p style="text-align: left;">在这种逻辑下，衡量AI能力的标准已发生根本性转变。Altman解释说：</p>
+<p style="text-align: left;">他指出，尽管AI在执行编程或网站设计等任务时仍会犯错，但人们因此断言其无法达到人类水平或影响甚微是“一种奇怪的现象”，正如几年前人们还认为AI编程是“科幻小说”。</p>
 <blockquote>
-<p style="text-align: left;"><strong>在如此规模下，GPU的数量已无意义，取而代之的是整个芯片集群所消耗的电力——吉瓦（GW）。GW数成了衡量一家公司能维持多少有效算力的唯一标准。</strong></p>
+<p style="text-align: left;">人们注意到，虽然AI现在可以编写程序、设计网站等，但它仍然经常犯错或走向错误的方向，然后他们不知何故就得出结论，认为AI永远无法在人类水平上完成这些任务，或者只会产生微小的影响。</p>
 </blockquote>
-<p style="text-align: left;">但这一计划的实现面临巨大挑战，包括电力供应、资金需求和供应链瓶颈。业内人士质疑如此庞大的基础设施投资是否现实，以及是否值得为人工智能发展付出如此高昂的代价。</p>
-<h2 style="text-align: left;">电力需求相当于250座核电站</h2>
-<p style="text-align: left;">OpenAI的250GW目标意味着对电力系统的巨大需求。</p>
-<p style="text-align: left;"><strong>一座典型的核电站发电量约为1GW，这意味着仅为支持OpenAI一家的AI发展，就需要新建相当于250座核电站的发电能力。</strong></p>
-<p style="text-align: left;">作为对比，微软旗下排名第二的Azure云业务，到2023年底为所有客户服务的总运营功耗也仅为5GW左右。</p>
-<p style="text-align: left;">据报道，过去一座大型数据中心的功耗通常在10到50兆瓦之间，而现在开发商们正在规划单个园区就达到数千兆瓦的规模，堪比整个城市的能耗。</p>
-<p style="text-align: left;">然而，Altman所指的算力远不止电力。该数字是整个工业系统的代名词，包括：<strong>数据中心、芯片、冷却和水系统、网络光纤以及将数百万处理器连接成超级计算机的高速互连设备</strong>。</p>
-<p style="text-align: left;">报道援引知情人士透露，OpenAI快速增长的服务器需求甚至让其关键供应商英伟达的高管都感到惊讶。</p>
-<p style="text-align: left;">为应对电力挑战，<strong>OpenAI及其合作伙伴正采用非常规方式，包括自建发电厂而非等待公用事业公司提供电网电力，或将设施建在更容易获得能源的偏远地区。</strong></p>
-<p style="text-align: left;"><strong>原因在于公用事业公司在新增发电能力方面本质上是保守的，它们不会因为单一公司的需求而冒险建设可能导致产能过剩的发电厂。</strong></p>
-<p style="text-align: left;">而据报道，OpenAI已在得州规划使用天然气、风能和太阳能的混合能源方案，但这依然无法轻易填补数百GW的巨大鸿沟。</p>
-<h2 style="text-align: left;">万亿投资与供应链瓶颈</h2>
-<p style="text-align: left;">除了电力，资金和供应链是另外两大制约因素。</p>
-<p style="text-align: left;"><strong>Altman在内部信中坦言，OpenAI"已经投资了数千亿美元，要做好这件事还需要数万亿美元"。同时还需要“激活全球的全部工业基础——能源、制造、物流、劳动力、供应链”。</strong></p>
-<p style="text-align: left;"><strong>目前，OpenAI早已为此投入巨资。</strong>据报道，在250GW目标公布前，公司已签约在2028年前获得约8GW的算力，这本身就需要向微软等云服务商支付数千亿美元。</p>
-<p style="text-align: left;"><strong>此外，若按目前建造一座1GW核电站约500亿美元的成本估算，仅电力设施的投资就可能高达12.5万亿美元。</strong></p>
-<p style="text-align: left;"><strong>供应链瓶颈同样严峻。</strong>要支撑如此规模的算力扩张，意味着需要芯片代工巨头台积电提供更多产能来生产英伟达的GPU，以及光刻机制造商阿斯麦提供更多设备。</p>
-<p style="text-align: left;">这些环节的产能扩张并非一蹴而就，需要整个上游产业链进行风险投资与协同。即使英伟达承诺为OpenAI的数据中心提供资金支持，新增产能依然会是一个艰巨的过程。</p>
-<h2 style="text-align: left;">OpenAI的“野心”实际是豪赌</h2>
-<p style="text-align: left;">归根结底，OpenAI的惊人计划是一场基于信念的豪赌。</p>
-<p style="text-align: left;"><strong>Altman及其竞争对手坚信，更大规模的GPU集群是通往更强大AI模型的唯一路径，是解锁AGI和ASI的关键。</strong>正如历史上胡佛大坝、阿波罗计划等宏大工程一样，其背后是对未来技术变革的坚定信仰。</p>
-<p style="text-align: left;">分析认为，对于投资者和市场而言，如何看待这一赌注取决于对AI未来的判断。</p>
-<p style="text-align: left;"><strong>如果相信超级AI能解决癌症等人类难题，那么万亿投资就是必要的。反之，它可能成为类似加州高铁项目一样被载入史册的“巨大工程灾难”。</strong></p>
-<p style="text-align: left;">无论250GW的目标最终能否实现，这场由AI驱动的、近乎疯狂的基础设施建设热潮已经开始。它正在以前所未有的方式重塑能源、土地和资本市场，而整个社会似乎还未充分意识到其背后的巨大成本与深远影响。</p>
-<p style="text-align: left;">正如Altman自己承认的那样，当人们使用ChatGPT时，很少有人会想到背后尘土飞扬的庞大建筑工地和它所代表的工业力量。</p><p>本文来自华尔街见闻，欢迎下载APP查看更多</p>
+<p style="text-align: left;">Schrittwieser的核心论点基于两项关键研究：METR和OpenAI的GDPval。数据显示，<strong>AI模型自主完成复杂任务的时长正以指数级速度翻倍</strong>，最新的模型已能处理超过两小时的软件工程任务。更重要的是，在覆盖44个职业的GDPval评估中，顶尖AI的表现已“惊人地接近”人类水平，甚至开始挑战行业专家的能力。</p>
+<p style="text-align: left;">在这篇题为《再次未能理解指数级》的博客文章中，Schrittwieser将当前对AI的怀疑论调比作“自欺欺人”，认为人们因关注当下的不完美而低估了即将到来的变革规模。</p>
+<p style="text-align: left;"><img class=" wscnph" src="https://wpimg-wscn.awtmt.com/e4193a06-03c3-4fb6-8355-343b53eaf30c.png" /></p>
+<h2 style="text-align: left;"><strong>软件任务能力：每7个月翻一番</strong></h2>
+<p style="text-align: left;">为反驳AI“平台期”论调，Schrittwieser首先引用了独立评估机构METR发布的《衡量AI完成长任务的能力》研究。该研究衡量AI模型能自主执行软件工程任务的长度，结果显示出“清晰的指数级趋势”。</p>
+<p style="text-align: left;">根据该研究，7个月前的模型Sonnet 3.7已能以50%的成功率完成长达一小时的任务。而METR网站上的最新图表则进一步证实了这一趋势的延续性。</p>
+<p style="text-align: left;"><img class=" wscnph" src="https://wpimg-wscn.awtmt.com/8f6a4edd-41a1-4f55-a056-7f9070671c80.png" /></p>
+<p style="text-align: left;">Schrittwieser指出，包括Grok 4、Opus 4.1和GPT-5在内的新模型不仅延续了趋势，“<strong>这些最新模型实际上略高于趋势，现在能执行超过2小时的任务！</strong>”</p>
+<p style="text-align: left;"><img class=" wscnph" src="https://wpimg-wscn.awtmt.com/ab52aa8f-6cb5-491c-839b-5e3ea71e6b62.png" /></p>
+<h2 style="text-align: left;"><strong>跨越代码：在44个职业中追赶人类专家</strong></h2>
+<p style="text-align: left;">针对“AI仅在软件工程领域表现出色”的质疑，Schrittwieser引用了OpenAI发布的另一项名为GDPval的评估。该研究旨在衡量模型在更广泛经济活动中的表现，涵盖了9个行业的44个职业，任务由平均拥有14年经验的行业专家提供。</p>
+<p style="text-align: left;">结果再次呈现相似趋势。Schrittwieser写道，最新的GPT-5已“惊人地接近人类表现”。</p>
+<p style="text-align: left;"><img class=" wscnph" src="https://wpimg-wscn.awtmt.com/20c4e5c3-75da-4df3-80e5-40f47a1f582f.png" /></p>
+<p>更有说服力的是，早于GPT-5发布的Claude Opus 4.1在该项评估中表现更佳，其性能“几乎与行业专家的表现相匹配”。Schrittwieser特别对此评论：“我在这里要特别赞扬OpenAI发布了一项评估，显示了另一家实验室的模型超越了他们自己的模型——这是诚信和关心有益AI成果的好迹象！”</p>
+<p><img class=" wscnph" src="https://wpimg-wscn.awtmt.com/1c9b302a-674a-46ca-8096-c3a9a59f63d2.png" /></p>
+<h2 style="text-align: left;"><strong>展望2026：AI经济整合的“关键一年”</strong></h2>
+<p style="text-align: left;">基于上述跨越多年和多个行业的指数级增长数据，Schrittwieser认为，若这些改进突然停止将是“极其令人惊讶的”。他给出了一个基于趋势外推的清晰预测：</p>
+<ul>
+<li>
+<p style="text-align: left;"><strong>到2026年中，模型将能够自主工作一整个工作日（8小时）。</strong></p>
+</li>
+<li>
+<p style="text-align: left;"><strong>到2026年底，至少有一个模型将在许多行业中达到人类专家的表现水平。</strong></p>
+</li>
+<li>
+<p style="text-align: left;"><strong>到2027年底，模型在许多任务上将频繁超越专家。</strong></p>
+</li>
+</ul>
+<p style="text-align: left;">他总结道，未来的模型可能会比专家更好。</p>
+<blockquote>
+<p style="text-align: left;"><span dir="auto">这听起来可能过于简单，但通过推断图表上的直线进行预测可能会给你一个比大多数“专家”更好的未来模型——甚至</span><span dir="auto">比大多数实际领域专家更好</span><span dir="auto">！</span></p>
+</blockquote><p>本文来自华尔街见闻，欢迎下载APP查看更多</p>
 --------------------------------------------------
-Full Content: <p style="text-align: left;">OpenAI计划到2033年建成250GW数据中心。CEO Altman将此视为通往通用人工智能的"暴力工业化"路径，但仍面临电力供应、万亿美元资金需求和供应链瓶颈等巨大挑战。</p>
-<p style="text-align: left;"><a href="https://wallstreetcn.com/articles/3756135" rel="noopener noreferrer nofollow" target="_blank">上周华尔街见闻提及</a>，德克萨斯州阿比林市的旗舰数据中心站点正式投运，作为OpenAI和甲骨文推进5000亿美元星际之门项目，OpenAI CEO Altman向媒体展示了这一雄心勃勃项目的初步成果。</p>
-<p style="text-align: center;"><img alt="" class="wscnph" src="https://wpimg-wscn.awtmt.com/4d1b9985-4ea8-4fcd-8d03-d47aaab6b417.png" title="" />（OpenAI CEO Sam Altman 在德克萨斯州阿比林星际之门数据中心）</p>
-<p style="text-align: left;">这个占地800英亩的建设工地上，6400名工人正在紧张施工，仅光纤电缆的铺设长度就足以绕地球16圈。Altman表示：</p>
+Full Content: <p style="text-align: left;">一位来自AI研究前沿的专家坚定反驳了当前普遍存在的“AI泡沫论”。</p>
+<p style="text-align: left;">AI明星公司Anthropic的研究员Julian Schrittwieser在其个人博客中撰文警告，当前对AI“泡沫”或“平台期”的普遍质疑，是对技术指数级增长趋势的严重误读，这种心态与新冠疫情初期对指数级传播的忽视如出一辙。</p>
 <blockquote>
-<p style="text-align: left;">这个庞大的工地只是未来规模的一小部分，甚至不足以满足ChatGPT的需求。</p>
+<p style="text-align: left;">当前围绕AI进步和所谓“泡沫”的讨论，让我想起了新冠疫情的最初几周。当指数趋势已经清晰预示了全球大流行的到来及其规模时，政客、记者和大多数公众评论员却仍将其视为一种遥远的可能性或局部现象。</p>
 </blockquote>
-<p style="text-align: left;">而据OpenAI内部披露的信息，<strong>公司预计2025年底建造数据中心容量超过2GW，并计划在2033年达到250GW的惊人规模，这一目标规模约占目前美国全国总发电装机容量（约1200GW）的四分之一。</strong></p>
-<p style="text-align: left;">Altman的策略核心是"规模化计算"。这并非指算法突破，而是指<strong>通过数百万芯片、大型数据中心园区、千兆瓦级电力以及大量冷却用水的"暴力工业化"方式，推动人工智能向通用人工智能(AGI)和超级人工智能(ASI)发展。</strong></p>
-<p style="text-align: left;">在这种逻辑下，衡量AI能力的标准已发生根本性转变。Altman解释说：</p>
+<p style="text-align: left;">他指出，尽管AI在执行编程或网站设计等任务时仍会犯错，但人们因此断言其无法达到人类水平或影响甚微是“一种奇怪的现象”，正如几年前人们还认为AI编程是“科幻小说”。</p>
 <blockquote>
-<p style="text-align: left;"><strong>在如此规模下，GPU的数量已无意义，取而代之的是整个芯片集群所消耗的电力——吉瓦（GW）。GW数成了衡量一家公司能维持多少有效算力的唯一标准。</strong></p>
+<p style="text-align: left;">人们注意到，虽然AI现在可以编写程序、设计网站等，但它仍然经常犯错或走向错误的方向，然后他们不知何故就得出结论，认为AI永远无法在人类水平上完成这些任务，或者只会产生微小的影响。</p>
 </blockquote>
-<p style="text-align: left;">但这一计划的实现面临巨大挑战，包括电力供应、资金需求和供应链瓶颈。业内人士质疑如此庞大的基础设施投资是否现实，以及是否值得为人工智能发展付出如此高昂的代价。</p>
-<h2 style="text-align: left;">电力需求相当于250座核电站</h2>
-<p style="text-align: left;">OpenAI的250GW目标意味着对电力系统的巨大需求。</p>
-<p style="text-align: left;"><strong>一座典型的核电站发电量约为1GW，这意味着仅为支持OpenAI一家的AI发展，就需要新建相当于250座核电站的发电能力。</strong></p>
-<p style="text-align: left;">作为对比，微软旗下排名第二的Azure云业务，到2023年底为所有客户服务的总运营功耗也仅为5GW左右。</p>
-<p style="text-align: left;">据报道，过去一座大型数据中心的功耗通常在10到50兆瓦之间，而现在开发商们正在规划单个园区就达到数千兆瓦的规模，堪比整个城市的能耗。</p>
-<p style="text-align: left;">然而，Altman所指的算力远不止电力。该数字是整个工业系统的代名词，包括：<strong>数据中心、芯片、冷却和水系统、网络光纤以及将数百万处理器连接成超级计算机的高速互连设备</strong>。</p>
-<p style="text-align: left;">报道援引知情人士透露，OpenAI快速增长的服务器需求甚至让其关键供应商英伟达的高管都感到惊讶。<...
+<p style="text-align: left;">Schrittwieser的核心论点基于两项关键研究：METR和OpenAI的GDPval。数据显示，<strong>AI模型自主完成复杂任务的时长正以指数级速度翻倍</strong>，最新的模型已能处理超过两小时的软件工程任务。更重要的是，在覆盖44个职业的GDPval评估中，顶尖AI的表现已“惊人地接近”人类水平，甚至开始挑战行业专家的能力。</p>
+<p style="text-align: left;">在这篇题为《再次未能理解指数级》的博客文章中，Schrittwieser将当前对AI的怀疑论调比作“自欺欺人”，认为人们因关注当下的不完美而低估了即将到来的变革规模。</p>
+<p style="text-align: left;"><img class=" wscnph" src="https://wpimg-wscn.awtmt.com/e4193a06-03c3-4fb6-8355-343b53eaf30c.png" /></p>
+<h2 style="text-align: left;"><strong>软件任务能力：每7个月翻一番</strong></h2>
+<p style="text-align: left;">为反驳AI“平台期”论调，Schrittwieser首先引用了独立评估机构METR发布的《衡量AI完成长任务的能力》研究。该研究衡量AI模型能自主执行软件工程任务的长度，结果显示出“清晰的指数级趋势”。</p>
+<p style="text-align: left;">根据该研究，7个月前的模型Sonnet 3.7已能以50%的成功率完成长达一小时的任务。而METR网站上的最新图表则进一步证实了这一趋势的延续性。</p>
+<p style="text-align: left;"><img class=" wscnph" src="https://wpimg-wscn.awtmt.com/8f6a4edd-41a1-4f55-a056-7f9070671c80.png" /></p>
+<p style="text-align: left;">Schrittwieser指出，包括Grok 4、Opus 4.1和GPT-5在内的新模型不仅延续了趋势，“<strong>这些最新模型实际上略高于趋势，现在能执行超过2小时的任务！</strong>”</p>
+<p style="text-align: left;"><img class=" wscnph" src="https://wpimg-wscn.awtmt.com/ab52aa8f-6cb5-491c-839b-5e3ea71e6b62.png" /></p>
+<h2 style="text-align: left;"><strong>跨越代码：在44个职业中追赶人类专家</strong></h2>
+<p style="text-align: left;">针对“AI仅在软件工程领域表现出色”的质疑，Schrittwieser引用了OpenAI发布的另一项名为GDPval的评估。该研究旨在衡量模型在更广泛经济活动中的表现，涵盖了9个行业的44个职业...
