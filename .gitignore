@@ -49,3 +49,6 @@ Thumbs.db
 # 临时文件
 *.tmp
 *.temp
+
+# 新闻备份文件
+docs/archive/*.txt
