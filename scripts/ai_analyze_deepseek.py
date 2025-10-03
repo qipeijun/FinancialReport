@@ -62,7 +62,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--config', type=str, help='可选：配置文件路径（默认 config/config.yml）')
     parser.add_argument('--content-field', choices=['summary', 'content', 'auto'], default='auto', help='选择分析字段：summary(摘要优先)、content(正文优先)、auto(智能选择)')
     parser.add_argument('--model', type=str, default='deepseek-chat', help='DeepSeek 模型名称（默认 deepseek-chat）')
-    parser.add_argument('--base-url', type=str, default='https://api.deepseek.com/v3.1_terminus_expires_on_20251015', help='DeepSeek API Base URL')
+    parser.add_argument('--base-url', type=str, default='https://api.deepseek.com', help='DeepSeek API Base URL')
     return parser.parse_args()
 
 
