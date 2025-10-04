@@ -292,7 +292,7 @@ def save_markdown(date_str: str, markdown_text: str) -> Path:
     now_str = datetime.now(pytz.timezone('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M:%S')
     header = f"# 📅 {date_str} 财经分析报告\n\n> 📅 生成时间: {now_str} (北京时间)\n\n"
     content = header + (markdown_text or '').strip() + '\n'
-    report_file = report_dir / f"📅 {date_str} 财经分析报告.md"
+    report_file = report_dir / f"📅 {date_str} 财经分析报告_deepseek.md"
     with open(report_file, 'w', encoding='utf-8') as f:
         f.write(content)
     print_success(f"报告已保存到: {report_file}")
