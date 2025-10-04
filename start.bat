@@ -60,10 +60,27 @@ if "%choice%"=="1" (
     python scripts\interactive_runner.py
 ) else if "%choice%"=="2" (
     echo 🤖 启动AI分析脚本...
-    python scripts\ai_analyze.py --help
+    echo 🤖 选择AI模型：
+    echo   • 1 = Gemini（默认）
+    echo   • 2 = DeepSeek
+    echo.
+    set /p model_choice="请选择模型 [1/2，默认1]: "
+    if "%model_choice%"=="" (
+        echo 已选择：Gemini
+        python scripts\ai_analyze.py
+    ) else if "%model_choice%"=="1" (
+        echo 已选择：Gemini
+        python scripts\ai_analyze.py
+    ) else if "%model_choice%"=="2" (
+        echo 已选择：DeepSeek
+        python scripts\ai_analyze_deepseek.py
+    ) else (
+        echo ❌ 无效选择，使用默认Gemini
+        python scripts\ai_analyze.py
+    )
 ) else if "%choice%"=="3" (
     echo 📰 启动RSS财经抓取器...
-    python scripts\rss_finance_analyzer.py --help
+    python scripts\rss_finance_analyzer.py
 ) else if "%choice%"=="4" (
     echo 🌐 启动文档网站...
     mkdocs serve

@@ -60,11 +60,25 @@ case $choice in
         ;;
     2)
         echo "🤖 启动AI分析脚本..."
-        python3 scripts/ai_analyze.py --help
+        echo "🤖 选择AI模型："
+        echo "  • 1 = Gemini（默认）"
+        echo "  • 2 = DeepSeek"
+        echo
+        read -p "请选择模型 [1/2，默认1]: " model_choice
+        if [ -z "$model_choice" ] || [ "$model_choice" = "1" ]; then
+            echo "已选择：Gemini"
+            python3 scripts/ai_analyze.py
+        elif [ "$model_choice" = "2" ]; then
+            echo "已选择：DeepSeek"
+            python3 scripts/ai_analyze_deepseek.py
+        else
+            echo "❌ 无效选择，使用默认Gemini"
+            python3 scripts/ai_analyze.py
+        fi
         ;;
     3)
         echo "📰 启动RSS财经抓取器..."
-        python3 scripts/rss_finance_analyzer.py --help
+        python3 scripts/rss_finance_analyzer.py
         ;;
     4)
         echo "🌐 启动文档网站..."
