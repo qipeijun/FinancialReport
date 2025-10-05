@@ -179,7 +179,23 @@ def fetch_article_content(url: str, timeout: int = 10) -> str:
             'User-Agent': 'Mozilla/5.0 (compatible; FinanceBot/1.0)'
         })
         resp.raise_for_status()
-        return clean_html_to_text(resp.text)
+
+        # 正确处理编码问题
+        if resp.encoding.lower() in ['utf-8', 'utf8']:
+            content = resp.text
+        else:
+            # 尝试多种编码方式
+            for encoding in ['utf-8', 'gbk', 'gb2312', 'latin1']:
+                try:
+                    content = resp.content.decode(encoding)
+                    break
+                except UnicodeDecodeError:
+                    continue
+            else:
+                # 如果所有编码都失败，使用默认编码
+                content = resp.content.decode('utf-8', errors='ignore')
+
+        return clean_html_to_text(content)
     except Exception:
         return ''
 

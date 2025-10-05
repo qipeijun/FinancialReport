@@ -63,7 +63,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--content-field', choices=['summary', 'content', 'auto'], default='auto', help='选择分析字段：summary(摘要优先)、content(正文优先)、auto(智能选择)')
     parser.add_argument('--model', type=str, default='deepseek-chat', help='DeepSeek 模型名称（默认 deepseek-chat）')
     parser.add_argument('--base-url', type=str, default='https://api.deepseek.com', help='DeepSeek API Base URL')
-    parser.add_argument('--prompt', choices=['safe', 'pro'], default='safe', help='提示词版本：safe(安全版，避免具体股票推荐) 或 pro(专业版，包含具体投资建议)')
+    parser.add_argument('--prompt', choices=['safe', 'pro'], default='pro', help='提示词版本：safe(安全版，避免具体股票推荐) 或 pro(专业版，包含具体投资建议)')
     return parser.parse_args()
 
 
@@ -152,6 +152,51 @@ def chunk_text(text: str, max_chars: int = 4000) -> List[str]:
     return chunks
 
 
+def sanitize_content(text: str) -> str:
+    """清理和过滤内容，移除可能触发内容风险的敏感信息"""
+    if not text:
+        return text
+
+    import re
+
+    # 尝试修复编码问题
+    try:
+        # 如果文本看起来是乱码，尝试重新编码
+        if any(ord(c) > 127 for c in text[:100]):
+            # 尝试不同的编码方式
+            for encoding in ['utf-8', 'gbk', 'gb2312', 'latin1']:
+                try:
+                    text = text.encode('latin1').decode(encoding)
+                    break
+                except (UnicodeEncodeError, UnicodeDecodeError):
+                    continue
+    except Exception:
+        pass
+
+    # 移除HTML标签和特殊字符
+    text = re.sub(r'<[^>]+>', '', text)
+    text = re.sub(r'&[a-z]+;', '', text)
+
+    # 移除过长的URL和链接
+    text = re.sub(r'https?://\S+', '[链接]', text)
+
+    # 移除可能的敏感政治词汇（根据需求调整）
+    sensitive_patterns = [
+        r'\b(?:习近平|李克强|党中央|国务院)\b',
+        r'\b(?:台湾|香港|澳门|新疆|西藏)\b',
+        r'\b(?:共产党|人民政府|社会主义)\b',
+    ]
+
+    for pattern in sensitive_patterns:
+        text = re.sub(pattern, '[相关]', text)
+
+    # 移除重复的空格和换行
+    text = re.sub(r'\s+', ' ', text)
+    text = re.sub(r'\n\s*\n', '\n\n', text)
+
+    return text.strip()
+
+
 def build_corpus(articles: List[Dict[str, Any]], max_chars: int, per_chunk_chars: int = 3000, content_field: str = 'auto') -> Tuple[List[Tuple[Dict[str, Any], List[str]]], int]:
     pairs: List[Tuple[Dict[str, Any], List[str]]] = []
     total_len = 0
@@ -167,6 +212,10 @@ def build_corpus(articles: List[Dict[str, Any]], max_chars: int, per_chunk_chars
                 body = summary
             else:
                 body = content or summary or ''
+
+        # 清理内容
+        body = sanitize_content(body)
+
         title = a.get('title') or ''
         source = a.get('source') or ''
         published = a.get('published') or ''
