@@ -2,7 +2,7 @@
 config/config.yml
 
 # MkDocs 构建输出
-# site/
+ site/
 
 # Python
 __pycache__/

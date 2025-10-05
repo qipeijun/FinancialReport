@@ -63,6 +63,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--content-field', choices=['summary', 'content', 'auto'], default='auto', help='选择分析字段：summary(摘要优先)、content(正文优先)、auto(智能选择)')
     parser.add_argument('--model', type=str, default='deepseek-chat', help='DeepSeek 模型名称（默认 deepseek-chat）')
     parser.add_argument('--base-url', type=str, default='https://api.deepseek.com', help='DeepSeek API Base URL')
+    parser.add_argument('--prompt', choices=['safe', 'pro'], default='safe', help='提示词版本：safe(安全版，避免具体股票推荐) 或 pro(专业版，包含具体投资建议)')
     return parser.parse_args()
 
 
@@ -243,17 +244,28 @@ def build_source_stats_block(selected: List[Dict[str, Any]], content_field: str,
     stats_info += f"总计: {total_articles}篇新闻文章\n"
     return stats_info
 
-def call_deepseek(api_key: str, base_url: str, model_name: str, content: str) -> Tuple[str, Dict[str, Any]]:
+def call_deepseek(api_key: str, base_url: str, model_name: str, content: str, prompt_version: str = 'safe') -> Tuple[str, Dict[str, Any]]:
     if OpenAI is None:
         raise SystemExit('未安装 openai，请先安装或在环境中提供。')
 
     print_progress(f'正在生成报告（输入长度 {len(content):,} 字符）')
 
-    prompt_path = PROJECT_ROOT / 'task' / 'financial_analysis_prompt_pro.md'
+    # 根据选择的版本使用不同的提示词
+    if prompt_version == 'safe':
+        prompt_path = PROJECT_ROOT / 'task' / 'financial_analysis_prompt_safe.md'
+        if not prompt_path.exists():
+            print_warning('安全版提示词不存在，回退到专业版')
+            prompt_path = PROJECT_ROOT / 'task' / 'financial_analysis_prompt_pro.md'
+    else:
+        prompt_path = PROJECT_ROOT / 'task' / 'financial_analysis_prompt_pro.md'
+
     if not prompt_path.exists():
         raise SystemExit(f'提示词文件不存在: {prompt_path}')
+
     with open(prompt_path, 'r', encoding='utf-8') as f:
         system_prompt = f.read()
+
+    print_info(f'使用提示词版本: {prompt_version} ({prompt_path.name})')
 
     client = OpenAI(api_key=api_key, base_url=base_url)
 
@@ -326,6 +338,7 @@ def main():
     print_header("AI 财经分析系统（DeepSeek）")
     print_info(f"分析日期范围: {start} → {end}")
     print_info(f"字段选择模式: {args.content_field}")
+    print_info(f"提示词版本: {args.prompt}")
     if args.max_chars > 0:
         print_info(f"字符数限制: {args.max_chars:,}")
     print()
@@ -390,7 +403,7 @@ def main():
     full_content = stats_info + "\n\n" + joined
 
     try:
-        summary_md, usage = call_deepseek(api_key, args.base_url, args.model, full_content)
+        summary_md, usage = call_deepseek(api_key, args.base_url, args.model, full_content, args.prompt)
     except Exception as e:
         print_error(f'模型调用失败: {e}')
         return
