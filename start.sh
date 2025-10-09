@@ -131,7 +131,16 @@ case $choice in
         ;;
     5)
         echo "🌐 启动文档网站..."
-        mkdocs serve
+        echo "📝 正在生成导航配置..."
+        python3 scripts/generate_mkdocs_nav.py
+        if [ $? -eq 0 ]; then
+            echo "✅ 导航配置生成成功"
+            echo "🚀 启动文档服务器..."
+            mkdocs serve
+        else
+            echo "❌ 导航配置生成失败，请检查错误信息"
+            exit 1
+        fi
         ;;
     6)
         echo "👋 再见！"
