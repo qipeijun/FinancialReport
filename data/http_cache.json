@@ -1,14 +1,14 @@
 {
   "http://rss.eastmoney.com/rss_partener.xml": {
-    "etag": "W/\"891c7adab738dc1:0\"",
-    "last_modified": "Thu, 09 Oct 2025 00:58:40 GMT"
+    "etag": "W/\"f8a2d316f39dc1:0\"",
+    "last_modified": "Thu, 09 Oct 2025 11:23:08 GMT"
   },
   "https://36kr.com/feed": {
     "etag": null,
     "last_modified": null
   },
   "https://www.thepaper.cn/rss_news.jsp?category=Finance": {
-    "etag": "\"hbwkxncoq316rk\"",
+    "etag": "\"u7bei9f5o415ab\"",
     "last_modified": null
   },
   "https://dedicated.wallstreetcn.com/rss.xml": {
@@ -20,20 +20,20 @@
     "last_modified": null
   },
   "https://www.chinanews.com.cn/rss/finance.xml": {
-    "etag": "\"68e6ff46-3c3e\"",
-    "last_modified": "Thu, 09 Oct 2025 00:18:14 GMT"
+    "etag": "\"68e79944-419d\"",
+    "last_modified": "Thu, 09 Oct 2025 11:15:16 GMT"
   },
   "https://www.ftchinese.com/rss/feed": {
-    "etag": "W/\"2a79-QDY7nq4yBwZCZXT5M6BX6MYeIC4\"",
+    "etag": "W/\"2a79-OdrFeRMlta/nVBrrf6Pt6RE0RtQ\"",
     "last_modified": null
   },
   "https://www.economist.com/finance-and-economics/rss.xml": {
-    "etag": "W/\"17e633cbaeb8aca18a01b019d8231c16\"",
-    "last_modified": "Wed, 08 Oct 2025 22:03:47 GMT"
+    "etag": "W/\"9f0663bc646ca7477ee2e30ad6ce9984\"",
+    "last_modified": "Thu, 09 Oct 2025 10:45:15 GMT"
   },
   "https://www.investing.com/rss/news.rss": {
-    "etag": "W/\"1029-640af463e949b\"",
-    "last_modified": "Thu, 09 Oct 2025 00:56:42 GMT"
+    "etag": "W/\"1001-640b7e58686bb\"",
+    "last_modified": "Thu, 09 Oct 2025 11:13:54 GMT"
   },
   "http://feeds.bbci.co.uk/news/business/rss.xml": {
     "etag": null,
@@ -53,7 +53,7 @@
   },
   "https://feeds.feedburner.com/zerohedge/feed": {
     "etag": null,
-    "last_modified": "Thu, 9 Oct 2025 00:04:03 GMT"
+    "last_modified": "Thu, 9 Oct 2025 11:19:57 GMT"
   },
   "https://www.bloomberg.com/feed/podcast/etf-report.xml": {
     "etag": null,
@@ -64,8 +64,8 @@
     "last_modified": "Wed, 08 Oct 2025 18:00:15 GMT"
   },
   "https://www.sec.gov/news/pressreleases.rss": {
-    "etag": "\"1759970875\"",
-    "last_modified": "Thu, 09 Oct 2025 00:47:55 GMT"
+    "etag": "\"1760008005\"",
+    "last_modified": "Thu, 09 Oct 2025 11:06:45 GMT"
   },
   "https://www.stats.gov.cn/sj/zxfb/rss.xml": {
     "etag": "\"68db32ab-4c2aa6\"",
@@ -81,7 +81,7 @@
   },
   "https://decrypt.co/feed": {
     "etag": null,
-    "last_modified": "Thu, 09 Oct 2025 01:00:09 GMT"
+    "last_modified": "Thu, 09 Oct 2025 11:24:22 GMT"
   },
   "https://www.coindesk.com/arc/outboundfeeds/rss/": {
     "etag": null,

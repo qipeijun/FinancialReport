@@ -47,11 +47,12 @@ echo
 echo "1. 交互式运行器 (推荐)"
 echo "2. AI分析脚本"
 echo "3. RSS财经抓取器"
-echo "4. 启动文档网站"
-echo "5. 退出"
+echo "4. 数据质量监控"
+echo "5. 启动文档网站"
+echo "6. 退出"
 echo
 
-read -p "请选择功能 (1-5): " choice
+read -p "请选择功能 (1-6): " choice
 
 case $choice in
     1)
@@ -78,13 +79,61 @@ case $choice in
         ;;
     3)
         echo "📰 启动RSS财经抓取器..."
-        python3 scripts/rss_finance_analyzer.py
+        echo
+        
+        # 抓取正文选项
+        read -p "是否抓取正文内容？[Y/n]: " fetch_content
+        rss_cmd="python3 scripts/rss_finance_analyzer.py"
+        if [ -z "$fetch_content" ] || [ "$fetch_content" = "Y" ] || [ "$fetch_content" = "y" ]; then
+            rss_cmd="$rss_cmd --fetch-content"
+        fi
+        
+        # 智能去重选项
+        read -p "是否启用智能去重？[Y/n]: " use_dedup
+        if [ -z "$use_dedup" ] || [ "$use_dedup" = "Y" ] || [ "$use_dedup" = "y" ]; then
+            rss_cmd="$rss_cmd --deduplicate"
+        fi
+        
+        # 并发数选项
+        read -p "并发数 (默认5，输入1-20): " workers
+        if [ ! -z "$workers" ] && [ "$workers" -ge 1 ] && [ "$workers" -le 20 ] 2>/dev/null; then
+            rss_cmd="$rss_cmd --max-workers $workers"
+        fi
+        
+        echo
+        echo "🚀 执行命令: $rss_cmd"
+        echo
+        $rss_cmd
         ;;
     4)
+        echo "📊 数据质量监控..."
+        echo
+        read -p "分析最近几天的数据？(默认7天): " days
+        if [ -z "$days" ]; then
+            days=7
+        fi
+        
+        quality_cmd="python3 scripts/monitor_data_quality.py --days $days"
+        
+        read -p "是否导出JSON报告？[y/N]: " export_json
+        if [ "$export_json" = "Y" ] || [ "$export_json" = "y" ]; then
+            read -p "输出文件名 (默认quality_report.json): " output_file
+            if [ -z "$output_file" ]; then
+                output_file="quality_report.json"
+            fi
+            quality_cmd="$quality_cmd --output $output_file"
+        fi
+        
+        echo
+        echo "🚀 执行命令: $quality_cmd"
+        echo
+        $quality_cmd
+        ;;
+    5)
         echo "🌐 启动文档网站..."
         mkdocs serve
         ;;
-    5)
+    6)
         echo "👋 再见！"
         exit 0
         ;;
