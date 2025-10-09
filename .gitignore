@@ -52,3 +52,6 @@ Thumbs.db
 
 # 新闻备份文件
 docs/archive/**/*.txt
+
+# 静态文件
+/site/
