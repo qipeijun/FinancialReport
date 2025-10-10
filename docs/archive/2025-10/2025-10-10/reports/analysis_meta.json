@@ -4,11 +4,11 @@
     "end": "2025-10-10"
   },
   "articles_used": 136,
-  "chunks": 163,
+  "chunks": 178,
   "model_usage": {
-    "model": "deepseek-chat",
-    "prompt_tokens": 62056,
-    "completion_tokens": 2197,
-    "total_tokens": 64253
+    "model": "models/gemini-2.5-pro",
+    "prompt_tokens": 96916,
+    "candidates_tokens": 3801,
+    "total_tokens": 103812
   }
 }
