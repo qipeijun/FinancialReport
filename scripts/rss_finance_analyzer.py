@@ -30,6 +30,8 @@ import html as html_lib
 import feedparser
 import requests
 from tqdm import tqdm
+from bs4 import BeautifulSoup
+from readability import Document
 
 from utils.logger import get_logger
 from utils.config_manager import get_config
@@ -67,8 +69,9 @@ class RSSAnalyzer:
     def _save_http_cache(self):
         """保存HTTP缓存"""
         try:
+            import builtins
             self.http_cache_path.parent.mkdir(parents=True, exist_ok=True)
-            with open(self.http_cache_path, 'w', encoding='utf-8') as f:
+            with builtins.open(self.http_cache_path, 'w', encoding='utf-8') as f:
                 json.dump(self.http_cache, f, ensure_ascii=False, indent=2)
             logger.debug(f"保存HTTP缓存: {len(self.http_cache)} 条")
         except Exception as e:
@@ -135,30 +138,270 @@ class RSSAnalyzer:
         text = re.sub(r'\s+', ' ', text).strip()
         return text
     
+    def _extract_with_custom_rules(self, soup: BeautifulSoup, url: str) -> str:
+        """使用自定义规则提取正文（针对特定网站）"""
+        domain = urlparse(url).netloc.lower()
+        
+        # 中新网财经
+        if 'chinanews.com' in domain:
+            # 优先使用 .left_zw（最精确的正文容器）
+            content_div = soup.select_one('.left_zw')
+            if content_div:
+                # 移除不需要的元素
+                for tag in content_div.select('script, style, .editor, .adEditor, .keywords, .share, .pictext, div.pictext'):
+                    tag.decompose()
+                
+                # 只保留p标签的文本（正文通常在p标签中）
+                paragraphs = content_div.find_all('p', recursive=True)
+                text_parts = []
+                for p in paragraphs:
+                    p_text = p.get_text(strip=True)
+                    if p_text and len(p_text) > 10:  # 忽略太短的段落
+                        text_parts.append(p_text)
+                
+                text = ' '.join(text_parts)
+                if len(text) > 100:
+                    return text
+            
+            # 备选方案
+            for selector in ['.content_maincontent_content', '.content', '#content']:
+                content_div = soup.select_one(selector)
+                if content_div:
+                    for tag in content_div.select('script, style, .editor, .keywords, .share'):
+                        tag.decompose()
+                    text = content_div.get_text(separator=' ', strip=True)
+                    if len(text) > 100:
+                        return text
+        
+        # 华尔街见闻（需要特殊处理，可能是动态加载）
+        elif 'wallstreetcn.com' in domain:
+            # 华尔街见闻的内容可能是React渲染的，直接提取可见文本
+            # 尝试从summary或description中获取内容
+            for selector in ['meta[property="og:description"]', 'meta[name="description"]']:
+                meta = soup.select_one(selector)
+                if meta and meta.get('content'):
+                    text = meta['content'].strip()
+                    if len(text) > 100:
+                        return text
+            
+            # 尝试其他可能的容器
+            for selector in ['.article-content', '[class*="content"]', 'article']:
+                content_div = soup.select_one(selector)
+                if content_div:
+                    for tag in content_div.select('script, style, .ad, .advertisement, .related, aside'):
+                        tag.decompose()
+                    text = content_div.get_text(separator=' ', strip=True)
+                    if len(text) > 100:
+                        return text
+        
+        # 36氪
+        elif '36kr.com' in domain:
+            for selector in ['.articleDetailContent', 'article', '.common-width', '[class*="article"]']:
+                content_div = soup.select_one(selector)
+                if content_div:
+                    for tag in content_div.select('script, style, .ad, aside'):
+                        tag.decompose()
+                    
+                    paragraphs = content_div.find_all(['p', 'div'], recursive=True)
+                    text_parts = []
+                    for p in paragraphs:
+                        p_text = p.get_text(strip=True)
+                        if p_text and len(p_text) > 10:
+                            text_parts.append(p_text)
+                    
+                    text = ' '.join(text_parts)
+                    if len(text) > 100:
+                        return text
+        
+        # 东方财富
+        elif 'eastmoney.com' in domain:
+            for selector in ['#ContentBody', '.Body', 'article']:
+                content_div = soup.select_one(selector)
+                if content_div:
+                    for tag in content_div.select('script, style, .ad'):
+                        tag.decompose()
+                    
+                    paragraphs = content_div.find_all('p', recursive=True)
+                    text_parts = []
+                    for p in paragraphs:
+                        p_text = p.get_text(strip=True)
+                        if p_text and len(p_text) > 10:
+                            text_parts.append(p_text)
+                    
+                    text = ' '.join(text_parts)
+                    if len(text) > 100:
+                        return text
+        
+        # 第一财经
+        elif 'yicai.com' in domain:
+            for selector in ['.m-txt', 'article', '.article-content']:
+                content_div = soup.select_one(selector)
+                if content_div:
+                    for tag in content_div.select('script, style, .ad'):
+                        tag.decompose()
+                    
+                    paragraphs = content_div.find_all('p', recursive=True)
+                    text_parts = []
+                    for p in paragraphs:
+                        p_text = p.get_text(strip=True)
+                        if p_text and len(p_text) > 10:
+                            text_parts.append(p_text)
+                    
+                    text = ' '.join(text_parts)
+                    if len(text) > 100:
+                        return text
+        
+        # 新浪财经
+        elif 'sina.com' in domain or 'finance.sina.com' in domain:
+            for selector in ['#artibody', '.article', 'article']:
+                content_div = soup.select_one(selector)
+                if content_div:
+                    for tag in content_div.select('script, style, .ad, .show_author'):
+                        tag.decompose()
+                    
+                    paragraphs = content_div.find_all('p', recursive=True)
+                    text_parts = []
+                    for p in paragraphs:
+                        p_text = p.get_text(strip=True)
+                        if p_text and len(p_text) > 10:
+                            text_parts.append(p_text)
+                    
+                    text = ' '.join(text_parts)
+                    if len(text) > 100:
+                        return text
+        
+        # 百度百家号
+        elif 'baijiahao.baidu.com' in domain:
+            for selector in ['.article-content', '#article', '[class*="article"]']:
+                content_div = soup.select_one(selector)
+                if content_div:
+                    for tag in content_div.select('script, style'):
+                        tag.decompose()
+                    
+                    paragraphs = content_div.find_all('p', recursive=True)
+                    text_parts = []
+                    for p in paragraphs:
+                        p_text = p.get_text(strip=True)
+                        if p_text and len(p_text) > 10:
+                            text_parts.append(p_text)
+                    
+                    text = ' '.join(text_parts)
+                    if len(text) > 100:
+                        return text
+        
+        # 虎嗅网
+        elif 'huxiu.com' in domain:
+            for selector in ['.article__content', '.article-content-wrap', 'article']:
+                content_div = soup.select_one(selector)
+                if content_div:
+                    for tag in content_div.select('script, style, .ad'):
+                        tag.decompose()
+                    
+                    paragraphs = content_div.find_all(['p', 'div'], recursive=True)
+                    text_parts = []
+                    for p in paragraphs:
+                        p_text = p.get_text(strip=True)
+                        if p_text and len(p_text) > 10:
+                            text_parts.append(p_text)
+                    
+                    text = ' '.join(text_parts)
+                    if len(text) > 100:
+                        return text
+        
+        # Investing.com
+        elif 'investing.com' in domain:
+            for selector in ['.article_WYSIWYG__O0uhW', 'article', '[class*="article"]']:
+                content_div = soup.select_one(selector)
+                if content_div:
+                    for tag in content_div.select('script, style'):
+                        tag.decompose()
+                    
+                    paragraphs = content_div.find_all('p', recursive=True)
+                    text_parts = []
+                    for p in paragraphs:
+                        p_text = p.get_text(strip=True)
+                        if p_text and len(p_text) > 10:
+                            text_parts.append(p_text)
+                    
+                    text = ' '.join(text_parts)
+                    if len(text) > 100:
+                        return text
+        
+        return ''
+    
     def fetch_article_content(self, url: str, timeout: int = 10) -> str:
-        """抓取文章正文（静默失败）"""
+        """抓取文章正文（智能提取）"""
         try:
             resp = requests.get(url, timeout=timeout, headers={
-                'User-Agent': 'Mozilla/5.0 (compatible; FinanceBot/1.0)'
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
             })
             resp.raise_for_status()
             
             # 处理编码
-            if resp.encoding.lower() not in ['utf-8', 'utf8']:
-                for encoding in ['utf-8', 'gbk', 'gb2312', 'latin1']:
+            if resp.encoding and resp.encoding.lower() not in ['utf-8', 'utf8']:
+                for encoding in ['utf-8', 'gbk', 'gb2312', 'gb18030', 'latin1']:
                     try:
-                        content = resp.content.decode(encoding)
+                        html_content = resp.content.decode(encoding)
                         break
-                    except UnicodeDecodeError:
+                    except (UnicodeDecodeError, LookupError):
                         continue
                 else:
-                    content = resp.content.decode('utf-8', errors='ignore')
+                    html_content = resp.content.decode('utf-8', errors='ignore')
             else:
-                content = resp.text
+                html_content = resp.text
             
-            return self.clean_html_to_text(content)
-        except:
+            # 策略1：使用自定义规则（针对特定网站）
+            soup = BeautifulSoup(html_content, 'lxml')
+            custom_text = self._extract_with_custom_rules(soup, url)
+            if custom_text and len(custom_text) > 100:
+                logger.debug(f"使用自定义规则提取正文: {url}")
+                return custom_text
+            
+            # 策略2：使用 readability-lxml（通用智能提取）
+            try:
+                doc = Document(html_content)
+                article_html = doc.summary()
+                
+                # 解析提取的HTML
+                article_soup = BeautifulSoup(article_html, 'lxml')
+                
+                # 移除不需要的标签
+                for tag in article_soup.select('script, style, iframe, nav, header, footer, aside'):
+                    tag.decompose()
+                
+                # 提取文本
+                text = article_soup.get_text(separator=' ', strip=True)
+                
+                # 清理多余空白
+                text = re.sub(r'\s+', ' ', text).strip()
+                
+                if len(text) > 100:
+                    logger.debug(f"使用Readability提取正文: {url}")
+                    return text
+            except Exception as e:
+                logger.debug(f"Readability提取失败 {url}: {e}")
+            
+            # 策略3：通用规则（作为后备）
+            # 尝试常见的正文容器
+            for selector in ['article', '.article', '#article', '.content', '#content', 
+                           '.post-content', '.entry-content', 'main']:
+                content_div = soup.select_one(selector)
+                if content_div:
+                    for tag in content_div.select('script, style, nav, header, footer, aside'):
+                        tag.decompose()
+                    text = content_div.get_text(separator=' ', strip=True)
+                    text = re.sub(r'\s+', ' ', text).strip()
+                    if len(text) > 100:
+                        logger.debug(f"使用通用规则提取正文: {url}")
+                        return text
+            
+            # 如果所有策略都失败，返回空
+            logger.debug(f"无法提取有效正文: {url}")
+            return ''
+            
+        except Exception as e:
             # 静默失败，正文抓取失败很常见（403/404等）
+            logger.debug(f"正文抓取异常 {url}: {e}")
             return ''
     
     def fetch_rss_feed(self, url: str, source_name: str, limit: int = 5) -> List[Any]:

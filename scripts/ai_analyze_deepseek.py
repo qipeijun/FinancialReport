@@ -60,7 +60,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--max-chars', type=int, default=500000, help='传入模型的最大字符数上限，用于控制成本，0 表示不限制')
     parser.add_argument('--api-key', type=str, help='可选：显式传入 DeepSeek API Key（默认仅从配置读取）')
     parser.add_argument('--config', type=str, help='可选：配置文件路径（默认 config/config.yml）')
-    parser.add_argument('--content-field', choices=['summary', 'content', 'auto'], default='auto', help='选择分析字段：summary(摘要优先)、content(正文优先)、auto(智能选择)')
+    parser.add_argument('--content-field', choices=['summary', 'content', 'auto'], default='summary', help='选择分析字段：summary(摘要优先，默认)、content(正文优先)、auto(智能选择)')
     parser.add_argument('--model', type=str, default='deepseek-chat', help='DeepSeek 模型名称（默认 deepseek-chat）')
     parser.add_argument('--base-url', type=str, default='https://api.deepseek.com', help='DeepSeek API Base URL')
     parser.add_argument('--prompt', choices=['safe', 'pro'], default='pro', help='提示词版本：safe(安全版，避免具体股票推荐) 或 pro(专业版，包含具体投资建议)')
@@ -315,6 +315,9 @@ def call_deepseek(api_key: str, base_url: str, model_name: str, content: str, pr
         system_prompt = f.read()
 
     print_info(f'使用提示词版本: {prompt_version} ({prompt_path.name})')
+    
+    # 替换模型占位符为实际使用的DeepSeek模型
+    system_prompt = system_prompt.replace('[使用的具体模型名称]', model_name)
 
     client = OpenAI(api_key=api_key, base_url=base_url)
 
@@ -329,17 +332,14 @@ def call_deepseek(api_key: str, base_url: str, model_name: str, content: str, pr
             stream=False
         )
         print_success(f'模型调用成功: {model_name}')
-        usage = {}
+        usage = {'model': getattr(resp, 'model', model_name)}
         try:
-            # OpenAI SDK usage 结构可能不同，这里做容错访问
-            usage = {
-                'model': getattr(resp, 'model', model_name),
-                'prompt_tokens': getattr(getattr(resp, 'usage', {}), 'prompt_tokens', None) or (resp.usage.get('prompt_tokens') if isinstance(resp.usage, dict) else None),
-                'completion_tokens': getattr(getattr(resp, 'usage', {}), 'completion_tokens', None) or (resp.usage.get('completion_tokens') if isinstance(resp.usage, dict) else None),
-                'total_tokens': getattr(getattr(resp, 'usage', {}), 'total_tokens', None) or (resp.usage.get('total_tokens') if isinstance(resp.usage, dict) else None),
-            }
+            if hasattr(resp, 'usage') and resp.usage:
+                usage['prompt_tokens'] = getattr(resp.usage, 'prompt_tokens', 0)
+                usage['completion_tokens'] = getattr(resp.usage, 'completion_tokens', 0)
+                usage['total_tokens'] = getattr(resp.usage, 'total_tokens', 0)
         except Exception:
-            pass
+            pass  # 静默失败，至少保证model字段存在
         text = resp.choices[0].message.content if resp and resp.choices else ''
         return text, usage
     except Exception as e:
