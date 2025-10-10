@@ -1,0 +1,9 @@
+{
+  "date_range": {
+    "start": "2025-10-05",
+    "end": "2025-10-05"
+  },
+  "articles_used": 46,
+  "chunks": 79,
+  "model_usage": {}
+}

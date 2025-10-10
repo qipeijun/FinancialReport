@@ -62,7 +62,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--config', type=str, help='可选：配置文件路径（默认 config/config.yml）')
     parser.add_argument('--content-field', choices=['summary', 'content', 'auto'], default='auto', help='选择分析字段：summary(摘要优先)、content(正文优先)、auto(智能选择)')
     parser.add_argument('--model', type=str, default='deepseek-chat', help='DeepSeek 模型名称（默认 deepseek-chat）')
-    parser.add_argument('--base-url', type=str, default='https://api.deepseek.com/v3.1_terminus_expires_on_20251015', help='DeepSeek API Base URL')
+    parser.add_argument('--base-url', type=str, default='https://api.deepseek.com', help='DeepSeek API Base URL')
+    parser.add_argument('--prompt', choices=['safe', 'pro'], default='pro', help='提示词版本：safe(安全版，避免具体股票推荐) 或 pro(专业版，包含具体投资建议)')
     return parser.parse_args()
 
 
@@ -151,6 +152,51 @@ def chunk_text(text: str, max_chars: int = 4000) -> List[str]:
     return chunks
 
 
+def sanitize_content(text: str) -> str:
+    """清理和过滤内容，移除可能触发内容风险的敏感信息"""
+    if not text:
+        return text
+
+    import re
+
+    # 尝试修复编码问题
+    try:
+        # 如果文本看起来是乱码，尝试重新编码
+        if any(ord(c) > 127 for c in text[:100]):
+            # 尝试不同的编码方式
+            for encoding in ['utf-8', 'gbk', 'gb2312', 'latin1']:
+                try:
+                    text = text.encode('latin1').decode(encoding)
+                    break
+                except (UnicodeEncodeError, UnicodeDecodeError):
+                    continue
+    except Exception:
+        pass
+
+    # 移除HTML标签和特殊字符
+    text = re.sub(r'<[^>]+>', '', text)
+    text = re.sub(r'&[a-z]+;', '', text)
+
+    # 移除过长的URL和链接
+    text = re.sub(r'https?://\S+', '[链接]', text)
+
+    # 移除可能的敏感政治词汇（根据需求调整）
+    sensitive_patterns = [
+        r'\b(?:习近平|李克强|党中央|国务院)\b',
+        r'\b(?:台湾|香港|澳门|新疆|西藏)\b',
+        r'\b(?:共产党|人民政府|社会主义)\b',
+    ]
+
+    for pattern in sensitive_patterns:
+        text = re.sub(pattern, '[相关]', text)
+
+    # 移除重复的空格和换行
+    text = re.sub(r'\s+', ' ', text)
+    text = re.sub(r'\n\s*\n', '\n\n', text)
+
+    return text.strip()
+
+
 def build_corpus(articles: List[Dict[str, Any]], max_chars: int, per_chunk_chars: int = 3000, content_field: str = 'auto') -> Tuple[List[Tuple[Dict[str, Any], List[str]]], int]:
     pairs: List[Tuple[Dict[str, Any], List[str]]] = []
     total_len = 0
@@ -166,6 +212,10 @@ def build_corpus(articles: List[Dict[str, Any]], max_chars: int, per_chunk_chars
                 body = summary
             else:
                 body = content or summary or ''
+
+        # 清理内容
+        body = sanitize_content(body)
+
         title = a.get('title') or ''
         source = a.get('source') or ''
         published = a.get('published') or ''
@@ -243,17 +293,28 @@ def build_source_stats_block(selected: List[Dict[str, Any]], content_field: str,
     stats_info += f"总计: {total_articles}篇新闻文章\n"
     return stats_info
 
-def call_deepseek(api_key: str, base_url: str, model_name: str, content: str) -> Tuple[str, Dict[str, Any]]:
+def call_deepseek(api_key: str, base_url: str, model_name: str, content: str, prompt_version: str = 'safe') -> Tuple[str, Dict[str, Any]]:
     if OpenAI is None:
         raise SystemExit('未安装 openai，请先安装或在环境中提供。')
 
     print_progress(f'正在生成报告（输入长度 {len(content):,} 字符）')
 
-    prompt_path = PROJECT_ROOT / 'task' / 'financial_analysis_prompt_pro.md'
+    # 根据选择的版本使用不同的提示词
+    if prompt_version == 'safe':
+        prompt_path = PROJECT_ROOT / 'task' / 'financial_analysis_prompt_safe.md'
+        if not prompt_path.exists():
+            print_warning('安全版提示词不存在，回退到专业版')
+            prompt_path = PROJECT_ROOT / 'task' / 'financial_analysis_prompt_pro.md'
+    else:
+        prompt_path = PROJECT_ROOT / 'task' / 'financial_analysis_prompt_pro.md'
+
     if not prompt_path.exists():
         raise SystemExit(f'提示词文件不存在: {prompt_path}')
+
     with open(prompt_path, 'r', encoding='utf-8') as f:
         system_prompt = f.read()
+
+    print_info(f'使用提示词版本: {prompt_version} ({prompt_path.name})')
 
     client = OpenAI(api_key=api_key, base_url=base_url)
 
@@ -292,7 +353,7 @@ def save_markdown(date_str: str, markdown_text: str) -> Path:
     now_str = datetime.now(pytz.timezone('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M:%S')
     header = f"# 📅 {date_str} 财经分析报告\n\n> 📅 生成时间: {now_str} (北京时间)\n\n"
     content = header + (markdown_text or '').strip() + '\n'
-    report_file = report_dir / f"📅 {date_str} 财经分析报告.md"
+    report_file = report_dir / f"📅 {date_str} 财经分析报告_deepseek.md"
     with open(report_file, 'w', encoding='utf-8') as f:
         f.write(content)
     print_success(f"报告已保存到: {report_file}")
@@ -326,6 +387,7 @@ def main():
     print_header("AI 财经分析系统（DeepSeek）")
     print_info(f"分析日期范围: {start} → {end}")
     print_info(f"字段选择模式: {args.content_field}")
+    print_info(f"提示词版本: {args.prompt}")
     if args.max_chars > 0:
         print_info(f"字符数限制: {args.max_chars:,}")
     print()
@@ -390,7 +452,7 @@ def main():
     full_content = stats_info + "\n\n" + joined
 
     try:
-        summary_md, usage = call_deepseek(api_key, args.base_url, args.model, full_content)
+        summary_md, usage = call_deepseek(api_key, args.base_url, args.model, full_content, args.prompt)
     except Exception as e:
         print_error(f'模型调用失败: {e}')
         return

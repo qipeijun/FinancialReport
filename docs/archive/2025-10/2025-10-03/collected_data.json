@@ -1,0 +1,1586 @@
+{
+  "collection_date": "2025-10-03",
+  "total_sources": 23,
+  "successful_sources": 17,
+  "failed_sources": [
+    "澎湃新闻财经",
+    "Wall Street Journal",
+    "彭博 Bloomberg",
+    "Thomson Reuters",
+    "Federal Reserve Board",
+    "国家统计局-最新发布"
+  ],
+  "total_articles": 85,
+  "articles": [
+    {
+      "title": "全球市场：美股三大指数均创收盘新高 特斯拉跌超5% 国际金价结束五连涨",
+      "link": "http://stock.eastmoney.com/news/11784,202510033528194769.html",
+      "published": "Fri, 03 Oct 2025 06:05:13 +0800",
+      "summary": "<p style=\"text-align: center;\"> <img src=\"https://np-newspic.dfcfw.com/download/D233811DE0E326F93B52474FDBE807BA52_w750h1630.jpg\" /></p><p><span style=\"font-weight: bold;\">　　美股市场：</span>美股三大指数10月02日均创<span>收盘</span>历史新高。截至收盘，道琼斯工业平均指数比前一交易日上涨78.62点，收于46519.72点，涨幅为0.17%；<span id=\"bk_90.BK0879\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0879\">标准普尔</a></span><span id=\"bkquote_90.BK0879\"></span>500种股票指数上涨4.15点，收于6715.35点，涨幅为0.06%；<span id=\"stock_105.NDAQ\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.NDAQ\">纳斯达克</a></span><span id=\"quote_105.NDAQ\"></span>综合指数上涨88.89点，收于22844.05点，涨幅为0.39%。</p><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.DJIA\" target=\"_blank\"><img alt=\"K图 DJIA_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.DJIA&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.SPX\" target=\"_blank\"><img alt=\"K图 SPX_0\" border=\"0\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.SPX&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" /></a></p><!-- EM_StockImg_End --><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.NDX\" target=\"_blank\"><img alt=\"K图 NDX_0\" border=\"0\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.NDX&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" /></a></p><p>　　大型科技股涨跌不一，Meta、博通涨超1%，特斯拉跌超5%。加密货币、半导体设备涨幅居前，Circle涨超16%，Coinbase涨超7%，康特科技涨超3%，阿斯麦涨超2%。汽车制造、油气设备跌幅居前，西方石油、Rivian跌超7%，通用汽车跌超3%，康菲石油跌超2%。</p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/META.html\" target=\"_blank\"><img alt=\"K图 META_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.META&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/CRCL.html\" target=\"_blank\"><img alt=\"K图 CRCL_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=106.CRCL&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/CAMT.html\" target=\"_blank\"><img alt=\"K图 CAMT_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.CAMT&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/105.NDAQ\">纳斯达克</span>中国金龙指数收涨1.06%，热门中概股多数上涨，<span id=\"stock_105.VNET\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.VNET\">世纪互联</a></span><span id=\"quote_105.VNET\"></span>涨超4%，<span id=\"stock_106.BABA\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.BABA\">阿里巴巴</a></span><span id=\"quote_106.BABA\"></span>、<span id=\"stock_106.NIO\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.NIO\">蔚来</a></span><span id=\"quote_106.NIO\"></span>、<span id=\"stock_105.KC\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.KC\">金山云</a></span><span id=\"quote_105.KC\"></span>涨超3%，<span id=\"stock_105.BIDU\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.BIDU\">百度</a></span><span id=\"quote_105.BIDU\"></span>涨超2%，<span id=\"stock_105.BILI\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.BILI\">哔哩哔哩</a></span><span id=\"quote_105.BILI\"></span>、<span id=\"stock_105.LI\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.LI\">理想汽车</a></span><span id=\"quote_105.LI\"></span>涨超1%；<span id=\"stock_106.MNSO\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.MNSO\">名创优品</a></span><span id=\"quote_106.MNSO\"></span>跌超3%。</p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/251.HXC\" target=\"_blank\"><img alt=\"K图 HXC_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=251.HXC&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/BABA.html\" target=\"_blank\"><img alt=\"K图 BABA_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=106.BABA&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/BIDU.html\" target=\"_blank\"><img alt=\"K图 BIDU_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.BIDU&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p><span style=\"font-weight: bold;\">　　欧股市场：</span>欧洲三大股指10月02日涨跌不一。英国伦敦股市《金融时报》100种股票平均价格指数报收于9427.73点，较前一交易日下跌18.7点，跌幅为0.2%；法国巴黎股市CAC40指数报收于8056.63点，较前一交易日上涨89.68点，涨幅为1.13%；德国法兰克福股市DAX指数报收于24422.56点，较前一交易日上涨308.94点，涨幅为1.28%。</p><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.FTSE\" target=\"_blank\"><img alt=\"K图 FTSE_0\" border=\"0\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.FTSE&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" /></a></p><!-- EM_StockImg_End --><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.GDAXI\" target=\"_blank\"><img alt=\"K图 GDAXI_0\" border=\"0\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.GDAXI&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" /></a></p><!-- EM_StockImg_End --><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.FCHI\" target=\"_blank\"><img alt=\"K图 FCHI_0\" border=\"0\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.FCHI&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" /></a></p><p><span style=\"font-weight: bold;\">　　商品市场：</span>国际油价10月02日下跌。截至当天收盘，纽约商品交易所WTI原油期货当月连续合约结算价下跌1.30美元，收于每桶60.48美元，跌幅为2.10%；伦敦布伦特原油期货当月连续合约下跌1.24美元，收于每桶64.11美元，跌幅为1.90%。COMEX黄金期货当月连续合约下跌29.40美元，跌幅0.75%，报3868.1美元/盎司。</p><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/101.GC00Y\" target=\"_blank\"><img alt=\"K图 GC00Y_0\" border=\"0\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=101.GC00Y&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" /></a></p><!-- EM_StockImg_End --><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/102.CL00Y\" target=\"_blank\"><img alt=\"K图 CL00Y_0\" border=\"0\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=102.CL00Y&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" /></a></p><!-- EM_StockImg_End --><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_End --><p style=\"text-align: center;\"><a href=\"https://acttg.eastmoney.com/pub/xxlout_khmbdfcfappnew_random_0007467a\"><img class=\"em_handle_adv_close\" src=\"https://np-newspic.dfcfw.com/download/D25753173264126031117_w690h389.jpg\" /></a></p><h3 class=\"emh3\">　　隔夜要闻</h3><p>　　<a href=\"http://finance.eastmoney.com/a/202510033528194974.html\"><strong>特朗普：若政府持续“停摆” 可能会裁员</strong></a></p><p>　　美国总统特朗普当地时间10月2日在采访中表示，若政府持续陷入“停摆”状态，可能会出现裁员和项目削减。由于美国会参议院9月30日先后否决两党拨款法案，当地时间10月1日0时1分，美国联邦政府近7年以来再次“停摆”。美国副总统万斯10月1日警告，如果联邦政府“停摆”持续时间较长，可能会引发裁员。白宫发言人莱维特则说，联邦政府裁员“很可能”发生，且“很快”会发生。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510033528189736.html\"><strong>普京：恢复与美国的全面关系符合俄罗斯国家利益</strong></a></p><p>　　当地时间10月2日，俄罗斯总统普京在俄智库瓦尔代国际辩论俱乐部第22届年会上发表讲话。普京表示，恢复与美国的全面关系符合俄罗斯国家利益。本届美国政府直言不讳地表明自身利益，有时甚至显得直来直往，但至少摒弃了虚伪——他们始终将本国利益置于首位，这是理性的选择。俄罗斯同样保留根据自身国家利益采取行动的权利。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510033528196660.html\"><strong>美能源部宣布终止近80亿美元新能源项目</strong></a></p><p>　　<span id=\"stock_105.USEG\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.USEG\">美国能源</a></span><span id=\"quote_105.USEG\"></span>部2日宣布终止223个能源项目，相关资金总计约75.6亿美元。这些项目主要涉及清洁能源和可再生能源，去年总统选举民主党获胜的州将普遍受冲击。<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/105.USEG\">美国能源</span>部在一份新闻稿中说，从经济效益、国家安全和能源安全等角度考量，被终止项目未能达到联邦政府继续投资的标准。项目资金接收方可在30天内提出申诉。</p><p>　　<a href=\"http://stock.eastmoney.com/a/202510033528200129.html\"><strong>美国内政部称政府“停摆”期间自由女神像仍开放 多处景点已关闭</strong></a></p><p>　　当地时间10月2日获悉，美国内政部1日表示，美国政府将保持自由女神像和埃利斯岛的开放。受政府“关门”影响，宾夕法尼亚州费城的自由钟、新墨西哥州南部的卡尔斯巴德洞窟国家公园、密西西比州的维克斯堡国家军事公园等景点均已关闭。</p><p>　　<a href=\"http://stock.eastmoney.com/a/202510033528195292.html\"><strong>Robinhood掌门人预见金融巨变：资产代币化趋势已不可阻挡</strong></a></p><p>　　美国网红券商Robinhood Markets首席执行官Vlad Tenev最新表示，从股票到房地产，现实世界资产的代币化将会扩展到全球金融市场。Tenev周三（10月1日）在新加坡的一场加密货币会议上说道：“代币化就像一列货运列车。它无法被阻止，并且最终会吞噬整个金融体系。”</p><p>　　<a href=\"http://stock.eastmoney.com/a/202510033528193669.html\"><strong>巴菲特升级石化领域布局 97亿美元吞下西方石油子公司</strong></a></p><p>　　当地时间周四（10月2日），伯克希尔-哈撒韦和<span id=\"stock_106.OXY\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.OXY\">西方石油</a></span><span id=\"quote_106.OXY\"></span>双双在官网宣布，两家公司达成最终协议，伯克希尔将以97亿美元的全现金交易收购<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/106.OXY\">西方石油</span>的化工业务OxyChem。本周早些时候，财联社报道就已经提到，伯克希尔计划以约100亿美元收购OxyChem。据了解，OxyChem主营医疗保健、<span id=\"bk_90.BK0614\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0614\">食品安全</a></span><span id=\"bkquote_90.BK0614\"></span>及建筑领域的化工产品。</p><p>　　<a href=\"http://stock.eastmoney.com/a/202510033528192354.html\"><strong>特斯拉三季度汽车交付量创新高 但美国补贴退坡或令下季承压</strong></a></p><p>　　当地时间周四（10月2日），美国<span id=\"stock_105.TSLA\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.TSLA\">特斯拉</a></span><span id=\"quote_105.TSLA\"></span>公司在官网公布了其2025年第三季度的汽车生产量和交付量报告。具体数据显示，<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/105.TSLA\">特斯拉</span>在这一季度共交付了497,099辆汽车，同比增长7.4%，刷新了季度交付纪录，几乎强于市场上所有预期。FactSet汇总数据显示，华尔街原本预计447,600辆。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510033528194037.html\"><strong>波音777X客机据称将推迟至2027年交付 或将导致数十亿美元损失</strong></a></p><p>　　知情人士透露，<span id=\"stock_106.BA\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.BA\">波音</a></span><span id=\"quote_106.BA\"></span>公司的777X客机计划于2027年初首次投入商业运营，而非原定的明年，这对美国飞机制造商而言又是一次挫折。分析师估计，此次非现金会计费用可能在25亿美元至40亿美元之间，不过<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/106.BA\">波音</span>尚未详细说明成本规模。这款已经延迟六年的喷气式客机，对于<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/106.BA\">波音</span>在与空中客车公司（Airbus SE）争夺利润丰厚的长途航空市场更大份额的竞争中，具有重大的战略和财务意义。波音高管计划在10月29日公布财报时，讨论这款大型客机最新延迟的程度和成本。</p><p>免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。</p><p class=\"em_media\">（文章来源：<span id=\"stock_0.300059\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300059\">东方财富</a></span><span id=\"quote_0.300059\"></span>研究中心）",
+      "source": {
+        "title": "东方财富研究中心"
+      },
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        22,
+        5,
+        13,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "美股三大指数集体收涨 特斯拉跌超5%",
+      "link": "http://finance.eastmoney.com/news/1345,202510023528176398.html",
+      "published": "Fri, 03 Oct 2025 04:00:00 +0800",
+      "summary": "<!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.DJIA\" target=\"_blank\"><img alt=\"K图 DJIA_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.DJIA&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.NDX\" target=\"_blank\"><img alt=\"K图 NDX_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.NDX&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.SPX\" target=\"_blank\"><img alt=\"K图 SPX_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.SPX&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p>　　美东时间周四，美股三大指数集体收涨，截至收盘，道琼斯指数涨0.17%，<span id=\"stock_105.NDAQ\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.NDAQ\">纳斯达克</a></span><span id=\"quote_105.NDAQ\"></span>综合指数涨0.39%，标普500指数涨0.06%。</p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/META.html\" target=\"_blank\"><img alt=\"K图 META_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.META&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/AVGO.html\" target=\"_blank\"><img alt=\"K图 AVGO_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.AVGO&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/TSLA.html\" target=\"_blank\"><img alt=\"K图 TSLA_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.TSLA&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p>　　大型科技股涨跌不一，Meta、<span id=\"stock_105.AVGO\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.AVGO\">博通</a></span><span id=\"quote_105.AVGO\"></span>涨超1%，<span id=\"stock_105.TSLA\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.TSLA\">特斯拉</a></span><span id=\"quote_105.TSLA\"></span>跌超5%。</p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/CRCL.html\" target=\"_blank\"><img alt=\"K图 CRCL_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=106.CRCL&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/COIN.html\" target=\"_blank\"><img alt=\"K图 COIN_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.COIN&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/CAMT.html\" target=\"_blank\"><img alt=\"K图 CAMT_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.CAMT&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p>　　加密货币、<span id=\"bk_90.BK1036\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1036\">半导体</a></span><span id=\"bkquote_90.BK1036\"></span>设备涨幅居前，Circle涨超16%，Coinbase涨超7%，<span id=\"stock_105.CAMT\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.CAMT\">康特科技</a></span><span id=\"quote_105.CAMT\"></span>涨超3%，<span id=\"stock_105.ASML\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.ASML\">阿斯麦</a></span><span id=\"quote_105.ASML\"></span>涨超2%。</p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/OXY.html\" target=\"_blank\"><img alt=\"K图 OXY_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=106.OXY&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/RIVN.html\" target=\"_blank\"><img alt=\"K图 RIVN_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.RIVN&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/GM.html\" target=\"_blank\"><img alt=\"K图 GM_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=106.GM&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p>　　汽车制造、油气设备跌幅居前，<span id=\"stock_106.OXY\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.OXY\">西方石油</a></span><span id=\"quote_106.OXY\"></span>、Rivian跌超7%，<span id=\"stock_106.GM\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.GM\">通用汽车</a></span><span id=\"quote_106.GM\"></span>跌超3%，<span id=\"stock_106.COP\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.COP\">康菲石油</a></span><span id=\"quote_106.COP\"></span>跌超2%。</p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/251.HXC\" target=\"_blank\"><img alt=\"K图 HXC_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=251.HXC&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/VNET.html\" target=\"_blank\"><img alt=\"K图 VNET_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.VNET&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/BABA.html\" target=\"_blank\"><img alt=\"K图 BABA_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=106.BABA&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/105.NDAQ\">纳斯达克</span>中国金龙指数收涨1.06%，热门中概股多数上涨，<span id=\"stock_105.VNET\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.VNET\">世纪互联</a></span><span id=\"quote_105.VNET\"></span>涨超4%，<span id=\"stock_106.BABA\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.BABA\">阿里巴巴</a></span><span id=\"quote_106.BABA\"></span>、<span id=\"stock_106.NIO\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.NIO\">蔚来</a></span><span id=\"quote_106.NIO\"></span>、<span id=\"stock_105.KC\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.KC\">金山云</a></span><span id=\"quote_105.KC\"></span>涨超3%，<span id=\"stock_105.BIDU\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.BIDU\">百度</a></span><span id=\"quote_105.BIDU\"></span>涨超2%，<span id=\"stock_105.BILI\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.BILI\">哔哩哔哩</a></span><span id=\"quote_105.BILI\"></span>、<span id=\"stock_105.LI\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.LI\">理想汽车</a></span><span id=\"quote_105.LI\"></span>涨超1%；<span id=\"stock_106.MNSO\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.MNSO\">名创优品</a></span><span id=\"quote_106.MNSO\"></span>跌超3%。</p><h3 class=\"emh3\">　　全球要闻</h3><p>　　<a href=\"http://finance.eastmoney.com/a/202510023528103972.html\"><strong>存储巨头狂欢持续！与OpenAI达成合作后 三星、SK海力士股价飙升</strong></a></p><p>　　周四，韩国<span id=\"bk_90.BK1137\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1137\">存储芯片</a></span><span id=\"bkquote_90.BK1137\"></span>巨头三星电子和SK海力士股价飙升，此前一天，这两家公司与<span id=\"bk_90.BK0800\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0800\">人工智能</a></span><span id=\"bkquote_90.BK0800\"></span>（AI）领军企业、ChatGPT开发者OpenAI达成合作，为“星际之门”（Stargate）项目提供芯片及其它解决方案。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510023528159174.html\"><strong>什么信号？科技高管警告“AI模型无法突破” 华尔街大佬直言崩盘避无可避！</strong></a></p><p>　　随着科技巨头相继“砸重金”投资<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0800\">人工智能</span>（AI），有关“AI泡沫”的警告声也愈发响亮。投资者们担心，AI估值过高，以及海量投资能否在预期时间内取得回报等问题。一位顶级科技行业高管最新警告称，OpenAI等实验室目前开发的<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0800\">人工智能</span>模型不太可能带来重大的科学突破，这又给围绕该技术的一些炒作和该领域主要人物的说法泼了一盆冷水，例如OpenAI首席执行官萨姆·奥尔特曼（Sam Altman）和Anthropic首席执行官Dario Amodei。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510023528088642.html\"><strong>美国政府“停摆”首日 参院再度否决临时拨款法案</strong></a></p><p>　　美国国会参议院1日否决共和党提出的一项临时拨款法案，使得迅速结束联邦政府“停摆”状态的希望破灭。当天上午举行的表决中，只有3名民主党籍参议员支持共和党提出将联邦政府资金延长至11月底的临时拨款法案，赞成票共计55票，未能达到通过所需的60票。</p><p>　　<a href=\"http://global.eastmoney.com/a/202510023528149981.html\"><strong>黄金还将继续闪耀？高盛：这类投资者正大举加仓 涨幅或超预测！</strong></a></p><p>　　周四，黄金价格在每盎司3,865美元附近交投，延续了五天的上涨态势，期间多次创下新高，并向4000美元的里程碑又迈进了一步。此次金价上涨的主要原因是，美国政府关门加剧了人们对财政的担忧，并给美元带来了压力。</p><p>　　<a href=\"http://stock.eastmoney.com/a/202510023528121729.html\"><strong>10月降息概率升至100%！华尔街：政府关门或令美联储偏向宽松</strong></a></p><p>　　当地时间周三午夜，美国政府时隔七年再度关门，这无疑给美国经济和金融市场带来了更多不确定性。在华尔街分析师看来，政府关门可能会进一步巩固美联储10月降息预期。他们表示，尤其是在美国政府关门僵局持续数天以上的情况下，美联储主席鲍威尔及其同僚可能会偏向于采取宽松货币政策。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510023528075681.html\"><strong>纽约州拒掏钱 自由女神像火炬或因政府停摆而“熄火”</strong></a></p><p>　　美国纽约州州长凯西·霍楚尔办公室当地时间10月1日发言人表示，纽约州不会像此前政府停摆时那样，承担自由女神像的开放运营费用。州长称这次自由女神像火炬可能会“彻底熄灭”。霍楚尔提到，纽约州已有超过10万名联邦工作人员被迫休假或面临休假风险，其中包括数十名在自由女神像工作的工作人员。目前，尚不清楚自由女神像是否会关闭以及何时关闭。",
+      "source": {
+        "title": "东方财富Choice数据"
+      },
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        20,
+        0,
+        0,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "美股三大指数涨跌互现 特斯拉涨2%",
+      "link": "http://finance.eastmoney.com/news/11060,202510023528176273.html",
+      "published": "Thu, 02 Oct 2025 21:30:00 +0800",
+      "summary": "<!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.DJIA\" target=\"_blank\"><img alt=\"R? DJIA_0\" border=\"0\" height=\"277\" src=\"https://webquotepic.eastmoney.com/GetPic.aspx?nid=100.DJIA&amp;imageType=r&amp;token=28dfeb41d35cc81d84b4664d7c23c49f\" style=\"border: #d1d1d1 1px solid;\" width=\"579\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.NDX\" target=\"_blank\"><img alt=\"R? NDX_0\" border=\"0\" height=\"277\" src=\"https://webquotepic.eastmoney.com/GetPic.aspx?nid=100.NDX&amp;imageType=r&amp;token=28dfeb41d35cc81d84b4664d7c23c49f\" style=\"border: #d1d1d1 1px solid;\" width=\"579\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.SPX\" target=\"_blank\"><img alt=\"R? SPX_0\" border=\"0\" height=\"277\" src=\"https://webquotepic.eastmoney.com/GetPic.aspx?nid=100.SPX&amp;imageType=r&amp;token=28dfeb41d35cc81d84b4664d7c23c49f\" style=\"border: #d1d1d1 1px solid;\" width=\"579\" /></a></p><!-- EM_StockImg_End --><p>　　美东时间周四，道琼斯指数跌0.04%，标普500指数涨0.22%，<span id=\"stock_105.NDAQ\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.NDAQ\">纳斯达克</a></span><span id=\"quote_105.NDAQ\"></span>综合指数涨0.59%。<span id=\"stock_105.TSLA\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.TSLA\">特斯拉</a></span><span id=\"quote_105.TSLA\"></span>涨2%，因其第三季度交付量超出市场预期；美股<span id=\"bk_90.BK1036\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1036\">半导体</a></span><span id=\"bkquote_90.BK1036\"></span>板块走强，<span id=\"stock_105.ASML\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.ASML\">阿斯麦</a></span><span id=\"quote_105.ASML\"></span>涨3.45%，<span id=\"stock_105.NVDA\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.NVDA\">英伟达</a></span><span id=\"quote_105.NVDA\"></span>涨1.50%。</p><p style=\"text-align: center;\"><a href=\"https://acttg.eastmoney.com/pub/xxlout_khmbdfcfappnew_random_0007467a\"><img class=\"em_handle_adv_close\" src=\"https://np-newspic.dfcfw.com/download/D25753173264126031117_w690h389.jpg\" /></a></p><h3 class=\"emh3\">　　全球要闻</h3><p>　　<a href=\"http://finance.eastmoney.com/a/202510023528103972.html\"><strong>存储巨头狂欢持续！与OpenAI达成合作后 三星、SK海力士股价飙升</strong></a></p><p>　　周四，韩国<span id=\"bk_90.BK1137\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1137\">存储芯片</a></span><span id=\"bkquote_90.BK1137\"></span>巨头三星电子和SK海力士股价飙升，此前一天，这两家公司与<span id=\"bk_90.BK0800\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0800\">人工智能</a></span><span id=\"bkquote_90.BK0800\"></span>（AI）领军企业、ChatGPT开发者OpenAI达成合作，为“星际之门”（Stargate）项目提供芯片及其它解决方案。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510023528159174.html\"><strong>什么信号？科技高管警告“AI模型无法突破”，华尔街大佬直言崩盘避无可避！</strong></a></p><p>　　财联社10月2日讯 随着科技巨头相继“砸重金”投资<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0800\">人工智能</span>（AI），有关“AI泡沫”的警告声也愈发响亮。投资者们担心，AI估值过高，以及海量投资能否在预期时间内取得回报等问题。一位顶级科技行业高管最新警告称，OpenAI等实验室目前开发的<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0800\">人工智能</span>模型不太可能带来重大的科学突破，这又给围绕该技术的一些炒作和该领域主要人物的说法泼了一盆冷水，例如OpenAI首席执行官萨姆·奥尔特曼（Sam Altman）和Anthropic首席执行官Dario Amodei。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510023528088642.html\"><strong>美国政府“停摆”首日 参院再度否决临时拨款法案</strong></a></p><p>　　新华社华盛顿10月1日电 美国国会参议院1日否决共和党提出的一项临时拨款法案，使得迅速结束联邦政府“停摆”状态的希望破灭。当天上午举行的表决中，只有3名民主党籍参议员支持共和党提出将联邦政府资金延长至11月底的临时拨款法案，赞成票共计55票，未能达到通过所需的60票。</p><p>　　<a href=\"http://global.eastmoney.com/a/202510023528149981.html\"><strong>黄金还将继续闪耀？高盛：这类投资者正大举加仓，涨幅或超预测！</strong></a></p><p>　　周四，黄金价格在每盎司3,865美元附近交投，延续了五天的上涨态势，期间多次创下新高，并向4000美元的里程碑又迈进了一步。此次金价上涨的主要原因是，美国政府关门加剧了人们对财政的担忧，并给美元带来了压力。</p><p>　　<a href=\"http://stock.eastmoney.com/a/202510023528121729.html\"><strong>10月降息概率升至100%！华尔街：政府关门或令美联储偏向宽松</strong></a></p><p>　　当地时间周三午夜，美国政府时隔七年再度关门，这无疑给美国经济和金融市场带来了更多不确定性。在华尔街分析师看来，政府关门可能会进一步巩固美联储10月降息预期。他们表示，尤其是在美国政府关门僵局持续数天以上的情况下，美联储主席鲍威尔及其同僚可能会偏向于采取宽松货币政策。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510023528075681.html\"><strong>纽约州拒掏钱 自由女神像火炬或因政府停摆而“熄火”</strong></a></p><p>　　美国纽约州州长凯西·霍楚尔办公室当地时间10月1日发言人表示，纽约州不会像此前政府停摆时那样，承担自由女神像的开放运营费用。州长称这次自由女神像火炬可能会“彻底熄灭”。霍楚尔提到，纽约州已有超过10万名联邦工作人员被迫休假或面临休假风险，其中包括数十名在自由女神像工作的工作人员。目前，尚不清楚自由女神像是否会关闭以及何时关闭。",
+      "source": {
+        "title": "东方财富Choice数据"
+      },
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        13,
+        30,
+        0,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "全球市场：道指、标普刷新纪录高位 英特尔涨超7%、美光涨超8% 金价续创新高",
+      "link": "http://stock.eastmoney.com/news/11784,202510023528072036.html",
+      "published": "Thu, 02 Oct 2025 05:59:42 +0800",
+      "summary": "<p style=\"text-align: center;\"> <img src=\"https://np-newspic.dfcfw.com/download/D2EE8E5EAD3BBDF8295BBC20A24884CACF_w750h1630.jpg\" /></p><p><span style=\"font-weight: bold;\">　　美股市场：</span>美股三大指数10月01日收盘全线上涨。截止收盘，道琼斯工业平均指数比前一交易日上涨43.21点，收于46441.1点，涨幅为0.09%，创收盘新高；<span id=\"bk_90.BK0879\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0879\">标准普尔</a></span><span id=\"bkquote_90.BK0879\"></span>500种股票指数上涨22.74点，收于6711.2点，涨幅为0.34%，<span>创收盘</span><span>新高</span>；<span id=\"stock_105.NDAQ\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.NDAQ\">纳斯达克</a></span><span id=\"quote_105.NDAQ\"></span>综合指数上涨95.15点，收于22755.16点，涨幅为0.42%。</p><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.DJIA\" target=\"_blank\"><img alt=\"K图 DJIA_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.DJIA&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.SPX\" target=\"_blank\"><img alt=\"K图 SPX_0\" border=\"0\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.SPX&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" /></a></p><!-- EM_StockImg_End --><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.NDX\" target=\"_blank\"><img alt=\"K图 NDX_0\" border=\"0\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.NDX&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" /></a></p><p>　　大型科技股多数上涨，英特尔涨超7%，知情人士消息称，英特尔正就把AMD纳入其工厂客户进行早期阶段的谈判；特斯拉涨超3%，微软、苹果、谷歌、亚马逊涨幅不足1%，Meta跌超2%。减肥药、药品制造商、半导体设备概念涨幅居前，阿斯利康涨近10%，美光科技、礼来涨超8%，默沙东、罗氏涨超7%，辉瑞、诺和诺德涨超6%，阿斯麦涨超3%。邮轮、社交媒体、航空服务跌幅居前，捷蓝航空跌超4%，联合大陆航空跌超3%。</p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/INTC.html\" target=\"_blank\"><img alt=\"K图 INTC_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.INTC&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/TSLA.html\" target=\"_blank\"><img alt=\"K图 TSLA_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.TSLA&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/MU.html\" target=\"_blank\"><img alt=\"K图 MU_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.MU&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/105.NDAQ\">纳斯达克</span>中国金龙指数收涨1.44%，热门中概股普遍上涨，<span id=\"stock_105.BIDU\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.BIDU\">百度</a></span><span id=\"quote_105.BIDU\"></span>、<span id=\"stock_105.VNET\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.VNET\">世纪互联</a></span><span id=\"quote_105.VNET\"></span>涨超4%，<span id=\"stock_105.JD\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.JD\">京东</a></span><span id=\"quote_105.JD\"></span>涨超3%，<span id=\"stock_106.BABA\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.BABA\">阿里巴巴</a></span><span id=\"quote_106.BABA\"></span>涨超2%，<span id=\"stock_105.BILI\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.BILI\">哔哩哔哩</a></span><span id=\"quote_105.BILI\"></span>、<span id=\"stock_106.XPEV\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.XPEV\">小鹏汽车</a></span><span id=\"quote_106.XPEV\"></span>涨超1%。</p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/251.HXC\" target=\"_blank\"><img alt=\"K图 HXC_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=251.HXC&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/BIDU.html\" target=\"_blank\"><img alt=\"K图 BIDU_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.BIDU&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/JD.html\" target=\"_blank\"><img alt=\"K图 JD_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.JD&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p><span style=\"font-weight: bold;\">　　欧股市场：</span>欧洲三大股指10月01日全线上涨。英国伦敦股市《金融时报》100种股票平均价格指数报收于9446.43点，较前一交易日上涨96.0点，涨幅为1.03%；法国巴黎股市CAC40指数报收于7966.95点，较前一交易日上涨71.01点，涨幅为0.9%；德国法兰克福股市DAX指数报收于24113.62点，较前一交易日上涨232.9点，涨幅为0.98%。</p><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.FTSE\" target=\"_blank\"><img alt=\"K图 FTSE_0\" border=\"0\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.FTSE&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" /></a></p><!-- EM_StockImg_End --><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.GDAXI\" target=\"_blank\"><img alt=\"K图 GDAXI_0\" border=\"0\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.GDAXI&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" /></a></p><!-- EM_StockImg_End --><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.FCHI\" target=\"_blank\"><img alt=\"K图 FCHI_0\" border=\"0\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.FCHI&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" /></a></p><p><span style=\"font-weight: bold;\">　　商品市场：</span>国际油价10月01日下跌。截至当天收盘，纽约商品交易所WTI原油期货当月连续合约结算价下跌0.59美元，收于每桶61.78美元，跌幅为0.95%；伦敦布伦特原油期货当月连续合约下跌0.68美元，收于每桶65.35美元，跌幅为1.03%。COMEX黄金期货当月连续合约上涨24.30美元，涨幅0.63%，报3897.5美元/盎司，续创历史新高。</p><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/101.GC00Y\" target=\"_blank\"><img alt=\"K图 GC00Y_0\" border=\"0\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=101.GC00Y&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" /></a></p><!-- EM_StockImg_End --><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/102.CL00Y\" target=\"_blank\"><img alt=\"K图 CL00Y_0\" border=\"0\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=102.CL00Y&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" /></a></p><!-- EM_StockImg_End --><p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/112.B00Y\" target=\"_blank\"><img alt=\"K图 B00Y_0\" border=\"0\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=112.B00Y&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" /></a></p><!-- EM_StockImg_End --><p style=\"text-align: center;\"><a href=\"https://acttg.eastmoney.com/pub/xxlout_khmbdfcfappnew_random_0007467a\"><img class=\"em_handle_adv_close\" src=\"https://np-newspic.dfcfw.com/download/D25753173264126031117_w690h389.jpg\" /></a></p><h3 class=\"emh3\">　　隔夜要闻</h3><p>　　<a href=\"http://finance.eastmoney.com/a/202510013527999057.html\"><strong>为何关门？影响多大？何时结束？一文看懂美政府再“关门”闹剧</strong></a></p><p>　　当地时间10月1日，由于国会参议院在9月30日未能通过共和党和民主党分别提出的临时拨款法案，美国联邦政府在七年后再次关门。数十万联邦雇员不得不面对强制休假或裁员，众多联邦部门的服务也停摆。美政府咋又走到“停摆”这步？</p><p>　　<a href=\"http://stock.eastmoney.com/a/202510023528070098.html\"><strong>美参议院再次先后否决两党提出的临时拨款法案</strong></a><br /></p><p>　　①美国参议院就民主党提出的临时拨款法案进行投票，最终以47票赞成、53票反对的结果，再次未能推动该法案落地；②由于民主党坚持医疗保健方面的要求，参议院针对共和党提出的短期拨款法案的投票未能通过，美政府停摆问题仍未得到解决。</p><p>　　<a href=\"http://stock.eastmoney.com/a/202510023528069968.html\"><strong>美最高法院暂让库克留任 特朗普迅速控权美联储遇挫</strong></a></p><p>　　当地时间周三（10月1日），美国最高法院判决暂时维持美联储理事莉萨·库克（Lisa Cook）的职务，并将该案件的口头辩论安排在2026年1月进行。该裁定意味着在明年1月法官们就此案听取辩论之前，库克可继续留任。分析认为，这对于正在加强控制美联储理事会的美国总统特朗普来说是一次挫折。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510013528058658.html\"><strong>三星、SK海力士将为OpenAI“星际之门”项目提供存储芯片</strong></a></p><p>　　当地时间周三（10月1日），<span id=\"bk_90.BK0800\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0800\">人工智能</a></span><span id=\"bkquote_90.BK0800\"></span>（AI）研究公司OpenAI与韩国芯片巨头三星电子和SK海力士宣布建立合作关系，为“星际之门”（Stargate）项目提供芯片及其他解决方案。在此之前，OpenAI首席执行官萨姆·奥尔特曼在首尔总统府会见了韩国总统李在明，以及三星电子和SK海力士的董事长。</p><p>　　<a href=\"http://stock.eastmoney.com/a/202510023528072378.html\"><strong>英特尔据称洽谈AMD代工合作 力图突围技术落后困境</strong></a></p><p>　　周三（10月1日）美股盘中传出消息，<span id=\"stock_105.INTC\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.INTC\">英特尔</a></span><span id=\"quote_105.INTC\"></span>正处于与AMD（<span id=\"stock_105.AMD\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.AMD\">超威半导体</a></span><span id=\"quote_105.AMD\"></span>）的早期谈判阶段，探讨让AMD成为其晶圆代工客户。这一进展若能成行，将被视为对<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/105.INTC\">英特尔</span>这家陷入困境的芯片制造商的又一次信任投票。受该消息影响，截至收盘，<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/105.INTC\">英特尔</span>股价涨超7%，收于2024年4月以来的最高水平。</p><p style=\"margin: 10px 0; color: #999;\">免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。</p><p class=\"em_media\">（文章来源：<span id=\"stock_0.300059\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300059\">东方财富</a></span><span id=\"quote_0.300059\"></span>研究中心）",
+      "source": {
+        "title": "东方财富研究中心"
+      },
+      "published_parsed": [
+        2025,
+        10,
+        1,
+        21,
+        59,
+        42,
+        2,
+        274,
+        0
+      ]
+    },
+    {
+      "title": "美股三大指数集体收涨 英特尔涨超7%",
+      "link": "http://finance.eastmoney.com/news/1351,202510013528041579.html",
+      "published": "Thu, 02 Oct 2025 04:00:00 +0800",
+      "summary": "<!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.DJIA\" target=\"_blank\"><img alt=\"K图 DJIA_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.DJIA&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.NDX\" target=\"_blank\"><img alt=\"K图 NDX_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.NDX&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/100.SPX\" target=\"_blank\"><img alt=\"K图 SPX_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=100.SPX&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p>　　美东时间周三，美股三大指数集体收涨，截至收盘，道琼斯指数涨0.09%，<span id=\"stock_105.NDAQ\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.NDAQ\">纳斯达克</a></span><span id=\"quote_105.NDAQ\"></span>综合指数涨0.42%，标普500指数涨0.34%。</p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/INTC.html\" target=\"_blank\"><img alt=\"K图 INTC_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.INTC&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/TSLA.html\" target=\"_blank\"><img alt=\"K图 TSLA_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.TSLA&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/MSFT.html\" target=\"_blank\"><img alt=\"K图 MSFT_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.MSFT&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p>　　科技股方面，<span id=\"stock_105.INTC\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.INTC\">英特尔</a></span><span id=\"quote_105.INTC\"></span>涨超7%，<span id=\"stock_105.TSLA\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.TSLA\">特斯拉</a></span><span id=\"quote_105.TSLA\"></span>涨超3%，<span id=\"stock_105.MSFT\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.MSFT\">微软</a></span><span id=\"quote_105.MSFT\"></span>、<span id=\"stock_105.AAPL\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.AAPL\">苹果</a></span><span id=\"quote_105.AAPL\"></span>、谷歌、<span id=\"stock_105.AMZN\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.AMZN\">亚马逊</a></span><span id=\"quote_105.AMZN\"></span>涨幅不足1%，Meta跌超2%。</p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/AZN.html\" target=\"_blank\"><img alt=\"K图 AZN_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.AZN&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/LLY.html\" target=\"_blank\"><img alt=\"K图 LLY_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=106.LLY&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/ASML.html\" target=\"_blank\"><img alt=\"K图 ASML_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.ASML&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p>　　<span id=\"bk_90.BK1146\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1146\">减肥药</a></span><span id=\"bkquote_90.BK1146\"></span>、药品制造商、<span id=\"bk_90.BK1036\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1036\">半导体</a></span><span id=\"bkquote_90.BK1036\"></span>设备概念涨幅居前，阿斯利康涨近10%，<span id=\"stock_106.LLY\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.LLY\">礼来</a></span><span id=\"quote_106.LLY\"></span>涨超8%，<span id=\"stock_106.MRK\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.MRK\">默沙东</a></span><span id=\"quote_106.MRK\"></span>、罗氏涨超7%，<span id=\"stock_106.PFE\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.PFE\">辉瑞</a></span><span id=\"quote_106.PFE\"></span>、<span id=\"stock_106.NVO\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.NVO\">诺和诺德</a></span><span id=\"quote_106.NVO\"></span>涨超6%，<span id=\"stock_105.ASML\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.ASML\">阿斯麦</a></span><span id=\"quote_105.ASML\"></span>涨超3%。</p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/JBLU.html\" target=\"_blank\"><img alt=\"K图 JBLU_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.JBLU&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/UAL.html\" target=\"_blank\"><img alt=\"K图 UAL_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.UAL&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p>　　邮轮、社交媒体、航空服务跌幅居前，<span id=\"stock_105.JBLU\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.JBLU\">捷蓝航空</a></span><span id=\"quote_105.JBLU\"></span>跌超4%，联合大陆航空跌超3%。</p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/unify/r/251.HXC\" target=\"_blank\"><img alt=\"K图 HXC_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=251.HXC&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/BIDU.html\" target=\"_blank\"><img alt=\"K图 BIDU_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.BIDU&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.com/us/VNET.html\" target=\"_blank\"><img alt=\"K图 VNET_0\" border=\"0\" height=\"276\" src=\"https://webquoteklinepic.eastmoney.com/GetPic.aspx?nid=105.VNET&amp;imageType=k&amp;token=28dfeb41d35cc81d84b4664d7c23c49f&amp;at=1\" style=\"border: #d1d1d1 1px solid;\" width=\"578\" /></a></p><!-- EM_StockImg_End --><p>　　<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/105.NDAQ\">纳斯达克</span>中国金龙指数收涨1.44%，热门中概股普遍上涨，<span id=\"stock_105.BIDU\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.BIDU\">百度</a></span><span id=\"quote_105.BIDU\"></span>、<span id=\"stock_105.VNET\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.VNET\">世纪互联</a></span><span id=\"quote_105.VNET\"></span>涨超4%，<span id=\"stock_105.JD\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.JD\">京东</a></span><span id=\"quote_105.JD\"></span>涨超3%，<span id=\"stock_106.BABA\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.BABA\">阿里巴巴</a></span><span id=\"quote_106.BABA\"></span>涨超2%，<span id=\"stock_105.BILI\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.BILI\">哔哩哔哩</a></span><span id=\"quote_105.BILI\"></span>、<span id=\"stock_106.XPEV\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.XPEV\">小鹏汽车</a></span><span id=\"quote_106.XPEV\"></span>涨超1%。</p><p style=\"text-align: center;\"><a href=\"https://acttg.eastmoney.com/pub/xxlout_khmbdfcfappnew_random_0007467a\"><img class=\"em_handle_adv_close\" src=\"https://np-newspic.dfcfw.com/download/D25753173264126031117_w690h389.jpg\" /></a></p><h3 class=\"emh3\">　　全球要闻</h3><p>　　<a href=\"http://stock.eastmoney.com/a/202510013527994050.html\"><strong>近7年来首次 美国联邦政府正式“关门”</strong></a></p><p>　　由于美国会参议院9月30日先后否决两党拨款法案，当地时间10月1日0时1分，美国联邦政府近7年以来再次关门，数十万联邦雇员不得不面临强制休假或被裁员，众多联邦部门的服务也“停摆”。当地时间30日晚，白宫管理和预算办公室（OMB）主任沃特发布备忘录，指示各政府机构开始执行其“有序停摆”的预案。不受影响的部门包括军方、联邦调查局和国土安全部等执法部门、联邦航空管理局和邮政局等。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510013528038260.html\"><strong>美国9月ADP就业人数减少3.2万人</strong></a></p><p>　　美国9月ADP就业人数减少3.2万人，预期增加5.1万人，前值5.4万人。美国9月ADP就业数据公布后，交易员提高对年内美联储进一步降息两次的押注。</p><p>　　<a href=\"http://biz.eastmoney.com/a/202510013527993494.html\"><strong>更精准更可控 Sora 2来了！OpenAI：迈入视频领域的“GPT-3.5时刻”</strong></a><br /></p><p>　　时隔一年，Sora 2凌晨“炸场”。当地时间9月30日，<span id=\"bk_90.BK0800\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0800\">人工智能</a></span><span id=\"bkquote_90.BK0800\"></span>（AI）巨头OpenAI正式发布最新旗舰视频与音频生成模型Sora 2。在发布会的一开始，就播出了一段全部由Sora 2生成的视频，OpenAI CEO山姆·奥特曼和Sora负责人比尔·皮布尔斯（William Peebles，又名Bill）都被模型生成出来进行新功能的介绍。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510013528002844.html\"><strong>美国政府大动作！特朗普盯上锂矿巨头</strong></a></p><p>　　特朗普盯上锂矿巨头。美东时间周二（9月30日），<span id=\"stock_105.USEG\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/105.USEG\">美国能源</a></span><span id=\"quote_105.USEG\"></span>部长克里斯·赖特（Chris Wright）表示，美国政府将持有加拿大矿业巨头美洲锂业（Lithium Americas）少量股份。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510013527972063.html\"><strong>首家日资独资券商来了：瑞穗证券获批设立</strong></a></p><p>　　又一家外资独资券商来了。9月30日，证监会发布批复，核准设立瑞穗<span id=\"bk_90.BK0473\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0473\">证券</a></span><span id=\"bkquote_90.BK0473\"></span>（中国）有限公司（下称“瑞穗<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0473\">证券</span>（中国）”）。瑞穗<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/90.BK0473\">证券</span>注册地为北京市，注册资本为人民币23亿元，业务范围为证券承销、证券自营、证券资产管理（限于从事资产证券化业务），由瑞穗证券株式会社100%持股。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510013528002541.html\"><strong>韩国举行大规模阅兵式 李在明：将大幅提高军费 收回作战指挥权</strong></a></p><p>　　据韩联社报道，10月1日，韩国国防部在忠清南道鸡龙台举行仪式，纪念建军77周年。韩国总统李在明出席，乘车检阅仪仗队和武器。当天，100多件武器亮相阅兵式，包括机器狗、<span id=\"bk_90.BK0704\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0704\">无人机</a></span><span id=\"bkquote_90.BK0704\"></span>、K9自行火炮、K2坦克、“天弓”-2防空导弹、L-SAM防空系统，以及“玄武-5”导弹。其中，“玄武-5”导弹弹头重8吨，有强大的钻地能力。</p><p>　　<a href=\"http://stock.eastmoney.com/a/202509303527750612.html\"><strong>辉瑞与美国政府达成药品定价协议 使美国药价与其他发达国家看齐</strong></a></p><p>　　多方消息指出，<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/106.PFE\">辉瑞</span>CEO艾伯乐将在周二晚些时候到访白宫，与特朗普一同宣布药品定价政策和700亿美元的本土投资计划。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510013527805915.html\"><strong>巴菲特再续化工梦？据称伯克希尔拟收购西方石油子公司</strong></a></p><p>　　周二（9月30日）美股尾盘传出消息，“股神”沃伦·巴菲特旗下伯克希尔-哈撒韦公司正与<span id=\"stock_106.OXY\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.OXY\">西方石油</a></span><span id=\"quote_106.OXY\"></span>公司商谈，计划以约100亿美元收购其石化业务子公司OxyChem。OxyChem主要供应那些应用于医疗保健、<span id=\"bk_90.BK0614\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0614\">食品安全</a></span><span id=\"bkquote_90.BK0614\"></span>和建筑领域的化工产品。上周末就有消息传出，<span class=\"em_stock_key_common\" href=\"http://quote.eastmoney.com/unify/r/106.OXY\">西方石油</span>正洽谈出售OxyChem——这也延续这家能源公司近年来持续剥离资产的举措。</p><p>　　<a href=\"http://stock.eastmoney.com/a/202510013527986774.html\"><strong>反驳激进鸽派？美联储柯林斯：大幅降息存在风险</strong></a></p><p>　　美国波士顿联储主席苏珊·柯林斯周二表示，她对货币政策的展望与央行最新预估中显示的渐进式宽松路径一致。她认为大幅降息存在风险。作为今年联邦公开市场委员会（FOMC）的票委，柯林斯在接受采访时表示，避免快速降息的原因在于通胀构成的持续威胁，即使在就业市场出现疲软迹象的情况下也是如此。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510013527976411.html\"><strong>特朗普的“20点计划” 为何难以带来“中东永久和平”？</strong></a></p><p>　　据新华社报道，美国总统特朗普9月29日在白宫与以色列总理内塔尼亚胡会谈后宣布，内塔尼亚胡已同意美方就结束加沙冲突提出的“20点计划”。巴勒斯坦伊斯兰抵抗运动（哈马斯）消息人士说，该组织已经由斡旋方收到上述方案，认真研究后将作出答复。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510013527977884.html\"><strong>再遭美国“致命性打击” 印度回归“多元外交”寻求破局</strong></a></p><p>　　在美国和印度刚刚宣布重启陷入僵局的贸易谈判之时，印度又遭到了美国新一波的打击。据报道，依据美国对印度运营的伊朗恰巴哈尔港的最新决定，9月29日起，在该港口工作或从事相关活动的印度个人与企业可能面临制裁。这使得这座印度第一个海外港口项目、乃至印度规划中的“南北走廊”互联互通计划都面临着更不确定的未来。</p><p>　　<a href=\"http://finance.eastmoney.com/a/202510013527783592.html\"><strong>福特CEO预言：补贴退场后 美国纯电动汽车市占率或腰斩</strong></a></p><p>　　美国<span id=\"stock_106.F\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/106.F\">福特汽车</a></span><span id=\"quote_106.F\"></span>首席执行官吉姆·法利（Jim Farley）最新表示，他预计自本周三电动汽车税收抵免结束后， 10月份纯电动汽车的需求将减少一半。当地时间周二（9月30日），法利在底特律一场福特活动中说：“我认为这仍将是一个充满活力的行业，但规模会比我们想象的小得多，尤其是在尾气排放政策变化、再加上7500美元的消费者补贴取消之后。”",
+      "source": {
+        "title": "东方财富Choice数据"
+      },
+      "published_parsed": [
+        2025,
+        10,
+        1,
+        20,
+        0,
+        0,
+        2,
+        274,
+        0
+      ]
+    },
+    {
+      "title": "12天超长“拼好假”，黄金周的钱都进了谁的口袋？",
+      "link": "https://36kr.com/p/3490215871699844?f=rss",
+      "published": "2025-10-01 13:51:52  +0800",
+      "summary": "<blockquote>\n   <p>“透视图”是36氪新推出的轻量化数据图文栏目——以数据透视趋势，以图片呈现要点。</p>\n   <p>\"Talk is Cheap. Show me the data.\"</p>\n  </blockquote>\n  <p><strong>作者丨谢芸子</strong></p>\n  <p>国庆始终是观察消费变迁的重要窗口，今年超长黄金周的到来，将创各项出行指标的新高。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20251001/v2_0bec9322320f4e6580e2c7a2c07290d7@1200352198_oswg229378oswg1200oswg1600_img_png?x-oss-process=image/quality,q_100/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">36氪制图</p>\n  <p>交通运输部预测，2025年国庆中秋假期期间（9月29日至10月10日），全国铁路预计发送旅客约‌2.19亿人次‌，较去年同期增长7.5%；民航预计执行客运航班总量13.9万班次，日均同比增长5.7%。多个旅游平台也显示，今年假期出游的人数同比大幅增长，旅游和消费或将进入全面的高峰期。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20251001/v2_a7abee41ee524fb99724bbe894688eba@1200352198_oswg183594oswg1200oswg1601_img_png?x-oss-process=image/quality,q_100/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">36氪制图</p>\n  <p>反映在资本市场上，9月以来，旅游股的表现呈分化趋势。再从各大企业上半年的财报表现看，无论是市值还是归母净利润，携程集团都断崖式领先。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20251001/v2_d36ac59c8b6245abaa28110d0d8dc7e8@1200352198_oswg226178oswg1201oswg1601_img_png?x-oss-process=image/quality,q_100/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">36氪制图</p>\n  <p>大营收体量的航空公司，则因宏观环境、成本波动等原因，普遍处于亏损状态。或也因此，今年黄金周，航空公司放弃“机票内卷”，消费者也普遍抱怨机票的价格上涨，选位费偏高。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20251001/v2_04f82d588d9740c48850544d301a6d94@1200352198_oswg209368oswg1201oswg1601_img_png?x-oss-process=image/quality,q_100/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">36氪制图</p>\n  <p>此外值得注意的是，除携程、中国中免、华住等头部企业，众多中小酒店、旅行社及景区，处于长期微利甚至亏损的状态。从这一层面看，整个旅游产业链的利润，更多集中在携程一身。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20251001/v2_8f880eeb957745dcb50bb6ca59c037ee@1200352198_oswg218896oswg1201oswg1601_img_png?x-oss-process=image/quality,q_100/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">36氪制图</p>\n  <p>或也因此，京东盯上了OTA这块肥肉。今年6月，刘强东明确表示，“任何一家平台企业利润太高时，上游、下游利润也在跟着减少，整个产业不会好。”同时，京东宣布对商家推出“0佣金政策”。随即，抖音也自10月1日起，实施酒店扫码免佣的策略。</p>\n  <p>实际上，OTA的参与者众多，但还没有谁能真正撼动携程集团的地位。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20251001/v2_4d1ff453dd0340578c43dfecc224e24f@1200352198_oswg301401oswg1201oswg1601_img_png?x-oss-process=image/quality,q_100/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">36氪制图</p>\n  <p>QuestMobile数据显示，2022年10月，携程与去哪儿的月活用户数是其他旅游平台的数倍至数十倍。时至2024年10月，这一差距还在加大。今年1月，携程也宣布投入超亿元的资源帮商家减负。相信在未来，OTA行业会呈现“多平台比价”的态势。至少在一段时期内，产业链的利益会向下游的中小企业倾斜。</p>",
+      "source": {
+        "title": "36氪"
+      },
+      "published_parsed": [
+        2025,
+        10,
+        1,
+        5,
+        51,
+        52,
+        2,
+        274,
+        0
+      ]
+    },
+    {
+      "title": "用AI改造传统出行，这家公司推出万元级智能三轮车 | 涌现NewThings",
+      "link": "https://36kr.com/p/3489786463214721?f=rss",
+      "published": "2025-10-01 09:00:00  +0800",
+      "summary": "<p><strong>文｜富充</strong></p>\n  <p><strong>编辑｜苏建勋</strong></p>\n  <p>当下，电动三轮车仍被普遍视为一种“并不酷”的代步工具。但一个名为“极巡”的品牌，正在为其加上“AI大脑”，让这个传统交通工具拥有更多可能。</p>\n  <p>近日，极巡首次公开展示了其样车以及产品所包括的多项创新技术。</p>\n  <p>这款样车外形小巧，相比四轮车更易通过狭窄空间。其整体驾驶体验接近智能驾驶汽车，具备自动跟车、辅助变道、自动紧急制动、车道偏离预警、盲区监测等自适应巡航功能。</p>\n  <p>同时，极巡电动三轮车的智能座舱提供包括交互娱乐、健康监测、环境控制在内的多项功能，车内与手机间可以实现导航、音乐、视频通话的流转。</p>\n  <p>智能座舱还能够像“驾驶助理”一样自动为用户调节零重力座椅、温度、推送新闻播报，及充电桩位置等个性化信息。</p>\n  <p>方向盘内嵌入的高灵敏度生物传感器，配合AI模型还可以实时分析司机心率、方向盘握持状况，并在异常时发出安全提醒。</p>\n  <p>关于“是否有必要上这么多智能功能”这一问题，极巡品牌总裁张占生解释，新增能力均来自前期用户调研的刚需场景。</p>\n  <p>在产品研发流程开始之前，极巡团队花费近9个月时间，在全国20多个城市进行用户反馈收集，包括线上、线下及实体多场景调研采集。</p>\n  <p>张占生在汽车行业已有16年工作经验，曾任职奇瑞汽车、吉利、沃尔沃等头部公司，筹建8个汽车生产主机厂项目建设落地。</p>\n  <p>汽车智驾技术带来的市场机遇，是他选择切入三轮车行业的理由。</p>\n  <p>“极巡智能三轮车的护城河主要包括两个方面，一是基于对蓝海市场先机的占据；二是基于7项创新技术的汽车级智能网联系统，这是三轮车具备智能性的技术基础。”张占生如此总结。</p>\n  <p>从技术而言，极巡的智能体验由车载“中央大脑”统筹完成。它汇集车内外多模态数据（摄像头、雷达、生物传感、车流与交通信号等），生成统一的“环境感知＋用户状态”模型。</p>\n  <p>结合机器学习、深度学习与实时决策后，“中央大脑”能够动态协调辅助驾驶、动力等车内外子系统。</p>\n  <p>基于历史数据与用户行为的学习，模型和算法还会持续优化智能服务，更懂车主的个性化需求。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20251001/v2_17e512c2fbac415289692d88fd11db16@6227116_oswg253646oswg1280oswg960_img_jpeg?x-oss-process=image/quality,q_100/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">极巡发布的样车，更节省停放面积，可通过狭窄路段，图片：品牌提供</p>\n  <p>未来，极巡的目标是形成智能三轮车矩阵。</p>\n  <p>根据规划，极巡将于2026年推出至少35款覆盖不同价位的智能三轮车，通过在产品中选配、组合应用AI和智驾技术，提供多元化产品。</p>\n  <p>规划中的35款产品从形态上分为全篷与软篷两大类，采用赛车、复古等多种风格的外观设计覆盖不同人群的审美偏好。其智能座舱可根据车型配置，支持1至4人乘坐。</p>\n  <p>产品发布将分步推进：打头阵的是定于2026年2月推出的两款新产品，它们将主要搭载基础的智能网联功能。</p>\n  <p>此后，品牌还计划在同年推出搭载智能辅助驾驶、智能座舱等汽车级配置的车型，在三轮车的智能体验与安全标准方面进行提升。</p>\n  <p>除了专注日常出行领域，极巡也在拓展商用场景，计划推出装配翻斗的专用车型，以服务于货运物流等行业。</p>\n  <p>极巡透露，大部分产品价格将控制在万元以内。</p>\n  <p>极巡All In三轮车的背后逻辑，在于主流的两轮和四轮交通工具仍未能覆盖全部出行需求：两轮车“怕风雨与负载差”，四轮则“买养用停都贵”。</p>\n  <p>三轮车相较二轮车更具安全性及载运能力，比起四轮车则更轻便、成本低。极巡智能三轮车采用摩托车牌照，也避开了大城市上车牌难的问题。</p>\n  <p>“目前智能驾驶汽车领域已相当拥挤，很难再开拓新的机遇。三轮车产品在基础安全升级，智能化探索方面，发展缓慢，高阶功能的研发明显滞后，没有形成产品大规模智能化的趋势。而缺失的这一环，将存在巨大的市场。”张占生分析。</p>\n  <p>电动三轮车的市场同时包括国内与海外。智研咨询数据显示，2017至2022年，我国电动三轮车市场规模由257.24亿元增至398.27亿元。</p>\n  <p>该品类过去以老年用户为主，随着更重视外观与材质工艺的新一代产品推出，年轻消费人群开始进入。</p>\n  <p>2024年12月，一则“00后在美国卖三蹦子三个月盈利100万元”的新闻登上热搜，“性价比高、实用、可上路”的电动三轮车也吸引着海外用户的关注。</p>\n  <p>张占生透露，极巡也在出海方面进行拓展。为满足海外用户需求，极巡可以提供定制化服务。</p>\n  <p>例如，面向中东快递物流客户的需求，极巡的智能三轮车也可以改造成油车，并采用当地客户偏爱的金色外观。</p>\n  <p>避开了竞争激烈的四轮赛道，也弥补了两轮车的功能短板，极巡在用AI智能为三轮车品类寻找更多解法。</p>",
+      "source": {
+        "title": "36氪"
+      },
+      "published_parsed": [
+        2025,
+        10,
+        1,
+        1,
+        0,
+        0,
+        2,
+        274,
+        0
+      ]
+    },
+    {
+      "title": "30岁博彦科技「加码」新加坡，以AI与开放生态重塑全球化叙事",
+      "link": "https://36kr.com/p/3488831057828745?f=rss",
+      "published": "2025-09-30 21:40:00  +0800",
+      "summary": "<p>9月18日，新加坡的空气中弥漫着热带的湿润。一家来自中国的科技服务公司——博彦科技，选择在这里为其三十年的征程，再次开启一个崭新的篇章。在这场以“让全球市场触手可及（Global Reach Within Your Grasp）”为主题的论坛上，博彦科技对外宣布了两件大事：正式启动其“新加坡创新中心”，并公布了全新的海外投资战略。这并非是一次寻常的海外业务扩张，放在更宏大的时空背景下——今年恰逢博彦科技成立三十周年，其新加坡分公司也恰好走过了十年历程——这更像是一场精心设计的战略“落子”，棋盘之上，是全球化与人工智能交织的未来三十年。</p>\n  <p>博彦科技创始人兼董事长王斌在开场致辞中明确指出，未来企业的竞争力不仅源于技术的突破，更在于与合作伙伴共同构建开放共赢的生态体系。这预示着一个深刻的变革——这家曾通过服务多家全球500强巨头而成长起来的公司，正逐步进化为一个创新生态的构建者。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250930/v2_83bfa1a3cf144a87a1527a2a6c94dbac@577536001_oswg540131oswg830oswg554_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">博彦科技创始人兼董事长王斌</p>\n  <p>在发布会现场，博彦科技与美锦能源、文华在线和百胜软件等三家企业正式签署MOU，全面深化战略合作，这进一步佐证了博彦科技在构建共赢生态体系的决心，为后续发展提供了良好的开端。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250930/v2_d522483fdd7f4909b17168541bf61dda@577536001_oswg594477oswg830oswg554_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">博彦科技与美锦能源签署协议</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250930/v2_01d5d13d95904d03bdca97079f1a46a5@577536001_oswg565738oswg830oswg554_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">博彦科技与文华在线签署协议</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250930/v2_cf859d629a5f45fd94c2d46379eaa773@577536001_oswg595645oswg828oswg552_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">博彦科技与百胜软件签署协议</p>\n  <p>本次发布会的圆桌论坛主持人、36氪CEO冯大刚在现场的观察，也为这一变革提供了解释。他提到，当下的中国企业出海，正面临一个微妙的悖论：“机会非常好，但是难度突然变得更大了”。这并非难以解决的矛盾，而是中国企业的全球化叙事进入新一阶段的真实写照。当单纯的产品出海、模式复制已不足以应对一个日益割裂和复杂的全球市场时，一种全新的、基于生态的全球化范式便应运而生。博彦科技决定在新加坡迈出战略性的一步，正是对如今这个时代浪潮的一次关键回应。</p>\n  <h2><strong>为什么是新加坡？</strong></h2>\n  <p>博彦科技的出海选择并非偶然。在全球地缘政治日益复杂、信任成为稀缺资源的今天，出海的第一步，选择从哪里出发，几乎定义了你将去往何方。</p>\n  <p>王斌在采访中解释了选择新加坡的深层考量：“新加坡的好处在于，它相对中立，法制比较健全，大家觉得它是管得很严的一个地方。所以你从这个地方出来的产品，再到国际上去的话，大家的信任度会有一个加分。”</p>\n  <p>这种“信任加分”，在全球企业愈发重视数据合规、本地生态建设的当下，显得尤为珍贵。它不仅仅是一个市场准入的优势，更是一个身份的“转换器”。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250930/v2_90020cb7cdf841a1ac232291221626dc@577536001_oswg549840oswg830oswg554_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">出海论坛：中国企业出海的路径探索与投资机遇</p>\n  <p>圆桌嘉宾、DayDayUp创始人兼CEO薄益群进一步阐述道：“千万不要仅仅把新加坡看成是一个销售市场，它是一个窗口，能够帮助所有企业打开国际市场。”他指出，在过去十年，新加坡连续被评为跨国企业亚太总部的首选城市，同时，这里注册了超过1200家创投机构，是东南亚三分之二以上VC投资交易的发生地，堪称名副其实的国际资本与商业枢纽。</p>\n  <p>这个“转换器”的深层价值，或许也可以从冯大刚在现场提出的一个尖锐问题中得到体现——一个习惯了国内“一将功成万骨枯”式竞争的企业，如何在海外转变成一个能够共赢的生态伙伴？这个问题直指中国企业出海最艰难的挑战——价值观的迭代。而新加坡，以其高度国际化和规则化的商业环境，正是在文化和价值观上起到“转换”与“规训”作用的关键节点。它让出海企业深刻意识到，在东南亚这样碎片化的市场，“一招打全域”的方法肯定行不通，必须“一国一策”，与行业领导者共创互通互联��商业环境，并与本地的政府、科研机构、大学以及社区产生深度捆绑，才能快速融入本地市场。</p>\n  <p>正因如此，博彦科技新加坡创新中心的使命被清晰地定义为“连接”。王斌强调，这个中心的核心任务不是生产代码或销售产品，而是“连接好的产品技术、连接本地的资源，以及未来连接投资和资本”。</p>\n  <p>有趣的是，博彦科技为这个创新中心设定了极不寻常的成功衡量标准。“财务指标不是我们第一考量的因素，”王斌坦言，“而是你做出来的产品到底有多少人使用，因为你被需要和被使用，就能证明你的价值。”他坚信，如果过早地用KPI去考核收入，很可能会在打磨阶段就把一个极具潜力的创新“给搞坏了”。这种对价值的重新定义，本身就宣告了一种与传统商业逻辑不同的、更着眼于长远的生态思维。</p>\n  <h2><strong>从“AI驱动”到“AI赋能”</strong></h2>\n  <p>如果将新加坡视为企业在新全球化战役中的“基地”，那么，驱动这场战役的“引擎”就是AI能力。然而，如何正确地使用这个引擎，已经成为当下全球企业面临的普遍困惑。</p>\n  <p>美国东北大学达摩·麦金商学院唐顿家族院长David De Cremer教授在下午场的主题演讲中，一针见血地指出了问题的核心。他剖析了当前企业界普遍存在的认知误区——将AI视为公司的战略本身，而非实现战略的工具。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250930/v2_4ee51c891f4e4c6f8a72f6091b52610c@577536001_oswg403286oswg830oswg554_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">美国东北大学达摩·麦金商学院唐顿家族院长David De Cremer教授</p>\n  <p>“AI绝不能等同于企业的战略，就像锤子不是战略一样。如果你手里只有锤子，看什么都像钉子，觉得锤子能解决所有问题。”David教授强调，“现在很多商界人士，对AI了解不足，也犯了同样的错误，把AI当成‘万能解决方案’，宣传我们公司是‘AI驱动型公司’。”他甚至举了一个生动的例子：“我今天早上看到新加坡在卖带有AI的牙刷。我的第一个问题是，我为什么需要它？”</p>\n  <p>这种“AI驱动”的迷思，导致了“灾难性”的后果。David教授引用数据指出，绝大多数商业领袖在批准了AI项目的预算后便“退缩”了，将主导权完全交给IT部门，导致项目沦为纯技术演练。最终的结果是，高达80%的AI项目因无法扩展而失败，而麻省理工学院的一项研究更显示，95%的公司未能从其AI项目中获得任何利润。这些项目大多只是孤立的试点，负责人根本不清楚为什么要在那些场景使用AI，整个项目本身就缺乏意义。</p>\n  <p>真正的出路在于“AI赋能”。这意味着，AI必须服务于一个清晰的商业目标，并被整合进组织的业务流程与转型中。这恰好与王斌在演讲中反复强调的理念不谋而合：“用AI去跟各行各业的朋友们一起做深度的融合，应该是博彦科技未来一个很重要的发展方向。”</p>\n  <p>事实上，博彦科技的海外投资战略，正是“AI赋能”理念的成功实践样本。博彦科技海外投资负责人（顾问）孙东霞在发布会上明确了其投资定位：“成为品牌出海的一个护航者。”在这个合作模式中，品牌负责在前方开疆扩土，而博彦科技则提供那个至关重要的“技术底座”，底座的核心就是数字化与AI能力。其具体的“三步走”战略也十分清晰：第一步“树标杆”，打造可复制的案例；第二步“建生态”，建立共享式服务体系；第三步“扩战果”，成立全球化基金，扩大投资规模。</p>\n  <p>新锐潮流咖啡品牌“拉环咖啡”的战略合作案例，生动地展示了这种“护航”如何运作。作为一个成立仅三年就在国内开出超过500家门店的品牌，“拉环咖啡”的核心优势在于其差异化定位和快速复制的能力。博彦科技与其战略合作是全方位的，孙东霞介绍，博彦科技不仅助力其完成了海外首轮战略融资，还在帮助他们做数据中台与AI化的核心模块。在发布会现场，拉环咖啡的代表分享了更具体的细节：团队正致力于将互联网公司那套打法应用到全球化中，而博彦科技的AI技术将在其中扮演关键角色。</p>\n  <p>这套智能IT系统将覆盖前、中、后台。前台，通过AI用户画像做精准营销；中台，打通全球各渠道数据，建立统一的会员系统；后台，解决至关重要的全球化合规与供应链管理问题。根据测算，一套智能化的供应链系统，能精准地控制门店损耗与存货，预计可为一个海外门店降低20%-30%的成本。这为品牌在陌生的海外市场高速扩张，注入了最宝贵的“确定性”。</p>\n  <p>这种构建深度合作生态的思路，在未来可能变得愈发重要。正如冯大刚在讨论中的大胆推测，未来由于地缘政治的影响，很可能“每个国家都会有自己的大模型”。在这个日益碎片化的全球AI版图中，单点式的技术输出将难以为继，只有深度绑定、共同成长的生态模式，才能真正穿越周期。</p>\n  <h2><strong>AI时代，如何定义人的价值？</strong></h2>\n  <p>当AI的能力边界以前所未有的速度扩张时，一个更深刻的问题摆在了所有人面前：人的价值是什么？</p>\n  <p>回顾30年征程，王斌给出的第一个关键词便是“人”。但人的价值在AI时代正面临严峻的挑战。David De Cremer教授对此也发出了警告，他观察到，AI正在快速消除会计、法律等行业的入门级岗位。如果企业为了短期效率而放弃对年轻人的培养，那么当现在40-50岁、经验丰富的中坚力量退休后，组织内部将出现后继无人的“经验断层”。他将此命名为“自动化导致的死亡”（death by automation）。</p>\n  <p>“我们将会需要AI代理人，而我们将是创造了它们（并最终被其取代）的人。”David教授强调，未来的核心人才竞争力，将不再是单一的技术能力，而是批判性思维、情商、跨文化沟通能力和整合性思维等软技能。大学教育需要从纯粹的知识传授，转向技能与工作经验相结合的模式。</p>\n  <p>这与王斌在三十年创业历程中沉淀出的人才哲学形成了默契的共振。对于如何培养全球化人才，王斌的看法极其务实，在当前的市场环境下，人才培养需要和实战经验结合，才能更好地促进企业增长。</p>\n  <p>他在采访中直言，“我们更强调的，是用事件、用任务、用目标去驱动。”换句话说，这是一种在游泳中学会游泳的实战哲学。同时，博彦科技高级副总裁陈超在圆桌中也分享了具体的管理实践：在全球化管理中，必须真正做到本地化，核心团队由本地人组成，总部提供战略和资源支持，最忌讳的就是“遥控指挥”。</p>\n  <p>这种对“人”的价值的坚持，最终回归到了商业的本质。王斌认为，在To B市场，最大的价值永远都是“你能帮别人解决问题”，只要能持续地用好的产品和服务为客户创造价值，口碑的传播力甚至会超越营销本身。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250930/v2_b00eae6bb1344c468aa8e2d3327a5017@577536001_oswg645923oswg824oswg550_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">圆桌讨论：AI与全球化时代的人才、文化挑战，如何重塑企业战略</p>\n  <p>“从人才培养到生态构建，全球化不是一场独行，而是需要汇聚顶尖智慧的联合远征。”这是博彦科技所传达的、贯穿整场发布会的核心理念。而在全球化叙事的第二季，博彦科技也将致力于构建一个更开放、共赢的生态网络。</p>\n  <p>设立创新中心是搭建平台的物理动作，而启动战略投资则是激活生态的化学反应。两者结合，构成了博彦科技面向未来的双螺旋。</p>\n  <p>在现场演讲的最后，王斌提到了他很喜欢的一首歌——孙燕姿的《遇见》。“我遇见谁，会有怎样的对白。”这句歌词为整场充满商业与科技味的发布会，增添了一抹温暖的人文亮色。王斌期待通过新加坡这个平台，与更多全球合作伙伴相遇，共同创造一个更好的明天。</p>\n  <p>对于30岁的博彦科技和无数正在重新思考全球化路径的中国企业而言，这或许是唯一正确的选择。它体现出一种务实的理想主义，虽然承认未知前路的巨大挑战，但更愿意相信连接与合作的力量。正如主持人冯大刚在圆桌论坛结束时所总结，“悲观者容易正确，但是到最后赢的人大概率是乐观派。”</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250930/v2_419f3ec89a114460b346a8cfe5ff8e06@577536001_oswg590254oswg828oswg552_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">博彦科技发布会现场大合影</p>",
+      "source": {
+        "title": "36氪"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        30,
+        13,
+        40,
+        0,
+        1,
+        273,
+        0
+      ]
+    },
+    {
+      "title": "氪星晚报｜孟晚舟当值华为轮值董事长；国家发展改革委下达今年第四批690亿元超长期特别国债支持消费品以旧换新资金；博彦科技正式启动“新加坡创新中心”",
+      "link": "https://36kr.com/p/3488620193225857?f=rss",
+      "published": "2025-09-30 18:18:36  +0800",
+      "summary": "<h2><strong>大公司：</strong></h2>\n  <p><a href=\"https://36kr.com/newsflashes/3488800918133632\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>美国批准首个可延缓近视加深的眼镜镜片</strong></a></p>\n  <p>从依视路陆逊梯卡获悉，9月25日，其依视路星趣控镜片通过美国食品药品监督管理局（FDA）的De Novo审批通道获得美国上市许可，成为首个美国FDA上市许可的经临床试验表明可延缓儿童近视发展的眼镜镜片。美国前瞻性随机双盲多中心临床数据显示，在两年间，该镜片延缓近视进展平均为71%。（界面）</p>\n  <p><a href=\"https://36kr.com/newsflashes/3488837661236096\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>泸州老窖旗下公司在成都新设企业管理合伙企业，出资额约5亿元</strong></a></p>\n  <p>36氪获悉，爱企查App显示，近日，成都金证共赢企业管理合伙企业（有限合伙）成立，执行事务合伙人为金惠红湖（深圳）企业管理有限公司，出资额约5亿人民币，经营范围为企业总部管理、企业管理、信息咨询服务、企业管理咨询。合伙人信息显示，该合伙企业由泸州老窖集团旗下四川金舵投资有限责任公司、金惠红湖（深圳）企业管理有限公司共同出资。</p>\n  <p><a href=\"https://36kr.com/newsflashes/3488785907473281\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>博彦科技正式启动“新加坡创新中心”</strong></a></p>\n  <p>近日，博彦科技在新加坡召开以“让全球市场触手可及（Global Reach Within Your Grasp）”为主题的论坛。会上，博彦科技宣布正式启动其“新加坡创新中心”，并公布了全新的海外投资战略。此外，发布会现场，博彦科技与美锦能源、文华在线和百胜软件等三家企业正式签署MOU，全面深化战略合作，进一步佐证了博彦科技在构建共赢生态体系的决心，为后续发展提供了良好的开端。</p>\n  <p><a href=\"https://36kr.com/newsflashes/3489005413997699\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>快手：对公司商业生态体系相关组织进行升级</strong></a></p>\n  <p>36氪获悉，9月30日，快手发布公告，宣布对公司商业生态体系相关组织进行升级，对原本地、电商、商业化等团队的相关业务场景进行重构。本次调整中，本地生活事业部正式更名为生活服务事业部，本地与线索广告相关业务并入该事业部；原商业化内循环电商广告相关业务并入电商事业部；调整后的商业化事业部将为平台做好广告中台能力的支撑，同时聚焦发展内容消费、综合平台、品牌营销、聚星、快手联盟等业务。</p>\n  <p><a href=\"https://36kr.com/newsflashes/3488943503334275\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>孟晚舟当值华为轮值董事长</strong></a></p>\n  <p>36氪获悉，华为官网显示，根据公司轮值董事长制度，2025年10月1日-2026年3月31日期间由孟晚舟女士当值轮值董事长，主持公司董事会及董事会常务委员会。</p>\n  <p><a href=\"https://36kr.com/newsflashes/3489019900107655\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>美“星舰”拟10月中旬再次试飞</strong></a></p>\n  <p>美国太空探索技术公司29日宣布，计划于10月13日进行其新一代重型运载火箭“星舰”的第11次试飞。该公司表示，此次试飞的主要目标包括为研发下一代“超级重型”助推器收集数据、对飞船隔热系统进行压力测试并为未来实现飞船返回发射场进行实验和验证。（新浪财经）</p>\n  <p><a href=\"https://36kr.com/newsflashes/3488953964043396\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>美图设计室接入阿里千牛，为淘宝、天猫商家提供相应服务</strong></a></p>\n  <p>36氪获悉，美图公司旗下美图设计室于近日接入阿里生意管家千牛后台，首批接入的“AI商品图”能力，将为淘宝、天猫商家提供相应的AI视觉生成服务。官方信息显示，目前美图设计室的核心功能覆盖商品图生成、修图改图、海报设计等需求。</p>\n  <h2><strong>新产品：</strong></h2>\n  <p><a href=\"https://36kr.com/newsflashes/3488949474974852\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>智谱发布新一代大模型GLM-4.6，寒武纪、摩尔线程已适配</strong></a></p>\n  <p>36氪获悉，9月30日，国内大模型头部厂商智谱正式发布并开源新一代大模型GLM-4.6，在Agentic Coding等关键能力上实现大幅提升。智谱官方宣布，GLM-4.6已在寒武纪国产芯片上实现FP8+Int4混合量化部署，这是首次在国产芯片投产的FP8+Int4模型芯片一体解决方案。同时，基于vLLM推理框架部署，摩尔线程新一代GPU可基于原生FP8精度稳定运行GLM-4.6。</p>\n  <p><a href=\"https://36kr.com/newsflashes/3488927347760007\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>特斯拉今年年底将推出第三代人形机器人，明年量产</strong></a></p>\n  <p>36氪获悉，特斯拉通过官微宣布，特斯拉正在努力扩大人形机器人的规模，计划2025年底推出第三代，并在2026年开始量产。马斯克预计2030年前将年产100万台。</p>\n  <h2><strong>投融资：</strong></h2>\n  <p><a href=\"https://36kr.com/newsflashes/3488914525084550\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>AI基础设施REIT公司Fermi提高IPO规模，拟筹资6.5亿美元</strong></a></p>\n  <p>AI基础设施REIT公司Fermi提高了即将进行的首次公开募股（IPO）的拟议融资规模。该公司目前计划以每股18至22美元的价格发行3250万股股票，募集6.5亿美元。（财联社）</p>\n  <h2><strong>其他值得关注的新闻：</strong></h2>\n  <p><a href=\"https://36kr.com/newsflashes/3488896543857539\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>两部门：对国际消费中心试点城市给予资金补助，每个城市合计补助2亿元</strong></a></p>\n  <p>36氪获悉，财政部、商务部发布开展国际化消费环境建设工作的通知，中央财政对试点城市给予资金补助。实施期内，国际消费中心城市每个城市合计补助2亿元，其他城市每个城市合计补助1亿元。补助资金分两批下达。试点启动第一年先下达部分资金，剩余资金根据绩效评价情况下达。试点城市可按照市场化原则，对符合条件的经营主体，按规定采取补助、奖励等方式予以支持。试点城市申报范围为地市级及以上城市（包括直辖市，计划单列市，各省、自治区省会或首府城市，地级市、州、盟）。支持15个左右试点城市，包括符合条件的国际消费中心城市及其他消费带动作用强、发展潜力大、境外旅客较多的城市。政策实施期为两年。</p>\n  <p><a href=\"https://36kr.com/newsflashes/3488971227093893\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>国家发展改革委下达今年第四批690亿元超长期特别国债支持消费品以旧换新资金</strong></a></p>\n  <p>36氪获悉，近日，国家发展改革委已会同财政部，向地方下达了今年第四批690亿元超长期特别国债支持消费品以旧换新资金，至此，全年3000亿元中央资金已全部下达。下一步，各有关部门将进一步组织地方合理把握工作节奏，完善资金使用计划，均衡有序支出补贴资金，加强产品质量和价格监管，严厉打击骗补套补等违法违规行为，平稳有序实施消费品以旧换新政策，推动补贴资金用到实处、见到实效。</p>\n  <p><a href=\"https://36kr.com/newsflashes/3489043394304898\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>证监会召开“十五五”资本市场规划上市公司和行业机构座谈会</strong></a></p>\n  <p>36氪获悉，据证监会，证监会党委书记、主席吴清在北京召开专题座谈会，与部分上市公司、行业机构和中介机构代表、中国资本市场学会会员深入交流，充分听取意见建议。会上，大家围绕如何做好“十五五”资本市场规划、进一步全面深化资本市场改革提出了具体意见建议。主要包括：进一步深化发行上市、再融资、并购重组等领域改革，完善政策执行机制，不断增强资本市场的吸引力和包容性；更大力度支持上市公司做优做强，引导上市公司加大分红回购力度，进一步发挥机构投资者在上市公司治理中的作用，不断提升上市公司质量和投资价值；支持优质证券基金公司等行业机构打造一流投资银行和投资机构，推动会计师、律师事务所等中介机构高质量发展，加快提升综合实力和国际竞争力；进一步丰富A股市场指数、ETF、衍生品等产品服务体系，更好服务居民财富保值增值；提升跨境投融资便利度，进一步提高资本市场制度型开放水平；等等。</p>",
+      "source": {
+        "title": "36氪"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        30,
+        10,
+        18,
+        36,
+        1,
+        273,
+        0
+      ]
+    },
+    {
+      "title": "Solotrip，治好了年轻人的旅行内耗",
+      "link": "https://36kr.com/p/3488830959131529?f=rss",
+      "published": "2025-09-30 15:12:47  +0800",
+      "summary": "<h4><strong>撰文｜锅包柚</strong></h4>\n  <h4><strong>封面图源｜Unsplash</strong></h4>\n  <h2><strong>“我的旅行我做主”</strong></h2>\n  <p>年轻人总能搞出旅行新花样。</p>\n  <p>继特种兵旅行、拼团游、窝囊游后，年轻人中又开始流行一种旅游新趋势——Solotrip。</p>\n  <p><strong>Solotrip，顾名思义，就是一个人出发，独闯天涯。</strong>比起一人食、一人居、一人微醺，一个人旅行的快乐更是有过之而无不及。毕竟，不用迁就、不用商量，全程自己说了算，主打一个“我的旅行我做主”。</p>\n  <p><strong>先是节奏，完全自己拿捏。</strong></p>\n  <p><strong>一人出行，意味着彻底告别了“导游”的身份，再也不用出发前就纠结“同伴能吃啥”“同伴想去哪”，主打一个随心所欲。</strong>你可以特种兵出行，在周五下班后赶最近的飞机，坐着红眼航班抵达目的地，开始两天一夜的“微信步数破万挑战赛”；也可以摆烂式出游，只定城市不定行程，在路上才决定去哪个景点，到景点才定好附近的酒店，主打一个开盲盒般的体验；当然，也可以选择白人式度假，找个舒服又惬意的酒店，最好有泳池有躺椅，想躺就躲在酒店里一天不出门，想逛就在酒店附近溜达，睡到自然醒，景点随机选……</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250930/v2_fc618c6dc87d4e15af99962481528830@5679941_oswg75219oswg1080oswg720_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">图源unsplash</p>\n  <p><strong>还有地点，也凭喜好解锁。</strong></p>\n  <p>在社交媒体上搜索Solotrip，能看到年轻人已经把Solotrip的脚印拓到了地图的每个角落，从新疆、甘南这些热门旅行大环线，到福州、泉州、大同这些历史宿命感拉满的古城，再到普洱、乐山这些慢节奏的烟火气小城，<strong>就没有他们不能一个人去的地方，只有还没出发的年轻人。</strong></p>\n  <p><strong>状态，更是自己说了算。</strong></p>\n  <p>有人会在Solotrip中彻底关闭社交开关，全程享受“冷脸自由”，不用费心找话题，也无需察言观色，就在陌生街头当一个快乐的闷葫芦；也有人热衷于玩一场“角色扮演”，既可以做一名主动搭话的社交悍匪，也可以当一位静静观察的都市隐士，“反正没人认识你，i人e人全凭心情”。</p>\n  <p><strong>当行程、节奏、状态全都归于自己，旅行的意义，便超越了观光本身。</strong></p>\n  <p>我发现，几乎社交媒体上每个Solotrip的年轻人，回来后晒的远不止攻略和美照，<strong>他们更爱分享的是旅途结束后心里悄然出现的改变和记忆</strong>——有人和在路上偶遇的陌生人，交换了过往的经历，虽然可能一辈子只能见到这一面； 也有人在无意间走进的当地小馆子里，和邻桌的当地人不经意聊起来，意外听到了只有本地人才知道的城市秘密。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250930/v2_b4e6bd2443ab4750bc4cf77b37c71199@5679941_oswg131065oswg1080oswg716_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">内蒙古乌兰察布市卓资县的小超市，图源unsplash</p>\n  <p><strong>每个人当然都有自己的心之所向，但有很多人都被困在工位上。</strong>那些旅游博主的帖子下面，你肯定看过这样的评论，“替我自由”“我也想去”“有生之年能去上XX么”，他们也不是不想出发，只是总被“没时间”“没人陪”困住脚步。</p>\n  <p>可“完美的时机”和“对的人”，好像永远在路上。于是，一部分年轻人不再等了。Solotrip，就像是年轻人对于等待状态的反抗。<strong>他们主动创造出发的条件，把旅行的主动权交还给自己，一个人就是一支队伍。</strong></p>\n  <h2><strong>在路上，见天地，也见自己</strong></h2>\n  <p>年轻人选择Solotrip，当然不是因为“孤独”，而是因为“清醒”——<strong>清醒地知道自己想要什么，并敢于独自去实现。</strong></p>\n  <p>就像网友@光影 所言，“人在Solotrip中能完全忠实于自己。”</p>\n  <p><strong>有人选择Solotrip，就是想去解锁从未去过的目的地。</strong></p>\n  <p>之前刷到位网友，说自己大学毕业的时候，就和朋友们商量去新疆毕业旅行，后来因为朋友们不是要实习就是要回老家，最终大家只能妥协来了个短途周边游。但对新疆的执念就这么留下了。后来每年，她都会约朋友去新疆，但时间全都凑不上。</p>\n  <p>直到今年，她说自己“不想再等了，实在太想去新疆了”，就一个人请年假，租了辆车，来了次六天五夜的Soltrip，终于将那些在她收藏夹里尘封已久的景点，一网打尽。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250930/v2_d534ccc22d0c491c87e6ae02c62dcc52@5679941_oswg121401oswg1080oswg607_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">新疆喀纳斯，图源unsplash</p>\n  <p><strong>有人是想在Solotrip中只做自己的第一责任人。</strong></p>\n  <p>我一位上海的朋友，几年前和发小一起去日本旅游，却因为过程中发小和自己想去的地方截然不同，而总产生分歧，差点闹得不欢而散。最终俩人干脆成了“酒店搭子”，白天各玩各的，晚上一起A酒店钱。</p>\n  <p>这还算好的。印象里有个热帖，帖主说自己和朋友一起去旅游，玩了五天吵了五天，玩也没玩好，吵也没吵赢，回来直接拉黑删除组合拳，不光浪费了假期，还失去了个朋友。评论区都在劝帖主，“你一个人去玩不就好了？”</p>\n  <p>而我那位朋友，在发现原来自己一个人也能在异国他乡解决自己的交通和饮食，还能给自己安排好行程后，也突然打开了新世界的大门。从那之后，她就开始自己一个人旅游，旅游地图从周边的杭州、宁波、扬州，拓展到内蒙、川西，全程只遵循依靠准则——让自己开心就好。<strong>毕竟别人旅途过程中的喜怒哀乐，为什么要由自己买单？</strong></p>\n  <p><strong>也有人就是想在旅途中看见自己。</strong></p>\n  <p>有位Solotrip过14次的网友，说一个人旅行，意味着和自己交流的机会更多了。要想清楚自己到底想吃什么，想逛什么，想做什么，再去安排一天的行程，要自己一个人解决路上遇到的各种突发情况，打不到车，语言不通，手机没电，甚至是丢了证件、掉了行李。<strong>“虽然一开始会手足无措，但当事情都被解决，守得云开见月明的时候，只会感慨原来我一个人可以解决这么多事情！”</strong></p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20250930/v2_4356733bbdc84f6f9ed066cedace82a7@5679941_oswg80108oswg1080oswg720_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">桂林，图源unsplash</p>\n  <p>有时还会有许多意外收获。当一个人来到陌生的城市或国度，没有其他人让自己分神，<strong>反而能把自己的感官更全神贯注地投射在城市中，会更容易和当地人产生连接，也更容易沉浸式地体验当地的文化与美景。</strong></p>\n  <p><strong>Solotrip不单单是一种旅行，更是一种追求独立、自由，与自我对话的生活方式。</strong>或许，这就是为什么一旦尝试过Solotrip，就很难再回头。毕竟没有什么比忠于自己，更爽的了。</p>\n  <h2><strong>随时出发，无需等待</strong></h2>\n  <p>Solotrip的魅力不止在于“去哪儿”，也在于“如何去”。</p>\n  <p>如果说Solo的形式，让年轻人找回了旅游的主导权，<strong>那么自驾的方式，则帮年轻人放大了自我探索的可能。</strong></p>\n  <p><strong>自驾能在Solotrip的过程中，帮你解决很多问题，</strong>你可以不用为了赶上最后一班地铁而仓皇结束行程，也可以不用因为打不到车而在路边徒留焦虑；自驾也能陪你捕捉美好的风景，比如不断向前延伸的路，比如远方隐约浮现的雪山，以及转角偶遇的一道彩虹，还有红遍漫天的整片夕阳。</p>\n  <p><strong>更重要的是，自驾给“说走就走”增加了无限的可能，也带来了截然不同的、误打误撞的体验。</strong>你可以因为一片好看的云，就拐进一条无名小路拍照打卡；你可以因为偶然发现的一座当地古宅，就停下来走进去一探究竟；你也可以因为扑面而来的柴火饭香，就去一家苍蝇小馆里品味美食……打破公共交通的路线规划，那些藏在巷子里，隐于深山中，甚至社交媒体上都没人分享的地方，都能让你轻松抵达。</p>\n  <p>就像网友@momo来到新疆塔县前，还因为网上“不如北疆”“不如西藏”的评价而担心和犹豫，但在真的开车自驾经过时，却被塔县的壮阔和苍茫而震撼，甚至被大自然的鬼斧神工“感动到一个人在车上流泪”，最终他在塔县停留了三天。这种随机而遇的惊喜，是很多精心规划的路线无法带来的。</p>\n  <p>当然，在远方独自探索的路上，最好还是有一位可靠的伙伴。<strong>而神州租车，一直都是你追求自由路上的支持者与陪伴者。</strong></p>\n  <p>无论是通过便捷的网点与APP提供随时可用的车辆保障，还是一年一度品牌tvc里倡导的“去那些没去过的地方”，神州租车一直在做的，就是努力唤醒年轻人心中对远方的渴望，并鼓励他们是时候出发去看看外面的世界了。<strong>听着那句“神州山海，此生必驾”，看着画面里的人们驾着车，去远方，去附近，穿行于新疆的雪山沙漠与泉州的红砖巷弄，谁能不心动，谁能不想立刻出发呢？</strong></p>\n  <p class=\"loading-entity\">&amp;amp;amp;nbsp;</p>\n  <p>方向盘在手，你就拥有了决定下一站去哪的绝对自由。无论是想去追逐一场海边日落，还是探访一个只有本地人才知道的隐世古镇，抑或是打卡你向往已久宝藏路线，或是穿行在呼伦贝尔草原上，无垠驰骋，<strong>遍布全国的神州租车，能帮你轻松启动，精准抵达每一个心之所向。</strong></p>\n  <p class=\"loading-entity\">&amp;amp;amp;nbsp;</p>\n  <p>人有向往，车已就位，出发的条件已经具备，只要愿意，你随时可以上路。</p>\n  <p><strong>Anytime都是合适的时间，自己正是那个对的人。</strong>是时候规划一条专属的线路，去那个在你心里念叨过无数次的地方了。这一次，不再协调，不再妥协，踩上油门，去抵达那条真正属于你的路。</p>\n  <p class=\"loading-entity\">&amp;amp;amp;nbsp;</p>\n  <p>路上所有的决定、所有的风景、所有的意外与惊喜，都真正由你一人独享。</p>",
+      "source": {
+        "title": "36氪"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        30,
+        7,
+        12,
+        47,
+        1,
+        273,
+        0
+      ]
+    },
+    {
+      "title": "恒科指跌超1%，快手跌超4%，小鹏汽车、比亚迪跌超3%",
+      "link": "https://wallstreetcn.com/articles/3756635",
+      "published": "Fri, 03 Oct 2025 09:43:00 +0800",
+      "summary": "<p style=\"text-align: left;\">10月3日，港股盘初，恒指低开0.24%，恒生科技指数跌0.44%。盘中，恒科指跌幅扩大至1.1%。</p>\n<p style=\"text-align: left;\"><img alt=\"\" class=\"wscnph\" src=\"https://wpimg-wscn.awtmt.com/6e28043c-c35b-401f-ae5e-c44e8c6199e7.png\" title=\"\" /></p>\n<p style=\"text-align: left;\">盘面上，科网股、汽车等板块多数下跌。快手跌超4%，小鹏汽车、比亚迪股份跌超3%，阿里巴巴涨1%，中芯国际涨0.8%。云锋金融涨10%，公司宣布战略入股全球加密货币人寿保险公司Anthea及与其战略合作。<img alt=\"\" class=\"wscnph\" src=\"https://wpimg-wscn.awtmt.com/9a916b85-8767-4f7d-85d0-bcf97cbd5655.png\" title=\"\" /></p>\n<p style=\"text-align: left;\">阿里开盘延续昨日涨势，涨超1%。<img alt=\"\" class=\"wscnph\" src=\"https://wpimg-wscn.awtmt.com/9b93aba1-86d4-4d7f-adf1-6af0d361e75a.png\" title=\"\" /></p>\n<p style=\"text-align: left;\">中芯国际开盘涨超1%，续创历史新高。<img alt=\"\" class=\"wscnph\" src=\"https://wpimg-wscn.awtmt.com/521f4888-0a9b-44f4-9b68-5122b7fbd7c4.png\" title=\"\" /></p>\n<p style=\"text-align: left;\">有色金属股集体回调，天齐锂业、紫金矿业跌超2%，中国白银集团跌近3%。<img alt=\"\" class=\"wscnph\" src=\"https://wpimg-wscn.awtmt.com/4f5e7059-49c5-4079-8b6f-0396d45404ff.png\" title=\"\" /></p><p>本文来自华尔街见闻，欢迎下载APP查看更多</p>",
+      "source": {
+        "title": "华尔街见闻"
+      },
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        43,
+        0,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "仅限美加地区且邀请制，OpenAI的Sora APP上线两日ios下载16.4万次，位居APP排行榜第三",
+      "link": "https://wallstreetcn.com/articles/3756633",
+      "published": "Fri, 03 Oct 2025 09:01:22 +0800",
+      "summary": "<p>OpenAI旗下备受期待的文生视频应用Sora在发布初期便展现出强劲的市场吸引力。</p>\n<p>根据应用情报提供商Appfigures的最新数据，在仅限美国和加拿大地区并采用邀请制的情况下，Sora的iOS应用程序于9月30日和10月1日上线后的头两天内，总计获得了16.4万次下载。这一表现使其迅速攀升至美国App Store总排行榜第三位。</p>\n<p>从首日表现来看，Sora的下载量为5.6万次。这一数据虽不及OpenAI自家的ChatGPT和谷歌Gemini，但与xAI的Grok持平，并超越了Anthropic的Claude和微软的Copilot等其他主要AI应用的早期表现。</p>\n<p>值得注意的是，Sora的邀请制模式意味着目前的下载数据可能并未完全反映其市场潜力。分析认为，一旦全面开放，其用户增长或将更为可观。</p>\n<h2>首日下载量超越部分竞争对手，<strong>应用商店排名跻身前三</strong></h2>\n<p><a href=\"https://wallstreetcn.com/articles/3756617\" rel=\"noopener\" target=\"_blank\">据见闻此前文章</a>，OpenAI周二正式发布其迄今最先进的视频生成模型Sora 2.0，并同步推出了一款名为“Sora by OpenAI”的iPhone应用，旨在让AI视频创作走向大众，用户可以制作并与朋友分享AI生成的视频。“探索、游戏并在为实验而建的社区中分享你的想象力，”Sora应用的App Store描述显示。有分析指出，<strong>OpenAI正在以类似Facebook早期的策略，通过邀请制的准入门槛和前沿的内容流进入社交媒体业务。</strong></p>\n<p>为了进行更公允的比较，Appfigures对各AI应用在美国和加拿大的首日下载数据进行了标准化分析。数据显示，<strong>Sora的发布表现位于行业第一梯队。</strong></p>\n<p>具体而言，ChatGPT和Gemini的iOS应用在发布首日分别录得8.1万和8万次下载，处于领先地位。Sora与Grok以5.6万次的成绩并列其后。相比之下，Sora的发布表现轻松击败了Claude（2.1万次）和Copilot（7000次），显示出其在发布初期的强劲竞争力。这一对比凸显了Sora在激烈的AI应用市场中，已成功吸引到早期用户的广泛关注。</p>\n<p>除了下载量，Sora在应用商店排行榜上的表现也印证了其传播热度。据Appfigures数据，<strong>该应用于上线第二天便冲上美国App Store总排行榜第三名。</strong></p>\n<p>这一排名表现同样优于多数竞争对手。作为参照，ChatGPT曾在上线第二天达到榜首位置，而Grok、Gemini和Copilot在各自发布第二天的排名分别为第4、第6和第19位。Claude则位列第78位。</p>\n<p>Sora在设有严格准入门槛的情况下依然取得了亮眼成绩，这被市场解读为消费者对AI视频生成工具的巨大潜在需求。由于目前应用仍处于邀请制阶段，其强劲表现被认为是一个非常积极的信号。分析指出，如果Sora向所有用户开放，其安装量可能会吸引到更多用户。</p><p>本文来自华尔街见闻，欢迎下载APP查看更多</p>",
+      "source": {
+        "title": "华尔街见闻"
+      },
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        1,
+        22,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "华尔街见闻早餐FM-Radio | 2025年10月3日",
+      "link": "https://wallstreetcn.com/articles/3756632",
+      "published": "Fri, 03 Oct 2025 07:20:35 +0800",
+      "summary": "<h2>华见早安之声</h2>\n\n<p><img class=\"wscnph editor-placeholder\" src=\"https://wdl-wscn.awtmt.com/2ed0c8c8-fb82-499d-b81c-3fd1de114eae\" /></p>\n<h2>市场概述</h2>\n<p>美股顶住数据缺席风险，<strong><span style=\"color: #ff0000;\">三大美股指盘中均曾转跌，最终本周首次齐收创新高</span></strong>。芯片股力挺大盘，英伟达三日创新高，AMD涨超3%，英特尔涨近4%。<strong><span style=\"color: #ff0000;\">特斯拉盘初涨2.5%后收跌超5%。</span><span style=\"color: #ff0000;\">西方石油收跌超7%</span></strong>。中概跑赢大盘，<strong><span style=\"color: #ff0000;\">阿里涨超3%</span></strong>。泛欧股指两日收创历史新高。</p>\n<p>美国首申失业数据未如期发布，美债收益率刷新日高，十年期收益率后回落至两周低位，两年期收益率本周首度攀升。</p>\n<p>美联储官员呼吁谨慎降息后，美元加速反弹、刷新日高。<strong><span style=\"color: #ff0000;\">比特币盘中涨超3%、一个半月来首次站上12万美元，以太坊盘中涨近5%。</span></strong></p>\n<p>黄金四日连创盘中历史新高后转跌，美联储官员讲话后，<strong><span style=\"color: #ff0000;\">盘中期金跌超1%、期银跌超3%</span></strong>。市场担心供应过剩，原油四连跌齐创四个月新低，<strong><span style=\"color: #ff0000;\">盘中跌超2%</span></strong>。伦铜连续两日涨超1%，创逾一年新高。</p>\n\n<h2>要闻</h2>\n<blockquote>\n<p>报道称<strong><span style=\"color: #1482f0;\">美国政府</span><span style=\"color: #ff0000;\">可能准备发布</span><span style=\"color: #1482f0;\">非农就业数据</span></strong>，美债收益率回落。</p>\n<p><strong><span style=\"color: #1482f0;\">美国政府关门</span></strong>第二天，<strong><span style=\"color: #1482f0;\">特朗普</span></strong>称<strong><span style=\"color: #ff0000;\">考虑裁减成千上万联邦雇员。</span></strong></p>\n<p><strong><span style=\"color: #1482f0;\">美联储明年票委</span></strong>重申通胀风险，称<strong><span style=\"color: #ff0000;\">行动必须“格外谨慎”。</span></strong></p>\n<p><strong><span style=\"color: #1482f0;\">普京</span></strong>：<strong><span style=\"color: #ff0000;\">恢复与美国的全面关系符合俄罗斯国家利益</span></strong>。普京：若失去俄罗斯供应，<strong><span style=\"color: #ff0000;\">油价将立即突破每桶100美元</span></strong>。<strong><span style=\"color: #1482f0;\">俄伊</span></strong>全面战略伙伴关系条约正式生效。</p>\n<p><strong><span style=\"color: #1482f0;\">摩根大通</span><span style=\"color: #ff0000;\">大幅上调</span><span style=\"color: #1482f0;\">阿里</span></strong>目标价，看好新的飞轮：<strong><span style=\"color: #ff0000;\">“将AI云的Token转化为电商的抽成率”。</span></strong></p>\n<p><strong><span style=\"color: #1482f0;\">特斯拉</span><span style=\"color: #ff0000;\">Q3交付量49.7万创纪录</span></strong>，大超预期，<strong><span style=\"color: #ff0000;\">股价先涨后跌超5%。</span></strong></p>\n<p><strong><span style=\"color: #1482f0;\">Sora 2</span></strong>强化新叙事：<strong><span style=\"color: #ff0000;\">AI吞噬APP</span></strong>，Meta应声下跌。</p>\n</blockquote>\n<h2>市场收报</h2>\n<p><strong><span style=\"color: #1482f0;\">欧美股市</span></strong>：标普500指数收涨0.06%，报6715.35点。道指涨幅0.17%，报46519.72点。纳指涨幅0.39%，报22844.051点。欧洲STOXX 600指数收涨0.53%，报567.60点。</p>\n<p><strong><span style=\"color: #1482f0;\">A股</span></strong>休市。</p>\n<p><strong><span style=\"color: #1482f0;\">债市</span></strong>：美国10年期基准国债收益率跌1.74个基点，刷新日低至4.0807%。两年期美债收益率涨0.41个基点，报3.5388%。</p>\n<p><strong><span style=\"color: #1482f0;\">商品</span></strong>：WTI 11月原油期货收跌2.10%，报60.48美元/桶。布伦特12月原油期货收跌1.90%，报64.10美元/桶。COMEX黄金期货跌0.45%，报3879.90美元/盎司。</p>\n<p><img class=\"wscnph\" src=\"https://wpimg-wscn.awtmt.com/797c515c-c4da-4845-80b5-8b9054b740a7.png\" /></p>\n<p><img class=\"wscnph\" src=\"https://wpimg-wscn.awtmt.com/1ed97884-620f-43fd-8775-f493423b9df8.png\" /></p>\n<p> </p>\n<h2>要闻详情</h2>\n<p><strong><span style=\"color: #ff0000;\">全球重磅</span></strong></p>\n<p><strong><span style=\"color: #ff0000;\"><a href=\"https://wallstreetcn.com/articles/3756622\" style=\"color: #ff0000;\">报道称美国政府可能准备发布非农就业数据，美债收益率回落</a>。</span></strong>美国参议院民主党成员沃伦（Warren）针对数据问题致信代理劳工统计局局长，呼吁美国政府关门期间，仍按计划于周五发布9月就业报告。媒体援引美国参议院银行委员会助理报道称，劳工统计局（BLS）可能准备好发布9月劳动力数据，数据已经收集完毕。</p>\n<ul>\n<li><a href=\"https://wallstreetcn.com/articles/3756608\">没有“非农”的日子里，“小非农”成了市场的“唯一”</a>。分析认为，尽管私营部门的替代数据有其优势，但无法真正取代政府角色。过往记录显示，ADP数据本身也依赖官方非农数据作为关键依据，在预测官方数据方面并非总是精准，本月ADP数据经历了“重新基准化调整”，导致就业人数在同等条件下减少了4.3万。</li>\n</ul>\n<p><a href=\"https://wallstreetcn.com/articles/3756626\">美国政府关门第二天，<strong><span style=\"color: #ff0000;\">特朗普称考虑裁减成千上万联邦雇员</span></strong></a>，并要求预算局长沃特提出永久或临时削减方案，<strong><span style=\"color: #ff0000;\">目标锁定“不符合政府价值观”的机构</span></strong>。白宫已暂停纽约交通和清洁能源项目资金，以加大对民主党的施压。</p>\n<p><a href=\"https://wallstreetcn.com/articles/3756605\">“美国政府关门”交易指南：时长是关键，金银更避险</a>。花旗认为，美国政府停摆时间的长短是决定资产表现的关键，而市场目前对此次停摆的定价可能过于乐观。历史数据显示，在超过五天的“长期停摆”事件中，美股往往提前抛售，在停摆开始后10至15个交易日触底反弹，与政府有直接或间接收入往来的公司个股更承压，<strong><span style=\"color: #ff0000;\">黄金、白银的避险需求高涨。</span></strong></p>\n<p><a href=\"https://wallstreetcn.com/articles/3756621\">不支持本月降息？美联储官员重申通胀风险，称<strong><span style=\"color: #ff0000;\">行动必须“格外谨慎”</span></strong></a>。明年票委洛根称，通胀仍高于联储目标，关税未来几个月料将推高通胀，认为要避免过度宽松最终迫使联储收紧货币；当前政策并未超过适度限制性，鉴于仍需抑制通胀，这种立场是合适的。今年票委古尔斯比希望，对过度靠前降息保持谨慎。</p>\n<p><strong><span style=\"color: #ff0000;\"><a href=\"https://wallstreetcn.com/articles/3756628\" style=\"color: #ff0000;\">普京：恢复与美国的全面关系符合俄罗斯国家利益</a>。</span></strong>普京表示，恢复与美国的全面关系符合俄罗斯国家利益。本届美国政府直言不讳地表明自身利益，有时甚至显得直来直往，但至少摒弃了虚伪——他们始终将本国利益置于首位，这是理性的选择。俄罗斯同样保留根据自身国家利益采取行动的权利。</p>\n<p><strong><span style=\"color: #ff0000;\"><a href=\"https://wallstreetcn.com/articles/3756629\" style=\"color: #ff0000;\">普京：若失去俄罗斯供应，油价将立即突破每桶100美元</a>。</span></strong></p>\n<p><a href=\"https://wallstreetcn.com/articles/3756625\">俄伊全面战略伙伴关系条约正式生效</a>。俄罗斯外交部2日发表的声明说，此举是俄伊两国关系史上的重要里程碑，标志着两国全面战略伙伴关系迈上新台阶。条约为双边合作所有优先领域的长期发展确定了关键方向，规定在多极世界中加强国际合作，包括在主要多边组织框架内密切配合，共同努力维护地区稳定与安全，应对共同挑战与威胁。</p>\n<p><a href=\"https://wallstreetcn.com/articles/3756609\">保油价以前靠沙特，现在靠中国</a>。分析认为，中国正大量采购廉价原油以填充其战略石油储备（SPR），由于被用于战略储备的这部分原油通常不被纳入全球可追踪的商业库存中，因此不会反映在国际油价上。这意味着，作为全球最大原油买家，中国目前的行为客观上比产油国沙特更能支撑油价。</p>\n<p><strong><span style=\"color: #ff0000;\"><a href=\"https://wallstreetcn.com/articles/3756618\" style=\"color: #ff0000;\">特斯拉Q3交付量49.7万创纪录，同比增加7.4%，大超预期</a>。</span></strong>这一数据远高于媒体统计的约439,600辆的平均预测。美国消费者在联邦税收抵免到期前加快了电动车购买。周四美股盘前，特斯拉股价一度上涨4.3%，但开盘后转跌，收跌超5%，原因是投资者预计，随着美国联邦电动车补贴到期，特斯拉Q3的表现难以再现。</p>\n<p><strong><span style=\"color: #ff0000;\"><a href=\"https://wallstreetcn.com/articles/3756617\" style=\"color: #ff0000;\">Sora 2强化新叙事：AI吞噬APP，Meta应声下跌</a>。</span></strong>高盛认为，Sora 2的成功发布是对“AI/大语言模型（LLM）吞噬软件/应用”这一叙事的强力确认，这可能会对现有的社交媒体平台构成颠覆性威胁，市场的此种担忧导致Meta股价下跌。</p>\n<p><a href=\"https://wallstreetcn.com/articles/3756607\"><strong><span style=\"color: #ff0000;\">摩根大通大幅上调阿里目标价</span></strong>，看好新的飞轮：“将AI云的Token转化为电商的抽成率”</a>。摩根大通表示，通过将云业务的AI Token收入转化为电商平台的抽成率优势，阿里正构建一个前所未有的商业飞轮。随着AI驱动的云业务变现、商家成本节约和国内电商增量变现的实现，阿里巴巴的股票叙事将从“国内电商市场份额流失方回归中国互联网一线资产”。</p>\n<p><span style=\"color: #1482f0;\"><strong>国内宏观</strong></span></p>\n<p><a href=\"https://wallstreetcn.com/articles/3756627\">国庆中秋假期消费市场有多热</a>。今年国庆假期叠加中秋，总共八天假。面对全年文旅消费最旺的节点之一，国家统计局表示，<strong><span style=\"color: #ff0000;\">假期消费有望继续扩容提质。</span></strong></p>\n<p><a href=\"https://wallstreetcn.com/articles/3756610\">美银欧洲机构路演：<strong><span style=\"color: #ff0000;\">对中国市场兴趣浓厚且情绪乐观 ，普遍看好“涨到年底”</span></strong></a>。美银表示，欧洲具备 “全新视角” 的新入场投资者，更看好中国股市相对偏低的估值、持续释放的创新活力，以及 “政策看跌期权” 带来的风险缓冲。他们提出一个新颖看涨逻辑：与2015年A股反弹期间类似，在目前经济环境下，中国股市或将迎来向好契机。</p>\n<p><span style=\"color: #1482f0;\"><strong>海外宏观</strong></span></p>\n<p><a href=\"https://wallstreetcn.com/articles/3756611\">高盛解读“金价突破”：<strong><span style=\"color: #ff0000;\">西方投资者大幅加仓，金价涨幅或超预期</span></strong></a>。高盛发现，近期流入黄金ETF的资金规模远超模型预期，表明西方个人投资者将资金从固收等传统资产转向黄金的趋势可能正在成为现实。高盛此前曾测算，若私人持有的美债资金中仅有1%转向黄金，<strong><span style=\"color: #ff0000;\">金价理论上可能升至近5000美元/盎司。</span></strong></p>\n<p><a href=\"https://wallstreetcn.com/articles/3756614\">关于石油、美元和黄金的深层逻辑</a>。石油价格是美元的另一个支柱，它跟联邦基金利率一起，共同支撑了美元币值的稳定。黄金的敌人并不是全球经济增长，而是单纯的国际油价。如果原油价格持续维持在62美元/桶，那么，黄金价格会随着降息推进继续上涨；相反，如果原油价格走强，甚至突破70美元大关，黄金的价格很可能陷入调整周期。</p>\n<p><span style=\"color: #1482f0;\"><strong>海外公司</strong></span></p>\n<p><a href=\"https://wallstreetcn.com/articles/3756602\">“存储双雄”三星、SK海力士股价大涨，此前与OpenAI就“星际之门”达成初步供应协议</a>。三星股价上涨4.5%，SK海力士股价涨9.7%，均为四月以来的最大盘中涨幅。据合作声明透露，随着星际之门项目在全球扩张，来自OpenAI的总需求可能达到每月90万片晶圆。</p>\n<p><a href=\"https://wallstreetcn.com/articles/3756616\">“数字币财库模式”正在崩溃</a>。数据显示，四分之一采用比特币财库策略的上市公司股价已跌破其数字代币持仓总价值，部分数字币财库概念股自公布计划以来已暴跌超过50%。美股企业在9月份购买了37881枚比特币，降至4月以来最低水平。市场分析师将这一趋势归因于相关公司股票供应过剩，以及投资者对这种商业模式可持续性的担忧。</p>\n<p><a href=\"https://wallstreetcn.com/articles/3756620\">桥水旗舰基金飙涨26%，或创2010年以来最佳表现</a>。受关税引发的市场波动推动，桥水旗舰宏观基金Pure Alpha今年前九个月大涨26.4%，有望创2010年以来最大年度涨幅。同时，桥水新推出的AI基金今年也上涨6.5%，桥水的亚洲总回报基金截至9月已上涨32%，中国总回报基金上涨了28.9%。</p>\n<h2>今日要闻前瞻</h2>\n<p><strong><span style=\"color: #ff0000;\">美国9月非农就业报告。</span></strong></p>\n<p><strong><span style=\"color: #ff0000;\">美国、欧元区9月服务业、综合PMI。</span></strong></p>\n<p>欧元区8月PPI。</p>\n<p>纽约联储主席威廉姆斯讲话。</p>\n<p>&lt;全文完&gt;</p><p>本文来自华尔街见闻，欢迎下载APP查看更多</p>",
+      "source": {
+        "title": "华尔街见闻"
+      },
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        23,
+        20,
+        35,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "美国政府关门第二天，特朗普称考虑裁减“成千上万”联邦雇员",
+      "link": "https://wallstreetcn.com/articles/3756626",
+      "published": "Fri, 03 Oct 2025 06:59:25 +0800",
+      "summary": "<p>媒体报道，美国总统特朗普正考虑裁减“成千上万”名联邦雇员，他将在与白宫预算局局长沃特（Russell Vought）会面前作出决定。分析称，白宫此举旨在加大对民主党的施压，推动结束已进入第二天的政府关门。</p>\n<p>白宫新闻秘书莱维特（Karoline Leavitt）周四对记者表示：“<strong>裁员规模很可能达到成千上万。</strong>”她强调，“整个白宫团队”正在努力寻找可以削减的岗位。</p>\n<blockquote>\n<p>“我们会针对那些与政府价值观不一致、我们认为是在浪费纳税人资金的机构进行审查。”</p>\n</blockquote>\n<p>莱维特的评论出现在特朗普当天早些时候的社交媒体发言之后。特朗普表示，他计划与沃特会面，</p>\n<blockquote>\n<p>“决定要削减哪些民主党的机构，这些机构大多是政治骗局，并评估这些削减是暂时的还是永久性的。”</p>\n</blockquote>\n<p><strong>此外，据知情人士对媒体透露，白宫最早将于周五宣布美国哪些联邦部门会被列为裁员的目标机构。</strong></p>\n<p><strong>媒体称，共和党人试图利用永久削减联邦机构的威胁，迫使民主党投票重开政府。</strong>白宫还表示，解雇可能很快就会发生。但一些预算专家则认为，在关门期间花钱进行永久裁员是违法的。</p>\n<p>众议院议长约翰逊（Mike Johnson）周四在白宫与特朗普会面。他早些时候为特朗普的威胁辩护，称总统有权在关门期间解雇员工和削减开支。他把拨款中断的责任归咎于民主党。</p>\n<p>约翰逊对记者说：</p>\n<blockquote>\n<p>“如果他们继续让政府关门，痛苦只会越来越大。白宫将按照政府的优先事项来确保资金到位”。</p>\n</blockquote>\n<p>沃特已经开始扣留纽约市的交通项目资金，以及在2024年投票支持民主党候选人哈里斯的州的清洁能源项目资金。</p>\n<p>目前尚不清楚联邦缩编的具体规模，但西弗吉尼亚州共和党参议员卡皮托（Shelley Moore Capito）预测，可能会有大幅削减。她对媒体表示：</p>\n<blockquote>\n<p>“我认为沃特是否想要大幅缩小政府？绝对想。他对此非常明确。”</p>\n</blockquote>\n<p>分析认为，白宫这种强硬策略远远超出了关门期间的常规做法，通常情况下，联邦雇员会被强制休假，并在政府恢复运转后获得补发工资。</p>\n<p>国会预算办公室估计，约有75万名员工将因关门被迫休假，每天将损失4亿美元的薪酬。</p>\n<h2><strong>政治角力</strong></h2>\n<p>美国财政部长贝森特（Scott Bessent）指责民主党在政府拨款谈判中“不真诚”。他在媒体表示：“民主党人想像恐怖分子一样谈判”，并补充说，共和党人寻求的是一份“干净的”临时拨款方案。而民主党人则希望在拨款法案中纳入医疗补贴。</p>\n<p>马萨诸塞州民主党参议员沃伦（Elizabeth Warren）在接受媒体采访中表示，民主党人一直在“恳求”共和党展开谈判，但迄今为止“完全没有”实质性会谈，因为共和党根本没有参与。</p>\n<p>一项媒体民调显示，更多选民认为政府关门的责任在于特朗普和共和党，而不是民主党，差距为17个百分点。独立选民在此问题上也压倒性地站在民主党一边。此外，民主党人比共和党人更加团结：只有67%的共和党人将责任归咎于民主党，而87%的民主党人认为责任在共和党。</p>\n<p>由于赎罪日（Yom Kippur）假期，众议院和参议院周四均无投票安排。参议院预计将在周五复会，但共和党领袖图恩（John Thune）表示，本周末“很可能”不会进行投票。众议院要到下周二才会回到华盛顿。</p>\n<p>佛罗里达州共和党众议员唐纳兹（Byron Donalds）在接受媒体采访时表示，他预计僵局至少会持续到下周初。</p>\n<blockquote>\n<p>“我认为这很可能持续到下周，甚至更久。这实际上取决于舒默（Chuck Schumer）。”</p>\n</blockquote>\n<p>民主党人正推动延长年底到期的《平价医疗法案》补贴。共和党人则表示，他们希望先解决政府拨款问题，再就此进行任何谈判。</p>\n<p>共和党籍、众议院拨款委员会主席科尔（Tom Cole）对媒体表示：</p>\n<blockquote>\n<p>“无论是共和党还是民主党主导的关门，都从未达到过预期目标。这是件非常愚蠢的事。”</p>\n</blockquote><p>本文来自华尔街见闻，欢迎下载APP查看更多</p>",
+      "source": {
+        "title": "华尔街见闻"
+      },
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        22,
+        59,
+        25,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "西方石油大跌7.5%，出售OxyChem给伯克希尔遭分析师质疑时机与估值",
+      "link": "https://wallstreetcn.com/articles/3756631",
+      "published": "Fri, 03 Oct 2025 06:55:19 +0800",
+      "summary": "<p>西方石油公司（Occidental Petroleum）周四股价一度重挫7.5%，成为标普500指数中跌幅最大的公司之一。</p>\n<p>消息显示，该公司已同意以97亿美元的价格，将旗下化工部门OxyChem出售给巴菲特的伯克希尔哈撒韦，用以缓解多年来因高价收购带来的沉重债务压力。</p>\n<p>周四，西方石油公司收跌7.32%，报44.23美元。</p>\n<p><img class=\"wscnph\" src=\"https://wpimg-wscn.awtmt.com/02cbdf42-9e18-420c-80f0-3b2aedfdf97e.png\" /></p>\n<p>西方石油CEO霍勒布（Vicki Hollub）在接受媒体采访时表示，公司最大的问题在于如何更快降低债务。此前，公司在2019年收购了阿纳达科石油（Anadarko Petroleum），在2024年又收购了CrownRock。霍勒布指出，公司计划将交易所得的65亿美元用于还债，从而实现将本金债务压低至150亿美元以下的目标。</p>\n<p>霍勒布强调，这笔交易将“释放股价”，让股东更有信心加仓，并吸引新投资者入场。</p>\n<blockquote>\n<p>“所以现在我们就能重新启动股票回购计划了……这是我们10年前开启重大转型后最后需要完成的一步。”</p>\n</blockquote>\n<p><strong>不过，TD Cowen分析师认为，交易时机并不理想。</strong>虽然这笔交易有助于减债，但正值OxyChem多年的扩张计划资本支出进入高峰期，未来数年原本预期的自由现金流拐点将因此丧失。</p>\n<p>Roth MKM分析师也表示，这笔出售可能会削弱未来的自由现金流增长，因为该部门原本被视为公司扩张的重要支撑。</p>\n<p>加拿大丰业银行（Scotiabank）分析师Paul Cheng则指出，交易价格偏低，他此前曾估算该部门的价值约为120亿美元。</p>\n<p>总部位于休斯敦的西方石油公司主要以其石油和天然气业务闻名，目前市值约为460亿美元，而伯克希尔已经是其最大股东，目前持有超过110亿美元的西方石油股票，持股比例为28.2%。巴菲特此前曾表示，不会完全控股这家由传奇石油大亨阿曼德·哈默（Armand Hammer）创立的公司。</p>\n<p>西方石油的石化部门OxyChem生产并销售多种化工产品，应用领域包括水的氯化处理、电池回收和造纸。截至6月底的过去12个月，该部门实现销售额接近50亿美元。</p><p>本文来自华尔街见闻，欢迎下载APP查看更多</p>",
+      "source": {
+        "title": "华尔街见闻"
+      },
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        22,
+        55,
+        19,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "上半年外资来华股本证券投资净流入282亿美元，去年..",
+      "link": "http://baijiahao.baidu.com/s?id=1844685871036161739",
+      "published": "2025-10-03T01:56:59.000Z",
+      "summary": "<a href=\"http://baijiahao.baidu.com/s?id=1844685871036161739\" target=\"_blank\"><img border=\"0\" src=\"http://t1.baidu.com/it/u=http%3A%2F%2Ft10.baidu.com%2Fit%2Fu%3D1555935966%2C277575731%26fm%3D30%26app%3D106%26f%3DJPEG%3Fw%3D312%26h%3D208%26s%3DBC28649604A72909702A61F60300106A&amp;fm=30\" /></a><br />国家外汇管理局9月30日公布的《2025年上半年中国国际收支报告》显示，今年上半年对外证券投资保持活跃，以股票投资为主；同时，来华证券投资呈现净流入，以股票投资为主。其中，2025年上半年，境内对外证<br />",
+      "source": {},
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        56,
+        59,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "港股黄金股走弱 潼关黄金跌近6%",
+      "link": "http://baijiahao.baidu.com/s?id=1844922774831390602",
+      "published": "2025-10-03T01:56:59.000Z",
+      "summary": "【港股黄金股走弱潼关黄金跌近6%】财联社10月3日电，截至发稿，潼关黄金(00340.HK)跌5.77%、坛金矿业(00621.HK)跌3.85%、大唐黄金(08299.HK)跌4.81%、赤峰黄金(<br />",
+      "source": {},
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        56,
+        59,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "日经225指数涨超1.7% 接近历史最高点位",
+      "link": "http://baijiahao.baidu.com/s?id=1844921516057776532",
+      "published": "2025-10-03T01:56:59.000Z",
+      "summary": "日经225指数持续走高，现涨1.71%，报45706点，接近历史最高点位。(本文来自第一财经)<br />",
+      "source": {},
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        56,
+        59,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "部分港股储能概念股走强 双登股份涨超7%",
+      "link": "http://baijiahao.baidu.com/s?id=1844922585709618467",
+      "published": "2025-10-03T01:56:59.000Z",
+      "summary": "【部分港股储能概念股走强双登股份涨超7%】财联社10月3日电，截至发稿，双登股份(06960.HK)涨7.45%、中国安储能源(02399.HK)涨2.86%、洪桥集团(08137.HK)涨1.82%<br />",
+      "source": {},
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        56,
+        59,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "卡松科技第三次冲刺“新三板”，山能系公司与赵之玉的..",
+      "link": "http://baijiahao.baidu.com/s?id=1844861622026166111",
+      "published": "2025-10-03T01:56:59.000Z",
+      "summary": "<a href=\"http://baijiahao.baidu.com/s?id=1844861622026166111\" target=\"_blank\"><img border=\"0\" src=\"http://t1.baidu.com/it/u=http%3A%2F%2Ft11.baidu.com%2Fit%2Fu%3D3131461069%2C277739406%26fm%3D30%26app%3D106%26f%3DJPEG%3Fw%3D312%26h%3D208%26s%3D9F32698546B51B8A77016CD1030080BB&amp;fm=30\" /></a><br />9月25日，卡松科技股份有限公司(简称“卡松科技”)披露了公开转让说明书（申报稿），公司新三板挂牌材料被正式受理。公司本次计划挂牌股份总量为7639.31万股，拟于新三板基础层挂牌，主办券商为开源证券<br />",
+      "source": {},
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        56,
+        59,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "超1000万千瓦时，创新高！多样灵活举措满足新能源汽车假日充电补能需求",
+      "link": "http://www.chinanews.com/cj/2025/10-03/10493513.shtml",
+      "published": "Fri, 3 Oct 2025 09:48:54 +0800",
+      "summary": "央视网消息：假期期间，不少人选择自驾出行，新能源汽车充电补能需求也迎来高峰。国家电网智慧车联网平台数据显示，假期第一天，平台充电量超1000万千瓦时，创历史新高。为保障新能源车主顺利出行，各地推出多种灵活举措。",
+      "source": "中新网",
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        48,
+        54,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "国庆中秋假期第二天中国铁路北京局共计发送旅客163.1万人",
+      "link": "http://www.chinanews.com/cj/2025/10-03/10493490.shtml",
+      "published": "Fri, 3 Oct 2025 09:01:10 +0800",
+      "summary": "中新网北京10月3日电 (记者 贾天勇)记者2日从中国铁路北京局集团公司(以下简称：中国铁路北京局)获悉：10月2日，中国铁路北京局共计发送旅客163.1万人。其中，北京地区发送旅客88.7万人次，北京地区到达旅客56.5万人次。",
+      "source": "中新网",
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        1,
+        10,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "国庆首日高原铁路发送旅客10.2万人次 创历史新高",
+      "link": "http://www.chinanews.com/cj/2025/10-02/10493410.shtml",
+      "published": "Thu, 2 Oct 2025 20:43:26 +0800",
+      "summary": "中新网西宁10月2日电 (祁增蓓 袁昌玲 卢曦)2日，记者从中国铁路青藏集团有限公司(以下简称“青藏集团公司”)获悉，10月1日国庆首日，青藏集团公司旅客发送量达10.2万人次，创单日旅客发送量历史新高。",
+      "source": "中新网",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        12,
+        43,
+        26,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "商圈经济亮点纷呈——假期市场热点见闻",
+      "link": "http://www.chinanews.com/cj/2025/10-02/10493395.shtml",
+      "published": "Thu, 2 Oct 2025 20:06:46 +0800",
+      "summary": "在北京，体育赛事与花园城市为商圈注入新鲜活力；在上海，各大商圈节庆活动接力举办，掀起消费热潮；在成都，沉浸式、互动式的消费新场景新业态为游客提供全新游览体验……国庆中秋假期是各大商圈比拼竞争力的关键节点，多地核心商圈以“新业态+强体验”突破同质化瓶颈，多领域联动、多场景布局、多业态融合，营造浓郁节日氛围，激活消费潜力。",
+      "source": "中新网",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        12,
+        6,
+        46,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "10月2日中国跨区域人员流动量预计近2.9亿人次",
+      "link": "http://www.chinanews.com/cj/2025/10-02/10493385.shtml",
+      "published": "Thu, 2 Oct 2025 19:44:49 +0800",
+      "summary": "中新社北京10月2日电 (记者 刘文文)中国交通运输部最新数据显示，10月2日，国庆中秋假期第二日，预计全社会跨区域人员流动量28999万人次，同比(2024年国庆假期第二日，下同)增长2.2%。",
+      "source": "中新网",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        11,
+        44,
+        49,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "紫金黄金国际上市首日大涨68.5%",
+      "link": "https://www.ftchinese.com/story/001107799",
+      "published": "Mon, 29 Sep 2025 16:00:00 GMT",
+      "summary": "这家由中国最大矿业公司之一紫金矿业分拆出的公司，此次在港IPO筹集了32亿美元。此时正值黄金价格突破3800美元创下新高。",
+      "source": "FT中文网",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        0,
+        0,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "中国电动汽车或打破日本车企在东南亚的主导地位",
+      "link": "https://www.ftchinese.com/story/001107798",
+      "published": "Mon, 29 Sep 2025 16:00:00 GMT",
+      "summary": "日本车企几十年来在东南亚市场占据主导地位，这种局面可能被价格实惠的中国产电动汽车打破。",
+      "source": "FT中文网",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        0,
+        0,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "中国工厂活动遭遇六年来最长的连续下滑",
+      "link": "https://www.ftchinese.com/story/001107797",
+      "published": "Mon, 29 Sep 2025 16:00:00 GMT",
+      "summary": "9月份官方制造业采购经理指数为49.8，低于50的荣枯线，连续第六个月处于收缩区间。",
+      "source": "FT中文网",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        0,
+        0,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "特朗普的“气候骗局说”不会阻止新型ESG",
+      "link": "https://www.ftchinese.com/story/001107796",
+      "published": "Mon, 29 Sep 2025 16:00:00 GMT",
+      "summary": "邰蒂：特朗普攻击绿色能源，是为了与中国争夺全球经济霸主地位。从长远看，他难以成功，从短期看，会给企业带来更多动荡并损害地球。",
+      "source": "FT中文网",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        0,
+        0,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "陈洋：下任日本首相应当具备的条件",
+      "link": "https://www.ftchinese.com/story/001107795",
+      "published": "Mon, 29 Sep 2025 16:00:00 GMT",
+      "summary": "21世纪以来，首相频繁更迭已加剧日本民众对政治、传统政党的不信任。下任日本首相应具备与在野党的协调力和与特朗普的沟通力。",
+      "source": "FT中文网",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        0,
+        0,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "Don’t tax wealth",
+      "link": "https://www.economist.com/finance-and-economics/2025/10/02/dont-tax-wealth",
+      "published": "Thu, 02 Oct 2025 10:23:50 +0000",
+      "summary": "Even the most sophisticated arguments in favour of doing so make no sense",
+      "source": "经济学人 Economist",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        10,
+        23,
+        50,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "Credit markets look increasingly dangerous",
+      "link": "https://www.economist.com/finance-and-economics/2025/10/02/credit-markets-look-increasingly-dangerous",
+      "published": "Thu, 02 Oct 2025 10:22:25 +0000",
+      "summary": "A pair of bankruptcies highlight the risks",
+      "source": "经济学人 Economist",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        10,
+        22,
+        25,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "How the Trump administration learned to love foreign aid",
+      "link": "https://www.economist.com/finance-and-economics/2025/10/02/how-the-trump-administration-learned-to-love-foreign-aid",
+      "published": "Thu, 02 Oct 2025 10:19:44 +0000",
+      "summary": "America’s international assistance has not been destroyed—it has been transformed",
+      "source": "经济学人 Economist",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        10,
+        19,
+        44,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "The eccentric investment strategy that beats the rest",
+      "link": "https://www.economist.com/finance-and-economics/2025/10/01/the-eccentric-investment-strategy-that-beats-the-rest",
+      "published": "Wed, 01 Oct 2025 18:45:54 +0000",
+      "summary": "Introducing the 25/25/25/25 portfolio",
+      "source": "经济学人 Economist",
+      "published_parsed": [
+        2025,
+        10,
+        1,
+        18,
+        45,
+        54,
+        2,
+        274,
+        0
+      ]
+    },
+    {
+      "title": "China’s stockmarket rally may hurt the economy",
+      "link": "https://www.economist.com/finance-and-economics/2025/09/29/chinas-stockmarket-rally-may-hurt-the-economy",
+      "published": "Mon, 29 Sep 2025 16:46:19 +0000",
+      "summary": "The “wealth effect” is not the only way it has an impact",
+      "source": "经济学人 Economist",
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        16,
+        46,
+        19,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "BOJ's Ueda warns of global uncertainty, impact on wage outlook",
+      "link": "https://www.investing.com/news/economy-news/bojs-ueda-warns-of-global-uncertainty-impact-on-wage-outlook-4269642",
+      "published": "2025-10-03 01:42:57",
+      "summary": "N/A",
+      "source": "Investing.com",
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        42,
+        57,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "Texas woman sentenced to five years for attempted drowning of Muslim child",
+      "link": "https://www.investing.com/news/world-news/texas-woman-sentenced-to-five-years-for-attempted-drowning-of-muslim-child-4269643",
+      "published": "2025-10-03 01:36:52",
+      "summary": "N/A",
+      "source": "Investing.com",
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        36,
+        52,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "Oil prices set for sharp weekly decline as potential OPEC+ hike looms",
+      "link": "https://www.investing.com/news/commodities-news/oil-prices-set-for-sharp-weekly-decline-as-potential-opec-hike-looms-4269641",
+      "published": "2025-10-03 01:32:45",
+      "summary": "N/A",
+      "source": "Investing.com",
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        32,
+        45,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "Asian stocks clock weekly gains on rate cut wagers, AI fervour",
+      "link": "https://www.investing.com/news/economy-news/asian-stocks-clock-weekly-gains-on-rate-cut-wagers-ai-fervour-4269639",
+      "published": "2025-10-03 01:30:24",
+      "summary": "N/A",
+      "source": "Investing.com",
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        30,
+        24,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "Form 13G Safe and Green Development Corporation For: 2 October",
+      "link": "https://www.investing.com/news/filings/form-13g-safe-and-green-development-corporation-for-2-october-93CH-4269640",
+      "published": "2025-10-03 01:25:16",
+      "summary": "N/A",
+      "source": "Investing.com",
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        25,
+        16,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "Baroness Mone accuses chancellor of 'inflammatory' language",
+      "link": "https://www.bbc.com/news/articles/cd9y5nkxpzlo?at_medium=RSS&at_campaign=rss",
+      "published": "Thu, 02 Oct 2025 18:36:40 GMT",
+      "summary": "Her comments come after a firm linked to the peer was ordered to pay £122m over a Covid-19 contract.",
+      "source": "BBC全球经济",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        18,
+        36,
+        40,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "Tesco warns 'enough is enough' on business taxes",
+      "link": "https://www.bbc.com/news/articles/c784q26v57vo?at_medium=RSS&at_campaign=rss",
+      "published": "Thu, 02 Oct 2025 14:31:54 GMT",
+      "summary": "Ken Murphy says he does not want more costs to be added onto business, and calls for a \"pro-growth\" Budget.",
+      "source": "BBC全球经济",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        14,
+        31,
+        54,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "Denmark loses £1.4bn tax fraud claim in UK court case",
+      "link": "https://www.bbc.com/news/articles/cy852vyn054o?at_medium=RSS&at_campaign=rss",
+      "published": "Thu, 02 Oct 2025 13:08:31 GMT",
+      "summary": "The Danish government says it \"strongly disagrees with the premises of the judgment and is now seeking to appeal it\".",
+      "source": "BBC全球经济",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        13,
+        8,
+        31,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "Thames Water lenders submit rescue plan to stave off collapse",
+      "link": "https://www.bbc.com/news/articles/cn82pm40915o?at_medium=RSS&at_campaign=rss",
+      "published": "Thu, 02 Oct 2025 15:10:32 GMT",
+      "summary": "London & Valley Water, a consortium of investors, plans to write off some of the company's huge debts.",
+      "source": "BBC全球经济",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        15,
+        10,
+        32,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "'I won £65,000 at an employment tribunal – but I've yet to see a penny'",
+      "link": "https://www.bbc.com/news/articles/cvgjk8qnx2yo?at_medium=RSS&at_campaign=rss",
+      "published": "Wed, 01 Oct 2025 23:01:41 GMT",
+      "summary": "A BBC investigation reveals thousands of workers are still missing out on tribunal payouts.",
+      "source": "BBC全球经济",
+      "published_parsed": [
+        2025,
+        10,
+        1,
+        23,
+        1,
+        41,
+        2,
+        274,
+        0
+      ]
+    },
+    {
+      "title": "Defense Spending Could Keep Momentum on This ETF’s Side",
+      "link": "https://www.etftrends.com/innovative-etfs-channel/defense-spending-could-keep-momentum-etfs-side/",
+      "published": "Thu, 02 Oct 2025 20:00:34 +0000",
+      "summary": "<p>The momentum factor is helping to propel strength in international equities. So defense spending, especially in Europe, could keep momentum on the side of the Invesco S&#38;P International Developed Momentum ETF (IDMO). The ongoing Russia/Ukraine conflict has been a catalyst for increase spending in recent years, but as research from Goldman Sachs noted, previous years [...]</p>\n<p>The post <a href=\"https://www.etftrends.com/innovative-etfs-channel/defense-spending-could-keep-momentum-etfs-side/\" rel=\"nofollow\">Defense Spending Could Keep Momentum on This ETF&#8217;s Side</a> appeared first on <a href=\"https://www.etftrends.com\" rel=\"nofollow\">ETF Trends</a>.</p>",
+      "source": "ETF Trends",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        20,
+        0,
+        34,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "Targa Resources Announces New Permian Investments",
+      "link": "https://www.etftrends.com/energy-infrastructure-channel/targa-resources-announces-new-permian-investments/",
+      "published": "Thu, 02 Oct 2025 19:19:49 +0000",
+      "summary": "<p>In big news for the energy infrastructure space, Targa Resources Corp. (TRGP) has announced significant new investments in its Permian Basin operations. The announcement includes a new natural gas liquids (NGL) pipeline and incremental natural gas infrastructure.  See more: Midstream Prepares for More Permian Natural Gas Targa Makes News With Major Investment First, Targa is [...]</p>\n<p>The post <a href=\"https://www.etftrends.com/energy-infrastructure-channel/targa-resources-announces-new-permian-investments/\" rel=\"nofollow\">Targa Resources Announces New Permian Investments</a> appeared first on <a href=\"https://www.etftrends.com\" rel=\"nofollow\">ETF Trends</a>.</p>",
+      "source": "ETF Trends",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        19,
+        19,
+        49,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "As Interest Rates Fall, These Equity Income ETFs Can Step Up",
+      "link": "https://www.etftrends.com/future-etfs-channel/interest-rates-fall-equity-income-etfs-step/",
+      "published": "Thu, 02 Oct 2025 18:40:30 +0000",
+      "summary": "<p>Interest rates have fallen once already this fall, and could be set to fall yet more in the months ahead. Should the Fed tame inflation, those cuts could, then, see a shift in investor portfolios’ fixed income allocations as yields drop. That may have some investors looking at their options to boost current income and [...]</p>\n<p>The post <a href=\"https://www.etftrends.com/future-etfs-channel/interest-rates-fall-equity-income-etfs-step/\" rel=\"nofollow\">As Interest Rates Fall, These Equity Income ETFs Can Step Up</a> appeared first on <a href=\"https://www.etftrends.com\" rel=\"nofollow\">ETF Trends</a>.</p>",
+      "source": "ETF Trends",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        18,
+        40,
+        30,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "ETF 360: Reckoner’s John Kim on CLOs",
+      "link": "https://www.etftrends.com/etf-360-reckoners-john-kim-clos/",
+      "published": "Thu, 02 Oct 2025 18:08:56 +0000",
+      "summary": "<p>On the latest ETF 360, VettaFi’s Cinithia Murphy talked to Reckoner Capital Management’s John Kim. The two discussed CLOs and the Reckoner Leveraged AAA CLO ETF (RAAA). Alternative Credit on the Rise Kim shared that for a long time, the fixed income options available to most individual investors was fairly standard. Institutional investors, however, saw [...]</p>\n<p>The post <a href=\"https://www.etftrends.com/etf-360-reckoners-john-kim-clos/\" rel=\"nofollow\">ETF 360: Reckoner&#8217;s John Kim on CLOs</a> appeared first on <a href=\"https://www.etftrends.com\" rel=\"nofollow\">ETF Trends</a>.</p>",
+      "source": "ETF Trends",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        18,
+        8,
+        56,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "Vanguard Debuts Low-Cost, Emerging Markets ex-China ETF",
+      "link": "https://www.etftrends.com/fixed-income-channel/vanguard-debuts-low-cost-emerging-markets-ex-china-etf/",
+      "published": "Thu, 02 Oct 2025 16:25:28 +0000",
+      "summary": "<p>Vanguard announced the debut of a new low-cost, emerging markets (EM) exchange-traded fund (ETF) — the Vanguard Emerging Markets ex-China ETF (VEXC). EM assets have been garnering increased investor attention this year and could see additional interest with the prospect of more interest rate cuts to come. This makes the timing of VEXC&#8217;s debut auspicious. [...]</p>\n<p>The post <a href=\"https://www.etftrends.com/fixed-income-channel/vanguard-debuts-low-cost-emerging-markets-ex-china-etf/\" rel=\"nofollow\">Vanguard Debuts Low-Cost, Emerging Markets ex-China ETF</a> appeared first on <a href=\"https://www.etftrends.com\" rel=\"nofollow\">ETF Trends</a>.</p>",
+      "source": "ETF Trends",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        16,
+        25,
+        28,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "Shutdown fallout: Energy Dept. axes billions for green projects in blue states",
+      "link": "https://www.cnbc.com/2025/10/02/energy-department-cancels-green-projects-in-united-states.html",
+      "published": "Fri, 03 Oct 2025 00:38:47 GMT",
+      "summary": "The Energy Department's cancellations of projects directly affected 16 states won by Kamala Harris in the 2024 presidential election.",
+      "source": "CNBC",
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        0,
+        38,
+        47,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "Apple removes ICE tracking apps after Trump AG pressure",
+      "link": "https://www.cnbc.com/2025/10/03/apple-ice-app-trump-bondi.html",
+      "published": "Fri, 03 Oct 2025 01:56:24 GMT",
+      "summary": "\"ICEBlock is designed to put ICE agents at risk just for doing their jobs,\" Attorney General Pam Bondi told Fox News Digital.",
+      "source": "CNBC",
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        56,
+        24,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "Trump touts shutdown as 'unprecedented opportunity' to cut more Democratic priorities",
+      "link": "https://www.cnbc.com/2025/10/02/trump-government-shutdown-updates-vought.html",
+      "published": "Thu, 02 Oct 2025 21:38:33 GMT",
+      "summary": "Trump in a Truth Social post said he will meet with Office of Management and Budget Director Russell Vought to discuss cutting agencies.",
+      "source": "CNBC",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        21,
+        38,
+        33,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "Elon Musk is telling his followers to cancel Netflix subscriptions. Here's what's happening",
+      "link": "https://www.cnbc.com/2025/10/02/elon-musk-calls-for-canceling-netflix-whats-happening.html",
+      "published": "Thu, 02 Oct 2025 20:46:49 GMT",
+      "summary": "Elon Musk this week urged his followers to cancel their Netflix subscriptions over a controversy surrounding an animated show and its creator.",
+      "source": "CNBC",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        20,
+        46,
+        49,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "OpenAI's Sora 2 is putting safety and censorship to the test with stunningly real videos",
+      "link": "https://www.cnbc.com/2025/10/02/openai-invite-code-sora-2-censorship.html",
+      "published": "Fri, 03 Oct 2025 00:09:21 GMT",
+      "summary": "Fresh off a $6.6 billion share sale that cemented its $500 billion valuation, OpenAI is viral with Sora 2, its first feed-driven video app.",
+      "source": "CNBC",
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        0,
+        9,
+        21,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "Trump Says Radical Left's Shutdown Misstep Opens \"Unprecedented Opportunity\" For Mass Firings Of Fed Workers",
+      "link": "https://www.zerohedge.com/political/democrats-govt-shutdown-misstep-revives-trump-doge-clear-out-dead-wood-bloated-dc",
+      "published": "Fri, 03 Oct 2025 03:20:00 +0000",
+      "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">Trump Says Radical Left's Shutdown Misstep Opens \"Unprecedented Opportunity\" For Mass Firings Of Fed Workers</span>\n\n            <div class=\"clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item\"><p><strong>Update (1320ET):</strong></p>\n\n<p>As we mentioned earlier, Democrats voted for a full-blown government shutdown, which has <strong>inadvertently given the Trump administration</strong> the greatest gift ever: <em>the ability to <strong>revive DOGE-style efforts</strong> to cut waste and fraud.</em></p>\n\n<p>\"I have a <strong>meeting today with Russ Vought, he of PROJECT 2025 Fame,  to determine which of the many Democrat Agencies, most of which are a political SCAM, he recommends to be cut, and whether or not those cuts will be temporary or permanent</strong>. I can't believe the Radical Left Democrats gave me this <strong>unprecedented opportunity</strong>,\" Trump wrote on Truth Social earlier. </p>\n\n<p>He continued, \"<strong>They are not stupid people</strong>, so maybe this is their way of wanting to, quietly and quickly, MAKE AMERICA GREAT AGAIN! President DJT.\" </p>\n\n<p><a href=\"https://cms.zerohedge.com/s3/files/inline-images/2025-10-02_12-48-45.png?itok=rUfssWVD\"><img alt=\"\" class=\"inline-images image-style-inline-images\" height=\"335\" src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/2025-10-02_12-48-45.png?itok=rUfssWVD\" width=\"500\" /></a></p>\n\n<p>It's only a matter of time before Democrats start viewing their miscalculated move as \"regrettable\"... </p>\n\n<p><a href=\"https://cms.zerohedge.com/s3/files/inline-images/642f828804797594.jpg?itok=GV1pdfPZ\"><img alt=\"\" class=\"inline-images image-style-inline-images\" height=\"584\" src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/642f828804797594.jpg?itok=GV1pdfPZ\" width=\"500\" /></a></p>\n\n<p>Whoops! </p>\n\n<p><a href=\"https://cms.zerohedge.com/s3/files/inline-images/2025-10-02_14-52-52.png?itok=HoyXJxK6\"><img alt=\"\" class=\"inline-images image-style-inline-images\" height=\"469\" src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/2025-10-02_14-52-52.png?itok=HoyXJxK6\" width=\"500\" /></a></p>\n\n<p>How many government workers are on the chopping block? </p>\n\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">BREAKING: Trump says Democrats have given him an \"unprecedented opportunity\" to fire potentially millions of government employees.</p>\n— Polymarket (@Polymarket) <a href=\"https://twitter.com/Polymarket/status/1973781968572870718?ref_src=twsrc%5Etfw\">October 2, 2025</a></blockquote>\n<p>Just wait until the administration's new joint task force begins enforcement against the dark money that rules the corrupt NGO space. </p>\n\n<p>*  *  * <em>5g of pure, <a href=\"https://store.zerohedge.com/creatine-monohydrate/\">micronized creatine</a> per serving. No soy, gluten, sugar, GMO. Just creatine. </em></p>\n\n<p><a href=\"https://store.zerohedge.com/creatine-monohydrate/\"><img alt=\"\" class=\"inline-images image-style-inline-images\" height=\"279\" src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/creatine%20ad.png?itok=SPSk6jpi\" width=\"500\" /></a></p>\n\n<p>Democrats voted for a government shutdown, and that's precisely what they got.</p>\n\n<p>They find themselves in an optics nightmare - as party leaders were surely aghast watching <em>CNN</em>'s Jake Tapper call out House Minority Leader Hakeem Jeffries (D-NY) over <strong>the hill they've chosen to die on - restoring provisions</strong> that were eliminated in Trump's 'big beautiful bill' that <strong>provides free healthcare to illegal immigrants.</strong></p>\n\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">Tapper: Here is the provision that shows you want to give illegals healthcare. I understand it's not an accurate depiction.<br /><br />\nJeffries: It's a lie.<br /><br />\nTapper: It's a lie... but it does bring back funding for healthcare for illegals. <a href=\"https://t.co/jyQS3RMj7e\">pic.twitter.com/jyQS3RMj7e</a></p>\n— Greg Price (@greg_price11) <a href=\"https://twitter.com/greg_price11/status/1973508813358760248?ref_src=twsrc%5Etfw\">October 1, 2025</a></blockquote>\n\n<p>What's more, <strong>Democrats handed President Trump a gift</strong> - not only do they look stupid for trying to add $<a href=\"https://mikejohnson.house.gov/news/documentsingle.aspx?DocumentID=2694\">1.5 trillion</a> to the national debt, they've opened the door for President Trump to deliver on one of his core campaign promises; cutting waste and fraud, a crusade that began with Elon Musk and DOGE in his first term but has since lost momentum - well, until now. </p>\n\n<p>On Tuesday, the president warned that he could \"<strong>get rid of a lot of things\" that would heavily impact the Democratic Party</strong>, adding, \"<strong>We can eliminate many things we didn't want ... and they'd be Democrat things.</strong>\" </p>\n\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">President Trump on \"A lot of good can come down from shutdowns. We can get rid of a lot of things that we didn't want.\" <a href=\"https://t.co/8VoDQ2cdq8\">pic.twitter.com/8VoDQ2cdq8</a></p>\n— CSPAN (@cspan) <a href=\"https://twitter.com/cspan/status/1973124610578133306?ref_src=twsrc%5Etfw\">September 30, 2025</a></blockquote>\n<p>By Wednesday morning, left-wing New York Governor Kathy Hochul and fellow Democrats were furious about Office of Management and Budget (OMB) Director Russ Vought's <a href=\"https://www.zerohedge.com/political/18-billion-nyc-infrastructure-cut-hits-first-shutdown-panic-grips-democrats\">announcement</a> that the Trump administration withheld $18 billion in New York City infrastructure projects due to \"<strong>unconstitutional DEI principles</strong>\". This shows how the administration has a lot more power during the shutdown to <strong>slash and burn spending that funds the Democratic Party machine.</strong></p>\n\n<p><a href=\"https://cms.zerohedge.com/s3/files/inline-images/2025-10-01_14-04-10.png?itok=Ql-MObgw\"><img alt=\"\" class=\"inline-images image-style-inline-images\" height=\"339\" src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/2025-10-01_14-04-10.png?itok=Ql-MObgw\" width=\"500\" /></a></p>\n\n<p>Late last night, Trump wrote on Truth Social, \"<strong>Republicans must use this opportunity of Democrat forced closure to clear out dead wood, waste, and fraud. Billions of Dollars can be saved</strong>.\" </p>\n\n<p><a href=\"https://cms.zerohedge.com/s3/files/inline-images/2025-10-02_07-09-47.png?itok=Gr6cIMAW\"><img alt=\"\" class=\"inline-images image-style-inline-images\" height=\"167\" src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/2025-10-02_07-09-47.png?itok=Gr6cIMAW\" width=\"500\" /></a></p>\n\n<p>Vought has fired up the chainsaw ... again.</p>\n\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">Nearly $8 billion in Green New Scam funding to fuel the Left's climate agenda is being cancelled. More info to come from <a href=\"https://twitter.com/ENERGY?ref_src=twsrc%5Etfw\">@ENERGY</a>.<br /><br />\nThe projects are in the following states: CA, CO, CT, DE, HI, IL, MD, MA, MN, NH, NJ, NM, NY, OR, VT, WA</p>\n— Russ Vought (@russvought) <a href=\"https://twitter.com/russvought/status/1973450301236715838?ref_src=twsrc%5Etfw\">October 1, 2025</a></blockquote>\n<p><strong>Panic mode sets in for Dem</strong>ocrats in the far-left state of Maryland. </p>\n\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">🚨 JUST IN: Nationwide, Democrats are in full-blown panic mode upon hearing that Russ Vought is being unleashed to fire federal workers during the Schumer Shutdown.<br /><br />\n\"It is deeply offensive that the president is threatening to FIRE workers!\"<a href=\"https://t.co/D0CRlrfdpA\">pic.twitter.com/D0CRlrfdpA</a></p>\n— Eric Daugherty (@EricLDaugh) <a href=\"https://twitter.com/EricLDaugh/status/1973388798483374412?ref_src=twsrc%5Etfw\">October 1, 2025</a></blockquote>\n<p><strong>Trump did warn Democrats</strong> ahead of the shutdown that his administration was ready to slash jobs and programs .... </p>\n\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">White House memo says Democrats' plan could spend $200B on healthcare for illegal immigrants <a href=\"https://t.co/vteQhPPbkF\">https://t.co/vteQhPPbkF</a></p>\n— Rapid Response 47 (@RapidResponse47) <a href=\"https://twitter.com/RapidResponse47/status/1973453989938340349?ref_src=twsrc%5Etfw\">October 1, 2025</a></blockquote>\n<p>Democrats appear to have made a miscalculated move in forcing a shutdown, one that now inadvertently gives the Trump administration the runway to cut even more waste and fraud from a bloated federal bureaucracy. A January Ipsos poll found that a majority of Americans support downsizing the federal government. With the national debt soaring to $37.5 trillion, savings must be found wherever possible. Those savings now appear to be coming from defunding the Democratic Party’s globalist machine, which has squandered not only the inheritance of previous generations but also the future of young Americans through its nation-killing woke policies. </p>\n\n<p>*  *  * <em>5g of oure, <a href=\"https://store.zerohedge.com/creatine-monohydrate/\">micronized creatine</a> per serving. No soy, gluten, sugar, GMO. Just creatine. </em></p>\n\n<p><a href=\"https://store.zerohedge.com/creatine-monohydrate/\"><img alt=\"\" class=\"inline-images image-style-inline-images\" height=\"279\" src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/creatine%20ad.png?itok=SPSk6jpi\" width=\"500\" /></a></p>\n</div>\n      <span class=\"field field--name-uid field--type-entity-reference field--label-hidden\" rel=\"schema:author\"><a class=\"username\" href=\"https://cms.zerohedge.com/users/tyler-durden\" lang=\"\" title=\"View user profile.\" xml:lang=\"\">Tyler Durden</a></span>\n<span class=\"field field--name-created field--type-created field--label-hidden\">Thu, 10/02/2025 - 23:20</span>",
+      "source": "ZeroHedge",
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        3,
+        20,
+        0,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "Putin: 'All NATO Countries Are Fighting Us' While EU Leaders 'Whip Up Hysteria'",
+      "link": "https://www.zerohedge.com/geopolitical/putin-all-nato-countries-are-fighting-us-while-eu-leaders-whip-hysteria",
+      "published": "Fri, 03 Oct 2025 01:50:00 +0000",
+      "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">Putin: 'All NATO Countries Are Fighting Us' While EU Leaders 'Whip Up Hysteria' </span>\n\n            <div class=\"clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item\"><p>Speaking at the Valdai Discussion Group in the Black Sea resort of Sochi on Thursday, Russian President Vladimir Putin said his forces are advancing along the entire front in Ukraine, and warned that Moscow is now facing down all of NATO.</p>\n\n<p>\"<strong>All NATO countries are fighting us, and they're no longer hiding it</strong>,\" he <a href=\"https://www.reuters.com/world/europe/putin-quotes-nato-europe-confrontation-2025-10-02/\">said</a>. \"Unfortunately, there are instructors (in Ukraine), and<strong> they're actually taking part in combat operations</strong>. A centre was created specifically in Europe, and it essentially supports everything the Ukrainian armed forces do. It feeds information, transmits intelligence from space, and supplies weapons and gives training.\"</p>\n\n<p>\"The ruling elites of united Europe <strong>continue to whip up hysteria</strong>. It turns out that war with the Russians is practically on the doorstep. They repeat this nonsense, this mantra, over and over again,\" he continued. \"They can't believe what they're saying, that Russia is going to attack NATO?... <strong>They're either incredibly incompetent if they truly believe it</strong>, because it's impossible to believe this nonsense, or they're simply dishonest.\" Earlier on Thursday it was widely reported that the White House has authorized intelligence assistance to striking long-range targets inside Ukraine.</p>\n<a href=\"https://cms.zerohedge.com/s3/files/inline-images/valdai_0.jpg?itok=b1cBf2qI\"><figure class=\"caption caption-img inline-images image-style-inline-images\"><img alt=\"\" height=\"302\" src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/valdai_0.jpg?itok=b1cBf2qI\" width=\"500\" /><figcaption><em>AFP/Getty Images</em></figcaption></figure></a>\n\n<p>\"We simply cannot ignore what is happening. We have no right to do so for reasons of our own security. I repeat, our defense and safety.<strong> Therefore, we are closely monitoring the escalating militarization of Europe</strong>.\" He made clear that it's absurd to believe that Russia is looking to attack NATO. This had been frequently repeated by the Kremlin throughout the summer.</p>\n\n<p>Putin said further: \"Are these just empty words, or is it time for us to take countermeasures? ... Germany, for example, says that the German army should be the most powerful in Europe. Good. We listen carefully, understanding what is meant.\"</p>\n\n<p>\"I think no one doubts that such measures will force Russia to act, and <strong>Russia's countermeasures will not be long in coming</strong>. It seems (to me) that the response to these threats will be, to put it mildly, <strong>very convincing</strong>.\"</p>\n\n<p>As for the United States and the potential for an improvement in bilateral relations, this was the one bright spot in the Valdai address: </p>\n\n<blockquote>\n<p><em>\"The current White House administration states its interests and desires directly ... <strong>and bluntly, but without any unnecessary hypocrisy</strong>.\"</em></p>\n\n<p><em>\"We see that the current U.S. administration is guided primarily by its own interests, as it understands them. <strong>I believe this is a rational approach</strong>. But then, if you will excuse me, <strong>Russia also reserves the right to be guided by its national interests</strong>. One of which, incidentally, is the <strong>restoration of full-fledged relations with the U.S</strong>.\"</em></p>\n</blockquote>\n\n<p>And so Putin appeared to lay the bulk of the blame on Europe and its efforts to support Ukraine at all costs while pursuing irresponsible and dangerous confrontation.</p>\n\n<p><em>Putin is not beating around the bush, calling out German leaders among others for their jingoist rhetoric, and vowing that serious 'countermeasures' are coming...</em></p>\n\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">NOW - Putin: \"They say that the German army should be the most powerful in Europe? Okay, we have been listening to that attentively and eyeing that closely, trying to figure what they actually mean. I believe that no one has any doubts that the response of Russia will not be long… <a href=\"https://t.co/dkkjJIHkPI\">pic.twitter.com/dkkjJIHkPI</a></p>\n— Disclose.tv (@disclosetv) <a href=\"https://twitter.com/disclosetv/status/1973783934505799693?ref_src=twsrc%5Etfw\">October 2, 2025</a></blockquote>\n<p>We can assume that if President Trump does actually go forward with approving Europe's request to send Tomahawk long-range missiles to Kiev, this optimistic picture of bilateral Russia-US relations will no longer be the case.</p>\n\n<p>As for the state of the battlefield, Putin made clear that Russia will pursue its Special Military Operation undeterred, and that it is ascendant and keeps moving forward daily. <strong>\"Our troops are confidently advancing along practically the entire line of contact,\"</strong> he declared.</p>\n\n<p>\"We control almost 100% of the Luhansk region. The enemy controls a little over 19% in the Donetsk region, and 24-25% in the Zaporizhzhia and Kherson regions, respectively. And everywhere, Russian troops confidently maintain the strategic initiative.\"</p>\n\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">🇷🇺 Russian President Putin on the war with NATO:<br /><br />\n\"I’m telling you honestly, sometimes I look at what they say and I think, they can’t believe it. They can't possibly believe what they're saying, that Russia is planning to attack NATO. Well, it's impossible to believe, but… <a href=\"https://t.co/dZ4ftLVOwx\">pic.twitter.com/dZ4ftLVOwx</a></p>\n— Status-6 (Military & Conflict News) (@Archer83Able) <a href=\"https://twitter.com/Archer83Able/status/1973784218699174118?ref_src=twsrc%5Etfw\">October 2, 2025</a></blockquote>\n<p>Last week, FM Lavrov said something similar to what Putin has said in Sochi. \"<strong>NATO and the European Union want to declare, in fact, have already declared a real war on my country and are directly participating in it</strong>,\" Lavrov had <a href=\"https://tass.com/politics/2021401\">said</a>.</p>\n\n<p>Meanwhile, on the economic front, some the countermeasures that Russia is said to be readying...</p>\n\n<blockquote class=\"twitter-tweet\">\n<p dir=\"ltr\" lang=\"en\" xml:lang=\"en\">🇧🇪 Belgium refused to seize Russian assets demanding signatures from the leaders of all EU countries on a commitment to share the financial risks of the kingdom, said the country's Prime Minister Bart De Wever. <a href=\"https://t.co/OnbwVXyEXu\">https://t.co/OnbwVXyEXu</a></p>\n— Roberto (@UniqueMongolia) <a href=\"https://twitter.com/UniqueMongolia/status/1973674082278453500?ref_src=twsrc%5Etfw\">October 2, 2025</a></blockquote>\n</div>\n      <span class=\"field field--name-uid field--type-entity-reference field--label-hidden\" rel=\"schema:author\"><a class=\"username\" href=\"https://cms.zerohedge.com/users/tyler-durden\" lang=\"\" title=\"View user profile.\" xml:lang=\"\">Tyler Durden</a></span>\n<span class=\"field field--name-created field--type-created field--label-hidden\">Thu, 10/02/2025 - 21:50</span>",
+      "source": "ZeroHedge",
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        50,
+        0,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "Alberta Proposes New Oil Pipeline",
+      "link": "https://www.zerohedge.com/markets/alberta-proposes-new-oil-pipeline",
+      "published": "Fri, 03 Oct 2025 01:25:00 +0000",
+      "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">Alberta Proposes New Oil Pipeline</span>\n\n            <div class=\"clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item\"><p><em>By Irina Slav of <a href=\"https://oilprice.com/Latest-Energy-News/World-News/Alberta-Proposes-New-Oil-Pipeline.html\">OilPrice.com</a></em></p>\n\n<p><strong>Alberta has proposed to build a new oil pipeline to the British Columbia coast that could carry up to 1 million barrels daily of crude oil, to be exported to Asian markets.</strong></p>\n\n<p><em><a href=\"https://cms.zerohedge.com/s3/files/inline-images/2025-10-02_8dsa0hlkmv.jpg?itok=HpsTdlhp\"><img alt=\"\" class=\"inline-images image-style-inline-images\" height=\"209\" src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/2025-10-02_8dsa0hlkmv.jpg?itok=HpsTdlhp\" width=\"500\" /></a></em></p>\n\n<p>The Calgary Herald <a href=\"https://calgaryherald.com/business/alberta-to-lead-push-for-new-pipeline-to-canadas-west-coast\">reported</a> the provincial government was ready to commit C$14 million to early planning for the project, with Premier Danielle Smith expressing hope the project could get federal approval as early as next month.</p>\n\n<p><strong>Opposition, however, has been swift. </strong>The Premier of British Columbia said that “The problem that we have is Smith continues to advance a project that is taxpayer-funded, has no private sector proponent, is not a real project and is incredibly alarming to British Columbians, especially First Nations along the coast,” as <a href=\"https://globalnews.ca/news/11460242/bc-premier-react-alberta-plan-oil-pipeline-to-the-coast/\">quoted</a> by Global News.</p>\n\n<p>Indeed, a representative of several coastal First Nations said they would not support a new pipeline project “now or ever,” according to a <a href=\"https://www.cbc.ca/news/canada/british-columbia/first-nations-bc-alberta-bitumen-proposal-1.7648740\">report</a> by CBC News. “This is not something that we would ever support,” Marylin Slett told the publication.</p>\n\n<p><strong>“There is no project that ... we would ever support the lifting of that moratorium,”</strong> referring to a ban on oil tankers for northern British Columbia ports.</p>\n\n<p>“I think coastal provinces have a special obligation to be generous and make sure we’re creating access to ports for all of our products,” Alberta’s Smith said.</p>\n\n<p>The Alberta government has been pushing for new oil pipeline capacity to expand Canadian oil’s access to international markets for a while now, but British Columbia’s government has been against it from the start.</p>\n\n<p><em><strong>“The only way that pipeline across the north gets built is if the government of Alberta and the federal government pony up tens of billions of tax dollars to build it,” </strong></em>B.C. Premier David Eby said in September, as <a href=\"https://www.bloomberg.com/news/articles/2025-10-01/alberta-backs-new-pipeline-to-boost-canada-s-oil-exports-to-asia\">quoted</a> by Bloomberg, estimating the potential price tag of such an infrastructure project at some $C$60 billion, equal to around $43 billion.</p>\n</div>\n      <span class=\"field field--name-uid field--type-entity-reference field--label-hidden\" rel=\"schema:author\"><a class=\"username\" href=\"https://cms.zerohedge.com/users/tyler-durden\" lang=\"\" title=\"View user profile.\" xml:lang=\"\">Tyler Durden</a></span>\n<span class=\"field field--name-created field--type-created field--label-hidden\">Thu, 10/02/2025 - 21:25</span>",
+      "source": "ZeroHedge",
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        25,
+        0,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "FICO Spikes On Plan To Go Direct To Lenders, Upends Experian, Equifax, TransUnion",
+      "link": "https://www.zerohedge.com/markets/fico-spikes-plan-go-direct-lenders-upends-experian-equifax-transunion",
+      "published": "Fri, 03 Oct 2025 01:00:00 +0000",
+      "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">FICO Spikes On Plan To Go Direct To Lenders, Upends Experian, Equifax, TransUnion</span>\n\n            <div class=\"clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item\"><p>Fair Isaac shares surged today after announcing a plan that bypasses the big three credit bureaus - Experian, Equifax, and TransUnion - in providing its credit scores directly to mortgage lenders.</p>\n\n<p>Until now, mortgage resellers had to purchase FICO scores through the bureaus, who added markups of about $10 per score, <a href=\"https://www.wsj.com/personal-finance/credit/fico-stock-pricing-model-434ff3e7\">according to the Wall Street Journal</a>. FICO will now sell directly, offering lenders either a flat $10 fee or $4.95 per score plus a $33 closing fee. The company said the new closing charge replaces reissue fees but didn’t disclose the prior cost.</p>\n\n<p><a href=\"https://cms.zerohedge.com/s3/files/inline-images/Screenshot%202025-10-02%20at%2013.36.52.jpg?itok=WLE5YQfp\"><img alt=\"\" class=\"inline-images image-style-inline-images\" height=\"434\" src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/Screenshot%202025-10-02%20at%2013.36.52.jpg?itok=WLE5YQfp\" width=\"312\" /></a></p>\n\n<p>WSJ <a href=\"https://www.wsj.com/personal-finance/credit/fico-stock-pricing-model-434ff3e7\">writes</a> that the change threatens a long-standing revenue stream for the bureaus. <em><strong>“We believe this change adds substantial uncertainty to a sector that has already been undergoing heightened volatility amid a series of potential regulatory changes,”</strong></em> wrote UBS analyst Kevin McVeigh.</p>\n\n<p>The move follows pressure from regulators to reduce costs in an unaffordable housing market. Earlier this year, the FHFA authorized lenders to use VantageScore—developed by the three bureaus—for government-backed loans, challenging FICO’s dominance.</p>\n\n<p><strong>FHFA Director Bill Pulte called FICO’s plan a “first step” and urged bureaus to “take similar creative and constructive actions” </strong>while pressing VantageScore to ensure “they are competitive, in every way, including but not limited to costs.”</p>\n\n<p>Industry reactions were cautiously positive. TD Cowen analysts called the change “politically positive.” Mortgage Bankers Association chief Bob Broeksmit said it was a “step in the right direction” but warned it “remains to be seen” whether it will meaningfully lower costs.</p>\n</div>\n      <span class=\"field field--name-uid field--type-entity-reference field--label-hidden\" rel=\"schema:author\"><a class=\"username\" href=\"https://cms.zerohedge.com/users/tyler-durden\" lang=\"\" title=\"View user profile.\" xml:lang=\"\">Tyler Durden</a></span>\n<span class=\"field field--name-created field--type-created field--label-hidden\">Thu, 10/02/2025 - 21:00</span>",
+      "source": "ZeroHedge",
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        0,
+        0,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "Top FDA Vaccine Official Says US Vaccine Schedule May Be Suboptimal",
+      "link": "https://www.zerohedge.com/political/top-fda-vaccine-official-says-us-vaccine-schedule-may-be-suboptimal",
+      "published": "Fri, 03 Oct 2025 00:35:00 +0000",
+      "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">Top FDA Vaccine Official Says US Vaccine Schedule May Be Suboptimal</span>\n\n            <div class=\"clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item\"><p><em><a href=\"https://www.theepochtimes.com/us/top-fda-vaccine-official-says-us-vaccine-schedule-may-be-suboptimal-5922828?utm_source=partner&amp;utm_campaign=ZeroHedge&amp;src_src=partner&amp;src_cmp=ZeroHedge\">Authored by Zachary Stieber via The Epoch Times</a> (emphasis ours),</em></p>\n\n<p><strong>The current vaccine schedule in the United States may not be optimal, </strong>the Food and Drug Administration’s top vaccine official said in a new interview.</p>\n<a href=\"https://cms.zerohedge.com/s3/files/inline-images/image_80%28200%29_0.jpg?itok=rq-uSJyw\"><figure class=\"caption caption-img inline-images image-style-inline-images\"><img alt=\"\" height=\"324\" src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/image_80%28200%29_0.jpg?itok=rq-uSJyw\" width=\"500\" /><figcaption><em>Dr. Vinay Prasad, director of the Food and Drug Administration’s Center for Biologics Evaluation and Research, in an undated file photograph. FDA via The Epoch Times</em></figcaption></figure></a>\n\n<p>“<strong>I think the scientific establishment blindly defending the U.S. vaccine schedule is incorrect,</strong>” Dr. Vinay Prasad, director of the FDA’s Center for Biologics Evaluation and Research, <a href=\"https://www.thefp.com/p/trumps-vaccine-chief-on-childhood-vaccinations\">told</a> the Free Press in an interview published Sept. 29. “It is possible that our schedule is suboptimal.”</p>\n\n<p>The FDA is part of the Department of Health and Human Services (HHS). Another HHS division, the Centers for Disease Control and Prevention, sets the immunization schedule, which contains more vaccines and doses than many other countries, such as Denmark.</p>\n\n<p>“<strong>I’ve seen some pundits claim that Denmark can get away with a different schedule because they’re a smaller country</strong>,” Prasad said. “That’s illogical. Denmark is connected to all of Europe. It would be like arguing that Boston could have a different vaccine schedule than the rest of the Eastern Seaboard if we made it its own nation.”</p>\n\n<p>Susan Monarez, who headed the CDC until she was recently fired, <a href=\"https://www.theepochtimes.com/us/ousted-cdc-director-says-kennedy-pressured-her-to-preapprove-changes-to-vaccine-recommendations-5916400\">told</a> a congressional committee last month that HHS Secretary Robert F. Kennedy Jr. said during a private meeting that the vaccine schedule would be changing.</p>\n\n<p>Monarez said she would only sign off on changes if she were presented with evidence backing them, and said she was not.</p>\n\n<p>“<strong>The childhood vaccine schedule has been vetted and validated through science and evidence</strong>,” Monarez said.</p>\n\n<p>If children receive vaccines when recommended by the schedule, they receive multiple shots across multiple visits.</p>\n\n<p><strong>President Donald Trump in a Sept. 22 briefing <a href=\"https://www.theepochtimes.com/us/trump-calls-for-spacing-out-vaccines-no-downside-5919186\">said</a> that parents should space out vaccines</strong>.</p>\n\n<p>“I think the president has a deeper point about the evidence to support combination and concomitant administration. By background, combination vaccines combine two or more into a single vial or shot, while concomitant administration means administering two or more at the same visit. Historically, FDA has had stronger levels of evidence for combination than concomitant administration, but that is changing,” Prasad told the Free Press.</p>\n\n<p>“We are planning new guidance to raise the bar for concomitant administration, and we have a paper now submitted in a medical journal.”</p>\n\n<h2>Measles, Hepatitis B Vaccines</h2>\n\n<p>Trump also proposed delaying the hepatitis B vaccine, which is currently on the immunization schedule at three doses in early childhood, or two doses for adolescents, and taking separate vaccines against measles, mumps, rubella, and chickenpox rather than combination vaccines.</p>\n\n<p>Also recently, advisers to the CDC <a href=\"https://www.theepochtimes.com/us/what-to-know-about-pending-changes-to-vaccines-against-covid-19-measles-5917414\">recommended</a> the agency remove the measles, mumps, rubella, and chickenpox vaccine from the schedule for children younger than 4 years of age, emphasizing a different vaccine that targets measles, mumps, and rubella, due to an elevated risk of febrile seizures. Advisers also considered delaying the first dose of the hepatitis B vaccine regimen, but ultimately tabled the decision to <a href=\"https://www.theepochtimes.com/health/cdc-advisers-to-consider-removing-hepatitis-b-vaccine-from-childhood-schedule-5920737\">explore</a> whether to alter or remove the entire regimen. The CDC has not yet acted on the advice.</p>\n\n<p><strong>“I think the president is 100 percent correct that it is prudent to take the chickenpox shot separately,” </strong>Prasad said.</p>\n\n<p>He said that Trump and the Advisory Committee on Immunization Practices (ACIP) were right to question whether hepatitis B shots should be administered to babies born to mothers who tested negative for hepatitis B, noting that some other countries do not give the vaccine to such children.</p>\n\n<p>ACIP is also examining the cumulative impact of the vaccination schedule, advisers <a href=\"https://www.theepochtimes.com/health/new-cdc-advisory-panel-opens-meeting-with-eye-on-vaccines-5878103\">said</a> in June.</p>\n\n<p>Trump’s comments drew criticism from some, including the American Academy of Pediatrics.</p>\n\n<p>“<strong>Pediatricians know firsthand that children’s immune systems perform better after vaccination against serious, contagious diseases like polio, measles, whooping cough and hepatitis B. Spacing out or delaying vaccines means children will not have immunity against these diseases at times when they are most at risk</strong>,” the academy <a href=\"https://www.aap.org/en/news-room/news-releases/aap/2025/aap-statement-on-white-house-autism-announcement\">said</a> in a statement.</p>\n\n<p>Prasad said that Trump was offering personal advice and not trying to compel anyone to follow that advice. When asked whether Trump’s comments would drive vaccine hesitancy, Prasad said people are getting fewer vaccines due to the imposition of COVID-19 vaccine mandates during the pandemic.</p>\n\n<p>“We will have more vaccine hesitancy for a generation. The president’s comments are not the driver of what we are seeing,” he said.</p>\n\n<p>Prasad <a href=\"https://www.theepochtimes.com/us/prasad-rejoins-fda-as-top-vaccine-official-after-short-resignation-5899295\">rejoined</a> the FDA in August, several weeks after resigning. He had left the agency after some of his past comments were recirculated, including remarks about supporting Democrats.</p>\n\n<p>“The FDA is steadfast in its commitment to rigorous, gold-standard science in the approval of vaccines, ensuring that every decision reflects the highest standards of safety and effectiveness. Science requires continual review and adaptation; when health recommendations become outdated or no longer align with the latest evidence, it is the responsibility of public health officials to make the necessary changes,” an HHS spokesperson told The Epoch Times in an email on Wednesday.</p>\n\n<p>“Dr. Prasad’s comments underscore the open-mindedness that true gold-standard science demands, and that the health of our citizens depends upon. At this time, HHS and FDA cannot comment on potential future policy changes.”</p>\n</div>\n      <span class=\"field field--name-uid field--type-entity-reference field--label-hidden\" rel=\"schema:author\"><a class=\"username\" href=\"https://cms.zerohedge.com/users/tyler-durden\" lang=\"\" title=\"View user profile.\" xml:lang=\"\">Tyler Durden</a></span>\n<span class=\"field field--name-created field--type-created field--label-hidden\">Thu, 10/02/2025 - 20:35</span>",
+      "source": "ZeroHedge",
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        0,
+        35,
+        0,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "SEC Announces Departure of Director of Office of the Advocate for Small Business Capital Formation Stacey Bowers",
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-129-sec-announces-departure-director-office-advocate-small-business-capital-formation-stacey-bowers",
+      "published": "Tue, 30 Sep 2025 20:06:12 -0400",
+      "summary": "The Securities and Exchange Commission today announced that Stacey Bowers, who has served as the Director of the Office of the Advocate for Small Business Capital Formation, will depart the agency effective October 17, 2025. She has served as Director…",
+      "source": "美国证监会-新闻发布",
+      "published_parsed": [
+        2025,
+        10,
+        1,
+        0,
+        6,
+        12,
+        2,
+        274,
+        0
+      ]
+    },
+    {
+      "title": "SEC Continues Efforts to Assist Market Participants During Implementation of Treasury Clearing Rules",
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-128-sec-continues-efforts-assist-market-participants-during-implementation-treasury-clearing-rules",
+      "published": "Tue, 30 Sep 2025 12:00:00 -0400",
+      "summary": "The Securities and Exchange Commission today enhanced its efforts to assist broker-dealers and other market participants on the path to central clearing of U.S. Treasury securities, developing a one-stop webpage that puts the latest status updates, staff…",
+      "source": "美国证监会-新闻发布",
+      "published_parsed": [
+        2025,
+        9,
+        30,
+        16,
+        0,
+        0,
+        1,
+        273,
+        0
+      ]
+    },
+    {
+      "title": "SEC Issues Order to Reduce Operating Costs of Consolidated Audit Trail",
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-127-sec-issues-order-reduce-operating-costs-consolidated-audit-trail",
+      "published": "Tue, 30 Sep 2025 11:03:00 -0400",
+      "summary": "The Securities and Exchange Commission today issued an order granting conditional exemptive relief related to certain requirements of the National Market System Plan governing the Consolidated Audit Trail (CAT NMS Plan), Rule 613 of Regulation NMS, and…",
+      "source": "美国证监会-新闻发布",
+      "published_parsed": [
+        2025,
+        9,
+        30,
+        15,
+        3,
+        0,
+        1,
+        273,
+        0
+      ]
+    },
+    {
+      "title": "SEC Seeks Public Comment to Improve Rules on Residential Mortgage-Backed Securities and Asset-Backed Securities",
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-126-sec-seeks-public-comment-improve-rules-residential-mortgage-backed-securities-asset-backed",
+      "published": "Fri, 26 Sep 2025 14:35:00 -0400",
+      "summary": "The Securities and Exchange Commission today published a concept release soliciting public comment on how to improve current SEC rules governing residential mortgage-backed securities (RMBS) and certain aspects of asset-backed securities (ABS) generally…",
+      "source": "美国证监会-新闻发布",
+      "published_parsed": [
+        2025,
+        9,
+        26,
+        18,
+        35,
+        0,
+        4,
+        269,
+        0
+      ]
+    },
+    {
+      "title": "SEC Announces Departure of Chief Operating Officer Ken Johnson",
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-125-sec-announces-departure-chief-operating-officer-ken-johnson",
+      "published": "Wed, 24 Sep 2025 14:02:29 -0400",
+      "summary": "The Securities and Exchange Commission today announced that Ken Johnson, who has been serving as Chief Operating Officer (COO) since December 2017, will retire from the agency in December.\n\n“Ken has been an integral leader at the SEC for more than two…",
+      "source": "美国证监会-新闻发布",
+      "published_parsed": [
+        2025,
+        9,
+        24,
+        18,
+        2,
+        29,
+        2,
+        267,
+        0
+      ]
+    },
+    {
+      "title": "“大电池”的天快塌了",
+      "link": "http://www.huxiu.com/article/4786606.html?f=wangzhan",
+      "published": "Fri, 03 Oct 2025 08:31:26 +0800",
+      "summary": "<img src=\"https://img.huxiucdn.com/ai/ai-article-cover/202510/03/4786606-prod-2-dbv2-1.png\" />\n<p><span class=\"text-remarks\" label=\"备注\">作者｜Eastland</span></p><p><span class=\"text-remarks\" label=\"备注\">头图｜AI生成</span></p><p><br /></p><p>新能源车领域的“军备竞赛”如火如荼，不拼技术、不比安全，只比谁的电池大、续航里程长。</p><p><br /></p><p>续航里程超过700公里的部分纯电动车型：</p><p><br /></p><blockquote><p>极氪009（<span class=\"text-remarks\" label=\"备注\">纯电MPV</span>）续航900公里；</p><p>小米YU 7（<span class=\"text-remarks\" label=\"备注\">超长续航版</span>）续航835公里；</p><p>小米SU 7（<span class=\"text-remarks\" label=\"备注\">超长续航版</span>）续航800公里；</p><p>特斯拉Model 3（<span class=\"text-remarks\" label=\"备注\">长续航版</span>）续航830公里；</p><p>问界M 8（<span class=\"text-remarks\" label=\"备注\">长续航版</span>）续航705公里；</p><p>智已LS 6（<span class=\"text-remarks\" label=\"备注\">长续航版</span>）续航701公里；</p></blockquote><p><br /></p><p>纯电续航里程超过300公里的部分插混/增程车型：</p><p><br /></p><blockquote><p>智已LS6 Max（<span class=\"text-remarks\" label=\"备注\">增程</span>）纯电续航450公里；</p><p>小鹏X9（<span class=\"text-remarks\" label=\"备注\">增程</span>）纯电续航450公里；</p><p>尊界S800（<span class=\"text-remarks\" label=\"备注\">增程</span>）纯电续航400公里；</p><p>享界S9（<span class=\"text-remarks\" label=\"备注\">增程</span>）纯电续航365公里；</p><p>极氪9X（<span class=\"text-remarks\" label=\"备注\">插混SUV</span>）纯电续航355公里；</p></blockquote><p>&nbsp;</p><p><strong>大电池与大沙发一样，谈不到技术含量，不过是利用碳酸锂价格超跌的投机行为。短期、中期、远期三大利空正在路上，大天池的天就要塌了。</strong></p><p>&nbsp;</p><p class=\"text-big-title\" label=\"大标题\">短期利空，锂价反转</p><p>&nbsp;</p><p>碳酸锂是新能源车重要的上游原材料（<span class=\"text-remarks\" label=\"备注\">每千瓦时用量约0.7公斤</span>）。</p><p>&nbsp;</p><p>2022年，新能源汽车需求爆发与供应链紧张叠加，碳酸锂价格一度突破60万元/吨。</p><p><br /></p><p>2023年起，锂资源供给增速大于需求增速。经历两轮断崖式暴跌，2025年6月碳酸锂价格跌至6万元一线，仅为高峰时的零头。</p><p>&nbsp;</p><p>价格暴跌刺激了需求，新能源车、储能领域碳酸锂消耗量大幅提高——2023年66.7万吨，2024年增至93.3万吨，预计2025年将达100万吨。</p><p>&nbsp;</p><p>动力电池成本约占整车成本的40%~60%（<span class=\"text-remarks\" label=\"备注\">纯电动车</span>）。当碳酸锂从50万元/吨跌至8万元/吨，一块80千瓦时的动力电池材料成本下降3.4万元！</p><p>&nbsp;</p><p>于是车企纷纷加大电池容量，提高续航里程，增强产品竞争力。特别是当“价格战”人人喊打，“增加续航里程”俨然成为最重要的竞争手段。</p><p>&nbsp;</p><p>种种迹象表明，碳酸锂价格已然见底。2025年8月29日，碳酸锂价格一度涨至7.9万元/吨，较最低价反弹30%。</p><p>&nbsp;</p><p>供给方面，由于碳酸锂价格暴跌90%，高成本产能基本出清。</p><p>&nbsp;</p><p><strong>预计2025年底至2026年，碳酸锂价格将出现真正的反转。</strong></p><p>&nbsp;</p><p class=\"text-big-title\" label=\"大标题\">快速补能+固态电池让大电池成为笑话</p><p class=\"text-sm-title\" label=\"小标题\">&nbsp;</p><p class=\"text-sm-title\" label=\"小标题\">1)50年代的“煤气包”</p><p>&nbsp;</p><p>电不是新能源，但过往一百年汽车以汽/柴油为燃料，改由电力驱动就是新能源车。好比一个人从小喝豆浆、饮绿茶，咖啡就是他的“新饮品”。</p><p>&nbsp;</p><p>还有人以“中国火电占比高”否认新能源车的环保价值。殊不知交通工具的电动化与电力的绿色转型是齐头并进的两条战线：</p><p><br /></p><blockquote><p>2024年，新能源车渗透率约为50%；火电占比则降至63.2%（<span class=\"text-remarks\" label=\"备注\">2014年为76.2%</span>）、三大可再生能源（<span class=\"text-remarks\" label=\"备注\">水电/风电/光伏</span>）占比提高到32.3%，核电4.5%；</p><p>根据碳达峰、碳中和承诺，2030年火电在中国总发电量中的占比将降至50%以下；2060年全部退出，届时中国新能源车（包括纯电动、插电混动）渗透率将无限接近100%。</p></blockquote><p>&nbsp;</p><p>尽管新能源车渗透率超过50%，但在能量密度、补能便利性、补能速度等方面，仍被燃油车全面碾压。</p><p>&nbsp;</p><p><strong>趁着碳酸锂价格超跌，配备大容量电池没有任何技术含量，“三大难题”（<span class=\"text-remarks\" label=\"备注\">能量密度、网点、补能速度</span>）一个都没解决。</strong></p><p><strong><br /></strong></p><p>虽然价格处于低位，但“大电池”也不是白送，消费者还是要花一大笔钱。天天驮着5、6百公斤的大电池跑通勤并不明智。</p><p class=\"text-normal\" label=\"正文\"><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/28/223730514909.png?imageView2/2/w/1000/format/png/interlace/1/q/85\" /></p><p class=\"text-img-note\" label=\"图片备注\">&nbsp;（图1：建国初期石油短缺，公交车被改装为“煤气车”‌）</p><p><br /></p><p><strong>大电池相当于50年代的“煤气包”，终将被抛弃。</strong></p><p><br /></p><p class=\"text-sm-title\" label=\"小标题\">2）闪充重塑用户心智</p><p>&nbsp;</p><p>即便充电耗时压缩到半小时左右，如果运气不好、需要“抢”充电枪的话，总耗时很容易超过一小时。</p><p><br /></p><p>上下班通勤每周要“折腾”两三次，节假日去三四百公里外的城市中途还得充个电，这些都有点难以接受。因此，续航500、600公里的车型大行其道。</p><p>&nbsp;</p><p>换电似乎可以解决补能速度。但成本高（<span class=\"text-remarks\" label=\"备注\">配备更多动力电池、部署/运营服务网络</span>），兼容性差（<span class=\"text-remarks\" label=\"备注\">同一品牌的不同车型都难以兼容</span>），其实是死路一条。</p><p><br /></p><p>王传福、巴斯克在第一时间就抛弃了换电方案。否则以这两家公司的百万级年销量、千万级保有量，推广换电的效率必定拔群。</p><p>&nbsp;</p><p>2025年3月17日，比亚迪发布“兆瓦闪充”技术，基于1000V电气架构和10C高倍率电池，实现1MW充电功率，充电5分钟可增加400公里续航。</p><p>&nbsp;</p><p>目前车主为充电支付的费用包含三个部分：电费、场地费、运营平台服务费。以特斯拉超充站为例：超充站电费约为0.83元/度，服务费（<span class=\"text-remarks\" label=\"备注\">含场地费</span>）1.36元/度，总成本约2.19元/度。</p><p>&nbsp;</p><p><strong>当电车补能耗时接近加油，场地费将会师出无名</strong>（<span class=\"text-remarks\" label=\"备注\">如果强收，用户将用脚投票</span>）。</p><p>&nbsp;</p><p>既快又省，随着闪充车型保有量与闪充电站数量的增长，车主心智会被重塑。</p><p>&nbsp;</p><p class=\"text-sm-title\" label=\"小标题\">补能速度提高引发行业质变</p><p>&nbsp;</p><p class=\"text-sm-title\" label=\"小标题\">1）现有运营模式</p><p><br /></p><p>截至2025年6月末，特来电（<span class=\"text-remarks\" label=\"备注\">特锐德子公司</span>）运营公共充电桩79.2万台，市场份额约24%；充电量约85亿度，市场份额23%。</p><p>&nbsp;</p><p>即使市场份额排第一，特来电盈业绩依然惨淡——2025年H1，单桩单日充电约64度、收入14元、毛利润4.2元。目前市场上主流纯电动车的电池容量在50度~80度之间。照此计算，特来电一台充电桩平均每天服务1台新能源车。</p><p><br /></p><p>由于补能时长动辄是加油的几十倍、上百倍，每台充电桩可服务的车辆数远低于加油枪。</p><p><br /></p><p>以北京为例：</p><p><br /></p><blockquote><p>燃油车保有量约700万辆，加油站约2000座（<span class=\"text-remarks\" label=\"备注\">假设每座有10把枪在运营</span>），<strong>每把加油枪服务350辆燃油车；</strong></p><p>新能源车保有量约100万辆（<span class=\"text-remarks\" label=\"备注\">约40%安装了私人充电桩，基本不在本地使用公共桩），其余60万辆依赖公共充电桩（约30万台</span>）补能。<strong>每台充电桩服务2台新能源车。</strong></p></blockquote><p>&nbsp;</p><p>充电桩综合成本约10万元/台。如果只服务2辆车，平均每天充电1次、每次赚4块毛利润……经济效益必定低下。</p><p>&nbsp;</p><p>当充电与加油耗时相等，每台充电桩可服务几十台、上百台新能源车，旧模式将被彻底颠覆。</p><p>&nbsp;</p><p class=\"text-sm-title\" label=\"小标题\">2）推动充电设施建设的合力</p><p>&nbsp;</p><p>2025年6月，发改委、能源局等五个部委联合发布通知提出：2027年底全国建设大功率充电设施超过10万台，同时提升电网接入能力；因地制宜配建光伏发电和储能设施；合理利用配电设施低谷容量裕度。</p><p>&nbsp;</p><p>在建设高效充电网络方面，企业战略与政府导向高度一致，形成合力。例如比亚迪3月发布的“兆瓦闪充”技术，就包含了“配建光伏和储能设施”等内容。</p><p>&nbsp;</p><p>如果说建换电站以千为单位（<span class=\"text-remarks\" label=\"备注\">截至2025年9月20日，蔚来已建成‌3500座换电站</span>），闪充站则以万为单位：</p><p>&nbsp;</p><p>截至2025年6月1日，已确定建设的兆瓦闪充站达1.9万座（<span class=\"text-remarks\" label=\"备注\">小桔充电1万座、新电途5000座、比亚迪4S店4000座</span>）。与特来电、星星充电的战略合作也已签署（<span class=\"text-remarks\" label=\"备注\">未透露建站数量</span>）。中石油、中石化、壳牌充电、南方电网、车电网、蔚景云将陆续加入建站和能源网络布局。</p><p>&nbsp;</p><p>预计2027年固态电池开始批量装车，2030年实现“固液同价”并与兆瓦闪充“双剑合璧”。</p><p>&nbsp;</p><p class=\"text-big-title\" label=\"大标题\">另辟蹊径——高能效插混</p><p>&nbsp;</p><p>增程/插混被视为燃油车与纯电动车之间的过渡，但因能解决量程焦虑，在新能源车市场中占据很大份额。</p><p>&nbsp;</p><p>以纯电模式行驶时，增程/插混车经济性等于纯电动车。每周以纯电模式通勤200公里，费用不到50元（<span class=\"text-remarks\" label=\"备注\">每公里0.25元</span>）。若全部以“亏电模式”行驶，费用大约200元（<span class=\"text-remarks\" label=\"备注\">上下班高峰每公里油费约1元</span>）。</p><p><br /></p><p>许多车主形成把增程/插混车当纯电车开的习惯。增程车节假日在高速服务区“抢占”充电桩被吐槽，折射出车主的<strong>“纯电执念”。</strong></p><p>&nbsp;</p><p>为迎合这种执念，车企为增程/插混车型配备的电池容量越来越大，纯电续航动辄2、3百公里，甚至超过400公里 。</p><p>&nbsp;</p><p>比亚迪第五代DM技术（<span class=\"text-remarks\" label=\"备注\">插电混动系统</span>）通过软硬件协同优化，实现了行业领先的燃油经济性，亏电油耗已降至‌2.6L/100Km（<span class=\"text-remarks\" label=\"备注\">每公里成本0.2</span>）。</p><p><br /></p><p>多家媒体实测显示，城市拥堵路况下部分车型（<span class=\"text-remarks\" label=\"备注\">如秦L DM-i</span>）实际亏电油耗可低至‌2.3L/100Km‌（<span class=\"text-remarks\" label=\"备注\">每公里成本约0.17元</span>)。</p><p>&nbsp;</p><p>当用电、烧油成本相等，甚至后者更低，“纯电行驶省钱”不成立。<strong>新一代插混车主随心所欲、随遇而安，用车体验既优于燃油车又优于纯电动车。</strong></p><p>&nbsp;</p><p>李斌讥讽增程车配备大油箱是说“一年用不了几次油箱，却天天背着它跑”。殊不知空油箱重量是”空电池“的零头：60升的空油箱重5~10公斤。纯电续航3、4百公里的“空电池”重约380公斤-450公斤。</p><p>&nbsp;</p><p>随着越来越多的插混车主意识到这一点，支持纯电续航三四百公里的“大电池”将成为<strong>“千斤鸡肋”</strong>。</p><p>&nbsp;</p><p>在新能源车替代燃油车进程中，插电混动车型的贡献或大于纯电动车，概括为两点：</p><p><br /></p><blockquote><p>第一，比优秀燃油车更优秀，动力更强、油耗更低；</p><p>第二，比纯电动车适应性更强，不依赖电网、充电桩建设进度。从欧美到拉美，电网老化、技术滞后、电费高昂等短板普遍存在，插电混动车大有可为；</p></blockquote><p><br /></p><p><strong>三大利空（<span class=\"text-remarks\" label=\"备注\">锂价反转、闪充、固态电池</span>）将在三、五年内陆续兑现，六七百公斤的大电池会像“煤气包”那样退出历史舞台。</strong></p><p><br /></p><p><span class=\"text-remarks\" label=\"备注\">*以上分析仅供参考，不构成任何投资建议！</span></p><p><span class=\"text-remarks\" label=\"备注\"></span></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/181604129241.jpg?imageView2/2/w/1000/format/jpg/interlace/1/q/85\" /></p><p><br /></p><p><a href=\"http://huxiu.link/ulxE\"><strong>下载虎嗅APP</strong></a>，第一时间获取深度独到的商业科技资讯，连接更多创新人群与线下活动</p>",
+      "source": {
+        "title": "Eastland"
+      },
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        0,
+        31,
+        26,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "国产电影，为何总是撤档？",
+      "link": "http://www.huxiu.com/article/4786273.html?f=wangzhan",
+      "published": "Tue, 30 Sep 2025 21:00:00 +0800",
+      "summary": "<img src=\"https://img.huxiucdn.com/article/cover/202509/28/113735558254.png\" />\n<p>为啥中国电影总爱撤档？有的片子上映扑街，片方怕丢人赶紧撤，有的趁机炒热度，更多是为了稳住排片和投资人信心......观众只是想看场好电影，别再把撤档当遮羞布了。</p><p><a href=\"http://huxiu.link/ulxE\"><strong>下载虎嗅APP</strong></a>，第一时间获取深度独到的商业科技资讯，连接更多创新人群与线下活动</p>",
+      "source": {
+        "title": "罐装鱼丸"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        30,
+        13,
+        0,
+        0,
+        1,
+        273,
+        0
+      ]
+    },
+    {
+      "title": "今年十一，年轻人扎堆去东北",
+      "link": "http://www.huxiu.com/article/4787563.html?f=wangzhan",
+      "published": "Tue, 30 Sep 2025 20:41:04 +0800",
+      "summary": "<img src=\"https://img.huxiucdn.com/ai/ai-article-cover/202509/30/4787563-prod-mj-2.png\" />\n<p><span class=\"text-remarks\" label=\"备注\">本文来自微信公众号：</span><a href=\"https://mp.weixin.qq.com/s/WOrtGI5me08jZChoQoaNwQ\" rel=\"nofollow\" style=\"text-decoration: none;\" target=\"_blank\"><span class=\"text-remarks\">劲旅网</span></a><span class=\"text-remarks\">，作者：陈杰，编辑：壮壮，原文标题：《今年十一，沈白高铁挤满去东北旅行的年轻人》，题图来自：AI生成</span></p><p><br /></p><p>劲旅君这两天发现，自己小半个朋友圈的旅游达人朋友都去了东北。</p><p><br /></p><p>有人在长白山看天池，有人在通化买人参，有人在延边拍“在逃的朝鲜族公主”，更有人已经开车在G331开启自驾旅行了。</p><p><br /></p><p>而在这些旅游达人的朋友圈下，更多年轻的朋友跃跃欲试，一边羡慕地咂嘴，一边恳求攻略，计划在马上到来的十一小长假去东北溜溜。</p><p><br /></p><p>为什么年轻人扎堆去东北了？</p><p><br /></p><p>因为一条备受整个东北旅游业期待的高铁线终于开通了。</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/183213717152.jpg?imageView2/2/w/1000/format/jpg/interlace/1/q/85\" /></p><p><br /></p><p>9月28日，沈白高铁官宣正式开通并同步开启售票。这一消息瞬间引爆舆论，尤其是在东北旅游业，可谓这几年最具爆炸性的大新闻。按照东北旅游从业者的说法，沈白高铁绝对是未来5～10年对东北最重要的高铁线路，而且是没有之一的那种。</p><p><br /></p><p>沈白高铁到底牛在哪儿？</p><p><br /></p><p>劲旅君简单梳理两个最受瞩目的点：</p><p><br /></p><blockquote><p>其一，北京到长白山的高铁用时从6小时缩减到4.5小时；沈阳到长白山的高铁用时从3.5小时缩减到2小时。这意味着对京津冀<span class=\"text-remarks\" label=\"备注\">（沈阳）</span>居民而言，长白山从长途<span class=\"text-remarks\" label=\"备注\">（中途）</span>旅游目的地变成中途<span class=\"text-remarks\" label=\"备注\">（短途）</span>旅游目的地。</p><p><br /></p><p>其二，沈白高铁的开通，结束了抚顺、通化、白山等东北小城市不通高铁的历史，有望给这些各大旅游攻略里的宝藏小城一个当地旅游业一飞冲天的机会。</p></blockquote><p><br /></p><p>在劲旅君看来，今年十一，年轻人扎堆沈白高铁，不仅仅是给东北带去更多游客那么简单，这背后是整个东北旅游业正迎来一轮翻天覆地的巨变。</p><p><br /></p><p class=\"text-big-title\" label=\"大标题\">01</p><p><br /></p><p>沈白高铁开通后，哪个区域的年轻人去长白山区域旅游的最多？</p><p><br /></p><p>如果我们以沈白高铁的终点“长白山”为圆心，反向沿线梳理其旅游辐射面，就发现可以划分为“东北-京津冀-全国”三个客源带。</p><p><br /></p><p>沈白高铁开通，首先受益的其实是以沈阳年轻人为代表的辽宁客源。</p><p><br /></p><p>尽管长白山是全国性地标景区，但是东三省客源占比却超过70%，其中挑大梁的是辽宁游客。沈白高铁开通之后，沈阳到长白山的高铁时间被大幅压缩到仅仅2个小时，这意味着长白山真正意义上成为了辽宁游客的后花园。</p><p><br /></p><p>沈阳年轻人这次算是做到了周末去长白山度假说走就走，周五晚上走，周日晚上回，整整有两天时间在长白山吃喝玩乐。更重要的是，2小时的高铁时长让更多沈阳年轻人愿意避开旅游高峰，在寻常节假日多次往返长白山度假，从一年一次变成一年多次，这是一种质的变化。</p><p><br /></p><p>从这一逻辑来说，以沈阳年轻人为代表的辽宁客源是大长白山区域的基本盘，也是典型的存量客源。沈白高铁开通的重要作用之一就是有效提升了这些存量客源的活跃度，有助于让大长白山区域旅游热度长盛不衰。</p><p><br /></p><p>其次是京津冀年轻人。</p><p><br /></p><p>沈白高铁让北京到长白山的时间压缩到4个小时以内，这会直接激活一批对“距离”尤为敏感的京津冀年轻人的出行积极性。因为这个时长是很多人日常出行乘坐交通工具的某种心理极限。而且在4个小时之内，高铁无论在价格还是体验性上的优势都超越飞机，这一点在京沪线上两大交通工具的揽客竞赛中已经有明显结果。</p><p><br /></p><p>沈白高铁会吸引一批此前从未去过东北或者长白山的京津冀年轻人将其选为未来中短途旅行目的地，这些就是宝贵的增量客源，而且是能够在短期内爆发式增长的优质增量客源。</p><p><br /></p><p>最后则是以南方客源为代表的更多年轻人。</p><p><br /></p><p>这些客源本质上也属于增量客源，大长白山区域对于他们而言是典型的长途旅游目的地，以乘坐飞机为主。以往更多南方客源选择在长春中转去大长白山区域，如今又多了一个沈阳作为中转站，可以链接更多南方城市和区域。</p><p><br /></p><p>沈白高铁开通除了刺激大长白山区域游客量快速增长之外，还起到另一个至关重要的作用——促使客源结构升级迭代。</p><p><br /></p><p>大长白山地区在客源结构上之前以观光型旅游为主，兼具度假客群，这些客源虽然能贡献可观的旅游人次，但是在旅游消费水平和频次上仍有大幅度提升空间。沈白高铁开通后，会大幅提高度假型客源的占比。这一类型客源的特征是在当地停留时间长、消费频次高、消费水平高，能够有效带动当地旅游产业链发展，提高当地旅游收入水平。</p><p><br /></p><p class=\"text-big-title\" label=\"大标题\">02</p><p><br /></p><p>沈白高铁开通吸引年轻人去东北旅行的另一个关键点在于，沿线的众多东北宝藏旅游小城。</p><p><br /></p><p>这两年劲旅君考察了不少东北小城市，客观来说当地旅游资源都非常优质，只不过受困于大交通不便的因素，无法吸引更多增量客源，导致旅游业发展受限。</p><p><br /></p><p>通化是东北最具有黑马潜质的旅游城市之一。</p><p><br /></p><p>众所周知滑雪是东北旅游业的扛把子，但除了滑雪发烧友之外，很多人不知道近两年通化崛起了一个继北大湖和松花湖之后的东北第三大超级滑雪目的地——万峰通化滑雪度假区。最近几个雪季，其一直稳居国内TOP10滑雪场阵营，最高曾冲击TOP5阵营，俨然一颗冉冉升起的滑雪季新星。</p><p><br /></p><p>通化还是这两年小红书上的爆款小众旅游目的地，境内四方顶景区的“雪夜星空”一度是年轻人疯狂追捧的爆款网红打卡场景。通化旗下的集安更是一个小众网红城市，当地的历史文化有高句丽王城，自然风景有五女峰国家森林公园，旅游资源都是顶级存在。</p><p><br /></p><p>白山是沈白高铁即将带火的另一座宝藏旅游小城。</p><p><br /></p><p>尤其是长白山西站落成之后，热衷滑雪和度假的游客从这一站驱车前往长白山西坡景区只需要20分钟，前往长白山万达国际度假区和长白山华美胜地两大知名度假区仅需要30分钟～40分钟。</p><p><br /></p><p>不仅如此，白山市除了滑雪度假之外，还有两个未来的重磅旅游IP正在开发，一个是松花江生态旅游风景区，可以在松花江乘船看景，尝松花江鱼，住锦江木屋村；另一个则是鸭绿江景观带风景区，可以眺望神秘国度，参观四保临江战役纪念馆等景点。</p><p><br /></p><p>据了解，这些小众旅游宝藏城市的旅游企业正在加紧招兵买马、投资建设。</p><p><br /></p><blockquote><p>“小城市的游客多了，旅游配套需求就会猛增。”</p></blockquote><p><br /></p><p>有当地旅游从业者向劲旅君透露，尤其是酒店、用车、导游、餐饮等刚需性业务，谁能够提前预备后，谁就能够最快速吃到第一波沈白高铁带来的旅游流量红利。</p><p><br /></p><p>除了直接吃到沈白高铁红利的城市外，还有更多区域接抓取到外溢的红利，例如延边。</p><p><br /></p><p>由于地理位置靠近，来长白山的游客越多，外溢到延边的流量红利就越大。今年已经有消息传出，沈白高铁有可能继续拓展，建设从长白山到延吉的直达线路，总长150公里的“长延高铁”。一旦这一规划落实，届时游客从北京、沈阳等城市直达延吉的时间亦将大幅缩短，这将给延边带去的流量红利肉眼可见的令人艳羡。</p><p><br /></p><p>受此利好消息影响，延边境内的敦化等诸多小众宝藏旅游城市也在跃跃欲试，想要抓取沈白高铁这波红利。</p><p><br /></p><p class=\"text-big-title\" label=\"大标题\">03</p><p><br /></p><p>在沈白高铁正式开通的当日，还有一个新闻非常默契的同步发布：</p><p><br /></p><p>吉林省延边开放旅游大通道全线贯通<span class=\"text-remarks\" label=\"备注\">（也称G331吉林段）</span>。</p><p><br /></p><p>G331是继318、独库公路之后，国内又一条爆火的自驾游线路。这条国道自辽宁起始，途径吉林、黑龙江、内蒙古、甘肃和新疆6个省份，横跨4个时区，全程9333公里。沿途可以看遍森林、草原、河流、沙漠、戈壁等多样风景，边境另一侧是朝鲜、俄罗斯和蒙古三大北方邻国，沿途散落上百个特色各异的边境小镇，因此它还有个更霸气的名称：</p><p><br /></p><p>中国北境公路之王。</p><p><br /></p><p>吉林赶在同一天让沈白高铁和中国北境公路之王同时亮相，意在打通“铁路+公路”的东北旅游交通新格局，以此吸引更多对新鲜刺激的旅游供给狂热的年轻人们。</p><p><br /></p><p>实践证明，年轻人的确很吃这一套。</p><p><br /></p><p>G331吉林段在1437公里的路程途径10个地市，吉林最拿得出手的五个顶级文旅IP长白山、高句丽遗址、鸭绿江、图们江和网红城市延吉全都在动线上。另一方面，G331吉林段边境体验更为丰富，沿途多个城市均为对外口岸不说，珲春更是国内唯一一个中朝俄三国边境，“一眼望三国”是吸引年轻人的一大爆点。</p><p><br /></p><p>“中国北境公路之王”也被称之为“边塞的历史感”和“深刻的爱国情怀”情绪价值提供最充沛的一条自驾路线。</p><p><br /></p><p>一个中国年轻人，站在中朝边境眺望对面，两岸完全不同的风景，会让他深刻感受到“改革开放”四个字的历史感有多厚重。当他站在中俄口岸，看着俄罗斯人源源不断涌入，大肆消费与购物时，才会深刻感受到“国富民强”四个字背后的真正分量，这是只属于“边塞的历史感”。</p><p><br /></p><p>G331吉林段有一个小城市珲春，当地最知名的景点是龙虎阁。此处是中俄朝三国边境交汇处，当你站在龙虎阁最高处，可以切身体验“鸡鸣闻三国，犬吠惊三疆”。几乎每一个来到这里参观的中国年轻人，都会死死盯着前方若隐若现的海面，无比痛心地吼上一句：</p><p><br /></p><p>“一步之遥啊！”</p><p><br /></p><p>因为距离中国边境线区区15公里之外，就是图们江入海口。这条发源自中国长白山的大江从此处日夜不歇注入日本海。然而，中国却在150多年前失去了日本海出海口，不仅使得吉林省从滨海省份成为内陆省份，同时也掐断了东北内陆出海的唯一海洋口岸。</p><p><br /></p><p>没有什么比这更深刻的爱国情怀了。</p><p><br /></p><p class=\"text-big-title\" label=\"大标题\">04</p><p><br /></p><p>“沈白高铁贯通+G331吉林段”双线贯通，对东北旅游业的刺激效应已经快速显现。</p><p><br /></p><p>携程数据显示，吉林省国庆期间订单，同比增长近200%。后期增幅尤为惊人：从10月4日开始，同比增长率均超过 200%，其中10月6日的增幅甚至接近 600%。位于沈白高铁和G331沿线的吉林省大小城市，特别是大长白山区域和边境地区增幅远超传统中心城市，例如：</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/183214041535.png?imageView2/2/w/1000/format/png/interlace/1/q/85\" /></p><p><br /></p><p>尤其是未来小半年，在持续叠加“十一小长假”“东北赏秋”“长白山滑雪”等诸多季节性BUFF的前提下，必然会让吉林为代表的东北旅游经济出现快速增长，这也给了东北旅游业一次难得的崛起契机。</p><p><br /></p><p>评判一个省旅游业的发展程度，“万亿收入”是一个硬门槛。</p><p><br /></p><p>纵观东北三大省，尚未有一省能够触及这一门槛，沈白高铁无疑加速了东北三省冲击“万亿收入”的步伐。</p><p><br /></p><p>吉林省就是东三省中率先提出要打造“旅游万亿目标”的省份，并且发布了《吉林旅游万亿攻坚方案》，明确给全省各地市划分了各自的冲击目标，同时也明确了重点扶持的旅游产业，力争在2030年实现这一目标。</p><p><br /></p><p>沈白高铁的贯通只是东北旅游业起飞的一个开始，期待这片黑土地能够创造更多旅游奇迹。</p><p><br /></p><p><span class=\"text-remarks\" label=\"备注\">本文来自微信公众号：</span><a href=\"https://mp.weixin.qq.com/s/WOrtGI5me08jZChoQoaNwQ\" rel=\"nofollow\" style=\"text-decoration: none;\" target=\"_blank\"><span class=\"text-remarks\">劲旅网</span></a><span class=\"text-remarks\">，作者：陈杰，编辑：壮壮</span></p><p><a href=\"http://huxiu.link/ulxE\"><strong>下载虎嗅APP</strong></a>，第一时间获取深度独到的商业科技资讯，连接更多创新人群与线下活动</p>",
+      "source": {
+        "title": "劲旅网"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        30,
+        12,
+        41,
+        4,
+        1,
+        273,
+        0
+      ]
+    },
+    {
+      "title": "三星美光疯狂涨价，中国存储如何杀出重围？",
+      "link": "http://www.huxiu.com/article/4787185.html?f=wangzhan",
+      "published": "Tue, 30 Sep 2025 11:10:00 +0800",
+      "summary": "<img src=\"https://img.huxiucdn.com/article/cover/202509/30/021728624630.png\" />\n<p>国际巨头坐地起价，中国军团奋力突围，最近全球芯片圈是热油里倒冷水，炸了锅了！AI算力点燃了存储芯片大战，资本市场血红一片，韭皇们一边涨声不断，一边又心惊胆颤，存储芯片是啥？</p><p><a href=\"http://huxiu.link/ulxE\"><strong>下载虎嗅APP</strong></a>，第一时间获取深度独到的商业科技资讯，连接更多创新人群与线下活动</p>",
+      "source": {
+        "title": "北大研哥"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        30,
+        3,
+        10,
+        0,
+        1,
+        273,
+        0
+      ]
+    },
+    {
+      "title": "欧洲车企，走上一条偏裂之路",
+      "link": "http://www.huxiu.com/article/4787193.html?f=wangzhan",
+      "published": "Tue, 30 Sep 2025 07:39:37 +0800",
+      "summary": "<img src=\"https://img.huxiucdn.com/article/cover/202509/30/073621121869.jpg\" />\n<p><span class=\"text-remarks\" label=\"备注\"></span></p><p><span class=\"text-remarks\" label=\"备注\">有人说，慕尼黑车展挺没意思，室内规模堪比国内二线车展；也有人说，慕尼黑像半个世博会。</span></p><p><br /></p><p><span class=\"text-remarks\" label=\"备注\">它不仅有德国第二大少数族裔控制的土耳其企业与邻国荷兰企业集群的捧场；</span><span style=\"color: rgb(153, 153, 153);\">还有来自德国“萨尔兰德”与“巴伐利亚”等联邦州的孵化器与研究所——代表着欧洲本土的招商与产研风格。</span></p><p><br /></p><p><span class=\"text-remarks\" label=\"备注\">但这一届之所以特别，是因为它是中国供应商参展最多的一届。很显然，欧洲市场的复杂性远远超过了我们的想象。</span></p><p><span class=\"text-remarks\" label=\"备注\"><br /></span></p><p><span class=\"text-remarks\" label=\"备注\">本文来自微信公众号：</span><a href=\"https://mp.weixin.qq.com/s?__biz=Mzg5MzI1NDkyMQ==&amp;mid=2247488407&amp;idx=1&amp;sn=4184c5ad64e1c3fad463941bc1cbb81e&amp;chksm=c1292c0717f6ab8f801ed43aec1a69dd7e64b4c8f0e9d9afd2ad85991096045828b88dda3a19&amp;mpshare=1&amp;scene=1&amp;srcid=0929aOokBaZZiT4mdtz7ieuD&amp;sharer_shareinfo=e20c292303fee39772468c9477970e32&amp;sharer_shareinfo_first=cd79de513731c2e61beafaabb1424bd6&amp;version=4.0.16.70139&amp;platform=mac#rd\" rel=\"nofollow\" style=\"text-decoration: none;\" target=\"_blank\"><span class=\"text-remarks\">宇多田</span></a><span class=\"text-remarks\">，作者：宇多田，头图来自：作者拍摄</span></p><p><br /></p><p>世界最负盛名的三大车展之一——德国慕尼黑车展，在一定程度上被“神化”了。也被误解了。</p><p><br /></p><p>这里“被神化”指的是，大量在中国卷生卷死、找不到出路的中国主机厂与供应链企业，以为这是一个触及欧洲市场最有效的“跳板”。</p><p><br /></p><p>但实际上，恰恰相反，德国乃至欧洲汽车市场的“百年傲慢”依然存在、从未消除。</p><p><br /></p><p>这种傲慢，建立在“英德美引领一二三次工业革命”与“通过殖民扩张实现原始积累”的漫长历史基础之上。</p><p><br /></p><p>当然，还有迥异的宗教信仰与地缘。</p><p><br /></p><p>即便欧盟试图鼓吹推动“电动化转型”主动击碎“傲慢”，但2024年欧洲整车与Tier1超5万裁员与“电动车工厂的过剩产能”说明，这波自上而下的改革没奏效。</p><p><br /></p><p>因为思想的固化，才是更加难以根除的。</p><p><br /></p><p>因此在慕尼黑，国内幻想中喜闻乐见的“各大主机厂高管、Tier1与外媒，以及老百姓围满中国展台”的盛况，其实从没出现。</p><p><br /></p><p>在这里，中国与欧美企业之间，隐隐有一条“线”。</p><p><br /></p><p>这条线可以是“一眼能看出是国内还是海外公司”的展台风格，可以是种族与语言障碍，也可以是“即便不落地也能侃侃而谈的欧洲松弛感”。</p><p><br /></p><p>但从根本上，这其实是欧洲车企的傲慢——<strong>我想拼命学习你，但我更要提防你。</strong></p><p><br /></p><p>在这里，无论三元锂、碳酸铁锂、还是固态，电池厂商多半来自中国公司，海外只有三星与法国初创公司Verkor等。特别是宁德时代，被旁边的客户爸爸“大众”带飞。</p><p><br /></p><p>不过，在欧洲由“三元派”统治且电动化放缓的当下，磷酸铁锂打入欧洲市场有难度。此外，OEM要求的技术安全细节与成本平衡也存在一些矛盾。</p><p><br /></p><p><strong>欧洲境内充电桩分布松散且稀少。</strong>车展上的大功率“充电桩”大多来自欧洲创业公司，譬如被奔驰支持的意大利供电商Alpitronic与波兰创业公司Eko energetyka。</p><p><br /></p><p>我在德国、荷兰与瑞士路上，其实没看到几个充电桩。它们大多分布在居民区与超市附近，多由石油巨头BP运营的Aral Pulse提供。</p><p><br /></p><p>实际上，就像欧洲的行政效率一样，充电桩建设进程非常缓慢。</p><p><br /></p><p>智驾方面，从零部件、云服务、操作系统、中间件再到最上层的地图与算法，皆存在与中国公司对应的“海外镜像版”公司，能力存疑但极受欢迎。</p><p><br /></p><p>嗯，这里关于海外供应链企业的一切，像是处于中国电动车供应链往前两代的“初始阶段”。</p><p><br /></p><p>如果论电池与新技术的先进性与产品成熟度，中国的实力足以分一杯羹。</p><p><br /></p><p>但你是否思考过，低好几个level的“镜像版”为何会存在？</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071903497491.jpg?imageView2/2/w/1000/format/jpg/interlace/1/q/85\" /></p><p class=\"text-img-note\" label=\"图片备注\">慕尼黑室内车展门口，德国公司充分发挥东道主优势</p><p><br /></p><p>在这里，除了头部，中国公司展台大多迎来的是中国访客与中国媒体。</p><p><br /></p><p>我看到的是，有一部分中国公司在德国搭台子，要么为传回国内一个好听的新闻，要么是为了接待来“民间调研”——但什么都拿不回去的中国车企高管。</p><p><br /></p><p>譬如，一家中国新能源电池企业，台子占地不小但第一天都没人接待，后来只有趴在前台睡觉、刷手机的老哥。两天，几十万欧元就这么撒掉了。</p><p><br /></p><p>“HIC…是什么？不知道啊。” 有俩德国媒体人在一家中国配电器公司前问了个问题，大家面面相觑，老哥悻悻离去。这种情况不少见。</p><p><br /></p><p>当然，大多数欧洲创业公司也没好到哪里去。</p><p><br /></p><p>我在一个Startup区<span class=\"text-remarks\" label=\"备注\">（四五家创业公司凑在一起，算是车展给的“支持福利”）</span>蹲了两个小时，见证了一个客人都没有的窘境。</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071904289599.png?imageView2/2/w/1000/format/png/interlace/1/q/85\" /></p><p class=\"text-img-note\" label=\"图片备注\">中国展台也与本地风格迥异</p><p><br /></p><p>坦率地讲，在欧洲经济增长乏力的当下，慕尼黑室内展只有6个区，整体规模是上海车展的一半，被戏称为“中国二线车展规模”。</p><p><br /></p><p>因而这场室内展的最大受益者，从未变过——财力雄厚的海外车企与外资Tier1<span class=\"text-remarks\" label=\"备注\">（但很多欧美车企压根没来，至于原因，在第二部分）</span>。</p><p><br /></p><p>坦率讲，慕尼黑车展对于没知名度的企业来说，租展台的作用都不大，只有给投资人做广告的价值。</p><p><br /></p><p>不过，如果来这里花掉上百万欧的中国主机厂都这么抱怨，那就是大错特错了。</p><p><br /></p><p class=\"text-big-title\" label=\"大标题\">一、生搬硬套</p><p><br /></p><p>最聪明的中国主机厂，其实是比亚迪，其次是小鹏和零跑。</p><p><br /></p><p>尽管没有任何新车型发布，审美也依然焚琴煮鹤，但它们至少属于中国主机厂里的“少数调研派”。</p><p><br /></p><p>因为他们知道，慕尼黑车展的“室内秀”，主要是用来与欧洲政商界联络感情的，对“打入消费者人心”毫无意义。</p><p><br /></p><p>因此，比亚迪老板娘只在这里举行了一场盛大的“政商界沟通会”，请来了各界高净值人士，给大家洗脑比亚迪的“工程师价值观”。</p><p><br /></p><p>虽然整个演讲内容跟那本毫无灵魂可言的《工程师之魂》相得益彰，但至少这家在国内并不好过的销量王，在车展没白花钱。</p><p><br /></p><p>也至少证明，有中国公司想在欧洲好好卖车。</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071905187895.png?imageView2/2/w/1000/format/png/interlace/1/q/85\" /></p><p><br /></p><p>对比之下，当你看到广汽、东风柳汽那几乎是从上海车展“生搬”过来的展台与车型时，你就知道这些主机厂的高管是多么“神游天外”了。</p><p><br /></p><p>在国内外都卖不好车，是个必然结果。</p><p><br /></p><p>只是我没想到，这次没带任何华为气息的问界也同样如此。</p><p><br /></p><p>虽然他们笑着说“我们来德国发布只是为了阿联酋市场”，但这些老车型显然也不是欧洲人喜欢的。</p><p><br /></p><p>看来还在想方设法匿名闯欧的华为，虽然藏在酒店叽叽咕咕，但也压根儿没做任何准备。</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071907635373.png?imageView2/2/w/1000/format/png/interlace/1/q/85\" /></p><p class=\"text-img-note\" label=\"图片备注\">问界展台</p><p><br /></p><p>实际上，真正面向德国潜在消费者群体的“展台”，是慕尼黑车展的另一个核心组成部分——Open Space。</p><p><br /></p><p>从国王广场到奥德昂广场，从代表新古典主义的“希腊门楼”再到巴洛克式的“铁阿提那教堂”，各种汽车品牌藏于其中。</p><p><br /></p><p>后者代表的“现代工程美学”与“古典流派”形成冲击，让人大开眼界。</p><p><br /></p><p>逛完所有公开展台，也意味着你沿着慕尼黑的历史走了一遍。</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071908007518.png?imageView2/2/w/1000/format/png/interlace/1/q/85\" /></p><p><br /></p><p>唉，慕尼黑这座城市的智慧不得不让人拊掌赞叹。这才是慕尼黑区别于全球其他任何一个车展的最大特色。</p><p><br /></p><p>因为德国的普通民众聚集在这里。</p><p><br /></p><p>因此，在中国公司蜂拥而至的室内展，你会看到奔驰、宝马的展台都不大，Smart和欧宝甚至只搭了一个小台子，现代汽车则只有供应链企业参展。而像菲亚特、极星等品牌则压根儿没出现。</p><p><br /></p><p>但他们在室外的摊位，却堪称艺术。</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071910832912.png?imageView2/2/w/1000/format/png/interlace/1/q/85\" /></p><p class=\"text-img-note\" label=\"图片备注\">大众旗下Cupra与奔驰的展厅</p><p><br /></p><p>然而在Open Space，我只在这里看到了唯四个中国OEM：比亚迪、小鹏、零跑和阿维塔。</p><p><br /></p><p>但说实话，这种选择的“聪明”反而被周围凸显得更加功利了。</p><p><br /></p><p>与其他全球百年老厂相比，你只能看到这些中国主机厂极为单一的野心与灵魂——只想卖车，卖了再说。</p><p><br /></p><p>德国车展期间一直在飘雨。比亚迪台子虽大，但很显然并不走心。</p><p><br /></p><p>他们把车置于露天展台之上，被雨水浇个透心凉<span class=\"text-remarks\" label=\"备注\">（敢想其他海外主机厂都配有擦车工吗）</span>。虽然楼上有观赏区，但只有黑哥在面无表情守着音箱，冷地打哆嗦。</p><p><br /></p><p>简陋的电线裸露在外，一切细节经不起推敲。</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071912984842.png?imageView2/2/w/1000/format/png/interlace/1/q/85\" /></p><p><br /></p><p>而比亚迪隔壁的现代汽车，一个在国内差不多被挤兑出去的韩国品牌，对待自己的“产品”却有着天差地别的态度。</p><p><br /></p><p>从整个罩住汽车的彩色透明建筑外壳，到两款风格迥异的概念车，再到墙上“从灵感迸发到工程落地”被全部呈现出来的设计草图…</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071913680869.jpg?imageView2/2/w/1000/format/jpg/interlace/1/q/85\" /></p><p><br /></p><p>细节证明，这家公司至少对“车”投射了自己独特的思考。</p><p><br /></p><p>但让我印象最深刻的是，一个身穿工服的韩国大叔，在指挥搬运工腾挪 INSTEROID概念车，因为天花板在漏水。</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071914173525.png?imageView2/2/w/1000/format/png/interlace/1/q/85\" /></p><p><br /></p><p>看他小心翼翼擦拭车前盖的严肃表情，我下意识掏出手机查了一下现代汽车的2025年上半年财报。</p><p><br /></p><p>果然我的直觉没有错。</p><p><br /></p><p>这家韩国主机厂，竟然在欧洲激烈的竞争中保持着销量持续增长，2025年上半年利润超过德国大众，全球排位直逼丰田。</p><p><br /></p><p>事实上，不只是现代，无论德国、意大利还是西班牙品牌，都或多或少展示出了自己的音乐与艺术品味。</p><p><br /></p><p>本质上，细致到外壳、内饰、发动机与轮胎材料的一切展示，也代表了民众品味。</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071915534158.png?imageView2/2/w/1000/format/png/interlace/1/q/85\" /></p><p><br /></p><p>因此，我合理猜测，尽管中国主机厂如比亚迪、零跑打入了欧洲市场并在短时间内似乎取得了不错结果，但长期来看仍然是个谜。</p><p><br /></p><p>因为我认为绝大部分中国主机厂在这里缺少了一样东西：对汽车发自内心的喜爱。</p><p><br class=\"text-big-title\" label=\"大标题\" /></p><p class=\"text-big-title\" label=\"大标题\">二、割裂</p><p><br /></p><p>毫无疑问，慕尼黑车展铺天盖地的广告充分证明，博世与Mobileye仍然是全球市场的智驾东道主。</p><p><br /></p><p>博世有总理站台，Mobileye则藏在所有外资Tier1的PPT里。</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071916721067.jpg?imageView2/2/w/1000/format/jpg/interlace/1/q/85\" /></p><p class=\"text-img-note\" label=\"图片备注\">德国总理到博世展台“一游”</p><p><br /></p><p>当然，整个全球市场也基本停留在他们能触达的水平——撑死有个“主动安全”功能就不错了。</p><p><br /></p><p>事实上，Mobileye展台那辆带有激光雷达的L4福斯商旅车，有点略显山寨。</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071917968874.jpg?imageView2/2/w/1000/format/jpg/interlace/1/q/85\" /></p><p class=\"text-img-note\" label=\"图片备注\">无人驾驶大众福斯商旅车</p><p><br /></p><p>就像我开头说的，如果论技术实力，在智驾技术上，中国供应商毫无疑问是碾压级别。</p><p><br /></p><p>大众Cariad的技术展示区，就是一个还停留在“目标检测”的科目一游戏；就连国内三流智驾Tier1，都能吊打大陆子公司Aumovio、法雷奥和麦格纳。</p><p><br /></p><p>法雷奥至少有零部件支撑，但Aumovio把2023年上海车展毫无新意的“跨域高性能计算”又吹了一遍。</p><p><br /></p><p>这个所谓子公司的前身，只是一个内部的域控部门，对整个“智驾系统”的理解四舍五入为零。</p><p><br /></p><p>还有麦格纳？这个我从未关注过的Tier1都在展台上摆着一堆摄像头、域控和DMS解决方案。</p><p><br /></p><p>“嗯…你这些东西看起来像是Mobileye的？”我问。</p><p><br /></p><p>“你想要啥，我们就能集成啥。”麦格纳老哥说SoC、毫米波雷达和软件都不是自己的。</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071918805451.png?imageView2/2/w/1000/format/png/interlace/1/q/85\" /></p><p class=\"text-img-note\" label=\"图片备注\">法雷奥的激光雷达点云投屏</p><p><br /></p><p>一方面，全球市场财务数据停滞的外资Tier1，由于找不到新的财务增长方向，只能也顺应欧盟最新“R171法规”，加入了“智驾吹牛大军”。</p><p><br /></p><p>但另一方面，他们的火热态度或许也证明了一个更加隐秘的事情——<strong>在全球供应链市场，欧洲更信任“自己人”。</strong></p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071920151727.png?imageView2/2/w/1000/format/png/interlace/1/q/85\" /></p><p class=\"text-img-note\" label=\"图片备注\">没新东西</p><p><br /></p><p>事实上，我发现了一件很奇怪的事。</p><p><br /></p><p>慕尼黑室内展的各色论坛上，欧美的企业高管与咨询顾问们翘着二郎腿，都在讨论“中国进入欧洲市场的速度”，不断渲染“欧洲企业可得加把劲儿了”的紧迫感。</p><p><br /></p><p>内容宏大虚浮，全是陈词滥调。</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071921524946.jpg?imageView2/2/w/1000/format/jpg/interlace/1/q/85\" /></p><p><br /></p><p>而在不为人知的角落，我发现英国与美国AI创业公司进入2025年后，被讨论热度陡然提升，行动也更加积极了。</p><p><br /></p><p>譬如英国企业Wayve与美国公司Helm.ai，后者甚至高调宣布与本田汽车合作前装量产ADAS。</p><p><br /></p><p>这些以往只出现在欧美资本和产业论坛上的创业公司，也带着Demo车来了慕尼黑车展，甚至广受欧洲车企高管追捧。</p><p><br /></p><p>“中国喜欢卷，但没时间思考；我们虽然慢一些，但有时间思考和改进，在电动和新技术研发上肯定能追赶上。” 类似言论我在论坛里听到不止一次。</p><p><br /></p><p>没错，这种论调如今广泛存在于欧洲车企高管之间，即便逻辑漏洞满满，但由于长期“喝香槟”喝傻了，自己根本意识不到。</p><p><br /></p><ul class=\" list-paddingleft-2\"><li><p>有没有可能，走上“电动化”这条路之前，是需要有一座桥去衔接的？</p></li></ul><p><br /></p><ul class=\" list-paddingleft-2\"><li><p>有没有可能，你们对于人工智能的认知问题不在于快和慢，而在于思维模式的僵化？</p></li></ul><p><br /></p><p>不过是为自己的“无能”与“其他目的”找借口罢了。</p><p><br /></p><p>事实证明我没猜错：有产业人士透露，欧洲主机厂似乎正在谋划一场“在欧洲市场去中国供应链化”的改革，但碍于对中国市场的顾虑，很多细节还在商讨中。</p><p><br /></p><p>举个最直观的例子：</p><p><br /></p><p>博世中国做的高阶智驾，甚至没能参与欧洲主机厂全球市场的竞标，因为被博世德国的智驾团队力压一头。</p><p><br /></p><p>然而德国团队的ADAS，如今连“变道”都不会。</p><p><br /></p><p>“在包括大众、宝马奔驰等公司的竞标体系内，英国公司Wayve成为了一个对抗博世等全球Tier1的有力竞争对手。</p><p><br /></p><p>但实际这家公司除了一段式端到端demo，泊车和AEB都没有。”</p><p><br /></p><p>连这种德国Tier1内部都有中国与全球团队之争，更不用说中国企业了，闯欧任重而道远。</p><p><br /></p><p>另外，高通、谷歌云与亚马逊云的全球市场车载生态圈里，几乎没有中国公司。</p><p><br /></p><p>但多了如“松下汽车系统、大陆软件子公司Electrobit、日本导航软件Micware”这些以前闻所未闻的企业。</p><p><br /></p><p>很久未闻消息的固态激光雷达创业公司MicroVisioin、Arbe与Innoviz，在欧洲市场仍然极为活跃。</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071921572308.png?imageView2/2/w/1000/format/png/interlace/1/q/85\" /></p><p><br /></p><p>当然，地图公司的切割最为明显。</p><p><br /></p><p>荷兰的TomTom与Here在欧洲占据绝对优势，因为所有智驾供应商仍然无法完全摆脱高精地图的困扰。</p><p><br /></p><p class=\"img-center-box\"><img src=\"https://img.huxiucdn.com/article/content/202509/30/071923888899.png?imageView2/2/w/1000/format/png/interlace/1/q/85\" /></p><p><br /></p><p>“你发现没，像欧宝、菲亚特这些在国内几乎销声匿迹、被描述成‘死掉’的公司，在欧洲活得很不错。但中国主机厂，除了一两家，其他没啥声响。这简直是两个世界。”&nbsp;</p><p><br /></p><p>一位老哥感叹，来了之后才发现原来欧洲如此不同。</p><p><br /></p><p>“本质上，这里想让我们来消费，来给他们提振经济，但不能抢当地公司粮食。大家都一样嘛！”</p><p><br /></p><p>当然，以上，都不是中国企业放弃的理由。</p><p><br /></p><p>目前，已经有供应商开始采用一些特殊的博弈策略打入欧洲市场。在此不表。</p><p><br /></p><p class=\"text-big-title\" label=\"大标题\">三、写在最后</p><p><br /></p><p>我一直都不是悲观主义者。</p><p><br /></p><p>即便目前在当下看不到“中高阶智驾”在欧洲上车的可能性，我也不认为这是阻止中国企业尝试走向海外的理由。</p><p><br /></p><p>不如先让中国的车打进去，毕竟销量最重要，才能养这帮臭研发。</p><p><br /></p><p>只不过，相比国内媒体“把中国企业吹上天”的论调，我觉得所有公司最应该先摒弃“我很强大”的心理姿态，主动融入对方的文化审美和商业体系，充分理解对方的消费者。</p><p><br /></p><p>实际上，已经有人做到了。</p><p><br /></p><p>我将在下一篇里详细描述“命运截然不同”的真实闯欧结果。</p><p><br /></p><p>嗯，我只相信实践。</p><p><br /></p><p><span class=\"text-remarks\" label=\"备注\">本文来自微信公众号：</span><a href=\"https://mp.weixin.qq.com/s?__biz=Mzg5MzI1NDkyMQ==&amp;mid=2247488407&amp;idx=1&amp;sn=4184c5ad64e1c3fad463941bc1cbb81e&amp;chksm=c1292c0717f6ab8f801ed43aec1a69dd7e64b4c8f0e9d9afd2ad85991096045828b88dda3a19&amp;mpshare=1&amp;scene=1&amp;srcid=0929aOokBaZZiT4mdtz7ieuD&amp;sharer_shareinfo=e20c292303fee39772468c9477970e32&amp;sharer_shareinfo_first=cd79de513731c2e61beafaabb1424bd6&amp;version=4.0.16.70139&amp;platform=mac#rd\" rel=\"nofollow\" style=\"text-decoration: none;\" target=\"_blank\"><span class=\"text-remarks\">宇多田</span></a><span class=\"text-remarks\">，作者：宇多田</span></p><p><a href=\"http://huxiu.link/ulxE\"><strong>下载虎嗅APP</strong></a>，第一时间获取深度独到的商业科技资讯，连接更多创新人群与线下活动</p>",
+      "source": {
+        "title": "宇多田"
+      },
+      "published_parsed": [
+        2025,
+        9,
+        29,
+        23,
+        39,
+        37,
+        0,
+        272,
+        0
+      ]
+    },
+    {
+      "title": "IPO双城记：港股“量”压美股，美股“概念”为王",
+      "link": "https://www.tmtpost.com/7712606.html",
+      "published": "Thu, 02 Oct 2025 21:10:15 +0800",
+      "summary": "综合2025年前三季全球IPO市场表现来看，港股与美股呈现出“此消彼长、各有亮点”的鲜明格局。",
+      "source": "钛媒体",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        13,
+        10,
+        15,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "西贝大降价，中产宝妈会买单吗？",
+      "link": "https://www.tmtpost.com/7712807.html",
+      "published": "Thu, 02 Oct 2025 21:10:08 +0800",
+      "summary": "西贝大降价，能重新赢回中产宝妈的信任吗？‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍",
+      "source": "钛媒体",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        13,
+        10,
+        8,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "Intel May Make Chips for AMD as Trump Admin. Reported to Consider New Tariffs to Boost U.S. Manufacturing",
+      "link": "https://www.tmtpost.com/7712817.html",
+      "published": "Thu, 02 Oct 2025 19:28:02 +0800",
+      "summary": "It's unclear how much of AMD's chip production would move to Intel if a deal is stuck. The Trump administration was reported to consider a plan asking chip companies to produce the same number of semiconductors in the U.S. as their customers import from overseas products.",
+      "source": "钛媒体",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        11,
+        28,
+        2,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "战略与产品，到底是什么关系？",
+      "link": "https://www.tmtpost.com/7712534.html",
+      "published": "Thu, 02 Oct 2025 18:06:54 +0800",
+      "summary": "战略不是抽象的“意图”，而是具象的“选择”；而产品，不是战略的后勤部门，是它真正的战场。",
+      "source": "钛媒体",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        10,
+        6,
+        54,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "Xiaomi and Chinese EV Competitors Set Delivery Records in September",
+      "link": "https://www.tmtpost.com/7712748.html",
+      "published": "Thu, 02 Oct 2025 16:48:02 +0800",
+      "summary": "Xiaomi and Xpeng for their first time to deliver more than 40,000 units in a month.  Leapmotor's monthly delivery first topped the 60,000 mark. Nio also broke its delivery record.",
+      "source": "钛媒体",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        8,
+        48,
+        2,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "Donald Trump Jr. Calls Media Treatment a 'Disaster', Likens Deplatforming to Crypto Debanking",
+      "link": "https://decrypt.co/342775/donald-trump-jr-media-treatment-disaster-likens-deplatforming-crypto-debanking",
+      "published": "Fri, 03 Oct 2025 01:53:14 +0000",
+      "summary": "At Singapore’s largest crypto conference, Donald Trump Jr. said World Liberty Financial is both a financial and media alternative, arguing mainstream outlets have discredited themselves.",
+      "source": "Decrypt",
+      "published_parsed": [
+        2025,
+        10,
+        3,
+        1,
+        53,
+        14,
+        4,
+        276,
+        0
+      ]
+    },
+    {
+      "title": "New York Democratic Lawmakers Want Bitcoin Miners to Pay More Tax. Here's Why",
+      "link": "https://decrypt.co/342769/new-york-democratic-lawmakers-bitcoin-miners-pay-more-tax-why",
+      "published": "Thu, 02 Oct 2025 21:59:30 +0000",
+      "summary": "Politicians have long slammed the amount of money Bitcoin miners use. Lawmakers now want to tax them for it.",
+      "source": "Decrypt",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        21,
+        59,
+        30,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "OpenAI Tops SpaceX as World’s Most Valuable Private Company With $500 Billion Valuation",
+      "link": "https://decrypt.co/342749/openai-tops-spacex-worlds-most-valuable-private-company-500-billion",
+      "published": "Thu, 02 Oct 2025 21:38:25 +0000",
+      "summary": "Employee share sale pushes OpenAI to a $500 billion valuation as investor frenzy in artificial intelligence continues to grow.",
+      "source": "Decrypt",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        21,
+        38,
+        25,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "Myriad Moves: Bitcoin's Odds of New All-Time High Jump by 50%",
+      "link": "https://decrypt.co/342743/myriad-moves-bitcoin-odds-all-time-high-jump-50",
+      "published": "Thu, 02 Oct 2025 20:57:34 +0000",
+      "summary": "Top markets on Myriad this week include price predictions for Bitcoin and Solana, as well as odds of Polymarket token news.",
+      "source": "Decrypt",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        20,
+        57,
+        34,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "Bitcoin Billionaire Arthur Hayes Predicts Europe Central Bank Turmoil Will Boost BTC",
+      "link": "https://decrypt.co/342739/bitcoin-billionaire-arthur-hayes-predicts-europe-bank-turmoil-boost-btc",
+      "published": "Thu, 02 Oct 2025 20:33:19 +0000",
+      "summary": "In his latest blog post, Hayes attacks the Eurozone, in particular focusing on France's problems.",
+      "source": "Decrypt",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        20,
+        33,
+        19,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "White House Weighing Candidates for Multiple CFTC Spots: Former Chairman Giancarlo",
+      "link": "https://www.coindesk.com/policy/2025/10/02/white-house-weighing-candidates-for-multiple-cftc-spots-former-chairman-giancarlo",
+      "published": "Thu, 02 Oct 2025 20:07:44 +0000",
+      "summary": "",
+      "source": "CoinDesk",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        20,
+        7,
+        44,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "Filecoin Rises More Than 4% Amid Wider Crypto Market Rally",
+      "link": "https://www.coindesk.com/markets/2025/10/02/filecoin-rises-more-than-4-amid-wider-crypto-market-rally",
+      "published": "Thu, 02 Oct 2025 18:06:50 +0000",
+      "summary": "",
+      "source": "CoinDesk",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        18,
+        6,
+        50,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "XLM Rallies 4% as Stellar Breaks Critical $0.40 Resistance Barrier",
+      "link": "https://www.coindesk.com/markets/2025/10/02/xlm-rallies-4-as-stellar-breaks-critical-usd0-40-resistance-barrier",
+      "published": "Thu, 02 Oct 2025 16:40:41 +0000",
+      "summary": "",
+      "source": "CoinDesk",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        16,
+        40,
+        41,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "HBAR Rallies on Institutional Interest, Faces Resistance at $0.23",
+      "link": "https://www.coindesk.com/markets/2025/10/02/hbar-rallies-on-institutional-interest-faces-resistance-at-usd0-23",
+      "published": "Thu, 02 Oct 2025 16:18:34 +0000",
+      "summary": "",
+      "source": "CoinDesk",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        16,
+        18,
+        34,
+        3,
+        275,
+        0
+      ]
+    },
+    {
+      "title": "Bitcoin Hits $120K With Traders Eyeing Bullish October Rally",
+      "link": "https://www.coindesk.com/markets/2025/10/02/dnp-bitcoin-breaks-usd120k-with-traders-eyeing-bullish-october-rally",
+      "published": "Thu, 02 Oct 2025 16:05:35 +0000",
+      "summary": "",
+      "source": "CoinDesk",
+      "published_parsed": [
+        2025,
+        10,
+        2,
+        16,
+        5,
+        35,
+        3,
+        275,
+        0
+      ]
+    }
+  ]
+}

@@ -40,6 +40,29 @@ def ask_yes_no(prompt: str, default: bool | None = None) -> bool:
         print('请输入 y/n')
 
 
+def ask_model_choice() -> str:
+    """询问用户选择AI模型"""
+    print_info('🤖 选择AI模型：')
+    print('  • 1 = Gemini（默认）')
+    print('  • 2 = DeepSeek')
+    print()
+    
+    while True:
+        try:
+            choice = input('请选择模型 [1/2，默认1]: ').strip()
+            if not choice or choice == '1':
+                print_info('已选择：Gemini')
+                return 'gemini'
+            elif choice == '2':
+                print_info('已选择：DeepSeek')
+                return 'deepseek'
+            else:
+                print_warning('请输入 1 或 2')
+        except (EOFError, KeyboardInterrupt):
+            print_info('使用默认设置：Gemini')
+            return 'gemini'
+
+
 def ask_content_field() -> str:
     """询问用户选择分析字段"""
     print_info('📝 分析字段选择：')
@@ -158,7 +181,6 @@ def main():
         print_info('🎯 分析选项：')
         print('  1. 自定义分析 - 可以指定日期范围、新闻来源、关键词等')
         print('  2. 标准分析 - 分析当天的所有新闻（推荐）')
-        print('  3. 选择模型 - Gemini 或 DeepSeek')
         print()
         if ask_yes_no('是否仅分析指定范围/来源/关键词？', default=False):
             print_info('📋 自定义分析参数配置：')
@@ -169,11 +191,8 @@ def main():
             
             date_mode = ask_yes_no('仅分析当天？（否则可指定起止日期）', default=True)
             # 选择模型
-            print_info('🤖 选择AI模型（回车默认 Gemini）：')
-            print('   • 1 = Gemini')
-            print('   • 2 = DeepSeek')
-            model_choice = input('选择模型 [1/2]: ').strip()
-            if model_choice == '2':
+            model_choice = ask_model_choice()
+            if model_choice == 'deepseek':
                 cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek.py')]
             else:
                 cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze.py')]
@@ -235,13 +254,10 @@ def main():
             print('  • 包含热门话题和潜力话题分析')
             print()
             # 模型选择
-            print_info('🤖 选择AI模型（回车默认 Gemini）：')
-            print('  • 1 = Gemini')
-            print('  • 2 = DeepSeek')
-            model_choice = input('选择模型 [1/2]: ').strip()
+            model_choice = ask_model_choice()
             # 添加字段选择
             content_field = ask_content_field()
-            if model_choice == '2':
+            if model_choice == 'deepseek':
                 cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek.py'), '--content-field', content_field]
             else:
                 cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze.py'), '--content-field', content_field]
@@ -307,9 +323,14 @@ def main():
             print('  • 生成专业的财经分析报告')
             print('  • 包含市场趋势和投资建议')
             print()
+            # 模型选择
+            model_choice = ask_model_choice()
             # 添加字段选择
             content_field = ask_content_field()
-            cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze.py'), '--content-field', content_field]
+            if model_choice == 'deepseek':
+                cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek.py'), '--content-field', content_field]
+            else:
+                cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze.py'), '--content-field', content_field]
             print_info('🚀 开始执行AI分析...')
             print(f'   命令：{" ".join(cmd)}')
             print()

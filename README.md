@@ -14,7 +14,27 @@
 
 ## 快速开始
 
-### 方式A：使用虚拟环境（推荐）
+### 方式A：一键启动脚本（推荐）
+```bash
+# macOS/Linux
+./start.sh
+
+# Windows
+start.bat
+```
+一键启动脚本会自动：
+- 检查Python环境
+- 创建虚拟环境（如不存在）
+- 安装项目依赖
+- 提供交互式菜单选择功能
+  - 交互式运行器
+  - AI分析脚本
+  - RSS财经抓取器
+  - 数据质量监控
+  - 启动文档网站（本地预览）
+  - 构建部署文档（生成静态网站）
+
+### 方式B：使用虚拟环境
 ```bash
 # 1. 激活虚拟环境（自动安装依赖 + 依赖校验）
 ./activate.sh                    # Linux/macOS
@@ -29,12 +49,6 @@ cp config/config.example.yml config/config.yml
 python scripts/interactive_runner.py
 ```
 
-### 方式B：一键脚本
-```bash
-bash scripts/setup.sh
-python3 scripts/interactive_runner.py
-```
-
 ### 方式C：手动安装
 ```bash
 # Python ≥ 3.10
@@ -43,7 +57,7 @@ cp config/config.example.yml config/config.yml
 # 编辑 config/config.yml，填写你的 Gemini 与/或 DeepSeek API Key
 python3 scripts/interactive_runner.py
 ```
-- 若今天已抓取过数据，可直接选择“AI 分析”。
+- 若今天已抓取过数据，可直接选择"AI 分析"。
 - 若未抓取，脚本会询问是否立即抓取（可选抓取正文），完成后再询问是否分析。
 
 ## 常用命令
@@ -114,6 +128,24 @@ python scripts/ai_analyze_deepseek.py                   # 使用 config.yml 的 
 python scripts/ai_analyze_deepseek.py --model deepseek-chat --base-url https://api.deepseek.com/v3.1_terminus_expires_on_20251015
 ```
 
+### 文档网站构建与部署
+```bash
+# 构建静态网站（生成到 site/ 目录）
+bash scripts/deploy.sh
+
+# 本地预览文档网站
+mkdocs serve                  # 访问 http://127.0.0.1:8000
+
+# 或使用交互式启动脚本
+./start.sh                    # 选择选项 5（本地预览）或选项 6（构建部署）
+```
+
+部署脚本会自动：
+- 生成 MkDocs 导航配置
+- 构建静态 HTML 网站
+- 复制安全验证文件到 site/ 目录
+- 准备部署到 GitHub Pages
+
 ## 结果位置
 - 主数据库：`data/news_data.db`
 - 当日归档：`docs/archive/YYYY-MM/YYYY-MM-DD/`
@@ -121,6 +153,9 @@ python scripts/ai_analyze_deepseek.py --model deepseek-chat --base-url https://a
   - `news_content/` 内容文件
   - `reports/` 分析报告（Markdown）
   - `collected_data.json` 备份
+- 静态网站：`site/`（通过 `bash scripts/deploy.sh` 生成）
+  - 包含所有分析报告的静态 HTML 网站
+  - 可直接部署到 GitHub Pages 或其他静态托管服务
 
 ## 配置说明
 - 实际配置：`config/config.yml`（已加入 `.gitignore`）
@@ -148,9 +183,15 @@ notify:
 - `scripts/ai_analyze_deepseek.py`
   - 与 `ai_analyze.py` 相同逻辑，但调用 DeepSeek（OpenAI SDK）
   - 从 `config/config.yml` 读取 `api_keys.deepseek` 或 `deepseek.api_key`（不再读取环境变量）
+  - 区分不同AI模型生成的财经分析报告文件名
 - `scripts/interactive_runner.py`
   - 交互式问答：检测 → 抓取 → 分析，一站式体验
   - 支持字段选择与模型选择（Gemini/DeepSeek）
+- `scripts/deploy.sh`
+  - 自动生成导航配置、构建文档网站并准备部署
+  - 自动复制安全验证文件到网站根目录
+- `scripts/generate_mkdocs_nav.py`
+  - 自动扫描归档目录，生成 MkDocs 导航配置
 
 ## 目录结构
 ```
@@ -161,13 +202,21 @@ Financial-report/
 ├── data/
 │   └── news_data.db               # 主 SQLite 数据库
 ├── docs/
-│   └── archive/YYYY-MM/YYYY-MM-DD/{rss_data,news_content,reports}
+│   ├── archive/YYYY-MM/YYYY-MM-DD/{rss_data,news_content,reports}
+│   └── index.md                   # 文档首页
 ├── scripts/
 │   ├── rss_finance_analyzer.py
 │   ├── query_news_by_date.py
 │   ├── ai_analyze.py
-│   └── interactive_runner.py
+│   ├── ai_analyze_deepseek.py
+│   ├── interactive_runner.py
+│   ├── deploy.sh                  # 文档网站构建部署脚本
+│   └── generate_mkdocs_nav.py    # MkDocs 导航配置生成器
+├── site/                          # 静态网站输出目录（git 忽略）
 ├── venv/                          # Python虚拟环境（git 忽略）
+├── mkdocs.yml                     # MkDocs 配置文件
+├── start.sh                       # 一键启动脚本（Linux/macOS）
+├── start.bat                      # 一键启动脚本（Windows）
 ├── activate.sh                    # 虚拟环境激活脚本（Linux/macOS）
 ├── activate.bat                   # 虚拟环境激活脚本（Windows）
 ├── VENV_README.md                 # 虚拟环境详细使用指南
@@ -177,9 +226,10 @@ Financial-report/
 
 ## 小贴士
 
-### 虚拟环境使用
+### 启动方式选择
+- **一键启动脚本（推荐）**：使用 `./start.sh`（Linux/macOS）或 `start.bat`（Windows）快速启动，自动处理环境检查和依赖安装
+- **虚拟环境使用**：如需更多控制，可使用 `./activate.sh`（Linux/macOS）或 `activate.bat`（Windows）手动激活虚拟环境
 - **推荐使用虚拟环境**：避免依赖冲突，确保环境一致性
-- **激活虚拟环境**：每次使用前执行 `./activate.sh`（Linux/macOS）或 `activate.bat`（Windows）
 - **详细指南**：查看 `VENV_README.md` 了解虚拟环境的完整使用方法
 
 ### 依赖安装与校验
@@ -193,6 +243,12 @@ Financial-report/
 - **摘要优先**：推荐使用 `summary` 模式，内容简洁且分析质量高
 - **正文分析**：抓取正文可显著提升 AI 分析质量；体量大时可先用摘要筛选再分析命中样本
 - **成本控制**：如遇长文本过大，可用 `--max-chars` 控制成本；导出时再加 `--include-content`
+
+### 文档网站部署
+- **本地预览**：运行 `mkdocs serve` 在本地查看文档网站
+- **构建部署**：运行 `bash scripts/deploy.sh` 生成静态网站到 `site/` 目录
+- **GitHub Pages**：推送到 GitHub 后会自动部署到 GitHub Pages
+- **安全验证**：部署时自动复制安全验证文件到网站根目录
 
 ### 自动化部署
 - **定时任务**：可将命令接入 CI/定时器实现自动化

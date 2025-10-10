@@ -2,7 +2,7 @@
 config/config.yml
 
 # MkDocs 构建输出
-# site/
+ site/
 
 # Python
 __pycache__/
@@ -52,3 +52,6 @@ Thumbs.db
 
 # 新闻备份文件
 docs/archive/**/*.txt
+
+# 静态文件
+/site/
