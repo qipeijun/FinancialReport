@@ -48,11 +48,12 @@ echo "1. 交互式运行器 (推荐)"
 echo "2. AI分析脚本"
 echo "3. RSS财经抓取器"
 echo "4. 数据质量监控"
-echo "5. 启动文档网站"
-echo "6. 退出"
+echo "5. 启动文档网站 (本地预览)"
+echo "6. 构建部署文档 (生成静态网站)"
+echo "7. 退出"
 echo
 
-read -p "请选择功能 (1-6): " choice
+read -p "请选择功能 (1-7): " choice
 
 case $choice in
     1)
@@ -143,6 +144,10 @@ case $choice in
         fi
         ;;
     6)
+        echo "🔨 构建部署文档..."
+        bash scripts/deploy.sh
+        ;;
+    7)
         echo "👋 再见！"
         exit 0
         ;;

@@ -62,6 +62,16 @@ echo "🔨 构建文档..."
 if mkdocs build; then
     echo "✅ 文档构建成功！"
     echo "📁 静态文件已生成到 site/ 目录"
+    
+    # 复制安全验证文件到 site 根目录
+    echo "🔐 复制安全验证文件..."
+    if [ -f "$PROJECT_ROOT/946d30b6403dda237744cead6645a0ae.txt" ]; then
+        cp "$PROJECT_ROOT/946d30b6403dda237744cead6645a0ae.txt" "$PROJECT_ROOT/site/"
+        echo "✅ 安全验证文件已复制到 site/ 目录"
+    else
+        echo "⚠️  安全验证文件未找到"
+    fi
+    
     echo "🌐 可以通过以下方式预览："
     echo "   - 本地预览: mkdocs serve"
     echo "   - 静态文件: 打开 site/index.html"
