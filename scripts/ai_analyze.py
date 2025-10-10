@@ -61,7 +61,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--max-chars', type=int, default=500000, help='传入模型的最大字符数上限，用于控制成本，0 表示不限制')
     parser.add_argument('--api-key', type=str, help='可选：显式传入 Gemini API Key（默认从配置/环境读取）')
     parser.add_argument('--config', type=str, help='可选：配置文件路径（默认 config/config.yml）')
-    parser.add_argument('--content-field', choices=['summary', 'content', 'auto'], default='auto', help='选择分析字段：summary(摘要优先)、content(正文优先)、auto(智能选择)')
+    parser.add_argument('--content-field', choices=['summary', 'content', 'auto'], default='summary', help='选择分析字段：summary(摘要优先，默认)、content(正文优先)、auto(智能选择)')
+    parser.add_argument('--model', type=str, help='可选：指定 Gemini 模型（如 gemini-2.5-pro），不指定则按优先级自动选择')
     return parser.parse_args()
 
 
@@ -247,17 +248,24 @@ def build_source_stats_block(selected: List[Dict[str, Any]], content_field: str,
     stats_info += f"总计: {total_articles}篇新闻文章\n"
     return stats_info
 
-def call_gemini(api_key: str, content: str) -> Tuple[str, Dict[str, Any]]:
+def call_gemini(api_key: str, content: str, preferred_model: Optional[str] = None) -> Tuple[str, Dict[str, Any]]:
     """按优先级尝试多个模型，返回 Markdown 文本。"""
     if genai is None:
         raise SystemExit('未安装 google-generativeai，请先安装或在环境中提供。')
 
-    model_names = [
-        'models/gemini-2.5-pro',
-        'models/gemini-2.5-flash',
-        'models/gemini-2.0-flash',
-        'models/gemini-pro-latest'
-    ]
+    # 如果指定了模型，只尝试该模型
+    if preferred_model:
+        model_names = [f'models/{preferred_model}' if not preferred_model.startswith('models/') else preferred_model]
+        print_info(f'使用指定模型: {model_names[0]}')
+    else:
+        # 默认按优先级尝试
+        model_names = [
+            'models/gemini-2.5-pro',
+            'models/gemini-2.5-flash',
+            'models/gemini-2.0-flash',
+            'models/gemini-pro-latest'
+        ]
+        print_info('按优先级尝试模型: 2.5-pro → 2.5-flash → 2.0-flash → pro-latest')
 
     genai.configure(api_key=api_key)
     print_progress(f'正在生成报告（输入长度 {len(content):,} 字符）')
@@ -268,24 +276,31 @@ def call_gemini(api_key: str, content: str) -> Tuple[str, Dict[str, Any]]:
         raise SystemExit(f'提示词文件不存在: {prompt_path}')
     with open(prompt_path, 'r', encoding='utf-8') as f:
         system_prompt = f.read()
+    
+    # 替换模型占位符（在实际调用前会被替换为真实模型名）
+    # 注意：这里先用占位符，成功调用后再替换
+    system_prompt_template = system_prompt
 
     last_error: Optional[Exception] = None
     for i, model_name in enumerate(model_names, 1):
         try:
             print_step(i, len(model_names), f'尝试模型: {model_name}')
+            
+            # 为每个模型替换占位符
+            system_prompt = system_prompt_template.replace('[使用的具体模型名称]', model_name.replace('models/', ''))
+            
             model = genai.GenerativeModel(model_name)
             resp = model.generate_content([system_prompt, content])
             print_success(f'模型调用成功: {model_name}')
-            usage = {}
+            usage = {'model': model_name}
             try:
-                usage = {
-                    'model': model_name,
-                    'prompt_tokens': getattr(resp, 'usage_metadata', {}).get('prompt_token_count'),
-                    'candidates_tokens': getattr(resp, 'usage_metadata', {}).get('candidates_token_count'),
-                    'total_tokens': getattr(resp, 'usage_metadata', {}).get('total_token_count')
-                }
+                if hasattr(resp, 'usage_metadata') and resp.usage_metadata:
+                    usage_metadata = resp.usage_metadata
+                    usage['prompt_tokens'] = getattr(usage_metadata, 'prompt_token_count', 0)
+                    usage['candidates_tokens'] = getattr(usage_metadata, 'candidates_token_count', 0)
+                    usage['total_tokens'] = getattr(usage_metadata, 'total_token_count', 0)
             except Exception:
-                pass
+                pass  # 静默失败，至少保证model字段存在
             return resp.text, usage
         except Exception as e:  # 尝试下一个
             last_error = e
@@ -401,7 +416,7 @@ def main():
     full_content = stats_info + "\n\n" + joined
 
     try:
-        summary_md, usage = call_gemini(api_key, full_content)
+        summary_md, usage = call_gemini(api_key, full_content, preferred_model=args.model)
     except Exception as e:
         print_error(f'模型调用失败: {e}')
         return
