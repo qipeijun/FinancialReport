@@ -21,6 +21,7 @@ import yaml
 
 # 导入公共模块
 from utils.ai_analyzer_common import *
+from utils.quality_filter import filter_and_rank_articles
 from utils.print_utils import (
     print_header, print_success, print_warning, print_error,
     print_info, print_progress, print_step, print_statistics
@@ -179,6 +180,18 @@ def main():
         filter_keyword=args.filter_keyword,
         max_articles=args.max_articles
     )
+    
+    # 质量筛选和排序（新增）
+    print_progress('质量筛选: 过滤低质量文章并智能去重...')
+    selected, quality_stats = filter_and_rank_articles(
+        selected
+        # 所有参数都从 config/quality_filter_config.yml 读取
+        # 可通过修改配置文件来调整质量阈值、去重参数等
+    )
+    
+    if not selected:
+        print_warning('质量筛选后无文章剩余，请降低阈值或检查数据源')
+        return
 
     # 构建语料
     pairs, total_len = build_corpus(selected, args.max_chars, per_chunk_chars=3000, content_field=args.content_field)

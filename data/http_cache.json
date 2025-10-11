@@ -1,7 +1,7 @@
 {
   "http://rss.eastmoney.com/rss_partener.xml": {
-    "etag": "W/\"ad41f0dcbd3adc1:0\"",
-    "last_modified": "Sat, 11 Oct 2025 14:46:44 GMT"
+    "etag": "W/\"47a3247ca3adc1:0\"",
+    "last_modified": "Sat, 11 Oct 2025 16:13:49 GMT"
   },
   "https://36kr.com/feed": {
     "etag": null,
@@ -53,7 +53,7 @@
   },
   "https://feeds.feedburner.com/zerohedge/feed": {
     "etag": null,
-    "last_modified": "Sat, 11 Oct 2025 14:36:39 GMT"
+    "last_modified": "Sat, 11 Oct 2025 15:42:31 GMT"
   },
   "https://www.bloomberg.com/feed/podcast/etf-report.xml": {
     "etag": null,
@@ -64,8 +64,8 @@
     "last_modified": "Thu, 09 Oct 2025 20:30:13 GMT"
   },
   "https://www.sec.gov/news/pressreleases.rss": {
-    "etag": "\"1760191174\"",
-    "last_modified": "Sat, 11 Oct 2025 13:59:34 GMT"
+    "etag": "\"1760198032\"",
+    "last_modified": "Sat, 11 Oct 2025 15:53:52 GMT"
   },
   "https://www.stats.gov.cn/sj/zxfb/rss.xml": {
     "etag": "\"68e861a9-4c15ec\"",
