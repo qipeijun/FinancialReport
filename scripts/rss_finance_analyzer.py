@@ -681,10 +681,9 @@ def load_rss_sources(config_path: Path) -> dict:
 
 
 def create_directory_structure(base_path: Path):
-    """创建目录结构"""
-    subdirs = ['rss_data', 'news_content', 'analysis', 'reports']
-    for subdir in subdirs:
-        (base_path / subdir).mkdir(parents=True, exist_ok=True)
+    """创建目录结构（仅创建必要的目录）"""
+    # 只创建基础目录，其他目录在需要时按需创建
+    base_path.mkdir(parents=True, exist_ok=True)
     logger.debug(f"目录结构创建: {base_path}")
 
 

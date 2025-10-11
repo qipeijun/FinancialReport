@@ -213,8 +213,8 @@ def build_corpus(articles: List[Dict[str, Any]], max_chars: int, per_chunk_chars
             else:
                 body = content or summary or ''
 
-        # 清理内容
-        body = sanitize_content(body)
+        # 清理内容（可选） 为了不限制模型，暂时不清理
+        # body = sanitize_content(body)
 
         title = a.get('title') or ''
         source = a.get('source') or ''

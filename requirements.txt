@@ -19,6 +19,7 @@ tqdm~=4.66.0
 # 网页正文提取
 beautifulsoup4~=4.12.3
 lxml~=5.1.0
+lxml-html-clean~=0.1.1
 readability-lxml~=0.8.1
 
 # 可选：本地运行/表格美化（当前脚本未强依赖，仅预留）
