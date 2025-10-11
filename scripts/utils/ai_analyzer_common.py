@@ -19,7 +19,7 @@ from utils.print_utils import (
 )
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DB_PATH = PROJECT_ROOT / 'data' / 'news_data.db'
 
 

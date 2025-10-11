@@ -3,12 +3,12 @@
     "start": "2025-10-11",
     "end": "2025-10-11"
   },
-  "articles_used": 127,
-  "chunks": 215,
+  "articles_used": 37,
+  "chunks": 69,
   "model_usage": {
-    "model": "models/gemini-2.5-flash",
-    "prompt_tokens": 165423,
-    "candidates_tokens": 5385,
-    "total_tokens": 175449
+    "model": "deepseek-chat",
+    "prompt_tokens": 58680,
+    "completion_tokens": 1984,
+    "total_tokens": 60664
   }
 }
