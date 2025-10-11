@@ -23,7 +23,7 @@ import yaml
 
 # 导入公共模块
 from utils.ai_analyzer_common import *
-from utils.data_enrichment import DataEnricher
+# from utils.data_enrichment import DataEnricher  # 已禁用数据增强功能
 from utils.quality_filter import filter_and_rank_articles
 from utils.print_utils import (
     print_header, print_success, print_warning, print_error,
@@ -152,18 +152,20 @@ def call_gemini(api_key: str, content: str, preferred_model: Optional[str] = Non
     raise RuntimeError(f'所有模型调用失败，最后错误：{last_error}')
 
 
-def enhance_with_realtime_data(api_key: str, report_text: str) -> str:
-    """使用AI增强报告，添加实时股票数据"""
-    try:
-        genai.configure(api_key=api_key)
-        client = genai.GenerativeModel('gemini-pro')
-        enricher = DataEnricher(ai_client=client)
-        enhanced_report = enricher.enrich_report(report_text)
-        print_success('数据增强完成')
-        return enhanced_report
-    except Exception as e:
-        print_warning(f'数据增强失败（跳过）: {e}')
-        return report_text
+# 数据增强功能已禁用（用户不需要此功能）
+# def enhance_with_realtime_data(api_key: str, report_text: str) -> str:
+#     """使用AI增强报告，添加实时股票数据"""
+#     try:
+#         genai.configure(api_key=api_key)
+#         # 注意：如果将来需要重新启用，需要将 'gemini-pro' 改为 'gemini-2.0-flash-exp' 或其他可用模型
+#         client = genai.GenerativeModel('gemini-pro')
+#         enricher = DataEnricher(ai_client=client)
+#         enhanced_report = enricher.enrich_report(report_text)
+#         print_success('数据增强完成')
+#         return enhanced_report
+#     except Exception as e:
+#         print_warning(f'数据增强失败（跳过）: {e}')
+#         return report_text
 
 
 def main():
@@ -232,9 +234,9 @@ def main():
         print_error(f'模型调用失败: {e}')
         return
 
-    # 数据增强：添加实时股票数据
-    print_progress('数据增强: 为报告添加实时股票数据...')
-    summary_md = enhance_with_realtime_data(api_key, summary_md)
+    # 数据增强：添加实时股票数据（已禁用，用户不需要此功能）
+    # print_progress('数据增强: 为报告添加实时股票数据...')
+    # summary_md = enhance_with_realtime_data(api_key, summary_md)
 
     # 保存报告
     saved_path = save_markdown(end, summary_md, model_suffix='gemini')

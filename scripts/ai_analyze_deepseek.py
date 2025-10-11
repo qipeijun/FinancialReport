@@ -9,7 +9,7 @@ AI 分析脚本（DeepSeek版本）- 重构版
 - 将报告保存到 `docs/archive/YYYY-MM/YYYY-MM-DD/reports/` 下
 
 示例：
-  python3 scripts/ai_analyze_deepseek.py
+      python3 scripts/ai_analyze_deepseek.py
   python3 scripts/ai_analyze_deepseek.py --date 2025-10-11
   python3 scripts/ai_analyze_deepseek.py --start 2025-10-10 --end 2025-10-11
 """
