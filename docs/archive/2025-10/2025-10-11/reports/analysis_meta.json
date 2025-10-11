@@ -3,12 +3,12 @@
     "start": "2025-10-11",
     "end": "2025-10-11"
   },
-  "articles_used": 59,
-  "chunks": 96,
+  "articles_used": 99,
+  "chunks": 176,
   "model_usage": {
     "model": "deepseek-chat",
-    "prompt_tokens": 68752,
-    "completion_tokens": 2143,
-    "total_tokens": 70895
+    "prompt_tokens": 123982,
+    "completion_tokens": 1924,
+    "total_tokens": 125906
   }
 }
