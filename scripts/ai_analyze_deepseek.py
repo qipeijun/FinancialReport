@@ -350,13 +350,10 @@ def save_markdown(date_str: str, markdown_text: str) -> Path:
     year_month = date_str[:7]
     report_dir = PROJECT_ROOT / 'docs' / 'archive' / year_month / date_str / 'reports'
     report_dir.mkdir(parents=True, exist_ok=True)
-    now = datetime.now(pytz.timezone('Asia/Shanghai'))
-    now_str = now.strftime('%Y-%m-%d %H:%M:%S')
-    # 根据小时判断 AM/PM
-    period = 'AM' if now.hour < 12 else 'PM'
+    now_str = datetime.now(pytz.timezone('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M:%S')
     header = f"# 📅 {date_str} 财经分析报告\n\n> 📅 生成时间: {now_str} (北京时间)\n\n"
     content = header + (markdown_text or '').strip() + '\n'
-    report_file = report_dir / f"📅 {date_str}_{period} 财经分析报告_deepseek.md"
+    report_file = report_dir / f"📅 {date_str} 财经分析报告_deepseek.md"
     with open(report_file, 'w', encoding='utf-8') as f:
         f.write(content)
     print_success(f"报告已保存到: {report_file}")

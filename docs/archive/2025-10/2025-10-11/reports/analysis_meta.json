@@ -8,7 +8,7 @@
   "model_usage": {
     "model": "deepseek-chat",
     "prompt_tokens": 123982,
-    "completion_tokens": 1924,
-    "total_tokens": 125906
+    "completion_tokens": 1975,
+    "total_tokens": 125957
   }
 }
