@@ -22,6 +22,10 @@ import yaml
 # 导入公共模块
 from utils.ai_analyzer_common import *
 from utils.quality_filter import filter_and_rank_articles
+from utils.quality_checker import (
+    check_report_quality, generate_quality_feedback, 
+    print_quality_report, print_quality_summary, add_quality_warning
+)
 from utils.print_utils import (
     print_header, print_success, print_warning, print_error,
     print_info, print_progress, print_step, print_statistics
@@ -59,6 +63,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--base-url', type=str, default='https://api.deepseek.com', help='DeepSeek API Base URL')
     parser.add_argument('--prompt', choices=['safe', 'pro'], default='pro',
                         help='提示词版本：safe(安全版) 或 pro(专业版)')
+    parser.add_argument('--quality-check', action='store_true', default=False,
+                        help='启用质量检查（默认关闭），自动检测报告质量')
+    parser.add_argument('--max-retries', type=int, default=0,
+                        help='质量检查不通过时的最大重试次数（默认0次，即不重试）')
     return parser.parse_args()
 
 
@@ -205,14 +213,54 @@ def main():
     joined = '\n\n'.join(c for _, chunks in pairs for c in chunks)
     full_content = stats_info + "\n\n" + joined
 
-    # 调用DeepSeek生成报告
-    try:
-        summary_md, usage = call_deepseek(api_key, args.base_url, args.model, full_content, args.prompt)
-    except Exception as e:
-        print_error(f'模型调用失败: {e}')
-        return
+    # 调用DeepSeek生成报告（支持质量检查和重试）
+    print()
+    quality_result = {}
+    
+    for attempt in range(args.max_retries + 1):
+        if attempt > 0:
+            print_warning(f'\n🔄 质量不达标，第{attempt}次重试（共{args.max_retries}次）...\n')
+        
+        # 生成报告
+        if attempt == 0:
+            print_progress('调用DeepSeek模型生成投资分析报告...')
+        
+        try:
+            summary_md, usage = call_deepseek(api_key, args.base_url, args.model, full_content, args.prompt)
+        except Exception as e:
+            print_error(f'模型调用失败: {e}')
+            return
+        
+        if attempt == 0:
+            print_success('✓ 报告生成完成')
+        
+        # 质量检查
+        if args.quality_check:
+            print_progress('质量检查中...')
+            quality_result = check_report_quality(summary_md)
+            print_quality_summary(quality_result)
+            
+            if quality_result['passed']:
+                print_success('✅ 质量检查通过\n')
+                break
+            else:
+                if attempt < args.max_retries:
+                    feedback = generate_quality_feedback(quality_result)
+                    print_warning(f'⚠️ 质量评分: {quality_result["score"]}/100')
+                    print_info(f'问题数量: {len(quality_result["issues"])}个严重问题, {len(quality_result["warnings"])}个警告')
+                else:
+                    print_error(f'❌ 已达最大重试次数({args.max_retries}次)，使用当前版本')
+                    print_warning('报告质量可能不理想，建议人工审核')
+                    summary_md = add_quality_warning(summary_md, quality_result)
+                    break
+        else:
+            # 不启用质量检查，直接使用
+            if attempt == 0:
+                print_info('  ℹ️ 质量检查已禁用，报告未经二次处理')
+            break
 
     # 保存报告
+    print_progress('保存报告到文件...')
     saved_path = save_markdown(end, summary_md, model_suffix='deepseek')
     
     # 保存元数据
@@ -221,8 +269,9 @@ def main():
         'articles_used': len(selected),
         'chunks': sum(len(ch) for _, ch in pairs),
         'model_usage': usage,
+        'quality_check': quality_result if quality_result else None,
     }
-    save_metadata(end, meta)
+    save_metadata(end, meta, model_suffix='deepseek')
 
     # 可选导出JSON
     if args.output_json:

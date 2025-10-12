@@ -213,12 +213,24 @@ def save_markdown(date_str: str, markdown_text: str, model_suffix: str = 'gemini
     return report_file
 
 
-def save_metadata(date_str: str, meta: Dict[str, Any]):
-    """保存元数据"""
+def save_metadata(date_str: str, meta: Dict[str, Any], model_suffix: str = ''):
+    """保存元数据
+    
+    Args:
+        date_str: 日期字符串
+        meta: 元数据字典
+        model_suffix: 模型后缀（如 'gemini', 'deepseek'）
+    """
     year_month = date_str[:7]
     report_dir = PROJECT_ROOT / 'docs' / 'archive' / year_month / date_str / 'reports'
     report_dir.mkdir(parents=True, exist_ok=True)
-    meta_file = report_dir / 'analysis_meta.json'
+    
+    # 根据模型添加后缀，避免覆盖
+    if model_suffix:
+        meta_file = report_dir / f'analysis_meta_{model_suffix}.json'
+    else:
+        meta_file = report_dir / 'analysis_meta.json'
+    
     with open(meta_file, 'w', encoding='utf-8') as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)
     print_info(f'元数据已保存到: {meta_file}')

@@ -25,6 +25,10 @@ import yaml
 from utils.ai_analyzer_common import *
 # from utils.data_enrichment import DataEnricher  # 已禁用数据增强功能
 from utils.quality_filter import filter_and_rank_articles
+from utils.quality_checker import (
+    check_report_quality, generate_quality_feedback, 
+    print_quality_report, print_quality_summary, add_quality_warning
+)
 from utils.print_utils import (
     print_header, print_success, print_warning, print_error,
     print_info, print_progress, print_step, print_statistics
@@ -59,6 +63,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--content-field', choices=['summary', 'content', 'auto'], default='summary', 
                         help='选择分析字段：summary(摘要优先)、content(正文优先)、auto(智能选择)')
     parser.add_argument('--model', type=str, help='可选：指定 Gemini 模型（如 gemini-2.5-pro）')
+    parser.add_argument('--quality-check', action='store_true', default=False,
+                        help='启用质量检查（默认关闭），自动检测报告质量并重试')
+    parser.add_argument('--max-retries', type=int, default=0,
+                        help='质量检查不通过时的最大重试次数（默认0次，即不重试）')
     return parser.parse_args()
 
 
@@ -168,6 +176,68 @@ def call_gemini(api_key: str, content: str, preferred_model: Optional[str] = Non
 #         return report_text
 
 
+def generate_report_with_quality_check(api_key: str, selected: list, args: argparse.Namespace, 
+                                       full_content: str = None) -> Tuple[str, Dict, Dict]:
+    """
+    生成报告并进行质量检查（全自动模式）
+    
+    Args:
+        api_key: Gemini API Key
+        selected: 文章列表
+        args: 命令行参数
+        full_content: 如果是单阶段模式，传入完整语料
+        
+    Returns:
+        (报告文本, 使用统计, 质量检查结果)
+    """
+    max_retries = args.max_retries
+    
+    for attempt in range(max_retries + 1):
+        if attempt > 0:
+            print_warning(f'\n🔄 质量不达标，第{attempt}次重试（共{max_retries}次）...\n')
+        
+        # 生成报告
+        if attempt == 0:
+            print_progress('调用Gemini模型生成投资分析报告...')
+        
+        report, usage = call_gemini(api_key, full_content, preferred_model=args.model)
+        
+        if attempt == 0:
+            print_success('✓ 报告生成完成')
+        
+        # 质量检查
+        if args.quality_check:
+            print_progress('质量检查中...')
+            quality_result = check_report_quality(report)
+            print_quality_summary(quality_result)
+            
+            if quality_result['passed']:
+                print_success('✅ 质量检查通过\n')
+                return report, usage, quality_result
+            else:
+                if attempt < max_retries:
+                    # 生成改进建议
+                    feedback = generate_quality_feedback(quality_result)
+                    print_warning(f'⚠️ 质量评分: {quality_result["score"]}/100')
+                    print_info(f'问题数量: {len(quality_result["issues"])}个严重问题, {len(quality_result["warnings"])}个警告')
+                    # 注: 改进建议不会自动添加到提示词中，而是用于下一次重试时的参考
+                else:
+                    print_error(f'❌ 已达最大重试次数({max_retries}次)，使用当前版本')
+                    print_warning('报告质量可能不理想，建议人工审核')
+                    # 在报告开头添加质量警告
+                    report = add_quality_warning(report, quality_result)
+                    return report, usage, quality_result
+        else:
+            # 不启用质量检查，直接返回原始报告（零干预）
+            if attempt == 0:
+                print_info('  ℹ️ 质量检查已禁用，报告未经二次处理')
+            return report, usage, {}
+    
+    # 理论上不会到达这里（质量检查循环结束仍未通过）
+    # 返回最后一次的结果
+    return report, usage, quality_result if args.quality_check else {}
+
+
 def main():
     """主函数"""
     args = parse_args()
@@ -178,6 +248,13 @@ def main():
     print_info(f"字段选择模式: {args.content_field}")
     if args.max_chars > 0:
         print_info(f"字符数限制: {args.max_chars:,}")
+    
+    # 显示启用的功能
+    features = []
+    if args.quality_check:
+        features.append(f"质量检查(最多重试{args.max_retries}次)")
+    if features:
+        print_info(f"启用功能: {', '.join(features)}")
     print()
 
     # 加载API Key
@@ -227,11 +304,16 @@ def main():
     joined = '\n\n'.join(c for _, chunks in pairs for c in chunks)
     full_content = stats_info + "\n\n" + joined
 
-    # 调用Gemini生成报告
+    # 生成报告（集成质量检查）
+    print()
     try:
-        summary_md, usage = call_gemini(api_key, full_content, preferred_model=args.model)
+        summary_md, usage, quality_result = generate_report_with_quality_check(
+            api_key, selected, args, full_content
+        )
     except Exception as e:
-        print_error(f'模型调用失败: {e}')
+        print_error(f'报告生成失败: {e}')
+        import traceback
+        traceback.print_exc()
         return
 
     # 数据增强：添加实时股票数据（已禁用，用户不需要此功能）
@@ -239,6 +321,7 @@ def main():
     # summary_md = enhance_with_realtime_data(api_key, summary_md)
 
     # 保存报告
+    print_progress('保存报告到文件...')
     saved_path = save_markdown(end, summary_md, model_suffix='gemini')
     
     # 保存元数据
@@ -247,8 +330,9 @@ def main():
         'articles_used': len(selected),
         'chunks': sum(len(ch) for _, ch in pairs),
         'model_usage': usage,
+        'quality_check': quality_result if quality_result else None,
     }
-    save_metadata(end, meta)
+    save_metadata(end, meta, model_suffix='gemini')
 
     # 可选导出JSON
     if args.output_json:

@@ -1,7 +1,7 @@
 {
   "http://rss.eastmoney.com/rss_partener.xml": {
-    "etag": "\"02f22bc333bdc1:0\"",
-    "last_modified": "Sun, 12 Oct 2025 04:50:30 GMT"
+    "etag": "W/\"f8dee42503bdc1:0\"",
+    "last_modified": "Sun, 12 Oct 2025 08:14:42 GMT"
   },
   "https://36kr.com/feed": {
     "etag": null,
@@ -20,8 +20,8 @@
     "last_modified": null
   },
   "https://www.chinanews.com.cn/rss/finance.xml": {
-    "etag": "\"68eb32a7-40b0\"",
-    "last_modified": "Sun, 12 Oct 2025 04:46:31 GMT"
+    "etag": "\"68eb625b-401e\"",
+    "last_modified": "Sun, 12 Oct 2025 08:10:03 GMT"
   },
   "https://www.ftchinese.com/rss/feed": {
     "etag": "W/\"2ac3-0XXn6lIAbi0CTLBVnILZTh0EGsM\"",
@@ -53,7 +53,7 @@
   },
   "https://feeds.feedburner.com/zerohedge/feed": {
     "etag": null,
-    "last_modified": "Sun, 12 Oct 2025 03:47:16 GMT"
+    "last_modified": "Sun, 12 Oct 2025 07:32:05 GMT"
   },
   "https://www.bloomberg.com/feed/podcast/etf-report.xml": {
     "etag": null,
@@ -64,8 +64,8 @@
     "last_modified": "Thu, 09 Oct 2025 20:30:13 GMT"
   },
   "https://www.sec.gov/news/pressreleases.rss": {
-    "etag": "\"1760243823\"",
-    "last_modified": "Sun, 12 Oct 2025 04:37:03 GMT"
+    "etag": "\"1760257010\"",
+    "last_modified": "Sun, 12 Oct 2025 08:16:50 GMT"
   },
   "https://www.stats.gov.cn/sj/zxfb/rss.xml": {
     "etag": "\"68e861a9-4c15ec\"",
