@@ -1,0 +1,411 @@
+# GitHub Actions 工作流：每日财经报告自动化
+# 功能：抓取RSS新闻 → AI分析 → 构建部署文档网站
+# 触发：每天两次（北京时间 08:30、20:30）+ 手动触发
+
+name: Daily Financial Report
+
+# 触发条件
+on:
+  # 定时任务：每天运行两次（覆盖A股开盘前 + 美股开盘前）
+  schedule:
+    - cron: '30 0 * * *'  # 每天 00:30 UTC (08:30 北京时间) - A股开盘前
+    - cron: '30 12 * * *'  # 每天 12:30 UTC (20:30 北京时间) - 美股开盘前
+  
+  # 手动触发：用于测试或补漏
+  workflow_dispatch:
+    inputs:
+      skip_fetch:
+        description: '跳过数据抓取（用于只重新分析）'
+        required: false
+        type: boolean
+        default: false
+      skip_analysis:
+        description: '跳过AI分析（用于只更新网站）'
+        required: false
+        type: boolean
+        default: false
+
+# 权限设置
+permissions:
+  contents: write    # 提交数据库更新
+  pages: write       # 部署到 GitHub Pages
+  id-token: write    # OIDC 认证
+
+# 并发控制：同一时间只运行一个工作流
+concurrency:
+  group: daily-report
+  cancel-in-progress: false  # 不取消正在运行的任务
+
+jobs:
+  # ========================================
+  # Job 1: 数据抓取（RSS新闻采集）
+  # ========================================
+  fetch-news:
+    name: 📰 抓取RSS新闻
+    runs-on: ubuntu-latest
+    # 条件：不是手动跳过抓取
+    if: ${{ !inputs.skip_fetch }}
+    
+    outputs:
+      news_count: ${{ steps.fetch.outputs.news_count }}
+      has_new_data: ${{ steps.fetch.outputs.has_new_data }}
+    
+    steps:
+      - name: 📥 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 完整历史，用于commit
+      
+      - name: 🐍 设置Python环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: 📦 安装依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: 📊 检查数据库状态
+        id: check_db
+        run: |
+          if [ -f "data/news_data.db" ]; then
+            echo "✅ 数据库已存在"
+            BEFORE_COUNT=$(sqlite3 data/news_data.db "SELECT COUNT(*) FROM news_articles;")
+            echo "before_count=$BEFORE_COUNT" >> $GITHUB_OUTPUT
+          else
+            echo "⚠️ 数据库不存在，将创建新库"
+            echo "before_count=0" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: 🔄 抓取RSS新闻
+        id: fetch
+        run: |
+          echo "🚀 开始抓取RSS新闻..."
+          
+          # 运行RSS抓取器
+          python3 scripts/rss_finance_analyzer.py \
+            --fetch-content \
+            --deduplicate \
+            --max-workers 10
+          
+          # 统计新增数据
+          AFTER_COUNT=$(sqlite3 data/news_data.db "SELECT COUNT(*) FROM news_articles;")
+          BEFORE_COUNT=${{ steps.check_db.outputs.before_count }}
+          NEW_COUNT=$((AFTER_COUNT - BEFORE_COUNT))
+          
+          echo "news_count=$NEW_COUNT" >> $GITHUB_OUTPUT
+          echo "total_count=$AFTER_COUNT" >> $GITHUB_OUTPUT
+          
+          if [ $NEW_COUNT -gt 0 ]; then
+            echo "has_new_data=true" >> $GITHUB_OUTPUT
+            echo "✅ 成功抓取 $NEW_COUNT 条新闻（总计 $AFTER_COUNT 条）"
+          else
+            echo "has_new_data=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ 没有新数据"
+          fi
+      
+      - name: 💾 提交数据库更新
+        if: steps.fetch.outputs.has_new_data == 'true'
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          
+          git add data/news_data.db
+          git commit -m "📊 自动更新数据库 - 新增 ${{ steps.fetch.outputs.news_count }} 条新闻
+
+          - 抓取时间: $(date '+%Y-%m-%d %H:%M:%S')
+          - 新增数量: ${{ steps.fetch.outputs.news_count }}
+          - 总计数量: ${{ steps.fetch.outputs.total_count }}
+          - 触发方式: ${{ github.event_name }}"
+          
+          git push
+          echo "✅ 数据库已更新并推送"
+      
+      - name: 📤 上传数据库（用于后续Job）
+        uses: actions/upload-artifact@v4
+        with:
+          name: news-database
+          path: data/news_data.db
+          retention-days: 1
+
+  # ========================================
+  # Job 2: AI分析（Gemini + DeepSeek并行）
+  # ========================================
+  ai-analysis:
+    name: 🤖 AI分析报告
+    runs-on: ubuntu-latest
+    needs: fetch-news
+    # 条件：有新数据 且 不是手动跳过分析
+    if: |
+      !inputs.skip_analysis && 
+      (needs.fetch-news.outputs.has_new_data == 'true' || github.event_name == 'workflow_dispatch')
+    
+    strategy:
+      matrix:
+        model: [gemini, deepseek]
+      fail-fast: false  # 一个模型失败不影响另一个
+    
+    steps:
+      - name: 📥 检出代码
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}  # 使用最新的commit（包含刚更新的数据库）
+      
+      - name: 📥 下载数据库
+        uses: actions/download-artifact@v4
+        with:
+          name: news-database
+          path: data/
+      
+      - name: 🐍 设置Python环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: 📦 安装依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: 🤖 运行AI分析 - ${{ matrix.model }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          TODAY=$(date '+%Y-%m-%d')
+          
+          if [ "${{ matrix.model }}" = "gemini" ]; then
+            echo "🚀 使用 Gemini 模型分析..."
+            python3 scripts/ai_analyze.py \
+              --date $TODAY \
+              --content-field summary \
+              --max-chars 500000
+          else
+            echo "🚀 使用 DeepSeek 模型分析..."
+            python3 scripts/ai_analyze_deepseek.py \
+              --date $TODAY \
+              --content-field summary \
+              --max-chars 500000
+          fi
+          
+          echo "✅ ${{ matrix.model }} 分析完成"
+      
+      - name: 📤 上传报告文件
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports-${{ matrix.model }}
+          path: docs/archive/
+          retention-days: 90  # 保留90天
+      
+      - name: 📊 报告摘要
+        run: |
+          TODAY=$(date '+%Y-%m-%d')
+          YEAR_MONTH=$(date '+%Y-%m')
+          REPORT_DIR="docs/archive/$YEAR_MONTH/$TODAY/reports"
+          
+          if [ -d "$REPORT_DIR" ]; then
+            echo "📁 生成的报告:"
+            ls -lh $REPORT_DIR/*.md 2>/dev/null || echo "  无Markdown报告"
+            ls -lh $REPORT_DIR/*.json 2>/dev/null || echo "  无元数据"
+          else
+            echo "⚠️ 报告目录不存在: $REPORT_DIR"
+          fi
+
+  # ========================================
+  # Job 3: 合并报告并提交
+  # ========================================
+  commit-reports:
+    name: 💾 提交分析报告
+    runs-on: ubuntu-latest
+    needs: ai-analysis
+    if: ${{ !cancelled() }}  # 即使AI分析部分失败也执行
+    
+    steps:
+      - name: 📥 检出代码
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
+      
+      - name: 📥 下载Gemini报告
+        uses: actions/download-artifact@v4
+        with:
+          name: reports-gemini
+          path: docs/archive/
+        continue-on-error: true
+      
+      - name: 📥 下载DeepSeek报告
+        uses: actions/download-artifact@v4
+        with:
+          name: reports-deepseek
+          path: docs/archive/
+        continue-on-error: true
+      
+      - name: 💾 提交报告到仓库
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          
+          # 检查是否有新文件
+          git add docs/archive/
+          
+          if git diff --cached --quiet; then
+            echo "ℹ️ 没有新报告需要提交"
+          else
+            TODAY=$(date '+%Y-%m-%d')
+            git commit -m "🤖 自动生成财经分析报告 - $TODAY
+
+            - 生成时间: $(date '+%Y-%m-%d %H:%M:%S')
+            - 包含模型: Gemini, DeepSeek
+            - 触发方式: ${{ github.event_name }}"
+            
+            git push
+            echo "✅ 报告已提交并推送"
+          fi
+
+  # ========================================
+  # Job 4: 构建并部署MkDocs网站
+  # ========================================
+  build-and-deploy:
+    name: 🚀 构建部署文档网站
+    runs-on: ubuntu-latest
+    needs: commit-reports
+    if: ${{ !cancelled() }}  # 即使前面步骤失败也尝试部署
+    
+    steps:
+      - name: 📥 检出代码
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+      
+      - name: 🐍 设置Python环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: 📦 安装依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: 📝 生成导航配置
+        run: |
+          python3 scripts/generate_mkdocs_nav.py
+          echo "✅ 导航配置生成完成"
+      
+      - name: 🔨 构建MkDocs网站
+        run: |
+          mkdocs build
+          echo "✅ MkDocs构建完成"
+      
+      - name: 🔐 复制安全验证文件
+        run: |
+          if [ -f "946d30b6403dda237744cead6645a0ae.txt" ]; then
+            cp 946d30b6403dda237744cead6645a0ae.txt site/
+            echo "✅ 安全验证文件已复制"
+          fi
+      
+      - name: 📤 上传Pages构建产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+      
+      - name: 🚀 部署到GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      
+      - name: ✅ 部署完成
+        run: |
+          echo "🎉 部署成功！"
+          echo "🔗 网站地址: ${{ steps.deployment.outputs.page_url }}"
+          echo "📅 部署时间: $(date '+%Y-%m-%d %H:%M:%S')"
+
+  # ========================================
+  # Job 5: 发送通知
+  # ========================================
+  notify:
+    name: 📬 发送完成通知
+    runs-on: ubuntu-latest
+    needs: [fetch-news, ai-analysis, build-and-deploy]
+    if: always()  # 无论成功失败都执行
+    
+    steps:
+      - name: 📊 汇总工作流状态
+        id: summary
+        run: |
+          # 生成GitHub摘要
+          echo "## 🎯 每日财经报告 - 工作流完成" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**执行时间**: $(date '+%Y-%m-%d %H:%M:%S')" >> $GITHUB_STEP_SUMMARY
+          echo "**触发方式**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📋 任务状态" >> $GITHUB_STEP_SUMMARY
+          echo "- 数据抓取: ${{ needs.fetch-news.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- AI分析: ${{ needs.ai-analysis.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- 网站部署: ${{ needs.build-and-deploy.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ needs.fetch-news.outputs.news_count }}" != "" ]; then
+            echo "### 📰 数据统计" >> $GITHUB_STEP_SUMMARY
+            echo "- 新增新闻: ${{ needs.fetch-news.outputs.news_count }} 条" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          # 准备邮件内容变量
+          FETCH_STATUS="${{ needs.fetch-news.result }}"
+          ANALYSIS_STATUS="${{ needs.ai-analysis.result }}"
+          DEPLOY_STATUS="${{ needs.build-and-deploy.result }}"
+          NEWS_COUNT="${{ needs.fetch-news.outputs.news_count }}"
+          
+          # 判断整体状态
+          if [ "$FETCH_STATUS" = "success" ] && [ "$ANALYSIS_STATUS" = "success" ] && [ "$DEPLOY_STATUS" = "success" ]; then
+            OVERALL_STATUS="✅ 成功"
+            EMOJI="✅"
+          else
+            OVERALL_STATUS="❌ 部分失败"
+            EMOJI="⚠️"
+          fi
+          
+          echo "overall_status=$OVERALL_STATUS" >> $GITHUB_OUTPUT
+          echo "emoji=$EMOJI" >> $GITHUB_OUTPUT
+          echo "fetch_status=$FETCH_STATUS" >> $GITHUB_OUTPUT
+          echo "analysis_status=$ANALYSIS_STATUS" >> $GITHUB_OUTPUT
+          echo "deploy_status=$DEPLOY_STATUS" >> $GITHUB_OUTPUT
+          echo "news_count=${NEWS_COUNT:-0}" >> $GITHUB_OUTPUT
+      
+      - name: 📥 检出代码（用于运行Python脚本）
+        if: vars.EMAIL_NOTIFICATION_ENABLED == 'true'
+        uses: actions/checkout@v4
+      
+      - name: 🐍 设置Python环境
+        if: vars.EMAIL_NOTIFICATION_ENABLED == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: 📧 发送通知（邮件）
+        if: vars.EMAIL_NOTIFICATION_ENABLED == 'true'
+        env:
+          SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: |
+          python3 scripts/send_notification.py \
+            --fetch-status ${{ steps.summary.outputs.fetch_status }} \
+            --analysis-status ${{ steps.summary.outputs.analysis_status }} \
+            --deploy-status ${{ steps.summary.outputs.deploy_status }} \
+            --news-count ${{ steps.summary.outputs.news_count }} \
+            --trigger ${{ github.event_name }} \
+            --website-url "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/" \
+            --run-url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --repository "${{ github.repository }}" \
+            --branch "${{ github.ref_name }}" \
+            --channels email
+        continue-on-error: true
+
