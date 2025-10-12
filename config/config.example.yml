@@ -1,12 +1,41 @@
 # 可提交的示例配置，请复制为 config/config.yml 并填写真实值
 
+# AI API 密钥
 api_keys:
   gemini: "REPLACE_WITH_YOUR_GEMINI_API_KEY"
   deepseek: "REPLACE_WITH_YOUR_DEEPSEEK_API_KEY"
 
+# 通知配置
 notify:
+  # 邮件通知配置
+  email:
+    enabled: false                          # 是否启用邮件通知
+    smtp_server: "smtp.gmail.com"          # SMTP服务器地址
+    smtp_port: 587                         # SMTP端口
+    username: "your-email@gmail.com"       # 发件邮箱账号
+    password: "your-app-password"          # 邮箱授权密码（Gmail需要应用专用密码）
+    from: "财经报告 <your-email@gmail.com>"  # 发件人显示（可选）
+    to: "recipient@example.com"            # 收件人邮箱
+  
+  # Server酱推送（旧版，待移除）
   server_chan_keys:
     - "REPLACE_WITH_SCT_KEY_1"
     - "REPLACE_WITH_SCT_KEY_2"
+  
+  # 企业微信（待实现）
+  wechat:
+    enabled: false
+    webhook: "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=YOUR_KEY"
+  
+  # 钉钉（待实现）
+  dingtalk:
+    enabled: false
+    webhook: "https://oapi.dingtalk.com/robot/send?access_token=YOUR_TOKEN"
+  
+  # Telegram（待实现）
+  telegram:
+    enabled: false
+    bot_token: "YOUR_BOT_TOKEN"
+    chat_id: "YOUR_CHAT_ID"
 
 
