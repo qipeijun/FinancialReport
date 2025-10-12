@@ -406,7 +406,12 @@ class RSSAnalyzer:
     
     def fetch_rss_feed(self, url: str, source_name: str, limit: int = 5) -> List[Any]:
         """获取RSS源内容（支持缓存和重试）"""
-        headers = {'User-Agent': 'Mozilla/5.0 (compatible; FinanceBot/1.0)'}
+        # 使用更真实的浏览器User-Agent（提高成功率）
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+            'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+        }
         
         # 条件GET
         cache_entry = self.http_cache.get(url, {})
@@ -418,8 +423,10 @@ class RSSAnalyzer:
         last_err = None
         for attempt in range(1, 4):
             try:
-                response = requests.get(url, timeout=10, headers=headers)
+                # 增加超时到30秒（GitHub Actions网络环境可能较慢）
+                response = requests.get(url, timeout=30, headers=headers, allow_redirects=True)
                 if response.status_code == 304:
+                    logger.debug(f"{source_name}: 无更新（304 Not Modified）")
                     return []
                 response.raise_for_status()
                 
@@ -430,22 +437,43 @@ class RSSAnalyzer:
                 }
                 
                 feed = feedparser.parse(response.content)
+                
+                # 检查feed是否有效
+                if not feed.entries:
+                    logger.debug(f"{source_name}: RSS解析成功但无条目")
+                    return []
+                
                 entries = feed.entries[:limit] if len(feed.entries) > limit else feed.entries
+                logger.debug(f"{source_name}: 成功获取 {len(entries)} 条")
                 return entries
+                
+            except requests.exceptions.Timeout as e:
+                last_err = f"超时: {e}"
+                logger.warning(f"{source_name} 第{attempt}次尝试超时")
+            except requests.exceptions.RequestException as e:
+                last_err = f"请求失败: {e}"
+                logger.warning(f"{source_name} 第{attempt}次尝试失败: {str(e)[:60]}")
             except Exception as e:
-                last_err = e
-                if attempt < 3:
-                    wait = min(10, 2 ** (attempt - 1))
-                    time.sleep(wait)
+                last_err = f"未知错误: {e}"
+                logger.warning(f"{source_name} 第{attempt}次尝试异常: {str(e)[:60]}")
+            
+            # 指数退避，增加等待时间
+            if attempt < 3:
+                wait_time = min(15, 3 ** attempt)  # 3秒, 9秒
+                logger.debug(f"{source_name} 等待 {wait_time} 秒后重试...")
+                time.sleep(wait_time)
         
-        # 只记录到日志文件，不在控制台显示
-        logger.debug(f"{source_name} 抓取失败: {last_err}")
+        # 所有尝试失败，记录错误
+        logger.error(f"{source_name} 抓取失败（重试3次）: {last_err}")
         return []
     
     def fetch_all_sources_parallel(self, rss_sources: dict, limit: int = 5, 
                                    max_workers: int = 5) -> List[Any]:
         """并发抓取所有RSS源"""
         all_entries = []
+        
+        # 记录开始时间
+        start_time = time.time()
         
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             # 提交所有任务
@@ -457,6 +485,8 @@ class RSSAnalyzer:
             # 使用进度条
             success_count = 0
             fail_count = 0
+            success_sources = []
+            failed_sources = []
             
             with tqdm(
                 total=len(rss_sources), 
@@ -475,15 +505,36 @@ class RSSAnalyzer:
                                 entry.source = source_name
                             all_entries.extend(entries)
                             success_count += 1
+                            success_sources.append((source_name, len(entries)))
+                            logger.info(f"✅ {source_name}: {len(entries)} 篇")
                         else:
                             fail_count += 1
-                    except Exception:
+                            failed_sources.append(source_name)
+                            logger.warning(f"⚠️ {source_name}: 无数据或失败")
+                    except Exception as e:
                         fail_count += 1
+                        failed_sources.append(source_name)
+                        logger.error(f"❌ {source_name}: 异常 - {str(e)[:60]}")
                     
                     pbar.update(1)
         
+        # 计算耗时
+        elapsed = time.time() - start_time
         
-        print(f"✓ 抓取完成: {success_count}/{len(rss_sources)} 个源，{len(all_entries)} 篇文章")
+        # 打印摘要
+        print(f"✓ 抓取完成: {success_count}/{len(rss_sources)} 个源，{len(all_entries)} 篇文章（耗时 {elapsed:.1f}s）")
+        
+        # 打印详细列表（用于GitHub Actions日志）
+        if success_sources:
+            print(f"\n  ✅ 成功的源 ({success_count}):")
+            for source, count in success_sources:
+                print(f"     • {source}: {count} 篇")
+        
+        if failed_sources:
+            print(f"\n  ⚠️ 失败或无数据的源 ({fail_count}):")
+            for source in failed_sources:
+                print(f"     • {source}")
+        
         return all_entries
     
     @retry_on_db_error(max_retries=3)

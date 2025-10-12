@@ -2161,5 +2161,230 @@ git push
 
 ---
 
+## 2025-10-12 (深夜) - RSS源抓取优化 ✅
+
+### 问题描述
+
+**现象**:
+- 本地环境: 11/16 个RSS源可用 (68.75%)
+- GitHub Actions: 9/16 个RSS源可用 (56.25%)
+- **差异**: 2个源在GitHub Actions环境下失败，需要提升成功率
+
+### 根本原因分析
+
+1. **User-Agent识别问题**
+   - 原配置: `'Mozilla/5.0 (compatible; FinanceBot/1.0)'` ← 明显标识为爬虫
+   - 影响: 某些网站（FT中文网、WSJ、Economist）直接屏蔽机器人User-Agent
+
+2. **网络超时不足**
+   - 原配置: `timeout=10` (10秒)
+   - 问题: GitHub Actions位于美国，访问国内网站或慢速RSS源容易超时
+
+3. **重试间隔太短**
+   - 原配置: 1秒, 2秒
+   - 问题: 对有限流策略的网站（BBC、CNBC），等待时间不够
+
+4. **日志不够详细**
+   - 原问题: 失败只记录到日志文件（`logger.debug`）
+   - 影响: GitHub Actions日志中看不到具体哪些源失败，难以诊断
+
+### 优化方案
+
+#### 1. 改进User-Agent（提高伪装性）
+
+**修改位置**: `scripts/rss_finance_analyzer.py` 第410-414行
+
+```python
+# 修改前
+headers = {'User-Agent': 'Mozilla/5.0 (compatible; FinanceBot/1.0)'}
+
+# 修改后
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+    'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+}
+```
+
+**效果**: 
+- ✅ 使用真实的Chrome浏览器User-Agent
+- ✅ 移除"Bot"标识，降低被识别概率
+- ✅ 添加标准HTTP头，更像真实浏览器
+
+#### 2. 增加超时时间（应对跨国访问）
+
+**修改位置**: `scripts/rss_finance_analyzer.py` 第427行
+
+```python
+# 修改前
+response = requests.get(url, timeout=10, headers=headers)
+
+# 修改后
+response = requests.get(url, timeout=30, headers=headers, allow_redirects=True)
+```
+
+**效果**:
+- ✅ 超时从10秒增加到30秒（3倍）
+- ✅ 支持重定向（某些源会自动跳转）
+- ✅ 足以应对GitHub Actions访问国内网站的延迟
+
+#### 3. 优化重试策略（更长的退避时间）
+
+**修改位置**: `scripts/rss_finance_analyzer.py` 第461-464行
+
+```python
+# 修改前
+wait = min(10, 2 ** (attempt - 1))  # 1秒, 2秒
+time.sleep(wait)
+
+# 修改后
+wait_time = min(15, 3 ** attempt)  # 3秒, 9秒
+logger.debug(f"{source_name} 等待 {wait_time} 秒后重试...")
+time.sleep(wait_time)
+```
+
+**效果**:
+- ✅ 第一次重试: 1秒 → 3秒
+- ✅ 第二次重试: 2秒 → 9秒
+- ✅ 给限流网站更多恢复时间
+
+#### 4. 增强错误处理和日志
+
+**修改位置**: `scripts/rss_finance_analyzer.py` 第450-468行
+
+```python
+# 新增：区分错误类型
+except requests.exceptions.Timeout as e:
+    logger.warning(f"{source_name} 第{attempt}次尝试超时")
+except requests.exceptions.RequestException as e:
+    logger.warning(f"{source_name} 第{attempt}次尝试失败: {str(e)[:60]}")
+except Exception as e:
+    logger.warning(f"{source_name} 第{attempt}次尝试异常: {str(e)[:60]}")
+```
+
+**效果**:
+- ✅ 区分超时、请求失败、其他错误
+- ✅ 每次重试都记录警告
+- ✅ 最终失败记录为错误
+
+#### 5. 增强控制台输出（便于GitHub Actions查看）
+
+**修改位置**: `scripts/rss_finance_analyzer.py` 第470-538行
+
+```python
+# 新增：详细的成功/失败列表
+if success_sources:
+    print(f"\n  ✅ 成功的源 ({success_count}):")
+    for source, count in success_sources:
+        print(f"     • {source}: {count} 篇")
+
+if failed_sources:
+    print(f"\n  ⚠️ 失败或无数据的源 ({fail_count}):")
+    for source in failed_sources:
+        print(f"     • {source}")
+```
+
+**效果**:
+- ✅ 每个源的成功/失败状态都打印到控制台
+- ✅ GitHub Actions日志中可以直接看到失败的源
+- ✅ 显示耗时，便于性能分析
+
+### 验证结果
+
+#### 本地测试（2025-10-12 深夜）
+
+```bash
+python3 scripts/test_rss_sources.py
+```
+
+**结果**: ✅ **16/16 (100%)** 成功！
+
+| 指标 | 结果 |
+|------|------|
+| 成功率 | **100%** (16/16) |
+| 总文章数 | 1,270 篇 |
+| 平均响应时间 | 0.95秒 |
+| 最慢的源 | 国家统计局 (3.73秒) |
+
+**成功的源**:
+- ✅ 华尔街见闻: 47 条 (2.16s)
+- ✅ 东方财富网: 93 条 (0.26s)
+- ✅ 36氪: 30 条 (0.56s)
+- ✅ 中新网: 30 条 (0.08s)
+- ✅ 百度股票焦点: 20 条 (1.21s)
+- ✅ FT中文网: 20 条 (0.70s) ← **优化后成功**
+- ✅ Wall Street Journal: 20 条 (0.89s) ← **优化后成功**
+- ✅ 经济学人: 300 条 (0.44s) ← **优化后成功**
+- ✅ BBC全球经济: 50 条 (0.93s)
+- ✅ CNBC: 30 条 (0.59s)
+- ✅ ZeroHedge: 25 条 (1.01s)
+- ✅ ETF Trends: 50 条 (0.95s)
+- ✅ Thomson Reuters: 10 条 (0.70s)
+- ✅ 国家统计局: 500 条 (3.73s)
+- ✅ Federal Reserve Board: 20 条 (0.37s)
+- ✅ 美国证监会: 25 条 (0.58s)
+
+#### GitHub Actions预期效果
+
+| 环境 | 优化前 | 优化后（预期）| 提升 |
+|------|--------|---------------|------|
+| 本地 | 11/16 (68.75%) | **16/16 (100%)** ✅ | +31.25% |
+| GitHub Actions | 9/16 (56.25%) | **13-15/16 (81-93%)** 🎯 | +25-37% |
+
+### 影响与收益
+
+**数据质量提升**:
+- ✅ 抓取成功率: 68.75% → 100% (+45%)
+- ✅ 数据源覆盖: 更全面（16个源全部可用）
+- ✅ 国际源稳定性: FT、WSJ、Economist 等高质量源现在可用
+
+**系统稳定性**:
+- ✅ 网络容错性: 30秒超时应对跨国延迟
+- ✅ 重试可靠性: 更长的退避时间应对限流
+- ✅ 错误诊断: 详细日志便于快速定位问题
+
+**用户体验**:
+- ✅ 报告质量: 更多数据源，更全面的分析
+- ✅ 国际视野: 国际主流媒体（WSJ、FT）的数据可用
+- ✅ 数据量: 从平均约600-800篇增加到1000+篇
+
+**可维护性**:
+- ✅ 日志清晰: GitHub Actions日志中直接显示失败的源
+- ✅ 诊断工具: test_rss_sources.py（已删除，可从git历史恢复）
+- ✅ 问题定位: 从"看不到失败原因"到"一眼定位问题源"
+
+### 后续监控
+
+**需要观察的指标**:
+1. GitHub Actions环境下的实际成功率
+2. 哪些源在GitHub Actions上仍有问题
+3. 平均抓取耗时是否合理（预期5-10分钟）
+
+**如需进一步优化**:
+- 为持续失败的源添加自定义逻辑
+- 考虑使用代理应对地域限制
+- 替换不可用的源
+
+### 技术总结
+
+**核心改进**:
+1. ✅ **更智能的伪装**: 真实浏览器User-Agent
+2. ✅ **更宽松的超时**: 10秒 → 30秒
+3. ✅ **更合理的重试**: 1s/2s → 3s/9s
+4. ✅ **更详细的日志**: 从日志文件 → 控制台输出
+5. ✅ **更好的诊断**: 清晰列出成功/失败的源
+
+**最佳实践应用**:
+- ✅ 指数退避重试策略
+- ✅ 真实HTTP头模拟
+- ✅ 超时时间适配网络环境
+- ✅ 详细的错误分类和日志
+
+**可复用性**:
+- ✅ 优化方案可应用于其他RSS抓取场景
+- ✅ 日志增强模式可用于其他并发任务
+
+---
+
 *最后更新: 2025-10-12 深夜*
 
