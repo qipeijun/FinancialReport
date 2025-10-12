@@ -53,13 +53,22 @@ class ConfigManager:
     def _load_config(self):
         """加载配置文件"""
         if not self.config_path.exists():
-            if self.example_config_path.exists():
-                raise FileNotFoundError(
-                    f'配置文件不存在: {self.config_path}\n'
-                    f'请复制 {self.example_config_path} 到 {self.config_path} 并填写配置'
-                )
+            # 在CI环境或配置文件不存在时，使用空配置（依赖环境变量）
+            is_ci = os.getenv('CI') or os.getenv('GITHUB_ACTIONS')
+            if is_ci:
+                # CI环境：使用空配置，完全依赖环境变量
+                print(f'⚠️  CI环境：配置文件不存在，将使用环境变量')
+                self._config = {}
+                return
             else:
-                raise FileNotFoundError(f'配置文件不存在: {self.config_path}')
+                # 本地环境：提示用户创建配置文件
+                if self.example_config_path.exists():
+                    raise FileNotFoundError(
+                        f'配置文件不存在: {self.config_path}\n'
+                        f'请复制 {self.example_config_path} 到 {self.config_path} 并填写配置'
+                    )
+                else:
+                    raise FileNotFoundError(f'配置文件不存在: {self.config_path}')
         
         try:
             with open(self.config_path, 'r', encoding='utf-8') as f:
