@@ -49,11 +49,30 @@ def get_analysis_files(date_dir):
             if file.endswith('.md'):
                 files['analysis'].append(file)
     
-    # 报告文件
+    # 报告文件（按照场次和模型排序）
     if os.path.exists(reports_dir):
         for file in os.listdir(reports_dir):
             if file.endswith('.md'):
                 files['reports'].append(file)
+        
+        # 自定义排序：morning < afternoon < evening < overnight，然后按 gemini/deepseek
+        def sort_key(filename):
+            session_order = {'morning': 1, 'afternoon': 2, 'evening': 3, 'overnight': 4}
+            model_order = {'gemini': 1, 'deepseek': 2}
+            
+            # 提取场次标识
+            session = 'unknown'
+            for s in session_order.keys():
+                if s in filename:
+                    session = s
+                    break
+            
+            # 提取模型标识
+            model = 'gemini' if 'gemini' in filename else 'deepseek'
+            
+            return (session_order.get(session, 999), model_order.get(model, 999))
+        
+        files['reports'].sort(key=sort_key)
     
     return files
 
@@ -70,6 +89,62 @@ def format_date_name(date_str):
         return date_str
     else:
         return date_str
+
+def format_report_name(report_file):
+    """
+    格式化报告文件名为友好的显示名称
+    
+    输入示例：
+    - 📅 2025-10-12 财经分析报告_morning_gemini.md
+    - 📅 2025-10-12 财经分析报告_evening_deepseek.md
+    - 📅 2025-10-12 财经分析报告_gemini.md (旧格式)
+    
+    输出示例：
+    - 🌅 早盘 - Gemini
+    - 🌙 美股 - DeepSeek
+    - 📊 Gemini (旧格式)
+    """
+    # 场次映射（emoji + 中文）
+    session_map = {
+        'morning': ('🌅', '早盘'),
+        'afternoon': ('🌆', '午盘'),
+        'evening': ('🌙', '美股'),
+        'overnight': ('🌃', '隔夜')
+    }
+    
+    # 模型映射
+    model_map = {
+        'gemini': 'Gemini',
+        'deepseek': 'DeepSeek'
+    }
+    
+    # 提取场次
+    session = None
+    for s in session_map.keys():
+        if s in report_file:
+            session = s
+            break
+    
+    # 提取模型
+    model = None
+    for m in model_map.keys():
+        if m in report_file:
+            model = m
+            break
+    
+    # 生成显示名称
+    if session and model:
+        emoji, session_cn = session_map[session]
+        model_name = model_map[model]
+        return f"{emoji} {session_cn} - {model_name}"
+    elif model:
+        # 旧格式（没有场次标识）
+        model_name = model_map[model]
+        return f"📊 {model_name}"
+    else:
+        # 降级处理：移除常见前缀和后缀
+        name = report_file.replace('.md', '').replace('📅 ', '').replace('财经分析报告', '').replace('_', ' ').strip()
+        return name if name else "分析报告"
 
 def generate_nav_structure():
     """生成导航结构"""
@@ -100,9 +175,7 @@ def generate_nav_structure():
                 if files['reports']:
                     for report_file in files['reports']:
                         report_path = f"archive/{month}/{date_path.name}/reports/{report_file}"
-                        report_name = report_file.replace('.md', '').replace('📅 ', '').replace('财经分析报告_', '').replace('_', ' ')
-                        if not report_name or report_name == date_name:
-                            report_name = "📊 2025-09-28 财经分析报告"
+                        report_name = format_report_name(report_file)
                         date_nav[date_name].append({report_name: report_path})
                 
                 # 分组分析文件：热门话题和潜力话题
