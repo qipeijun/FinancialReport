@@ -420,13 +420,33 @@ jobs:
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
         run: |
+          # 构建当天报告的精确链接
+          TODAY=$(date '+%Y-%m-%d')
+          YEAR_MONTH=$(date '+%Y-%m')
+          
+          # 确定上午/下午场次
+          HOUR=$(date '+%H')
+          if [ $HOUR -ge 6 ] && [ $HOUR -lt 12 ]; then
+            SESSION="morning"
+          elif [ $HOUR -ge 12 ] && [ $HOUR -lt 18 ]; then
+            SESSION="afternoon"
+          elif [ $HOUR -ge 18 ]; then
+            SESSION="evening"
+          else
+            SESSION="overnight"
+          fi
+          
+          # 构建 MkDocs 生成的报告页面 URL（不包含文件名，MkDocs 会自动处理）
+          # 格式：https://qipeijun.github.io/FinancialReport/archive/YYYY-MM/YYYY-MM-DD/
+          REPORT_URL="https://qipeijun.github.io/FinancialReport/archive/${YEAR_MONTH}/${TODAY}/"
+          
           python3 scripts/send_notification.py \
             --fetch-status ${{ steps.summary.outputs.fetch_status }} \
             --analysis-status ${{ steps.summary.outputs.analysis_status }} \
             --deploy-status ${{ steps.summary.outputs.deploy_status }} \
             --news-count ${{ steps.summary.outputs.news_count }} \
             --trigger ${{ github.event_name }} \
-            --website-url "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/" \
+            --website-url "${REPORT_URL}" \
             --run-url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
             --repository "${{ github.repository }}" \
             --branch "${{ github.ref_name }}" \

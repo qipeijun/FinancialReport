@@ -338,11 +338,15 @@ class NotificationSender:
             
             <div class="buttons">
                 <a href="{website_url}" class="button button-primary">
-                    🌐 查看报告网站
+                    📅 查看今日报告
                 </a>
                 <a href="{run_url}" class="button button-secondary">
                     🔍 查看执行日志
                 </a>
+            </div>
+            
+            <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px; font-size: 14px; color: #666;">
+                <strong>💡 提示：</strong>点击"查看今日报告"可直接跳转到 {self.today} 的分析报告页面
             </div>
         </div>
         
@@ -382,8 +386,10 @@ class NotificationSender:
 
 【链接】
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  报告网站: {self.config.get('website_url', 'N/A')}
-  执行日志: {self.config.get('run_url', 'N/A')}
+  📅 今日报告: {self.config.get('website_url', 'N/A')}
+  🔍 执行日志: {self.config.get('run_url', 'N/A')}
+  
+💡 提示: 今日报告链接直达 {self.today} 的分析页面
 
 {'='*50}
 此邮件由 GitHub Actions 自动发送

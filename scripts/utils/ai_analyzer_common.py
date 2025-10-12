@@ -218,26 +218,22 @@ def save_markdown(date_str: str, markdown_text: str, model_suffix: str = 'gemini
     now_str = now.strftime('%Y-%m-%d %H:%M:%S')
     hour = now.hour
     
-    # 根据时间段确定场次标识
+    # 根据时间段确定场次标识（简化为 AM/PM）
     if 6 <= hour < 12:
         session = 'morning'
-        session_cn = '早盘'
-        session_emoji = '🌅'
+        session_label = 'AM'
     elif 12 <= hour < 18:
         session = 'afternoon'
-        session_cn = '午盘'
-        session_emoji = '🌆'
+        session_label = 'PM'
     elif 18 <= hour < 24:
         session = 'evening'
-        session_cn = '美股'
-        session_emoji = '🌙'
+        session_label = 'PM'
     else:  # 0-6点
         session = 'overnight'
-        session_cn = '隔夜'
-        session_emoji = '🌃'
+        session_label = 'Night'
     
-    # 生成报告头部
-    header = f"# 📅 {date_str} 财经分析报告 {session_emoji} {session_cn}场\n\n> 📅 生成时间: {now_str} (北京时间)\n\n"
+    # 生成报告头部（简洁格式）
+    header = f"# 📅 {date_str} 财经分析报告 ({session_label})\n\n> 📅 生成时间: {now_str} (北京时间)\n\n"
     content = header + (markdown_text or '').strip() + '\n'
     
     # 文件名包含场次，避免覆盖
@@ -258,8 +254,9 @@ def save_metadata(date_str: str, meta: Dict[str, Any], model_suffix: str = ''):
         model_suffix: 模型后缀（如 'gemini', 'deepseek'）
     """
     year_month = date_str[:7]
-    report_dir = PROJECT_ROOT / 'docs' / 'archive' / year_month / date_str / 'reports'
-    report_dir.mkdir(parents=True, exist_ok=True)
+    # 元数据单独存放在 metadata 目录
+    metadata_dir = PROJECT_ROOT / 'docs' / 'archive' / year_month / date_str / 'metadata'
+    metadata_dir.mkdir(parents=True, exist_ok=True)
     
     # 获取北京时间，确定场次
     now = datetime.now(pytz.timezone('Asia/Shanghai'))
@@ -276,9 +273,9 @@ def save_metadata(date_str: str, meta: Dict[str, Any], model_suffix: str = ''):
     
     # 根据模型和场次添加后缀，避免覆盖
     if model_suffix:
-        meta_file = report_dir / f'analysis_meta_{session}_{model_suffix}.json'
+        meta_file = metadata_dir / f'analysis_meta_{session}_{model_suffix}.json'
     else:
-        meta_file = report_dir / f'analysis_meta_{session}.json'
+        meta_file = metadata_dir / f'analysis_meta_{session}.json'
     
     # 在元数据中记录场次信息
     meta['session'] = session
