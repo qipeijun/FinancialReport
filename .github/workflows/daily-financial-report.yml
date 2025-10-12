@@ -193,12 +193,36 @@ jobs:
           
           echo "✅ ${{ matrix.model }} 分析完成"
       
+      - name: 🔍 检查生成的报告
+        run: |
+          TODAY=$(date '+%Y-%m-%d')
+          YEAR_MONTH=$(date '+%Y-%m')
+          REPORT_DIR="docs/archive/$YEAR_MONTH/$TODAY/reports"
+          
+          echo "📁 检查报告目录: $REPORT_DIR"
+          if [ -d "$REPORT_DIR" ]; then
+            echo "✅ 报告目录存在"
+            FILE_COUNT=$(find "$REPORT_DIR" -name "*.md" 2>/dev/null | wc -l)
+            if [ "$FILE_COUNT" -gt 0 ]; then
+              echo "✅ 找到 $FILE_COUNT 个报告文件:"
+              ls -lh "$REPORT_DIR"/*.md
+            else
+              echo "⚠️ 报告目录为空，可能分析失败"
+              exit 1
+            fi
+          else
+            echo "❌ 报告目录不存在，分析失败"
+            exit 1
+          fi
+      
       - name: 📤 上传报告文件
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: reports-${{ matrix.model }}
           path: docs/archive/
           retention-days: 90  # 保留90天
+          if-no-files-found: error  # 没有文件时报错
       
       - name: 📊 报告摘要
         run: |

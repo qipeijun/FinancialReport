@@ -71,10 +71,24 @@ def parse_args() -> argparse.Namespace:
 
 
 def load_api_key(args: argparse.Namespace) -> str:
-    """加载Gemini API Key"""
+    """加载Gemini API Key（优先级：命令行 > 环境变量 > 配置文件）"""
     config_path = Path(args.config) if args.config else (PROJECT_ROOT / 'config' / 'config.yml')
     api_key: Optional[str] = None
     
+    # 1. 尝试从命令行参数读取
+    if args.api_key:
+        api_key = args.api_key
+        print_success('使用命令行参数提供的 API Key')
+        return api_key
+    
+    # 2. 尝试从环境变量读取
+    env_key = os.getenv('GEMINI_API_KEY')
+    if env_key:
+        api_key = env_key
+        print_success('使用环境变量 GEMINI_API_KEY')
+        return api_key
+    
+    # 3. 尝试从配置文件读取
     if config_path.exists():
         try:
             with open(config_path, 'r', encoding='utf-8') as f:
@@ -85,16 +99,17 @@ def load_api_key(args: argparse.Namespace) -> str:
             )
             if api_key:
                 print_success(f'使用配置文件：{config_path}')
+                return api_key
         except Exception as e:
             print_warning(f'读取配置失败（{config_path}）：{e}')
     
-    if not api_key:
-        api_key = args.api_key or os.getenv('GEMINI_API_KEY')
-    
-    if not api_key:
-        raise SystemExit("未找到 Gemini API Key。请在 config.yml 配置或使用 --api-key")
-    
-    return api_key
+    # 4. 都没找到，报错
+    raise SystemExit(
+        "未找到 Gemini API Key。请使用以下任一方式配置：\n"
+        "  1. 环境变量：export GEMINI_API_KEY='your-key'\n"
+        "  2. 配置文件：config/config.yml 中的 api_keys.gemini\n"
+        "  3. 命令行参数：--api-key 'your-key'"
+    )
 
 
 def call_gemini(api_key: str, content: str, preferred_model: Optional[str] = None) -> Tuple[str, Dict[str, Any]]:
