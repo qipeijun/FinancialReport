@@ -116,12 +116,7 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           
-          # 先拉取最新代码（可能有其他手动推送）
-          echo "🔄 拉取最新代码..."
-          git pull --rebase origin master || {
-            echo "⚠️ Rebase 可能有冲突，继续..."
-          }
-          
+          # 先提交数据库更改（避免pull时冲突）
           git add data/news_data.db
           git commit -m "📊 自动更新数据库 - 新增 ${{ steps.fetch.outputs.news_count }} 条新闻
 
@@ -130,9 +125,12 @@ jobs:
           - 总计数量: ${{ steps.fetch.outputs.total_count }}
           - 触发方式: ${{ github.event_name }}"
           
-          # 推送前再次拉取（确保没有新的推送）
+          # 推送前拉取最新代码（使用rebase保持线性历史）
+          echo "🔄 推送前同步最新代码..."
           git pull --rebase origin master || {
             echo "⚠️ Rebase冲突，尝试解决..."
+            # 数据库文件冲突时使用我们的版本（更新的数据库）
+            git checkout --ours data/news_data.db
             git add data/news_data.db
             git rebase --continue || {
               echo "❌ 无法自动解决冲突，放弃推送"
@@ -173,11 +171,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: master  # 总是使用master最新代码（包含数据库更新）
-          fetch-depth: 0
-      
-      - name: 🔄 拉取最新更新（如果有）
-        run: |
-          git pull origin master || echo "已是最新"
+          fetch-depth: 1  # 只需要最新代码，无需完整历史
       
       - name: 📥 下载数据库
         uses: actions/download-artifact@v4
@@ -323,10 +317,6 @@ jobs:
           ref: master  # 总是使用master最新代码
           fetch-depth: 0
       
-      - name: 🔄 拉取最新更新（包含数据库提交）
-        run: |
-          git pull origin master || echo "已是最新"
-      
       - name: 📥 下载Gemini报告
         uses: actions/download-artifact@v4
         with:
@@ -455,11 +445,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: master  # 总是使用master最新代码（包含报告）
-          fetch-depth: 0
-      
-      - name: 🔄 拉取最新更新（包含报告提交）
-        run: |
-          git pull origin master || echo "已是最新"
+          fetch-depth: 1  # 只需要最新代码
       
       - name: 🐍 设置Python环境
         uses: actions/setup-python@v5
