@@ -299,54 +299,65 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: reports-gemini
-          path: docs/archive/
+          path: /tmp/reports-gemini/
         continue-on-error: true
-      
-      - name: 🔍 检查Gemini报告下载情况
-        run: |
-          echo "📁 检查 Gemini 报告下载结果："
-          if [ -d "docs/archive" ]; then
-            echo "✅ docs/archive 目录存在"
-            find docs/archive -type f -name "*gemini*.md" -o -name "*gemini*.json" | while read file; do
-              echo "  📄 $file ($(stat -f%z "$file" 2>/dev/null || stat -c%s "$file" 2>/dev/null) bytes)"
-            done
-          else
-            echo "⚠️ docs/archive 目录不存在"
-          fi
       
       - name: 📥 下载DeepSeek报告
         uses: actions/download-artifact@v4
         with:
           name: reports-deepseek
-          path: docs/archive/
+          path: /tmp/reports-deepseek/
         continue-on-error: true
       
-      - name: 🔍 检查DeepSeek报告下载情况
+      - name: 🔀 合并两个模型的报告
         run: |
-          echo "📁 检查 DeepSeek 报告下载结果："
-          if [ -d "docs/archive" ]; then
-            echo "✅ docs/archive 目录存在"
-            find docs/archive -type f -name "*deepseek*.md" -o -name "*deepseek*.json" | while read file; do
-              echo "  📄 $file ($(stat -f%z "$file" 2>/dev/null || stat -c%s "$file" 2>/dev/null) bytes)"
+          echo "📦 合并 Gemini 和 DeepSeek 报告到 docs/archive/"
+          echo ""
+          
+          # 复制 Gemini 报告
+          if [ -d "/tmp/reports-gemini/docs/archive" ]; then
+            echo "✅ 复制 Gemini 报告..."
+            cp -r /tmp/reports-gemini/docs/archive/* docs/archive/ 2>/dev/null || true
+            GEMINI_COUNT=$(find /tmp/reports-gemini -type f \( -name "*.md" -o -name "*.json" \) | wc -l)
+            echo "  📄 Gemini 文件数: $GEMINI_COUNT"
+            find /tmp/reports-gemini -type f \( -name "*.md" -o -name "*.json" \) | while read file; do
+              echo "    📄 $(basename "$file")"
             done
           else
-            echo "⚠️ docs/archive 目录不存在"
+            echo "⚠️ Gemini 报告目录不存在"
           fi
-      
-      - name: 📋 列出所有下载的报告文件
-        run: |
-          echo "📁 所有报告文件列表："
+          
+          echo ""
+          
+          # 复制 DeepSeek 报告
+          if [ -d "/tmp/reports-deepseek/docs/archive" ]; then
+            echo "✅ 复制 DeepSeek 报告..."
+            cp -r /tmp/reports-deepseek/docs/archive/* docs/archive/ 2>/dev/null || true
+            DEEPSEEK_COUNT=$(find /tmp/reports-deepseek -type f \( -name "*.md" -o -name "*.json" \) | wc -l)
+            echo "  📄 DeepSeek 文件数: $DEEPSEEK_COUNT"
+            find /tmp/reports-deepseek -type f \( -name "*.md" -o -name "*.json" \) | while read file; do
+              echo "    📄 $(basename "$file")"
+            done
+          else
+            echo "⚠️ DeepSeek 报告目录不存在"
+          fi
+          
+          echo ""
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📋 合并后的文件列表："
           TODAY=$(date '+%Y-%m-%d')
           YEAR_MONTH=$(date '+%Y-%m')
           if [ -d "docs/archive/$YEAR_MONTH/$TODAY/reports" ]; then
             echo "✅ 今日报告目录: docs/archive/$YEAR_MONTH/$TODAY/reports"
-            ls -lh "docs/archive/$YEAR_MONTH/$TODAY/reports/" || echo "  目录为空"
+            ls -lh "docs/archive/$YEAR_MONTH/$TODAY/reports/" 2>/dev/null || echo "  目录为空"
           else
             echo "⚠️ 今日报告目录不存在"
           fi
-          echo ""
-          echo "📦 所有 .md 和 .json 文件："
-          find docs/archive -type f \( -name "*.md" -o -name "*.json" \) -newer docs/archive 2>/dev/null || echo "  未找到新文件"
+          
+          if [ -d "docs/archive/$YEAR_MONTH/$TODAY/metadata" ]; then
+            echo "✅ 今日元数据目录: docs/archive/$YEAR_MONTH/$TODAY/metadata"
+            ls -lh "docs/archive/$YEAR_MONTH/$TODAY/metadata/" 2>/dev/null || echo "  目录为空"
+          fi
       
       - name: 💾 提交报告到仓库
         run: |
