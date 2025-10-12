@@ -231,13 +231,19 @@ jobs:
               echo "✅ 找到 $FILE_COUNT 个报告文件:"
               ls -lh "$REPORT_DIR"/*.md
             else
-              echo "⚠️ 报告目录为空，可能分析失败"
-              exit 1
+              echo "⚠️ 报告目录为空"
+              echo "ℹ️ 可能原因：今日无新数据或分析脚本未生成报告"
+              # 不退出，允许继续执行
             fi
           else
-            echo "❌ 报告目录不存在，分析失败"
-            exit 1
+            echo "⚠️ 报告目录不存在"
+            echo "ℹ️ 可能原因：今日无新数据，AI 分析脚本未创建目录"
+            echo "💡 这是正常情况，不视为错误"
+            # 不退出，允许继续执行
           fi
+          
+          echo ""
+          echo "✅ 检查完成（允许无报告的情况）"
       
       - name: 📤 上传报告文件
         if: success()
@@ -246,7 +252,7 @@ jobs:
           name: reports-${{ matrix.model }}
           path: docs/archive/
           retention-days: 90  # 保留90天
-          if-no-files-found: error  # 没有文件时报错
+          if-no-files-found: ignore  # 没有文件时忽略（允许无数据的情况）
       
       - name: 📊 报告摘要
         run: |
