@@ -4,6 +4,10 @@
 
 name: Daily Financial Report
 
+# 统一时区设置：所有Job使用北京时间
+env:
+  TZ: Asia/Shanghai
+
 # 触发条件
 on:
   # 定时任务：每天运行两次（覆盖A股开盘前 + 美股开盘前）
@@ -115,7 +119,7 @@ jobs:
           git add data/news_data.db
           git commit -m "📊 自动更新数据库 - 新增 ${{ steps.fetch.outputs.news_count }} 条新闻
 
-          - 抓取时间: $(date '+%Y-%m-%d %H:%M:%S')
+          - 抓取时间: $(date '+%Y-%m-%d %H:%M:%S %Z') (北京时间)
           - 新增数量: ${{ steps.fetch.outputs.news_count }}
           - 总计数量: ${{ steps.fetch.outputs.total_count }}
           - 触发方式: ${{ github.event_name }}"
@@ -175,22 +179,42 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: |
+          # 使用北京时间
           TODAY=$(date '+%Y-%m-%d')
+          BEIJING_TIME=$(date '+%Y-%m-%d %H:%M:%S %Z')
+          
+          echo "📅 当前北京时间: $BEIJING_TIME"
+          echo "📅 分析日期: $TODAY"
+          echo "🤖 模型: ${{ matrix.model }}"
+          echo ""
           
           if [ "${{ matrix.model }}" = "gemini" ]; then
             echo "🚀 使用 Gemini 模型分析..."
-            python3 scripts/ai_analyze.py \
+            if python3 scripts/ai_analyze.py \
               --date $TODAY \
               --content-field summary \
-              --max-chars 500000
+              --max-chars 500000; then
+              echo "✅ Gemini 分析成功"
+            else
+              EXIT_CODE=$?
+              echo "❌ Gemini 分析失败，退出码: $EXIT_CODE"
+              exit $EXIT_CODE
+            fi
           else
             echo "🚀 使用 DeepSeek 模型分析..."
-            python3 scripts/ai_analyze_deepseek.py \
+            if python3 scripts/ai_analyze_deepseek.py \
               --date $TODAY \
               --content-field summary \
-              --max-chars 500000
+              --max-chars 500000; then
+              echo "✅ DeepSeek 分析成功"
+            else
+              EXIT_CODE=$?
+              echo "❌ DeepSeek 分析失败，退出码: $EXIT_CODE"
+              exit $EXIT_CODE
+            fi
           fi
           
+          echo ""
           echo "✅ ${{ matrix.model }} 分析完成"
       
       - name: 🔍 检查生成的报告
@@ -230,12 +254,29 @@ jobs:
           YEAR_MONTH=$(date '+%Y-%m')
           REPORT_DIR="docs/archive/$YEAR_MONTH/$TODAY/reports"
           
+          echo "📅 当前日期: $TODAY"
+          echo "📅 年月: $YEAR_MONTH"
+          echo "📁 报告目录: $REPORT_DIR"
+          echo ""
+          
           if [ -d "$REPORT_DIR" ]; then
-            echo "📁 生成的报告:"
-            ls -lh $REPORT_DIR/*.md 2>/dev/null || echo "  无Markdown报告"
-            ls -lh $REPORT_DIR/*.json 2>/dev/null || echo "  无元数据"
+            echo "✅ 报告目录存在"
+            echo ""
+            echo "📄 Markdown报告:"
+            ls -lh $REPORT_DIR/*.md 2>/dev/null || echo "  未找到 .md 文件"
+            echo ""
+            echo "📄 元数据文件:"
+            ls -lh $REPORT_DIR/*.json 2>/dev/null || echo "  未找到 .json 文件"
+            echo ""
+            echo "📄 所有文件:"
+            ls -lh $REPORT_DIR/ 2>/dev/null || echo "  目录为空"
+            echo ""
+            echo "📦 当前模型报告:"
+            ls -lh $REPORT_DIR/*${{ matrix.model }}* 2>/dev/null || echo "  未找到 ${{ matrix.model }} 相关文件"
           else
-            echo "⚠️ 报告目录不存在: $REPORT_DIR"
+            echo "❌ 报告目录不存在: $REPORT_DIR"
+            echo "📁 查看父目录结构:"
+            ls -lh "docs/archive/$YEAR_MONTH/" 2>/dev/null || echo "  月份目录不存在"
           fi
 
   # ========================================
@@ -261,6 +302,18 @@ jobs:
           path: docs/archive/
         continue-on-error: true
       
+      - name: 🔍 检查Gemini报告下载情况
+        run: |
+          echo "📁 检查 Gemini 报告下载结果："
+          if [ -d "docs/archive" ]; then
+            echo "✅ docs/archive 目录存在"
+            find docs/archive -type f -name "*gemini*.md" -o -name "*gemini*.json" | while read file; do
+              echo "  📄 $file ($(stat -f%z "$file" 2>/dev/null || stat -c%s "$file" 2>/dev/null) bytes)"
+            done
+          else
+            echo "⚠️ docs/archive 目录不存在"
+          fi
+      
       - name: 📥 下载DeepSeek报告
         uses: actions/download-artifact@v4
         with:
@@ -268,21 +321,65 @@ jobs:
           path: docs/archive/
         continue-on-error: true
       
+      - name: 🔍 检查DeepSeek报告下载情况
+        run: |
+          echo "📁 检查 DeepSeek 报告下载结果："
+          if [ -d "docs/archive" ]; then
+            echo "✅ docs/archive 目录存在"
+            find docs/archive -type f -name "*deepseek*.md" -o -name "*deepseek*.json" | while read file; do
+              echo "  📄 $file ($(stat -f%z "$file" 2>/dev/null || stat -c%s "$file" 2>/dev/null) bytes)"
+            done
+          else
+            echo "⚠️ docs/archive 目录不存在"
+          fi
+      
+      - name: 📋 列出所有下载的报告文件
+        run: |
+          echo "📁 所有报告文件列表："
+          TODAY=$(date '+%Y-%m-%d')
+          YEAR_MONTH=$(date '+%Y-%m')
+          if [ -d "docs/archive/$YEAR_MONTH/$TODAY/reports" ]; then
+            echo "✅ 今日报告目录: docs/archive/$YEAR_MONTH/$TODAY/reports"
+            ls -lh "docs/archive/$YEAR_MONTH/$TODAY/reports/" || echo "  目录为空"
+          else
+            echo "⚠️ 今日报告目录不存在"
+          fi
+          echo ""
+          echo "📦 所有 .md 和 .json 文件："
+          find docs/archive -type f \( -name "*.md" -o -name "*.json" \) -newer docs/archive 2>/dev/null || echo "  未找到新文件"
+      
       - name: 💾 提交报告到仓库
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           
+          # 显示当前状态
+          echo "📊 Git 状态检查："
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━"
+          git status --short docs/archive/ || echo "无变更"
+          echo ""
+          
           # 检查是否有新文件
           git add docs/archive/
+          
+          echo "📦 准备提交的文件："
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━"
+          git diff --cached --name-status || echo "无文件需要提交"
+          echo ""
           
           if git diff --cached --quiet; then
             echo "ℹ️ 没有新报告需要提交"
           else
             TODAY=$(date '+%Y-%m-%d')
+            BEIJING_TIME=$(date '+%Y-%m-%d %H:%M:%S %Z')
+            
+            echo "✅ 发现新文件，准备提交..."
+            echo "📅 日期: $TODAY"
+            echo "🕐 时间: $BEIJING_TIME"
+            
             git commit -m "🤖 自动生成财经分析报告 - $TODAY
 
-            - 生成时间: $(date '+%Y-%m-%d %H:%M:%S')
+            - 生成时间: $BEIJING_TIME (北京时间)
             - 包含模型: Gemini, DeepSeek
             - 触发方式: ${{ github.event_name }}"
             
@@ -346,7 +443,7 @@ jobs:
         run: |
           echo "🎉 部署成功！"
           echo "🔗 网站地址: ${{ steps.deployment.outputs.page_url }}"
-          echo "📅 部署时间: $(date '+%Y-%m-%d %H:%M:%S')"
+          echo "📅 部署时间: $(date '+%Y-%m-%d %H:%M:%S %Z') (北京时间)"
 
   # ========================================
   # Job 5: 发送通知
@@ -361,10 +458,13 @@ jobs:
       - name: 📊 汇总工作流状态
         id: summary
         run: |
+          # 获取北京时间
+          BEIJING_TIME=$(date '+%Y-%m-%d %H:%M:%S %Z')
+          
           # 生成GitHub摘要
           echo "## 🎯 每日财经报告 - 工作流完成" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**执行时间**: $(date '+%Y-%m-%d %H:%M:%S')" >> $GITHUB_STEP_SUMMARY
+          echo "**执行时间**: $BEIJING_TIME (北京时间)" >> $GITHUB_STEP_SUMMARY
           echo "**触发方式**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 📋 任务状态" >> $GITHUB_STEP_SUMMARY
@@ -414,7 +514,7 @@ jobs:
         if: vars.EMAIL_NOTIFICATION_ENABLED == 'true'
         run: |
           python -m pip install --upgrade pip
-          pip install PyYAML
+          pip install PyYAML pytz
       
       - name: 📧 发送通知（邮件）
         if: vars.EMAIL_NOTIFICATION_ENABLED == 'true'
@@ -426,25 +526,11 @@ jobs:
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
         run: |
-          # 构建当天报告的精确链接
-          TODAY=$(date '+%Y-%m-%d')
-          YEAR_MONTH=$(date '+%Y-%m')
+          # 使用主页地址（北京时间）
+          REPORT_URL="https://qipeijun.github.io/FinancialReport/"
           
-          # 确定上午/下午场次
-          HOUR=$(date '+%H')
-          if [ $HOUR -ge 6 ] && [ $HOUR -lt 12 ]; then
-            SESSION="morning"
-          elif [ $HOUR -ge 12 ] && [ $HOUR -lt 18 ]; then
-            SESSION="afternoon"
-          elif [ $HOUR -ge 18 ]; then
-            SESSION="evening"
-          else
-            SESSION="overnight"
-          fi
-          
-          # 构建 MkDocs 生成的报告页面 URL（不包含文件名，MkDocs 会自动处理）
-          # 格式：https://qipeijun.github.io/FinancialReport/archive/YYYY-MM/YYYY-MM-DD/
-          REPORT_URL="https://qipeijun.github.io/FinancialReport/archive/${YEAR_MONTH}/${TODAY}/"
+          echo "📅 当前北京时间: $(date '+%Y-%m-%d %H:%M:%S %Z')"
+          echo "🔗 报告网站: ${REPORT_URL}"
           
           python3 scripts/send_notification.py \
             --fetch-status ${{ steps.summary.outputs.fetch_status }} \
