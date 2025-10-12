@@ -1,5 +1,35 @@
 # GitHub Actions 工作流说明
 
+## 🎯 配置命名规范
+
+本项目采用**混合命名**策略，符合业界最佳实践：
+
+| 配置位置 | 命名规范 | 示例 | 说明 |
+|---------|---------|------|------|
+| 📁 `config.yml`（本地） | 小写+下划线 | `api_keys.gemini` | Python配置文件惯例 |
+| 🔐 GitHub Secrets（云端） | 大写+下划线 | `GEMINI_API_KEY` | 环境变量标准 |
+
+### 📊 配置映射表
+
+程序会自动读取配置，优先级：**环境变量（大写） > 配置文件（小写）**
+
+| 本地配置 (config.yml) | GitHub Secrets | 说明 |
+|---------------------|----------------|------|
+| `api_keys.gemini` | `GEMINI_API_KEY` | Gemini API密钥 |
+| `api_keys.deepseek` | `DEEPSEEK_API_KEY` | DeepSeek API密钥 |
+| `notify.email.username` | `EMAIL_USERNAME` | 邮箱账号 |
+| `notify.email.password` | `EMAIL_PASSWORD` | 邮箱授权码 |
+| `notify.email.smtp_server` | `SMTP_SERVER` | SMTP服务器 |
+| `notify.email.smtp_port` | `SMTP_PORT` | SMTP端口 |
+| `notify.email.to` | `EMAIL_TO` | 收件人邮箱（支持多个，逗号分隔） |
+
+💡 **小提示**: 
+- 本地开发使用 `config.yml`（小写配置）
+- GitHub Actions 使用 Secrets（大写环境变量）
+- 两者可以共存，程序会自动选择正确的配置
+
+---
+
 ## 📋 工作流概览
 
 ### `daily-financial-report.yml` - 每日自动财经报告
@@ -7,7 +37,7 @@
 **功能**: 完整的自动化流程：抓取 → 分析 → 部署
 
 **触发方式**:
-- ⏰ 定时：每天北京时间 08:00（UTC 00:00）
+- ⏰ 定时：每天两次（北京时间 08:30、20:30）
 - 🖱️ 手动：在 GitHub Actions 页面点击"Run workflow"
 
 **工作流程**:
@@ -61,12 +91,42 @@
 |-----------|------|------|
 | `EMAIL_USERNAME` | 发送邮箱账号 | `your-email@gmail.com` |
 | `EMAIL_PASSWORD` | 邮箱授权密码 | Gmail需要使用应用专用密码 |
-| `EMAIL_TO` | 接收邮箱地址 | `recipient@example.com` |
+| `EMAIL_TO` | 接收邮箱地址（支持多个，逗号分隔） | `user1@example.com, user2@example.com` |
 | `EMAIL_FROM` | 发件人显示名称（可选） | `财经报告机器人 <bot@example.com>` |
 | `SMTP_SERVER` | SMTP服务器（可选，默认Gmail） | `smtp.gmail.com` |
 | `SMTP_PORT` | SMTP端口（可选，默认587） | `587` |
 
 #### 邮件通知配置详细说明
+
+**多个收件人配置**:
+
+在GitHub Secrets中，使用逗号分隔多个邮箱：
+```
+EMAIL_TO = user1@example.com, user2@example.com, user3@example.com
+```
+
+在配置文件 `config.yml` 中，支持三种方式：
+```yaml
+# 方式1: 单个收件人
+notify:
+  email:
+    to: "recipient@example.com"
+
+# 方式2: 多个收件人（逗号分隔）
+notify:
+  email:
+    to: "user1@example.com, user2@example.com, user3@example.com"
+
+# 方式3: 多个收件人（YAML列表，推荐）
+notify:
+  email:
+    to:
+      - "user1@example.com"
+      - "user2@example.com"
+      - "user3@example.com"
+```
+
+---
 
 **Gmail配置示例**:
 1. 前往 https://myaccount.google.com/apppasswords
@@ -141,16 +201,22 @@
 
 ### 🤖 方法1: 自动运行（推荐）
 
-**无需任何操作**，每天北京时间早上8点自动运行完整流程。
+**无需任何操作**，每天自动运行两次完整流程：
+- 🌅 **早盘场**: 北京时间 08:30（A股开盘前1小时，掌握隔夜美股+亚洲早盘动态）
+- 🌙 **美股场**: 北京时间 20:30（美股开盘前1小时，汇总全天A股+准备美股交易）
 
 **自动执行内容**:
 1. ✅ 抓取最新RSS新闻
 2. ✅ 使用Gemini和DeepSeek并行分析
 3. ✅ 生成Markdown报告
 4. ✅ 构建并部署MkDocs网站
-5. ✅ 发送执行摘要通知
+5. ✅ 发送执行摘要通知（如已启用）
 
-**适合场景**: 日常使用，无需人工干预
+**适合场景**: 
+- ✅ 同时关注A股和美股
+- ✅ 早上：获取隔夜美股、亚洲市场动态，准备A股开盘
+- ✅ 晚上：复盘全天A股走势，获取美股开盘前瞻
+- ✅ 全天候跟踪财经动态，无需人工干预
 
 ---
 
@@ -208,15 +274,21 @@ A:
 A: 编辑 `daily-financial-report.yml` 中的 cron 表达式：
 ```yaml
 schedule:
-  - cron: '0 0 * * *'  # 每天 00:00 UTC (08:00 北京时间)
-  # 改为：
-  - cron: '0 12 * * *'  # 每天 12:00 UTC (20:00 北京时间)
+  - cron: '30 0 * * *'   # 每天 00:30 UTC (08:30 北京时间) - A股开盘前
+  - cron: '30 12 * * *'  # 每天 12:30 UTC (20:30 北京时间) - 美股开盘前
 ```
 
-**Cron时间转换**:
-- UTC 00:00 = 北京 08:00
-- UTC 12:00 = 北京 20:00
-- UTC 22:00 = 北京 06:00（次日）
+**Cron时间转换**（北京时间 = UTC + 8小时）:
+- UTC 00:30 = 北京 08:30（A股开盘前）
+- UTC 04:00 = 北京 12:00（午休时间）
+- UTC 12:30 = 北京 20:30（美股开盘前）
+- UTC 14:00 = 北京 22:00（美股盘中）
+
+**当前配置**: 每天两次（早上8:30 A股前、晚上20:30 美股前）
+
+**其他推荐时间**:
+- `0 4 * * *` = 12:00 午休，适合看上午A股新闻
+- `0 14 * * *` = 22:00 美股盘中，适合夜间交易者
 
 ---
 
@@ -228,14 +300,18 @@ schedule:
 
 ### 单次运行时长
 - 完整流程：约 20-30分钟
-- 每月运行：30次 × 25分钟 = 750分钟
+- 每天运行：2次
+- 每月运行：30天 × 2次 × 25分钟 = 1,500分钟
 
 ### AI API成本
-- Gemini: $0.015/次
-- DeepSeek: $0.005/次
-- 每月总计：约 $0.6
+- Gemini: $0.015/次 × 60次/月 = $0.90
+- DeepSeek: $0.005/次 × 60次/月 = $0.30
+- 每月总计：约 $1.20
 
-**结论**: 公开仓库完全免费，私有仓库也在免费额度内 ✅
+**结论**: 
+- ✅ 公开仓库完全免费（无限Actions时长）
+- ✅ 私有仓库在免费额度内（1,500 < 2,000分钟）
+- 💰 AI API成本：约$1.2/月（可接受）
 
 ---
 

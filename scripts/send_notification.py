@@ -409,16 +409,29 @@ class NotificationSender:
             username = email_config.get('username') or os.getenv('EMAIL_USERNAME')
             password = email_config.get('password') or os.getenv('EMAIL_PASSWORD')
             from_email = email_config.get('from') or os.getenv('EMAIL_FROM', username)
-            to_email = email_config.get('to') or os.getenv('EMAIL_TO')
+            to_email_raw = email_config.get('to') or os.getenv('EMAIL_TO')
+            
+            # 处理多个收件人（支持列表或逗号分隔的字符串）
+            if isinstance(to_email_raw, list):
+                # 配置文件中的YAML列表
+                to_emails = [email.strip() for email in to_email_raw if email.strip()]
+            elif isinstance(to_email_raw, str):
+                # 逗号分隔的字符串
+                to_emails = [email.strip() for email in to_email_raw.split(',') if email.strip()]
+            else:
+                to_emails = []
             
             # 验证必需参数
-            if not all([username, password, to_email]):
+            if not all([username, password, to_emails]):
                 print_error('❌ 邮件配置不完整，跳过发送')
                 print_info('需要配置文件 config/config.yml 中的 notify.email 或环境变量:')
                 print_info('  - EMAIL_USERNAME (发件邮箱)')
                 print_info('  - EMAIL_PASSWORD (授权密码)')
-                print_info('  - EMAIL_TO (收件邮箱)')
+                print_info('  - EMAIL_TO (收件邮箱，支持多个用逗号分隔)')
                 return False
+            
+            # 收件人邮箱字符串（用于显示）
+            to_email = ', '.join(to_emails)
             
             # 显示配置来源
             config_source = '配置文件' if email_config else '环境变量'
@@ -461,11 +474,11 @@ class NotificationSender:
                 print_info('登录邮箱服务器...')
                 server.login(username, password)
                 
-                print_info('发送邮件...')
+                print_info(f'发送邮件给 {len(to_emails)} 个收件人...')
                 server.send_message(msg)
                 
                 print_success(f'✅ 邮件发送成功: {to_email}')
-                logger.info(f'Email sent to {to_email}')
+                logger.info(f'Email sent to {len(to_emails)} recipient(s): {to_email}')
                 return True
                 
             finally:

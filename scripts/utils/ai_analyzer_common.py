@@ -199,14 +199,50 @@ def build_source_stats_block(selected: List[Dict[str, Any]], content_field: str,
 
 
 def save_markdown(date_str: str, markdown_text: str, model_suffix: str = 'gemini') -> Path:
-    """保存Markdown报告"""
+    """保存Markdown报告
+    
+    Args:
+        date_str: 日期字符串（YYYY-MM-DD）
+        markdown_text: 报告内容
+        model_suffix: 模型后缀（gemini/deepseek）
+        
+    Returns:
+        报告文件路径
+    """
     year_month = date_str[:7]
     report_dir = PROJECT_ROOT / 'docs' / 'archive' / year_month / date_str / 'reports'
     report_dir.mkdir(parents=True, exist_ok=True)
-    now_str = datetime.now(pytz.timezone('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M:%S')
-    header = f"# 📅 {date_str} 财经分析报告\n\n> 📅 生成时间: {now_str} (北京时间)\n\n"
+    
+    # 获取北京时间
+    now = datetime.now(pytz.timezone('Asia/Shanghai'))
+    now_str = now.strftime('%Y-%m-%d %H:%M:%S')
+    hour = now.hour
+    
+    # 根据时间段确定场次标识
+    if 6 <= hour < 12:
+        session = 'morning'
+        session_cn = '早盘'
+        session_emoji = '🌅'
+    elif 12 <= hour < 18:
+        session = 'afternoon'
+        session_cn = '午盘'
+        session_emoji = '🌆'
+    elif 18 <= hour < 24:
+        session = 'evening'
+        session_cn = '美股'
+        session_emoji = '🌙'
+    else:  # 0-6点
+        session = 'overnight'
+        session_cn = '隔夜'
+        session_emoji = '🌃'
+    
+    # 生成报告头部
+    header = f"# 📅 {date_str} 财经分析报告 {session_emoji} {session_cn}场\n\n> 📅 生成时间: {now_str} (北京时间)\n\n"
     content = header + (markdown_text or '').strip() + '\n'
-    report_file = report_dir / f"📅 {date_str} 财经分析报告_{model_suffix}.md"
+    
+    # 文件名包含场次，避免覆盖
+    report_file = report_dir / f"📅 {date_str} 财经分析报告_{session}_{model_suffix}.md"
+    
     with open(report_file, 'w', encoding='utf-8') as f:
         f.write(content)
     print_success(f"报告已保存到: {report_file}")
@@ -225,11 +261,28 @@ def save_metadata(date_str: str, meta: Dict[str, Any], model_suffix: str = ''):
     report_dir = PROJECT_ROOT / 'docs' / 'archive' / year_month / date_str / 'reports'
     report_dir.mkdir(parents=True, exist_ok=True)
     
-    # 根据模型添加后缀，避免覆盖
-    if model_suffix:
-        meta_file = report_dir / f'analysis_meta_{model_suffix}.json'
+    # 获取北京时间，确定场次
+    now = datetime.now(pytz.timezone('Asia/Shanghai'))
+    hour = now.hour
+    
+    if 6 <= hour < 12:
+        session = 'morning'
+    elif 12 <= hour < 18:
+        session = 'afternoon'
+    elif 18 <= hour < 24:
+        session = 'evening'
     else:
-        meta_file = report_dir / 'analysis_meta.json'
+        session = 'overnight'
+    
+    # 根据模型和场次添加后缀，避免覆盖
+    if model_suffix:
+        meta_file = report_dir / f'analysis_meta_{session}_{model_suffix}.json'
+    else:
+        meta_file = report_dir / f'analysis_meta_{session}.json'
+    
+    # 在元数据中记录场次信息
+    meta['session'] = session
+    meta['session_time'] = now.strftime('%Y-%m-%d %H:%M:%S')
     
     with open(meta_file, 'w', encoding='utf-8') as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)
