@@ -342,32 +342,54 @@ jobs:
           echo "📦 合并 Gemini 和 DeepSeek 报告到 docs/archive/"
           echo ""
           
+          # 调试：查看实际的目录结构
+          echo "🔍 调试信息 - Gemini artifact 目录结构："
+          ls -la /tmp/reports-gemini/ 2>/dev/null || echo "  Gemini 临时目录不存在"
+          echo ""
+          
+          echo "🔍 调试信息 - DeepSeek artifact 目录结构："
+          ls -la /tmp/reports-deepseek/ 2>/dev/null || echo "  DeepSeek 临时目录不存在"
+          echo ""
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo ""
+          
           # 复制 Gemini 报告
-          if [ -d "/tmp/reports-gemini/docs/archive" ]; then
+          # Artifact下载后，内容直接在临时目录下（不包含docs/archive路径）
+          if [ -d "/tmp/reports-gemini" ] && [ "$(ls -A /tmp/reports-gemini 2>/dev/null)" ]; then
             echo "✅ 复制 Gemini 报告..."
-            cp -r /tmp/reports-gemini/docs/archive/* docs/archive/ 2>/dev/null || true
+            # 如果有docs/archive子目录，使用它；否则直接复制内容
+            if [ -d "/tmp/reports-gemini/docs/archive" ]; then
+              cp -r /tmp/reports-gemini/docs/archive/* docs/archive/ 2>/dev/null || true
+            else
+              cp -r /tmp/reports-gemini/* docs/archive/ 2>/dev/null || true
+            fi
             GEMINI_COUNT=$(find /tmp/reports-gemini -type f \( -name "*.md" -o -name "*.json" \) | wc -l)
             echo "  📄 Gemini 文件数: $GEMINI_COUNT"
-            find /tmp/reports-gemini -type f \( -name "*.md" -o -name "*.json" \) | while read file; do
+            find /tmp/reports-gemini -type f \( -name "*.md" -o -name "*.json" \) | head -10 | while read file; do
               echo "    📄 $(basename "$file")"
             done
           else
-            echo "⚠️ Gemini 报告目录不存在"
+            echo "⚠️ Gemini 报告目录不存在或为空"
           fi
           
           echo ""
           
           # 复制 DeepSeek 报告
-          if [ -d "/tmp/reports-deepseek/docs/archive" ]; then
+          if [ -d "/tmp/reports-deepseek" ] && [ "$(ls -A /tmp/reports-deepseek 2>/dev/null)" ]; then
             echo "✅ 复制 DeepSeek 报告..."
-            cp -r /tmp/reports-deepseek/docs/archive/* docs/archive/ 2>/dev/null || true
+            # 如果有docs/archive子目录，使用它；否则直接复制内容
+            if [ -d "/tmp/reports-deepseek/docs/archive" ]; then
+              cp -r /tmp/reports-deepseek/docs/archive/* docs/archive/ 2>/dev/null || true
+            else
+              cp -r /tmp/reports-deepseek/* docs/archive/ 2>/dev/null || true
+            fi
             DEEPSEEK_COUNT=$(find /tmp/reports-deepseek -type f \( -name "*.md" -o -name "*.json" \) | wc -l)
             echo "  📄 DeepSeek 文件数: $DEEPSEEK_COUNT"
-            find /tmp/reports-deepseek -type f \( -name "*.md" -o -name "*.json" \) | while read file; do
+            find /tmp/reports-deepseek -type f \( -name "*.md" -o -name "*.json" \) | head -10 | while read file; do
               echo "    📄 $(basename "$file")"
             done
           else
-            echo "⚠️ DeepSeek 报告目录不存在"
+            echo "⚠️ DeepSeek 报告目录不存在或为空"
           fi
           
           echo ""
