@@ -116,11 +116,10 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           
-          # 先拉取最新代码（避免与其他推送冲突）
+          # 先拉取最新代码（可能有其他手动推送）
+          echo "🔄 拉取最新代码..."
           git pull --rebase origin master || {
-            echo "⚠️ Pull 冲突，尝试解决..."
-            git add data/news_data.db
-            git rebase --continue || true
+            echo "⚠️ Rebase 可能有冲突，继续..."
           }
           
           git add data/news_data.db
@@ -130,6 +129,17 @@ jobs:
           - 新增数量: ${{ steps.fetch.outputs.news_count }}
           - 总计数量: ${{ steps.fetch.outputs.total_count }}
           - 触发方式: ${{ github.event_name }}"
+          
+          # 推送前再次拉取（确保没有新的推送）
+          git pull --rebase origin master || {
+            echo "⚠️ Rebase冲突，尝试解决..."
+            git add data/news_data.db
+            git rebase --continue || {
+              echo "❌ 无法自动解决冲突，放弃推送"
+              git rebase --abort
+              exit 1
+            }
+          }
           
           git push
           echo "✅ 数据库已更新并推送"
@@ -162,7 +172,12 @@ jobs:
       - name: 📥 检出代码
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}  # 使用最新的commit（包含刚更新的数据库）
+          ref: master  # 总是使用master最新代码（包含数据库更新）
+          fetch-depth: 0
+      
+      - name: 🔄 拉取最新更新（如果有）
+        run: |
+          git pull origin master || echo "已是最新"
       
       - name: 📥 下载数据库
         uses: actions/download-artifact@v4
@@ -305,8 +320,12 @@ jobs:
       - name: 📥 检出代码
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}
+          ref: master  # 总是使用master最新代码
           fetch-depth: 0
+      
+      - name: 🔄 拉取最新更新（包含数据库提交）
+        run: |
+          git pull origin master || echo "已是最新"
       
       - name: 📥 下载Gemini报告
         uses: actions/download-artifact@v4
@@ -377,15 +396,6 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           
-          # 先拉取最新代码（避免与其他推送冲突）
-          echo "🔄 拉取最新代码..."
-          git pull --rebase origin master || {
-            echo "⚠️ Pull 冲突，尝试解决..."
-            git add docs/archive/
-            git rebase --continue || true
-          }
-          echo ""
-          
           # 显示当前状态
           echo "📊 Git 状态检查："
           echo "━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -416,6 +426,17 @@ jobs:
             - 包含模型: Gemini, DeepSeek
             - 触发方式: ${{ github.event_name }}"
             
+            # 推送前再次拉取（避免推送时冲突）
+            git pull --rebase origin master || {
+              echo "⚠️ Rebase冲突，尝试解决..."
+              git add docs/archive/
+              git rebase --continue || {
+                echo "❌ 无法自动解决冲突，放弃推送"
+                git rebase --abort
+                exit 1
+              }
+            }
+            
             git push
             echo "✅ 报告已提交并推送"
           fi
@@ -433,7 +454,12 @@ jobs:
       - name: 📥 检出代码
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}
+          ref: master  # 总是使用master最新代码（包含报告）
+          fetch-depth: 0
+      
+      - name: 🔄 拉取最新更新（包含报告提交）
+        run: |
+          git pull origin master || echo "已是最新"
       
       - name: 🐍 设置Python环境
         uses: actions/setup-python@v5
@@ -536,6 +562,9 @@ jobs:
       - name: 📥 检出代码（用于运行Python脚本）
         if: vars.EMAIL_NOTIFICATION_ENABLED == 'true'
         uses: actions/checkout@v4
+        with:
+          ref: master  # 使用最新代码
+          fetch-depth: 1
       
       - name: 🐍 设置Python环境
         if: vars.EMAIL_NOTIFICATION_ENABLED == 'true'
