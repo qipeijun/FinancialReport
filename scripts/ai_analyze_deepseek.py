@@ -15,6 +15,7 @@ AI 分析脚本（DeepSeek版本）- 重构版
 """
 
 import argparse
+import os
 from pathlib import Path
 from typing import Optional, Tuple, Dict, Any
 import yaml
