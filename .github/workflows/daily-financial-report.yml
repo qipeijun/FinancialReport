@@ -116,6 +116,13 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           
+          # 先拉取最新代码（避免与其他推送冲突）
+          git pull --rebase origin master || {
+            echo "⚠️ Pull 冲突，尝试解决..."
+            git add data/news_data.db
+            git rebase --continue || true
+          }
+          
           git add data/news_data.db
           git commit -m "📊 自动更新数据库 - 新增 ${{ steps.fetch.outputs.news_count }} 条新闻
 
@@ -369,6 +376,15 @@ jobs:
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
+          
+          # 先拉取最新代码（避免与其他推送冲突）
+          echo "🔄 拉取最新代码..."
+          git pull --rebase origin master || {
+            echo "⚠️ Pull 冲突，尝试解决..."
+            git add docs/archive/
+            git rebase --continue || true
+          }
+          echo ""
           
           # 显示当前状态
           echo "📊 Git 状态检查："
