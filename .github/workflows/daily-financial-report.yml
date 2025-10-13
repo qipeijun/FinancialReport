@@ -319,138 +319,72 @@ jobs:
       
       - name: 💾 提交报告到仓库
         run: |
+          set -e  # 任何命令失败都立即退出
+          
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           
-          echo ""
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "📊 Git 状态检查"
+          echo "📊 开始提交流程"
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo ""
           
-          git status --short docs/archive/ || echo "无变更"
-          echo ""
-          
-          # 检查是否有新报告文件
+          # 检查是否有报告文件
           if [ -z "$(git status --porcelain docs/archive/)" ]; then
-            echo "ℹ️ 没有新报告需要提交"
+            echo "ℹ️ 没有新报告，跳过提交"
             exit 0
           fi
           
-          # 保存其他未暂存的更改（如日志文件），但保留报告文件在工作区
-          if ! git diff --quiet || [ -n "$(git ls-files --others --exclude-standard)" ]; then
-            echo "⚠️ 检测到其他未暂存的更改（日志等），暂时保存..."
-            # 只 stash 非 docs/archive/ 的文件
-            git stash push -u -m "临时保存日志文件等" -- ':(exclude)docs/archive/'
-            echo "✅ 其他文件已 stash"
-          fi
+          echo "步骤 1/4: 保存工作区到 stash"
+          git stash push -u -m "Temp stash for reports"
+          echo "✅ 完成"
           echo ""
           
-          # 第一步：先拉取最新代码（在干净的工作区）
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "🔄 步骤 1/4: 拉取远程最新代码"
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "步骤 2/4: 拉取远程最新代码"
+          git pull --rebase origin master
+          echo "✅ 完成"
           echo ""
           
-          git pull --rebase origin master || {
-            echo "⚠️ 拉取时发现冲突，尝试自动解决..."
-            # 如果是 docs/archive/ 目录的冲突，优先使用远程版本
-            git checkout --theirs docs/archive/ 2>/dev/null || true
-            git add docs/archive/ 2>/dev/null || true
-            git rebase --continue || {
-              echo "❌ 无法自动解决冲突，中止操作"
-              git rebase --abort
-              exit 1
-            }
-          }
-          
-          echo "✅ 远程代码已同步"
-          echo ""
-          
-          # 第二步：添加报告文件到暂存区
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "📦 步骤 2/4: 添加报告文件"
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo ""
-          
+          echo "步骤 3/4: 恢复 stash 并提交"
+          git stash pop
           git add docs/archive/
           
-          # 检查暂存区
+          # 如果没有更改，退出
           if git diff --cached --quiet; then
-            echo "ℹ️ 无新文件需要提交（可能远程已有相同报告）"
+            echo "ℹ️ 拉取后无新文件，跳过提交"
             exit 0
           fi
           
-          echo "✅ 已暂存 $(git diff --cached --name-only | wc -l) 个文件："
-          git diff --cached --name-status
-          echo ""
-          
-          # 第三步：提交报告
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "💾 步骤 3/4: 提交报告到本地仓库"
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo ""
-          
-          # 生成提交信息
+          # 统计并提交
           TODAY=$(date '+%Y-%m-%d')
-          BEIJING_TIME=$(date '+%Y-%m-%d %H:%M:%S %Z')
           GEMINI_COUNT=$(git diff --cached --name-only | grep -c "gemini" || echo "0")
           DEEPSEEK_COUNT=$(git diff --cached --name-only | grep -c "deepseek" || echo "0")
           
-          echo "📊 统计信息："
-          echo "  - 日期: $TODAY"
-          echo "  - 时间: $BEIJING_TIME"
-          echo "  - Gemini 报告: $GEMINI_COUNT 个文件"
-          echo "  - DeepSeek 报告: $DEEPSEEK_COUNT 个文件"
+          echo "提交文件:"
+          git diff --cached --name-status
           echo ""
           
-          git commit -m "🤖 自动生成财经分析报告 - $TODAY
-          
-          * 生成时间: $BEIJING_TIME (北京时间)
-          * Gemini 报告: $GEMINI_COUNT 个文件
-          * DeepSeek 报告: $DEEPSEEK_COUNT 个文件
-          * 触发方式: ${{ github.event_name }}
-          * 执行模式: 串行（避免并行竞争）" || {
-            echo "❌ 提交失败"
-            exit 1
-          }
-          
-          echo "✅ 本地提交完成"
+          git commit -m "🤖 自动生成财经分析报告 - $TODAY (Gemini: ${GEMINI_COUNT}, DeepSeek: ${DEEPSEEK_COUNT})"
+          echo "✅ 完成"
           echo ""
           
-          # 第四步：推送到远程仓库
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "🚀 步骤 4/4: 推送到远程仓库"
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo ""
-          
-          # 推送前再次检查是否有新的远程更改
+          echo "步骤 4/4: 推送到远程"
+          # 推送前再check一次，如果远程有新提交就再rebase
           git fetch origin master
-          LOCAL_COMMIT=$(git rev-parse HEAD)
-          REMOTE_COMMIT=$(git rev-parse origin/master)
-          
-          if [ "$LOCAL_COMMIT" = "$REMOTE_COMMIT" ]; then
-            echo "⚠️ 本地和远程相同，无需推送"
-            exit 0
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/master)" ]; then
+            # 检查是否需要rebase
+            BEHIND=$(git rev-list HEAD..origin/master --count)
+            if [ "$BEHIND" -gt 0 ]; then
+              echo "⚠️ 远程有 $BEHIND 个新提交，同步中..."
+              git pull --rebase origin master
+            fi
           fi
           
-          # 如果远程有新提交，再次 rebase
-          if ! git diff --quiet HEAD origin/master; then
-            echo "⚠️ 检测到新的远程提交，再次同步..."
-            git pull --rebase origin master || {
-              echo "❌ 二次同步失败，放弃推送"
-              exit 1
-            }
-          fi
-          
-          # 推送到远程
-          git push origin master || {
-            echo "❌ 推送失败，可能需要手动处理"
-            exit 1
-          }
-          
+          git push origin master
+          echo "✅ 完成"
           echo ""
-          echo "✅ 报告已成功推送到远程仓库"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "✅ 报告已成功提交到远程仓库"
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
       
       - name: 📤 上传报告（用于后续Job）
