@@ -156,10 +156,10 @@ jobs:
           retention-days: 1
 
   # ========================================
-  # Job 2: AI分析（Gemini + DeepSeek并行）
+  # Job 2: AI分析（串行执行：Gemini → DeepSeek）
   # ========================================
   ai-analysis:
-    name: 🤖 AI分析报告
+    name: 🤖 AI分析报告（串行执行）
     runs-on: ubuntu-latest
     needs: fetch-news
     # 条件：有新数据 且 不是手动跳过分析
@@ -167,17 +167,12 @@ jobs:
       !inputs.skip_analysis && 
       (needs.fetch-news.outputs.has_new_data == 'true' || github.event_name == 'workflow_dispatch')
     
-    strategy:
-      matrix:
-        model: [gemini, deepseek]
-      fail-fast: false  # 一个模型失败不影响另一个
-    
     steps:
       - name: 📥 检出代码
         uses: actions/checkout@v4
         with:
           ref: master  # 总是使用master最新代码（包含数据库更新）
-          fetch-depth: 1  # 只需要最新代码，无需完整历史
+          fetch-depth: 0  # 需要完整历史以便后续提交
       
       - name: 📥 下载数据库
         uses: actions/download-artifact@v4
@@ -196,282 +191,268 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
-      - name: 🤖 运行AI分析 - ${{ matrix.model }}
+      - name: 🤖 运行AI分析 - Gemini
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          # 使用北京时间
+          TODAY=$(date '+%Y-%m-%d')
+          BEIJING_TIME=$(date '+%Y-%m-%d %H:%M:%S %Z')
+          
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📅 当前北京时间: $BEIJING_TIME"
+          echo "📅 分析日期: $TODAY"
+          echo "🤖 模型: Gemini (步骤 1/2)"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo ""
+          
+          echo "🚀 使用 Gemini 模型分析..."
+          if python3 scripts/ai_analyze.py \
+            --date $TODAY \
+            --content-field summary \
+            --max-chars 500000; then
+            echo ""
+            echo "✅ Gemini 分析成功"
+          else
+            EXIT_CODE=$?
+            echo ""
+            echo "❌ Gemini 分析失败，退出码: $EXIT_CODE"
+            echo "⚠️ 继续执行 DeepSeek 分析..."
+            # 不退出，继续执行 DeepSeek
+          fi
+      
+      - name: 🤖 运行AI分析 - DeepSeek
+        env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: |
           # 使用北京时间
           TODAY=$(date '+%Y-%m-%d')
           BEIJING_TIME=$(date '+%Y-%m-%d %H:%M:%S %Z')
           
+          echo ""
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "📅 当前北京时间: $BEIJING_TIME"
           echo "📅 分析日期: $TODAY"
-          echo "🤖 模型: ${{ matrix.model }}"
+          echo "🤖 模型: DeepSeek (步骤 2/2)"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo ""
           
-          if [ "${{ matrix.model }}" = "gemini" ]; then
-            echo "🚀 使用 Gemini 模型分析..."
-            if python3 scripts/ai_analyze.py \
-              --date $TODAY \
-              --content-field summary \
-              --max-chars 500000; then
-              echo "✅ Gemini 分析成功"
-            else
-              EXIT_CODE=$?
-              echo "❌ Gemini 分析失败，退出码: $EXIT_CODE"
-              exit $EXIT_CODE
-            fi
+          echo "🚀 使用 DeepSeek 模型分析..."
+          if python3 scripts/ai_analyze_deepseek.py \
+            --date $TODAY \
+            --content-field summary \
+            --max-chars 500000; then
+            echo ""
+            echo "✅ DeepSeek 分析成功"
           else
-            echo "🚀 使用 DeepSeek 模型分析..."
-            if python3 scripts/ai_analyze_deepseek.py \
-              --date $TODAY \
-              --content-field summary \
-              --max-chars 500000; then
-              echo "✅ DeepSeek 分析成功"
-            else
-              EXIT_CODE=$?
-              echo "❌ DeepSeek 分析失败，退出码: $EXIT_CODE"
-              exit $EXIT_CODE
-            fi
+            EXIT_CODE=$?
+            echo ""
+            echo "❌ DeepSeek 分析失败，退出码: $EXIT_CODE"
+            echo "⚠️ 将使用现有报告（如果有）"
+            # 不退出，允许部分成功
           fi
-          
-          echo ""
-          echo "✅ ${{ matrix.model }} 分析完成"
       
       - name: 🔍 检查生成的报告
         run: |
           TODAY=$(date '+%Y-%m-%d')
           YEAR_MONTH=$(date '+%Y-%m')
           REPORT_DIR="docs/archive/$YEAR_MONTH/$TODAY/reports"
+          METADATA_DIR="docs/archive/$YEAR_MONTH/$TODAY/metadata"
           
-          echo "📁 检查报告目录: $REPORT_DIR"
+          echo ""
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📁 检查生成的报告文件"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo ""
+          
+          echo "📁 报告目录: $REPORT_DIR"
           if [ -d "$REPORT_DIR" ]; then
             echo "✅ 报告目录存在"
-            FILE_COUNT=$(find "$REPORT_DIR" -name "*.md" 2>/dev/null | wc -l)
-            if [ "$FILE_COUNT" -gt 0 ]; then
-              echo "✅ 找到 $FILE_COUNT 个报告文件:"
-              ls -lh "$REPORT_DIR"/*.md
+            echo ""
+            
+            # 检查 Gemini 报告
+            GEMINI_FILES=$(find "$REPORT_DIR" -name "*gemini*.md" 2>/dev/null | wc -l)
+            if [ "$GEMINI_FILES" -gt 0 ]; then
+              echo "✅ Gemini 报告 ($GEMINI_FILES 个文件):"
+              ls -lh "$REPORT_DIR"/*gemini*.md
             else
-              echo "⚠️ 报告目录为空"
-              echo "ℹ️ 可能原因：今日无新数据或分析脚本未生成报告"
-              # 不退出，允许继续执行
+              echo "⚠️ 未找到 Gemini 报告"
             fi
+            
+            echo ""
+            
+            # 检查 DeepSeek 报告
+            DEEPSEEK_FILES=$(find "$REPORT_DIR" -name "*deepseek*.md" 2>/dev/null | wc -l)
+            if [ "$DEEPSEEK_FILES" -gt 0 ]; then
+              echo "✅ DeepSeek 报告 ($DEEPSEEK_FILES 个文件):"
+              ls -lh "$REPORT_DIR"/*deepseek*.md
+            else
+              echo "⚠️ 未找到 DeepSeek 报告"
+            fi
+            
+            echo ""
+            echo "📊 所有报告文件:"
+            ls -lh "$REPORT_DIR"/*.md 2>/dev/null || echo "  未找到任何 .md 文件"
           else
             echo "⚠️ 报告目录不存在"
             echo "ℹ️ 可能原因：今日无新数据，AI 分析脚本未创建目录"
-            echo "💡 这是正常情况，不视为错误"
-            # 不退出，允许继续执行
-          fi
-          
-          echo ""
-          echo "✅ 检查完成（允许无报告的情况）"
-      
-      - name: 📤 上传报告文件
-        if: success()
-        uses: actions/upload-artifact@v4
-        with:
-          name: reports-${{ matrix.model }}
-          path: docs/archive/
-          retention-days: 90  # 保留90天
-          if-no-files-found: ignore  # 没有文件时忽略（允许无数据的情况）
-      
-      - name: 📊 报告摘要
-        run: |
-          TODAY=$(date '+%Y-%m-%d')
-          YEAR_MONTH=$(date '+%Y-%m')
-          REPORT_DIR="docs/archive/$YEAR_MONTH/$TODAY/reports"
-          
-          echo "📅 当前日期: $TODAY"
-          echo "📅 年月: $YEAR_MONTH"
-          echo "📁 报告目录: $REPORT_DIR"
-          echo ""
-          
-          if [ -d "$REPORT_DIR" ]; then
-            echo "✅ 报告目录存在"
-            echo ""
-            echo "📄 Markdown报告:"
-            ls -lh $REPORT_DIR/*.md 2>/dev/null || echo "  未找到 .md 文件"
-            echo ""
-            echo "📄 元数据文件:"
-            ls -lh $REPORT_DIR/*.json 2>/dev/null || echo "  未找到 .json 文件"
-            echo ""
-            echo "📄 所有文件:"
-            ls -lh $REPORT_DIR/ 2>/dev/null || echo "  目录为空"
-            echo ""
-            echo "📦 当前模型报告:"
-            ls -lh $REPORT_DIR/*${{ matrix.model }}* 2>/dev/null || echo "  未找到 ${{ matrix.model }} 相关文件"
-          else
-            echo "❌ 报告目录不存在: $REPORT_DIR"
-            echo "📁 查看父目录结构:"
-            ls -lh "docs/archive/$YEAR_MONTH/" 2>/dev/null || echo "  月份目录不存在"
-          fi
-
-  # ========================================
-  # Job 3: 合并报告并提交
-  # ========================================
-  commit-reports:
-    name: 💾 提交分析报告
-    runs-on: ubuntu-latest
-    needs: ai-analysis
-    if: ${{ !cancelled() }}  # 即使AI分析部分失败也执行
-    
-    steps:
-      - name: 📥 检出代码
-        uses: actions/checkout@v4
-        with:
-          ref: master  # 总是使用master最新代码
-          fetch-depth: 0
-      
-      - name: 📥 下载Gemini报告
-        uses: actions/download-artifact@v4
-        with:
-          name: reports-gemini
-          path: /tmp/reports-gemini/
-        continue-on-error: true
-      
-      - name: 📥 下载DeepSeek报告
-        uses: actions/download-artifact@v4
-        with:
-          name: reports-deepseek
-          path: /tmp/reports-deepseek/
-        continue-on-error: true
-      
-      - name: 🔀 合并两个模型的报告
-        run: |
-          echo "📦 合并 Gemini 和 DeepSeek 报告到 docs/archive/"
-          echo ""
-          
-          # 调试：查看实际的目录结构
-          echo "🔍 调试信息 - Gemini artifact 目录结构："
-          ls -la /tmp/reports-gemini/ 2>/dev/null || echo "  Gemini 临时目录不存在"
-          echo ""
-          
-          echo "🔍 调试信息 - DeepSeek artifact 目录结构："
-          ls -la /tmp/reports-deepseek/ 2>/dev/null || echo "  DeepSeek 临时目录不存在"
-          echo ""
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo ""
-          
-          # 复制 Gemini 报告
-          # Artifact下载后，内容直接在临时目录下（不包含docs/archive路径）
-          if [ -d "/tmp/reports-gemini" ] && [ "$(ls -A /tmp/reports-gemini 2>/dev/null)" ]; then
-            echo "✅ 复制 Gemini 报告..."
-            # 如果有docs/archive子目录，使用它；否则直接复制内容
-            if [ -d "/tmp/reports-gemini/docs/archive" ]; then
-              cp -r /tmp/reports-gemini/docs/archive/* docs/archive/ 2>/dev/null || true
-            else
-              cp -r /tmp/reports-gemini/* docs/archive/ 2>/dev/null || true
-            fi
-            GEMINI_COUNT=$(find /tmp/reports-gemini -type f \( -name "*.md" -o -name "*.json" \) | wc -l)
-            echo "  📄 Gemini 文件数: $GEMINI_COUNT"
-            find /tmp/reports-gemini -type f \( -name "*.md" -o -name "*.json" \) | head -10 | while read file; do
-              echo "    📄 $(basename "$file")"
-            done
-          else
-            echo "⚠️ Gemini 报告目录不存在或为空"
           fi
           
           echo ""
           
-          # 复制 DeepSeek 报告
-          if [ -d "/tmp/reports-deepseek" ] && [ "$(ls -A /tmp/reports-deepseek 2>/dev/null)" ]; then
-            echo "✅ 复制 DeepSeek 报告..."
-            # 如果有docs/archive子目录，使用它；否则直接复制内容
-            if [ -d "/tmp/reports-deepseek/docs/archive" ]; then
-              cp -r /tmp/reports-deepseek/docs/archive/* docs/archive/ 2>/dev/null || true
-            else
-              cp -r /tmp/reports-deepseek/* docs/archive/ 2>/dev/null || true
-            fi
-            DEEPSEEK_COUNT=$(find /tmp/reports-deepseek -type f \( -name "*.md" -o -name "*.json" \) | wc -l)
-            echo "  📄 DeepSeek 文件数: $DEEPSEEK_COUNT"
-            find /tmp/reports-deepseek -type f \( -name "*.md" -o -name "*.json" \) | head -10 | while read file; do
-              echo "    📄 $(basename "$file")"
-            done
-          else
-            echo "⚠️ DeepSeek 报告目录不存在或为空"
+          # 检查元数据
+          if [ -d "$METADATA_DIR" ]; then
+            echo "📁 元数据目录: $METADATA_DIR"
+            ls -lh "$METADATA_DIR"/*.json 2>/dev/null || echo "  未找到元数据文件"
           fi
           
           echo ""
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "📋 合并后的文件列表："
-          TODAY=$(date '+%Y-%m-%d')
-          YEAR_MONTH=$(date '+%Y-%m')
-          if [ -d "docs/archive/$YEAR_MONTH/$TODAY/reports" ]; then
-            echo "✅ 今日报告目录: docs/archive/$YEAR_MONTH/$TODAY/reports"
-            ls -lh "docs/archive/$YEAR_MONTH/$TODAY/reports/" 2>/dev/null || echo "  目录为空"
-          else
-            echo "⚠️ 今日报告目录不存在"
-          fi
-          
-          if [ -d "docs/archive/$YEAR_MONTH/$TODAY/metadata" ]; then
-            echo "✅ 今日元数据目录: docs/archive/$YEAR_MONTH/$TODAY/metadata"
-            ls -lh "docs/archive/$YEAR_MONTH/$TODAY/metadata/" 2>/dev/null || echo "  目录为空"
-          fi
+          echo "✅ 检查完成"
       
       - name: 💾 提交报告到仓库
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           
-          # 显示当前状态
-          echo "📊 Git 状态检查："
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo ""
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📊 Git 状态检查"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo ""
+          
           git status --short docs/archive/ || echo "无变更"
           echo ""
           
-          # 检查是否有新文件
-          git add docs/archive/
+          # 检查是否有新报告文件
+          if [ -z "$(git status --porcelain docs/archive/)" ]; then
+            echo "ℹ️ 没有新报告需要提交"
+            exit 0
+          fi
           
-          echo "📦 准备提交的文件："
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━"
-          git diff --cached --name-status || echo "无文件需要提交"
+          # 先保存其他未暂存的更改（如日志文件）
+          if ! git diff --quiet; then
+            echo "⚠️ 检测到未暂存的更改（通常是日志文件），暂存它们..."
+            git stash push -u -m "临时保存日志文件等"
+          fi
+          
+          # 第一步：先拉取最新代码（避免后续冲突）
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "🔄 步骤 1/3: 拉取远程最新代码"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo ""
           
-          if git diff --cached --quiet; then
-            echo "ℹ️ 没有新报告需要提交"
-          else
-            TODAY=$(date '+%Y-%m-%d')
-            BEIJING_TIME=$(date '+%Y-%m-%d %H:%M:%S %Z')
-            
-            echo "✅ 发现新文件，准备提交..."
-            echo "📅 日期: $TODAY"
-            echo "🕐 时间: $BEIJING_TIME"
-            
-            git commit -m "🤖 自动生成财经分析报告 - $TODAY
-
-            - 生成时间: $BEIJING_TIME (北京时间)
-            - 包含模型: Gemini, DeepSeek
-            - 触发方式: ${{ github.event_name }}"
-            
-            # 检查是否有其他未暂存的更改（如日志文件）
-            if ! git diff --quiet; then
-              echo "⚠️ 检测到未暂存的更改，暂存它们..."
-              git stash push -u -m "临时保存日志文件等"
-            fi
-            
-            # 推送前再次拉取（避免推送时冲突）
-            git pull --rebase origin master || {
-              echo "⚠️ Rebase冲突，尝试解决..."
-              git add docs/archive/
-              git rebase --continue || {
-                echo "❌ 无法自动解决冲突，放弃推送"
-                git rebase --abort
-                exit 1
-              }
+          git pull --rebase origin master || {
+            echo "⚠️ 拉取时发现冲突，尝试自动解决..."
+            # 如果是 docs/archive/ 目录的冲突，优先使用远程版本，然后再添加我们的文件
+            git checkout --theirs docs/archive/ 2>/dev/null || true
+            git add docs/archive/ 2>/dev/null || true
+            git rebase --continue || {
+              echo "❌ 无法自动解决冲突，中止操作"
+              git rebase --abort
+              exit 1
             }
-            
-            git push
-            echo "✅ 报告已提交并推送"
+          }
+          
+          echo "✅ 远程代码已同步"
+          echo ""
+          
+          # 第二步：添加并提交本地报告
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📦 步骤 2/3: 提交新生成的报告"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo ""
+          
+          # 添加所有报告文件
+          git add docs/archive/
+          
+          # 显示要提交的文件
+          echo "准备提交的文件："
+          git diff --cached --name-status || echo "无文件"
+          echo ""
+          
+          # 再次检查是否有文件需要提交
+          if git diff --cached --quiet; then
+            echo "ℹ️ 拉取后无新文件需要提交（可能远程已有相同报告）"
+            exit 0
           fi
+          
+          # 生成提交信息
+          TODAY=$(date '+%Y-%m-%d')
+          BEIJING_TIME=$(date '+%Y-%m-%d %H:%M:%S %Z')
+          GEMINI_COUNT=$(git diff --cached --name-only | grep -c "gemini" || echo "0")
+          DEEPSEEK_COUNT=$(git diff --cached --name-only | grep -c "deepseek" || echo "0")
+          
+          echo "📊 统计信息："
+          echo "  - 日期: $TODAY"
+          echo "  - 时间: $BEIJING_TIME"
+          echo "  - Gemini 报告: $GEMINI_COUNT 个文件"
+          echo "  - DeepSeek 报告: $DEEPSEEK_COUNT 个文件"
+          echo ""
+          
+          git commit -m "🤖 自动生成财经分析报告 - $TODAY
+
+- 生成时间: $BEIJING_TIME (北京时间)
+- Gemini 报告: $GEMINI_COUNT 个文件
+- DeepSeek 报告: $DEEPSEEK_COUNT 个文件
+- 触发方式: ${{ github.event_name }}
+- 执行模式: 串行（避免并行竞争）" || {
+            echo "❌ 提交失败"
+            exit 1
+          }
+          
+          echo "✅ 本地提交完成"
+          echo ""
+          
+          # 第三步：推送到远程仓库
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "🚀 步骤 3/3: 推送到远程仓库"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo ""
+          
+          # 推送前再次检查是否有新的远程更改
+          git fetch origin master
+          LOCAL_COMMIT=$(git rev-parse HEAD)
+          REMOTE_COMMIT=$(git rev-parse origin/master)
+          
+          if [ "$LOCAL_COMMIT" = "$REMOTE_COMMIT" ]; then
+            echo "⚠️ 本地和远程相同，无需推送"
+            exit 0
+          fi
+          
+          # 如果远程有新提交，再次 rebase
+          if ! git diff --quiet HEAD origin/master; then
+            echo "⚠️ 检测到新的远程提交，再次同步..."
+            git pull --rebase origin master || {
+              echo "❌ 二次同步失败，放弃推送"
+              exit 1
+            }
+          fi
+          
+          # 推送到远程
+          git push origin master || {
+            echo "❌ 推送失败，可能需要手动处理"
+            exit 1
+          }
+          
+          echo ""
+          echo "✅ 报告已成功推送到远程仓库"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      
+      - name: 📤 上传报告（用于后续Job）
+        uses: actions/upload-artifact@v4
+        with:
+          name: analysis-reports
+          path: docs/archive/
+          retention-days: 90
+          if-no-files-found: warn  # 如果没有报告文件，发出警告
 
   # ========================================
-  # Job 4: 构建并部署MkDocs网站
+  # Job 3: 构建并部署MkDocs网站
   # ========================================
   build-and-deploy:
     name: 🚀 构建部署文档网站
     runs-on: ubuntu-latest
-    needs: commit-reports
+    needs: ai-analysis
     if: ${{ !cancelled() }}  # 即使前面步骤失败也尝试部署
     
     steps:
@@ -525,7 +506,7 @@ jobs:
           echo "📅 部署时间: $(date '+%Y-%m-%d %H:%M:%S %Z') (北京时间)"
 
   # ========================================
-  # Job 5: 发送通知
+  # Job 4: 发送通知
   # ========================================
   notify:
     name: 📬 发送完成通知
