@@ -1,0 +1,17 @@
+{
+  "date_range": {
+    "start": "2025-10-13",
+    "end": "2025-10-13"
+  },
+  "articles_used": 70,
+  "chunks": 105,
+  "model_usage": {
+    "model": "models/gemini-2.5-pro",
+    "prompt_tokens": 66427,
+    "candidates_tokens": 3813,
+    "total_tokens": 73017
+  },
+  "quality_check": null,
+  "session": "afternoon",
+  "session_time": "2025-10-13 12:36:29"
+}
