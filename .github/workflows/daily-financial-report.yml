@@ -1,6 +1,6 @@
-# GitHub Actions 工作流：每日财经报告自动化
-# 功能：抓取RSS新闻 → AI分析 → 构建部署文档网站
-# 触发：每天两次（北京时间 08:15、20:15，提前15分钟应对延迟）+ 手动触发
+# GitHub Actions Workflow: Daily Financial Report
+# Feature: Fetch RSS News -> AI Analysis -> Build and Deploy Documentation Site
+# Trigger: Twice daily (Beijing Time 08:15, 20:15) + Manual Dispatch
 
 name: Daily Financial Report
 
@@ -119,11 +119,11 @@ jobs:
           # 先提交数据库更改（避免pull时冲突）
           git add data/news_data.db
           git commit -m "📊 自动更新数据库 - 新增 ${{ steps.fetch.outputs.news_count }} 条新闻
-
-          - 抓取时间: $(date '+%Y-%m-%d %H:%M:%S %Z') (北京时间)
-          - 新增数量: ${{ steps.fetch.outputs.news_count }}
-          - 总计数量: ${{ steps.fetch.outputs.total_count }}
-          - 触发方式: ${{ github.event_name }}"
+          
+          * 抓取时间: $(date '+%Y-%m-%d %H:%M:%S %Z') (北京时间)
+          * 新增数量: ${{ steps.fetch.outputs.news_count }}
+          * 总计数量: ${{ steps.fetch.outputs.total_count }}
+          * 触发方式: ${{ github.event_name }}"
           
           # 检查是否有其他未暂存的更改（如日志文件）
           if ! git diff --quiet; then
@@ -390,12 +390,12 @@ jobs:
           echo ""
           
           git commit -m "🤖 自动生成财经分析报告 - $TODAY
-
-- 生成时间: $BEIJING_TIME (北京时间)
-- Gemini 报告: $GEMINI_COUNT 个文件
-- DeepSeek 报告: $DEEPSEEK_COUNT 个文件
-- 触发方式: ${{ github.event_name }}
-- 执行模式: 串行（避免并行竞争）" || {
+          
+          * 生成时间: $BEIJING_TIME (北京时间)
+          * Gemini 报告: $GEMINI_COUNT 个文件
+          * DeepSeek 报告: $DEEPSEEK_COUNT 个文件
+          * 触发方式: ${{ github.event_name }}
+          * 执行模式: 串行（避免并行竞争）" || {
             echo "❌ 提交失败"
             exit 1
           }
