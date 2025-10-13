@@ -183,6 +183,8 @@ jobs:
           fetch-depth: 0  # 需要完整历史以便后续提交
       
       - name: 📥 下载数据库
+        # 只在 fetch-news 成功时下载，否则使用仓库中现有的数据库
+        if: needs.fetch-news.result == 'success'
         uses: actions/download-artifact@v4
         with:
           name: news-database
