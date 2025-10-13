@@ -337,39 +337,24 @@ jobs:
             exit 0
           fi
           
-          # ⚠️ 关键：先把报告文件加入暂存区，再 stash 其他文件
-          # 这样可以避免报告文件被 stash
-          echo "📦 将报告文件加入暂存区..."
-          git add docs/archive/
-          
-          # 检查暂存区是否有文件
-          if git diff --cached --quiet; then
-            echo "⚠️ 暂存区为空，可能报告文件已经在远程"
-            exit 0
-          fi
-          
-          echo "✅ 已暂存 $(git diff --cached --name-only | wc -l) 个文件"
-          git diff --cached --name-status
-          echo ""
-          
-          # 保存其他未暂存的更改（如日志文件）
-          # 此时报告文件已在暂存区，不会被 stash
+          # 保存其他未暂存的更改（如日志文件），但保留报告文件在工作区
           if ! git diff --quiet || [ -n "$(git ls-files --others --exclude-standard)" ]; then
-            echo "⚠️ 检测到其他未暂存的更改（日志等），暂存它们..."
+            echo "⚠️ 检测到其他未暂存的更改（日志等），暂时保存..."
+            # 只 stash 非 docs/archive/ 的文件
             git stash push -u -m "临时保存日志文件等" -- ':(exclude)docs/archive/'
             echo "✅ 其他文件已 stash"
           fi
           echo ""
           
-          # 第一步：先拉取最新代码（避免后续冲突）
+          # 第一步：先拉取最新代码（在干净的工作区）
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "🔄 步骤 1/3: 拉取远程最新代码"
+          echo "🔄 步骤 1/4: 拉取远程最新代码"
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo ""
           
           git pull --rebase origin master || {
             echo "⚠️ 拉取时发现冲突，尝试自动解决..."
-            # 如果是 docs/archive/ 目录的冲突，优先使用远程版本，然后再添加我们的文件
+            # 如果是 docs/archive/ 目录的冲突，优先使用远程版本
             git checkout --theirs docs/archive/ 2>/dev/null || true
             git add docs/archive/ 2>/dev/null || true
             git rebase --continue || {
@@ -382,21 +367,29 @@ jobs:
           echo "✅ 远程代码已同步"
           echo ""
           
-          # 第二步：提交本地报告
+          # 第二步：添加报告文件到暂存区
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "📦 步骤 2/3: 提交新生成的报告"
+          echo "📦 步骤 2/4: 添加报告文件"
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo ""
           
-          # 再次检查暂存区（拉取后可能有变化）
-          echo "当前暂存区文件："
-          git diff --cached --name-status || echo "无文件"
-          echo ""
+          git add docs/archive/
           
+          # 检查暂存区
           if git diff --cached --quiet; then
-            echo "ℹ️ 拉取后暂存区为空（可能远程已有相同报告）"
+            echo "ℹ️ 无新文件需要提交（可能远程已有相同报告）"
             exit 0
           fi
+          
+          echo "✅ 已暂存 $(git diff --cached --name-only | wc -l) 个文件："
+          git diff --cached --name-status
+          echo ""
+          
+          # 第三步：提交报告
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "💾 步骤 3/4: 提交报告到本地仓库"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo ""
           
           # 生成提交信息
           TODAY=$(date '+%Y-%m-%d')
@@ -425,9 +418,9 @@ jobs:
           echo "✅ 本地提交完成"
           echo ""
           
-          # 第三步：推送到远程仓库
+          # 第四步：推送到远程仓库
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "🚀 步骤 3/3: 推送到远程仓库"
+          echo "🚀 步骤 4/4: 推送到远程仓库"
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo ""
           
