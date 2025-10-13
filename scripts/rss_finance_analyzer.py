@@ -413,15 +413,15 @@ class RSSAnalyzer:
             'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
         }
         
-        # 条件GET
-        cache_entry = self.http_cache.get(url, {})
-        if cache_entry.get('etag'):
-            headers['If-None-Match'] = cache_entry['etag']
-        if cache_entry.get('last_modified'):
-            headers['If-Modified-Since'] = cache_entry['last_modified']
+        # 条件GET（暂时禁用，避免304导致的"无数据"假象）
+        # cache_entry = self.http_cache.get(url, {})
+        # if cache_entry.get('etag'):
+        #     headers['If-None-Match'] = cache_entry['etag']
+        # if cache_entry.get('last_modified'):
+        #     headers['If-Modified-Since'] = cache_entry['last_modified']
         
         last_err = None
-        for attempt in range(1, 4):
+        for attempt in range(1, 5):  # 增加到5次重试
             try:
                 # 增加超时到30秒（GitHub Actions网络环境可能较慢）
                 response = requests.get(url, timeout=30, headers=headers, allow_redirects=True)
@@ -450,6 +450,18 @@ class RSSAnalyzer:
             except requests.exceptions.Timeout as e:
                 last_err = f"超时: {e}"
                 logger.warning(f"{source_name} 第{attempt}次尝试超时")
+            except requests.exceptions.HTTPError as e:
+                last_err = f"HTTP错误: {e}"
+                # 对于403错误（反爬虫），增加更长的等待时间
+                if hasattr(e, 'response') and e.response is not None and e.response.status_code == 403:
+                    logger.warning(f"{source_name} 第{attempt}次遭遇403（反爬虫），等待后重试")
+                    if attempt < 5:
+                        wait_time = min(30, 5 * attempt)  # 5s, 10s, 15s, 20s
+                        logger.debug(f"{source_name} 403错误，等待 {wait_time} 秒...")
+                        time.sleep(wait_time)
+                    continue
+                else:
+                    logger.warning(f"{source_name} 第{attempt}次HTTP错误: {str(e)[:60]}")
             except requests.exceptions.RequestException as e:
                 last_err = f"请求失败: {e}"
                 logger.warning(f"{source_name} 第{attempt}次尝试失败: {str(e)[:60]}")
@@ -458,13 +470,13 @@ class RSSAnalyzer:
                 logger.warning(f"{source_name} 第{attempt}次尝试异常: {str(e)[:60]}")
             
             # 指数退避，增加等待时间
-            if attempt < 3:
-                wait_time = min(15, 3 ** attempt)  # 3秒, 9秒
+            if attempt < 5:
+                wait_time = min(15, 3 ** attempt)  # 3秒, 9秒, 15秒, 15秒
                 logger.debug(f"{source_name} 等待 {wait_time} 秒后重试...")
                 time.sleep(wait_time)
         
         # 所有尝试失败，记录错误
-        logger.error(f"{source_name} 抓取失败（重试3次）: {last_err}")
+        logger.error(f"{source_name} 抓取失败（重试5次）: {last_err}")
         return []
     
     def fetch_all_sources_parallel(self, rss_sources: dict, limit: int = 5, 
@@ -499,7 +511,8 @@ class RSSAnalyzer:
                 for future in as_completed(future_to_source):
                     source_name = future_to_source[future]
                     try:
-                        entries = future.result()
+                        # 获取结果，设置超时以避免永久阻塞
+                        entries = future.result(timeout=120)  # 2分钟超时
                         if entries:
                             for entry in entries:
                                 entry.source = source_name
@@ -510,11 +523,16 @@ class RSSAnalyzer:
                         else:
                             fail_count += 1
                             failed_sources.append(source_name)
-                            logger.warning(f"⚠️ {source_name}: 无数据或失败")
+                            # 当返回空列表时，查看是否有异常信息
+                            exc_info = future.exception()
+                            if exc_info:
+                                logger.warning(f"⚠️ {source_name}: 返回空结果，异常: {str(exc_info)[:80]}")
+                            else:
+                                logger.warning(f"⚠️ {source_name}: 返回空结果（可能是RSS源无内容或所有重试失败）")
                     except Exception as e:
                         fail_count += 1
                         failed_sources.append(source_name)
-                        logger.error(f"❌ {source_name}: 异常 - {str(e)[:60]}")
+                        logger.error(f"❌ {source_name}: 并发异常 - {type(e).__name__}: {str(e)[:60]}", exc_info=True)
                     
                     pbar.update(1)
         
