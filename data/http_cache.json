@@ -1,7 +1,7 @@
 {
   "http://rss.eastmoney.com/rss_partener.xml": {
-    "etag": "W/\"a34877cfee3bdc1:0\"",
-    "last_modified": "Mon, 13 Oct 2025 03:09:38 GMT"
+    "etag": "W/\"1e7e401c363cdc1:0\"",
+    "last_modified": "Mon, 13 Oct 2025 11:40:01 GMT"
   },
   "https://36kr.com/feed": {
     "etag": null,
@@ -20,16 +20,16 @@
     "last_modified": null
   },
   "https://www.chinanews.com.cn/rss/finance.xml": {
-    "etag": "\"68ec6bfe-3cfe\"",
-    "last_modified": "Mon, 13 Oct 2025 03:03:26 GMT"
+    "etag": "\"68ece4a6-3efd\"",
+    "last_modified": "Mon, 13 Oct 2025 11:38:14 GMT"
   },
   "https://www.ftchinese.com/rss/feed": {
-    "etag": "W/\"2aa8-9cfFz9kCAZ5hVS6LxSwTUm6uMyw\"",
+    "etag": "W/\"2a7f-SGOafvA6211YMHDpcosdPqaQqi8\"",
     "last_modified": null
   },
   "https://www.economist.com/finance-and-economics/rss.xml": {
-    "etag": "W/\"6b8842a35ae40ea5bdf086314cfb1f0f\"",
-    "last_modified": "Sun, 12 Oct 2025 19:44:02 GMT"
+    "etag": "W/\"4385eecd7b685914493ac2aa22528402\"",
+    "last_modified": "Mon, 13 Oct 2025 10:20:25 GMT"
   },
   "https://www.investing.com/rss/news.rss": {
     "etag": "W/\"10d8-640dd64ac9b17\"",
@@ -45,7 +45,7 @@
   },
   "https://www.etftrends.com/feed/": {
     "etag": null,
-    "last_modified": "Sun, 12 Oct 2025 12:00:12 GMT"
+    "last_modified": "Mon, 13 Oct 2025 11:00:22 GMT"
   },
   "https://www.cnbc.com/id/100003114/device/rss/rss.html": {
     "etag": null,
@@ -53,7 +53,7 @@
   },
   "https://feeds.feedburner.com/zerohedge/feed": {
     "etag": null,
-    "last_modified": "Mon, 13 Oct 2025 02:03:53 GMT"
+    "last_modified": "Mon, 13 Oct 2025 10:29:24 GMT"
   },
   "https://www.bloomberg.com/feed/podcast/etf-report.xml": {
     "etag": null,
@@ -64,8 +64,8 @@
     "last_modified": "Thu, 09 Oct 2025 20:30:13 GMT"
   },
   "https://www.sec.gov/news/pressreleases.rss": {
-    "etag": "\"1760323947\"",
-    "last_modified": "Mon, 13 Oct 2025 02:52:27 GMT"
+    "etag": "\"1760355570\"",
+    "last_modified": "Mon, 13 Oct 2025 11:39:30 GMT"
   },
   "https://www.stats.gov.cn/sj/zxfb/rss.xml": {
     "etag": "\"68e861a9-4c15ec\"",
@@ -88,7 +88,7 @@
     "last_modified": null
   },
   "https://ir.thomsonreuters.com/rss/news-releases.xml": {
-    "etag": "\"1760323812\"",
-    "last_modified": "Mon, 13 Oct 2025 02:50:12 GMT"
+    "etag": "\"1760355385\"",
+    "last_modified": "Mon, 13 Oct 2025 11:36:25 GMT"
   }
 }
