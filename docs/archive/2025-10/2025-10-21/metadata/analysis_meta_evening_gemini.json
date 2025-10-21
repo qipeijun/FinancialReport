@@ -6,12 +6,12 @@
   "articles_used": 73,
   "chunks": 115,
   "model_usage": {
-    "model": "deepseek-chat",
-    "prompt_tokens": 77891,
-    "completion_tokens": 2184,
-    "total_tokens": 80075
+    "model": "models/gemini-2.5-pro",
+    "prompt_tokens": 89132,
+    "candidates_tokens": 4520,
+    "total_tokens": 96323
   },
   "quality_check": null,
   "session": "evening",
-  "session_time": "2025-10-21 20:30:31"
+  "session_time": "2025-10-21 20:28:55"
 }
