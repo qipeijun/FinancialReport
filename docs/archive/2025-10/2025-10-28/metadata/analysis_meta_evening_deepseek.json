@@ -3,15 +3,15 @@
     "start": "2025-10-28",
     "end": "2025-10-28"
   },
-  "articles_used": 65,
-  "chunks": 124,
+  "articles_used": 84,
+  "chunks": 159,
   "model_usage": {
     "model": "deepseek-chat",
-    "prompt_tokens": 94050,
-    "completion_tokens": 2319,
-    "total_tokens": 96369
+    "prompt_tokens": 122816,
+    "completion_tokens": 2167,
+    "total_tokens": 124983
   },
   "quality_check": null,
   "session": "evening",
-  "session_time": "2025-10-28 18:11:14"
+  "session_time": "2025-10-28 20:06:32"
 }
