@@ -1,7 +1,7 @@
 {
   "http://rss.eastmoney.com/rss_partener.xml": {
-    "etag": "\"03d37d15d4cdc1:0\"",
-    "last_modified": "Mon, 03 Nov 2025 01:04:34 GMT"
+    "etag": "W/\"dc50bceeba4cdc1:0\"",
+    "last_modified": "Mon, 03 Nov 2025 12:11:06 GMT"
   },
   "https://36kr.com/feed": {
     "etag": null,
@@ -20,11 +20,11 @@
     "last_modified": null
   },
   "https://www.chinanews.com.cn/rss/finance.xml": {
-    "etag": "\"6907fa87-39e3\"",
-    "last_modified": "Mon, 03 Nov 2025 00:42:47 GMT"
+    "etag": "\"6908991e-4113\"",
+    "last_modified": "Mon, 03 Nov 2025 11:59:26 GMT"
   },
   "https://www.ftchinese.com/rss/feed": {
-    "etag": "W/\"29ef-25xyMvrXRDhd1jqBCC5E8Jw9hMg\"",
+    "etag": "W/\"2a6c-NzSqdc0eQZbHu78cbslLK+hc7m4\"",
     "last_modified": null
   },
   "https://www.economist.com/finance-and-economics/rss.xml": {
@@ -45,7 +45,7 @@
   },
   "https://www.etftrends.com/feed/": {
     "etag": null,
-    "last_modified": "Sun, 02 Nov 2025 12:30:04 GMT"
+    "last_modified": "Mon, 03 Nov 2025 12:00:22 GMT"
   },
   "https://www.cnbc.com/id/100003114/device/rss/rss.html": {
     "etag": null,
@@ -53,7 +53,7 @@
   },
   "https://feeds.feedburner.com/zerohedge/feed": {
     "etag": null,
-    "last_modified": "Mon, 3 Nov 2025 00:53:54 GMT"
+    "last_modified": "Mon, 3 Nov 2025 10:23:54 GMT"
   },
   "https://www.bloomberg.com/feed/podcast/etf-report.xml": {
     "etag": null,
@@ -64,8 +64,8 @@
     "last_modified": "Fri, 31 Oct 2025 20:45:18 GMT"
   },
   "https://www.sec.gov/news/pressreleases.rss": {
-    "etag": "\"1762130057\"",
-    "last_modified": "Mon, 03 Nov 2025 00:34:17 GMT"
+    "etag": "\"1762156126\"",
+    "last_modified": "Mon, 03 Nov 2025 07:48:46 GMT"
   },
   "https://www.stats.gov.cn/sj/zxfb/rss.xml": {
     "etag": "\"69041129-4bcddc\"",
@@ -88,7 +88,7 @@
     "last_modified": null
   },
   "https://ir.thomsonreuters.com/rss/news-releases.xml": {
-    "etag": "\"1762131238\"",
-    "last_modified": "Mon, 03 Nov 2025 00:53:58 GMT"
+    "etag": "\"1762171735\"",
+    "last_modified": "Mon, 03 Nov 2025 12:08:55 GMT"
   }
 }
