@@ -1,20 +1,40 @@
-# 财经新闻采集与 AI 分析
+# Financial Report - AI驱动的财经分析系统
 
-一个可落地的财经新闻数据管道：多源 RSS 采集 → SQLite 汇总存储 → 可查询导出 → 调用大模型生成专业分析报告。
+> 🎯 多源RSS采集 → 智能去重 → 实时数据注入 → AI分析 → 质量验证 → 自动部署
 
-## 特性
-- **多源 RSS 采集**：统一入库到 `data/news_data.db`
-- **灵活内容抓取**：支持抓取正文 `content`（默认不截断）与摘要 `summary`
-- **智能字段选择**：AI分析时可选择摘要优先、正文优先或智能选择
-- **便捷查询导出**：按日期/来源/关键词查询并导出 CSV/JSON
-- **AI 分析报告**：一键调用大模型生成专业 Markdown 报告
-- **多模型支持**：支持 Gemini 与 DeepSeek，可在交互脚本中选择
-- **虚拟环境支持**：完整的 Python 虚拟环境配置，确保依赖隔离
-- **交互式体验**：简化上手的交互式脚本，支持字段选择界面
+[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org)
+[![Gemini](https://img.shields.io/badge/AI-Gemini%203.0-orange.svg)](https://ai.google.dev)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 
-## 快速开始
+---
 
-### 方式A：一键启动脚本（推荐）
+## ✨ 核心特性
+
+### 🤖 AI智能分析
+- **Gemini 3.0** - 速度提升3倍，成本更低
+- **实时数据注入** - 股票/黄金/外汇实时行情
+- **事实核查** - 自动验证AI生成的数据
+- **质量评分** - 多维度评分，80分以上才发布
+- **自动重试** - 质量不达标自动优化
+
+### 📰 智能新闻采集
+- **20+财经RSS源** - 全面覆盖财经资讯
+- **MinHash去重** - O(n)复杂度，极速去重
+- **内容提取** - 智能抓取正文
+- **SQLite存储** - 高效本地数据库
+
+### 🔧 自动化运维
+- **GitHub Actions** - 定时自动执行
+- **数据库维护** - 每周健康检查，每月自动优化
+- **MkDocs网站** - 自动构建部署
+- **质量监控** - 实时监控报告质量
+
+---
+
+## 🚀 快速开始
+
+### 方式一: 一键启动（推荐）
+
 ```bash
 # macOS/Linux
 ./start.sh
@@ -22,249 +42,204 @@
 # Windows
 start.bat
 ```
-一键启动脚本会自动：
-- 检查Python环境
-- 创建虚拟环境（如不存在）
-- 安装项目依赖
-- 提供交互式菜单选择功能
-  - 交互式运行器
-  - AI分析脚本
-  - RSS财经抓取器
-  - 数据质量监控
-  - 启动文档网站（本地预览）
-  - 构建部署文档（生成静态网站）
 
-### 方式B：使用虚拟环境
+### 方式二: 手动安装
+
 ```bash
-# 1. 激活虚拟环境（自动安装依赖 + 依赖校验）
-./activate.sh                    # Linux/macOS
-# 或
-activate.bat                     # Windows
+# 1. 克隆仓库
+git clone https://github.com/your-username/Financial-report.git
+cd Financial-report
 
-# 2. 配置API密钥
-cp config/config.example.yml config/config.yml
-# 编辑 config/config.yml，填写你的 Gemini 与/或 DeepSeek API Key
+# 2. 创建虚拟环境
+python3 -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
-# 3. 运行交互式脚本（可选择 Gemini 或 DeepSeek 模型）
-python scripts/interactive_runner.py
-```
-
-### 方式C：手动安装
-```bash
-# Python ≥ 3.10
-pip3 install -r requirements.txt
-cp config/config.example.yml config/config.yml
-# 编辑 config/config.yml，填写你的 Gemini 与/或 DeepSeek API Key
-python3 scripts/interactive_runner.py
-```
-- 若今天已抓取过数据，可直接选择"AI 分析"。
-- 若未抓取，脚本会询问是否立即抓取（可选抓取正文），完成后再询问是否分析。
-
-## 常用命令
-
-> 💡 **提示**：以下命令需要在虚拟环境中运行。先执行 `./activate.sh`（Linux/macOS）或 `activate.bat`（Windows）激活虚拟环境。
-
-### 虚拟环境管理
-```bash
-# 激活虚拟环境
-./activate.sh                    # Linux/macOS
-activate.bat                     # Windows
-
-# 退出虚拟环境
-deactivate
-
-# 查看已安装的包
-pip list
-
-# 重新安装依赖
+# 3. 安装依赖
 pip install -r requirements.txt
+
+# 4. 配置API密钥
+export GEMINI_API_KEY="your-gemini-api-key"
+
+# 5. 生成报告
+python3 scripts/ai_analyze_verified.py --date $(date +%Y-%m-%d)
 ```
 
-### 数据采集
+报告保存在: `docs/archive/YYYY-MM/YYYY-MM-DD/reports/`
+
+---
+
+## 📖 文档导航
+
+### 核心文档
+- 📘 [完整文档](./docs/README.md) - 系统文档总览
+- 🚀 [快速开始](./docs/README.md#快速开始) - 5分钟上手指南
+- 🏗️ [系统架构](./docs/README.md#系统架构) - 技术架构说明
+- 👨‍💻 [开发指南](./docs/README.md#开发指南) - 开发者文档
+
+### 专题指南
+- ⭐ [AI质量验证系统](./docs/README.md#ai智能分析) - 如何确保报告质量
+- 🗄️ [数据库维护](./docs/README.md#数据库自动维护) - 自动维护策略
+- 📊 [数据库Schema](./docs/DATABASE_SCHEMA.md) - 数据库结构
+- 🚀 [部署指南](./docs/DEPLOYMENT.md) - GitHub Actions部署
+
+### 更新日志
+- 🆕 [Gemini 3.0升级](./docs/README.md#更新日志) - 最新模型升级
+- 📝 [完整变更日志](./docs/README.md#更新日志) - 版本历史
+
+---
+
+## 💡 使用示例
+
+### 采集新闻
+
 ```bash
-# 仅摘要
-python scripts/rss_finance_analyzer.py
+# 基础采集
+python3 scripts/rss_finance_analyzer.py --fetch-content
 
-# 抓取正文写入 content（推荐）
-python scripts/rss_finance_analyzer.py --fetch-content
-
-# 仅抓取指定来源（与 scripts/config/rss.json 名称一致，逗号分隔）
-python scripts/rss_finance_analyzer.py --only-source "华尔街见闻,36氪"
+# 高级选项
+python3 scripts/rss_finance_analyzer.py \
+  --fetch-content \
+  --deduplicate \
+  --max-workers 10
 ```
 
-### 查询与导出
+### 生成AI报告
+
 ```bash
-# 表格查看当天
-python scripts/query_news_by_date.py
+# 标准模式
+python3 scripts/ai_analyze_verified.py --date 2026-01-07
 
-# 导出JSON格式（包含正文）
-python scripts/query_news_by_date.py --format json --output news.json --include-content
+# 高质量模式(评分90+)
+python3 scripts/ai_analyze_verified.py \
+  --date 2026-01-07 \
+  --min-score 90 \
+  --max-retries 5
 
-# 导出CSV格式（包含正文）
-python scripts/query_news_by_date.py --format csv --output news.csv --include-content
-
-# 全文检索（需 FTS5，匹配 title/summary/content）
-python scripts/query_news_by_date.py --search "新能源 OR AI" --format json --output search.json
+# 测试模式(跳过验证)
+python3 scripts/ai_analyze_verified.py \
+  --date 2026-01-07 \
+  --skip-verification
 ```
 
-### AI 分析（生成 Markdown 报告）
+### 数据库维护
+
 ```bash
-# 分析当天
-python scripts/ai_analyze.py
+# 健康检查
+python3 scripts/utils/db_maintenance.py --health-check
 
-# 指定日期范围
-python scripts/ai_analyze.py --start 2025-09-28 --end 2025-09-29
+# 完整维护
+python3 scripts/utils/db_maintenance.py --optimize
 
-# 控量/过滤（降成本）
-python scripts/ai_analyze.py --filter-source "华尔街见闻,36氪" --filter-keyword "新能源,AI" --max-articles 50 --max-chars 150000
-
-# 选择分析字段（新增功能）
-python scripts/ai_analyze.py --content-field summary    # 摘要优先（推荐）
-python scripts/ai_analyze.py --content-field content    # 正文优先
-python scripts/ai_analyze.py --content-field auto       # 智能选择（默认）
-
-# 使用 DeepSeek 模型（可直接运行 DeepSeek 版本脚本）
-python scripts/ai_analyze_deepseek.py                   # 使用 config.yml 的 api_keys.deepseek
-python scripts/ai_analyze_deepseek.py --model deepseek-chat --base-url https://api.deepseek.com/v3.1_terminus_expires_on_20251015
+# 清理旧数据(保留90天)
+python3 scripts/utils/db_maintenance.py --cleanup 90
 ```
 
-### 文档网站构建与部署
-```bash
-# 构建静态网站（生成到 site/ 目录）
-bash scripts/deploy.sh
+---
 
-# 本地预览文档网站
-mkdocs serve                  # 访问 http://127.0.0.1:8000
+## 🏗️ 项目结构
 
-# 或使用交互式启动脚本
-./start.sh                    # 选择选项 5（本地预览）或选项 6（构建部署）
-```
-
-部署脚本会自动：
-- 生成 MkDocs 导航配置
-- 构建静态 HTML 网站
-- 复制安全验证文件到 site/ 目录
-- 准备部署到 GitHub Pages
-
-## 结果位置
-- 主数据库：`data/news_data.db`
-- 当日归档：`docs/archive/YYYY-MM/YYYY-MM-DD/`
-  - `rss_data/` 原始 RSS 文本
-  - `news_content/` 内容文件
-  - `reports/` 分析报告（Markdown）
-  - `collected_data.json` 备份
-- 静态网站：`site/`（通过 `bash scripts/deploy.sh` 生成）
-  - 包含所有分析报告的静态 HTML 网站
-  - 可直接部署到 GitHub Pages 或其他静态托管服务
-
-## 配置说明
-- 实际配置：`config/config.yml`（已加入 `.gitignore`）
-- 模板示例：`config/config.example.yml`
-```yaml
-api_keys:
-  gemini: "YOUR_GEMINI_API_KEY"
-  deepseek: "YOUR_DEEPSEEK_API_KEY"
-
-notify:
-  server_chan_keys:
-    - "SCT_xxx_1"
-    - "SCT_xxx_2"
-```
-
-## 脚本清单
-- `scripts/rss_finance_analyzer.py`
-  - 多源 RSS 采集；支持 `--fetch-content` 与 `--content-max-length`（默认 0=不截断）
-- `scripts/query_news_by_date.py`
-  - 按日期/来源/关键词查询与导出；`--include-content` 在 CSV/JSON 中包含正文
-- `scripts/ai_analyze.py`
-  - 读取数据库，支持字段选择（`--content-field`：`summary`/`content`/`auto`）
-  - 固定提示词 `task/financial_analysis_prompt_pro.md`，生成 Markdown 报告
-  - 智能内容选择：当正文过长时自动使用摘要
-- `scripts/ai_analyze_deepseek.py`
-  - 与 `ai_analyze.py` 相同逻辑，但调用 DeepSeek（OpenAI SDK）
-  - 从 `config/config.yml` 读取 `api_keys.deepseek` 或 `deepseek.api_key`（不再读取环境变量）
-  - 区分不同AI模型生成的财经分析报告文件名
-- `scripts/interactive_runner.py`
-  - 交互式问答：检测 → 抓取 → 分析，一站式体验
-  - 支持字段选择与模型选择（Gemini/DeepSeek）
-- `scripts/deploy.sh`
-  - 自动生成导航配置、构建文档网站并准备部署
-  - 自动复制安全验证文件到网站根目录
-- `scripts/generate_mkdocs_nav.py`
-  - 自动扫描归档目录，生成 MkDocs 导航配置
-
-## 目录结构
 ```
 Financial-report/
-├── config/
-│   ├── config.example.yml
-│   └── config.yml                 # 本地私密配置（git 忽略）
-├── data/
-│   └── news_data.db               # 主 SQLite 数据库
-├── docs/
-│   ├── archive/YYYY-MM/YYYY-MM-DD/{rss_data,news_content,reports}
-│   └── index.md                   # 文档首页
-├── scripts/
-│   ├── rss_finance_analyzer.py
-│   ├── query_news_by_date.py
-│   ├── ai_analyze.py
-│   ├── ai_analyze_deepseek.py
-│   ├── interactive_runner.py
-│   ├── deploy.sh                  # 文档网站构建部署脚本
-│   └── generate_mkdocs_nav.py    # MkDocs 导航配置生成器
-├── site/                          # 静态网站输出目录（git 忽略）
-├── venv/                          # Python虚拟环境（git 忽略）
-├── mkdocs.yml                     # MkDocs 配置文件
-├── start.sh                       # 一键启动脚本（Linux/macOS）
-├── start.bat                      # 一键启动脚本（Windows）
-├── activate.sh                    # 虚拟环境激活脚本（Linux/macOS）
-├── activate.bat                   # 虚拟环境激活脚本（Windows）
-├── VENV_README.md                 # 虚拟环境详细使用指南
-├── requirements.txt               # Python依赖列表
-└── README.md                      # 项目说明文档
+├── scripts/                # 核心脚本
+│   ├── rss_finance_analyzer.py         # RSS采集
+│   ├── ai_analyze_verified.py          # AI分析(主版本)
+│   ├── test_verification_system.py     # 测试工具
+│   └── utils/                          # 工具模块
+│       ├── realtime_data_fetcher.py    # 实时数据
+│       ├── fact_checker.py             # 事实核查
+│       ├── quality_checker.py          # 质量评分
+│       └── db_maintenance.py           # 数据库维护
+│
+├── .github/workflows/      # 自动化工作流
+│   ├── daily-financial-report-verified.yml
+│   └── database-maintenance.yml
+│
+├── docs/                   # 文档
+│   ├── README.md          # 文档总览
+│   ├── DATABASE_SCHEMA.md # 数据库结构
+│   └── DEPLOYMENT.md      # 部署指南
+│
+├── data/                   # 数据文件
+│   └── news_data.db       # SQLite数据库
+│
+└── config/                 # 配置文件
+    └── config.yml         # 系统配置
 ```
 
-## 小贴士
+---
 
-### 启动方式选择
-- **一键启动脚本（推荐）**：使用 `./start.sh`（Linux/macOS）或 `start.bat`（Windows）快速启动，自动处理环境检查和依赖安装
-- **虚拟环境使用**：如需更多控制，可使用 `./activate.sh`（Linux/macOS）或 `activate.bat`（Windows）手动激活虚拟环境
-- **推荐使用虚拟环境**：避免依赖冲突，确保环境一致性
-- **详细指南**：查看 `VENV_README.md` 了解虚拟环境的完整使用方法
+## 🔧 核心技术
 
-### 依赖安装与校验
-- `activate.sh` 会自动：
-  - 升级 pip
-  - 安装 `requirements.txt` 全部依赖
-  - 执行 `pip check` 完成依赖一致性校验
+| 组件 | 技术 | 用途 |
+|------|------|------|
+| AI模型 | Gemini 3.0 Flash/Pro | 报告生成 |
+| 数据库 | SQLite 3 | 数据存储 |
+| 文档 | MkDocs | 静态网站 |
+| CI/CD | GitHub Actions | 自动化 |
+| 去重 | MinHash + LSH | 新闻去重 |
+| 语言 | Python 3.11+ | 核心开发 |
 
-### 数据分析优化
-- **字段选择**：新增 `--content-field` 参数，可选择 `summary`（摘要优先）、`content`（正文优先）或 `auto`（智能选择）
-- **摘要优先**：推荐使用 `summary` 模式，内容简洁且分析质量高
-- **正文分析**：抓取正文可显著提升 AI 分析质量；体量大时可先用摘要筛选再分析命中样本
-- **成本控制**：如遇长文本过大，可用 `--max-chars` 控制成本；导出时再加 `--include-content`
+---
 
-### 文档网站部署
-- **本地预览**：运行 `mkdocs serve` 在本地查看文档网站
-- **构建部署**：运行 `bash scripts/deploy.sh` 生成静态网站到 `site/` 目录
-- **GitHub Pages**：推送到 GitHub 后会自动部署到 GitHub Pages
-- **安全验证**：部署时自动复制安全验证文件到网站根目录
+## 📊 系统优势
 
-### 自动化部署
-- **定时任务**：可将命令接入 CI/定时器实现自动化
-- **依赖管理**：`requirements.txt` 已固定小版本，建议使用虚拟环境安装
+### v2.0 核心升级
 
-## 定时触发方案
+- ⚡ **性能**: AI生成速度提升3倍
+- 💰 **成本**: Token使用成本降低
+- 🎯 **准确性**: 事实核查+质量评分
+- 📊 **可靠性**: 实时数据注入
+- 🔄 **自动化**: 自动重试+自动维护
 
-### 问题
-GitHub Actions 定时任务延迟 15-60 分钟，成功率 95%
+### 数据质量保障
 
-### 解决方案
-使用**腾讯云函数**准时触发，延迟 < 1 分钟，成功率 99.9%，完全免费
+- ✅ 实时市场数据注入
+- ✅ 自动事实核查验证
+- ✅ 多维度质量评分
+- ✅ 质量不达标自动重试
+- ✅ 完整可追溯报告
 
-### 配置指南
-📖 **[腾讯云函数配置指南](docs/TENCENT_SCF_GUIDE.md)** - 10分钟完成配置
+---
 
-## 许可与声明
-- License：MIT
-- 免责声明：本项目输出仅供参考，不构成任何投资建议；投资有风险，入市需谨慎。
+## 🤝 贡献
+
+欢迎贡献代码、报告问题或提出建议！
+
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交变更 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启 Pull Request
+
+---
+
+## 📝 许可证
+
+本项目采用 MIT 许可证 - 详见 [LICENSE](./LICENSE) 文件
+
+---
+
+## 🙏 致谢
+
+- [Google Gemini API](https://ai.google.dev/) - AI模型支持
+- [DeepSeek API](https://www.deepseek.com/) - 备用AI模型
+- [MkDocs](https://www.mkdocs.org/) - 文档生成
+- [GitHub Actions](https://github.com/features/actions) - CI/CD平台
+
+---
+
+## 📞 联系方式
+
+- 📖 [完整文档](./docs/README.md)
+- 🐛 [报告问题](https://github.com/your-username/Financial-report/issues)
+- 💬 [讨论交流](https://github.com/your-username/Financial-report/discussions)
+
+---
+
+<div align="center">
+
+**[开始使用](./docs/README.md#快速开始)** | **[查看文档](./docs/README.md)** | **[贡献代码](#贡献)**
+
+Made with ❤️ by Financial Report Team
+
+</div>
