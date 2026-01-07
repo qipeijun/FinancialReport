@@ -16,6 +16,8 @@ scripts/
 ├── ai_analyze_deepseek.py     # 315行 - DeepSeek版
 └── ai_analyze_verified.py     # 522行 - Gemini验证版
     总计: 1,212行代码，~80%重复
+
+问题: DeepSeek没有增强版，功能不对等
 ```
 
 **问题**:
@@ -28,9 +30,10 @@ scripts/
 
 ```
 scripts/
-├── ai_analyze.py              # 136行 - Gemini基础版 ⬇️64%
-├── ai_analyze_deepseek.py     # 141行 - DeepSeek版  ⬇️55%
-├── ai_analyze_verified.py     # 139行 - Gemini验证增强版 ⬇️73%
+├── ai_analyze.py                      # 136行 - Gemini基础版 ⬇️64%
+├── ai_analyze_deepseek.py             # 141行 - DeepSeek基础版 ⬇️55%
+├── ai_analyze_verified.py             # 139行 - Gemini验证增强版 ⬇️73%
+├── ai_analyze_deepseek_verified.py    # 127行 - DeepSeek验证增强版 🆕
 │
 └── utils/
     ├── report_generator.py    # 统一报告生成引擎 (410行)
@@ -40,15 +43,16 @@ scripts/
         ├── gemini_provider.py # Gemini实现 (95行)
         └── deepseek_provider.py # DeepSeek实现 (80行)
 
-总计: 416行入口 + 585行引擎 = 1,001行
+总计: 543行入口 + 585行引擎 = 1,128行
 ```
 
 **改进**:
 - ✅ 消除 ~80% 代码重复
-- ✅ 总代码量减少 17% (1,212 → 1,001行)
-- ✅ 入口脚本减少 66% (1,212 → 416行)
+- ✅ 总代码量减少 7% (1,212 → 1,128行)
+- ✅ 入口脚本减少 55% (1,212 → 543行)
 - ✅ 统一逻辑易于维护
 - ✅ 符合开闭原则，易于扩展
+- ✅ **DeepSeek增强版** - 两个模型功能对等 🆕
 
 ---
 
@@ -140,7 +144,7 @@ class ReportGenerator:
 ✅ **质量筛选** - `filter_and_rank_articles()`
 ✅ **MinHash去重** - 已集成
 
-### 三个入口的定位
+### 四个入口的定位
 
 #### 1. `ai_analyze.py` - Gemini基础版
 
@@ -181,6 +185,22 @@ python3 scripts/ai_analyze_verified.py --date 2026-01-07 --min-score 90 --max-re
 - ✅ 自动重试优化
 - 适合生产环境
 
+#### 4. `ai_analyze_deepseek_verified.py` - DeepSeek增强验证版 🆕
+
+```bash
+python3 scripts/ai_analyze_deepseek_verified.py --date 2026-01-07
+python3 scripts/ai_analyze_deepseek_verified.py --date 2026-01-07 --min-score 90 --max-retries 5
+```
+
+**特点**:
+- DeepSeek模型
+- ✅ 实时数据注入（股票/黄金/外汇）
+- ✅ 事实核查验证
+- ✅ 高级质量评分v2
+- ✅ 自动重试优化
+- 支持safe/pro提示词
+- 与Gemini增强版功能对等
+
 ---
 
 ## 🔧 使用示例
@@ -191,11 +211,14 @@ python3 scripts/ai_analyze_verified.py --date 2026-01-07 --min-score 90 --max-re
 # Gemini基础版
 python3 scripts/ai_analyze.py --date 2026-01-07
 
-# DeepSeek版
+# DeepSeek基础版
 python3 scripts/ai_analyze_deepseek.py --date 2026-01-07
 
 # Gemini增强版（推荐）
 python3 scripts/ai_analyze_verified.py --date 2026-01-07
+
+# DeepSeek增强版（新增）🆕
+python3 scripts/ai_analyze_deepseek_verified.py --date 2026-01-07
 ```
 
 ### 高级使用
