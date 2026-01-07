@@ -51,24 +51,46 @@ def get_analysis_files(date_dir):
     
     # 报告文件（按照场次和模型排序）
     if os.path.exists(reports_dir):
-        for file in os.listdir(reports_dir):
-            if file.endswith('.md'):
-                files['reports'].append(file)
+        all_md_files = [f for f in os.listdir(reports_dir) if f.endswith('.md')]
         
-        # 自定义排序：morning < afternoon < evening < overnight，然后按 gemini/deepseek
+        # 分离新旧格式文件
+        new_format_files = []  # 带 session 标识的新格式（_morning_、_afternoon_、_evening_、_overnight_）
+        old_format_files = []  # 旧格式（没有 session，只有模型后缀）
+        
+        session_patterns = ['_morning_', '_afternoon_', '_evening_', '_overnight_']
+        
+        for file in all_md_files:
+            has_session = any(pattern in file for pattern in session_patterns)
+            if has_session:
+                new_format_files.append(file)
+            else:
+                old_format_files.append(file)
+        
+        # ⚠️ 优先使用新格式：如果新格式文件存在，则忽略旧格式文件
+        if new_format_files:
+            files['reports'] = new_format_files
+        else:
+            # 降级到旧格式（兼容旧数据）
+            files['reports'] = old_format_files
+        
+        # 自定义排序：按场次（morning < afternoon < evening < overnight）和模型（gemini < deepseek）
         def sort_key(filename):
             session_order = {'morning': 1, 'afternoon': 2, 'evening': 3, 'overnight': 4}
             model_order = {'gemini': 1, 'deepseek': 2}
             
-            # 提取场次标识
+            # 提取场次标识（必须严格匹配 _session_ 格式）
             session = 'unknown'
             for s in session_order.keys():
-                if s in filename:
+                if f'_{s}_' in filename:
                     session = s
                     break
             
             # 提取模型标识
-            model = 'gemini' if 'gemini' in filename else 'deepseek'
+            model = 'unknown'
+            if 'gemini' in filename:
+                model = 'gemini'
+            elif 'deepseek' in filename:
+                model = 'deepseek'
             
             return (session_order.get(session, 999), model_order.get(model, 999))
         
@@ -100,16 +122,16 @@ def format_report_name(report_file):
     - 📅 2025-10-12 财经分析报告_gemini.md (旧格式)
     
     输出示例：
-    - 🌅 早盘 - Gemini
-    - 🌙 美股 - DeepSeek
-    - 📊 Gemini (旧格式)
+    - AM Gemini
+    - PM DeepSeek
+    - Gemini报告 (旧格式)
     """
-    # 场次映射（emoji + 中文）
+    # 场次映射（简化为 AM/PM）
     session_map = {
-        'morning': ('🌅', '早盘'),
-        'afternoon': ('🌆', '午盘'),
-        'evening': ('🌙', '美股'),
-        'overnight': ('🌃', '隔夜')
+        'morning': 'AM',
+        'afternoon': 'PM',
+        'evening': 'PM',
+        'overnight': 'Night'
     }
     
     # 模型映射
@@ -118,10 +140,10 @@ def format_report_name(report_file):
         'deepseek': 'DeepSeek'
     }
     
-    # 提取场次
+    # 提取场次（严格匹配 _session_ 格式）
     session = None
     for s in session_map.keys():
-        if s in report_file:
+        if f'_{s}_' in report_file:
             session = s
             break
     
@@ -134,13 +156,14 @@ def format_report_name(report_file):
     
     # 生成显示名称
     if session and model:
-        emoji, session_cn = session_map[session]
+        # 新格式：AM Gemini报告 / PM DeepSeek报告
+        session_label = session_map[session]
         model_name = model_map[model]
-        return f"{emoji} {session_cn} - {model_name}"
+        return f"{session_label} {model_name}报告"
     elif model:
-        # 旧格式（没有场次标识）
+        # 旧格式：Gemini报告
         model_name = model_map[model]
-        return f"📊 {model_name}"
+        return f"{model_name}报告"
     else:
         # 降级处理：移除常见前缀和后缀
         name = report_file.replace('.md', '').replace('📅 ', '').replace('财经分析报告', '').replace('_', ' ').strip()

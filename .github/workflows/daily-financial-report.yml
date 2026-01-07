@@ -1,17 +1,21 @@
-# GitHub Actions 工作流：每日财经报告自动化
-# 功能：抓取RSS新闻 → AI分析 → 构建部署文档网站
-# 触发：每天两次（北京时间 08:30、20:30）+ 手动触发
+# GitHub Actions Workflow: Daily Financial Report
+# Feature: Fetch RSS News -> AI Analysis -> Build and Deploy Documentation Site
+# Trigger: Twice daily (Beijing Time 08:15, 20:15) + Manual Dispatch
 
 name: Daily Financial Report
 
+# 统一时区设置：所有Job使用北京时间
+env:
+  TZ: Asia/Shanghai
+
 # 触发条件
 on:
-  # 定时任务：每天运行两次（覆盖A股开盘前 + 美股开盘前）
-  schedule:
-    - cron: '30 0 * * *'  # 每天 00:30 UTC (08:30 北京时间) - A股开盘前
-    - cron: '30 12 * * *'  # 每天 12:30 UTC (20:30 北京时间) - 美股开盘前
+  # 定时任务：已切换为腾讯云函数触发，暂时注释观察几天
+  # schedule:
+  #   - cron: '15 0 * * *'  # 每天 00:15 UTC (08:15 北京时间) - A股开盘前，提前15分钟
+  #   - cron: '15 12 * * *'  # 每天 12:15 UTC (20:15 北京时间) - 美股开盘前，提前15分钟
   
-  # 手动触发：用于测试或补漏
+  # 手动触发：用于测试或补漏（腾讯云函数通过此接口触发）
   workflow_dispatch:
     inputs:
       skip_fetch:
@@ -112,13 +116,34 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           
+          # 先提交数据库更改（避免pull时冲突）
           git add data/news_data.db
           git commit -m "📊 自动更新数据库 - 新增 ${{ steps.fetch.outputs.news_count }} 条新闻
-
-          - 抓取时间: $(date '+%Y-%m-%d %H:%M:%S')
-          - 新增数量: ${{ steps.fetch.outputs.news_count }}
-          - 总计数量: ${{ steps.fetch.outputs.total_count }}
-          - 触发方式: ${{ github.event_name }}"
+          
+          * 抓取时间: $(date '+%Y-%m-%d %H:%M:%S %Z') (北京时间)
+          * 新增数量: ${{ steps.fetch.outputs.news_count }}
+          * 总计数量: ${{ steps.fetch.outputs.total_count }}
+          * 触发方式: ${{ github.event_name }}"
+          
+          # 检查是否有其他未暂存的更改（如日志文件）
+          if ! git diff --quiet; then
+            echo "⚠️ 检测到未暂存的更改（通常是日志文件），暂存它们..."
+            git stash push -u -m "临时保存日志文件等"
+          fi
+          
+          # 推送前拉取最新代码（使用rebase保持线性历史）
+          echo "🔄 推送前同步最新代码..."
+          git pull --rebase origin master || {
+            echo "⚠️ Rebase冲突，尝试解决..."
+            # 数据库文件冲突时使用我们的版本（更新的数据库）
+            git checkout --ours data/news_data.db
+            git add data/news_data.db
+            git rebase --continue || {
+              echo "❌ 无法自动解决冲突，放弃推送"
+              git rebase --abort
+              exit 1
+            }
+          }
           
           git push
           echo "✅ 数据库已更新并推送"
@@ -131,29 +156,35 @@ jobs:
           retention-days: 1
 
   # ========================================
-  # Job 2: AI分析（Gemini + DeepSeek并行）
+  # Job 2: AI分析（串行执行：Gemini → DeepSeek）  （TODO: 改为并行执行）  
   # ========================================
   ai-analysis:
     name: 🤖 AI分析报告
     runs-on: ubuntu-latest
     needs: fetch-news
-    # 条件：有新数据 且 不是手动跳过分析
+    # 条件：不是手动跳过分析 且 满足以下任一条件：
+    # 1. fetch成功且有新数据
+    # 2. fetch被跳过（说明是skip_fetch=true，要用现有数据分析）
+    # 3. 手动触发（无论是否有新数据都分析）
     if: |
-      !inputs.skip_analysis && 
-      (needs.fetch-news.outputs.has_new_data == 'true' || github.event_name == 'workflow_dispatch')
-    
-    strategy:
-      matrix:
-        model: [gemini, deepseek]
-      fail-fast: false  # 一个模型失败不影响另一个
+      always() &&
+      !inputs.skip_analysis &&
+      (
+        (needs.fetch-news.result == 'success' && needs.fetch-news.outputs.has_new_data == 'true') ||
+        (needs.fetch-news.result == 'skipped') ||
+        (github.event_name == 'workflow_dispatch')
+      )
     
     steps:
       - name: 📥 检出代码
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}  # 使用最新的commit（包含刚更新的数据库）
+          ref: master  # 总是使用master最新代码（包含数据库更新）
+          fetch-depth: 0  # 需要完整历史以便后续提交
       
       - name: 📥 下载数据库
+        # 只在 fetch-news 成功时下载，否则使用仓库中现有的数据库
+        if: needs.fetch-news.result == 'success'
         uses: actions/download-artifact@v4
         with:
           name: news-database
@@ -170,116 +201,217 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
-      - name: 🤖 运行AI分析 - ${{ matrix.model }}
+      - name: 🤖 运行AI分析 - Gemini
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          # 使用北京时间
+          TODAY=$(date '+%Y-%m-%d')
+          BEIJING_TIME=$(date '+%Y-%m-%d %H:%M:%S %Z')
+          
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📅 当前北京时间: $BEIJING_TIME"
+          echo "📅 分析日期: $TODAY"
+          echo "🤖 模型: Gemini (步骤 1/2)"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo ""
+          
+          echo "🚀 使用 Gemini 模型分析..."
+          if python3 scripts/ai_analyze.py \
+            --date $TODAY \
+            --content-field summary \
+            --max-chars 500000; then
+            echo ""
+            echo "✅ Gemini 分析成功"
+          else
+            EXIT_CODE=$?
+            echo ""
+            echo "❌ Gemini 分析失败，退出码: $EXIT_CODE"
+            echo "⚠️ 继续执行 DeepSeek 分析..."
+            # 不退出，继续执行 DeepSeek
+          fi
+      
+      - name: 🤖 运行AI分析 - DeepSeek
+        env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: |
+          # 使用北京时间
           TODAY=$(date '+%Y-%m-%d')
+          BEIJING_TIME=$(date '+%Y-%m-%d %H:%M:%S %Z')
           
-          if [ "${{ matrix.model }}" = "gemini" ]; then
-            echo "🚀 使用 Gemini 模型分析..."
-            python3 scripts/ai_analyze.py \
-              --date $TODAY \
-              --content-field summary \
-              --max-chars 500000
+          echo ""
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📅 当前北京时间: $BEIJING_TIME"
+          echo "📅 分析日期: $TODAY"
+          echo "🤖 模型: DeepSeek (步骤 2/2)"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo ""
+          
+          echo "🚀 使用 DeepSeek 模型分析..."
+          if python3 scripts/ai_analyze_deepseek.py \
+            --date $TODAY \
+            --content-field summary \
+            --max-chars 500000; then
+            echo ""
+            echo "✅ DeepSeek 分析成功"
           else
-            echo "🚀 使用 DeepSeek 模型分析..."
-            python3 scripts/ai_analyze_deepseek.py \
-              --date $TODAY \
-              --content-field summary \
-              --max-chars 500000
+            EXIT_CODE=$?
+            echo ""
+            echo "❌ DeepSeek 分析失败，退出码: $EXIT_CODE"
+            echo "⚠️ 将使用现有报告（如果有）"
+            # 不退出，允许部分成功
           fi
-          
-          echo "✅ ${{ matrix.model }} 分析完成"
       
-      - name: 📤 上传报告文件
-        uses: actions/upload-artifact@v4
-        with:
-          name: reports-${{ matrix.model }}
-          path: docs/archive/
-          retention-days: 90  # 保留90天
-      
-      - name: 📊 报告摘要
+      - name: 🔍 检查生成的报告
         run: |
           TODAY=$(date '+%Y-%m-%d')
           YEAR_MONTH=$(date '+%Y-%m')
           REPORT_DIR="docs/archive/$YEAR_MONTH/$TODAY/reports"
+          METADATA_DIR="docs/archive/$YEAR_MONTH/$TODAY/metadata"
           
+          echo ""
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📁 检查生成的报告文件"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo ""
+          
+          echo "📁 报告目录: $REPORT_DIR"
           if [ -d "$REPORT_DIR" ]; then
-            echo "📁 生成的报告:"
-            ls -lh $REPORT_DIR/*.md 2>/dev/null || echo "  无Markdown报告"
-            ls -lh $REPORT_DIR/*.json 2>/dev/null || echo "  无元数据"
+            echo "✅ 报告目录存在"
+            echo ""
+            
+            # 检查 Gemini 报告
+            GEMINI_FILES=$(find "$REPORT_DIR" -name "*gemini*.md" 2>/dev/null | wc -l)
+            if [ "$GEMINI_FILES" -gt 0 ]; then
+              echo "✅ Gemini 报告 ($GEMINI_FILES 个文件):"
+              ls -lh "$REPORT_DIR"/*gemini*.md
+            else
+              echo "⚠️ 未找到 Gemini 报告"
+            fi
+            
+            echo ""
+            
+            # 检查 DeepSeek 报告
+            DEEPSEEK_FILES=$(find "$REPORT_DIR" -name "*deepseek*.md" 2>/dev/null | wc -l)
+            if [ "$DEEPSEEK_FILES" -gt 0 ]; then
+              echo "✅ DeepSeek 报告 ($DEEPSEEK_FILES 个文件):"
+              ls -lh "$REPORT_DIR"/*deepseek*.md
+            else
+              echo "⚠️ 未找到 DeepSeek 报告"
+            fi
+            
+            echo ""
+            echo "📊 所有报告文件:"
+            ls -lh "$REPORT_DIR"/*.md 2>/dev/null || echo "  未找到任何 .md 文件"
           else
-            echo "⚠️ 报告目录不存在: $REPORT_DIR"
+            echo "⚠️ 报告目录不存在"
+            echo "ℹ️ 可能原因：今日无新数据，AI 分析脚本未创建目录"
           fi
-
-  # ========================================
-  # Job 3: 合并报告并提交
-  # ========================================
-  commit-reports:
-    name: 💾 提交分析报告
-    runs-on: ubuntu-latest
-    needs: ai-analysis
-    if: ${{ !cancelled() }}  # 即使AI分析部分失败也执行
-    
-    steps:
-      - name: 📥 检出代码
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref }}
-          fetch-depth: 0
-      
-      - name: 📥 下载Gemini报告
-        uses: actions/download-artifact@v4
-        with:
-          name: reports-gemini
-          path: docs/archive/
-        continue-on-error: true
-      
-      - name: 📥 下载DeepSeek报告
-        uses: actions/download-artifact@v4
-        with:
-          name: reports-deepseek
-          path: docs/archive/
-        continue-on-error: true
+          
+          echo ""
+          
+          # 检查元数据
+          if [ -d "$METADATA_DIR" ]; then
+            echo "📁 元数据目录: $METADATA_DIR"
+            ls -lh "$METADATA_DIR"/*.json 2>/dev/null || echo "  未找到元数据文件"
+          fi
+          
+          echo ""
+          echo "✅ 检查完成"
       
       - name: 💾 提交报告到仓库
         run: |
+          set -e  # 任何命令失败都立即退出
+          
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           
-          # 检查是否有新文件
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📊 开始提交流程"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo ""
+          
+          # 检查是否有报告文件
+          if [ -z "$(git status --porcelain docs/archive/)" ]; then
+            echo "ℹ️ 没有新报告，跳过提交"
+            exit 0
+          fi
+          
+          echo "步骤 1/4: 保存工作区到 stash"
+          git stash push -u -m "Temp stash for reports"
+          echo "✅ 完成"
+          echo ""
+          
+          echo "步骤 2/4: 拉取远程最新代码"
+          git pull --rebase origin master
+          echo "✅ 完成"
+          echo ""
+          
+          echo "步骤 3/4: 恢复 stash 并提交"
+          git stash pop
           git add docs/archive/
           
+          # 如果没有更改，退出
           if git diff --cached --quiet; then
-            echo "ℹ️ 没有新报告需要提交"
-          else
-            TODAY=$(date '+%Y-%m-%d')
-            git commit -m "🤖 自动生成财经分析报告 - $TODAY
-
-            - 生成时间: $(date '+%Y-%m-%d %H:%M:%S')
-            - 包含模型: Gemini, DeepSeek
-            - 触发方式: ${{ github.event_name }}"
-            
-            git push
-            echo "✅ 报告已提交并推送"
+            echo "ℹ️ 拉取后无新文件，跳过提交"
+            exit 0
           fi
+          
+          # 统计并提交
+          TODAY=$(date '+%Y-%m-%d')
+          GEMINI_COUNT=$(git diff --cached --name-only | grep -c "gemini" || echo "0")
+          DEEPSEEK_COUNT=$(git diff --cached --name-only | grep -c "deepseek" || echo "0")
+          
+          echo "提交文件:"
+          git diff --cached --name-status
+          echo ""
+          
+          git commit -m "🤖 自动生成财经分析报告 - $TODAY (Gemini: ${GEMINI_COUNT}, DeepSeek: ${DEEPSEEK_COUNT})"
+          echo "✅ 完成"
+          echo ""
+          
+          echo "步骤 4/4: 推送到远程"
+          # 推送前再check一次，如果远程有新提交就再rebase
+          git fetch origin master
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/master)" ]; then
+            # 检查是否需要rebase
+            BEHIND=$(git rev-list HEAD..origin/master --count)
+            if [ "$BEHIND" -gt 0 ]; then
+              echo "⚠️ 远程有 $BEHIND 个新提交，同步中..."
+              git pull --rebase origin master
+            fi
+          fi
+          
+          git push origin master
+          echo "✅ 完成"
+          echo ""
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "✅ 报告已成功提交到远程仓库"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      
+      - name: 📤 上传报告（用于后续Job）
+        uses: actions/upload-artifact@v4
+        with:
+          name: analysis-reports
+          path: docs/archive/
+          retention-days: 90
+          if-no-files-found: warn  # 如果没有报告文件，发出警告
 
   # ========================================
-  # Job 4: 构建并部署MkDocs网站
+  # Job 3: 构建并部署MkDocs网站
   # ========================================
   build-and-deploy:
     name: 🚀 构建部署文档网站
     runs-on: ubuntu-latest
-    needs: commit-reports
+    needs: ai-analysis
     if: ${{ !cancelled() }}  # 即使前面步骤失败也尝试部署
     
     steps:
       - name: 📥 检出代码
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}
+          ref: master  # 总是使用master最新代码（包含报告）
+          fetch-depth: 1  # 只需要最新代码
       
       - name: 🐍 设置Python环境
         uses: actions/setup-python@v5
@@ -322,10 +454,10 @@ jobs:
         run: |
           echo "🎉 部署成功！"
           echo "🔗 网站地址: ${{ steps.deployment.outputs.page_url }}"
-          echo "📅 部署时间: $(date '+%Y-%m-%d %H:%M:%S')"
+          echo "📅 部署时间: $(date '+%Y-%m-%d %H:%M:%S %Z') (北京时间)"
 
   # ========================================
-  # Job 5: 发送通知
+  # Job 4: 发送通知
   # ========================================
   notify:
     name: 📬 发送完成通知
@@ -337,10 +469,13 @@ jobs:
       - name: 📊 汇总工作流状态
         id: summary
         run: |
+          # 获取北京时间
+          BEIJING_TIME=$(date '+%Y-%m-%d %H:%M:%S %Z')
+          
           # 生成GitHub摘要
           echo "## 🎯 每日财经报告 - 工作流完成" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**执行时间**: $(date '+%Y-%m-%d %H:%M:%S')" >> $GITHUB_STEP_SUMMARY
+          echo "**执行时间**: $BEIJING_TIME (北京时间)" >> $GITHUB_STEP_SUMMARY
           echo "**触发方式**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 📋 任务状态" >> $GITHUB_STEP_SUMMARY
@@ -379,12 +514,21 @@ jobs:
       - name: 📥 检出代码（用于运行Python脚本）
         if: vars.EMAIL_NOTIFICATION_ENABLED == 'true'
         uses: actions/checkout@v4
+        with:
+          ref: master  # 使用最新代码
+          fetch-depth: 1
       
       - name: 🐍 设置Python环境
         if: vars.EMAIL_NOTIFICATION_ENABLED == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      
+      - name: 📦 安装邮件通知依赖
+        if: vars.EMAIL_NOTIFICATION_ENABLED == 'true'
+        run: |
+          python -m pip install --upgrade pip
+          pip install PyYAML pytz
       
       - name: 📧 发送通知（邮件）
         if: vars.EMAIL_NOTIFICATION_ENABLED == 'true'
@@ -396,13 +540,19 @@ jobs:
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
         run: |
+          # 使用主页地址（北京时间）
+          REPORT_URL="https://qipeijun.github.io/FinancialReport/"
+          
+          echo "📅 当前北京时间: $(date '+%Y-%m-%d %H:%M:%S %Z')"
+          echo "🔗 报告网站: ${REPORT_URL}"
+          
           python3 scripts/send_notification.py \
             --fetch-status ${{ steps.summary.outputs.fetch_status }} \
             --analysis-status ${{ steps.summary.outputs.analysis_status }} \
             --deploy-status ${{ steps.summary.outputs.deploy_status }} \
             --news-count ${{ steps.summary.outputs.news_count }} \
             --trigger ${{ github.event_name }} \
-            --website-url "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/" \
+            --website-url "${REPORT_URL}" \
             --run-url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
             --repository "${{ github.repository }}" \
             --branch "${{ github.ref_name }}" \

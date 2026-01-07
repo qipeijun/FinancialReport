@@ -24,6 +24,7 @@ import os
 import smtplib
 import sys
 import yaml
+import pytz
 from datetime import datetime
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -71,8 +72,12 @@ class NotificationSender:
             config: 配置字典，包含status信息和SMTP配置
         """
         self.config = config
-        self.today = datetime.now().strftime('%Y-%m-%d')
-        self.timestamp = datetime.now().strftime('%Y年%m月%d日 %H:%M:%S')
+        # 使用北京时间
+        import pytz
+        beijing_tz = pytz.timezone('Asia/Shanghai')
+        beijing_time = datetime.now(beijing_tz)
+        self.today = beijing_time.strftime('%Y-%m-%d')
+        self.timestamp = beijing_time.strftime('%Y年%m月%d日 %H:%M:%S')
     
     def get_status_emoji(self, status: str) -> str:
         """获取状态对应的emoji"""
@@ -338,11 +343,15 @@ class NotificationSender:
             
             <div class="buttons">
                 <a href="{website_url}" class="button button-primary">
-                    🌐 查看报告网站
+                    📅 查看分析报告
                 </a>
                 <a href="{run_url}" class="button button-secondary">
                     🔍 查看执行日志
                 </a>
+            </div>
+            
+            <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px; font-size: 14px; color: #666;">
+                <strong>💡 提示：</strong>点击"查看分析报告"可访问财经报告网站，查看最新的分析报告
             </div>
         </div>
         
@@ -382,8 +391,10 @@ class NotificationSender:
 
 【链接】
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  报告网站: {self.config.get('website_url', 'N/A')}
-  执行日志: {self.config.get('run_url', 'N/A')}
+  📅 分析报告: {self.config.get('website_url', 'N/A')}
+  🔍 执行日志: {self.config.get('run_url', 'N/A')}
+  
+💡 提示: 访问报告网站可查看最新的财经分析
 
 {'='*50}
 此邮件由 GitHub Actions 自动发送
@@ -449,7 +460,10 @@ class NotificationSender:
             # QQ邮箱要求From必须和登录用户名一致
             msg['From'] = username if '@' in username else from_email
             msg['To'] = to_email
-            msg['Date'] = datetime.now().strftime('%a, %d %b %Y %H:%M:%S +0800')
+            # 使用北京时间
+            beijing_tz = pytz.timezone('Asia/Shanghai')
+            beijing_time = datetime.now(beijing_tz)
+            msg['Date'] = beijing_time.strftime('%a, %d %b %Y %H:%M:%S +0800')
             
             # 添加纯文本和HTML版本
             msg.attach(MIMEText(text_body, 'plain', 'utf-8'))

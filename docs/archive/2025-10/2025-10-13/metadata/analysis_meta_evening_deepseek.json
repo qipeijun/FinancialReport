@@ -1,0 +1,17 @@
+{
+  "date_range": {
+    "start": "2025-10-13",
+    "end": "2025-10-13"
+  },
+  "articles_used": 103,
+  "chunks": 160,
+  "model_usage": {
+    "model": "deepseek-chat",
+    "prompt_tokens": 98184,
+    "completion_tokens": 2365,
+    "total_tokens": 100549
+  },
+  "quality_check": null,
+  "session": "evening",
+  "session_time": "2025-10-13 20:06:29"
+}
