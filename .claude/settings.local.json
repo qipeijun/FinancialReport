@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(chmod:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(git add data/http_cache.json data/news_data.db docs/archive/2025-11/2025-11-03/collected_data.json docs/archive/2025-11/2025-11-03/metadata/analysis_meta_evening_gemini.json docs/archive/2025-11/2025-11-03/reports/📅 2025-11-03 财经分析报告_evening_gemini.md)",
+      "Bash(git commit -m \"$(cat <<''EOF''\n📊 自动更新数据库 - 新增数据和分析报告\n\n- 更新HTTP缓存元数据\n- 更新新闻数据库\n- 新增财经分析报告 (Gemini)\n- 更新收集的数据文件\n\n🤖 Generated with Claude Code\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push origin master)"
     ],
     "deny": [],
     "ask": []
