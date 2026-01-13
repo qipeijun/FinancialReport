@@ -8,12 +8,34 @@
   "model_usage": {
     "model": "deepseek-chat",
     "provider": "deepseek",
-    "prompt_tokens": 56109,
-    "completion_tokens": 3526,
-    "total_tokens": 59635
+    "prompt_tokens": 56833,
+    "completion_tokens": 4096,
+    "total_tokens": 60929
   },
-  "quality_check": null,
-  "verification_enabled": false,
+  "quality_check": {
+    "score": 40,
+    "passed": false,
+    "accuracy_score": 30,
+    "timeliness_score": 0,
+    "reliability_score": 10,
+    "issues": [
+      "❌ 缺少实时数据注入,报告时效性差"
+    ],
+    "warnings": [
+      "⚠️ 未进行事实核查,准确性无法保证",
+      "⚠️ 引用来源偏少 (74处),建议增加到15处以上"
+    ],
+    "stats": {
+      "has_realtime_data": false,
+      "data_age_hours": null,
+      "citation_count": 74,
+      "verified_claims": 0,
+      "total_claims": 0,
+      "fabrication_detected": false
+    },
+    "timestamp": "2026-01-13T10:49:28.731727"
+  },
+  "verification_enabled": true,
   "session": "morning",
-  "session_time": "2026-01-13 08:07:44"
+  "session_time": "2026-01-13 10:49:28"
 }

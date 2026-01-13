@@ -47,7 +47,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--config', type=str, help='配置文件路径')
     parser.add_argument('--model', type=str, default='deepseek-chat', help='DeepSeek模型名称')
     parser.add_argument('--base-url', type=str, default='https://api.deepseek.com', help='DeepSeek API Base URL')
-    parser.add_argument('--prompt', choices=['safe', 'pro'], default='pro', help='提示词版本')
+    parser.add_argument('--prompt', choices=['safe', 'pro', 'pro_v2'], default='pro_v2', help='提示词版本')
     parser.add_argument('--skip-verification', action='store_true', help='跳过事实验证(测试用)')
     parser.add_argument('--max-retries', type=int, default=3, help='质量不达标时的最大重试次数')
     parser.add_argument('--min-score', type=int, default=80, help='最低质量评分(0-100)')

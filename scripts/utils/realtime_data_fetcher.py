@@ -329,6 +329,63 @@ class RealtimeDataFetcher:
 
         return prompt
 
+    def fetch_all(self) -> Dict:
+        """
+        获取通用的实时市场数据（不依赖具体文章）
+
+        Returns:
+            {
+                'stocks': {...},
+                'gold': GoldData,
+                'forex': {...},
+                'prompt': '格式化的Prompt文本'
+            }
+        """
+        # 获取常见的核心股票
+        common_stock_codes = [
+            'sh000001',  # 上证指数
+            'sz399001',  # 深证成指
+            'sz399006',  # 创业板指
+        ]
+
+        # 获取股票数据
+        stocks = {}
+        try:
+            stocks = self.get_stock_realtime(common_stock_codes)
+            logger.info(f"成功获取 {len(stocks)} 个指数数据")
+        except Exception as e:
+            logger.warning(f"获取股票数据失败: {e}")
+
+        # 获取黄金价格
+        gold = None
+        try:
+            gold = self.get_gold_price()
+            if gold:
+                logger.info(f"获取黄金价格: ${gold.price_usd:.2f}/盎司")
+        except Exception as e:
+            logger.warning(f"获取黄金价格失败: {e}")
+
+        # 获取外汇
+        forex = {}
+        try:
+            usd_cny = self.get_forex_rate("USD/CNY")
+            if usd_cny:
+                forex['USD/CNY'] = usd_cny
+                logger.info(f"获取美元汇率: {usd_cny.rate:.4f}")
+        except Exception as e:
+            logger.warning(f"获取外汇数据失败: {e}")
+
+        # 格式化为Prompt
+        prompt_text = self.format_for_prompt(stocks=stocks, gold=gold, forex=forex)
+
+        return {
+            'stocks': {k: v.to_dict() for k, v in stocks.items()},
+            'gold': gold.to_dict() if gold else None,
+            'forex': {k: v.to_dict() for k, v in forex.items()},
+            'prompt': prompt_text,
+            'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        }
+
     def fetch_all_for_articles(self, articles: List[Dict]) -> Dict:
         """
         为一批文章获取所有相关实时数据
