@@ -3,17 +3,17 @@
     "start": "2026-01-19",
     "end": "2026-01-19"
   },
-  "articles_used": 54,
-  "chunks": 88,
+  "articles_used": 68,
+  "chunks": 105,
   "model_usage": {
     "model": "deepseek-chat",
     "provider": "deepseek",
-    "prompt_tokens": 64089,
-    "completion_tokens": 3386,
-    "total_tokens": 67475
+    "prompt_tokens": 75302,
+    "completion_tokens": 3656,
+    "total_tokens": 78958
   },
   "quality_check": null,
   "verification_enabled": false,
   "session": "evening",
-  "session_time": "2026-01-19 20:36:30"
+  "session_time": "2026-01-19 21:30:01"
 }
