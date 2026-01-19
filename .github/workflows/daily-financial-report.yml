@@ -10,13 +10,12 @@ env:
 
 # 触发条件
 on:
-  # 定时任务：使用腾讯云函数触发，GitHub Actions schedule 已禁用
-  # 优势：腾讯云函数触发更准时，GitHub Actions schedule 经常延迟
-  # schedule:
-  #   - cron: '15 0 * * *'  # 每天 00:15 UTC (08:15 北京时间) - A股开盘前，提前15分钟
-  #   - cron: '15 12 * * *'  # 每天 12:15 UTC (20:15 北京时间) - 美股开盘前，提前15分钟
+  # 定时任务：GitHub Actions 自动触发
+  schedule:
+    - cron: '15 0 * * *'  # 每天 00:15 UTC (08:15 北京时间) - A股开盘前，提前15分钟
+    - cron: '15 12 * * *'  # 每天 12:15 UTC (20:15 北京时间) - 美股开盘前，提前15分钟
 
-  # 手动触发：用于测试或补漏（腾讯云函数通过此接口触发）
+  # 手动触发：用于测试或补漏
   workflow_dispatch:
     inputs:
       skip_fetch:
