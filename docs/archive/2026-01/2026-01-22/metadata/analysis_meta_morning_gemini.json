@@ -1,0 +1,19 @@
+{
+  "date_range": {
+    "start": "2026-01-22",
+    "end": "2026-01-22"
+  },
+  "articles_used": 45,
+  "chunks": 69,
+  "model_usage": {
+    "model": "models/gemini-3-flash-preview",
+    "provider": "gemini",
+    "prompt_tokens": 51592,
+    "candidates_tokens": 2964,
+    "total_tokens": 55849
+  },
+  "quality_check": null,
+  "verification_enabled": false,
+  "session": "morning",
+  "session_time": "2026-01-22 10:40:11"
+}
