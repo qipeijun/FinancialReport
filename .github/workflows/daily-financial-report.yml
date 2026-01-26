@@ -87,14 +87,18 @@ jobs:
       - name: 🔄 抓取RSS新闻
         id: fetch
         run: |
+          # 1. 在任务开始前进行清理（保留30天数据）
+          echo "🧹 [预处理] 执行数据库清理与优化..."
+          python3 scripts/cleanup_db.py --days 30
+
           echo "🚀 开始抓取RSS新闻..."
-          
-          # 运行RSS抓取器
+
+          # 2. 运行RSS抓取器
           python3 scripts/rss_finance_analyzer.py \
             --fetch-content \
             --deduplicate \
             --max-workers 10
-          
+
           # 统计新增数据
           AFTER_COUNT=$(sqlite3 data/news_data.db "SELECT COUNT(*) FROM news_articles;")
           BEFORE_COUNT=${{ steps.check_db.outputs.before_count }}

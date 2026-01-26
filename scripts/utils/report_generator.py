@@ -311,7 +311,8 @@ class ReportGenerator:
         # 构建语料
         pairs, total_len = build_corpus(selected, max_chars, per_chunk_chars=3000, content_field=content_field)
         current_len = sum(len(c) for _, chunks in pairs for c in chunks)
-        print_info(f'语料长度: {current_len:,} 字符（原始 {total_len:,}，限制={max_chars:,}）')
+        usage_pct = (current_len / max_chars * 100) if max_chars and max_chars > 0 else 0
+        print_info(f'语料长度: {current_len:,} 字符（原始 {total_len:,}，限制={max_chars:,}，使用率 {usage_pct:.1f}%）')
         if max_chars and max_chars > 0 and total_len > max_chars:
             print_warning(f'语料已按上限截断：{total_len:,} → {current_len:,}')
 

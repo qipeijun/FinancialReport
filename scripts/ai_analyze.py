@@ -46,6 +46,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--model', type=str, help='指定 Gemini 模型')
     parser.add_argument('--quality-check', action='store_true', default=False, help='启用质量检查')
     parser.add_argument('--max-retries', type=int, default=0, help='质量检查不通过时的最大重试次数')
+    parser.add_argument('--content-field', choices=['summary', 'content', 'auto'], default='summary', help='分析字段选择')
     parser.add_argument('--output-json', type=str, help='导出为 JSON 文件')
     return parser.parse_args()
 
@@ -113,6 +114,7 @@ def main():
             max_chars=args.max_chars,
             quality_check=args.quality_check,
             max_retries=args.max_retries,
+            content_field=args.content_field,
             prompt_version='pro',  # 使用专业版提示词
             output_json=args.output_json,
             preferred_model=args.model
