@@ -1,6 +1,6 @@
 # GitHub Actions Workflow: Daily Financial Report
 # Feature: Fetch RSS News -> AI Analysis -> Build and Deploy Documentation Site
-# Trigger: Twice daily (Beijing Time 08:15, 20:15) + Manual Dispatch
+# Trigger: Once daily (Beijing Time 08:15) + Manual Dispatch
 
 name: Daily Financial Report
 
@@ -13,7 +13,6 @@ on:
   # 定时任务：GitHub Actions 自动触发
   schedule:
     - cron: '15 0 * * *'  # 每天 00:15 UTC (08:15 北京时间) - A股开盘前，提前15分钟
-    - cron: '15 12 * * *'  # 每天 12:15 UTC (20:15 北京时间) - 美股开盘前，提前15分钟
 
   # 手动触发：用于测试或补漏
   workflow_dispatch:
