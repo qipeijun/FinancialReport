@@ -68,7 +68,456 @@ markdown_extensions:
 nav:
 - 首页: index.md
 - 分析报告:
+  - 2026年04月:
+    - '2026-04-21':
+      - AM DeepSeek报告: archive/2026-04/2026-04-21/reports/📅 2026-04-21 财经分析报告_morning_deepseek.md
+    - '2026-04-20':
+      - PM DeepSeek报告: archive/2026-04/2026-04-20/reports/📅 2026-04-20 财经分析报告_afternoon_deepseek.md
+    - '2026-04-15':
+      - PM DeepSeek报告: archive/2026-04/2026-04-15/reports/📅 2026-04-15 财经分析报告_afternoon_deepseek.md
+    - '2026-04-08':
+      - AM DeepSeek报告: archive/2026-04/2026-04-08/reports/📅 2026-04-08 财经分析报告_morning_deepseek.md
+  - 2026年03月:
+    - '2026-03-24':
+      - AM DeepSeek报告: archive/2026-03/2026-03-24/reports/📅 2026-03-24 财经分析报告_morning_deepseek.md
+    - '2026-03-19':
+      - AM DeepSeek报告: archive/2026-03/2026-03-19/reports/📅 2026-03-19 财经分析报告_morning_deepseek.md
+    - '2026-03-18':
+      - AM DeepSeek报告: archive/2026-03/2026-03-18/reports/📅 2026-03-18 财经分析报告_morning_deepseek.md
+    - '2026-03-17':
+      - AM DeepSeek报告: archive/2026-03/2026-03-17/reports/📅 2026-03-17 财经分析报告_morning_deepseek.md
+    - '2026-03-12':
+      - AM DeepSeek报告: archive/2026-03/2026-03-12/reports/📅 2026-03-12 财经分析报告_morning_deepseek.md
+    - '2026-03-11':
+      - AM DeepSeek报告: archive/2026-03/2026-03-11/reports/📅 2026-03-11 财经分析报告_morning_deepseek.md
+    - '2026-03-02':
+      - PM DeepSeek报告: archive/2026-03/2026-03-02/reports/📅 2026-03-02 财经分析报告_afternoon_deepseek.md
+  - 2026年02月:
+    - '2026-02-25':
+      - AM DeepSeek报告: archive/2026-02/2026-02-25/reports/📅 2026-02-25 财经分析报告_morning_deepseek.md
+    - '2026-02-24':
+      - AM DeepSeek报告: archive/2026-02/2026-02-24/reports/📅 2026-02-24 财经分析报告_morning_deepseek.md
+    - '2026-02-23':
+      - AM Gemini报告: archive/2026-02/2026-02-23/reports/📅 2026-02-23 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-23/reports/📅 2026-02-23 财经分析报告_morning_deepseek.md
+    - '2026-02-22':
+      - AM Gemini报告: archive/2026-02/2026-02-22/reports/📅 2026-02-22 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-22/reports/📅 2026-02-22 财经分析报告_morning_deepseek.md
+    - '2026-02-21':
+      - AM Gemini报告: archive/2026-02/2026-02-21/reports/📅 2026-02-21 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-21/reports/📅 2026-02-21 财经分析报告_morning_deepseek.md
+    - '2026-02-20':
+      - AM Gemini报告: archive/2026-02/2026-02-20/reports/📅 2026-02-20 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-20/reports/📅 2026-02-20 财经分析报告_morning_deepseek.md
+    - '2026-02-19':
+      - AM Gemini报告: archive/2026-02/2026-02-19/reports/📅 2026-02-19 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-19/reports/📅 2026-02-19 财经分析报告_morning_deepseek.md
+    - '2026-02-18':
+      - AM Gemini报告: archive/2026-02/2026-02-18/reports/📅 2026-02-18 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-18/reports/📅 2026-02-18 财经分析报告_morning_deepseek.md
+    - '2026-02-17':
+      - AM Gemini报告: archive/2026-02/2026-02-17/reports/📅 2026-02-17 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-17/reports/📅 2026-02-17 财经分析报告_morning_deepseek.md
+    - '2026-02-16':
+      - AM Gemini报告: archive/2026-02/2026-02-16/reports/📅 2026-02-16 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-16/reports/📅 2026-02-16 财经分析报告_morning_deepseek.md
+    - '2026-02-15':
+      - AM Gemini报告: archive/2026-02/2026-02-15/reports/📅 2026-02-15 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-15/reports/📅 2026-02-15 财经分析报告_morning_deepseek.md
+    - '2026-02-14':
+      - AM Gemini报告: archive/2026-02/2026-02-14/reports/📅 2026-02-14 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-14/reports/📅 2026-02-14 财经分析报告_morning_deepseek.md
+    - '2026-02-13':
+      - AM Gemini报告: archive/2026-02/2026-02-13/reports/📅 2026-02-13 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-13/reports/📅 2026-02-13 财经分析报告_morning_deepseek.md
+    - '2026-02-12':
+      - AM Gemini报告: archive/2026-02/2026-02-12/reports/📅 2026-02-12 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-12/reports/📅 2026-02-12 财经分析报告_morning_deepseek.md
+    - '2026-02-11':
+      - AM Gemini报告: archive/2026-02/2026-02-11/reports/📅 2026-02-11 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-11/reports/📅 2026-02-11 财经分析报告_morning_deepseek.md
+    - '2026-02-10':
+      - AM Gemini报告: archive/2026-02/2026-02-10/reports/📅 2026-02-10 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-10/reports/📅 2026-02-10 财经分析报告_morning_deepseek.md
+    - '2026-02-09':
+      - AM Gemini报告: archive/2026-02/2026-02-09/reports/📅 2026-02-09 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-09/reports/📅 2026-02-09 财经分析报告_morning_deepseek.md
+    - '2026-02-08':
+      - AM Gemini报告: archive/2026-02/2026-02-08/reports/📅 2026-02-08 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-08/reports/📅 2026-02-08 财经分析报告_morning_deepseek.md
+    - '2026-02-07':
+      - AM Gemini报告: archive/2026-02/2026-02-07/reports/📅 2026-02-07 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-07/reports/📅 2026-02-07 财经分析报告_morning_deepseek.md
+    - '2026-02-06':
+      - AM Gemini报告: archive/2026-02/2026-02-06/reports/📅 2026-02-06 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-06/reports/📅 2026-02-06 财经分析报告_morning_deepseek.md
+    - '2026-02-05':
+      - AM Gemini报告: archive/2026-02/2026-02-05/reports/📅 2026-02-05 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-05/reports/📅 2026-02-05 财经分析报告_morning_deepseek.md
+    - '2026-02-04':
+      - AM Gemini报告: archive/2026-02/2026-02-04/reports/📅 2026-02-04 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-04/reports/📅 2026-02-04 财经分析报告_morning_deepseek.md
+    - '2026-02-03':
+      - AM Gemini报告: archive/2026-02/2026-02-03/reports/📅 2026-02-03 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-03/reports/📅 2026-02-03 财经分析报告_morning_deepseek.md
+    - '2026-02-02':
+      - AM Gemini报告: archive/2026-02/2026-02-02/reports/📅 2026-02-02 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-02/reports/📅 2026-02-02 财经分析报告_morning_deepseek.md
+    - '2026-02-01':
+      - AM Gemini报告: archive/2026-02/2026-02-01/reports/📅 2026-02-01 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-02/2026-02-01/reports/📅 2026-02-01 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2026-02/2026-02-01/reports/📅 2026-02-01 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2026-02/2026-02-01/reports/📅 2026-02-01 财经分析报告_evening_deepseek.md
+  - 2026年01月:
+    - '2026-01-29':
+      - PM DeepSeek报告: archive/2026-01/2026-01-29/reports/📅 2026-01-29 财经分析报告_afternoon_deepseek.md
+    - '2026-01-28':
+      - AM DeepSeek报告: archive/2026-01/2026-01-28/reports/📅 2026-01-28 财经分析报告_morning_deepseek.md
+    - '2026-01-27':
+      - AM DeepSeek报告: archive/2026-01/2026-01-27/reports/📅 2026-01-27 财经分析报告_morning_deepseek.md
+    - '2026-01-26':
+      - PM DeepSeek报告: archive/2026-01/2026-01-26/reports/📅 2026-01-26 财经分析报告_evening_deepseek.md
+    - '2026-01-22':
+      - AM Gemini报告: archive/2026-01/2026-01-22/reports/📅 2026-01-22 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-01/2026-01-22/reports/📅 2026-01-22 财经分析报告_morning_deepseek.md
+    - '2026-01-21':
+      - AM Gemini报告: archive/2026-01/2026-01-21/reports/📅 2026-01-21 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-01/2026-01-21/reports/📅 2026-01-21 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2026-01/2026-01-21/reports/📅 2026-01-21 财经分析报告_evening_deepseek.md
+    - '2026-01-20':
+      - AM Gemini报告: archive/2026-01/2026-01-20/reports/📅 2026-01-20 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-01/2026-01-20/reports/📅 2026-01-20 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2026-01/2026-01-20/reports/📅 2026-01-20 财经分析报告_evening_deepseek.md
+    - '2026-01-19':
+      - PM Gemini报告: archive/2026-01/2026-01-19/reports/📅 2026-01-19 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2026-01/2026-01-19/reports/📅 2026-01-19 财经分析报告_evening_deepseek.md
+    - '2026-01-15':
+      - AM Gemini报告: archive/2026-01/2026-01-15/reports/📅 2026-01-15 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-01/2026-01-15/reports/📅 2026-01-15 财经分析报告_morning_deepseek.md
+    - '2026-01-14':
+      - AM Gemini报告: archive/2026-01/2026-01-14/reports/📅 2026-01-14 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-01/2026-01-14/reports/📅 2026-01-14 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2026-01/2026-01-14/reports/📅 2026-01-14 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2026-01/2026-01-14/reports/📅 2026-01-14 财经分析报告_evening_deepseek.md
+    - '2026-01-13':
+      - AM Gemini报告: archive/2026-01/2026-01-13/reports/📅 2026-01-13 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-01/2026-01-13/reports/📅 2026-01-13 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2026-01/2026-01-13/reports/📅 2026-01-13 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2026-01/2026-01-13/reports/📅 2026-01-13 财经分析报告_evening_deepseek.md
+    - '2026-01-12':
+      - PM Gemini报告: archive/2026-01/2026-01-12/reports/📅 2026-01-12 财经分析报告_afternoon_gemini.md
+      - PM DeepSeek报告: archive/2026-01/2026-01-12/reports/📅 2026-01-12 财经分析报告_afternoon_deepseek.md
+      - PM Gemini报告: archive/2026-01/2026-01-12/reports/📅 2026-01-12 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2026-01/2026-01-12/reports/📅 2026-01-12 财经分析报告_evening_deepseek.md
+    - '2026-01-06':
+      - AM Gemini报告: archive/2026-01/2026-01-06/reports/📅 2026-01-06 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-01/2026-01-06/reports/📅 2026-01-06 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2026-01/2026-01-06/reports/📅 2026-01-06 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2026-01/2026-01-06/reports/📅 2026-01-06 财经分析报告_evening_deepseek.md
+    - '2026-01-05':
+      - AM Gemini报告: archive/2026-01/2026-01-05/reports/📅 2026-01-05 财经分析报告_morning_gemini.md
+      - PM Gemini报告: archive/2026-01/2026-01-05/reports/📅 2026-01-05 财经分析报告_evening_gemini.md
+    - '2026-01-04':
+      - AM Gemini报告: archive/2026-01/2026-01-04/reports/📅 2026-01-04 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-01/2026-01-04/reports/📅 2026-01-04 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2026-01/2026-01-04/reports/📅 2026-01-04 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2026-01/2026-01-04/reports/📅 2026-01-04 财经分析报告_evening_deepseek.md
+    - '2026-01-03':
+      - AM Gemini报告: archive/2026-01/2026-01-03/reports/📅 2026-01-03 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-01/2026-01-03/reports/📅 2026-01-03 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2026-01/2026-01-03/reports/📅 2026-01-03 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2026-01/2026-01-03/reports/📅 2026-01-03 财经分析报告_evening_deepseek.md
+    - '2026-01-02':
+      - AM Gemini报告: archive/2026-01/2026-01-02/reports/📅 2026-01-02 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-01/2026-01-02/reports/📅 2026-01-02 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2026-01/2026-01-02/reports/📅 2026-01-02 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2026-01/2026-01-02/reports/📅 2026-01-02 财经分析报告_evening_deepseek.md
+    - '2026-01-01':
+      - AM Gemini报告: archive/2026-01/2026-01-01/reports/📅 2026-01-01 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2026-01/2026-01-01/reports/📅 2026-01-01 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2026-01/2026-01-01/reports/📅 2026-01-01 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2026-01/2026-01-01/reports/📅 2026-01-01 财经分析报告_evening_deepseek.md
+  - 2025年12月:
+    - '2025-12-31':
+      - AM Gemini报告: archive/2025-12/2025-12-31/reports/📅 2025-12-31 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-12/2025-12-31/reports/📅 2025-12-31 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-12/2025-12-31/reports/📅 2025-12-31 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-31/reports/📅 2025-12-31 财经分析报告_evening_deepseek.md
+    - '2025-12-30':
+      - AM Gemini报告: archive/2025-12/2025-12-30/reports/📅 2025-12-30 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-12/2025-12-30/reports/📅 2025-12-30 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-12/2025-12-30/reports/📅 2025-12-30 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-30/reports/📅 2025-12-30 财经分析报告_evening_deepseek.md
+    - '2025-12-29':
+      - AM Gemini报告: archive/2025-12/2025-12-29/reports/📅 2025-12-29 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-12/2025-12-29/reports/📅 2025-12-29 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-12/2025-12-29/reports/📅 2025-12-29 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-29/reports/📅 2025-12-29 财经分析报告_evening_deepseek.md
+    - '2025-12-28':
+      - AM Gemini报告: archive/2025-12/2025-12-28/reports/📅 2025-12-28 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-12/2025-12-28/reports/📅 2025-12-28 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-12/2025-12-28/reports/📅 2025-12-28 财经分析报告_evening_gemini.md
+    - '2025-12-27':
+      - AM Gemini报告: archive/2025-12/2025-12-27/reports/📅 2025-12-27 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-12/2025-12-27/reports/📅 2025-12-27 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-12/2025-12-27/reports/📅 2025-12-27 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-27/reports/📅 2025-12-27 财经分析报告_evening_deepseek.md
+    - '2025-12-26':
+      - AM Gemini报告: archive/2025-12/2025-12-26/reports/📅 2025-12-26 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-12/2025-12-26/reports/📅 2025-12-26 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-12/2025-12-26/reports/📅 2025-12-26 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-26/reports/📅 2025-12-26 财经分析报告_evening_deepseek.md
+    - '2025-12-25':
+      - AM Gemini报告: archive/2025-12/2025-12-25/reports/📅 2025-12-25 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-12/2025-12-25/reports/📅 2025-12-25 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-12/2025-12-25/reports/📅 2025-12-25 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-25/reports/📅 2025-12-25 财经分析报告_evening_deepseek.md
+    - '2025-12-24':
+      - AM DeepSeek报告: archive/2025-12/2025-12-24/reports/📅 2025-12-24 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-24/reports/📅 2025-12-24 财经分析报告_evening_deepseek.md
+    - '2025-12-23':
+      - AM DeepSeek报告: archive/2025-12/2025-12-23/reports/📅 2025-12-23 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-23/reports/📅 2025-12-23 财经分析报告_evening_deepseek.md
+    - '2025-12-22':
+      - AM DeepSeek报告: archive/2025-12/2025-12-22/reports/📅 2025-12-22 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-22/reports/📅 2025-12-22 财经分析报告_evening_deepseek.md
+    - '2025-12-21':
+      - AM DeepSeek报告: archive/2025-12/2025-12-21/reports/📅 2025-12-21 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-21/reports/📅 2025-12-21 财经分析报告_evening_deepseek.md
+    - '2025-12-20':
+      - AM DeepSeek报告: archive/2025-12/2025-12-20/reports/📅 2025-12-20 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-20/reports/📅 2025-12-20 财经分析报告_evening_deepseek.md
+    - '2025-12-19':
+      - AM DeepSeek报告: archive/2025-12/2025-12-19/reports/📅 2025-12-19 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-19/reports/📅 2025-12-19 财经分析报告_evening_deepseek.md
+    - '2025-12-18':
+      - AM DeepSeek报告: archive/2025-12/2025-12-18/reports/📅 2025-12-18 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-18/reports/📅 2025-12-18 财经分析报告_evening_deepseek.md
+    - '2025-12-17':
+      - AM DeepSeek报告: archive/2025-12/2025-12-17/reports/📅 2025-12-17 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-17/reports/📅 2025-12-17 财经分析报告_evening_deepseek.md
+    - '2025-12-16':
+      - AM DeepSeek报告: archive/2025-12/2025-12-16/reports/📅 2025-12-16 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-16/reports/📅 2025-12-16 财经分析报告_evening_deepseek.md
+    - '2025-12-15':
+      - AM DeepSeek报告: archive/2025-12/2025-12-15/reports/📅 2025-12-15 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-15/reports/📅 2025-12-15 财经分析报告_evening_deepseek.md
+    - '2025-12-14':
+      - AM DeepSeek报告: archive/2025-12/2025-12-14/reports/📅 2025-12-14 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-14/reports/📅 2025-12-14 财经分析报告_evening_deepseek.md
+    - '2025-12-13':
+      - AM DeepSeek报告: archive/2025-12/2025-12-13/reports/📅 2025-12-13 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-13/reports/📅 2025-12-13 财经分析报告_evening_deepseek.md
+    - '2025-12-12':
+      - AM DeepSeek报告: archive/2025-12/2025-12-12/reports/📅 2025-12-12 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-12/reports/📅 2025-12-12 财经分析报告_evening_deepseek.md
+    - '2025-12-11':
+      - AM DeepSeek报告: archive/2025-12/2025-12-11/reports/📅 2025-12-11 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-11/reports/📅 2025-12-11 财经分析报告_evening_deepseek.md
+    - '2025-12-10':
+      - AM DeepSeek报告: archive/2025-12/2025-12-10/reports/📅 2025-12-10 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-10/reports/📅 2025-12-10 财经分析报告_evening_deepseek.md
+    - '2025-12-09':
+      - AM DeepSeek报告: archive/2025-12/2025-12-09/reports/📅 2025-12-09 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-09/reports/📅 2025-12-09 财经分析报告_evening_deepseek.md
+    - '2025-12-08':
+      - AM DeepSeek报告: archive/2025-12/2025-12-08/reports/📅 2025-12-08 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-08/reports/📅 2025-12-08 财经分析报告_evening_deepseek.md
+    - '2025-12-07':
+      - AM DeepSeek报告: archive/2025-12/2025-12-07/reports/📅 2025-12-07 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-07/reports/📅 2025-12-07 财经分析报告_evening_deepseek.md
+    - '2025-12-06':
+      - AM DeepSeek报告: archive/2025-12/2025-12-06/reports/📅 2025-12-06 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-06/reports/📅 2025-12-06 财经分析报告_evening_deepseek.md
+    - '2025-12-05':
+      - AM DeepSeek报告: archive/2025-12/2025-12-05/reports/📅 2025-12-05 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-05/reports/📅 2025-12-05 财经分析报告_evening_deepseek.md
+    - '2025-12-04':
+      - PM DeepSeek报告: archive/2025-12/2025-12-04/reports/📅 2025-12-04 财经分析报告_evening_deepseek.md
+    - '2025-12-03':
+      - AM DeepSeek报告: archive/2025-12/2025-12-03/reports/📅 2025-12-03 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-03/reports/📅 2025-12-03 财经分析报告_evening_deepseek.md
+    - '2025-12-02':
+      - AM DeepSeek报告: archive/2025-12/2025-12-02/reports/📅 2025-12-02 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-02/reports/📅 2025-12-02 财经分析报告_evening_deepseek.md
+    - '2025-12-01':
+      - AM DeepSeek报告: archive/2025-12/2025-12-01/reports/📅 2025-12-01 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-12/2025-12-01/reports/📅 2025-12-01 财经分析报告_evening_deepseek.md
+  - 2025年11月:
+    - '2025-11-30':
+      - AM DeepSeek报告: archive/2025-11/2025-11-30/reports/📅 2025-11-30 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-30/reports/📅 2025-11-30 财经分析报告_evening_deepseek.md
+    - '2025-11-29':
+      - AM DeepSeek报告: archive/2025-11/2025-11-29/reports/📅 2025-11-29 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-29/reports/📅 2025-11-29 财经分析报告_evening_deepseek.md
+    - '2025-11-28':
+      - AM DeepSeek报告: archive/2025-11/2025-11-28/reports/📅 2025-11-28 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-28/reports/📅 2025-11-28 财经分析报告_evening_deepseek.md
+    - '2025-11-27':
+      - AM DeepSeek报告: archive/2025-11/2025-11-27/reports/📅 2025-11-27 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-27/reports/📅 2025-11-27 财经分析报告_evening_deepseek.md
+    - '2025-11-26':
+      - AM DeepSeek报告: archive/2025-11/2025-11-26/reports/📅 2025-11-26 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-26/reports/📅 2025-11-26 财经分析报告_evening_deepseek.md
+    - '2025-11-25':
+      - AM DeepSeek报告: archive/2025-11/2025-11-25/reports/📅 2025-11-25 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-25/reports/📅 2025-11-25 财经分析报告_evening_deepseek.md
+    - '2025-11-24':
+      - AM DeepSeek报告: archive/2025-11/2025-11-24/reports/📅 2025-11-24 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-24/reports/📅 2025-11-24 财经分析报告_evening_deepseek.md
+    - '2025-11-23':
+      - AM DeepSeek报告: archive/2025-11/2025-11-23/reports/📅 2025-11-23 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-23/reports/📅 2025-11-23 财经分析报告_evening_deepseek.md
+    - '2025-11-22':
+      - AM DeepSeek报告: archive/2025-11/2025-11-22/reports/📅 2025-11-22 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-22/reports/📅 2025-11-22 财经分析报告_evening_deepseek.md
+    - '2025-11-21':
+      - AM DeepSeek报告: archive/2025-11/2025-11-21/reports/📅 2025-11-21 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-21/reports/📅 2025-11-21 财经分析报告_evening_deepseek.md
+    - '2025-11-20':
+      - AM DeepSeek报告: archive/2025-11/2025-11-20/reports/📅 2025-11-20 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-20/reports/📅 2025-11-20 财经分析报告_evening_deepseek.md
+    - '2025-11-19':
+      - AM DeepSeek报告: archive/2025-11/2025-11-19/reports/📅 2025-11-19 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-19/reports/📅 2025-11-19 财经分析报告_evening_deepseek.md
+    - '2025-11-18':
+      - AM DeepSeek报告: archive/2025-11/2025-11-18/reports/📅 2025-11-18 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-18/reports/📅 2025-11-18 财经分析报告_evening_deepseek.md
+    - '2025-11-17':
+      - AM DeepSeek报告: archive/2025-11/2025-11-17/reports/📅 2025-11-17 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-17/reports/📅 2025-11-17 财经分析报告_evening_deepseek.md
+    - '2025-11-16':
+      - AM DeepSeek报告: archive/2025-11/2025-11-16/reports/📅 2025-11-16 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-16/reports/📅 2025-11-16 财经分析报告_evening_deepseek.md
+    - '2025-11-14':
+      - AM DeepSeek报告: archive/2025-11/2025-11-14/reports/📅 2025-11-14 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-14/reports/📅 2025-11-14 财经分析报告_evening_deepseek.md
+    - '2025-11-13':
+      - AM DeepSeek报告: archive/2025-11/2025-11-13/reports/📅 2025-11-13 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-13/reports/📅 2025-11-13 财经分析报告_evening_deepseek.md
+    - '2025-11-12':
+      - AM DeepSeek报告: archive/2025-11/2025-11-12/reports/📅 2025-11-12 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-12/reports/📅 2025-11-12 财经分析报告_evening_deepseek.md
+    - '2025-11-11':
+      - AM DeepSeek报告: archive/2025-11/2025-11-11/reports/📅 2025-11-11 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-11/reports/📅 2025-11-11 财经分析报告_evening_deepseek.md
+    - '2025-11-10':
+      - AM DeepSeek报告: archive/2025-11/2025-11-10/reports/📅 2025-11-10 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-10/reports/📅 2025-11-10 财经分析报告_evening_deepseek.md
+    - '2025-11-09':
+      - AM DeepSeek报告: archive/2025-11/2025-11-09/reports/📅 2025-11-09 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-09/reports/📅 2025-11-09 财经分析报告_evening_deepseek.md
+    - '2025-11-08':
+      - AM DeepSeek报告: archive/2025-11/2025-11-08/reports/📅 2025-11-08 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-08/reports/📅 2025-11-08 财经分析报告_evening_deepseek.md
+    - '2025-11-07':
+      - AM DeepSeek报告: archive/2025-11/2025-11-07/reports/📅 2025-11-07 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-07/reports/📅 2025-11-07 财经分析报告_evening_deepseek.md
+    - '2025-11-06':
+      - AM DeepSeek报告: archive/2025-11/2025-11-06/reports/📅 2025-11-06 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-06/reports/📅 2025-11-06 财经分析报告_evening_deepseek.md
+    - '2025-11-05':
+      - AM DeepSeek报告: archive/2025-11/2025-11-05/reports/📅 2025-11-05 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-05/reports/📅 2025-11-05 财经分析报告_evening_deepseek.md
+    - '2025-11-04':
+      - AM DeepSeek报告: archive/2025-11/2025-11-04/reports/📅 2025-11-04 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-04/reports/📅 2025-11-04 财经分析报告_evening_deepseek.md
+    - '2025-11-03':
+      - AM Gemini报告: archive/2025-11/2025-11-03/reports/📅 2025-11-03 财经分析报告_morning_gemini.md
+      - PM Gemini报告: archive/2025-11/2025-11-03/reports/📅 2025-11-03 财经分析报告_evening_gemini.md
+    - '2025-11-02':
+      - AM DeepSeek报告: archive/2025-11/2025-11-02/reports/📅 2025-11-02 财经分析报告_morning_deepseek.md
+    - '2025-11-01':
+      - AM DeepSeek报告: archive/2025-11/2025-11-01/reports/📅 2025-11-01 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-11/2025-11-01/reports/📅 2025-11-01 财经分析报告_evening_deepseek.md
   - 2025年10月:
+    - '2025-10-31':
+      - AM DeepSeek报告: archive/2025-10/2025-10-31/reports/📅 2025-10-31 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-31/reports/📅 2025-10-31 财经分析报告_evening_deepseek.md
+    - '2025-10-30':
+      - AM DeepSeek报告: archive/2025-10/2025-10-30/reports/📅 2025-10-30 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-30/reports/📅 2025-10-30 财经分析报告_evening_deepseek.md
+    - '2025-10-29':
+      - AM DeepSeek报告: archive/2025-10/2025-10-29/reports/📅 2025-10-29 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-29/reports/📅 2025-10-29 财经分析报告_evening_deepseek.md
+    - '2025-10-28':
+      - AM Gemini报告: archive/2025-10/2025-10-28/reports/📅 2025-10-28 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-10/2025-10-28/reports/📅 2025-10-28 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-10/2025-10-28/reports/📅 2025-10-28 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-28/reports/📅 2025-10-28 财经分析报告_evening_deepseek.md
+    - '2025-10-27':
+      - AM Gemini报告: archive/2025-10/2025-10-27/reports/📅 2025-10-27 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-10/2025-10-27/reports/📅 2025-10-27 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-10/2025-10-27/reports/📅 2025-10-27 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-27/reports/📅 2025-10-27 财经分析报告_evening_deepseek.md
+    - '2025-10-26':
+      - AM Gemini报告: archive/2025-10/2025-10-26/reports/📅 2025-10-26 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-10/2025-10-26/reports/📅 2025-10-26 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-10/2025-10-26/reports/📅 2025-10-26 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-26/reports/📅 2025-10-26 财经分析报告_evening_deepseek.md
+    - '2025-10-25':
+      - AM Gemini报告: archive/2025-10/2025-10-25/reports/📅 2025-10-25 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-10/2025-10-25/reports/📅 2025-10-25 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-10/2025-10-25/reports/📅 2025-10-25 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-25/reports/📅 2025-10-25 财经分析报告_evening_deepseek.md
+    - '2025-10-24':
+      - AM DeepSeek报告: archive/2025-10/2025-10-24/reports/📅 2025-10-24 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-24/reports/📅 2025-10-24 财经分析报告_evening_deepseek.md
+    - '2025-10-23':
+      - AM DeepSeek报告: archive/2025-10/2025-10-23/reports/📅 2025-10-23 财经分析报告_morning_deepseek.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-23/reports/📅 2025-10-23 财经分析报告_evening_deepseek.md
+    - '2025-10-22':
+      - AM Gemini报告: archive/2025-10/2025-10-22/reports/📅 2025-10-22 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-10/2025-10-22/reports/📅 2025-10-22 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-10/2025-10-22/reports/📅 2025-10-22 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-22/reports/📅 2025-10-22 财经分析报告_evening_deepseek.md
+    - '2025-10-21':
+      - AM Gemini报告: archive/2025-10/2025-10-21/reports/📅 2025-10-21 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-10/2025-10-21/reports/📅 2025-10-21 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-10/2025-10-21/reports/📅 2025-10-21 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-21/reports/📅 2025-10-21 财经分析报告_evening_deepseek.md
+    - '2025-10-20':
+      - AM Gemini报告: archive/2025-10/2025-10-20/reports/📅 2025-10-20 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-10/2025-10-20/reports/📅 2025-10-20 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-10/2025-10-20/reports/📅 2025-10-20 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-20/reports/📅 2025-10-20 财经分析报告_evening_deepseek.md
+    - '2025-10-19':
+      - AM Gemini报告: archive/2025-10/2025-10-19/reports/📅 2025-10-19 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-10/2025-10-19/reports/📅 2025-10-19 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-10/2025-10-19/reports/📅 2025-10-19 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-19/reports/📅 2025-10-19 财经分析报告_evening_deepseek.md
+    - '2025-10-18':
+      - AM Gemini报告: archive/2025-10/2025-10-18/reports/📅 2025-10-18 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-10/2025-10-18/reports/📅 2025-10-18 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-10/2025-10-18/reports/📅 2025-10-18 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-18/reports/📅 2025-10-18 财经分析报告_evening_deepseek.md
+    - '2025-10-17':
+      - AM Gemini报告: archive/2025-10/2025-10-17/reports/📅 2025-10-17 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-10/2025-10-17/reports/📅 2025-10-17 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-10/2025-10-17/reports/📅 2025-10-17 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-17/reports/📅 2025-10-17 财经分析报告_evening_deepseek.md
+    - '2025-10-16':
+      - AM Gemini报告: archive/2025-10/2025-10-16/reports/📅 2025-10-16 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-10/2025-10-16/reports/📅 2025-10-16 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-10/2025-10-16/reports/📅 2025-10-16 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-16/reports/📅 2025-10-16 财经分析报告_evening_deepseek.md
+    - '2025-10-15':
+      - AM Gemini报告: archive/2025-10/2025-10-15/reports/📅 2025-10-15 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-10/2025-10-15/reports/📅 2025-10-15 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-10/2025-10-15/reports/📅 2025-10-15 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-15/reports/📅 2025-10-15 财经分析报告_evening_deepseek.md
+    - '2025-10-14':
+      - AM Gemini报告: archive/2025-10/2025-10-14/reports/📅 2025-10-14 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-10/2025-10-14/reports/📅 2025-10-14 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-10/2025-10-14/reports/📅 2025-10-14 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-14/reports/📅 2025-10-14 财经分析报告_evening_deepseek.md
+    - '2025-10-13':
+      - AM Gemini报告: archive/2025-10/2025-10-13/reports/📅 2025-10-13 财经分析报告_morning_gemini.md
+      - AM DeepSeek报告: archive/2025-10/2025-10-13/reports/📅 2025-10-13 财经分析报告_morning_deepseek.md
+      - PM Gemini报告: archive/2025-10/2025-10-13/reports/📅 2025-10-13 财经分析报告_afternoon_gemini.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-13/reports/📅 2025-10-13 财经分析报告_afternoon_deepseek.md
+      - PM Gemini报告: archive/2025-10/2025-10-13/reports/📅 2025-10-13 财经分析报告_evening_gemini.md
+      - PM DeepSeek报告: archive/2025-10/2025-10-13/reports/📅 2025-10-13 财经分析报告_evening_deepseek.md
     - '2025-10-12':
       - PM Gemini报告: archive/2025-10/2025-10-12/reports/📅 2025-10-12 财经分析报告_evening_gemini.md
       - PM DeepSeek报告: archive/2025-10/2025-10-12/reports/📅 2025-10-12 财经分析报告_evening_deepseek.md
