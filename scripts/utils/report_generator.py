@@ -55,6 +55,13 @@ from scripts.utils.investment_signal import (
     extract_json_payload,
     render_judgment_markdown,
 )
+from scripts.utils.stock_recommendation import (
+    SecurityMasterProvider,
+    PriceHistoryProvider,
+    ValuationProvider,
+    RecommendationScorer,
+    render_stock_recommendation_markdown,
+)
 from scripts.utils.print_utils import (
     print_header, print_success, print_warning, print_error,
     print_info, print_progress, print_statistics
@@ -98,6 +105,10 @@ class ReportGenerator:
         if enable_verification and not VERIFICATION_AVAILABLE:
             print_warning('验证系统模块未找到，已禁用验证功能')
             self.enable_verification = False
+
+        self.security_master_provider = SecurityMasterProvider()
+        self.price_history_provider = PriceHistoryProvider()
+        self.valuation_provider = ValuationProvider(self.security_master_provider)
 
     def load_prompt(self, prompt_version: str = 'pro_v2') -> str:
         """
@@ -529,6 +540,10 @@ class ReportGenerator:
                 **provider_kwargs,
             )
 
+        enable_stock_scoring = bool(provider_kwargs.pop('enable_stock_scoring', True))
+        max_stock_picks = int(provider_kwargs.pop('max_stock_picks', 10))
+        stock_market = provider_kwargs.pop('stock_market', 'CN')
+
         # 构建语料
         pairs, total_len = build_corpus(selected, max_chars, per_chunk_chars=3000, content_field=content_field)
         current_len = sum(len(c) for _, chunks in pairs for c in chunks)
@@ -576,6 +591,38 @@ class ReportGenerator:
             summary_md += "\n\n" + verification_report
             print_success(f'✓ 事实核查完成: {len(verified_claims)} 个断言')
 
+        stock_payload = {
+            'recommendations': [],
+            'score_distribution': {'strong_focus': 0, 'focus': 0, 'watch': 0, 'avoid': 0},
+            'scoring_config': {
+                'market': stock_market,
+                'style': 'balanced',
+                'lookback_days': 60,
+            },
+        }
+        if enable_stock_scoring and stock_market == 'CN':
+            print_progress('生成 A 股结构化推荐评分...')
+            judgment_candidates = build_judgment_candidates(selected, max_candidates=8)
+            candidate_stocks = self.security_master_provider.build_candidates(
+                articles=selected,
+                judgment_candidates=judgment_candidates,
+                max_candidates=max_stock_picks,
+            )
+            scorer = RecommendationScorer(
+                security_master=self.security_master_provider,
+                price_history_provider=self.price_history_provider,
+                valuation_provider=self.valuation_provider,
+                lookback_days=60,
+                style='balanced',
+            )
+            stock_payload = scorer.score_candidates(candidate_stocks)
+            stock_section = render_stock_recommendation_markdown(
+                stock_payload['recommendations'],
+                scoring_config=stock_payload['scoring_config'],
+            )
+            summary_md = f"{summary_md.rstrip()}\n\n{stock_section}\n"
+            print_success(f"✓ 已生成 {len(stock_payload['recommendations'])} 条股票评分结果")
+
         # 保存报告
         meta = {
             'date_range': {'start': start_date, 'end': end_date},
@@ -585,11 +632,17 @@ class ReportGenerator:
             'quality_check': quality_result if quality_result else None,
             'verification_enabled': self.enable_verification,
             'output_mode': 'markdown-report',
+            'stock_recommendations': stock_payload['recommendations'],
+            'score_distribution': stock_payload['score_distribution'],
+            'scoring_config': stock_payload['scoring_config'],
         }
         export_payload = {
             'summary_markdown': summary_md,
             'articles': rows,
             'metadata': meta,
+            'stock_recommendations': stock_payload['recommendations'],
+            'score_distribution': stock_payload['score_distribution'],
+            'scoring_config': stock_payload['scoring_config'],
         }
         saved_path = self._save_result(
             end_date,

@@ -8,7 +8,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 
-from scripts.run_acceptance import analyze_report_quality
+from scripts.run_acceptance import analyze_report_quality, validate_stock_recommendations_payload
 from scripts.utils.realtime_data_fetcher import RealtimeDataFetcher
 
 
@@ -79,3 +79,31 @@ def test_realtime_fetcher_force_failure_env_skips_all_network(monkeypatch):
     assert data['stocks'] == {}
     assert data['gold'] is None
     assert data['forex'] == {}
+
+
+def test_validate_stock_recommendations_payload_rejects_incomplete_high_grade():
+    result = validate_stock_recommendations_payload(
+        {
+            'stock_recommendations': [
+                {
+                    'symbol': 'sh600519',
+                    'name': '贵州茅台',
+                    'grade': '强关注',
+                    'total_score': 85,
+                    'scores': {
+                        'news_catalyst': 25,
+                        'technical': 20,
+                        'valuation': 15,
+                        'quality_risk': 15,
+                        'market_regime': 10,
+                    },
+                    'data_completeness': 0.5,
+                    'evidence_article_ids': [],
+                }
+            ]
+        }
+    )
+
+    assert result['passed'] is False
+    assert result['high_grade_without_evidence'] == 1
+    assert result['strong_focus_with_incomplete'] == 1

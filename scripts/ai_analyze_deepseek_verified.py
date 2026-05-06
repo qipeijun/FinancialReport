@@ -58,6 +58,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--min-independent-evidence', type=int, default=2, help='形成判断卡片所需的最少独立证据数')
     parser.add_argument('--degrade-on-weak-evidence', action='store_true', default=True, help='证据不足时自动降级为观察项')
     parser.add_argument('--output-observation-only-when-weak', action='store_true', default=True, help='弱证据时仅输出观察项')
+    parser.add_argument('--enable-stock-scoring', action='store_true', help='启用 A 股结构化推荐评分')
+    parser.add_argument('--disable-stock-scoring', action='store_true', help='禁用 A 股结构化推荐评分')
+    parser.add_argument('--stock-market', type=str, default='CN', help='股票市场，v1 仅支持 CN')
+    parser.add_argument('--max-stock-picks', type=int, default=10, help='最多输出多少只股票评分结果')
     parser.add_argument('--output', type=str, help='输出文件路径')
     parser.add_argument('--verbose', action='store_true', help='详细日志')
     return parser.parse_args()
@@ -118,6 +122,9 @@ def main():
 
     # 生成报告
     try:
+        enable_stock_scoring = args.enable_stock_scoring or args.mode == 'markdown-report'
+        if args.disable_stock_scoring:
+            enable_stock_scoring = False
         result = generator.generate(
             date=args.date,
             start=args.start,
@@ -138,6 +145,9 @@ def main():
             min_independent_evidence=args.min_independent_evidence,
             degrade_on_weak_evidence=args.degrade_on_weak_evidence,
             output_observation_only_when_weak=args.output_observation_only_when_weak,
+            enable_stock_scoring=enable_stock_scoring,
+            stock_market=args.stock_market,
+            max_stock_picks=args.max_stock_picks,
             model=args.model
         )
 

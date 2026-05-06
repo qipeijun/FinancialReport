@@ -1,0 +1,96 @@
+{
+  "securities": {
+    "sh600519": {
+      "name": "贵州茅台",
+      "industry": "白酒",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["贵州茅台", "茅台"]
+    },
+    "sz000858": {
+      "name": "五粮液",
+      "industry": "白酒",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["五粮液"]
+    },
+    "sh600036": {
+      "name": "招商银行",
+      "industry": "银行",
+      "company_type": "financial",
+      "profitability": "profitable",
+      "aliases": ["招商银行"]
+    },
+    "sh601318": {
+      "name": "中国平安",
+      "industry": "保险",
+      "company_type": "financial",
+      "profitability": "profitable",
+      "aliases": ["中国平安", "平安"]
+    },
+    "sz002594": {
+      "name": "比亚迪",
+      "industry": "新能源车",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["比亚迪"]
+    },
+    "sz300750": {
+      "name": "宁德时代",
+      "industry": "锂电池",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["宁德时代"]
+    },
+    "sh688981": {
+      "name": "中芯国际",
+      "industry": "半导体",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["中芯国际"]
+    },
+    "sh603019": {
+      "name": "中科曙光",
+      "industry": "算力基础设施",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["中科曙光", "曙光"]
+    },
+    "sz000977": {
+      "name": "浪潮信息",
+      "industry": "算力基础设施",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["浪潮信息", "浪潮"]
+    },
+    "sh601899": {
+      "name": "紫金矿业",
+      "industry": "有色金属",
+      "company_type": "cyclical",
+      "profitability": "profitable",
+      "aliases": ["紫金矿业"]
+    },
+    "sh601857": {
+      "name": "中国石油",
+      "industry": "石油石化",
+      "company_type": "cyclical",
+      "profitability": "profitable",
+      "aliases": ["中国石油", "中石油"]
+    },
+    "sh600941": {
+      "name": "中国移动",
+      "industry": "通信运营",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["中国移动"]
+    }
+  },
+  "topic_stock_map": {
+    "政策与监管": ["sh600036", "sh601318", "sh600941"],
+    "宏观与流动性": ["sh600036", "sh600519", "sz000858"],
+    "汇率与大宗": ["sh601899", "sh601857"],
+    "财报与公司经营": ["sh600519", "sz002594", "sh688981"],
+    "科技与产业主题": ["sh688981", "sz000977", "sh603019"],
+    "风险事件": ["sh600036", "sh601318"]
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "updated_at": "2026-05-06T00:00:00",
+  "symbols": {
+    "sh600519": {
+      "symbol": "sh600519",
+      "pe_ttm": 23.4,
+      "pb_lf": 9.2,
+      "industry": "白酒",
+      "profitability": "profitable",
+      "company_type": "general",
+      "pe_history": [28.1, 26.5, 24.8, 22.9, 23.4],
+      "pb_history": [11.2, 10.4, 9.9, 9.3, 9.2]
+    },
+    "sz000858": {
+      "symbol": "sz000858",
+      "pe_ttm": 18.7,
+      "pb_lf": 5.1,
+      "industry": "白酒",
+      "profitability": "profitable",
+      "company_type": "general",
+      "pe_history": [24.2, 22.1, 20.5, 19.3, 18.7],
+      "pb_history": [6.7, 6.0, 5.6, 5.2, 5.1]
+    },
+    "sh600036": {
+      "symbol": "sh600036",
+      "pe_ttm": 6.8,
+      "pb_lf": 0.95,
+      "industry": "银行",
+      "profitability": "profitable",
+      "company_type": "financial",
+      "pe_history": [8.2, 7.6, 7.2, 6.9, 6.8],
+      "pb_history": [1.12, 1.05, 1.01, 0.97, 0.95]
+    },
+    "sh601318": {
+      "symbol": "sh601318",
+      "pe_ttm": 7.9,
+      "pb_lf": 1.05,
+      "industry": "保险",
+      "profitability": "profitable",
+      "company_type": "financial",
+      "pe_history": [9.6, 8.9, 8.4, 8.1, 7.9],
+      "pb_history": [1.28, 1.21, 1.15, 1.09, 1.05]
+    },
+    "sz002594": {
+      "symbol": "sz002594",
+      "pe_ttm": 20.6,
+      "pb_lf": 4.6,
+      "industry": "新能源车",
+      "profitability": "profitable",
+      "company_type": "general",
+      "pe_history": [35.0, 29.3, 24.1, 21.7, 20.6],
+      "pb_history": [7.2, 6.1, 5.3, 4.8, 4.6]
+    },
+    "sz300750": {
+      "symbol": "sz300750",
+      "pe_ttm": 18.4,
+      "pb_lf": 3.2,
+      "industry": "锂电池",
+      "profitability": "profitable",
+      "company_type": "general",
+      "pe_history": [45.5, 33.8, 25.7, 21.0, 18.4],
+      "pb_history": [8.8, 6.4, 4.9, 3.9, 3.2]
+    },
+    "sh688981": {
+      "symbol": "sh688981",
+      "pe_ttm": 42.0,
+      "pb_lf": 2.4,
+      "industry": "半导体",
+      "profitability": "profitable",
+      "company_type": "general",
+      "pe_history": [58.0, 51.2, 47.6, 44.8, 42.0],
+      "pb_history": [3.8, 3.2, 2.9, 2.6, 2.4]
+    },
+    "sh603019": {
+      "symbol": "sh603019",
+      "pe_ttm": 29.6,
+      "pb_lf": 3.1,
+      "industry": "算力基础设施",
+      "profitability": "profitable",
+      "company_type": "general",
+      "pe_history": [41.0, 36.8, 33.1, 30.2, 29.6],
+      "pb_history": [4.5, 4.0, 3.6, 3.2, 3.1]
+    },
+    "sz000977": {
+      "symbol": "sz000977",
+      "pe_ttm": 24.1,
+      "pb_lf": 2.6,
+      "industry": "算力基础设施",
+      "profitability": "profitable",
+      "company_type": "general",
+      "pe_history": [32.3, 29.0, 26.8, 25.2, 24.1],
+      "pb_history": [3.9, 3.4, 3.0, 2.8, 2.6]
+    },
+    "sh601899": {
+      "symbol": "sh601899",
+      "pe_ttm": 14.5,
+      "pb_lf": 2.9,
+      "industry": "有色金属",
+      "profitability": "profitable",
+      "company_type": "cyclical",
+      "pe_history": [18.8, 16.2, 15.0, 14.8, 14.5],
+      "pb_history": [3.4, 3.2, 3.0, 2.9, 2.9]
+    },
+    "sh601857": {
+      "symbol": "sh601857",
+      "pe_ttm": 10.1,
+      "pb_lf": 1.12,
+      "industry": "石油石化",
+      "profitability": "profitable",
+      "company_type": "cyclical",
+      "pe_history": [12.4, 11.7, 10.9, 10.4, 10.1],
+      "pb_history": [1.32, 1.25, 1.18, 1.14, 1.12]
+    },
+    "sh600941": {
+      "symbol": "sh600941",
+      "pe_ttm": 16.3,
+      "pb_lf": 1.52,
+      "industry": "通信运营",
+      "profitability": "profitable",
+      "company_type": "general",
+      "pe_history": [19.8, 18.4, 17.2, 16.8, 16.3],
+      "pb_history": [1.81, 1.73, 1.64, 1.58, 1.52]
+    }
+  }
+}

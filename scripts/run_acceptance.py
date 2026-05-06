@@ -192,7 +192,7 @@ def build_analysis_command(
     max_articles: int,
     output_json: Path,
 ) -> List[str]:
-    return [
+    cmd = [
         python_bin,
         str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek_verified.py'),
         '--date', date_str,
@@ -203,6 +203,47 @@ def build_analysis_command(
         '--min-score', '80',
         '--output', str(output_json),
     ]
+    if mode == 'markdown-report':
+        cmd.append('--enable-stock-scoring')
+    return cmd
+
+
+def validate_stock_recommendations_payload(metadata: Dict[str, Any]) -> Dict[str, Any]:
+    recommendations = metadata.get('stock_recommendations') or []
+    required_fields = {'symbol', 'name', 'grade', 'total_score', 'scores', 'data_completeness'}
+    issues = []
+    high_grade_without_evidence = 0
+    strong_focus_with_incomplete = 0
+    score_mismatch = 0
+
+    for item in recommendations:
+        missing = sorted(required_fields - set(item.keys()))
+        if missing:
+            issues.append(f"{item.get('symbol', 'unknown')} 缺少字段: {', '.join(missing)}")
+            continue
+
+        scores = item.get('scores') or {}
+        total_score = item.get('total_score')
+        if isinstance(total_score, int) and sum(scores.values()) != total_score:
+            score_mismatch += 1
+            issues.append(f"{item.get('symbol')} 子分求和与总分不一致")
+
+        if item.get('grade') in {'关注', '强关注'} and not item.get('evidence_article_ids'):
+            high_grade_without_evidence += 1
+            issues.append(f"{item.get('symbol')} 高等级推荐缺少新闻证据")
+
+        if item.get('grade') == '强关注' and float(item.get('data_completeness', 0)) < 0.7:
+            strong_focus_with_incomplete += 1
+            issues.append(f"{item.get('symbol')} 数据不完整却给出强关注")
+
+    return {
+        'count': len(recommendations),
+        'issues': issues,
+        'score_mismatch': score_mismatch,
+        'high_grade_without_evidence': high_grade_without_evidence,
+        'strong_focus_with_incomplete': strong_focus_with_incomplete,
+        'passed': not issues if recommendations else True,
+    }
 
 
 def fetch_realtime_context(force_failure: bool = False) -> Optional[Dict[str, Any]]:
@@ -243,7 +284,7 @@ def analyze_report_quality(
     )
 
     required_sections = (
-        ['市场概况', '投资主题', '风险', '建议']
+        ['市场概况', '投资主题', '风险', '建议', '股票推荐评分']
         if mode == 'markdown-report'
         else ['判断卡片', '观察项']
     )
@@ -264,6 +305,9 @@ def analyze_report_quality(
             'thesis_count': metadata.get('thesis_count'),
             'watch_item_count': metadata.get('watch_item_count'),
             'degraded': metadata.get('degraded'),
+            'stock_recommendations': metadata.get('stock_recommendations') or [],
+            'score_distribution': metadata.get('score_distribution') or {},
+            'scoring_config': metadata.get('scoring_config') or {},
         },
         'required_sections': structure,
         'claims': {
@@ -276,8 +320,11 @@ def analyze_report_quality(
         'quality': quality_result,
         'citation_count': report_text.count('【新闻'),
         'suspicious_realtime_phrases': suspicious_realtime_phrases,
+        'stock_scoring': validate_stock_recommendations_payload(metadata) if mode == 'markdown-report' else {},
         'passed': all(structure.values()) and quality_result.get('passed', False) and not quality_result.get('issues'),
     }
+    if mode == 'markdown-report':
+        payload['passed'] = payload['passed'] and payload['stock_scoring'].get('passed', True)
     return payload
 
 
@@ -289,6 +336,7 @@ def build_manual_checklist() -> List[str]:
         '确认 Judgment Cards 区分了事实、推断、风险。',
         '确认观察项承接了证据不足内容，而不是强行输出确定性结论。',
         '确认建议具有跟踪价值，不是模板化、空泛表述。',
+        '确认股票推荐评分章节包含总分、子分、等级、数据完整度与失效条件。',
     ]
 
 
@@ -315,7 +363,7 @@ def main() -> int:
 
     automation_results = []
     for name, cmd in (
-        ('pytest', [args.python_bin, '-m', 'pytest', '-q', 'tests/test_fact_checker_quality.py', 'tests/test_investment_signal.py', 'tests/test_run_acceptance.py']),
+        ('pytest', [args.python_bin, '-m', 'pytest', '-q', 'tests/test_fact_checker_quality.py', 'tests/test_investment_signal.py', 'tests/test_run_acceptance.py', 'tests/test_stock_recommendation.py']),
         ('compileall', [args.python_bin, '-m', 'compileall', 'scripts', 'tests']),
     ):
         result = run_command(name, cmd, env=env)
