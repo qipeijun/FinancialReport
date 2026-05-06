@@ -5,13 +5,12 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 #
 # 本项目采用混合命名策略：
-#   • 本地配置文件：小写 + 下划线 (例如: api_keys.gemini)
-#   • 环境变量/GitHub Secrets：大写 + 下划线 (例如: GEMINI_API_KEY)
+#   • 本地配置文件：小写 + 下划线 (例如: api_keys.deepseek)
+#   • 环境变量/GitHub Secrets：大写 + 下划线 (例如: DEEPSEEK_API_KEY)
 #
 # 🔄 配置映射关系（程序会自动转换）：
 #   配置文件 (小写)              ←→   环境变量 (大写)
 #   ─────────────────────────────────────────────────
-#   api_keys.gemini              ←→   GEMINI_API_KEY
 #   api_keys.deepseek            ←→   DEEPSEEK_API_KEY
 #   notify.email.username        ←→   EMAIL_USERNAME
 #   notify.email.password        ←→   EMAIL_PASSWORD
@@ -28,7 +27,6 @@
 
 # AI API 密钥
 api_keys:
-  gemini: "REPLACE_WITH_YOUR_GEMINI_API_KEY"
   deepseek: "REPLACE_WITH_YOUR_DEEPSEEK_API_KEY"
 
 # 通知配置
@@ -75,5 +73,4 @@ notify:
     enabled: false
     bot_token: "YOUR_BOT_TOKEN"
     chat_id: "YOUR_CHAT_ID"
-
 

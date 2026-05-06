@@ -6,7 +6,7 @@
 功能：
 - 检查今天是否已有数据（data/news_data.db 是否存在今日 collection_date）
 - 询问是否抓取今天数据；若需要则调用 rss_finance_analyzer.py
-- 询问是否进行 AI 分析；若需要则调用 ai_analyze.py
+- 询问是否进行 AI 分析；若需要则调用 ai_analyze_deepseek_verified.py
 
 提示：本脚本为简洁交互，不依赖第三方库。
 """
@@ -30,7 +30,16 @@ DB_PATH = PROJECT_ROOT / 'data' / 'news_data.db'
 def ask_yes_no(prompt: str, default: bool | None = None) -> bool:
     suffix = ' [y/n]' if default is None else (' [Y/n]' if default else ' [y/N]')
     while True:
-        ans = input(prompt + suffix + ': ').strip().lower()
+        try:
+            ans = input(prompt + suffix + ': ').strip().lower()
+        except (EOFError, KeyboardInterrupt):
+            if default is not None:
+                print()
+                print_info('使用默认设置')
+                return default
+            print()
+            print_warning('未收到输入，请输入 y/n')
+            continue
         if not ans and default is not None:
             return default
         if ans in ('y', 'yes', '是', '好', 'ok'):
@@ -38,29 +47,6 @@ def ask_yes_no(prompt: str, default: bool | None = None) -> bool:
         if ans in ('n', 'no', '否', '不'):
             return False
         print('请输入 y/n')
-
-
-def ask_model_choice() -> str:
-    """询问用户选择AI模型"""
-    print_info('🤖 选择AI模型：')
-    print('  • 1 = Gemini（默认）')
-    print('  • 2 = DeepSeek')
-    print()
-    
-    while True:
-        try:
-            choice = input('请选择模型 [1/2，默认1]: ').strip()
-            if not choice or choice == '1':
-                print_info('已选择：Gemini')
-                return 'gemini'
-            elif choice == '2':
-                print_info('已选择：DeepSeek')
-                return 'deepseek'
-            else:
-                print_warning('请输入 1 或 2')
-        except (EOFError, KeyboardInterrupt):
-            print_info('使用默认设置：Gemini')
-            return 'gemini'
 
 
 def ask_content_field() -> str:
@@ -187,12 +173,7 @@ def main():
             print()
             
             date_mode = ask_yes_no('仅分析当天？（否则可指定起止日期）', default=True)
-            # 选择模型
-            model_choice = ask_model_choice()
-            if model_choice == 'deepseek':
-                cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek.py')]
-            else:
-                cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze.py')]
+            cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek_verified.py'), '--mode', 'judgment-cards']
             
             if not date_mode:
                 print_info('📅 日期范围设置：')
@@ -250,14 +231,9 @@ def main():
             print('  • 生成完整的财经分析报告')
             print('  • 包含热门话题和潜力话题分析')
             print()
-            # 模型选择
-            model_choice = ask_model_choice()
             # 添加字段选择
             content_field = ask_content_field()
-            if model_choice == 'deepseek':
-                cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek.py'), '--content-field', content_field]
-            else:
-                cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze.py'), '--content-field', content_field]
+            cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek_verified.py'), '--mode', 'markdown-report', '--content-field', content_field]
             print_info('🚀 开始执行标准分析...')
             print(f'   命令：{" ".join(cmd)}')
             print()
@@ -320,14 +296,9 @@ def main():
             print('  • 生成专业的财经分析报告')
             print('  • 包含市场趋势和投资建议')
             print()
-            # 模型选择
-            model_choice = ask_model_choice()
             # 添加字段选择
             content_field = ask_content_field()
-            if model_choice == 'deepseek':
-                cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek.py'), '--content-field', content_field]
-            else:
-                cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze.py'), '--content-field', content_field]
+            cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek_verified.py'), '--mode', 'markdown-report', '--content-field', content_field]
             print_info('🚀 开始执行AI分析...')
             print(f'   命令：{" ".join(cmd)}')
             print()
@@ -347,5 +318,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-

@@ -13,10 +13,10 @@
 
 使用示例:
     from utils.report_generator import ReportGenerator
-    from utils.providers import GeminiProvider
+    from utils.providers import DeepSeekProvider
 
     generator = ReportGenerator(
-        provider=GeminiProvider(api_key='your-key'),
+        provider=DeepSeekProvider(api_key='your-key'),
         enable_verification=True
     )
 
@@ -28,6 +28,7 @@
 """
 
 import sys
+import json
 from pathlib import Path
 from typing import Optional, Dict, Any, Tuple
 from datetime import datetime
@@ -43,12 +44,20 @@ from scripts.utils.ai_analyzer_common import (
 )
 from scripts.utils.quality_filter import filter_and_rank_articles
 from scripts.utils.quality_checker import (
-    check_report_quality, generate_quality_feedback,
+    check_report_quality,
     print_quality_summary, add_quality_warning
+)
+from scripts.utils.investment_signal import (
+    build_judgment_candidates,
+    build_judgment_prompt_context,
+    build_retry_feedback,
+    enforce_judgment_rules,
+    extract_json_payload,
+    render_judgment_markdown,
 )
 from scripts.utils.print_utils import (
     print_header, print_success, print_warning, print_error,
-    print_info, print_progress, print_step, print_statistics
+    print_info, print_progress, print_statistics
 )
 from scripts.utils.providers import BaseProvider
 
@@ -104,6 +113,7 @@ class ReportGenerator:
             str: 提示词内容
         """
         prompt_files = {
+            'judgment_cards': 'judgment_cards_prompt.md',
             'pro_v2': 'financial_analysis_prompt_pro_v2.md',
             'pro': 'financial_analysis_prompt_pro.md',
             'safe': 'financial_analysis_prompt_safe.md'
@@ -132,7 +142,15 @@ class ReportGenerator:
             print_progress('获取实时市场数据...')
             fetcher = RealtimeDataFetcher()
             data = fetcher.fetch_all()
-            print_success(f'✓ 获取成功: {len(data)} 类数据')
+            available_kinds = sum(
+                1 for key in ('stocks', 'gold', 'forex')
+                if data.get(key)
+            )
+            if available_kinds == 0:
+                print_warning('实时行情接口当前均不可用，将继续生成报告，但不注入实时价格数据')
+                return None
+            else:
+                print_success(f'✓ 获取成功: {available_kinds} 类实时数据')
             return data
         except Exception as e:
             print_warning(f'实时数据获取失败: {e}')
@@ -145,6 +163,8 @@ class ReportGenerator:
         quality_check: bool = False,
         max_retries: int = 0,
         min_score: int = 80,
+        realtime_data: Optional[Dict[str, Any]] = None,
+        report_mode: str = 'markdown-report',
         **kwargs
     ) -> Tuple[str, Dict[str, Any], Dict[str, Any]]:
         """
@@ -179,7 +199,16 @@ class ReportGenerator:
             # 质量检查
             if quality_check:
                 print_progress('质量检查中...')
-                quality_result = quality_checker(report)
+                if self.enable_verification:
+                    verified_claims, _ = self._run_fact_check(report, realtime_data)
+                    quality_result = quality_checker(
+                        report,
+                        claims=verified_claims,
+                        realtime_data=realtime_data,
+                        report_mode=report_mode,
+                    )
+                else:
+                    quality_result = quality_checker(report)
 
                 if self.enable_verification:
                     print_quality_report_v2(quality_result)
@@ -213,6 +242,178 @@ class ReportGenerator:
         # 返回最后一次的结果
         return report, usage, quality_result if quality_check else {}
 
+    def _run_fact_check(self, report_text: str, realtime_data: Optional[Dict[str, Any]]) -> Tuple[list, str]:
+        """运行事实核查并返回断言与附加报告"""
+        if not (self.enable_verification and realtime_data):
+            return [], ''
+
+        checker = FactChecker()
+        claims = checker.extract_claims(report_text)
+        verified_claims = checker.verify_claims(claims, realtime_data)
+        verification_report = checker.generate_report_annotation(verified_claims)
+        return verified_claims, verification_report
+
+    def _save_result(
+        self,
+        end_date: str,
+        report_text: str,
+        usage: Dict[str, Any],
+        meta: Dict[str, Any],
+        output_json: Optional[str],
+        json_payload: Optional[Dict[str, Any]] = None,
+        artifact_suffix: str = '',
+    ) -> Path:
+        """保存报告、元数据和可选JSON"""
+        print_progress('保存报告到文件...')
+        model_suffix = self.provider.get_provider_name().lower()
+        saved_path = save_markdown(
+            end_date,
+            report_text,
+            model_suffix=model_suffix,
+            artifact_suffix=artifact_suffix,
+        )
+        save_metadata(
+            end_date,
+            meta,
+            model_suffix=model_suffix,
+            artifact_suffix=artifact_suffix,
+        )
+
+        if output_json:
+            out_path = Path(output_json)
+            if not out_path.is_absolute():
+                out_path = PROJECT_ROOT / out_path
+            payload = json_payload or {'summary_markdown': report_text, 'model_usage': usage}
+            with open(out_path, 'w', encoding='utf-8') as f:
+                json.dump(payload, f, ensure_ascii=False, indent=2)
+            print_success(f'已导出 JSON: {out_path}')
+        return saved_path
+
+    def _generate_judgment_cards(
+        self,
+        *,
+        start_date: str,
+        end_date: str,
+        selected: list,
+        realtime_data: Optional[Dict[str, Any]],
+        max_retries: int,
+        min_score: int,
+        output_json: Optional[str],
+        max_theses: int,
+        min_source_tier: str,
+        min_independent_evidence: int,
+        degrade_on_weak_evidence: bool,
+        output_observation_only_when_weak: bool,
+        **provider_kwargs,
+    ) -> Dict[str, Any]:
+        candidates = build_judgment_candidates(selected, max_candidates=max(max_theses + 3, 6))
+        prompt = self.load_prompt('judgment_cards')
+        base_content = build_judgment_prompt_context(candidates, bool(realtime_data), max_theses)
+        retry_feedback = ''
+        last_error = ''
+        payload: Dict[str, Any] = {}
+        rendered_md = ''
+        usage: Dict[str, Any] = {}
+        quality_result: Dict[str, Any] = {}
+        verified_claims = []
+        verification_report = ''
+
+        for attempt in range(max_retries + 1):
+            content = base_content if not retry_feedback else f"{base_content}\n\n{retry_feedback}"
+            try:
+                raw_text, usage = self.provider.generate(prompt, content, **provider_kwargs)
+                payload = extract_json_payload(raw_text)
+                payload = enforce_judgment_rules(
+                    payload,
+                    candidates,
+                    realtime_available=bool(realtime_data),
+                    min_source_tier=min_source_tier,
+                    min_independent_evidence=min_independent_evidence,
+                    degrade_on_weak_evidence=degrade_on_weak_evidence,
+                    output_observation_only_when_weak=output_observation_only_when_weak,
+                    max_theses=max_theses,
+                )
+                rendered_md = render_judgment_markdown(payload)
+                verified_claims, verification_report = self._run_fact_check(rendered_md, realtime_data)
+                quality_result = check_report_quality_v2(
+                    rendered_md,
+                    claims=verified_claims,
+                    realtime_data=realtime_data,
+                    report_mode='judgment-cards',
+                )
+            except Exception as exc:
+                last_error = str(exc)
+                quality_result = {
+                    'score': 0,
+                    'passed': False,
+                    'issues': [f'判断卡片生成失败: {exc}'],
+                    'warnings': [],
+                }
+
+            if quality_result.get('passed') and quality_result.get('score', 0) >= min_score:
+                break
+            if attempt < max_retries:
+                retry_feedback = build_retry_feedback(quality_result)
+                print_warning(f'判断卡片质量未达标，准备第 {attempt + 1} 次重试')
+            else:
+                print_warning('判断卡片达到最大重试次数，将使用当前版本')
+
+        if not rendered_md:
+            return {'success': False, 'error': last_error or '未生成有效判断卡片'}
+
+        if verification_report:
+            rendered_md = f"{rendered_md}\n\n{verification_report}"
+
+        meta = {
+            'date_range': {'start': start_date, 'end': end_date},
+            'articles_used': len(selected),
+            'candidate_count': len(candidates),
+            'model_usage': usage,
+            'quality_check': quality_result,
+            'verification_enabled': self.enable_verification,
+            'output_mode': 'judgment-cards',
+            'degraded': payload.get('degraded', False),
+            'thesis_count': len(payload.get('theses') or []),
+            'watch_item_count': len(payload.get('watch_items') or []),
+        }
+        export_payload = {
+            'theses': payload.get('theses') or [],
+            'watch_items': payload.get('watch_items') or [],
+            'confidence': [thesis.get('confidence', '中') for thesis in payload.get('theses') or []],
+            'evidence_summary': payload.get('evidence_summary', ''),
+            'market_scope': payload.get('market_scope', '中国与全球联动'),
+            'time_horizon': payload.get('time_horizon', '1-4周'),
+            'degraded': payload.get('degraded', False),
+            'metadata': meta,
+        }
+        saved_path = self._save_result(
+            end_date,
+            rendered_md,
+            usage,
+            meta,
+            output_json,
+            export_payload,
+            artifact_suffix='judgment-cards',
+        )
+
+        print_success('判断卡片生成完成！')
+        print_statistics({
+            '分析日期范围': f"{start_date} → {end_date}",
+            '处理文章数': len(selected),
+            '判断卡片数': len(payload.get('theses') or []),
+            '观察项数': len(payload.get('watch_items') or []),
+            '使用模型': usage.get('model', '未知'),
+            '降级状态': '是' if payload.get('degraded') else '否',
+        })
+        return {
+            'success': True,
+            'report_path': str(saved_path),
+            'report_text': rendered_md,
+            'metadata': meta,
+            'quality_result': quality_result,
+            'payload': export_payload,
+        }
+
     def generate(
         self,
         date: Optional[str] = None,
@@ -230,6 +431,7 @@ class ReportGenerator:
         min_score: int = 80,
         prompt_version: str = 'pro_v2' if VERIFICATION_AVAILABLE else 'pro',
         output_json: Optional[str] = None,
+        mode: str = 'markdown-report',
         **provider_kwargs
     ) -> Dict[str, Any]:
         """
@@ -251,6 +453,7 @@ class ReportGenerator:
             min_score: 最低质量评分
             prompt_version: 提示词版本
             output_json: 可选：导出JSON文件路径
+            mode: 输出模式（markdown-report/judgment-cards）
             **provider_kwargs: 传递给provider的其他参数
 
         Returns:
@@ -267,6 +470,7 @@ class ReportGenerator:
 
         print_header(f"AI 财经分析系统（{self.provider.get_provider_name()}）")
         print_info(f"分析日期范围: {start_date} → {end_date}")
+        print_info(f"输出模式: {mode}")
         print_info(f"字段选择模式: {content_field}")
         if self.enable_verification:
             print_info("验证系统: 已启用 ✅")
@@ -308,6 +512,23 @@ class ReportGenerator:
             print_warning('质量筛选后无文章剩余，请降低阈值或检查数据源')
             return {'success': False, 'error': '质量筛选后无文章'}
 
+        if mode == 'judgment-cards':
+            return self._generate_judgment_cards(
+                start_date=start_date,
+                end_date=end_date,
+                selected=selected,
+                realtime_data=realtime_data,
+                max_retries=max_retries,
+                min_score=min_score,
+                output_json=output_json,
+                max_theses=int(provider_kwargs.pop('max_theses', 5)),
+                min_source_tier=provider_kwargs.pop('min_source_tier', 'mainstream'),
+                min_independent_evidence=int(provider_kwargs.pop('min_independent_evidence', 2)),
+                degrade_on_weak_evidence=bool(provider_kwargs.pop('degrade_on_weak_evidence', True)),
+                output_observation_only_when_weak=bool(provider_kwargs.pop('output_observation_only_when_weak', True)),
+                **provider_kwargs,
+            )
+
         # 构建语料
         pairs, total_len = build_corpus(selected, max_chars, per_chunk_chars=3000, content_field=content_field)
         current_len = sum(len(c) for _, chunks in pairs for c in chunks)
@@ -339,6 +560,8 @@ class ReportGenerator:
                 quality_check=quality_check,
                 max_retries=max_retries,
                 min_score=min_score,
+                realtime_data=realtime_data,
+                report_mode='markdown-report',
                 **provider_kwargs
             )
         except Exception as e:
@@ -348,25 +571,12 @@ class ReportGenerator:
             return {'success': False, 'error': str(e)}
 
         # 事实核查（如果启用验证）
-        if self.enable_verification and realtime_data:
-            print_progress('事实核查: 验证报告中的数据断言...')
-            try:
-                checker = FactChecker(realtime_data)
-                check_result = checker.check_report(summary_md)
-
-                # 追加核查报告
-                verification_report = checker.generate_verification_report(check_result)
-                summary_md += "\n\n" + verification_report
-                print_success(f'✓ 事实核查完成: {check_result["stats"]["total"]} 个断言')
-            except Exception as e:
-                print_warning(f'事实核查失败（跳过）: {e}')
+        verified_claims, verification_report = self._run_fact_check(summary_md, realtime_data)
+        if verification_report:
+            summary_md += "\n\n" + verification_report
+            print_success(f'✓ 事实核查完成: {len(verified_claims)} 个断言')
 
         # 保存报告
-        print_progress('保存报告到文件...')
-        model_suffix = self.provider.get_provider_name().lower()
-        saved_path = save_markdown(end_date, summary_md, model_suffix=model_suffix)
-
-        # 保存元数据
         meta = {
             'date_range': {'start': start_date, 'end': end_date},
             'articles_used': len(selected),
@@ -374,15 +584,22 @@ class ReportGenerator:
             'model_usage': usage,
             'quality_check': quality_result if quality_result else None,
             'verification_enabled': self.enable_verification,
+            'output_mode': 'markdown-report',
         }
-        save_metadata(end_date, meta, model_suffix=model_suffix)
-
-        # 可选导出JSON
-        if output_json:
-            out_path = Path(output_json)
-            if not out_path.is_absolute():
-                out_path = PROJECT_ROOT / out_path
-            write_json(out_path, summary_md, rows)
+        export_payload = {
+            'summary_markdown': summary_md,
+            'articles': rows,
+            'metadata': meta,
+        }
+        saved_path = self._save_result(
+            end_date,
+            summary_md,
+            usage,
+            meta,
+            output_json,
+            export_payload,
+            artifact_suffix='markdown-report',
+        )
 
         print_success('分析完成！')
 
@@ -407,6 +624,10 @@ class ReportGenerator:
 
     def _format_realtime_data(self, realtime_data: Dict[str, Any]) -> str:
         """格式化实时数据为Markdown块"""
+        prompt_block = realtime_data.get('prompt')
+        if isinstance(prompt_block, str) and prompt_block.strip():
+            return prompt_block.strip()
+
         lines = ["## 📊 实时市场数据", ""]
 
         for key, value in realtime_data.items():

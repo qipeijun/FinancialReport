@@ -23,13 +23,13 @@ class DeepSeekProvider(BaseProvider):
             raise ImportError('未安装 openai，请运行: pip install openai')
 
         self.base_url = kwargs.get('base_url', 'https://api.deepseek.com')
-        self.default_model = kwargs.get('model', 'deepseek-chat')
+        self.default_model = kwargs.get('model', 'deepseek-v4-pro')
 
         self.client = OpenAI(api_key=self.api_key, base_url=self.base_url)
 
     def get_available_models(self) -> list:
         """获取可用的DeepSeek模型列表"""
-        return ['deepseek-chat', 'deepseek-coder']
+        return ['deepseek-v4-pro', 'deepseek-v4-flash', 'deepseek-chat']
 
     def generate(self, prompt: str, content: str, **kwargs) -> Tuple[str, Dict[str, Any]]:
         """

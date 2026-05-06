@@ -21,10 +21,17 @@ import logging
 logger = logging.getLogger(__name__)
 
 
+def _realtime_claims(claims: Optional[List]) -> Optional[List]:
+    if claims is None:
+        return None
+    return [c for c in claims if getattr(c, 'scope', None) is None or getattr(c, 'scope').value == '实时行情断言']
+
+
 def check_report_quality_v2(
     report_text: str,
     claims: Optional[List] = None,
-    realtime_data: Optional[Dict] = None
+    realtime_data: Optional[Dict] = None,
+    report_mode: str = 'markdown-report',
 ) -> Dict:
     """
     增强版质量检查 (集成事实核查)
@@ -60,10 +67,12 @@ def check_report_quality_v2(
     # ============================================================
     # 1. 准确性评分 (60分) - 核心指标
     # ============================================================
-    if claims:
-        verified_count = sum(1 for c in claims if c.verified)
-        total_count = len(claims)
-        error_count = sum(1 for c in claims if c.error)
+    realtime_claims = _realtime_claims(claims)
+
+    if realtime_claims is not None:
+        verified_count = sum(1 for c in realtime_claims if c.verified)
+        total_count = len(realtime_claims)
+        error_count = sum(1 for c in realtime_claims if c.error)
 
         if total_count > 0:
             accuracy_rate = verified_count / total_count
@@ -83,8 +92,9 @@ def check_report_quality_v2(
                 accuracy_score = max(0, accuracy_score - penalty)
                 issues.append(f"❌ 检测到 {error_count} 个错误或违规断言,扣分 {penalty}")
         else:
-            warnings.append("⚠️ 缺少可验证的具体断言,无法评估准确性")
-            accuracy_score = 30  # 给基础分
+            logger.info("事实核查已执行，但报告中未提取到可验证断言")
+            warnings.append("⚠️ 未提取到可验证的具体断言,准确性按中性评分处理")
+            accuracy_score = 45
     else:
         warnings.append("⚠️ 未进行事实核查,准确性无法保证")
         accuracy_score = 30  # 给基础分
@@ -102,11 +112,17 @@ def check_report_quality_v2(
         has_realtime_data = True
 
         # 提取更新时间
-        time_match = re.search(r'更新时间.*?(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2})', report_text)
+        time_match = re.search(r'更新时间.*?(\d{4}-\d{2}-\d{2}(?:\s+\d{2}:\d{2})?)', report_text)
         if time_match:
             try:
                 update_time_str = time_match.group(1)
-                update_time = datetime.strptime(update_time_str, '%Y-%m-%d %H:%M')
+                if len(update_time_str.strip()) == 10:
+                    if realtime_data and realtime_data.get('timestamp'):
+                        update_time = datetime.strptime(realtime_data['timestamp'], '%Y-%m-%d %H:%M:%S')
+                    else:
+                        update_time = datetime.strptime(update_time_str, '%Y-%m-%d')
+                else:
+                    update_time = datetime.strptime(update_time_str, '%Y-%m-%d %H:%M')
                 data_age_hours = (datetime.now() - update_time).total_seconds() / 3600
 
                 if data_age_hours < 1:
@@ -130,8 +146,22 @@ def check_report_quality_v2(
         # 检查是否注入了实时数据
         if realtime_data and realtime_data.get('timestamp'):
             has_realtime_data = True
-            timeliness_score = 10
-            warnings.append("⚠️ 报告中缺少实时数据标注,但系统已注入数据")
+            try:
+                update_time = datetime.strptime(realtime_data['timestamp'], '%Y-%m-%d %H:%M:%S')
+                data_age_hours = (datetime.now() - update_time).total_seconds() / 3600
+                if data_age_hours < 1:
+                    timeliness_score = 20
+                elif data_age_hours < 4:
+                    timeliness_score = 15
+                elif data_age_hours < 24:
+                    timeliness_score = 10
+                else:
+                    timeliness_score = 5
+                warnings.append("⚠️ 报告中缺少实时数据标注,已按系统注入时间计算时效性")
+            except Exception as e:
+                timeliness_score = 10
+                warnings.append("⚠️ 报告中缺少实时数据标注,但系统已注入数据")
+                logger.warning(f"系统实时数据时间解析失败: {e}")
         else:
             issues.append("❌ 缺少实时数据注入,报告时效性差")
             timeliness_score = 0
@@ -144,12 +174,17 @@ def check_report_quality_v2(
     # 检查引用来源
     citations = re.findall(r'【新闻\d+】', report_text)
     citation_count = len(citations)
+    judgment_cards_count = len(re.findall(r'^###\s+\d+\.', report_text, flags=re.MULTILINE))
 
     # 检查数据来源标注
     has_source_annotation = '数据来源' in report_text or '来源：' in report_text
 
     # 计算可靠性得分
-    if citation_count >= 15 and has_source_annotation:
+    if report_mode == 'judgment-cards' and judgment_cards_count > 0:
+        reliability_score = min(20, 8 + judgment_cards_count * 3)
+        if '观察项' not in report_text:
+            warnings.append("⚠️ 缺少观察项章节，判断边界可能不够清晰")
+    elif citation_count >= 15 and has_source_annotation:
         reliability_score = 20
     elif citation_count >= 10 and has_source_annotation:
         reliability_score = 15
@@ -194,7 +229,11 @@ def check_report_quality_v2(
     # ============================================================
     # 5. 基础结构检查 (额外加分项)
     # ============================================================
-    required_sections = ["市场概况", "投资主题", "风险", "建议"]
+    required_sections = (
+        ["判断卡片", "观察项"]
+        if report_mode == 'judgment-cards'
+        else ["市场概况", "投资主题", "风险", "建议"]
+    )
     missing_sections = [s for s in required_sections if s not in report_text]
 
     if missing_sections:
@@ -227,8 +266,8 @@ def check_report_quality_v2(
             'has_realtime_data': has_realtime_data,
             'data_age_hours': data_age_hours,
             'citation_count': citation_count,
-            'verified_claims': sum(1 for c in claims if c.verified) if claims else 0,
-            'total_claims': len(claims) if claims else 0,
+            'verified_claims': sum(1 for c in realtime_claims if c.verified) if realtime_claims is not None else 0,
+            'total_claims': len(realtime_claims) if realtime_claims is not None else 0,
             'fabrication_detected': fabrication_detected
         },
         'timestamp': datetime.now().isoformat()

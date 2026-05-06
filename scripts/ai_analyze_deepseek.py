@@ -42,7 +42,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--max-chars', type=int, default=500000, help='传入模型的最大字符数上限')
     parser.add_argument('--api-key', type=str, help='DeepSeek API Key')
     parser.add_argument('--config', type=str, help='配置文件路径')
-    parser.add_argument('--model', type=str, default='deepseek-chat', help='DeepSeek 模型名称')
+    parser.add_argument('--model', type=str, default='deepseek-v4-pro', help='DeepSeek 模型名称')
     parser.add_argument('--base-url', type=str, default='https://api.deepseek.com', help='DeepSeek API Base URL')
     parser.add_argument('--prompt', choices=['safe', 'pro'], default='pro', help='提示词版本')
     parser.add_argument('--quality-check', action='store_true', default=False, help='启用质量检查')

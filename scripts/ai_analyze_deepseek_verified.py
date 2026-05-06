@@ -43,14 +43,21 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--max-articles', type=int, help='参与分析的文章数量上限')
     parser.add_argument('--filter-source', type=str, help='仅分析指定来源（逗号分隔）')
     parser.add_argument('--filter-keyword', type=str, help='关键词过滤（逗号分隔）')
+    parser.add_argument('--content-field', choices=['summary', 'content', 'auto'], default='summary', help='分析字段选择')
     parser.add_argument('--api-key', type=str, help='DeepSeek API Key')
     parser.add_argument('--config', type=str, help='配置文件路径')
-    parser.add_argument('--model', type=str, default='deepseek-chat', help='DeepSeek模型名称')
+    parser.add_argument('--model', type=str, default='deepseek-v4-pro', help='DeepSeek模型名称')
     parser.add_argument('--base-url', type=str, default='https://api.deepseek.com', help='DeepSeek API Base URL')
     parser.add_argument('--prompt', choices=['safe', 'pro', 'pro_v2'], default='pro_v2', help='提示词版本')
+    parser.add_argument('--mode', choices=['judgment-cards', 'markdown-report'], default='judgment-cards', help='输出模式')
     parser.add_argument('--skip-verification', action='store_true', help='跳过事实验证(测试用)')
     parser.add_argument('--max-retries', type=int, default=3, help='质量不达标时的最大重试次数')
     parser.add_argument('--min-score', type=int, default=80, help='最低质量评分(0-100)')
+    parser.add_argument('--max-theses', type=int, default=5, help='最多输出多少条判断卡片')
+    parser.add_argument('--min-source-tier', choices=['aggregator', 'industry', 'mainstream', 'official'], default='mainstream', help='最小来源等级')
+    parser.add_argument('--min-independent-evidence', type=int, default=2, help='形成判断卡片所需的最少独立证据数')
+    parser.add_argument('--degrade-on-weak-evidence', action='store_true', default=True, help='证据不足时自动降级为观察项')
+    parser.add_argument('--output-observation-only-when-weak', action='store_true', default=True, help='弱证据时仅输出观察项')
     parser.add_argument('--output', type=str, help='输出文件路径')
     parser.add_argument('--verbose', action='store_true', help='详细日志')
     return parser.parse_args()
@@ -119,11 +126,18 @@ def main():
             max_articles=args.max_articles,
             filter_source=args.filter_source,
             filter_keyword=args.filter_keyword,
+            content_field=args.content_field,
             quality_check=True,  # 默认启用质量检查
             max_retries=args.max_retries,
             min_score=args.min_score,
             prompt_version=args.prompt,  # DeepSeek支持safe/pro
             output_json=args.output,
+            mode=args.mode,
+            max_theses=args.max_theses,
+            min_source_tier=args.min_source_tier,
+            min_independent_evidence=args.min_independent_evidence,
+            degrade_on_weak_evidence=args.degrade_on_weak_evidence,
+            output_observation_only_when_weak=args.output_observation_only_when_weak,
             model=args.model
         )
 

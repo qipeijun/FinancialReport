@@ -6,7 +6,7 @@
 提供统一的配置管理功能，支持：
 - 单例模式，全局唯一配置实例
 - 懒加载，按需读取配置
-- 点号路径访问（如 'api_keys.gemini'）
+- 点号路径访问（如 'api_keys.deepseek'）
 - 环境变量覆盖
 - 配置验证
 - 缓存机制
@@ -88,7 +88,7 @@ class ConfigManager:
         获取配置值，支持点号路径访问
         
         Args:
-            key_path: 配置路径，用点号分隔，如 'api_keys.gemini'
+            key_path: 配置路径，用点号分隔，如 'api_keys.deepseek'
             default: 默认值
             use_env: 是否允许环境变量覆盖
         
@@ -97,7 +97,7 @@ class ConfigManager:
         
         Example:
             >>> config = ConfigManager()
-            >>> api_key = config.get('api_keys.gemini')
+            >>> api_key = config.get('api_keys.deepseek')
             >>> max_articles = config.get('limits.max_articles', default=100)
         """
         # 先尝试从环境变量获取（如果允许）
@@ -126,14 +126,14 @@ class ConfigManager:
         获取API密钥（支持多种配置方式）
         
         Args:
-            service: 服务名称，如 'gemini', 'deepseek'
+            service: 服务名称，如 'deepseek'
         
         Returns:
             API密钥或None
         
         Example:
             >>> config = ConfigManager()
-            >>> gemini_key = config.get_api_key('gemini')
+            >>> deepseek_key = config.get_api_key('deepseek')
         """
         # 优先级：环境变量 > api_keys.service > service.api_key
         
@@ -198,11 +198,9 @@ class ConfigManager:
         errors = []
         
         # 检查必需的API密钥
-        gemini_key = self.get_api_key('gemini')
         deepseek_key = self.get_api_key('deepseek')
-        
-        if not gemini_key and not deepseek_key:
-            errors.append('至少需要配置一个AI模型的API密钥（Gemini或DeepSeek）')
+        if not deepseek_key:
+            errors.append('必须配置 DeepSeek API 密钥')
         
         # 检查数据库路径
         try:
@@ -241,7 +239,7 @@ def get_config() -> ConfigManager:
     Example:
         >>> from utils.config_manager import get_config
         >>> config = get_config()
-        >>> api_key = config.get('api_keys.gemini')
+        >>> api_key = config.get('api_keys.deepseek')
     """
     return _config_instance
 
@@ -291,8 +289,7 @@ if __name__ == '__main__':
     print(f"项目根目录: {config.project_root}")
     
     # 测试获取配置
-    print(f"\nGemini API Key: {config.get_api_key('gemini')}")
-    print(f"DeepSeek API Key: {config.get_api_key('deepseek')}")
+    print(f"\nDeepSeek API Key: {config.get_api_key('deepseek')}")
     print(f"数据库路径: {config.get_db_path()}")
     
     # 验证配置
@@ -302,4 +299,3 @@ if __name__ == '__main__':
         print("错误列表:")
         for error in errors:
             print(f"  - {error}")
-

@@ -37,6 +37,12 @@ from utils.logger import get_logger
 from utils.config_manager import get_config
 from utils.db_manager import DatabaseManager, retry_on_db_error
 from utils.deduplication import deduplicate_items
+from utils.investment_signal import (
+    classify_source_tier,
+    detect_content_quality_status,
+    is_original_source,
+    score_investment_relevance,
+)
 from utils.print_utils import (
     print_header, print_success, print_warning, print_error,
     print_info, print_statistics
@@ -490,8 +496,8 @@ class RSSAnalyzer:
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             # 提交所有任务
             future_to_source = {
-                executor.submit(self.fetch_rss_feed, url, name, limit): name
-                for name, url in rss_sources.items()
+                executor.submit(self.fetch_rss_feed, meta['url'], name, limit): name
+                for name, meta in rss_sources.items()
             }
             
             # 使用进度条
@@ -585,6 +591,11 @@ class RSSAnalyzer:
             
             if source_id is None:
                 continue
+
+            source_meta = rss_sources.get(source_name, {})
+            source_category = source_meta.get('category', '')
+            source_tier = classify_source_tier(source_name, source_category)
+            original_source = is_original_source(source_tier, source_name)
             
             # 处理发布时间
             published = entry.get('published', 'N/A')
@@ -607,10 +618,23 @@ class RSSAnalyzer:
             summary_text = self.enhance_text_quality(entry.get('summary', 'N/A') or '')
             if content_text:
                 content_text = self.enhance_text_quality(content_text)
+
+            content_quality_status = detect_content_quality_status(
+                summary_text,
+                content_text,
+                fetch_content
+            )
             
             # 规范化
             norm_title = self.normalize_title(entry.get('title', 'N/A'))
             norm_link = self.normalize_link(entry.get('link', 'N/A'))
+            investment_relevance = score_investment_relevance({
+                'title': norm_title,
+                'summary': summary_text,
+                'content': content_text if fetch_content else '',
+                'source_tier': source_tier,
+                'content_quality_status': content_quality_status,
+            })
             
             article_data.append((
                 collection_date,
@@ -621,14 +645,19 @@ class RSSAnalyzer:
                 published_parsed,
                 summary_text,
                 content_text if fetch_content else None,
-                None  # category
+                None,  # category
+                source_tier,
+                content_quality_status,
+                investment_relevance,
+                original_source,
             ))
         
         # 批量插入
         sql = '''
             INSERT OR IGNORE INTO news_articles 
-            (collection_date, title, link, source_id, published, published_parsed, summary, content, category)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (collection_date, title, link, source_id, published, published_parsed, summary, content, category,
+             source_tier, content_quality_status, investment_relevance, is_original_source)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         '''
         
         inserted = self.db.execute_batch(sql, article_data, batch_size=100)
@@ -647,6 +676,7 @@ class RSSAnalyzer:
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     source_name TEXT UNIQUE NOT NULL,
                     rss_url TEXT NOT NULL,
+                    source_category TEXT,
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 )
             ''')
@@ -664,11 +694,21 @@ class RSSAnalyzer:
                     summary TEXT,
                     content TEXT,
                     category TEXT,
+                    source_tier TEXT DEFAULT 'mainstream',
+                    content_quality_status TEXT DEFAULT 'summary_only',
+                    investment_relevance TEXT DEFAULT 'medium',
+                    is_original_source INTEGER DEFAULT 0,
                     sentiment_score REAL DEFAULT 0,
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                     FOREIGN KEY (source_id) REFERENCES rss_sources (id)
                 )
             ''')
+
+            self._ensure_column(cursor, 'rss_sources', 'source_category', 'TEXT')
+            self._ensure_column(cursor, 'news_articles', 'source_tier', "TEXT DEFAULT 'mainstream'")
+            self._ensure_column(cursor, 'news_articles', 'content_quality_status', "TEXT DEFAULT 'summary_only'")
+            self._ensure_column(cursor, 'news_articles', 'investment_relevance', "TEXT DEFAULT 'medium'")
+            self._ensure_column(cursor, 'news_articles', 'is_original_source', 'INTEGER DEFAULT 0')
             
             # 创建标签表
             cursor.execute('''
@@ -688,6 +728,8 @@ class RSSAnalyzer:
             cursor.execute('CREATE INDEX IF NOT EXISTS idx_articles_published ON news_articles(published)')
             cursor.execute('CREATE INDEX IF NOT EXISTS idx_articles_title ON news_articles(title)')
             cursor.execute('CREATE INDEX IF NOT EXISTS idx_articles_link ON news_articles(link)')
+            cursor.execute('CREATE INDEX IF NOT EXISTS idx_articles_source_tier ON news_articles(source_tier)')
+            cursor.execute('CREATE INDEX IF NOT EXISTS idx_articles_relevance ON news_articles(investment_relevance)')
             cursor.execute('CREATE INDEX IF NOT EXISTS idx_tags_article ON news_tags(article_id)')
             cursor.execute('CREATE INDEX IF NOT EXISTS idx_tags_value ON news_tags(tag_value)')
             
@@ -702,18 +744,33 @@ class RSSAnalyzer:
                 logger.debug(f"FTS5不可用: {e}")
         
         logger.debug("数据库表结构初始化完成")
+
+    @staticmethod
+    def _ensure_column(cursor, table_name: str, column_name: str, column_def: str):
+        columns = cursor.execute(f"PRAGMA table_info({table_name})").fetchall()
+        existing = {column[1] for column in columns}
+        if column_name not in existing:
+            cursor.execute(f"ALTER TABLE {table_name} ADD COLUMN {column_name} {column_def}")
     
     def _get_source_map(self, rss_sources: dict) -> Dict[str, int]:
         """获取或创建来源映射"""
-        source_data = [(name, url) for name, url in rss_sources.items()]
+        source_data = [
+            (name, meta['url'], meta.get('category'))
+            for name, meta in rss_sources.items()
+        ]
         
         with self.db.transaction() as conn:
             cursor = conn.cursor()
             # 批量插入
             cursor.executemany(
-                "INSERT OR IGNORE INTO rss_sources (source_name, rss_url) VALUES (?, ?)",
+                "INSERT OR IGNORE INTO rss_sources (source_name, rss_url, source_category) VALUES (?, ?, ?)",
                 source_data
             )
+            for name, meta in rss_sources.items():
+                cursor.execute(
+                    "UPDATE rss_sources SET rss_url = ?, source_category = ? WHERE source_name = ?",
+                    (meta['url'], meta.get('category'), name)
+                )
             
             # 获取映射
             rows = cursor.execute("SELECT source_name, id FROM rss_sources").fetchall()
@@ -737,7 +794,10 @@ def load_rss_sources(config_path: Path) -> dict:
         rss_sources = {}
         for category, sources in config.items():
             for source_name, url in sources.items():
-                rss_sources[source_name] = url
+                rss_sources[source_name] = {
+                    'url': url,
+                    'category': category,
+                }
         
         return rss_sources
         
@@ -917,4 +977,3 @@ def main():
 
 if __name__ == "__main__":
     exit(main())
-

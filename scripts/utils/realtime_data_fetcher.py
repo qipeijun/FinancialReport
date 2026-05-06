@@ -2,7 +2,7 @@
 实时财经数据采集器
 
 功能:
-1. 获取股票实时行情(新浪财经API)
+1. 获取股票实时行情(Yahoo Finance)
 2. 获取黄金/外汇实时价格
 3. 获取宏观经济指标
 4. 格式化数据供AI分析使用
@@ -11,6 +11,8 @@
 """
 
 import re
+import time
+import os
 import requests
 from typing import Dict, List, Optional, Tuple
 from datetime import datetime, timedelta
@@ -71,13 +73,86 @@ class RealtimeDataFetcher:
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
         })
+        self.force_failure = os.getenv('FINANCIAL_REPORT_FORCE_REALTIME_FAILURE') == '1'
+        self.request_timeout = (3, 8)
+        self.max_retries = 2
+        self.retry_backoff = 1.0
 
         # API端点
         self.apis = {
-            'sina_stock': 'https://hq.sinajs.cn/list=',
-            'sina_gold': 'https://hq.sinajs.cn/list=hf_GC',  # 纽约黄金期货
-            'eastmoney_gold': 'https://www.goldprice.org/zh-hans/gold-price-china.html',
+            'yahoo_chart': 'https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=5d',
+            'frankfurter_latest': 'https://api.frankfurter.dev/v1/latest?base={base}&symbols={symbols}',
+            'gold_api': 'https://api.gold-api.com/price/XAU',
         }
+
+    def _request_text(self, urls: List[str] | str, encoding: str = 'gbk') -> Optional[str]:
+        """带重试与备用地址的文本请求"""
+        if self.force_failure:
+            logger.warning("已启用实时数据失败模拟，跳过所有外部行情请求")
+            return None
+
+        candidates = [urls] if isinstance(urls, str) else urls
+        last_error: Optional[Exception] = None
+
+        for url in candidates:
+            for attempt in range(self.max_retries + 1):
+                try:
+                    response = self.session.get(url, timeout=self.request_timeout)
+                    response.raise_for_status()
+                    response.encoding = encoding
+                    return response.text
+                except Exception as exc:
+                    last_error = exc
+                    is_last_attempt = attempt >= self.max_retries
+                    if not is_last_attempt:
+                        sleep_s = self.retry_backoff * (attempt + 1)
+                        logger.warning(
+                            f"请求失败，{sleep_s:.1f}s 后重试 ({attempt + 1}/{self.max_retries}) {url}: {exc}"
+                        )
+                        time.sleep(sleep_s)
+
+            logger.warning(f"备用地址请求失败: {url}")
+
+        if last_error:
+            raise last_error
+        return None
+
+    def _request_json(self, urls: List[str] | str) -> Optional[Dict]:
+        """带重试与备用地址的JSON请求"""
+        text = self._request_text(urls, encoding='utf-8')
+        if not text:
+            return None
+        return json.loads(text)
+
+    def _to_yahoo_symbol(self, code: str) -> str:
+        """转换仓库内部代码为 Yahoo Finance 符号"""
+        code = (code or '').strip()
+        if not code:
+            return code
+
+        if code.startswith('sh') and len(code) == 8:
+            return f"{code[2:]}.SS"
+        if code.startswith('sz') and len(code) == 8:
+            return f"{code[2:]}.SZ"
+        return code
+
+    def _display_name_for_code(self, original_code: str, yahoo_symbol: str, meta: Dict) -> str:
+        known_names = {
+            'sh000001': '上证指数',
+            'sz399001': '深证成指',
+            'sz399006': '创业板指',
+        }
+        return (
+            known_names.get(original_code)
+            or meta.get('shortName')
+            or meta.get('longName')
+            or yahoo_symbol
+        )
+
+    def _format_unix_timestamp(self, unix_ts: Optional[int]) -> str:
+        if not unix_ts:
+            return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        return datetime.fromtimestamp(unix_ts).strftime('%Y-%m-%d %H:%M:%S')
 
     def get_stock_realtime(self, stock_codes: List[str]) -> Dict[str, StockData]:
         """
@@ -97,57 +172,49 @@ class RealtimeDataFetcher:
             return {}
 
         result = {}
-
-        # 分批处理(新浪限制单次最多100个)
-        batch_size = 100
-        for i in range(0, len(stock_codes), batch_size):
-            batch = stock_codes[i:i + batch_size]
-            codes_str = ','.join(batch)
-            url = f"{self.apis['sina_stock']}{codes_str}"
-
+        for original_code in stock_codes:
+            yahoo_symbol = self._to_yahoo_symbol(original_code)
+            url = self.apis['yahoo_chart'].format(symbol=yahoo_symbol)
             try:
-                response = self.session.get(url, timeout=5)
-                response.encoding = 'gbk'
-                lines = response.text.strip().split('\n')
+                payload = self._request_json(url)
+                if not payload:
+                    continue
+                chart = (payload.get('chart') or {}).get('result') or []
+                if not chart:
+                    continue
+                result0 = chart[0]
+                meta = result0.get('meta') or {}
+                indicators = (result0.get('indicators') or {}).get('quote') or [{}]
+                quote = indicators[0] or {}
 
-                for line in lines:
-                    if not line or '=""' in line:
-                        continue
+                price = float(meta.get('regularMarketPrice') or 0.0)
+                prev_close = float(meta.get('chartPreviousClose') or meta.get('previousClose') or 0.0)
+                open_price = self._last_numeric(quote.get('open'))
+                high_price = self._last_numeric(quote.get('high'))
+                low_price = self._last_numeric(quote.get('low'))
+                volume = int(self._last_numeric(quote.get('volume')))
 
-                    # 解析格式: var hq_str_sh601899="紫金矿业,15.23,15.12,15.45,..."
-                    match = re.search(r'var hq_str_(.+?)="(.+?)"', line)
-                    if not match:
-                        continue
+                if price <= 0:
+                    logger.warning(f"Yahoo 未返回有效价格 {yahoo_symbol}")
+                    continue
 
-                    code, data = match.groups()
-                    fields = data.split(',')
-
-                    # A股格式: 32个字段
-                    if len(fields) >= 32:
-                        try:
-                            stock = StockData(
-                                code=code,
-                                name=fields[0],
-                                open=float(fields[1]) if fields[1] else 0.0,
-                                prev_close=float(fields[2]) if fields[2] else 0.0,
-                                price=float(fields[3]) if fields[3] else 0.0,
-                                high=float(fields[4]) if fields[4] else 0.0,
-                                low=float(fields[5]) if fields[5] else 0.0,
-                                volume=int(float(fields[8])) if fields[8] else 0,
-                                amount=float(fields[9]) if fields[9] else 0.0,
-                                change_pct=self._calculate_change_pct(
-                                    float(fields[3]) if fields[3] else 0.0,
-                                    float(fields[2]) if fields[2] else 0.0
-                                ),
-                                timestamp=self._parse_timestamp(fields[30], fields[31])
-                            )
-                            result[code] = stock
-                        except (ValueError, IndexError) as e:
-                            logger.warning(f"解析股票数据失败 {code}: {e}")
-                            continue
+                stock = StockData(
+                    code=original_code,
+                    name=self._display_name_for_code(original_code, yahoo_symbol, meta),
+                    open=open_price if open_price > 0 else price,
+                    prev_close=prev_close,
+                    price=price,
+                    high=high_price if high_price > 0 else price,
+                    low=low_price if low_price > 0 else price,
+                    volume=volume,
+                    amount=0.0,
+                    change_pct=self._calculate_change_pct(price, prev_close),
+                    timestamp=self._format_unix_timestamp(meta.get('regularMarketTime')),
+                )
+                result[original_code] = stock
 
             except Exception as e:
-                logger.error(f"获取股票数据失败: {e}")
+                logger.error(f"获取股票数据失败 {original_code}: {e}")
 
         return result
 
@@ -159,28 +226,36 @@ class RealtimeDataFetcher:
             GoldData 或 None(如果获取失败)
         """
         try:
-            # 方法1: 新浪黄金期货数据
-            url = self.apis['sina_gold']
-            response = self.session.get(url, timeout=5)
-            response.encoding = 'gbk'
+            payload = self._request_json(self.apis['gold_api'])
+            if payload and payload.get('price'):
+                price = float(payload['price'])
+                change_pct = payload.get('chp')
+                updated_at = payload.get('updatedAt')
+                return GoldData(
+                    price_usd=price,
+                    change_24h=float(change_pct) if change_pct is not None else None,
+                    timestamp=updated_at or datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                )
+        except Exception as e:
+            logger.warning(f"从 Gold-API 获取黄金价格失败: {e}")
 
-            # 解析: var hq_str_hf_GC="黄金,2650.50,2648.30,..."
-            match = re.search(r'"([^"]+)"', response.text)
-            if match:
-                fields = match.group(1).split(',')
-                if len(fields) >= 3:
-                    price = float(fields[1])  # 当前价
-                    prev = float(fields[2])   # 昨收
-
+        try:
+            yahoo_symbol = 'GC=F'
+            payload = self._request_json(self.apis['yahoo_chart'].format(symbol=yahoo_symbol))
+            chart = ((payload or {}).get('chart') or {}).get('result') or []
+            if chart:
+                meta = chart[0].get('meta') or {}
+                price = float(meta.get('regularMarketPrice') or 0.0)
+                prev = float(meta.get('chartPreviousClose') or 0.0)
+                if price > 0:
                     return GoldData(
                         price_usd=price,
-                        change_24h=((price - prev) / prev * 100) if prev > 0 else 0.0,
-                        timestamp=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                        change_24h=((price - prev) / prev * 100) if prev > 0 else None,
+                        timestamp=self._format_unix_timestamp(meta.get('regularMarketTime'))
                     )
         except Exception as e:
-            logger.warning(f"从新浪获取黄金价格失败: {e}")
+            logger.warning(f"从 Yahoo 获取黄金价格失败: {e}")
 
-        # 方法2: 如果新浪失败,返回None(未来可添加备用API)
         logger.error("获取黄金价格失败")
         return None
 
@@ -195,31 +270,23 @@ class RealtimeDataFetcher:
             ForexData 或 None
         """
         try:
-            # 新浪外汇API
-            code_map = {
-                "USD/CNY": "fx_susdcny",
-                "EUR/CNY": "fx_seurcny",
-                "JPY/CNY": "fx_sjpycny"
-            }
-
-            code = code_map.get(pair)
-            if not code:
+            base, quote = pair.split('/')
+            if not base or not quote:
                 logger.warning(f"不支持的货币对: {pair}")
                 return None
 
-            url = f"{self.apis['sina_stock']}{code}"
-            response = self.session.get(url, timeout=5)
-            response.encoding = 'gbk'
+            url = self.apis['frankfurter_latest'].format(base=base, symbols=quote)
+            payload = self._request_json(url)
+            if not payload:
+                return None
 
-            match = re.search(r'"([^"]+)"', response.text)
-            if match:
-                fields = match.group(1).split(',')
-                if len(fields) >= 2:
-                    return ForexData(
-                        pair=pair,
-                        rate=float(fields[1]),
-                        timestamp=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                    )
+            rate = ((payload.get('rates') or {}).get(quote))
+            if rate is not None:
+                return ForexData(
+                    pair=pair,
+                    rate=float(rate),
+                    timestamp=f"{payload.get('date', datetime.now().strftime('%Y-%m-%d'))} 00:00:00"
+                )
         except Exception as e:
             logger.error(f"获取外汇汇率失败 {pair}: {e}")
 
@@ -319,7 +386,7 @@ class RealtimeDataFetcher:
 
         # 数据来源声明
         prompt += "---\n\n"
-        prompt += "**数据来源**: 新浪财经实时行情  \n"
+        prompt += "**数据来源**: Yahoo Finance、Gold-API、Frankfurter  \n"
         prompt += f"**数据时效**: {timestamp}  \n"
         prompt += "**使用约束**:  \n"
         prompt += "1. ✅ 引用数据时必须标注来源和时间  \n"
@@ -446,6 +513,19 @@ class RealtimeDataFetcher:
         if previous == 0:
             return 0.0
         return round((current - previous) / previous * 100, 2)
+
+    def _last_numeric(self, values: Optional[List]) -> float:
+        """从序列中提取最后一个有效数值"""
+        if not values:
+            return 0.0
+        for value in reversed(values):
+            if value is None:
+                continue
+            try:
+                return float(value)
+            except (TypeError, ValueError):
+                continue
+        return 0.0
 
     def _parse_timestamp(self, date: str, time: str) -> str:
         """解析新浪时间戳"""

@@ -33,6 +33,13 @@ class ClaimType(Enum):
     MARKET_TREND = "市场趋势断言"     # "黄金板块表现强势"
 
 
+class ClaimScope(Enum):
+    """断言验证范围"""
+    REALTIME_MARKET = "实时行情断言"
+    NEWS_FACT = "新闻事实断言"
+    VIOLATION = "违规预测断言"
+
+
 @dataclass
 class Claim:
     """断言数据类"""
@@ -45,6 +52,9 @@ class Claim:
     source: str = ""                # 数据来源
     timestamp: str = ""
     error: str = ""                 # 验证失败原因
+    scope: ClaimScope = ClaimScope.REALTIME_MARKET
+    context: str = ""               # 断言所在完整语句/行
+    asset_hint: Optional[str] = None  # 目标资产提示，如 sh000001/gold/forex
 
     def to_dict(self) -> Dict:
         return {
@@ -56,7 +66,10 @@ class Claim:
             'evidence': self.evidence,
             'source': self.source,
             'timestamp': self.timestamp,
-            'error': self.error
+            'error': self.error,
+            'scope': self.scope.value,
+            'context': self.context,
+            'asset_hint': self.asset_hint,
         }
 
 
@@ -97,8 +110,29 @@ class FactChecker:
         # 5. 提取宏观数据断言
         claims.extend(self._extract_macro_claims(report_text))
 
-        logger.info(f"从报告中提取到 {len(claims)} 个断言")
-        return claims
+        # 6. 提取新闻事实断言（不纳入实时行情校验）
+        claims.extend(self._extract_news_fact_claims(report_text))
+
+        deduped = self._dedupe_claims(claims)
+        logger.info(f"从报告中提取到 {len(deduped)} 个断言")
+        return deduped
+
+    def _dedupe_claims(self, claims: List[Claim]) -> List[Claim]:
+        seen = set()
+        result: List[Claim] = []
+        for claim in claims:
+            key = (
+                claim.type.value,
+                claim.content,
+                claim.extracted_value,
+                claim.scope.value,
+                claim.asset_hint,
+            )
+            if key in seen:
+                continue
+            seen.add(key)
+            result.append(claim)
+        return result
 
     def _extract_price_claims(self, text: str) -> List[Claim]:
         """提取价格断言"""
@@ -117,7 +151,9 @@ class FactChecker:
                     claims.append(Claim(
                         type=ClaimType.STOCK_PRICE,
                         content=match.group(0),
-                        extracted_value=groups[-1]  # 价格值
+                        extracted_value=groups[-1],  # 价格值
+                        context=match.group(0),
+                        asset_hint=self._infer_asset_hint(match.group(0))
                     ))
 
         return claims
@@ -125,6 +161,11 @@ class FactChecker:
     def _extract_change_claims(self, text: str) -> List[Claim]:
         """提取涨跌幅断言"""
         claims = []
+        realtime_cues = (
+            '基于实时数据', '实时', '现价', '收涨', '收跌',
+            '上证指数', '深证成指', '创业板指', '黄金', '金价',
+            '美元兑人民币', '汇率'
+        )
 
         # 模式: "涨幅XX%", "上涨XX%", "下跌XX%", "涨XX%"
         patterns = [
@@ -133,13 +174,25 @@ class FactChecker:
             r'([\u4e00-\u9fa5]+)(?:涨|跌)\s*(\d+\.?\d*)\s*%',
         ]
 
-        for pattern in patterns:
-            for match in re.finditer(pattern, text):
-                claims.append(Claim(
-                    type=ClaimType.PRICE_CHANGE,
-                    content=match.group(0),
-                    extracted_value=match.group(2) if len(match.groups()) >= 2 else match.group(1)
-                ))
+        for line in text.splitlines():
+            if not any(cue in line for cue in realtime_cues):
+                continue
+            for clause in re.split(r'[，。；]', line):
+                clause = clause.strip()
+                if not clause:
+                    continue
+                asset_hint = self._infer_asset_hint(clause)
+                if asset_hint is None:
+                    continue
+                for pattern in patterns:
+                    for match in re.finditer(pattern, clause):
+                        claims.append(Claim(
+                            type=ClaimType.PRICE_CHANGE,
+                            content=match.group(0),
+                            extracted_value=match.group(2) if len(match.groups()) >= 2 else match.group(1),
+                            context=clause,
+                            asset_hint=asset_hint,
+                        ))
 
         # 特别检测: 目标涨幅(这是严重违规!)
         target_pattern = r'目标(?:涨幅|价格?)\s*(\d+\.?\d*)\s*%'
@@ -150,7 +203,9 @@ class FactChecker:
                 extracted_value=match.group(1),
                 verified=False,
                 confidence=0.0,
-                error="❌❌❌ 严重违规: AI编造目标涨幅,明确禁止此类断言!"
+                error="❌❌❌ 严重违规: AI编造目标涨幅,明确禁止此类断言!",
+                scope=ClaimScope.VIOLATION,
+                context=match.group(0),
             ))
 
         return claims
@@ -167,10 +222,15 @@ class FactChecker:
 
         for pattern in patterns:
             for match in re.finditer(pattern, text):
+                line = self._extract_line(text, match.start(), match.end())
+                if '基于实时数据' not in line and '实时' not in line and '现货黄金' not in line and '黄金ETF' not in line:
+                    continue
                 claims.append(Claim(
                     type=ClaimType.GOLD_PRICE,
                     content=match.group(0),
-                    extracted_value=match.group(1)
+                    extracted_value=match.group(1),
+                    context=line,
+                    asset_hint='gold',
                 ))
 
         return claims
@@ -181,17 +241,22 @@ class FactChecker:
 
         # 模式: "美元兑人民币XX", "USD/CNY XX"
         patterns = [
-            r'美元兑人民币\s*(\d+\.?\d*)',
-            r'USD/CNY\s*(\d+\.?\d*)',
-            r'人民币汇率\s*(\d+\.?\d*)',
+            r'美元兑人民币(?:汇率)?(?:为|报)?\s*(\d+\.?\d*)',
+            r'USD/CNY(?:为|报)?\s*(\d+\.?\d*)',
+            r'人民币汇率(?:为|报)?\s*(\d+\.?\d*)',
         ]
 
         for pattern in patterns:
             for match in re.finditer(pattern, text):
+                line = self._extract_line(text, match.start(), match.end())
+                if '基于实时数据' not in line and '实时' not in line and '汇率' not in line:
+                    continue
                 claims.append(Claim(
                     type=ClaimType.FOREX_RATE,
                     content=match.group(0),
-                    extracted_value=match.group(1)
+                    extracted_value=match.group(1),
+                    context=line,
+                    asset_hint='USD/CNY',
                 ))
 
         return claims
@@ -211,10 +276,55 @@ class FactChecker:
                 claims.append(Claim(
                     type=ClaimType.MACRO_DATA,
                     content=match.group(0),
-                    extracted_value=match.group(2) if len(match.groups()) >= 2 else match.group(1)
+                    extracted_value=match.group(2) if len(match.groups()) >= 2 else match.group(1),
+                    scope=ClaimScope.NEWS_FACT,
+                    context=self._extract_line(text, match.start(), match.end()),
                 ))
 
         return claims
+
+    def _extract_news_fact_claims(self, text: str) -> List[Claim]:
+        """提取新闻事实断言（同比/环比/财报增速等）"""
+        claims = []
+        patterns = [
+            r'(?:同比|环比)(?:增长|上涨|下滑|下降)?\s*\+?(\d+\.?\d*)\s*%',
+            r'(?:营收|收入|净利润|利润)(?:同比|环比)(?:增长|上涨|下滑|下降)?\s*\+?(\d+\.?\d*)\s*%',
+        ]
+
+        for line in text.splitlines():
+            if '基于实时数据' in line or '现价' in line or '收涨' in line or '收跌' in line:
+                continue
+            for pattern in patterns:
+                for match in re.finditer(pattern, line):
+                    claims.append(Claim(
+                        type=ClaimType.MARKET_TREND,
+                        content=match.group(0),
+                        extracted_value=match.group(1),
+                        scope=ClaimScope.NEWS_FACT,
+                        context=line.strip(),
+                    ))
+
+        return claims
+
+    def _extract_line(self, text: str, start: int, end: int) -> str:
+        line_start = text.rfind('\n', 0, start) + 1
+        line_end = text.find('\n', end)
+        if line_end == -1:
+            line_end = len(text)
+        return text[line_start:line_end].strip()
+
+    def _infer_asset_hint(self, text: str) -> Optional[str]:
+        hint_map = {
+            'sh000001': ['上证指数', '沪指', '上证'],
+            'sz399001': ['深证成指', '深成指'],
+            'sz399006': ['创业板指', '创业板'],
+            'gold': ['黄金', '金价', '现货黄金', '黄金ETF'],
+            'USD/CNY': ['美元兑人民币', 'USD/CNY', '汇率'],
+        }
+        for asset, cues in hint_map.items():
+            if any(cue in text for cue in cues):
+                return asset
+        return None
 
     def verify_claims(self, claims: List[Claim], context_data: Optional[Dict] = None) -> List[Claim]:
         """
@@ -229,6 +339,9 @@ class FactChecker:
         """
         for claim in claims:
             if claim.error:  # 已标记为错误的跳过
+                continue
+            if claim.scope != ClaimScope.REALTIME_MARKET:
+                claim.evidence = "新闻事实断言，不纳入实时行情校验"
                 continue
 
             try:
@@ -296,7 +409,7 @@ class FactChecker:
                         claim.verified = True
                         claim.confidence = 1.0 - diff_pct
                         claim.evidence = f"实时数据验证: ¥{actual_price:.2f} (误差 {diff_pct*100:.1f}%)"
-                        claim.source = "新浪财经"
+                        claim.source = "Yahoo Finance"
                         claim.timestamp = stock_dict.get('timestamp', '')
                         return
 
@@ -320,8 +433,26 @@ class FactChecker:
                 claim.evidence = "缺少实时数据上下文,无法验证"
                 return
 
-            # 查找匹配
-            for code, stock_dict in stocks_data.items():
+            if claim.asset_hint == 'gold':
+                gold_data = context_data.get('gold') if context_data else None
+                if not gold_data or gold_data.get('change_24h') is None:
+                    claim.evidence = "缺少黄金涨跌幅实时数据,无法验证"
+                    return
+                actual_change = float(gold_data.get('change_24h') or 0)
+                if abs(actual_change - claimed_change) < 0.5:
+                    claim.verified = True
+                    claim.confidence = 0.95
+                    claim.evidence = f"实时黄金涨跌幅: {actual_change:+.2f}%"
+                    claim.source = "Gold-API / Yahoo Finance"
+                    claim.timestamp = gold_data.get('timestamp', '')
+                    return
+                claim.verified = False
+                claim.evidence = "实时黄金涨跌幅数据不符"
+                return
+
+            candidate_codes = [claim.asset_hint] if claim.asset_hint in stocks_data else list(stocks_data.keys())
+            for code in candidate_codes:
+                stock_dict = stocks_data.get(code) or {}
                 actual_change = stock_dict.get('change_pct', 0)
 
                 # 允许0.5%绝对误差
@@ -329,7 +460,7 @@ class FactChecker:
                     claim.verified = True
                     claim.confidence = 0.95
                     claim.evidence = f"实时涨跌幅: {actual_change:+.2f}%"
-                    claim.source = "新浪财经"
+                    claim.source = "Yahoo Finance"
                     claim.timestamp = stock_dict.get('timestamp', '')
                     return
 
@@ -367,7 +498,7 @@ class FactChecker:
                 claim.verified = True
                 claim.confidence = 1.0 - diff_pct
                 claim.evidence = f"实时金价: ${actual_price:.2f}/盎司 (误差 {diff_pct*100:.1f}%)"
-                claim.source = "新浪财经"
+                claim.source = "Gold-API / Yahoo Finance"
                 claim.timestamp = timestamp
             else:
                 claim.verified = False
@@ -407,7 +538,7 @@ class FactChecker:
                 claim.verified = True
                 claim.confidence = 1.0 - diff_pct
                 claim.evidence = f"实时汇率: {actual_rate:.4f}"
-                claim.source = "新浪财经"
+                claim.source = "Frankfurter"
                 claim.timestamp = timestamp
             else:
                 claim.verified = False
@@ -433,20 +564,26 @@ class FactChecker:
         annotation += "## 📌 事实核查报告\n\n"
 
         # 统计
-        total = len(claims)
-        verified = sum(1 for c in claims if c.verified)
+        realtime_claims = [c for c in claims if c.scope == ClaimScope.REALTIME_MARKET]
+        skipped_news_claims = [c for c in claims if c.scope == ClaimScope.NEWS_FACT]
+
+        total = len(realtime_claims)
+        verified = sum(1 for c in realtime_claims if c.verified)
         unverified = total - verified
-        errors = sum(1 for c in claims if c.error)
+        errors = sum(1 for c in realtime_claims if c.error)
 
         annotation += f"**总断言数**: {total}  \n"
-        annotation += f"**已验证**: {verified} ({verified/total*100:.1f}%)  \n"
+        verified_pct = (verified / total * 100) if total > 0 else 0.0
+        annotation += f"**已验证**: {verified} ({verified_pct:.1f}%)  \n"
         annotation += f"**未验证**: {unverified}  \n"
+        if skipped_news_claims:
+            annotation += f"**新闻事实断言**: {len(skipped_news_claims)}（不纳入实时行情校验）  \n"
         if errors > 0:
             annotation += f"**错误/违规**: {errors} ❌  \n"
 
         # 可信度评级
         if total > 0:
-            avg_confidence = sum(c.confidence for c in claims if c.verified) / verified if verified > 0 else 0
+            avg_confidence = sum(c.confidence for c in realtime_claims if c.verified) / verified if verified > 0 else 0
             if avg_confidence >= 0.9:
                 rating = "高"
             elif avg_confidence >= 0.7:
@@ -458,7 +595,7 @@ class FactChecker:
         annotation += "\n"
 
         # 已验证的断言
-        verified_claims = [c for c in claims if c.verified]
+        verified_claims = [c for c in realtime_claims if c.verified]
         if verified_claims:
             annotation += "### ✅ 已验证的断言\n\n"
             for claim in verified_claims[:5]:  # 最多显示5个
@@ -472,7 +609,7 @@ class FactChecker:
                 annotation += f"*（还有 {len(verified_claims)-5} 个已验证断言未完全列出）*\n\n"
 
         # 未验证的断言
-        unverified_claims = [c for c in claims if not c.verified and not c.error]
+        unverified_claims = [c for c in realtime_claims if not c.verified and not c.error]
         if unverified_claims:
             annotation += "### ⚠️ 无法验证的断言\n\n"
             for claim in unverified_claims[:3]:
@@ -481,7 +618,7 @@ class FactChecker:
                 annotation += "\n"
 
         # 错误/违规断言
-        error_claims = [c for c in claims if c.error]
+        error_claims = [c for c in realtime_claims if c.error]
         if error_claims:
             annotation += "### ❌ 检测到的问题\n\n"
             for claim in error_claims:
@@ -493,7 +630,7 @@ class FactChecker:
         annotation += "---\n\n"
         annotation += "**事实核查说明**:  \n"
         annotation += "- 本核查基于报告生成时的实时市场数据  \n"
-        annotation += "- 数据来源: 新浪财经等公开API  \n"
+        annotation += "- 数据来源: Yahoo Finance、Gold-API、Frankfurter 等公开接口  \n"
         annotation += "- 价格类断言允许≤5%误差,涨跌幅允许≤0.5%误差  \n"
 
         if errors > 0:

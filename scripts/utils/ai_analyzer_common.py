@@ -3,7 +3,7 @@
 """
 AI 分析公共模块
 
-提取ai_analyze.py和ai_analyze_deepseek.py的公共逻辑，避免代码重复
+提取 DeepSeek 分析脚本的公共逻辑，避免代码重复
 """
 
 import json
@@ -41,10 +41,22 @@ def open_connection(db_path: Path) -> sqlite3.Connection:
     return conn
 
 
-def build_query(order: str, limit: int) -> Tuple[str, List[Any]]:
+def build_query(conn: sqlite3.Connection, order: str, limit: int) -> Tuple[str, List[Any]]:
     """构建SQL查询"""
+    columns = {
+        row['name'] if isinstance(row, sqlite3.Row) else row[1]
+        for row in conn.execute("PRAGMA table_info(news_articles)").fetchall()
+    }
+    source_tier_sql = "a.source_tier" if 'source_tier' in columns else "'mainstream'"
+    content_quality_sql = "a.content_quality_status" if 'content_quality_status' in columns else "'summary_only'"
+    relevance_sql = "a.investment_relevance" if 'investment_relevance' in columns else "'medium'"
+    original_sql = "a.is_original_source" if 'is_original_source' in columns else "0"
+
     sql = [
-        'SELECT a.id, a.collection_date, a.title, a.link, a.published, a.summary, a.content, s.source_name',
+        'SELECT a.id, a.collection_date, a.title, a.link, a.published, a.summary, a.content,',
+        f'       {source_tier_sql} AS source_tier, {content_quality_sql} AS content_quality_status,',
+        f'       {relevance_sql} AS investment_relevance, {original_sql} AS is_original_source,',
+        '       s.source_name',
         'FROM news_articles a',
         'JOIN rss_sources s ON a.source_id = s.id',
         'WHERE a.collection_date BETWEEN ? AND ?'
@@ -63,7 +75,7 @@ def build_query(order: str, limit: int) -> Tuple[str, List[Any]]:
 
 def query_articles(conn: sqlite3.Connection, start: str, end: str, order: str, limit: int) -> List[Dict[str, Any]]:
     """查询文章"""
-    sql, tail = build_query(order, limit)
+    sql, tail = build_query(conn, order, limit)
     params = [start, end] + tail
     cur = conn.execute(sql, params)
     rows = cur.fetchall()
@@ -77,7 +89,11 @@ def query_articles(conn: sqlite3.Connection, start: str, end: str, order: str, l
             'source': r['source_name'],
             'published': r['published'],
             'summary': r['summary'],
-            'content': r['content']
+            'content': r['content'],
+            'source_tier': r['source_tier'],
+            'content_quality_status': r['content_quality_status'],
+            'investment_relevance': r['investment_relevance'],
+            'is_original_source': r['is_original_source'],
         })
     return results
 
@@ -198,13 +214,19 @@ def build_source_stats_block(selected: List[Dict[str, Any]], content_field: str,
     return stats_info
 
 
-def save_markdown(date_str: str, markdown_text: str, model_suffix: str = 'gemini') -> Path:
+def save_markdown(
+    date_str: str,
+    markdown_text: str,
+    model_suffix: str = 'gemini',
+    artifact_suffix: str = '',
+) -> Path:
     """保存Markdown报告
     
     Args:
         date_str: 日期字符串（YYYY-MM-DD）
         markdown_text: 报告内容
         model_suffix: 模型后缀（gemini/deepseek）
+        artifact_suffix: 额外产物后缀（如 judgment-cards）
         
     Returns:
         报告文件路径
@@ -236,8 +258,14 @@ def save_markdown(date_str: str, markdown_text: str, model_suffix: str = 'gemini
     header = f"# 📅 {date_str} 财经分析报告 ({session_label})\n\n> 📅 生成时间: {now_str} (北京时间)\n\n"
     content = header + (markdown_text or '').strip() + '\n'
     
-    # 文件名包含场次，避免覆盖
-    report_file = report_dir / f"📅 {date_str} 财经分析报告_{session}_{model_suffix}.md"
+    # 文件名包含场次和模式，避免不同输出互相覆盖
+    suffix_parts = [session]
+    if artifact_suffix:
+        suffix_parts.append(artifact_suffix)
+    if model_suffix:
+        suffix_parts.append(model_suffix)
+    filename_suffix = '_'.join(suffix_parts)
+    report_file = report_dir / f"📅 {date_str} 财经分析报告_{filename_suffix}.md"
     
     with open(report_file, 'w', encoding='utf-8') as f:
         f.write(content)
@@ -245,13 +273,19 @@ def save_markdown(date_str: str, markdown_text: str, model_suffix: str = 'gemini
     return report_file
 
 
-def save_metadata(date_str: str, meta: Dict[str, Any], model_suffix: str = ''):
+def save_metadata(
+    date_str: str,
+    meta: Dict[str, Any],
+    model_suffix: str = '',
+    artifact_suffix: str = '',
+):
     """保存元数据
     
     Args:
         date_str: 日期字符串
         meta: 元数据字典
         model_suffix: 模型后缀（如 'gemini', 'deepseek'）
+        artifact_suffix: 额外产物后缀（如 judgment-cards）
     """
     year_month = date_str[:7]
     # 元数据单独存放在 metadata 目录
@@ -271,11 +305,14 @@ def save_metadata(date_str: str, meta: Dict[str, Any], model_suffix: str = ''):
     else:
         session = 'overnight'
     
-    # 根据模型和场次添加后缀，避免覆盖
+    # 根据模式、模型和场次添加后缀，避免覆盖
+    suffix_parts = [session]
+    if artifact_suffix:
+        suffix_parts.append(artifact_suffix)
     if model_suffix:
-        meta_file = metadata_dir / f'analysis_meta_{session}_{model_suffix}.json'
-    else:
-        meta_file = metadata_dir / f'analysis_meta_{session}.json'
+        suffix_parts.append(model_suffix)
+    filename_suffix = '_'.join(suffix_parts)
+    meta_file = metadata_dir / f'analysis_meta_{filename_suffix}.json'
     
     # 在元数据中记录场次信息
     meta['session'] = session
@@ -332,4 +369,3 @@ def resolve_date_range(args) -> Tuple[str, str]:
     if start > end:
         raise SystemExit(f'开始日期不得晚于结束日期: {start} > {end}')
     return start, end
-

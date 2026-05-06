@@ -63,12 +63,6 @@ case $choice in
     2)
         echo "🤖 启动AI分析脚本..."
         echo
-        echo "🤖 选择AI模型："
-        echo "  • 1 = Gemini（默认）"
-        echo "  • 2 = DeepSeek"
-        echo
-        read -p "请选择模型 [1/2，默认1]: " model_choice
-        
         echo
         echo "📝 选择分析字段："
         echo "  • 1 = summary - 摘要优先（推荐，速度快，成功率85.7%）"
@@ -89,16 +83,8 @@ case $choice in
         fi
         
         echo
-        if [ -z "$model_choice" ] || [ "$model_choice" = "1" ]; then
-            echo "🚀 使用Gemini模型，字段模式：$content_field"
-            python3 scripts/ai_analyze.py --content-field "$content_field"
-        elif [ "$model_choice" = "2" ]; then
-            echo "🚀 使用DeepSeek模型，字段模式：$content_field"
-            python3 scripts/ai_analyze_deepseek.py --content-field "$content_field"
-        else
-            echo "❌ 无效选择，使用默认Gemini + 摘要模式"
-            python3 scripts/ai_analyze.py --content-field summary
-        fi
+        echo "🚀 使用DeepSeek完整报告模式，字段模式：$content_field"
+        python3 scripts/ai_analyze_deepseek_verified.py --mode markdown-report --content-field "$content_field"
         ;;
     3)
         echo "📰 启动RSS财经抓取器..."

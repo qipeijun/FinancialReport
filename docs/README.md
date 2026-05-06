@@ -1,361 +1,253 @@
 # Financial Report 项目文档
 
-> 📅 最后更新: 2026-01-07
-> 🎯 版本: v2.0 (已优化)
+> 最后更新：2026-05-06  
+> 当前主链路：DeepSeek + 验证增强版 + 双模式输出 + 验收脚本
 
 ---
 
-## 📚 快速导航
+## 快速导航
 
 - [快速开始](#快速开始)
-- [核心功能](#核心功能)
-- [系统架构](#系统架构)
-- [开发指南](#开发指南)
-- [部署运维](#部署运维)
-- [更新日志](#更新日志)
+- [当前推荐链路](#当前推荐链路)
+- [核心脚本](#核心脚本)
+- [质量控制](#质量控制)
+- [验收机制](#验收机制)
+- [部署与运维](#部署与运维)
 
 ---
 
-## 🚀 快速开始
+## 快速开始
 
 ### 环境要求
 
 - Python 3.10+
 - SQLite 3
-- Git
+- DeepSeek API Key
 
-### 快速安装
+### 安装
 
 ```bash
-# 1. 克隆仓库
 git clone https://github.com/your-username/Financial-report.git
 cd Financial-report
 
-# 2. 创建虚拟环境
 python3 -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-# 3. 安装依赖
+source venv/bin/activate
 pip install -r requirements.txt
-
-# 4. 配置API密钥
-export GEMINI_API_KEY="your-gemini-api-key"
-export DEEPSEEK_API_KEY="your-deepseek-api-key"  # 可选
 ```
 
-### 生成第一份报告
+### 配置
+
+推荐使用环境变量：
 
 ```bash
-# 方式1: 抓取新闻并生成报告
+export DEEPSEEK_API_KEY="your-deepseek-api-key"
+```
+
+也支持在 `config/config.yml` 中配置：
+
+```yaml
+api_keys:
+  deepseek: "YOUR_KEY"
+```
+
+---
+
+## 当前推荐链路
+
+### 方式一：交互式入口
+
+```bash
+python3 scripts/interactive_runner.py
+```
+
+或：
+
+```bash
+./start.sh
+```
+
+### 方式二：显式脚本入口
+
+1. 先抓新闻：
+
+```bash
 python3 scripts/rss_finance_analyzer.py --fetch-content
-python3 scripts/ai_analyze_verified.py --date $(date +%Y-%m-%d)
-
-# 方式2: 使用已有数据生成
-python3 scripts/ai_analyze_verified.py --date 2026-01-07
 ```
 
-报告将保存到: `docs/archive/YYYY-MM/YYYY-MM-DD/reports/`
-
----
-
-## ⭐ 核心功能
-
-### 1. 智能新闻采集
-
-- 📰 **多源RSS聚合** - 支持20+财经RSS源
-- 🔄 **智能去重** - MinHash + LSH算法，O(n)复杂度
-- 🎯 **内容抓取** - 自动提取正文，智能清洗
-- 💾 **SQLite存储** - 高效本地数据库
-
-### 2. AI财经分析
-
-- 🤖 **多模型支持** - Gemini 3.0, DeepSeek, Claude
-- ⚡ **实时数据注入** - 股票/黄金/外汇实时行情
-- 🔍 **事实核查** - 自动验证AI生成的数据断言
-- 📊 **质量评分** - 准确性+时效性+可靠性 (80分以上发布)
-- 🔄 **自动重试** - 质量不达标自动优化重试
-
-### 3. 数据库自动维护
-
-- 🏥 **定时健康检查** - 每周一凌晨自动检查
-- 🔧 **完整维护** - 每月1号自动VACUUM+索引优化
-- 📊 **实时监控** - 每次生成报告时检查碎片率
-- 🛠️ **手动工具** - 支持6种维护操作
-
-### 4. 自动化部署
-
-- ⏰ **GitHub Actions** - 定时自动执行
-- 📄 **MkDocs网站** - 自动构建部署到GitHub Pages
-- 📧 **通知系统** - 邮件/钉钉通知(可选)
-- ☁️ **云函数支持** - 腾讯云SCF部署
-
----
-
-## 🏗️ 系统架构
-
-### 技术栈
-
-| 组件 | 技术 | 说明 |
-|------|------|------|
-| 语言 | Python 3.11 | 核心开发语言 |
-| 数据库 | SQLite 3 | 轻量级本地数据库 |
-| AI模型 | Gemini 3.0, DeepSeek | 多模型支持 |
-| 文档 | MkDocs | 静态网站生成 |
-| CI/CD | GitHub Actions | 自动化工作流 |
-| 部署 | GitHub Pages | 静态托管 |
-
-### 核心模块
-
-```
-Financial-report/
-├── scripts/                    # 核心脚本
-│   ├── rss_finance_analyzer.py        # RSS采集主脚本
-│   ├── ai_analyze_verified.py         # AI分析(带验证)
-│   ├── test_verification_system.py    # 测试工具
-│   └── utils/                         # 工具模块
-│       ├── realtime_data_fetcher.py   # 实时数据采集
-│       ├── fact_checker.py            # 事实核查
-│       ├── quality_checker.py         # 质量评分
-│       ├── db_maintenance.py          # 数据库维护
-│       └── ...
-│
-├── .github/workflows/         # 自动化工作流
-│   ├── daily-financial-report-verified.yml  # 验证版报告
-│   └── database-maintenance.yml             # 数据库维护
-│
-├── docs/                      # 文档
-├── data/                      # 数据文件
-│   └── news_data.db          # SQLite数据库
-└── config/                    # 配置文件
-```
-
-### 数据流程
-
-```
-RSS源 → 内容抓取 → 去重 → SQLite
-                                ↓
-                          AI Prompt ← 实时数据(股票/金价)
-                                ↓
-                          Gemini 3.0生成报告
-                                ↓
-                          事实核查 → 质量评分
-                                ↓
-                    评分<80? → 重试 (最多3次)
-                                ↓
-                          追加核查报告 → 保存
-                                ↓
-                          MkDocs构建 → GitHub Pages
-```
-
----
-
-## 👨‍💻 开发指南
-
-### 核心脚本说明
-
-#### 1. RSS采集: `rss_finance_analyzer.py`
+2. 再分析：
 
 ```bash
-# 基本使用
+# 完整报告
+python3 scripts/ai_analyze_deepseek_verified.py --date $(date +%Y-%m-%d) --mode markdown-report
+
+# 判断卡片
+python3 scripts/ai_analyze_deepseek_verified.py --date $(date +%Y-%m-%d) --mode judgment-cards
+```
+
+---
+
+## 核心脚本
+
+### 1. RSS 采集：`rss_finance_analyzer.py`
+
+```bash
 python3 scripts/rss_finance_analyzer.py --fetch-content
-
-# 完整参数
-python3 scripts/rss_finance_analyzer.py \
-  --fetch-content \      # 抓取全文
-  --deduplicate \        # 去重
-  --max-workers 10       # 并发数
 ```
 
-#### 2. AI分析: `ai_analyze_verified.py`
+常用参数：
+
+- `--fetch-content`：抓取正文
+- `--deduplicate`：启用去重
+- `--max-workers`：控制并发
+- `--only-source`：限制来源
+
+### 2. AI 分析主入口：`ai_analyze_deepseek_verified.py`
+
+这是当前推荐的主分析脚本，支持两种输出模式。
+
+#### 完整报告模式
 
 ```bash
-# 基本使用
-python3 scripts/ai_analyze_verified.py --date 2026-01-07
-
-# 高质量模式
-python3 scripts/ai_analyze_verified.py \
-  --date 2026-01-07 \
-  --min-score 90 \       # 最低评分90
-  --max-retries 5        # 最多重试5次
-
-# 跳过验证(测试)
-python3 scripts/ai_analyze_verified.py \
-  --date 2026-01-07 \
-  --skip-verification
+python3 scripts/ai_analyze_deepseek_verified.py \
+  --date 2026-05-06 \
+  --mode markdown-report \
+  --content-field summary
 ```
 
-#### 3. 数据库维护: `db_maintenance.py`
+#### 判断卡片模式
 
 ```bash
-# 健康检查
-python3 scripts/utils/db_maintenance.py --health-check
-
-# 完整维护
-python3 scripts/utils/db_maintenance.py --optimize
-
-# VACUUM清理
-python3 scripts/utils/db_maintenance.py --vacuum
-
-# 数据清理
-python3 scripts/utils/db_maintenance.py --cleanup 90  # 保留90天
+python3 scripts/ai_analyze_deepseek_verified.py \
+  --date 2026-05-06 \
+  --mode judgment-cards \
+  --max-theses 5
 ```
 
-### AI模型配置
+常用参数：
 
-当前模型优先级:
+- `--mode markdown-report|judgment-cards`
+- `--content-field summary|content|auto`
+- `--min-score`
+- `--max-retries`
+- `--skip-verification`
+- `--filter-source`
+- `--filter-keyword`
+- `--output`
 
-1. **Gemini 3.0 Flash** (最新) - 速度快3倍,成本低
-2. **Gemini 3.0 Pro** - 最智能,复杂推理
-3. **Gemini 2.0 Flash** - 备用
-4. Gemini 1.5 Pro - 备用
-5. Gemini 1.5 Flash - 最后备用
+### 3. 验收入口：`run_acceptance.py`
 
-### 数据库Schema
+```bash
+# 轻量验收
+python3 scripts/run_acceptance.py --date 2026-05-06 --skip-live
 
-参见: [`docs/DATABASE_SCHEMA.md`](./DATABASE_SCHEMA.md)
+# 全量验收
+python3 scripts/run_acceptance.py --date 2026-05-06
+```
 
-核心表:
-- `news_articles` - 新闻文章
-- `rss_sources` - RSS源配置
-- `minhash_signatures` - 去重签名
+输出：
+
+```text
+data/acceptance/YYYY-MM-DD/acceptance_report.json
+```
 
 ---
 
-## 🚀 部署运维
+## 质量控制
 
-### GitHub Actions 自动化
+当前质量控制分四层：
 
-#### 验证版报告生成
+### 1. 实时数据注入
 
-**Workflow**: `.github/workflows/daily-financial-report-verified.yml`
+- 股票：Yahoo Finance
+- 黄金：Gold-API / Yahoo Finance
+- 外汇：Frankfurter
 
-**触发方式**:
-- 手动触发 (Actions页面)
-- 定时触发 (需取消注释cron)
+如果三类行情全部失败，系统会自动降级，不再伪装成“有实时数据”。
 
-**参数**:
-- `skip_verification` - 跳过验证
-- `min_quality_score` - 最低质量评分 (默认80)
-- `max_retries` - 最大重试次数 (默认3)
+### 2. 事实核查
 
-#### 数据库自动维护
+系统会从报告中提取可验证断言，例如：
 
-**Workflow**: `.github/workflows/database-maintenance.yml`
+- 股价
+- 涨跌幅
+- 金价
+- 汇率
 
-**自动执行**:
-- 每周一凌晨2:00 - 健康检查
-- 每月1号凌晨3:00 - 完整维护
+再用实时数据做校验，并生成附加的核查报告。
 
-**手动操作**:
-- health-check - 健康检查
-- full-maintenance - 完整维护
-- vacuum - VACUUM清理
-- rebuild-indexes - 重建索引
-- cleanup - 清理旧数据
+### 3. 质量评分
 
-### 本地开发
+`check_report_quality_v2()` 会从三个维度评分：
+
+- 准确性：60 分
+- 时效性：20 分
+- 可靠性：20 分
+
+通过标准默认是：
+
+- 总分 `>= 80`
+- `issues = []`
+- 未检测到明显编造内容
+
+### 4. 弱证据降级
+
+判断卡片模式下，若证据不足：
+
+- 不应强行输出高置信度结论
+- 应优先降级为 `观察项`
+
+---
+
+## 产物与归档
+
+分析结果默认保存到：
+
+```text
+docs/archive/YYYY-MM/YYYY-MM-DD/
+```
+
+主要产物包括：
+
+- `collected_data.json`
+- `reports/*.md`
+- `metadata/*.json`
+
+当前文件名会区分：
+
+- 时段（morning / afternoon / evening / overnight）
+- 模式（markdown-report / judgment-cards）
+- 模型（deepseek）
+
+这样同一时段连续跑两种模式时不会互相覆盖。
+
+---
+
+## 部署与运维
+
+### 本地查看文档
 
 ```bash
-# 1. 安装开发依赖
-pip install -r requirements.txt
-
-# 2. 运行测试
-python3 scripts/test_verification_system.py
-
-# 3. 本地预览文档
 mkdocs serve
+```
 
-# 4. 构建文档
+### 构建文档
+
+```bash
 mkdocs build
 ```
 
-### 环境变量
+### 数据库维护
 
-必需:
-- `GEMINI_API_KEY` - Gemini API密钥
-
-可选:
-- `DEEPSEEK_API_KEY` - DeepSeek API密钥
-- `SMTP_SERVER` - 邮件服务器
-- `EMAIL_USERNAME` - 邮件用户名
-- `EMAIL_PASSWORD` - 邮件密码
+```bash
+python3 scripts/utils/db_maintenance.py --health-check
+python3 scripts/utils/db_maintenance.py --optimize
+python3 scripts/utils/db_maintenance.py --cleanup 90
+```
 
 ---
 
-## 📝 更新日志
+## 说明
 
-### v2.0 (2026-01-07)
-
-**重大更新**:
-- ✅ 升级到Gemini 3.0系列模型
-- ✅ 完整的AI报告质量验证系统
-- ✅ 数据库自动维护系统
-- ✅ 实时数据注入功能
-- ✅ 事实核查框架
-- ✅ 多维度质量评分
-
-**性能提升**:
-- ⚡ AI生成速度提升3倍
-- 💰 Token成本降低
-- 🎯 报告准确性显著提升
-- 📊 数据库性能优化
-
-详见: [`docs/GEMINI_3_UPGRADE.md`](./GEMINI_3_UPGRADE.md)
-
-### v1.0 (2025-09)
-
-- ✅ RSS新闻采集系统
-- ✅ 基础AI分析功能
-- ✅ MkDocs文档网站
-- ✅ GitHub Actions自动化
-
----
-
-## 🔧 故障排除
-
-### 常见问题
-
-**Q: 实时数据获取失败?**
-
-A: 检查是否交易时间。非交易时间会自动降级使用新闻数据。
-
-**Q: 质量评分总是不通过?**
-
-A:
-1. 降低最低评分 `--min-score 70`
-2. 增加重试次数 `--max-retries 5`
-3. 检查AI是否编造目标涨幅
-
-**Q: Token使用过多?**
-
-A:
-1. 限制文章数 `--max-articles 30`
-2. 限制读取量 `--limit 50`
-
-### 获取帮助
-
-- 📖 查看详细文档: `docs/`
-- 🐛 提交Issue: [GitHub Issues](https://github.com/your-username/Financial-report/issues)
-- 💬 讨论交流: [GitHub Discussions](https://github.com/your-username/Financial-report/discussions)
-
----
-
-## 📄 许可证
-
-MIT License
-
----
-
-## 🙏 致谢
-
-- Google Gemini API
-- DeepSeek API
-- MkDocs
-- GitHub Actions
-
----
-
-**文档版本**: v2.0
-**最后更新**: 2026-01-07
-
-💪 准备好生成高质量的AI财经报告了吗? [开始使用](#快速开始) 🚀
+- 当前文档默认描述的是 **DeepSeek 主链路**。
+- `scripts/archive/` 下的文件仅作为历史备份参考。
+- 如果某份旧文档仍提到 Gemini 主入口、`ai_analyze.py` 或 `ai_analyze_verified.py`，应视为历史背景，而不是当前推荐用法。
