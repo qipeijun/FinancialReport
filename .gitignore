@@ -55,6 +55,7 @@ data/http_cache.json
 data/news_data.db
 data/market_cache/price_history/
 data/acceptance/
+docs/archive/
 
 # 新闻备份文件
 docs/archive/**/*.txt
