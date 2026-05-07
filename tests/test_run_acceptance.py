@@ -8,7 +8,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 
-from scripts.run_acceptance import analyze_report_quality, validate_stock_recommendations_payload
+from scripts.run_acceptance import analyze_mode_output, analyze_report_quality, validate_stock_recommendations_payload
 from scripts.utils.realtime_data_fetcher import RealtimeDataFetcher
 
 
@@ -84,11 +84,21 @@ def test_realtime_fetcher_force_failure_env_skips_all_network(monkeypatch):
 def test_validate_stock_recommendations_payload_rejects_incomplete_high_grade():
     result = validate_stock_recommendations_payload(
         {
+            'metadata': {
+                'stock_recommendations': [],
+                'score_distribution': {},
+                'scoring_config': {
+                    'pool_mode': 'strict',
+                    'value_acceptance_enabled': True,
+                },
+            },
             'stock_recommendations': [
                 {
                     'symbol': 'sh600519',
                     'name': '贵州茅台',
+                    'base_grade': '强关注',
                     'grade': '强关注',
+                    'grade_caps': [],
                     'total_score': 85,
                     'scores': {
                         'news_catalyst': 25,
@@ -99,11 +109,133 @@ def test_validate_stock_recommendations_payload_rejects_incomplete_high_grade():
                     },
                     'data_completeness': 0.5,
                     'evidence_article_ids': [],
+                    'candidate_confidence': 'high',
+                    'evidence_strength': {
+                        'direct_mentions': 0,
+                        'independent_evidence_count': 0,
+                        'source_tier_max': 'mainstream',
+                    },
+                    'industry_trend': {
+                        'status': 'missing',
+                        'direction': 'flat',
+                        'score': 0,
+                        'as_of': None,
+                    },
+                    'source_type': 'theme_mapping',
                 }
-            ]
+            ],
+            'score_distribution': {},
+            'scoring_config': {
+                'pool_mode': 'strict',
+                'value_acceptance_enabled': True,
+            },
         }
     )
 
     assert result['passed'] is False
-    assert result['high_grade_without_evidence'] == 1
+    assert result['high_grade_without_evidence'] >= 1
     assert result['strong_focus_with_incomplete'] == 1
+    assert result['theme_mapping_strong_focus_count'] == 1
+    assert result['output_json_schema_passed'] is True
+
+
+def test_validate_stock_recommendations_payload_prefers_metadata_recommendations():
+    result = validate_stock_recommendations_payload(
+        {
+            'metadata': {
+                'stock_recommendations': [
+                    {
+                        'symbol': 'sh600519',
+                        'name': '贵州茅台',
+                        'base_grade': '关注',
+                        'grade': '关注',
+                        'grade_caps': [],
+                        'total_score': 70,
+                        'scores': {
+                            'news_catalyst': 18,
+                            'technical': 15,
+                            'valuation': 15,
+                            'quality_risk': 12,
+                            'market_regime': 10,
+                        },
+                        'data_completeness': 0.9,
+                        'evidence_article_ids': [1],
+                        'candidate_confidence': 'high',
+                        'evidence_strength': {
+                            'direct_mentions': 1,
+                            'independent_evidence_count': 2,
+                            'source_tier_max': 'official',
+                        },
+                        'industry_trend': {
+                            'status': 'available',
+                            'direction': 'flat',
+                            'score': 0,
+                            'as_of': '2026-05-07',
+                        },
+                        'source_type': 'direct_news',
+                    }
+                ],
+                'score_distribution': {},
+                'scoring_config': {
+                    'pool_mode': 'strict',
+                    'value_acceptance_enabled': True,
+                },
+            },
+            'stock_recommendations': [
+                {
+                    'symbol': 'sz000977',
+                    'name': '浪潮信息',
+                    'base_grade': '强关注',
+                    'grade': '强关注',
+                    'grade_caps': [],
+                    'total_score': 85,
+                    'scores': {
+                        'news_catalyst': 25,
+                        'technical': 20,
+                        'valuation': 15,
+                        'quality_risk': 15,
+                        'market_regime': 10,
+                    },
+                    'data_completeness': 0.95,
+                    'evidence_article_ids': [],
+                    'candidate_confidence': 'high',
+                    'evidence_strength': {
+                        'direct_mentions': 0,
+                        'independent_evidence_count': 0,
+                        'source_tier_max': 'mainstream',
+                    },
+                    'industry_trend': {
+                        'status': 'missing',
+                        'direction': 'flat',
+                        'score': 0,
+                        'as_of': None,
+                    },
+                    'source_type': 'theme_mapping',
+                }
+            ],
+            'score_distribution': {},
+            'scoring_config': {
+                'pool_mode': 'strict',
+                'value_acceptance_enabled': True,
+            },
+        }
+    )
+
+    assert result['passed'] is True
+    assert result['count'] == 1
+    assert result['high_grade_without_evidence'] == 0
+
+
+def test_analyze_mode_output_fails_when_structured_export_is_missing(tmp_path: Path):
+    report_path = tmp_path / 'report.md'
+    report_path.write_text("## 股票推荐评分\n", encoding='utf-8')
+
+    result = analyze_mode_output(
+        report_path=report_path,
+        export_json_path=tmp_path / 'missing.json',
+        mode='markdown-report',
+        realtime_data=None,
+    )
+
+    assert result['passed'] is False
+    assert '缺少结构化导出文件' in result['error']

@@ -208,13 +208,55 @@ def build_analysis_command(
     return cmd
 
 
-def validate_stock_recommendations_payload(metadata: Dict[str, Any]) -> Dict[str, Any]:
-    recommendations = metadata.get('stock_recommendations') or []
-    required_fields = {'symbol', 'name', 'grade', 'total_score', 'scores', 'data_completeness'}
+def normalize_export_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
+    if 'metadata' in payload and isinstance(payload.get('metadata'), dict):
+        return payload
+    return {
+        'metadata': {
+            'stock_recommendations': payload.get('stock_recommendations') or [],
+            'score_distribution': payload.get('score_distribution') or {},
+            'scoring_config': payload.get('scoring_config') or {},
+            'output_mode': payload.get('output_mode'),
+            'articles_used': payload.get('articles_used'),
+            'verification_enabled': payload.get('verification_enabled'),
+            'quality_check': payload.get('quality_check'),
+        },
+        'stock_recommendations': payload.get('stock_recommendations') or [],
+        'score_distribution': payload.get('score_distribution') or {},
+        'scoring_config': payload.get('scoring_config') or {},
+    }
+
+
+def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
+    normalized = normalize_export_payload(payload)
+    metadata = normalized.get('metadata') or {}
+    recommendations = metadata.get('stock_recommendations') or normalized.get('stock_recommendations') or []
+    required_fields = {
+        'symbol', 'name', 'grade', 'base_grade', 'grade_caps', 'total_score', 'scores',
+        'data_completeness', 'candidate_confidence', 'evidence_strength', 'industry_trend',
+    }
     issues = []
+    warnings = []
     high_grade_without_evidence = 0
+    theme_mapping_strong_focus_count = 0
     strong_focus_with_incomplete = 0
     score_mismatch = 0
+    missing_grade_caps_count = 0
+    candidate_pool_low_quality = False
+    allowed_grade_caps = {
+        'insufficient_evidence',
+        'no_direct_stock_evidence',
+        'theme_mapping_watch_only',
+        'data_incomplete',
+        'insufficient_history',
+        'missing_valuation_baseline',
+        'risk_flag_present',
+        'score_gate_not_met',
+    }
+    output_json_schema_passed = all(
+        key in normalized for key in ('metadata', 'stock_recommendations', 'score_distribution', 'scoring_config')
+    )
+    scoring_config = metadata.get('scoring_config') or normalized.get('scoring_config') or {}
 
     for item in recommendations:
         missing = sorted(required_fields - set(item.keys()))
@@ -236,13 +278,49 @@ def validate_stock_recommendations_payload(metadata: Dict[str, Any]) -> Dict[str
             strong_focus_with_incomplete += 1
             issues.append(f"{item.get('symbol')} 数据不完整却给出强关注")
 
+        if item.get('source_type') == 'theme_mapping' and item.get('grade') == '强关注':
+            theme_mapping_strong_focus_count += 1
+            issues.append(f"{item.get('symbol')} 主题映射股不允许输出强关注")
+
+        grade_caps = item.get('grade_caps')
+        if item.get('base_grade') != item.get('grade') and not grade_caps:
+            missing_grade_caps_count += 1
+            issues.append(f"{item.get('symbol')} 已压级但未写出 grade_caps")
+        elif grade_caps and any(cap not in allowed_grade_caps for cap in grade_caps):
+            issues.append(f"{item.get('symbol')} 存在非法 grade_caps 枚举")
+
+        evidence_strength = item.get('evidence_strength') or {}
+        direct_mentions = int(evidence_strength.get('direct_mentions') or 0)
+        independent_evidence_count = int(evidence_strength.get('independent_evidence_count') or 0)
+        if item.get('grade') in {'关注', '强关注'} and independent_evidence_count < 1:
+            issues.append(f"{item.get('symbol')} 高等级推荐缺少最小独立证据")
+        if item.get('grade') == '强关注' and direct_mentions < 1:
+            high_grade_without_evidence += 1
+            issues.append(f"{item.get('symbol')} 强关注缺少直接个股证据")
+
+    if recommendations and all(
+        item.get('source_type') == 'theme_mapping'
+        and item.get('candidate_confidence') == 'low'
+        and int((item.get('evidence_strength') or {}).get('direct_mentions') or 0) == 0
+        for item in recommendations
+    ):
+        candidate_pool_low_quality = True
+        warnings.append('推荐列表全部为弱证据 theme-only 候选，候选质量偏低')
+
     return {
         'count': len(recommendations),
         'issues': issues,
+        'warnings': warnings,
         'score_mismatch': score_mismatch,
         'high_grade_without_evidence': high_grade_without_evidence,
+        'theme_mapping_strong_focus_count': theme_mapping_strong_focus_count,
         'strong_focus_with_incomplete': strong_focus_with_incomplete,
-        'passed': not issues if recommendations else True,
+        'missing_grade_caps_count': missing_grade_caps_count,
+        'candidate_pool_low_quality': candidate_pool_low_quality,
+        'output_json_schema_passed': output_json_schema_passed,
+        'passed': bool(output_json_schema_passed) and (not issues if recommendations else True)
+                 and scoring_config.get('pool_mode') == 'strict'
+                 and scoring_config.get('value_acceptance_enabled') is True,
     }
 
 
@@ -271,7 +349,8 @@ def analyze_report_quality(
     realtime_data: Optional[Dict[str, Any]],
 ) -> Dict[str, Any]:
     report_text = report_path.read_text(encoding='utf-8')
-    metadata = load_json(metadata_path)
+    export_payload = normalize_export_payload(load_json(metadata_path))
+    metadata = export_payload.get('metadata') or {}
 
     checker = FactChecker()
     claims = checker.extract_claims(report_text)
@@ -320,12 +399,41 @@ def analyze_report_quality(
         'quality': quality_result,
         'citation_count': report_text.count('【新闻'),
         'suspicious_realtime_phrases': suspicious_realtime_phrases,
-        'stock_scoring': validate_stock_recommendations_payload(metadata) if mode == 'markdown-report' else {},
+        'stock_scoring': validate_stock_recommendations_payload(export_payload) if mode == 'markdown-report' else {},
         'passed': all(structure.values()) and quality_result.get('passed', False) and not quality_result.get('issues'),
     }
     if mode == 'markdown-report':
         payload['passed'] = payload['passed'] and payload['stock_scoring'].get('passed', True)
     return payload
+
+
+def analyze_mode_output(
+    *,
+    report_path: Optional[Path],
+    export_json_path: Path,
+    mode: str,
+    realtime_data: Optional[Dict[str, Any]],
+) -> Dict[str, Any]:
+    if not export_json_path.exists():
+        return {
+            'passed': False,
+            'error': f'缺少结构化导出文件: {export_json_path}',
+            'report_path': str(report_path) if report_path else None,
+            'metadata_path': str(export_json_path),
+        }
+    if not report_path or not report_path.exists():
+        return {
+            'passed': False,
+            'error': '未找到对应模式报告产物',
+            'report_path': str(report_path) if report_path else None,
+            'metadata_path': str(export_json_path),
+        }
+    return analyze_report_quality(
+        report_path,
+        export_json_path,
+        mode=mode,
+        realtime_data=realtime_data,
+    )
 
 
 def build_manual_checklist() -> List[str]:
@@ -428,18 +536,13 @@ def main() -> int:
 
         for mode in ('markdown-report', 'judgment-cards'):
             latest = latest_artifact(date_str, mode)
-            if latest['report'] and latest['metadata']:
-                mode_checks[mode] = analyze_report_quality(
-                    latest['report'],
-                    latest['metadata'],
-                    mode=mode,
-                    realtime_data=realtime_data,
-                )
-            else:
-                mode_checks[mode] = {
-                    'passed': False,
-                    'error': '未找到对应模式产物',
-                }
+            output_json = out_dir / f'{mode}_latest.json'
+            mode_checks[mode] = analyze_mode_output(
+                report_path=latest['report'],
+                export_json_path=output_json,
+                mode=mode,
+                realtime_data=realtime_data,
+            )
 
         markdown_artifacts = find_mode_artifacts(date_str, 'markdown-report')
         judgment_artifacts = find_mode_artifacts(date_str, 'judgment-cards')
@@ -466,10 +569,10 @@ def main() -> int:
         degrade_result = run_command('generate_markdown_degraded', degrade_cmd, env=degrade_env)
         latest_degrade = latest_artifact(date_str, 'markdown-report')
         degrade_analysis = None
-        if latest_degrade['report'] and latest_degrade['metadata']:
-            degrade_analysis = analyze_report_quality(
-                latest_degrade['report'],
-                latest_degrade['metadata'],
+        if latest_degrade['report']:
+            degrade_analysis = analyze_mode_output(
+                report_path=latest_degrade['report'],
+                export_json_path=degrade_output,
                 mode='markdown-report',
                 realtime_data=None,
             )

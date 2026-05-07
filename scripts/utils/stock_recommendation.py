@@ -27,6 +27,16 @@ import requests
 logger = logging.getLogger(__name__)
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+GRADE_CAP_REASONS = {
+    'insufficient_evidence',
+    'no_direct_stock_evidence',
+    'theme_mapping_watch_only',
+    'data_incomplete',
+    'insufficient_history',
+    'missing_valuation_baseline',
+    'risk_flag_present',
+    'score_gate_not_met',
+}
 
 TOPIC_MARKET_SCOPE = {
     '政策与监管': 'broad',
@@ -72,6 +82,9 @@ class CandidateStock:
     independent_evidence_count: int
     direct_mentions: int
     risk_flags: List[str]
+    source_tier_max: str
+    high_confidence_topic: bool = False
+    theme_topics: List[str] | None = None
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
@@ -179,6 +192,8 @@ class SecurityMasterProvider:
                         independent_evidence_count=0,
                         direct_mentions=0,
                         risk_flags=[],
+                        source_tier_max=source_tier,
+                        theme_topics=[],
                     )
                     direct_map[symbol] = item
                 item.evidence_article_ids.append(int(article.get('id') or 0))
@@ -186,6 +201,8 @@ class SecurityMasterProvider:
                 item.source_tiers.append(source_tier)
                 item.direct_mentions += 1
                 item.independent_evidence_count += is_original
+                if self._source_tier_rank(source_tier) > self._source_tier_rank(item.source_tier_max):
+                    item.source_tier_max = source_tier
                 for flag in risk_flags:
                     if flag not in item.risk_flags:
                         item.risk_flags.append(flag)
@@ -206,11 +223,21 @@ class SecurityMasterProvider:
         if judgment_candidates:
             for candidate in judgment_candidates:
                 topic = candidate.get('topic')
-                if topic not in self.topic_map:
+                if topic not in self.topic_map or not candidate.get('high_confidence_topic'):
                     continue
                 for mapped_symbol in self.topic_map[topic][:max_theme_stocks]:
                     symbol = self.normalize_symbol(mapped_symbol)
-                    if not symbol or symbol in result_symbols or symbol not in self.securities:
+                    if not symbol or symbol not in self.securities:
+                        continue
+                    if symbol in direct_map:
+                        direct_item = direct_map[symbol]
+                        if topic not in (direct_item.theme_topics or []):
+                            direct_item.theme_topics = sorted((direct_item.theme_topics or []) + [topic])
+                        direct_item.high_confidence_topic = (
+                            direct_item.high_confidence_topic or bool(candidate.get('high_confidence_topic'))
+                        )
+                        continue
+                    if symbol in result_symbols:
                         continue
                     security = self.securities[symbol]
                     source_tiers = [
@@ -237,6 +264,9 @@ class SecurityMasterProvider:
                             independent_evidence_count=int(candidate.get('independent_evidence_count') or 0),
                             direct_mentions=0,
                             risk_flags=[],
+                            source_tier_max=str(candidate.get('source_tier_max') or 'mainstream'),
+                            high_confidence_topic=bool(candidate.get('high_confidence_topic')),
+                            theme_topics=[topic],
                         )
                     )
                     result_symbols.add(symbol)
@@ -244,6 +274,15 @@ class SecurityMasterProvider:
                         return result
 
         return result[:max_candidates]
+
+    @staticmethod
+    def _source_tier_rank(tier: str) -> int:
+        return {
+            'aggregator': 1,
+            'industry': 2,
+            'mainstream': 3,
+            'official': 4,
+        }.get(tier, 0)
 
 
 class PriceHistoryProvider:
@@ -523,6 +562,7 @@ class RecommendationScorer:
         self.valuation_provider = valuation_provider
         self.lookback_days = lookback_days
         self.style = style
+        self.industry_trend_snapshot = self._load_industry_trend_snapshot()
 
     def score_candidates(self, candidates: List[CandidateStock]) -> Dict[str, Any]:
         market_regime = self.price_history_provider.fetch_market_regime()
@@ -558,6 +598,10 @@ class RecommendationScorer:
                 'market': 'CN',
                 'style': self.style,
                 'lookback_days': self.lookback_days,
+                'pool_mode': 'strict',
+                'theme_mapping_max_grade': 'watch',
+                'value_acceptance_enabled': True,
+                'industry_trend_enabled': True,
             },
         }
 
@@ -577,7 +621,10 @@ class RecommendationScorer:
             candidate, snapshot, industry_stats
         )
         risk_score, risk_flags = self._score_risk(candidate, bars, indicators, snapshot)
-        regime_score, regime_flags = self._score_market_regime(candidate, bars, indicators, market_regime)
+        industry_trend = self._get_industry_trend(candidate.industry)
+        regime_score, regime_flags = self._score_market_regime(
+            candidate, bars, indicators, market_regime, industry_trend
+        )
 
         completeness_weights = {
             'evidence': 0.25,
@@ -601,31 +648,74 @@ class RecommendationScorer:
             'market_regime': regime_score,
         }
         total_score = sum(scores.values())
-
-        grade = self._grade_for_score(total_score)
-        if news_score < 15 or risk_score < 6:
-            grade = self._cap_grade(grade, '观察')
-        if data_completeness < 0.7:
-            grade = self._cap_grade(grade, '关注')
         if len(bars) < self.lookback_days:
             technical_score = 0
             scores['technical'] = 0
             total_score = sum(scores.values())
-            grade = self._cap_grade(self._grade_for_score(total_score), '观察')
+
+        base_grade = self._grade_for_score(total_score)
+        grade = base_grade
+        grade_caps: List[str] = []
+
+        if len(bars) < self.lookback_days:
+            grade = self._cap_grade(grade, '观察')
+            grade_caps.append('insufficient_history')
         if not has_valuation_baseline:
             grade = self._cap_grade(grade, '关注')
+            grade_caps.append('missing_valuation_baseline')
         if candidate.risk_flags:
             grade = self._cap_grade(grade, '观察')
+            grade_caps.append('risk_flag_present')
+        if data_completeness < 0.7:
+            grade = self._cap_grade(grade, '观察')
+            grade_caps.append('data_incomplete')
+        elif data_completeness < 0.85 and base_grade == '强关注':
+            grade = self._cap_grade(grade, '关注')
+            grade_caps.append('data_incomplete')
+        if not candidate.evidence_article_ids:
+            grade = self._cap_grade(grade, '观察')
+            grade_caps.append('insufficient_evidence')
+        if news_score < 15:
+            grade = self._cap_grade(grade, '观察')
+            grade_caps.append('score_gate_not_met')
+        if base_grade in {'关注', '强关注'} and candidate.direct_mentions < 1:
+            grade = self._cap_grade(grade, '观察')
+            grade_caps.append('no_direct_stock_evidence')
+        # Theme-only candidates stay capped at watch. If the stock is also directly
+        # mentioned, it is merged into a direct candidate earlier and can compete
+        # under the direct-evidence rules instead of using an unreachable branch here.
+        if candidate.source_type == 'theme_mapping' and candidate.direct_mentions < 1:
+            grade = self._cap_grade(grade, '观察')
+            grade_caps.append('theme_mapping_watch_only')
+
+        if not self._meets_grade_gate(
+            grade=grade,
+            total_score=total_score,
+            news_score=news_score,
+            risk_score=risk_score,
+            data_completeness=data_completeness,
+            candidate=candidate,
+        ):
+            grade = self._cap_grade(grade, '观察')
+            grade_caps.append('score_gate_not_met')
+
+        grade_caps = sorted({item for item in grade_caps if item in GRADE_CAP_REASONS})
+        if grade == base_grade:
+            grade_caps = []
 
         signals = self._build_signals(candidate, bars, indicators, snapshot, market_regime)
         risks = list(dict.fromkeys(candidate.risk_flags + risk_flags + valuation_flags + regime_flags))
-        invalidators = self._build_invalidators(candidate, indicators, snapshot)
+        invalidators = self._build_invalidators(candidate, indicators, snapshot, grade_caps)
+        candidate_confidence = self._candidate_confidence(candidate)
 
         return {
             'symbol': candidate.symbol,
             'name': candidate.name,
             'industry': candidate.industry,
+            'candidate_confidence': candidate_confidence,
+            'base_grade': base_grade,
             'grade': grade,
+            'grade_caps': grade_caps,
             'total_score': total_score,
             'scores': scores,
             'signals': signals,
@@ -636,6 +726,13 @@ class RecommendationScorer:
             'data_completeness': data_completeness,
             'source_type': candidate.source_type,
             'topic': candidate.topic,
+            'theme_topics': candidate.theme_topics or [],
+            'evidence_strength': {
+                'direct_mentions': candidate.direct_mentions,
+                'independent_evidence_count': candidate.independent_evidence_count,
+                'source_tier_max': candidate.source_tier_max,
+            },
+            'industry_trend': industry_trend,
         }
 
     def _score_news(self, candidate: CandidateStock) -> int:
@@ -804,6 +901,7 @@ class RecommendationScorer:
         bars: List[HistoryBar],
         indicators: Dict[str, Optional[float]],
         market_regime: Dict[str, Any],
+        industry_trend: Dict[str, Any],
     ) -> tuple[int, List[str]]:
         score = 5
         flags = []
@@ -830,7 +928,111 @@ class RecommendationScorer:
             if ma20 and close < ma20:
                 score -= 1
 
+        trend_score = float(industry_trend.get('score') or 0)
+        score += int(clamp(trend_score, -2, 2))
+        status = industry_trend.get('status')
+        if status == 'missing':
+            flags.append('行业趋势缺失，按中性环境处理')
+
         return int(clamp(score, 0, 10)), flags
+
+    def _get_industry_trend(self, industry: str) -> Dict[str, Any]:
+        entry = self.industry_trend_snapshot.get(industry)
+        if not entry:
+            return {
+                'status': 'missing',
+                'direction': 'flat',
+                'score': 0,
+                'as_of': None,
+                'source': 'local_snapshot',
+            }
+        return {
+            'status': 'available',
+            'direction': entry.get('trend_direction', 'flat'),
+            'score': entry.get('trend_score', 0),
+            'as_of': entry.get('as_of'),
+            'source': entry.get('source', 'local_snapshot'),
+        }
+
+    @staticmethod
+    def _load_industry_trend_snapshot() -> Dict[str, Dict[str, Any]]:
+        path = PROJECT_ROOT / 'data' / 'market_cache' / 'industry_trend_snapshot.json'
+        if not path.exists():
+            logger.warning('Industry trend snapshot missing: %s', path)
+            return {}
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                payload = json.load(f)
+        except (json.JSONDecodeError, OSError) as exc:
+            logger.warning('Failed to load industry trend snapshot %s: %s', path, exc)
+            return {}
+        if isinstance(payload, dict):
+            items = payload.get('industries')
+            if isinstance(items, list):
+                result = {
+                    str(item.get('industry')): item
+                    for item in items
+                    if isinstance(item, dict) and item.get('industry')
+                }
+                if len(result) < 8:
+                    logger.warning(
+                        'Industry trend snapshot coverage is low: %s industries loaded from %s',
+                        len(result),
+                        path,
+                    )
+                return result
+        if isinstance(payload, list):
+            result = {
+                str(item.get('industry')): item
+                for item in payload
+                if isinstance(item, dict) and item.get('industry')
+            }
+            if len(result) < 8:
+                logger.warning(
+                    'Industry trend snapshot coverage is low: %s industries loaded from %s',
+                    len(result),
+                    path,
+                )
+            return result
+        logger.warning('Industry trend snapshot has unexpected structure: %s', path)
+        return {}
+
+    def _meets_grade_gate(
+        self,
+        *,
+        grade: str,
+        total_score: int,
+        news_score: int,
+        risk_score: int,
+        data_completeness: float,
+        candidate: CandidateStock,
+    ) -> bool:
+        if grade == '强关注':
+            return (
+                total_score >= 80
+                and news_score >= 20
+                and risk_score >= 10
+                and data_completeness >= 0.85
+                and candidate.direct_mentions >= 1
+                and candidate.source_type != 'theme_mapping'
+                and not candidate.risk_flags
+            )
+        if grade == '关注':
+            return (
+                total_score >= 65
+                and news_score >= 15
+                and data_completeness >= 0.70
+                and bool(candidate.evidence_article_ids)
+            )
+        return True
+
+    @staticmethod
+    def _candidate_confidence(candidate: CandidateStock) -> str:
+        if candidate.direct_mentions >= 1 and candidate.independent_evidence_count >= 2:
+            return 'high'
+        if candidate.high_confidence_topic or candidate.independent_evidence_count >= 1:
+            return 'medium'
+        return 'low'
 
     @staticmethod
     def _grade_for_score(score: int) -> str:
@@ -883,6 +1085,7 @@ class RecommendationScorer:
         candidate: CandidateStock,
         indicators: Dict[str, Optional[float]],
         snapshot: Dict[str, Any],
+        grade_caps: List[str],
     ) -> List[str]:
         items = [
             '若后续催化未兑现或证据链减弱，需要下调关注度',
@@ -892,6 +1095,10 @@ class RecommendationScorer:
             items.append('若盈利改善进度继续不及预期，高估值容忍度将下降')
         if candidate.risk_flags:
             items.append('若负面事件继续发酵，需从观察名单移出')
+        if 'missing_valuation_baseline' in grade_caps:
+            items.append('若后续补齐估值基准，应重新评估估值与等级')
+        if 'no_direct_stock_evidence' in grade_caps:
+            items.append('若出现个股级直接催化证据，可重新评估是否升级')
         return items[:3]
 
 
@@ -932,6 +1139,7 @@ def render_stock_recommendation_markdown(
             [
                 f"#### {index}. {item['name']}（{item['symbol']}）",
                 f"- 推荐等级: {item['grade']} / 总分 {item['total_score']}",
+                f"- 压级原因: {'；'.join(item.get('grade_caps') or ['无'])}",
                 f"- 核心催化: {'；'.join(item.get('signals') or ['暂无'])}",
                 f"- 主要风险: {'；'.join(item.get('risks') or ['暂无'])}",
                 f"- 失效条件: {'；'.join(item.get('invalidators') or ['暂无'])}",
