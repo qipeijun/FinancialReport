@@ -50,6 +50,12 @@ Thumbs.db
 *.tmp
 *.temp
 
+# 本地运行缓存/生成物
+data/http_cache.json
+data/news_data.db
+data/market_cache/price_history/
+data/acceptance/
+
 # 新闻备份文件
 docs/archive/**/*.txt
 
