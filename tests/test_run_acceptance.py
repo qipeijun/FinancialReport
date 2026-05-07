@@ -8,7 +8,12 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 
-from scripts.run_acceptance import analyze_mode_output, analyze_report_quality, validate_stock_recommendations_payload
+from scripts.run_acceptance import (
+    analyze_mode_output,
+    analyze_report_quality,
+    detect_blocked_reason,
+    validate_stock_recommendations_payload,
+)
 from scripts.utils.realtime_data_fetcher import RealtimeDataFetcher
 
 
@@ -79,6 +84,49 @@ def test_realtime_fetcher_force_failure_env_skips_all_network(monkeypatch):
     assert data['stocks'] == {}
     assert data['gold'] is None
     assert data['forex'] == {}
+
+
+def test_analyze_report_quality_skip_live_does_not_fetch_external_data(tmp_path: Path, monkeypatch):
+    report_path = tmp_path / 'report.md'
+    metadata_path = tmp_path / 'metadata.json'
+
+    report_path.write_text(
+        """
+## 市场概况
+- 基于实时数据，现货黄金站上4700美元/盎司，美元兑人民币为6.8302。
+        """.strip(),
+        encoding='utf-8',
+    )
+    metadata_path.write_text(
+        """{
+  "output_mode": "markdown-report",
+  "articles_used": 2,
+  "verification_enabled": true,
+  "quality_check": {"score": 80, "passed": true}
+}
+""",
+        encoding='utf-8',
+    )
+
+    def fail_gold(self):
+        raise AssertionError('skip-live 验收不应触发黄金实时请求')
+
+    def fail_fx(self, pair):
+        raise AssertionError(f'skip-live 验收不应触发汇率实时请求: {pair}')
+
+    monkeypatch.setattr(RealtimeDataFetcher, 'get_gold_price', fail_gold)
+    monkeypatch.setattr(RealtimeDataFetcher, 'get_forex_rate', fail_fx)
+
+    result = analyze_report_quality(
+        report_path,
+        metadata_path,
+        mode='markdown-report',
+        realtime_data=None,
+    )
+
+    assert result['claims']['realtime'] >= 2
+    assert result['quality']['stats']['has_realtime_data'] is False
+    assert result['suspicious_realtime_phrases'] == []
 
 
 def test_validate_stock_recommendations_payload_rejects_incomplete_high_grade():
@@ -239,3 +287,16 @@ def test_analyze_mode_output_fails_when_structured_export_is_missing(tmp_path: P
 
     assert result['passed'] is False
     assert '缺少结构化导出文件' in result['error']
+
+
+def test_detect_blocked_reason_marks_missing_pytest():
+    blocked = detect_blocked_reason(
+        [
+            {
+                'name': 'pytest',
+                'stderr_tail': '/tmp/venv/bin/python: No module named pytest\n',
+            }
+        ]
+    )
+
+    assert blocked == 'pytest_missing'

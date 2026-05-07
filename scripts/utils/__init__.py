@@ -21,8 +21,14 @@ from .print_utils import (
     print_file_info,
     print_time_info,
     print_count,
+    configure_dashboard,
+    start_stage,
+    update_stage,
+    finish_stage,
+    note_event,
+    heartbeat,
     PrintUtils,
-    Colors
+    Colors,
 )
 
 __all__ = [
@@ -40,6 +46,12 @@ __all__ = [
     'print_file_info',
     'print_time_info',
     'print_count',
+    'configure_dashboard',
+    'start_stage',
+    'update_stage',
+    'finish_stage',
+    'note_event',
+    'heartbeat',
     'PrintUtils',
-    'Colors'
+    'Colors',
 ]

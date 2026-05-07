@@ -1,0 +1,32 @@
+{
+  "industries": [
+    {
+      "industry": "算力基础设施",
+      "trend_direction": "up",
+      "trend_score": 2,
+      "as_of": "2026-05-07",
+      "source": "local_snapshot"
+    },
+    {
+      "industry": "半导体",
+      "trend_direction": "up",
+      "trend_score": 1,
+      "as_of": "2026-05-07",
+      "source": "local_snapshot"
+    },
+    {
+      "industry": "保险",
+      "trend_direction": "flat",
+      "trend_score": 0,
+      "as_of": "2026-05-07",
+      "source": "local_snapshot"
+    },
+    {
+      "industry": "白酒",
+      "trend_direction": "flat",
+      "trend_score": 0,
+      "as_of": "2026-05-07",
+      "source": "local_snapshot"
+    }
+  ]
+}

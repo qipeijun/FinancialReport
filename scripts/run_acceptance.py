@@ -35,6 +35,11 @@ if str(PROJECT_ROOT) not in sys.path:
 from scripts.utils.fact_checker import FactChecker
 from scripts.utils.quality_checker_v2 import check_report_quality_v2
 from scripts.utils.realtime_data_fetcher import RealtimeDataFetcher
+from scripts.utils.daily_digest import (
+    archive_dirs_for_date,
+    inspect_mode_artifacts,
+    load_json,
+)
 
 
 @dataclass
@@ -60,6 +65,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--skip-fetch', action='store_true', help='跳过RSS抓取步骤')
     parser.add_argument('--skip-live', action='store_true', help='跳过需要调用模型的实时验收步骤')
     parser.add_argument('--output', type=str, help='验收报告输出路径（JSON）')
+    parser.add_argument('--run-started-at', type=float, help='本次自动化启动时间戳（epoch秒）')
     return parser.parse_args()
 
 
@@ -90,25 +96,10 @@ def run_command(
     )
 
 
-def archive_dirs_for_date(date_str: str) -> Dict[str, Path]:
-    year_month = date_str[:7]
-    base_dir = PROJECT_ROOT / 'docs' / 'archive' / year_month / date_str
-    return {
-        'base': base_dir,
-        'reports': base_dir / 'reports',
-        'metadata': base_dir / 'metadata',
-    }
-
-
 def acceptance_output_dir(date_str: str) -> Path:
     out_dir = PROJECT_ROOT / 'data' / 'acceptance' / date_str
     out_dir.mkdir(parents=True, exist_ok=True)
     return out_dir
-
-
-def load_json(path: Path) -> Dict[str, Any]:
-    with open(path, 'r', encoding='utf-8') as f:
-        return json.load(f)
 
 
 def find_mode_artifacts(date_str: str, mode: str, model_suffix: str = 'deepseek') -> Dict[str, List[Path]]:
@@ -351,10 +342,18 @@ def analyze_report_quality(
     report_text = report_path.read_text(encoding='utf-8')
     export_payload = normalize_export_payload(load_json(metadata_path))
     metadata = export_payload.get('metadata') or {}
+    verification_context = realtime_data
+    if verification_context is None:
+        verification_context = {
+            '_skip_live_fetch': True,
+            'stocks': {},
+            'gold': None,
+            'forex': {},
+        }
 
     checker = FactChecker()
     claims = checker.extract_claims(report_text)
-    verified_claims = checker.verify_claims(claims, realtime_data)
+    verified_claims = checker.verify_claims(claims, verification_context)
     quality_result = check_report_quality_v2(
         report_text=report_text,
         claims=verified_claims,
@@ -372,6 +371,8 @@ def analyze_report_quality(
         phrase for phrase in ('基于实时数据', '现价', '收涨', '收跌', '美元兑人民币为', '现货黄金')
         if phrase in report_text
     ]
+    if realtime_data is None:
+        suspicious_realtime_phrases = []
 
     payload = {
         'report_path': str(report_path),
@@ -384,6 +385,7 @@ def analyze_report_quality(
             'thesis_count': metadata.get('thesis_count'),
             'watch_item_count': metadata.get('watch_item_count'),
             'degraded': metadata.get('degraded'),
+            'live_data_degraded': metadata.get('live_data_degraded'),
             'stock_recommendations': metadata.get('stock_recommendations') or [],
             'score_distribution': metadata.get('score_distribution') or {},
             'scoring_config': metadata.get('scoring_config') or {},
@@ -448,6 +450,14 @@ def build_manual_checklist() -> List[str]:
     ]
 
 
+def detect_blocked_reason(checks: List[Dict[str, Any]]) -> Optional[str]:
+    for item in checks:
+        stderr_tail = item.get('stderr_tail') or ''
+        if 'No module named pytest' in stderr_tail:
+            return 'pytest_missing'
+    return None
+
+
 def main() -> int:
     args = parse_args()
     date_str = args.date or beijing_today()
@@ -485,6 +495,9 @@ def main() -> int:
         })
     report['automation']['checks'] = automation_results
     report['automation']['passed'] = all(item['passed'] for item in automation_results)
+    blocked_reason = detect_blocked_reason(automation_results)
+    if blocked_reason:
+        report['automation']['blocked_reason'] = blocked_reason
 
     fetch_result = None
     if not args.skip_fetch:
@@ -506,6 +519,36 @@ def main() -> int:
     mode_checks: Dict[str, Any] = {}
     overlap_check: Dict[str, Any] = {}
     degrade_check: Dict[str, Any] = {}
+    freshness_check: Dict[str, Any] = {}
+
+    markdown_freshness = inspect_mode_artifacts(
+        date_str,
+        'markdown-report',
+        run_started_at=args.run_started_at,
+    )
+    judgment_freshness = inspect_mode_artifacts(
+        date_str,
+        'judgment-cards',
+        run_started_at=args.run_started_at,
+    )
+    freshness_check = {
+        'markdown-report': markdown_freshness.to_dict(),
+        'judgment-cards': judgment_freshness.to_dict(),
+    }
+
+    if args.skip_live and markdown_freshness.complete:
+        mode_checks['markdown-report'] = analyze_report_quality(
+            markdown_freshness.report,
+            markdown_freshness.metadata,
+            mode='markdown-report',
+            realtime_data=None,
+        )
+    elif args.skip_live:
+        mode_checks['markdown-report'] = {
+            'passed': False,
+            'error': '未找到本次新鲜 markdown-report 产物',
+            **markdown_freshness.to_dict(),
+        }
 
     if not args.skip_live:
         if 'DEEPSEEK_API_KEY' not in env or not env['DEEPSEEK_API_KEY']:
@@ -535,14 +578,26 @@ def main() -> int:
         report['automation']['live_runs'] = live_runs
 
         for mode in ('markdown-report', 'judgment-cards'):
-            latest = latest_artifact(date_str, mode)
             output_json = out_dir / f'{mode}_latest.json'
+            freshness = inspect_mode_artifacts(
+                date_str,
+                mode,
+                run_started_at=args.run_started_at,
+            )
+            if not freshness.complete:
+                mode_checks[mode] = {
+                    'passed': False,
+                    'error': '未找到本次新鲜产物或 session 不匹配',
+                    **freshness.to_dict(),
+                }
+                continue
             mode_checks[mode] = analyze_mode_output(
-                report_path=latest['report'],
+                report_path=freshness.report,
                 export_json_path=output_json,
                 mode=mode,
                 realtime_data=realtime_data,
             )
+            mode_checks[mode].update(freshness.to_dict())
 
         markdown_artifacts = find_mode_artifacts(date_str, 'markdown-report')
         judgment_artifacts = find_mode_artifacts(date_str, 'judgment-cards')
@@ -567,11 +622,15 @@ def main() -> int:
             output_json=degrade_output,
         )
         degrade_result = run_command('generate_markdown_degraded', degrade_cmd, env=degrade_env)
-        latest_degrade = latest_artifact(date_str, 'markdown-report')
+        latest_degrade = inspect_mode_artifacts(
+            date_str,
+            'markdown-report',
+            run_started_at=args.run_started_at,
+        )
         degrade_analysis = None
-        if latest_degrade['report']:
+        if latest_degrade.report and latest_degrade.metadata:
             degrade_analysis = analyze_mode_output(
-                report_path=latest_degrade['report'],
+                report_path=latest_degrade.report,
                 export_json_path=degrade_output,
                 mode='markdown-report',
                 realtime_data=None,
@@ -597,6 +656,7 @@ def main() -> int:
     report['artifacts']['modes'] = mode_checks
     report['artifacts']['same_session_overlap'] = overlap_check
     report['artifacts']['degrade'] = degrade_check
+    report['artifacts']['freshness'] = freshness_check
 
     live_passed = True
     if not args.skip_live:
@@ -605,6 +665,8 @@ def main() -> int:
             and overlap_check.get('passed', False)
             and degrade_check.get('passed', False)
         )
+    elif args.run_started_at is not None:
+        live_passed = freshness_check['markdown-report'].get('fresh_artifacts', False) and freshness_check['markdown-report'].get('artifact_session_match', False)
 
     report['passed'] = (
         report['automation']['passed']

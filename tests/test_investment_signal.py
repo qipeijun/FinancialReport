@@ -44,6 +44,7 @@ def test_build_judgment_candidates_groups_high_value_articles():
     assert len(candidates) == 1
     assert candidates[0]['topic'] == '宏观与流动性'
     assert candidates[0]['independent_evidence_count'] >= 1
+    assert candidates[0]['high_confidence_topic'] is True
 
 
 def test_enforce_judgment_rules_degrades_weak_thesis_to_watch_item():
@@ -56,6 +57,7 @@ def test_enforce_judgment_rules_degrades_weak_thesis_to_watch_item():
             'evidence_count': 1,
             'independent_evidence_count': 1,
             'source_tier_max': 'aggregator',
+            'high_confidence_topic': False,
             'original_source_count': 0,
             'articles': [],
             'priority_score': 8,

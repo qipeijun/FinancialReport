@@ -64,7 +64,9 @@ from scripts.utils.stock_recommendation import (
 )
 from scripts.utils.print_utils import (
     print_header, print_success, print_warning, print_error,
-    print_info, print_progress, print_statistics
+    print_info, print_progress, print_statistics,
+    configure_dashboard, start_stage, update_stage, finish_stage,
+    note_event, heartbeat,
 )
 from scripts.utils.providers import BaseProvider
 
@@ -197,21 +199,32 @@ class ReportGenerator:
         for attempt in range(max_retries + 1):
             if attempt > 0:
                 print_warning(f'\n🔄 质量不达标，第{attempt}次重试（共{max_retries}次）...\n')
+                note_event(f'第 {attempt} 次质量重试')
 
             # 生成报告
             if attempt == 0:
+                start_stage('调用 AI 模型', step=4, total=6, detail='准备生成报告')
                 print_progress('调用AI模型生成投资分析报告...')
+            else:
+                start_stage('调用 AI 模型', step=4, total=6, detail=f'第 {attempt + 1} 次生成尝试')
 
-            report, usage = self.provider.generate(prompt, content, **kwargs)
+            ai_frames = ('[生成中]', '[组织结构]', '[等待返回]', '[整理输出]')
+            with heartbeat('AI 报告生成', interval_seconds=6.0, frames=ai_frames):
+                report, usage = self.provider.generate(prompt, content, **kwargs)
 
             if attempt == 0:
                 print_success('✓ 报告生成完成')
+            finish_stage('AI 生成完成', duration=True)
 
             # 质量检查
             if quality_check:
+                start_stage('事实核查 / 质量检查', step=5, total=6, detail=f'第 {attempt + 1} 次质量检查')
                 print_progress('质量检查中...')
                 if self.enable_verification:
+                    update_stage('抽取并验证实时数值断言')
                     verified_claims, _ = self._run_fact_check(report, realtime_data)
+                    note_event(f'已验证 {len(verified_claims)} 个断言')
+                    update_stage('计算验证版质量评分')
                     quality_result = quality_checker(
                         report,
                         claims=verified_claims,
@@ -219,12 +232,14 @@ class ReportGenerator:
                         report_mode=report_mode,
                     )
                 else:
+                    update_stage('计算基础质量评分')
                     quality_result = quality_checker(report)
 
                 if self.enable_verification:
                     print_quality_report_v2(quality_result)
                 else:
                     print_quality_summary(quality_result)
+                finish_stage('质量检查完成', duration=True)
 
                 # 判断是否通过
                 passed = quality_result.get('passed', quality_result.get('score', 0) >= min_score)
@@ -248,6 +263,7 @@ class ReportGenerator:
                 # 不启用质量检查，直接返回
                 if attempt == 0:
                     print_info('  ℹ️ 质量检查已禁用，报告未经二次处理')
+                    note_event('质量检查已禁用')
                 return report, usage, {}
 
         # 返回最后一次的结果
@@ -275,6 +291,7 @@ class ReportGenerator:
         artifact_suffix: str = '',
     ) -> Path:
         """保存报告、元数据和可选JSON"""
+        start_stage('保存报告与元数据', detail='写入 Markdown 报告')
         print_progress('保存报告到文件...')
         model_suffix = self.provider.get_provider_name().lower()
         saved_path = save_markdown(
@@ -283,14 +300,18 @@ class ReportGenerator:
             model_suffix=model_suffix,
             artifact_suffix=artifact_suffix,
         )
+        note_event(f'报告已保存: {saved_path.name}')
+        update_stage('写入 metadata')
         save_metadata(
             end_date,
             meta,
             model_suffix=model_suffix,
             artifact_suffix=artifact_suffix,
         )
+        note_event('metadata 已保存')
 
         if output_json:
+            update_stage('导出 JSON 结果')
             out_path = Path(output_json)
             if not out_path.is_absolute():
                 out_path = PROJECT_ROOT / out_path
@@ -298,6 +319,8 @@ class ReportGenerator:
             with open(out_path, 'w', encoding='utf-8') as f:
                 json.dump(payload, f, ensure_ascii=False, indent=2)
             print_success(f'已导出 JSON: {out_path}')
+            note_event(f'JSON 已导出: {out_path.name}')
+        finish_stage('保存产物完成', duration=True)
         return saved_path
 
     def _generate_judgment_cards(
@@ -332,7 +355,10 @@ class ReportGenerator:
         for attempt in range(max_retries + 1):
             content = base_content if not retry_feedback else f"{base_content}\n\n{retry_feedback}"
             try:
-                raw_text, usage = self.provider.generate(prompt, content, **provider_kwargs)
+                start_stage('调用 AI 模型', detail=f'生成判断卡片（第 {attempt + 1} 次）')
+                with heartbeat('AI 判断卡片生成', interval_seconds=6.0, frames=('[构思中]', '[抽取证据]', '[组织结论]', '[等待返回]')):
+                    raw_text, usage = self.provider.generate(prompt, content, **provider_kwargs)
+                finish_stage('判断卡片 AI 输出完成', duration=True)
                 payload = extract_json_payload(raw_text)
                 payload = enforce_judgment_rules(
                     payload,
@@ -345,6 +371,7 @@ class ReportGenerator:
                     max_theses=max_theses,
                 )
                 rendered_md = render_judgment_markdown(payload)
+                start_stage('事实核查 / 质量检查', detail='校验判断卡片内容')
                 verified_claims, verification_report = self._run_fact_check(rendered_md, realtime_data)
                 quality_result = check_report_quality_v2(
                     rendered_md,
@@ -352,6 +379,7 @@ class ReportGenerator:
                     realtime_data=realtime_data,
                     report_mode='judgment-cards',
                 )
+                finish_stage('判断卡片质量检查完成', duration=True)
             except Exception as exc:
                 last_error = str(exc)
                 quality_result = {
@@ -375,6 +403,7 @@ class ReportGenerator:
         if verification_report:
             rendered_md = f"{rendered_md}\n\n{verification_report}"
 
+        live_data_degraded = bool(self.enable_verification and realtime_data is None)
         meta = {
             'date_range': {'start': start_date, 'end': end_date},
             'articles_used': len(selected),
@@ -384,8 +413,11 @@ class ReportGenerator:
             'verification_enabled': self.enable_verification,
             'output_mode': 'judgment-cards',
             'degraded': payload.get('degraded', False),
+            'live_data_degraded': live_data_degraded,
             'thesis_count': len(payload.get('theses') or []),
             'watch_item_count': len(payload.get('watch_items') or []),
+            'backtest_ready': True,
+            'backtest_generated_at': datetime.now().isoformat(),
         }
         export_payload = {
             'theses': payload.get('theses') or [],
@@ -397,6 +429,9 @@ class ReportGenerator:
             'degraded': payload.get('degraded', False),
             'metadata': meta,
         }
+        meta.update({
+            'export_payload_refreshed': True,
+        })
         saved_path = self._save_result(
             end_date,
             rendered_md,
@@ -479,6 +514,7 @@ class ReportGenerator:
         args.end = end
         start_date, end_date = resolve_date_range(args)
 
+        configure_dashboard(title='Financial Report', total_steps=6)
         print_header(f"AI 财经分析系统（{self.provider.get_provider_name()}）")
         print_info(f"分析日期范围: {start_date} → {end_date}")
         print_info(f"输出模式: {mode}")
@@ -492,9 +528,13 @@ class ReportGenerator:
         print()
 
         # 获取实时数据（如果启用验证）
+        start_stage('获取实时数据', step=1, total=6, detail='检查实时行情可用性')
         realtime_data = self.fetch_realtime_data()
+        live_data_degraded = bool(self.enable_verification and realtime_data is None)
+        finish_stage('实时数据阶段完成', duration=True)
 
         # 查询文章
+        start_stage('查询与筛选文章', step=2, total=6, detail='读取数据库中的候选文章')
         conn = open_connection(self.db_path)
         try:
             rows = query_articles(conn, start_date, end_date, order, limit)
@@ -506,8 +546,10 @@ class ReportGenerator:
             return {'success': False, 'error': '未找到文章'}
 
         print_info(f'已读取文章：{len(rows):,} 条')
+        note_event(f'已读取 {len(rows):,} 篇文章')
 
         # 过滤文章
+        update_stage('应用来源、关键词与数量过滤')
         selected = filter_articles(
             rows,
             filter_source=filter_source,
@@ -516,12 +558,15 @@ class ReportGenerator:
         )
 
         # 质量筛选和排序
+        update_stage('执行质量筛选和智能去重')
         print_progress('质量筛选: 过滤低质量文章并智能去重...')
         selected, quality_stats = filter_and_rank_articles(selected)
+        note_event(f'筛选后保留 {len(selected):,} 篇文章')
 
         if not selected:
             print_warning('质量筛选后无文章剩余，请降低阈值或检查数据源')
             return {'success': False, 'error': '质量筛选后无文章'}
+        finish_stage('文章筛选完成', duration=True)
 
         if mode == 'judgment-cards':
             return self._generate_judgment_cards(
@@ -545,10 +590,12 @@ class ReportGenerator:
         stock_market = provider_kwargs.pop('stock_market', 'CN')
 
         # 构建语料
+        start_stage('构建语料', step=3, total=6, detail='拼接文章语料与来源统计')
         pairs, total_len = build_corpus(selected, max_chars, per_chunk_chars=3000, content_field=content_field)
         current_len = sum(len(c) for _, chunks in pairs for c in chunks)
         usage_pct = (current_len / max_chars * 100) if max_chars and max_chars > 0 else 0
         print_info(f'语料长度: {current_len:,} 字符（原始 {total_len:,}，限制={max_chars:,}，使用率 {usage_pct:.1f}%）')
+        note_event(f'语料长度 {current_len:,} 字符')
         if max_chars and max_chars > 0 and total_len > max_chars:
             print_warning(f'语料已按上限截断：{total_len:,} → {current_len:,}')
 
@@ -557,12 +604,14 @@ class ReportGenerator:
 
         # 注入实时数据（如果有）
         if realtime_data:
+            update_stage('注入实时市场数据到提示词')
             print_progress('注入实时市场数据到提示词...')
             realtime_block = self._format_realtime_data(realtime_data)
             stats_info = realtime_block + "\n\n" + stats_info
 
         joined = '\n\n'.join(c for _, chunks in pairs for c in chunks)
         full_content = stats_info + "\n\n" + joined
+        finish_stage('语料构建完成', duration=True)
 
         # 加载提示词
         prompt = self.load_prompt(prompt_version)
@@ -588,8 +637,10 @@ class ReportGenerator:
         # 事实核查（如果启用验证）
         verified_claims, verification_report = self._run_fact_check(summary_md, realtime_data)
         if verification_report:
+            start_stage('事实核查 / 质量检查', step=5, total=6, detail='合并事实核查附注')
             summary_md += "\n\n" + verification_report
             print_success(f'✓ 事实核查完成: {len(verified_claims)} 个断言')
+            finish_stage('事实核查附注已合并', duration=False)
 
         stock_payload = {
             'recommendations': [],
@@ -601,6 +652,7 @@ class ReportGenerator:
             },
         }
         if enable_stock_scoring and stock_market == 'CN':
+            start_stage('事实核查 / 质量检查', step=5, total=6, detail='生成 A 股结构化推荐评分')
             print_progress('生成 A 股结构化推荐评分...')
             judgment_candidates = build_judgment_candidates(selected, max_candidates=8)
             candidate_stocks = self.security_master_provider.build_candidates(
@@ -622,6 +674,7 @@ class ReportGenerator:
             )
             summary_md = f"{summary_md.rstrip()}\n\n{stock_section}\n"
             print_success(f"✓ 已生成 {len(stock_payload['recommendations'])} 条股票评分结果")
+            finish_stage('股票评分生成完成', duration=True)
 
         # 保存报告
         meta = {
@@ -632,9 +685,12 @@ class ReportGenerator:
             'quality_check': quality_result if quality_result else None,
             'verification_enabled': self.enable_verification,
             'output_mode': 'markdown-report',
+            'live_data_degraded': live_data_degraded,
             'stock_recommendations': stock_payload['recommendations'],
             'score_distribution': stock_payload['score_distribution'],
             'scoring_config': stock_payload['scoring_config'],
+            'backtest_ready': True,
+            'backtest_generated_at': datetime.now().isoformat(),
         }
         export_payload = {
             'summary_markdown': summary_md,
@@ -644,6 +700,7 @@ class ReportGenerator:
             'score_distribution': stock_payload['score_distribution'],
             'scoring_config': stock_payload['scoring_config'],
         }
+        start_stage('保存报告与元数据', step=6, total=6, detail='写入报告归档与 metadata')
         saved_path = self._save_result(
             end_date,
             summary_md,

@@ -14,13 +14,24 @@
 import os
 import sqlite3
 import subprocess
+import time
 from datetime import datetime
 from pathlib import Path
 
-from utils.print_utils import (
-    print_header, print_success, print_warning, print_error, 
-    print_info, print_progress
-)
+try:
+    from utils.print_utils import (
+        print_header, print_success, print_warning, print_error,
+        print_info, print_progress,
+        configure_dashboard, start_stage, update_stage, finish_stage,
+        note_event, heartbeat,
+    )
+except ModuleNotFoundError:
+    from scripts.utils.print_utils import (  # type: ignore
+        print_header, print_success, print_warning, print_error,
+        print_info, print_progress,
+        configure_dashboard, start_stage, update_stage, finish_stage,
+        note_event, heartbeat,
+    )
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -100,7 +111,7 @@ def has_today_data(db_path: Path, today: str) -> bool:
         return False
 
 
-def run_script(cmd: list[str]) -> int:
+def run_script(cmd: list[str], task_label: str = '执行任务') -> int:
     # 使用虚拟环境中的Python
     venv_python = PROJECT_ROOT / 'venv' / 'bin' / 'python'
     if not venv_python.exists():
@@ -108,22 +119,50 @@ def run_script(cmd: list[str]) -> int:
     
     if cmd and cmd[0] in ('python3', 'python', 'py'):
         cmd[0] = str(venv_python)
+    start_stage('执行所选任务', step=4, total=4, detail=task_label)
     print_progress(f'执行命令: {" ".join(cmd)}')
-    proc = subprocess.run(cmd)
-    return proc.returncode
+    started_at = time.time()
+    proc = subprocess.Popen(cmd)
+    with heartbeat(task_label, interval_seconds=6.0):
+        while True:
+            code = proc.poll()
+            if code is not None:
+                break
+            time.sleep(0.2)
+
+    elapsed = time.time() - started_at
+    if code == 0:
+        finish_stage(f'{task_label}完成，用时 {_format_duration(elapsed)}', duration=False)
+        note_event(f'{task_label}已完成')
+    else:
+        finish_stage(f'{task_label}失败，退出码 {code}，用时 {_format_duration(elapsed)}', duration=False)
+        note_event(f'{task_label}失败')
+    return code
+
+
+def _format_duration(seconds: float) -> str:
+    total = max(0, int(seconds))
+    minutes, secs = divmod(total, 60)
+    hours, minutes = divmod(minutes, 60)
+    if hours:
+        return f'{hours:02d}:{minutes:02d}:{secs:02d}'
+    return f'{minutes:02d}:{secs:02d}'
 
 
 def run_mkdocs_deploy():
     """运行MkDocs部署"""
+    start_stage('执行所选任务', step=4, total=4, detail='部署 MkDocs 文档站点')
     print_info('开始生成文档网站...')
     
     # 运行部署脚本
     deploy_script = PROJECT_ROOT / 'scripts' / 'deploy.sh'
     if deploy_script.exists():
         print_progress('执行MkDocs部署脚本...')
-        code = subprocess.run(['bash', str(deploy_script)]).returncode
+        with heartbeat('构建 MkDocs 站点', interval_seconds=5.0):
+            code = subprocess.run(['bash', str(deploy_script)]).returncode
         if code == 0:
             print_success('文档网站生成成功！')
+            finish_stage('MkDocs 文档构建完成', duration=True)
             
             # 询问是否启动预览服务器
             if ask_yes_no('是否启动本地预览服务器？', default=True):
@@ -136,14 +175,19 @@ def run_mkdocs_deploy():
                     print_info('预览服务器已停止')
         else:
             print_error('文档网站生成失败')
+            finish_stage('MkDocs 文档构建失败', duration=True)
     else:
         print_error(f'部署脚本不存在: {deploy_script}')
+        finish_stage('MkDocs 部署脚本不存在', duration=False)
 
 
-def main():
+def main() -> int:
     today = datetime.now().strftime('%Y-%m-%d')
+    configure_dashboard(title='Financial Report', total_steps=4)
+    start_stage('进入功能选择', step=3, total=4, detail='加载交互式运行器')
     print_header("财经新闻分析系统")
     print_info(f'今天日期：{today}')
+    note_event(f'当前分析日期: {today}')
 
     exists = has_today_data(DB_PATH, today)
     if exists:
@@ -157,7 +201,7 @@ def main():
             code = run_script(cmd)
             if code != 0:
                 print_error('重新抓取失败，请查看日志后重试。')
-                return
+                return code
             print_success('重新抓取完成。')
 
         # 分支：仅分析指定范围/来源/关键词
@@ -224,7 +268,7 @@ def main():
             print_info('🚀 开始执行自定义分析...')
             print(f'   命令：{" ".join(cmd)}')
             print()
-            code = run_script(cmd)
+            code = run_script(cmd, task_label='执行自定义 AI 分析')
         elif ask_yes_no('是否立即进行 AI 分析？', default=True):
             print_info('📊 标准分析模式：')
             print('  • 分析当天的所有新闻数据')
@@ -237,7 +281,7 @@ def main():
             print_info('🚀 开始执行标准分析...')
             print(f'   命令：{" ".join(cmd)}')
             print()
-            code = run_script(cmd)
+            code = run_script(cmd, task_label='执行标准 AI 分析')
             if code == 0:
                 print_success('分析完成。')
                 # 询问是否生成文档网站
@@ -245,9 +289,10 @@ def main():
                     run_mkdocs_deploy()
             else:
                 print_error('分析失败，请查看上方日志。')
+                return code
         else:
             print_info('已跳过分析。')
-        return
+        return 0
 
     print_warning('未检测到今天的数据。')
     print_info('📥 数据抓取选项：')
@@ -279,10 +324,10 @@ def main():
         print_info('🚀 开始抓取数据...')
         print(f'   命令：{" ".join(cmd)}')
         print()
-        code = run_script(cmd)
+        code = run_script(cmd, task_label='抓取财经 RSS 数据')
         if code != 0:
             print_error('抓取失败，请重试或检查网络。')
-            return
+            return code
         print_success('抓取完成。')
 
         # 抓取成功后再次确认是否分析
@@ -302,7 +347,7 @@ def main():
             print_info('🚀 开始执行AI分析...')
             print(f'   命令：{" ".join(cmd)}')
             print()
-            code = run_script(cmd)
+            code = run_script(cmd, task_label='执行标准 AI 分析')
             if code == 0:
                 print_success('分析完成。')
                 # 询问是否生成文档网站
@@ -310,11 +355,13 @@ def main():
                     run_mkdocs_deploy()
             else:
                 print_error('分析失败，请查看上方日志。')
+                return code
         else:
             print_info('已跳过分析。')
     else:
         print_info('已取消抓取与分析。')
+    return 0
 
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main())

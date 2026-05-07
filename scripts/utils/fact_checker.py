@@ -355,6 +355,9 @@ class FactChecker:
 
         return claims
 
+    def _skip_live_fetch(self, context_data: Optional[Dict] = None) -> bool:
+        return bool(context_data and context_data.get('_skip_live_fetch'))
+
     def _verify_single_claim(self, claim: Claim, context_data: Optional[Dict] = None):
         """验证单个断言"""
 
@@ -480,6 +483,9 @@ class FactChecker:
 
             gold_data = context_data.get('gold') if context_data else None
             if not gold_data:
+                if self._skip_live_fetch(context_data):
+                    claim.evidence = "缺少实时金价上下文,已跳过外部实时校验"
+                    return
                 # 实时获取
                 gold = self.fetcher.get_gold_price()
                 if not gold:
@@ -520,6 +526,9 @@ class FactChecker:
             usd_cny = forex_data.get('USD/CNY')
 
             if not usd_cny:
+                if self._skip_live_fetch(context_data):
+                    claim.evidence = "缺少实时汇率上下文,已跳过外部实时校验"
+                    return
                 # 实时获取
                 forex = self.fetcher.get_forex_rate("USD/CNY")
                 if not forex:

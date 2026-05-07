@@ -198,6 +198,9 @@ def build_judgment_candidates(
         top_items = items[:4]
         source_names = sorted({item.get('source') or '未知来源' for item in items})
         original_sources = sum(1 for item in items if item.get('is_original_source'))
+        high_relevance_article_count = sum(
+            1 for item in items if item.get('investment_relevance') == 'high'
+        )
         candidate = {
             'candidate_id': f'C{idx:02d}',
             'topic': topic,
@@ -205,6 +208,7 @@ def build_judgment_candidates(
             'time_horizon': top_items[0].get('time_horizon', '1-2周'),
             'evidence_count': len(source_names),
             'independent_evidence_count': original_sources or min(len(source_names), 1),
+            'high_relevance_article_count': high_relevance_article_count,
             'source_tier_max': max(
                 (item.get('source_tier', 'mainstream') for item in items),
                 key=lambda tier: SOURCE_TIER_RANK.get(tier, 0),
@@ -226,6 +230,12 @@ def build_judgment_candidates(
             SOURCE_TIER_RANK.get(candidate['source_tier_max'], 0) * 10
             + candidate['evidence_count'] * 3
             + candidate['original_source_count'] * 4
+        )
+        candidate['high_confidence_topic'] = (
+            SOURCE_TIER_RANK.get(candidate['source_tier_max'], 0) >= SOURCE_TIER_RANK['mainstream']
+            and candidate['independent_evidence_count'] >= 2
+            and candidate['evidence_count'] >= 2
+            and candidate['high_relevance_article_count'] >= 1
         )
         candidates.append(candidate)
 
