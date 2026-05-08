@@ -5,19 +5,18 @@ set -euo pipefail
 PROJECT_ROOT="$(cd "$(dirname "$0")" && pwd)"
 cd "$PROJECT_ROOT"
 
-DASHBOARD_TOTAL=4
-DASHBOARD_LINES=6
-DASHBOARD_TITLE="Financial Report Launcher"
-DASHBOARD_INTERACTIVE=0
-DASHBOARD_CURRENT_STEP=0
-DASHBOARD_CURRENT_STAGE="待启动"
-DASHBOARD_DETAIL="初始化中"
-DASHBOARD_EVENT="准备启动"
-DASHBOARD_SESSION_START="$(date +%s)"
-DASHBOARD_STAGE_START="$DASHBOARD_SESSION_START"
+STATUS_TOTAL=4
+STATUS_STEP=0
+STATUS_STAGE="待启动"
+STATUS_DETAIL="初始化中"
+STATUS_INTERACTIVE=0
+STATUS_SESSION_START="$(date +%s)"
+STATUS_STAGE_START="$STATUS_SESSION_START"
+STATUS_VISIBLE=0
+STATUS_SUSPENDED=0
 
 if [[ -t 1 && "${TERM:-}" != "dumb" && "${FINANCIAL_REPORT_PLAIN_LOGS:-0}" != "1" ]]; then
-  DASHBOARD_INTERACTIVE=1
+  STATUS_INTERACTIVE=1
 fi
 
 format_elapsed() {
@@ -35,92 +34,126 @@ format_elapsed() {
   fi
 }
 
-progress_bar() {
-  local width=20
-  local filled=0
-  if (( DASHBOARD_TOTAL > 0 && DASHBOARD_CURRENT_STEP > 0 )); then
-    filled=$((width * DASHBOARD_CURRENT_STEP / DASHBOARD_TOTAL))
+render_status() {
+  local now total_elapsed stage_elapsed line
+  if (( STATUS_SUSPENDED == 1 )); then
+    return
   fi
-  local bar=""
-  local idx=0
-  while (( idx < width )); do
-    if (( idx < filled )); then
-      bar="${bar}="
-    else
-      bar="${bar}-"
-    fi
-    idx=$((idx + 1))
-  done
-  printf '%s' "$bar"
-}
-
-render_dashboard() {
-  local now total_elapsed stage_elapsed
   now="$(date +%s)"
-  total_elapsed="$(format_elapsed $((now - DASHBOARD_SESSION_START)))"
-  stage_elapsed="$(format_elapsed $((now - DASHBOARD_STAGE_START)))"
-  local stage_label="[$DASHBOARD_CURRENT_STEP/$DASHBOARD_TOTAL]"
-  if (( DASHBOARD_CURRENT_STEP == 0 )); then
-    stage_label="[--]"
-  fi
+  total_elapsed="$(format_elapsed $((now - STATUS_SESSION_START)))"
+  stage_elapsed="$(format_elapsed $((now - STATUS_STAGE_START)))"
+  line="[$STATUS_STEP/$STATUS_TOTAL] $STATUS_STAGE · 总 $total_elapsed · 阶段 $stage_elapsed · $STATUS_DETAIL"
 
-  if (( DASHBOARD_INTERACTIVE == 1 )); then
-    if [[ "${DASHBOARD_RENDERED:-0}" == "1" ]]; then
-      printf '\033[%sF' "$DASHBOARD_LINES"
-    fi
-    printf '\033[2K\033[1;36m%s\033[0m\n' "┌─ $DASHBOARD_TITLE"
-    printf '\033[2K\033[36m%s\033[0m\n' "│ 阶段  $stage_label $DASHBOARD_CURRENT_STAGE"
-    printf '\033[2K\033[35m%s\033[0m\n' "│ 进度  [$(progress_bar)]  总耗时 $total_elapsed  当前阶段 $stage_elapsed"
-    printf '\033[2K\033[34m%s\033[0m\n' "│ 动作  $DASHBOARD_DETAIL"
-    printf '\033[2K\033[32m%s\033[0m\n' "│ 事件  $DASHBOARD_EVENT"
-    printf '\033[2K\033[1;36m%s\033[0m\n' "└──────────────────────────────────────────────────────────"
-    DASHBOARD_RENDERED=1
+  if (( STATUS_INTERACTIVE == 1 )); then
+    printf '\r\033[2K\033[1;36m%s\033[0m' "$line"
+    STATUS_VISIBLE=1
   else
-    printf '[%s/%s] %s - %s\n' "$DASHBOARD_CURRENT_STEP" "$DASHBOARD_TOTAL" "$DASHBOARD_CURRENT_STAGE" "$DASHBOARD_DETAIL"
-    printf '[事件] %s\n' "$DASHBOARD_EVENT"
+    printf '[阶段] [%s/%s] %s - %s\n' "$STATUS_STEP" "$STATUS_TOTAL" "$STATUS_STAGE" "$STATUS_DETAIL"
   fi
 }
 
-dashboard_start_stage() {
-  DASHBOARD_CURRENT_STEP="$1"
-  DASHBOARD_CURRENT_STAGE="$2"
-  DASHBOARD_DETAIL="$3"
-  DASHBOARD_EVENT="$3"
-  DASHBOARD_STAGE_START="$(date +%s)"
-  render_dashboard
+clear_status() {
+  if (( STATUS_INTERACTIVE == 1 && STATUS_VISIBLE == 1 )); then
+    printf '\r\033[2K'
+    STATUS_VISIBLE=0
+  fi
 }
 
-dashboard_update() {
-  DASHBOARD_DETAIL="$1"
-  DASHBOARD_EVENT="$1"
-  render_dashboard
+status_suspend() {
+  STATUS_SUSPENDED=1
+  clear_status
 }
 
-dashboard_finish() {
-  local now elapsed
-  now="$(date +%s)"
-  elapsed="$(format_elapsed $((now - DASHBOARD_STAGE_START)))"
-  DASHBOARD_EVENT="$1 ($elapsed)"
-  render_dashboard
+status_resume() {
+  STATUS_SUSPENDED=0
+  if (( STATUS_INTERACTIVE == 1 )); then
+    render_status
+  fi
 }
 
-run_with_dashboard() {
+print_log() {
+  clear_status
+  printf '%s\n' "$1"
+  if (( STATUS_INTERACTIVE == 1 && STATUS_SUSPENDED == 0 )); then
+    render_status
+  fi
+}
+
+prompt_read() {
+  local __var_name="$1"
+  local __prompt="$2"
+  local __reply
+  status_suspend
+  read -r -p "$__prompt" __reply
+  printf -v "$__var_name" '%s' "$__reply"
+  status_resume
+}
+
+status_start() {
+  STATUS_STEP="$1"
+  STATUS_STAGE="$2"
+  STATUS_DETAIL="$3"
+  STATUS_STAGE_START="$(date +%s)"
+  render_status
+}
+
+status_update() {
+  STATUS_DETAIL="$1"
+  if (( STATUS_INTERACTIVE == 1 )); then
+    render_status
+  fi
+}
+
+status_finish() {
+  local summary="${1:-$STATUS_STAGE}"
+  STATUS_DETAIL="$summary"
+  clear_status
+  printf '[完成] %s (%s)\n' "$summary" "$(format_elapsed $(( $(date +%s) - STATUS_STAGE_START )))"
+}
+
+run_with_status() {
   local label="$1"
   shift
-  local start_ts frame_index=0
-  local frames=("[=   ]" "[==  ]" "[=== ]" "[ ===]" "[  ==]" "[   =]")
+  local start_ts frame_index=0 rc=0 heartbeat_interval=6
+  local frames=("·" "•")
+  local details=("检查运行状态" "等待命令返回" "继续执行中")
+  local fifo activity_file reader_pid pid last_activity now elapsed frame detail
   start_ts="$(date +%s)"
+  fifo="$(mktemp -u "/tmp/financial-report-status.XXXXXX")"
+  activity_file="$(mktemp "/tmp/financial-report-activity.XXXXXX")"
+  mkfifo "$fifo"
+  : > "$activity_file"
 
-  "$@" &
-  local pid=$!
-  local rc=0
+  status_suspend
+  "$@" >"$fifo" 2>&1 &
+  pid=$!
+
+  (
+    while IFS= read -r line; do
+      touch "$activity_file"
+      clear_status
+      printf '%s\n' "$line"
+    done <"$fifo"
+  ) &
+  reader_pid=$!
 
   while kill -0 "$pid" 2>/dev/null; do
-    local now elapsed frame
     now="$(date +%s)"
-    elapsed="$(format_elapsed $((now - start_ts)))"
-    frame="${frames[$frame_index]}"
-    dashboard_update "$label 进行中 $frame 已耗时 $elapsed"
+    last_activity="$(stat -f %m "$activity_file" 2>/dev/null || printf '%s' "$start_ts")"
+    if (( now - last_activity >= heartbeat_interval )); then
+      elapsed="$(format_elapsed $((now - start_ts)))"
+      frame="${frames[$frame_index]}"
+      detail="${details[$((frame_index % ${#details[@]}))]}"
+      if (( STATUS_INTERACTIVE == 1 )); then
+        STATUS_SUSPENDED=0
+        status_update "$detail $frame"
+      else
+        printf '[心跳] %s - %s (%s)\n' "$label" "$detail" "$elapsed"
+      fi
+    else
+      STATUS_SUSPENDED=1
+      clear_status
+    fi
     frame_index=$(((frame_index + 1) % ${#frames[@]}))
     sleep 2
   done
@@ -128,12 +161,15 @@ run_with_dashboard() {
   set +e
   wait "$pid"
   rc=$?
+  wait "$reader_pid" 2>/dev/null
   set -e
+  rm -f "$fifo" "$activity_file"
+  STATUS_SUSPENDED=0
 
   if (( rc == 0 )); then
-    dashboard_finish "$label 完成"
+    status_finish "$label 完成"
   else
-    dashboard_finish "$label 失败，退出码 $rc"
+    status_finish "$label 失败，退出码 $rc"
   fi
   return "$rc"
 }
@@ -143,176 +179,175 @@ echo "  财经报告系统 - macOS/Linux 一键启动"
 echo "========================================"
 echo
 
-dashboard_start_stage 1 "环境检查" "检查 Python 运行环境"
+status_start 1 "环境准备" "检查 Python 与虚拟环境"
 
 if ! command -v python3 &> /dev/null; then
-    echo "❌ 未检测到Python3，请先安装Python 3.10+"
-    echo "   下载地址: https://www.python.org/downloads/"
+    print_log "❌ 未检测到Python3，请先安装Python 3.10+"
+    print_log "   下载地址: https://www.python.org/downloads/"
     exit 1
 fi
 
-dashboard_finish "Python 环境检查完成"
-
-dashboard_start_stage 2 "虚拟环境与依赖" "准备 Python 虚拟环境"
-
 if [ ! -d "venv" ]; then
-    echo "⚠️ 虚拟环境不存在，正在创建..."
+    print_log "⚠️ 虚拟环境不存在，正在创建..."
     python3 -m venv venv
-    echo "✅ 虚拟环境创建成功"
-    dashboard_update "已创建虚拟环境"
+    print_log "✅ 虚拟环境创建成功"
 fi
 
-echo "🐍 激活Python虚拟环境..."
+print_log "🐍 激活Python虚拟环境..."
 source venv/bin/activate
-dashboard_update "虚拟环境已激活"
+status_finish "环境准备完成"
 
-echo "📦 检查并安装项目依赖..."
+status_start 2 "依赖安装" "准备安装项目依赖"
+print_log "📦 检查并安装项目依赖..."
 if [ -f "requirements.txt" ]; then
-    if ! run_with_dashboard "升级 pip" python3 -m pip install --upgrade --quiet pip; then
-      echo "⚠️ pip 升级失败，将继续使用当前版本"
+    if ! run_with_status "升级 pip" python3 -m pip install --upgrade --quiet pip; then
+      print_log "⚠️ pip 升级失败，将继续使用当前版本"
     fi
-    run_with_dashboard "安装 requirements.txt 依赖" pip install --quiet --disable-pip-version-check -r requirements.txt
-    echo "✅ 依赖安装完成"
+    run_with_status "安装项目依赖" pip install --quiet --disable-pip-version-check -r requirements.txt
+    print_log "✅ 依赖安装完成"
 else
-    echo "⚠️ 未找到requirements.txt，跳过依赖安装"
+    print_log "⚠️ 未找到requirements.txt，跳过依赖安装"
 fi
 
-dashboard_finish "依赖准备完成"
+status_finish "依赖准备完成"
 
-echo
-echo "========================================"
-echo "  启动选项"
-echo "========================================"
-echo
-echo "1. 交互式运行器 (推荐)"
-echo "2. AI分析脚本"
-echo "3. RSS财经抓取器"
-echo "4. 数据质量监控"
-echo "5. 启动文档网站 (本地预览)"
-echo "6. 构建部署文档 (生成静态网站)"
-echo "7. 退出"
-echo
+print_log ""
+print_log "========================================"
+print_log "  启动选项"
+print_log "========================================"
+print_log ""
+print_log "1. 交互式运行器 (推荐)"
+print_log "2. AI分析脚本"
+print_log "3. RSS财经抓取器"
+print_log "4. 数据质量监控"
+print_log "5. 启动文档网站 (本地预览)"
+print_log "6. 构建部署文档 (生成静态网站)"
+print_log "7. 退出"
+print_log ""
 
-dashboard_start_stage 3 "进入功能选择" "等待用户选择启动模式"
-read -r -p "请选择功能 (1-7): " choice
-dashboard_finish "已选择菜单项 $choice"
+status_start 3 "进入功能选择" "等待用户选择启动模式"
+prompt_read choice "请选择功能 (1-7): "
+status_finish "已选择菜单项 $choice"
 
-dashboard_start_stage 4 "执行所选任务" "准备执行菜单项 $choice"
+status_start 4 "执行所选任务" "准备执行菜单项 $choice"
 
 case $choice in
     1)
-        dashboard_update "启动交互式运行器"
-        echo "🚀 启动交互式运行器..."
+        status_update "启动交互式运行器"
+        print_log "🚀 启动交互式运行器..."
+        status_suspend
         python3 scripts/interactive_runner.py
+        status_resume
+        status_update "交互式运行器已退出"
         ;;
     2)
-        dashboard_update "准备执行 AI 分析脚本"
-        echo "🤖 启动AI分析脚本..."
-        echo
-        echo
-        echo "📝 选择分析字段："
-        echo "  • 1 = summary - 摘要优先（推荐，速度快，成功率85.7%）"
-        echo "  • 2 = content - 正文优先（信息详细，但成功率76.5%）"
-        echo "  • 3 = auto - 智能选择"
-        echo
-        read -r -p "请选择字段 [1/2/3，默认1]: " field_choice
+        status_update "准备执行 AI 分析脚本"
+        print_log "🤖 启动AI分析脚本..."
+        print_log ""
+        print_log ""
+        print_log "📝 选择分析字段："
+        print_log "  • 1 = summary - 摘要优先（推荐，速度快，成功率85.7%）"
+        print_log "  • 2 = content - 正文优先（信息详细，但成功率76.5%）"
+        print_log "  • 3 = auto - 智能选择"
+        print_log ""
+        prompt_read field_choice "请选择字段 [1/2/3，默认1]: "
 
         content_field="summary"
         if [ "$field_choice" = "2" ]; then
             content_field="content"
-            echo "✅ 已选择：正文优先"
+            print_log "✅ 已选择：正文优先"
         elif [ "$field_choice" = "3" ]; then
             content_field="auto"
-            echo "✅ 已选择：智能选择"
+            print_log "✅ 已选择：智能选择"
         else
-            echo "✅ 已选择：摘要优先"
+            print_log "✅ 已选择：摘要优先"
         fi
 
-        echo
-        dashboard_update "执行 AI 分析，字段模式: $content_field"
-        echo "🚀 使用DeepSeek完整报告模式，字段模式：$content_field"
+        print_log ""
+        status_update "执行 AI 分析，字段模式: $content_field"
+        print_log "🚀 使用DeepSeek完整报告模式，字段模式：$content_field"
         python3 scripts/ai_analyze_deepseek_verified.py --mode markdown-report --content-field "$content_field"
         ;;
     3)
-        dashboard_update "准备执行 RSS 财经抓取"
-        echo "📰 启动RSS财经抓取器..."
-        echo
+        status_update "准备执行 RSS 财经抓取"
+        print_log "📰 启动RSS财经抓取器..."
+        print_log ""
 
-        read -r -p "是否抓取正文内容？[Y/n]: " fetch_content
+        prompt_read fetch_content "是否抓取正文内容？[Y/n]: "
         rss_cmd=(python3 scripts/rss_finance_analyzer.py)
         if [ -z "$fetch_content" ] || [ "$fetch_content" = "Y" ] || [ "$fetch_content" = "y" ]; then
             rss_cmd+=(--fetch-content)
         fi
 
-        read -r -p "是否启用智能去重？[Y/n]: " use_dedup
+        prompt_read use_dedup "是否启用智能去重？[Y/n]: "
         if [ -z "$use_dedup" ] || [ "$use_dedup" = "Y" ] || [ "$use_dedup" = "y" ]; then
             rss_cmd+=(--deduplicate)
         fi
 
-        read -r -p "并发数 (默认5，输入1-20): " workers
+        prompt_read workers "并发数 (默认5，输入1-20): "
         if [ -n "$workers" ] && [ "$workers" -ge 1 ] && [ "$workers" -le 20 ] 2>/dev/null; then
             rss_cmd+=(--max-workers "$workers")
         fi
 
-        echo
-        dashboard_update "执行 RSS 财经抓取"
-        echo "🚀 执行命令: ${rss_cmd[*]}"
-        echo
+        print_log ""
+        status_update "执行 RSS 财经抓取"
+        print_log "🚀 执行命令: ${rss_cmd[*]}"
+        print_log ""
         "${rss_cmd[@]}"
         ;;
     4)
-        dashboard_update "准备执行数据质量监控"
-        echo "📊 数据质量监控..."
-        echo
-        read -r -p "分析最近几天的数据？(默认7天): " days
+        status_update "准备执行数据质量监控"
+        print_log "📊 数据质量监控..."
+        print_log ""
+        prompt_read days "分析最近几天的数据？(默认7天): "
         if [ -z "$days" ]; then
             days=7
         fi
 
         quality_cmd=(python3 scripts/monitor_data_quality.py --days "$days")
 
-        read -r -p "是否导出JSON报告？[y/N]: " export_json
+        prompt_read export_json "是否导出JSON报告？[y/N]: "
         if [ "$export_json" = "Y" ] || [ "$export_json" = "y" ]; then
-            read -r -p "输出文件名 (默认quality_report.json): " output_file
+            prompt_read output_file "输出文件名 (默认quality_report.json): "
             if [ -z "$output_file" ]; then
                 output_file="quality_report.json"
             fi
             quality_cmd+=(--output "$output_file")
         fi
 
-        echo
-        dashboard_update "执行数据质量监控"
-        echo "🚀 执行命令: ${quality_cmd[*]}"
-        echo
+        print_log ""
+        status_update "执行数据质量监控"
+        print_log "🚀 执行命令: ${quality_cmd[*]}"
+        print_log ""
         "${quality_cmd[@]}"
         ;;
     5)
-        dashboard_update "生成导航并启动文档网站"
-        echo "🌐 启动文档网站..."
-        echo "📝 正在生成导航配置..."
+        status_update "生成导航并启动文档网站"
+        print_log "🌐 启动文档网站..."
+        print_log "📝 正在生成导航配置..."
         python3 scripts/generate_mkdocs_nav.py
-        echo "✅ 导航配置生成成功"
-        echo "🚀 启动文档服务器..."
+        print_log "✅ 导航配置生成成功"
+        print_log "🚀 启动文档服务器..."
         mkdocs serve
         ;;
     6)
-        dashboard_update "构建部署文档站点"
-        echo "🔨 构建部署文档..."
+        status_update "构建部署文档站点"
+        print_log "🔨 构建部署文档..."
         bash scripts/deploy.sh
         ;;
     7)
-        dashboard_finish "用户选择退出"
-        echo "👋 再见！"
+        status_finish "用户选择退出"
+        print_log "👋 再见！"
         exit 0
         ;;
     *)
-        echo "❌ 无效选择"
+        print_log "❌ 无效选择"
         exit 1
         ;;
 esac
 
-dashboard_finish "菜单任务执行完成"
+status_finish "菜单任务执行完成"
 
-echo
-echo "💡 提示：使用 'deactivate' 退出虚拟环境"
-echo
+print_log ""
+print_log "💡 提示：使用 'deactivate' 退出虚拟环境"
+print_log ""

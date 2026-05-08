@@ -203,13 +203,14 @@ class ReportGenerator:
 
             # 生成报告
             if attempt == 0:
-                start_stage('调用 AI 模型', step=4, total=6, detail='准备生成报告')
+                start_stage('调用 AI 模型', step=4, total=6, detail='整理提示词并发起模型请求')
                 print_progress('调用AI模型生成投资分析报告...')
             else:
-                start_stage('调用 AI 模型', step=4, total=6, detail=f'第 {attempt + 1} 次生成尝试')
+                start_stage('调用 AI 模型', step=4, total=6, detail=f'准备第 {attempt + 1} 次模型重试')
 
             ai_frames = ('[生成中]', '[组织结构]', '[等待返回]', '[整理输出]')
-            with heartbeat('AI 报告生成', interval_seconds=6.0, frames=ai_frames):
+            ai_details = ('整理摘要结构', '等待模型返回', '校对生成片段')
+            with heartbeat('AI 报告生成', interval_seconds=6.0, frames=ai_frames, details=ai_details):
                 report, usage = self.provider.generate(prompt, content, **kwargs)
 
             if attempt == 0:
@@ -218,7 +219,7 @@ class ReportGenerator:
 
             # 质量检查
             if quality_check:
-                start_stage('事实核查 / 质量检查', step=5, total=6, detail=f'第 {attempt + 1} 次质量检查')
+                start_stage('事实核查 / 质量检查', step=5, total=6, detail=f'执行第 {attempt + 1} 次质量检查')
                 print_progress('质量检查中...')
                 if self.enable_verification:
                     update_stage('抽取并验证实时数值断言')
@@ -291,7 +292,7 @@ class ReportGenerator:
         artifact_suffix: str = '',
     ) -> Path:
         """保存报告、元数据和可选JSON"""
-        start_stage('保存报告与元数据', detail='写入 Markdown 报告')
+        update_stage('写入 Markdown 报告')
         print_progress('保存报告到文件...')
         model_suffix = self.provider.get_provider_name().lower()
         saved_path = save_markdown(
@@ -356,7 +357,12 @@ class ReportGenerator:
             content = base_content if not retry_feedback else f"{base_content}\n\n{retry_feedback}"
             try:
                 start_stage('调用 AI 模型', detail=f'生成判断卡片（第 {attempt + 1} 次）')
-                with heartbeat('AI 判断卡片生成', interval_seconds=6.0, frames=('[构思中]', '[抽取证据]', '[组织结论]', '[等待返回]')):
+                with heartbeat(
+                    'AI 判断卡片生成',
+                    interval_seconds=6.0,
+                    frames=('[构思中]', '[抽取证据]', '[组织结论]', '[等待返回]'),
+                    details=('抽取候选证据', '组织判断结构', '等待模型完成'),
+                ):
                     raw_text, usage = self.provider.generate(prompt, content, **provider_kwargs)
                 finish_stage('判断卡片 AI 输出完成', duration=True)
                 payload = extract_json_payload(raw_text)
@@ -700,7 +706,7 @@ class ReportGenerator:
             'score_distribution': stock_payload['score_distribution'],
             'scoring_config': stock_payload['scoring_config'],
         }
-        start_stage('保存报告与元数据', step=6, total=6, detail='写入报告归档与 metadata')
+        start_stage('保存报告与元数据', step=6, total=6, detail='准备写入报告归档与 metadata')
         saved_path = self._save_result(
             end_date,
             summary_md,

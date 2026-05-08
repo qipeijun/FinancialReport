@@ -26,23 +26,69 @@ def test_terminal_dashboard_non_tty_falls_back_to_plain_text(monkeypatch):
     dashboard.emit_heartbeat(label='AI 报告生成', elapsed='00:08', frame='[==  ]', tty_dynamic=False)
 
     output = stream.getvalue()
-    assert '[1/6] 获取实时数据 - 检查行情接口' in output
-    assert '[心跳] AI 报告生成 进行中 [==  ] 已耗时 00:08' in output
+    assert '[阶段] [1/6] 获取实时数据 - 检查行情接口' in output
+    assert '[心跳] AI 报告生成 - 检查行情接口 (00:08)' in output
+    assert '[状态]' not in output
 
 
-def test_terminal_dashboard_tty_renders_ansi_panel(monkeypatch):
+def test_terminal_dashboard_tty_renders_single_line_status(monkeypatch):
     stream = StringIO()
     monkeypatch.setattr(sys, 'stdout', stream)
 
     dashboard = print_utils.TerminalDashboard()
     dashboard.interactive = True
     dashboard.configure(title='Financial Report', total_steps=4)
+    assert stream.getvalue() == ''
     dashboard.start_stage('执行所选任务', step=4, total=4, detail='执行标准 AI 分析')
 
     output = stream.getvalue()
-    assert 'Financial Report' in output
     assert '执行所选任务' in output
-    assert '\033[2K' in output
+    assert '\r\033[2K' in output
+    assert '总 ' in output
+    assert '阶段 ' in output
+    assert '┌─' not in output
+
+
+def test_print_info_temporarily_clears_and_restores_status(monkeypatch):
+    stream = StringIO()
+    monkeypatch.setattr(sys, 'stdout', stream)
+
+    dashboard = print_utils.printer.dashboard
+    dashboard.interactive = True
+    dashboard.total_steps = 4
+    dashboard.current_step = 2
+    dashboard.current_stage = '调用 AI 模型'
+    dashboard.current_detail = '等待模型返回'
+    dashboard._active_stage = True
+    dashboard._suspend_depth = 0
+    dashboard._status_visible = False
+
+    print_utils.print_info('一条普通日志')
+
+    output = stream.getvalue()
+    assert 'INFO 一条普通日志' in output
+    assert '调用 AI 模型' in output
+    assert output.count('\r\033[2K') >= 1
+
+
+def test_prompt_input_suspends_status_while_waiting(monkeypatch):
+    stream = StringIO()
+    monkeypatch.setattr(sys, 'stdout', stream)
+    monkeypatch.setattr('builtins.input', lambda prompt='': prompt + 'ok')
+
+    dashboard = print_utils.TerminalDashboard()
+    dashboard.interactive = True
+    dashboard.start_stage('进入功能选择', step=3, total=4, detail='等待用户选择启动模式')
+    before_prompt = stream.getvalue()
+    assert '进入功能选择' in before_prompt
+
+    with dashboard.prompt_context():
+        result = input('请选择功能 (1-7): ')
+
+    after_prompt = stream.getvalue()
+    assert result == '请选择功能 (1-7): ok'
+    assert after_prompt.count('\r\033[2K') >= 2
+    assert '进入功能选择' in after_prompt
 
 
 def test_run_script_reports_success(monkeypatch):
@@ -50,11 +96,10 @@ def test_run_script_reports_success(monkeypatch):
 
     class FakeProc:
         def __init__(self, *_args, **_kwargs):
-            self.calls = 0
+            self.stdout = iter(['第一行日志\n', '第二行日志\n'])
 
-        def poll(self):
-            self.calls += 1
-            return 0 if self.calls > 1 else None
+        def wait(self):
+            return 0
 
     class FakeHeartbeat:
         def __enter__(self):
@@ -67,14 +112,18 @@ def test_run_script_reports_success(monkeypatch):
     monkeypatch.setattr(interactive_runner, 'start_stage', lambda *args, **kwargs: events.append(('start', kwargs.get('detail'))))
     monkeypatch.setattr(interactive_runner, 'finish_stage', lambda summary, duration=False: events.append(('finish', summary, duration)))
     monkeypatch.setattr(interactive_runner, 'note_event', lambda message: events.append(('event', message)))
+    monkeypatch.setattr(interactive_runner, 'print_plain', lambda message='': events.append(('plain', message)))
+    monkeypatch.setattr(interactive_runner, 'suspend_status', lambda: events.append(('suspend',)))
+    monkeypatch.setattr(interactive_runner, 'resume_status', lambda: events.append(('resume',)))
     monkeypatch.setattr(interactive_runner, 'heartbeat', lambda *args, **kwargs: FakeHeartbeat())
     monkeypatch.setattr(interactive_runner.subprocess, 'Popen', FakeProc)
-    monkeypatch.setattr(interactive_runner.time, 'sleep', lambda *_args, **_kwargs: None)
 
     code = interactive_runner.run_script(['python3', 'demo.py'], task_label='执行标准 AI 分析')
 
     assert code == 0
-    assert ('start', '执行标准 AI 分析') in events
+    assert ('start', '启动 执行标准 AI 分析') in events
+    assert ('plain', '第一行日志') in events
+    assert ('plain', '第二行日志') in events
     assert any(item[0] == 'finish' and '执行标准 AI 分析完成' in item[1] for item in events)
     assert ('event', '执行标准 AI 分析已完成') in events
 
@@ -130,3 +179,54 @@ def test_report_generator_emits_stage_sequence(monkeypatch):
     starts = [item for item in events if item[0] == 'start']
     assert [item[1] for item in starts[:4]] == ['获取实时数据', '查询与筛选文章', '构建语料', '调用 AI 模型']
     assert any(item[1] == '保存报告与元数据' for item in starts)
+
+
+def test_heartbeat_with_details_emits_single_visible_line_per_tick(monkeypatch):
+    stream = StringIO()
+    monkeypatch.setattr(sys, 'stdout', stream)
+
+    dashboard = print_utils.TerminalDashboard()
+    dashboard.interactive = False
+
+    dashboard.emit_heartbeat(
+        label='调用 AI 模型',
+        elapsed='00:06',
+        frame='•',
+        tty_dynamic=False,
+        detail_override='等待模型返回',
+    )
+
+    output = stream.getvalue().strip().splitlines()
+    assert output == ['[心跳] 调用 AI 模型 - 等待模型返回 (00:06)']
+
+
+def test_heartbeat_can_skip_noisy_periods(monkeypatch):
+    stream = StringIO()
+    monkeypatch.setattr(sys, 'stdout', stream)
+
+    dashboard = print_utils.TerminalDashboard()
+    dashboard.interactive = False
+
+    dashboard.emit_heartbeat(
+        label='调用 AI 模型',
+        elapsed='00:12',
+        frame='•',
+        tty_dynamic=False,
+        detail_override='等待模型返回',
+    )
+
+    assert '[心跳] 调用 AI 模型 - 等待模型返回 (00:12)' in stream.getvalue()
+
+
+def test_stage_start_and_finish_plain_text_format(monkeypatch):
+    stream = StringIO()
+    monkeypatch.setattr(sys, 'stdout', stream)
+
+    dashboard = print_utils.TerminalDashboard()
+    dashboard.interactive = False
+    dashboard.start_stage('查询与筛选文章', step=2, total=6, detail='读取数据库候选文章')
+    dashboard.finish_stage('查询与筛选文章', duration=False)
+
+    output = stream.getvalue()
+    assert '[阶段] [2/6] 查询与筛选文章 - 读取数据库候选文章' in output
+    assert '[完成] 查询与筛选文章' in output

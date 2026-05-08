@@ -1,0 +1,416 @@
+{
+  "date_range": {
+    "start": "2026-05-08",
+    "end": "2026-05-08"
+  },
+  "articles_used": 48,
+  "chunks": 83,
+  "model_usage": {
+    "model": "deepseek-v4-pro",
+    "provider": "deepseek",
+    "prompt_tokens": 60775,
+    "completion_tokens": 4518,
+    "total_tokens": 65293
+  },
+  "quality_check": {
+    "score": 86.2,
+    "passed": true,
+    "accuracy_score": 46.2,
+    "timeliness_score": 20,
+    "reliability_score": 20,
+    "issues": [],
+    "warnings": [],
+    "stats": {
+      "has_realtime_data": true,
+      "data_age_hours": 0.29885057666666665,
+      "citation_count": 109,
+      "verified_claims": 10,
+      "total_claims": 13,
+      "fabrication_detected": false
+    },
+    "timestamp": "2026-05-08T14:26:55.862387"
+  },
+  "verification_enabled": true,
+  "output_mode": "markdown-report",
+  "live_data_degraded": false,
+  "stock_recommendations": [
+    {
+      "symbol": "sh601899",
+      "name": "紫金矿业",
+      "industry": "有色金属",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "no_direct_stock_evidence",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 77,
+      "scores": {
+        "news_catalyst": 20,
+        "technical": 24,
+        "valuation": 14,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "来自“汇率与大宗”主题映射，适合作为代表标的跟踪",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构",
+        "估值层已纳入行业相对比较"
+      ],
+      "risks": [
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_article_ids": [
+        3607,
+        3585,
+        3590,
+        3591
+      ],
+      "evidence_summaries": [
+        "达利欧：未来5年将发生巨大变化，此后世界将面目全非",
+        "中国储能产品出口火热 淡季不淡",
+        "穿普拉达的女王2：魔头的魅惑与批判的锋芒，都留在了前作",
+        "AGI临近，人类该如何对待AI？"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "汇率与大宗",
+      "theme_topics": [
+        "汇率与大宗"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 3,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sz000858",
+      "name": "五粮液",
+      "industry": "白酒",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 61,
+      "scores": {
+        "news_catalyst": 20,
+        "technical": 4,
+        "valuation": 19,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "来自“宏观与流动性”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        3606,
+        3601,
+        3605,
+        3626
+      ],
+      "evidence_summaries": [
+        "CoreWeave电话会：Q1营收翻倍亏损扩大，但下半年利润将迎“逃逸速度” ，推理就是AI的变现方式",
+        "在模型厂碾压之前，AI视频Agent产品是否只能挣波快钱？",
+        "Rocket Lab Q1营收暴增64%、拿下\"黄金穹顶\"大单，订单积压突破22亿美元 | 财报见闻",
+        "Here's what to expect from Friday's release of the April jobs report"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "宏观与流动性",
+      "theme_topics": [
+        "宏观与流动性"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 4,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "flat",
+        "score": 0,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh601857",
+      "name": "中国石油",
+      "industry": "石油石化",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 59,
+      "scores": {
+        "news_catalyst": 20,
+        "technical": 7,
+        "valuation": 14,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "来自“汇率与大宗”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        3607,
+        3585,
+        3590,
+        3591
+      ],
+      "evidence_summaries": [
+        "达利欧：未来5年将发生巨大变化，此后世界将面目全非",
+        "中国储能产品出口火热 淡季不淡",
+        "穿普拉达的女王2：魔头的魅惑与批判的锋芒，都留在了前作",
+        "AGI临近，人类该如何对待AI？"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "汇率与大宗",
+      "theme_topics": [
+        "汇率与大宗"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 3,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600036",
+      "name": "招商银行",
+      "industry": "银行",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 58,
+      "scores": {
+        "news_catalyst": 20,
+        "technical": 10,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "来自“宏观与流动性”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        3606,
+        3601,
+        3605,
+        3626
+      ],
+      "evidence_summaries": [
+        "CoreWeave电话会：Q1营收翻倍亏损扩大，但下半年利润将迎“逃逸速度” ，推理就是AI的变现方式",
+        "在模型厂碾压之前，AI视频Agent产品是否只能挣波快钱？",
+        "Rocket Lab Q1营收暴增64%、拿下\"黄金穹顶\"大单，订单积压突破22亿美元 | 财报见闻",
+        "Here's what to expect from Friday's release of the April jobs report"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "宏观与流动性",
+      "theme_topics": [
+        "宏观与流动性"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 4,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600519",
+      "name": "贵州茅台",
+      "industry": "白酒",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 54,
+      "scores": {
+        "news_catalyst": 15,
+        "technical": 10,
+        "valuation": 17,
+        "quality_risk": 6,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "处罚",
+        "亏损",
+        "新闻风险信号: 处罚",
+        "新闻风险信号: 亏损",
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        3600
+      ],
+      "evidence_summaries": [
+        "8点1氪丨段永平再加仓泡泡玛特；多平台已下架“全李酒店”；世界杯决赛门票1张200万美元，FIFA回应"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "宏观与流动性"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "flat",
+        "score": 0,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sz002594",
+      "name": "比亚迪",
+      "industry": "新能源车",
+      "candidate_confidence": "low",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 52,
+      "scores": {
+        "news_catalyst": 15,
+        "technical": 10,
+        "valuation": 17,
+        "quality_risk": 4,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "立案",
+        "退市",
+        "亏损",
+        "调查",
+        "新闻风险信号: 立案",
+        "新闻风险信号: 退市",
+        "新闻风险信号: 亏损",
+        "估值处于相对合理或偏低区间",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        3597
+      ],
+      "evidence_summaries": [
+        "5月8日国内四大证券报纸、重要财经媒体头版头条内容精华摘要"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    }
+  ],
+  "score_distribution": {
+    "strong_focus": 0,
+    "focus": 0,
+    "watch": 6,
+    "avoid": 0
+  },
+  "scoring_config": {
+    "market": "CN",
+    "style": "balanced",
+    "lookback_days": 60,
+    "pool_mode": "strict",
+    "theme_mapping_max_grade": "watch",
+    "value_acceptance_enabled": true,
+    "industry_trend_enabled": true
+  },
+  "backtest_ready": true,
+  "backtest_generated_at": "2026-05-08T14:26:55.887258",
+  "session": "afternoon",
+  "session_time": "2026-05-08 14:26:55"
+}

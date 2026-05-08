@@ -69,8 +69,12 @@ nav:
 - 首页: index.md
 - 分析报告:
   - 2026年05月:
+    - '2026-05-08':
+      - AM DeepSeek报告: archive/2026-05/2026-05-08/reports/📅 2026-05-08 财经分析报告_morning_markdown-report_deepseek.md
+      - PM DeepSeek报告: archive/2026-05/2026-05-08/reports/📅 2026-05-08 财经分析报告_afternoon_markdown-report_deepseek.md
     - '2026-05-07':
       - AM DeepSeek报告: archive/2026-05/2026-05-07/reports/📅 2026-05-07 财经分析报告_morning_markdown-report_deepseek.md
+      - PM DeepSeek报告: archive/2026-05/2026-05-07/reports/📅 2026-05-07 财经分析报告_evening_markdown-report_deepseek.md
     - '2026-05-06':
       - PM DeepSeek报告: archive/2026-05/2026-05-06/reports/📅 2026-05-06 财经分析报告_afternoon_deepseek.md
       - PM DeepSeek报告: archive/2026-05/2026-05-06/reports/📅 2026-05-06 财经分析报告_evening_deepseek.md
