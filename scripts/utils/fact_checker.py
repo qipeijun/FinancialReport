@@ -121,12 +121,13 @@ class FactChecker:
         seen = set()
         result: List[Claim] = []
         for claim in claims:
+            normalized_context = re.sub(r'[\s，。；：:,.]+', '', (claim.context or claim.content or ''))
             key = (
                 claim.type.value,
-                claim.content,
-                claim.extracted_value,
                 claim.scope.value,
                 claim.asset_hint,
+                claim.extracted_value,
+                normalized_context,
             )
             if key in seen:
                 continue
@@ -289,6 +290,8 @@ class FactChecker:
         patterns = [
             r'(?:同比|环比)(?:增长|上涨|下滑|下降)?\s*\+?(\d+\.?\d*)\s*%',
             r'(?:营收|收入|净利润|利润)(?:同比|环比)(?:增长|上涨|下滑|下降)?\s*\+?(\d+\.?\d*)\s*%',
+            r'(?:非农就业|新增就业|融资|募资|订单|产能|销量|零售)\D{0,8}(\d+\.?\d*)\s*(万亿|亿|万|%)',
+            r'(?:指数|价格|收益率|汇率)\D{0,8}(\d+\.?\d*)\s*(点|美元|%|元)',
         ]
 
         for line in text.splitlines():
@@ -296,10 +299,11 @@ class FactChecker:
                 continue
             for pattern in patterns:
                 for match in re.finditer(pattern, line):
+                    value = next((group for group in match.groups() if re.fullmatch(r'\d+\.?\d*', str(group or ''))), '')
                     claims.append(Claim(
                         type=ClaimType.MARKET_TREND,
                         content=match.group(0),
-                        extracted_value=match.group(1),
+                        extracted_value=value,
                         scope=ClaimScope.NEWS_FACT,
                         context=line.strip(),
                     ))
@@ -574,21 +578,22 @@ class FactChecker:
 
         # 统计
         realtime_claims = [c for c in claims if c.scope == ClaimScope.REALTIME_MARKET]
-        skipped_news_claims = [c for c in claims if c.scope == ClaimScope.NEWS_FACT]
+        news_fact_claims = [c for c in claims if c.scope == ClaimScope.NEWS_FACT]
+        violation_claims = [c for c in claims if c.scope == ClaimScope.VIOLATION]
 
         total = len(realtime_claims)
         verified = sum(1 for c in realtime_claims if c.verified)
         unverified = total - verified
         errors = sum(1 for c in realtime_claims if c.error)
 
-        annotation += f"**总断言数**: {total}  \n"
+        annotation += f"**实时行情断言**: {total}  \n"
         verified_pct = (verified / total * 100) if total > 0 else 0.0
-        annotation += f"**已验证**: {verified} ({verified_pct:.1f}%)  \n"
-        annotation += f"**未验证**: {unverified}  \n"
-        if skipped_news_claims:
-            annotation += f"**新闻事实断言**: {len(skipped_news_claims)}（不纳入实时行情校验）  \n"
-        if errors > 0:
-            annotation += f"**错误/违规**: {errors} ❌  \n"
+        annotation += f"**实时行情已验证**: {verified} ({verified_pct:.1f}%)  \n"
+        annotation += f"**实时行情未验证**: {unverified}  \n"
+        annotation += f"**数值型新闻断言**: {len(news_fact_claims)}（仅统计覆盖，不做实时校验）  \n"
+        annotation += f"**分析性判断**: 不纳入自动核查，请结合新闻证据与结构化推荐人工判断  \n"
+        if errors > 0 or violation_claims:
+            annotation += f"**错误/违规**: {errors + len(violation_claims)} ❌  \n"
 
         # 可信度评级
         if total > 0:
@@ -626,8 +631,16 @@ class FactChecker:
                 annotation += f"  > 原因: {claim.evidence or '缺少实时数据源'}  \n"
                 annotation += "\n"
 
+        if news_fact_claims:
+            annotation += "### ℹ️ 数值型新闻断言覆盖\n\n"
+            for claim in news_fact_claims[:5]:
+                annotation += f"- {claim.content}  \n"
+                annotation += "  > 说明: 已识别为新闻事实或历史数据，不纳入实时行情核查  \n\n"
+            if len(news_fact_claims) > 5:
+                annotation += f"*（还有 {len(news_fact_claims)-5} 个数值型新闻断言未完全列出）*\n\n"
+
         # 错误/违规断言
-        error_claims = [c for c in realtime_claims if c.error]
+        error_claims = [c for c in realtime_claims if c.error] + violation_claims
         if error_claims:
             annotation += "### ❌ 检测到的问题\n\n"
             for claim in error_claims:

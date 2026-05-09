@@ -222,9 +222,12 @@ def build_judgment_candidates(
                     'summary': (item.get('summary') or '')[:180],
                     'source_tier': item.get('source_tier'),
                     'content_quality_status': item.get('content_quality_status'),
+                    'published': item.get('published'),
+                    'collection_date': item.get('collection_date'),
                 }
                 for item in top_items
             ],
+            'topic_article_count': len(items),
         }
         candidate['priority_score'] = (
             SOURCE_TIER_RANK.get(candidate['source_tier_max'], 0) * 10

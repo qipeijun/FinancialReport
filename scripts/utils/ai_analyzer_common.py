@@ -179,6 +179,37 @@ def _normalize_source_name(name: str) -> str:
     return mapping.get(name, name)
 
 
+def summarize_content_quality(selected: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """汇总文章内容质量分布，统一报告与增强上下文的口径。"""
+    counters = {
+        'full': 0,
+        'partial': 0,
+        'summary_only': 0,
+        'other': 0,
+    }
+    for article in selected:
+        status = str(article.get('content_quality_status') or 'summary_only').strip()
+        if status in counters:
+            counters[status] += 1
+        else:
+            counters['other'] += 1
+
+    total = len(selected)
+    def _ratio(key: str) -> float:
+        return (counters[key] / total * 100) if total > 0 else 0.0
+
+    return {
+        'counts': counters,
+        'ratios': {
+            'full': _ratio('full'),
+            'partial': _ratio('partial'),
+            'summary_only': _ratio('summary_only'),
+            'other': _ratio('other'),
+        },
+        'total': total,
+    }
+
+
 def build_source_stats_block(selected: List[Dict[str, Any]], content_field: str, start: str, end: str) -> str:
     """构建数据统计信息块"""
     tracked = ['华尔街见闻', '36氪', '东方财富', '国家统计局', '中新网']
@@ -193,16 +224,17 @@ def build_source_stats_block(selected: List[Dict[str, Any]], content_field: str,
         else:
             other_count += 1
 
-    total_articles = len(selected)
-    content_articles = sum(1 for a in selected if a.get('content'))
-    content_ratio = (content_articles / total_articles * 100) if total_articles > 0 else 0
+    content_quality = summarize_content_quality(selected)
+    total_articles = content_quality['total']
+    quality_counts = content_quality['counts']
+    quality_ratios = content_quality['ratios']
 
     stats_info = f"""
 === 数据统计信息 ===
 分析日期范围: {start} 至 {end}
 处理文章总数: {total_articles}篇
 内容类型: {content_field}
-数据完整性: {content_ratio:.1f}%的文章包含完整内容
+数据质量分布: 完整正文 {quality_counts['full']}篇({quality_ratios['full']:.1f}%) / 部分正文 {quality_counts['partial']}篇({quality_ratios['partial']:.1f}%) / 仅摘要 {quality_counts['summary_only']}篇({quality_ratios['summary_only']:.1f}%)
 
 新闻源统计:
 本次分析基于以下新闻源：
@@ -321,6 +353,46 @@ def save_metadata(
     with open(meta_file, 'w', encoding='utf-8') as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)
     print_info(f'元数据已保存到: {meta_file}')
+
+
+def save_enhanced_context(
+    date_str: str,
+    payload: Dict[str, Any],
+    model_suffix: str = '',
+    artifact_suffix: str = '',
+) -> Path:
+    """保存增强特征归档，供后续回看与时序分析使用。"""
+    year_month = date_str[:7]
+    metadata_dir = PROJECT_ROOT / 'docs' / 'archive' / year_month / date_str / 'metadata'
+    metadata_dir.mkdir(parents=True, exist_ok=True)
+
+    now = datetime.now(pytz.timezone('Asia/Shanghai'))
+    hour = now.hour
+    if 6 <= hour < 12:
+        session = 'morning'
+    elif 12 <= hour < 18:
+        session = 'afternoon'
+    elif 18 <= hour < 24:
+        session = 'evening'
+    else:
+        session = 'overnight'
+
+    suffix_parts = [session, 'enhanced-context']
+    if artifact_suffix:
+        suffix_parts.append(artifact_suffix)
+    if model_suffix:
+        suffix_parts.append(model_suffix)
+    filename_suffix = '_'.join(suffix_parts)
+    payload_file = metadata_dir / f'{filename_suffix}.json'
+
+    archive_payload = dict(payload)
+    archive_payload.setdefault('session', session)
+    archive_payload.setdefault('session_time', now.strftime('%Y-%m-%d %H:%M:%S'))
+
+    with open(payload_file, 'w', encoding='utf-8') as f:
+        json.dump(archive_payload, f, ensure_ascii=False, indent=2)
+    print_info(f'增强特征归档已保存到: {payload_file}')
+    return payload_file
 
 
 def write_json(path: Path, summary_md: str, articles: List[Dict[str, Any]]):

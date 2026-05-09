@@ -207,6 +207,9 @@ def normalize_export_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
             'stock_recommendations': payload.get('stock_recommendations') or [],
             'score_distribution': payload.get('score_distribution') or {},
             'scoring_config': payload.get('scoring_config') or {},
+            'decision_views': payload.get('decision_views') or {},
+            'judgment_candidates': payload.get('judgment_candidates') or [],
+            'data_quality_stats': payload.get('data_quality_stats') or {},
             'output_mode': payload.get('output_mode'),
             'articles_used': payload.get('articles_used'),
             'verification_enabled': payload.get('verification_enabled'),
@@ -215,6 +218,9 @@ def normalize_export_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
         'stock_recommendations': payload.get('stock_recommendations') or [],
         'score_distribution': payload.get('score_distribution') or {},
         'scoring_config': payload.get('scoring_config') or {},
+        'decision_views': payload.get('decision_views') or {},
+        'judgment_candidates': payload.get('judgment_candidates') or [],
+        'data_quality_stats': payload.get('data_quality_stats') or {},
     }
 
 
@@ -222,9 +228,11 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
     normalized = normalize_export_payload(payload)
     metadata = normalized.get('metadata') or {}
     recommendations = metadata.get('stock_recommendations') or normalized.get('stock_recommendations') or []
+    decision_views = metadata.get('decision_views') or normalized.get('decision_views') or {}
     required_fields = {
         'symbol', 'name', 'grade', 'base_grade', 'grade_caps', 'total_score', 'scores',
         'data_completeness', 'candidate_confidence', 'evidence_strength', 'industry_trend',
+        'stale_opportunity_flag', 'crowding_flag', 'fresh_evidence_flag',
     }
     issues = []
     warnings = []
@@ -234,6 +242,11 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
     score_mismatch = 0
     missing_grade_caps_count = 0
     candidate_pool_low_quality = False
+    stale_high_grade_count = 0
+    crowded_high_grade_count = 0
+    theme_only_overgraded_count = 0
+    missing_forward_fields_count = 0
+    decision_views_schema_passed = False
     allowed_grade_caps = {
         'insufficient_evidence',
         'no_direct_stock_evidence',
@@ -245,9 +258,10 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
         'score_gate_not_met',
     }
     output_json_schema_passed = all(
-        key in normalized for key in ('metadata', 'stock_recommendations', 'score_distribution', 'scoring_config')
+        key in normalized for key in ('metadata', 'stock_recommendations', 'score_distribution', 'scoring_config', 'decision_views')
     )
     scoring_config = metadata.get('scoring_config') or normalized.get('scoring_config') or {}
+    expected_decision_view_keys = {'actionable_candidates', 'conditional_watchlist', 'stale_or_rejected'}
 
     for item in recommendations:
         missing = sorted(required_fields - set(item.keys()))
@@ -272,6 +286,15 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
         if item.get('source_type') == 'theme_mapping' and item.get('grade') == '强关注':
             theme_mapping_strong_focus_count += 1
             issues.append(f"{item.get('symbol')} 主题映射股不允许输出强关注")
+        if item.get('source_type') == 'theme_mapping' and int((item.get('evidence_strength') or {}).get('direct_mentions') or 0) == 0 and item.get('grade') in {'关注', '强关注'}:
+            theme_only_overgraded_count += 1
+            issues.append(f"{item.get('symbol')} 纯 theme-only 且无新增直接证据，不得高于观察")
+        if item.get('stale_opportunity_flag') and item.get('grade') == '强关注':
+            stale_high_grade_count += 1
+            issues.append(f"{item.get('symbol')} stale_opportunity_flag=true 不得输出强关注")
+        if item.get('crowding_flag') and item.get('grade') in {'关注', '强关注'}:
+            crowded_high_grade_count += 1
+            issues.append(f"{item.get('symbol')} crowding_flag=true 不得高于观察")
 
         grade_caps = item.get('grade_caps')
         if item.get('base_grade') != item.get('grade') and not grade_caps:
@@ -288,6 +311,10 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
         if item.get('grade') == '强关注' and direct_mentions < 1:
             high_grade_without_evidence += 1
             issues.append(f"{item.get('symbol')} 强关注缺少直接个股证据")
+        for field in ('validation_points', 'catalyst_path', 'failure_triggers'):
+            if field not in item:
+                missing_forward_fields_count += 1
+                warnings.append(f"{item.get('symbol')} 缺少 {field}")
 
     if recommendations and all(
         item.get('source_type') == 'theme_mapping'
@@ -298,18 +325,46 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
         candidate_pool_low_quality = True
         warnings.append('推荐列表全部为弱证据 theme-only 候选，候选质量偏低')
 
+    if isinstance(decision_views, dict) and expected_decision_view_keys.issubset(decision_views.keys()):
+        known_symbols = {item.get('symbol') for item in recommendations if item.get('symbol')}
+        decision_view_issues = []
+        for key in expected_decision_view_keys:
+            items = decision_views.get(key)
+            if not isinstance(items, list):
+                decision_view_issues.append(f'decision_views.{key} 不是列表')
+                continue
+            for item in items:
+                if not isinstance(item, dict):
+                    decision_view_issues.append(f'decision_views.{key} 存在非对象条目')
+                    continue
+                symbol = item.get('symbol')
+                if symbol not in known_symbols:
+                    decision_view_issues.append(f'decision_views.{key} 包含未知 symbol: {symbol}')
+        if decision_view_issues:
+            issues.extend(decision_view_issues)
+        else:
+            decision_views_schema_passed = True
+    else:
+        issues.append('缺少完整 decision_views 结构')
+
     return {
         'count': len(recommendations),
         'issues': issues,
         'warnings': warnings,
         'score_mismatch': score_mismatch,
         'high_grade_without_evidence': high_grade_without_evidence,
+        'stale_high_grade_count': stale_high_grade_count,
+        'crowded_high_grade_count': crowded_high_grade_count,
+        'theme_only_overgraded_count': theme_only_overgraded_count,
         'theme_mapping_strong_focus_count': theme_mapping_strong_focus_count,
         'strong_focus_with_incomplete': strong_focus_with_incomplete,
         'missing_grade_caps_count': missing_grade_caps_count,
+        'missing_forward_fields_count': missing_forward_fields_count,
         'candidate_pool_low_quality': candidate_pool_low_quality,
         'output_json_schema_passed': output_json_schema_passed,
+        'decision_views_schema_passed': decision_views_schema_passed,
         'passed': bool(output_json_schema_passed) and (not issues if recommendations else True)
+                 and decision_views_schema_passed
                  and scoring_config.get('pool_mode') == 'strict'
                  and scoring_config.get('value_acceptance_enabled') is True,
     }
@@ -359,6 +414,9 @@ def analyze_report_quality(
         claims=verified_claims,
         realtime_data=realtime_data,
         report_mode=mode,
+        stock_recommendations=metadata.get('stock_recommendations') or export_payload.get('stock_recommendations') or [],
+        judgment_candidates=metadata.get('judgment_candidates') or export_payload.get('judgment_candidates') or [],
+        data_quality_stats=metadata.get('data_quality_stats') or export_payload.get('data_quality_stats') or {},
     )
 
     required_sections = (
@@ -389,6 +447,8 @@ def analyze_report_quality(
             'stock_recommendations': metadata.get('stock_recommendations') or [],
             'score_distribution': metadata.get('score_distribution') or {},
             'scoring_config': metadata.get('scoring_config') or {},
+            'judgment_candidates': metadata.get('judgment_candidates') or [],
+            'data_quality_stats': metadata.get('data_quality_stats') or {},
         },
         'required_sections': structure,
         'claims': {

@@ -1,7 +1,7 @@
 {
   "http://rss.eastmoney.com/rss_partener.xml": {
-    "etag": "W/\"54d84c4085dedc1:0\"",
-    "last_modified": "Fri, 08 May 2026 00:54:40 GMT"
+    "etag": "W/\"90b2d524ddfdc1:0\"",
+    "last_modified": "Sat, 09 May 2026 00:46:49 GMT"
   },
   "https://36kr.com/feed": {
     "etag": null,
@@ -20,16 +20,16 @@
     "last_modified": null
   },
   "https://www.chinanews.com.cn/rss/finance.xml": {
-    "etag": "\"69fd3009-3dd2\"",
-    "last_modified": "Fri, 08 May 2026 00:36:25 GMT"
+    "etag": "\"69fe80cd-411c\"",
+    "last_modified": "Sat, 09 May 2026 00:33:17 GMT"
   },
   "https://www.ftchinese.com/rss/feed": {
-    "etag": "W/\"2b7f-8mHtEIp5b2HglMiq34h53VZTTNo\"",
+    "etag": "W/\"2ba9-J6s8s9io9UdHTCfcP7WK7j/6G+A\"",
     "last_modified": null
   },
   "https://www.economist.com/finance-and-economics/rss.xml": {
-    "etag": "W/\"2f6aed054f0c37ffc1d08572e792f2b7\"",
-    "last_modified": "Thu, 07 May 2026 15:58:29 GMT"
+    "etag": "W/\"2a2f8d8052e4e7d855ea29120a51e3e9\"",
+    "last_modified": "Fri, 08 May 2026 18:20:08 GMT"
   },
   "https://www.investing.com/rss/news.rss": {
     "etag": "W/\"10d8-640dd64ac9b17\"",
@@ -45,7 +45,7 @@
   },
   "https://www.etftrends.com/feed/": {
     "etag": null,
-    "last_modified": "Thu, 07 May 2026 21:26:47 GMT"
+    "last_modified": "Fri, 08 May 2026 21:07:25 GMT"
   },
   "https://www.cnbc.com/id/100003114/device/rss/rss.html": {
     "etag": null,
@@ -53,19 +53,19 @@
   },
   "https://feeds.feedburner.com/zerohedge/feed": {
     "etag": null,
-    "last_modified": "Thu, 7 May 2026 23:25:32 GMT"
+    "last_modified": "Sat, 9 May 2026 00:40:38 GMT"
   },
   "https://www.bloomberg.com/feed/podcast/etf-report.xml": {
     "etag": null,
     "last_modified": "Wed, 24 Sep 2025 19:35:54 GMT"
   },
   "https://www.federalreserve.gov/feeds/press_all.xml": {
-    "etag": "W/\"bfdbae387bd9dc1:0\"",
-    "last_modified": "Fri, 01 May 2026 15:00:16 GMT"
+    "etag": "W/\"2044a6aa2ddfdc1:0\"",
+    "last_modified": "Fri, 08 May 2026 21:00:14 GMT"
   },
   "https://www.sec.gov/news/pressreleases.rss": {
-    "etag": "\"1778201181\"",
-    "last_modified": "Fri, 08 May 2026 00:46:21 GMT"
+    "etag": "\"1778287589\"",
+    "last_modified": "Sat, 09 May 2026 00:46:29 GMT"
   },
   "https://www.stats.gov.cn/sj/zxfb/rss.xml": {
     "etag": "\"69fbeb27-47c357\"",
@@ -88,7 +88,7 @@
     "last_modified": null
   },
   "https://ir.thomsonreuters.com/rss/news-releases.xml": {
-    "etag": "\"1778199118\"",
-    "last_modified": "Fri, 08 May 2026 00:11:58 GMT"
+    "etag": "\"1778287667\"",
+    "last_modified": "Sat, 09 May 2026 00:47:47 GMT"
   }
 }

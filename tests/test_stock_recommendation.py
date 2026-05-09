@@ -1,5 +1,6 @@
 from pathlib import Path
 import sys
+import json
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -100,6 +101,7 @@ def test_merged_direct_candidate_is_not_forced_into_theme_watch_only():
         source_tier_max='official',
         high_confidence_topic=True,
         theme_topics=['科技与产业主题'],
+        topic_article_count=5,
     )
     price_provider = FakePriceHistoryProvider({'sh603019': build_bars(count=90)})
     valuation_provider = FakeValuationProvider(
@@ -271,6 +273,7 @@ def test_recommendation_scorer_caps_theme_only_candidate_to_watch():
         source_tier_max='official',
         high_confidence_topic=True,
         theme_topics=['科技与产业主题'],
+        topic_article_count=5,
     )
     price_provider = FakePriceHistoryProvider({'sh688981': build_bars(count=90)})
     valuation_provider = FakeValuationProvider(
@@ -299,6 +302,7 @@ def test_recommendation_scorer_caps_theme_only_candidate_to_watch():
     assert result['grade'] == '观察'
     assert 'theme_mapping_watch_only' in result['grade_caps']
     assert result['industry_trend']['status'] == 'available'
+    assert result['crowding_flag'] is True
 
 
 def test_recommendation_scorer_clears_grade_caps_when_grade_unchanged():
@@ -345,6 +349,11 @@ def test_recommendation_scorer_clears_grade_caps_when_grade_unchanged():
 
     assert result['grade'] == result['base_grade']
     assert result['grade_caps'] == []
+    assert 'stale_opportunity_flag' in result
+    assert 'fresh_evidence_flag' in result
+    assert 'validation_points' in result
+    assert 'catalyst_path' in result
+    assert 'failure_triggers' in result
 
 
 def test_render_stock_recommendation_markdown_contains_required_section():
@@ -381,6 +390,13 @@ def test_render_stock_recommendation_markdown_contains_required_section():
                     'score': 0,
                     'as_of': '2026-05-07',
                 },
+                'stale_opportunity_flag': False,
+                'crowding_flag': False,
+                'fresh_evidence_flag': True,
+                'forward_window': '1-4周',
+                'catalyst_path': ['跟踪个股级直接催化是否继续被主流来源确认'],
+                'validation_points': ['确认后续是否出现第二条独立个股证据或进一步官方/主流跟进'],
+                'failure_triggers': ['若后续催化未兑现或证据链减弱，需要下调关注度'],
             }
         ],
         scoring_config={'market': 'CN', 'style': 'balanced', 'lookback_days': 60},
@@ -416,3 +432,279 @@ def test_load_industry_trend_snapshot_warns_on_invalid_json(tmp_path, caplog):
 
     assert snapshot == {}
     assert any('Failed to load industry trend snapshot' in message for message in caplog.messages)
+
+
+def test_recommendation_scorer_flags_stale_direct_candidate():
+    security_master = SecurityMasterProvider()
+    candidate = CandidateStock(
+        symbol='sh600519',
+        name='贵州茅台',
+        industry='白酒',
+        source_type='direct_news',
+        topic='新闻直接提及',
+        evidence_article_ids=[1, 2],
+        evidence_summaries=['渠道反馈继续向好', '高端白酒景气仍在'],
+        source_tiers=['official', 'mainstream'],
+        independent_evidence_count=2,
+        direct_mentions=2,
+        risk_flags=[],
+        source_tier_max='official',
+        high_confidence_topic=True,
+        theme_topics=[],
+        evidence_published_dates=['2026-05-07', '2026-05-08'],
+        topic_article_count=2,
+    )
+    bars = build_bars(close_start=10.0, step=0.2, count=90)
+    for offset, bar in enumerate(bars[-20:], start=1):
+        boosted_close = 28.0 + offset * 0.9
+        bar.open = boosted_close - 0.2
+        bar.high = boosted_close + 0.3
+        bar.low = boosted_close - 0.4
+        bar.close = boosted_close
+    for index in range(-5, 0):
+        bars[index].volume = 10000 + (index + 5) * 500
+    price_provider = FakePriceHistoryProvider({'sh600519': bars})
+    valuation_provider = FakeValuationProvider(
+        {
+            'sh600519': {
+                'symbol': 'sh600519',
+                'pe_ttm': 20.0,
+                'pb_lf': 5.0,
+                'industry': '白酒',
+                'profitability': 'profitable',
+                'company_type': 'general',
+                'pe_history': [18.0, 19.0, 22.0],
+                'pb_history': [4.5, 5.1, 5.4],
+            }
+        }
+    )
+    scorer = RecommendationScorer(
+        security_master=security_master,
+        price_history_provider=price_provider,
+        valuation_provider=valuation_provider,
+        lookback_days=60,
+    )
+
+    result = scorer.score_candidates([candidate])['recommendations'][0]
+
+    assert result['stale_opportunity_flag'] is True
+    assert result['fresh_evidence_flag'] is True
+    assert result['grade'] != '强关注'
+
+
+def test_recommendation_scorer_uses_recent_enhanced_context_for_cross_day_signals(tmp_path):
+    archive_dir = tmp_path / 'docs' / 'archive' / '2026-05' / '2026-05-08' / 'metadata'
+    archive_dir.mkdir(parents=True, exist_ok=True)
+    payload = {
+        'selected_articles': [
+            {'primary_topic': '科技与产业主题'},
+            {'primary_topic': '科技与产业主题'},
+            {'primary_topic': '科技与产业主题'},
+        ],
+        'candidate_stocks': [
+            {'symbol': 'sh603019', 'direct_mentions': 1},
+        ],
+    }
+    (archive_dir / 'morning_enhanced-context_markdown-report_deepseek.json').write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2),
+        encoding='utf-8',
+    )
+
+    security_master = SecurityMasterProvider()
+    candidate = CandidateStock(
+        symbol='sh603019',
+        name='中科曙光',
+        industry='算力基础设施',
+        source_type='direct_news',
+        topic='科技与产业主题',
+        evidence_article_ids=[1, 2],
+        evidence_summaries=['新增订单', '产业链景气持续'],
+        source_tiers=['official', 'mainstream'],
+        independent_evidence_count=2,
+        direct_mentions=2,
+        risk_flags=[],
+        source_tier_max='official',
+        high_confidence_topic=True,
+        theme_topics=['科技与产业主题'],
+        evidence_published_dates=['2026-05-09', '2026-05-09'],
+        topic_article_count=5,
+    )
+    price_provider = FakePriceHistoryProvider({'sh603019': build_bars(count=90)})
+    valuation_provider = FakeValuationProvider(
+        {
+            'sh603019': {
+                'symbol': 'sh603019',
+                'pe_ttm': 24.0,
+                'pb_lf': 3.6,
+                'industry': '算力基础设施',
+                'profitability': 'profitable',
+                'company_type': 'general',
+                'pe_history': [22.0, 23.0, 25.0],
+                'pb_history': [3.2, 3.4, 3.7],
+            }
+        }
+    )
+    scorer = RecommendationScorer(
+        security_master=security_master,
+        price_history_provider=price_provider,
+        valuation_provider=valuation_provider,
+        lookback_days=60,
+        as_of_date='2026-05-09',
+        enhanced_context_root=tmp_path / 'docs' / 'archive',
+    )
+
+    result = scorer.score_candidates([candidate])['recommendations'][0]
+
+    assert result['fresh_evidence_flag'] is False
+    assert result['crowding_flag'] is True
+
+
+def test_recommendation_scorer_deduplicates_same_day_enhanced_context_articles(tmp_path):
+    archive_root = tmp_path / 'docs' / 'archive' / '2026-05'
+    day_one_dir = archive_root / '2026-05-07' / 'metadata'
+    day_two_dir = archive_root / '2026-05-08' / 'metadata'
+    day_one_dir.mkdir(parents=True, exist_ok=True)
+    day_two_dir.mkdir(parents=True, exist_ok=True)
+
+    duplicate_payload = {
+        'selected_articles': [
+            {'id': 1, 'title': '算力景气延续', 'source': 'source-a', 'published': '2026-05-07', 'primary_topic': '科技与产业主题'},
+            {'id': 2, 'title': '订单继续释放', 'source': 'source-b', 'published': '2026-05-07', 'primary_topic': '科技与产业主题'},
+        ],
+        'candidate_stocks': [],
+    }
+    single_payload = {
+        'selected_articles': [
+            {'id': 3, 'title': '主题继续发酵', 'source': 'source-c', 'published': '2026-05-08', 'primary_topic': '科技与产业主题'},
+        ],
+        'candidate_stocks': [],
+    }
+
+    (day_one_dir / 'morning_enhanced-context_markdown-report_deepseek.json').write_text(
+        json.dumps(duplicate_payload, ensure_ascii=False, indent=2),
+        encoding='utf-8',
+    )
+    (day_one_dir / 'evening_enhanced-context_judgment-cards_deepseek.json').write_text(
+        json.dumps(duplicate_payload, ensure_ascii=False, indent=2),
+        encoding='utf-8',
+    )
+    (day_two_dir / 'morning_enhanced-context_markdown-report_deepseek.json').write_text(
+        json.dumps(single_payload, ensure_ascii=False, indent=2),
+        encoding='utf-8',
+    )
+
+    security_master = SecurityMasterProvider()
+    candidate = CandidateStock(
+        symbol='sh603019',
+        name='中科曙光',
+        industry='算力基础设施',
+        source_type='direct_news',
+        topic='科技与产业主题',
+        evidence_article_ids=[1, 2],
+        evidence_summaries=['新增订单', '产业链景气持续'],
+        source_tiers=['official', 'mainstream'],
+        independent_evidence_count=2,
+        direct_mentions=2,
+        risk_flags=[],
+        source_tier_max='official',
+        high_confidence_topic=True,
+        theme_topics=['科技与产业主题'],
+        evidence_published_dates=['2026-05-09', '2026-05-09'],
+        topic_article_count=4,
+    )
+
+    class CalmPriceHistoryProvider(FakePriceHistoryProvider):
+        @staticmethod
+        def compute_indicators(_bars):
+            return {
+                'ma20': 10.0,
+                'ma60': 10.0,
+                'rsi14': 55.0,
+                'macd': 0.1,
+                'boll_upper': 10.5,
+                'boll_lower': 9.5,
+                'momentum_20d': 5.0,
+                'volume_ratio_5_20': 1.0,
+            }
+
+    price_provider = CalmPriceHistoryProvider({'sh603019': build_bars(count=90)})
+    valuation_provider = FakeValuationProvider(
+        {
+            'sh603019': {
+                'symbol': 'sh603019',
+                'pe_ttm': 24.0,
+                'pb_lf': 3.6,
+                'industry': '算力基础设施',
+                'profitability': 'profitable',
+                'company_type': 'general',
+                'pe_history': [22.0, 23.0, 25.0],
+                'pb_history': [3.2, 3.4, 3.7],
+            }
+        }
+    )
+    scorer = RecommendationScorer(
+        security_master=security_master,
+        price_history_provider=price_provider,
+        valuation_provider=valuation_provider,
+        lookback_days=60,
+        as_of_date='2026-05-09',
+        enhanced_context_root=tmp_path / 'docs' / 'archive',
+    )
+
+    result = scorer.score_candidates([candidate])['recommendations'][0]
+
+    assert scorer.topic_recent_daily_counts['科技与产业主题'] == {
+        '2026-05-07': 2,
+        '2026-05-08': 1,
+    }
+    assert result['crowding_flag'] is False
+
+
+def test_recommendation_scorer_decision_views_are_mutually_exclusive():
+    security_master = SecurityMasterProvider()
+    candidate = CandidateStock(
+        symbol='sh600519',
+        name='贵州茅台',
+        industry='白酒',
+        source_type='direct_news',
+        topic='新闻直接提及',
+        evidence_article_ids=[1, 2],
+        evidence_summaries=['渠道反馈继续向好', '高端白酒景气仍在'],
+        source_tiers=['official', 'mainstream'],
+        independent_evidence_count=2,
+        direct_mentions=2,
+        risk_flags=[],
+        source_tier_max='official',
+        high_confidence_topic=True,
+        theme_topics=[],
+        evidence_published_dates=['2026-05-09', '2026-05-09'],
+        topic_article_count=2,
+    )
+    price_provider = FakePriceHistoryProvider({'sh600519': build_bars(count=90)})
+    valuation_provider = FakeValuationProvider(
+        {
+            'sh600519': {
+                'symbol': 'sh600519',
+                'pe_ttm': 20.0,
+                'pb_lf': 5.0,
+                'industry': '白酒',
+                'profitability': 'profitable',
+                'company_type': 'general',
+                'pe_history': [18.0, 19.0, 22.0],
+                'pb_history': [4.5, 5.1, 5.4],
+            }
+        }
+    )
+    scorer = RecommendationScorer(
+        security_master=security_master,
+        price_history_provider=price_provider,
+        valuation_provider=valuation_provider,
+        lookback_days=60,
+        as_of_date='2026-05-09',
+    )
+
+    payload = scorer.score_candidates([candidate])
+
+    assert [item['symbol'] for item in payload['decision_views']['actionable_candidates']] == ['sh600519']
+    assert payload['decision_views']['conditional_watchlist'] == []
+    assert payload['decision_views']['stale_or_rejected'] == []

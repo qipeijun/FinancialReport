@@ -85,6 +85,8 @@ class CandidateStock:
     source_tier_max: str
     high_confidence_topic: bool = False
     theme_topics: List[str] | None = None
+    evidence_published_dates: List[str] | None = None
+    topic_article_count: int = 0
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
@@ -194,6 +196,8 @@ class SecurityMasterProvider:
                         risk_flags=[],
                         source_tier_max=source_tier,
                         theme_topics=[],
+                        evidence_published_dates=[],
+                        topic_article_count=0,
                     )
                     direct_map[symbol] = item
                 item.evidence_article_ids.append(int(article.get('id') or 0))
@@ -201,6 +205,9 @@ class SecurityMasterProvider:
                 item.source_tiers.append(source_tier)
                 item.direct_mentions += 1
                 item.independent_evidence_count += is_original
+                published = str(article.get('published') or article.get('collection_date') or '').strip()
+                if published:
+                    item.evidence_published_dates = (item.evidence_published_dates or []) + [published]
                 if self._source_tier_rank(source_tier) > self._source_tier_rank(item.source_tier_max):
                     item.source_tier_max = source_tier
                 for flag in risk_flags:
@@ -267,6 +274,12 @@ class SecurityMasterProvider:
                             source_tier_max=str(candidate.get('source_tier_max') or 'mainstream'),
                             high_confidence_topic=bool(candidate.get('high_confidence_topic')),
                             theme_topics=[topic],
+                            evidence_published_dates=[
+                                str(item.get('published') or item.get('collection_date') or '').strip()
+                                for item in candidate.get('articles', [])
+                                if str(item.get('published') or item.get('collection_date') or '').strip()
+                            ],
+                            topic_article_count=int(candidate.get('topic_article_count') or 0),
                         )
                     )
                     result_symbols.add(symbol)
@@ -556,13 +569,22 @@ class RecommendationScorer:
         valuation_provider: ValuationProvider,
         lookback_days: int = 60,
         style: str = 'balanced',
+        as_of_date: Optional[str] = None,
+        enhanced_context_root: Optional[Path] = None,
+        recent_context_days: int = 5,
     ):
         self.security_master = security_master
         self.price_history_provider = price_history_provider
         self.valuation_provider = valuation_provider
         self.lookback_days = lookback_days
         self.style = style
+        self.as_of_date = self._resolve_as_of_date(as_of_date)
+        self.enhanced_context_root = enhanced_context_root or (PROJECT_ROOT / 'docs' / 'archive')
+        self.recent_context_days = recent_context_days
         self.industry_trend_snapshot = self._load_industry_trend_snapshot()
+        self.recent_contexts = self._load_recent_enhanced_contexts()
+        self.symbol_recent_direct_days = self._build_symbol_recent_direct_days(self.recent_contexts)
+        self.topic_recent_daily_counts = self._build_topic_recent_daily_counts(self.recent_contexts)
 
     def score_candidates(self, candidates: List[CandidateStock]) -> Dict[str, Any]:
         market_regime = self.price_history_provider.fetch_market_regime()
@@ -591,9 +613,37 @@ class RecommendationScorer:
             'watch': sum(1 for item in recommendations if item['grade'] == '观察'),
             'avoid': sum(1 for item in recommendations if item['grade'] == '回避'),
         }
+        actionable_candidates = [
+            item for item in recommendations
+            if item['grade'] in {'关注', '强关注'}
+            and not item['stale_opportunity_flag']
+            and not item['crowding_flag']
+        ]
+        actionable_symbols = {item['symbol'] for item in actionable_candidates}
+        stale_or_rejected = [
+            item for item in recommendations
+            if item['grade'] == '回避'
+            or item['stale_opportunity_flag']
+            or item['crowding_flag']
+        ]
+        stale_or_rejected_symbols = {item['symbol'] for item in stale_or_rejected}
+        decision_views = {
+            'actionable_candidates': actionable_candidates,
+            'conditional_watchlist': [
+                item for item in recommendations
+                if item['symbol'] not in actionable_symbols
+                and item['symbol'] not in stale_or_rejected_symbols
+                and (
+                    item['grade'] == '观察'
+                    or item['fresh_evidence_flag']
+                )
+            ],
+            'stale_or_rejected': stale_or_rejected,
+        }
         return {
             'recommendations': recommendations,
             'score_distribution': distribution,
+            'decision_views': decision_views,
             'scoring_config': {
                 'market': 'CN',
                 'style': self.style,
@@ -656,6 +706,9 @@ class RecommendationScorer:
         base_grade = self._grade_for_score(total_score)
         grade = base_grade
         grade_caps: List[str] = []
+        stale_opportunity_flag = self._is_stale_opportunity(candidate, bars, indicators)
+        crowding_flag = self._is_crowded_opportunity(candidate, bars, indicators)
+        fresh_evidence_flag = self._has_fresh_evidence(candidate)
 
         if len(bars) < self.lookback_days:
             grade = self._cap_grade(grade, '观察')
@@ -687,6 +740,12 @@ class RecommendationScorer:
         if candidate.source_type == 'theme_mapping' and candidate.direct_mentions < 1:
             grade = self._cap_grade(grade, '观察')
             grade_caps.append('theme_mapping_watch_only')
+        if stale_opportunity_flag and base_grade == '强关注':
+            grade = self._cap_grade(grade, '关注')
+            grade_caps.append('score_gate_not_met')
+        if crowding_flag:
+            grade = self._cap_grade(grade, '观察')
+            grade_caps.append('score_gate_not_met')
 
         if not self._meets_grade_gate(
             grade=grade,
@@ -727,6 +786,13 @@ class RecommendationScorer:
             'source_type': candidate.source_type,
             'topic': candidate.topic,
             'theme_topics': candidate.theme_topics or [],
+            'stale_opportunity_flag': stale_opportunity_flag,
+            'crowding_flag': crowding_flag,
+            'fresh_evidence_flag': fresh_evidence_flag,
+            'forward_window': '1-4周',
+            'catalyst_path': self._build_catalyst_path(candidate, fresh_evidence_flag),
+            'validation_points': self._build_validation_points(candidate, indicators, stale_opportunity_flag),
+            'failure_triggers': invalidators,
             'evidence_strength': {
                 'direct_mentions': candidate.direct_mentions,
                 'independent_evidence_count': candidate.independent_evidence_count,
@@ -734,6 +800,173 @@ class RecommendationScorer:
             },
             'industry_trend': industry_trend,
         }
+
+    @staticmethod
+    def _parse_date(value: str) -> Optional[datetime]:
+        text = (value or '').strip()
+        if not text:
+            return None
+        normalized = text.replace('Z', '+00:00')
+        try:
+            return datetime.fromisoformat(normalized)
+        except ValueError:
+            pass
+        for fmt in ('%Y-%m-%d', '%Y-%m-%d %H:%M:%S', '%a, %d %b %Y %H:%M:%S %z'):
+            try:
+                return datetime.strptime(text, fmt)
+            except ValueError:
+                continue
+        return None
+
+    def _resolve_as_of_date(self, value: Optional[str]) -> datetime:
+        parsed = self._parse_date(value or '')
+        if parsed is not None:
+            return parsed
+        return datetime.now()
+
+    def _load_recent_enhanced_contexts(self) -> List[Dict[str, Any]]:
+        contexts: List[Dict[str, Any]] = []
+        for days_ago in range(1, self.recent_context_days + 1):
+            day = (self.as_of_date - timedelta(days=days_ago)).strftime('%Y-%m-%d')
+            metadata_dir = self.enhanced_context_root / day[:7] / day / 'metadata'
+            if not metadata_dir.exists():
+                continue
+            for path in sorted(metadata_dir.glob('*enhanced-context*.json')):
+                try:
+                    with open(path, 'r', encoding='utf-8') as f:
+                        payload = json.load(f)
+                except (OSError, json.JSONDecodeError) as exc:
+                    logger.warning('Failed to load enhanced context %s: %s', path, exc)
+                    continue
+                payload['_archive_date'] = day
+                contexts.append(payload)
+        return contexts
+
+    @staticmethod
+    def _build_symbol_recent_direct_days(contexts: List[Dict[str, Any]]) -> Dict[str, List[str]]:
+        result: Dict[str, set[str]] = {}
+        for payload in contexts:
+            archive_date = str(payload.get('_archive_date') or '')
+            for item in payload.get('candidate_stocks') or []:
+                if not isinstance(item, dict):
+                    continue
+                symbol = str(item.get('symbol') or '').strip()
+                direct_mentions = int(item.get('direct_mentions') or 0)
+                if not symbol or direct_mentions < 1 or not archive_date:
+                    continue
+                result.setdefault(symbol, set()).add(archive_date)
+        return {symbol: sorted(days) for symbol, days in result.items()}
+
+    @staticmethod
+    def _build_topic_recent_daily_counts(contexts: List[Dict[str, Any]]) -> Dict[str, Dict[str, int]]:
+        result: Dict[str, Dict[str, int]] = {}
+        seen_article_keys: Dict[str, set[tuple[str, str, str, str]]] = {}
+        for payload in contexts:
+            archive_date = str(payload.get('_archive_date') or '')
+            for article in payload.get('selected_articles') or []:
+                if not isinstance(article, dict):
+                    continue
+                topic = str(article.get('primary_topic') or '').strip()
+                if not topic or not archive_date:
+                    continue
+                article_key = (
+                    str(article.get('id') or ''),
+                    str(article.get('title') or ''),
+                    str(article.get('source') or ''),
+                    str(article.get('published') or article.get('collection_date') or ''),
+                )
+                day_seen = seen_article_keys.setdefault(archive_date, set())
+                if article_key in day_seen:
+                    continue
+                day_seen.add(article_key)
+                result.setdefault(topic, {})
+                result[topic][archive_date] = result[topic].get(archive_date, 0) + 1
+        return result
+
+    def _has_fresh_evidence(self, candidate: CandidateStock) -> bool:
+        if candidate.direct_mentions < 1:
+            return False
+        if self.symbol_recent_direct_days.get(candidate.symbol):
+            return False
+        evidence_dates = [
+            self._parse_date(item)
+            for item in (candidate.evidence_published_dates or [])
+        ]
+        evidence_dates = [item for item in evidence_dates if item is not None]
+        if not evidence_dates:
+            return candidate.direct_mentions >= 1 and candidate.independent_evidence_count >= 1
+        latest = max(evidence_dates)
+        earliest = min(evidence_dates)
+        return (latest - earliest).days <= 3
+
+    def _is_stale_opportunity(
+        self,
+        candidate: CandidateStock,
+        bars: List[HistoryBar],
+        indicators: Dict[str, Optional[float]],
+    ) -> bool:
+        if candidate.direct_mentions < 1 or len(bars) < 20:
+            return False
+        momentum = indicators.get('momentum_20d') or 0
+        rsi14 = indicators.get('rsi14') or 0
+        volume_ratio = indicators.get('volume_ratio_5_20') or 0
+        return bool(momentum >= 25 and rsi14 >= 72 and volume_ratio >= 1.2)
+
+    def _is_crowded_opportunity(
+        self,
+        candidate: CandidateStock,
+        bars: List[HistoryBar],
+        indicators: Dict[str, Optional[float]],
+    ) -> bool:
+        momentum = indicators.get('momentum_20d') or 0
+        rsi14 = indicators.get('rsi14') or 0
+        volume_ratio = indicators.get('volume_ratio_5_20') or 0
+        prior_daily_counts = self.topic_recent_daily_counts.get(candidate.topic, {})
+        prior_active_days = sum(1 for count in prior_daily_counts.values() if count > 0)
+        prior_average = (
+            sum(prior_daily_counts.values()) / len(prior_daily_counts)
+            if prior_daily_counts else 0.0
+        )
+        return bool(
+            candidate.topic_article_count >= 4
+            and len(bars) >= 20
+            and (
+                (prior_active_days >= 2 and prior_average >= 2)
+                or momentum >= 18
+                or rsi14 >= 75
+                or volume_ratio >= 2.2
+            )
+        )
+
+    @staticmethod
+    def _build_catalyst_path(candidate: CandidateStock, fresh_evidence_flag: bool) -> List[str]:
+        items = []
+        if candidate.source_type == 'direct_news':
+            items.append('跟踪个股级直接催化是否继续被主流来源确认')
+        else:
+            items.append(f'跟踪“{candidate.topic}”主题是否从主题扩散走向个股兑现')
+        if fresh_evidence_flag:
+            items.append('观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现')
+        else:
+            items.append('若后续缺少新增个股证据，需警惕题材已被交易完成')
+        return items[:2]
+
+    @staticmethod
+    def _build_validation_points(
+        candidate: CandidateStock,
+        indicators: Dict[str, Optional[float]],
+        stale_opportunity_flag: bool,
+    ) -> List[str]:
+        items = []
+        if candidate.direct_mentions >= 1:
+            items.append('确认后续是否出现第二条独立个股证据或进一步官方/主流跟进')
+        else:
+            items.append('等待主题催化转化为个股级新增证据')
+        if indicators.get('ma20') is not None:
+            items.append('观察价格是否继续站稳 20 日均线并维持健康量能')
+        if stale_opportunity_flag:
+            items.append('若短线继续放量冲高且无新增证据，应下调为后手交易机会')
+        return items[:3]
 
     def _score_news(self, candidate: CandidateStock) -> int:
         source_rank = {

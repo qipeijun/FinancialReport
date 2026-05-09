@@ -14,7 +14,7 @@
 """
 
 import re
-from typing import Dict, List, Optional
+from typing import Any, Dict, List, Optional
 from datetime import datetime
 import logging
 
@@ -27,11 +27,112 @@ def _realtime_claims(claims: Optional[List]) -> Optional[List]:
     return [c for c in claims if getattr(c, 'scope', None) is None or getattr(c, 'scope').value == '实时行情断言']
 
 
+def _news_fact_claims(claims: Optional[List]) -> Optional[List]:
+    if claims is None:
+        return None
+    return [c for c in claims if getattr(c, 'scope', None) and getattr(c, 'scope').value == '新闻事实断言']
+
+
+def _section_before_stock_table(report_text: str) -> str:
+    marker = report_text.find('## 股票推荐评分')
+    if marker == -1:
+        return report_text
+    return report_text[:marker]
+
+
+def _extract_strong_phrases(report_text: str) -> List[str]:
+    phrases = ['绝佳窗口', '十倍速', '不可逆', '极大概率', '极端结构主义配置哲学']
+    return [phrase for phrase in phrases if phrase in report_text]
+
+
+def _find_unsupported_stock_mentions(report_text: str, stock_recommendations: Optional[List[Dict]]) -> List[str]:
+    if not stock_recommendations:
+        return []
+    recommendation_names = {str(item.get('name') or '').strip() for item in stock_recommendations}
+    recommendation_names.discard('')
+    recommendation_symbols = {str(item.get('symbol') or '').strip() for item in stock_recommendations}
+    recommendation_symbols.discard('')
+    narrative_text = _section_before_stock_table(report_text)
+
+    unsupported = []
+    for match in re.findall(r'\b(?:sh|sz)\d{6}\b', narrative_text):
+        if match not in recommendation_symbols:
+            unsupported.append(match)
+    for match in re.finditer(r'（([A-Za-z0-9]{6,8})）', narrative_text):
+        symbol = match.group(1).lower()
+        if symbol not in recommendation_symbols:
+            unsupported.append(symbol)
+
+    recommendation_section_keywords = ('推荐摘要', '投资组合建议', '建议', '重点标的', '核心持仓')
+    if any(keyword in narrative_text for keyword in recommendation_section_keywords):
+        known_company_names = re.findall(r'[\u4e00-\u9fa5]{2,8}', narrative_text)
+        for name in known_company_names:
+            if name in {'市场概况', '投资主题', '风险提示', '操作策略', '高置信主题', '观察主题', '结构化推荐摘要'}:
+                continue
+            if name in recommendation_names:
+                continue
+            if name.endswith('指数') or name.endswith('黄金') or name.endswith('人民币'):
+                continue
+            if '新闻' in name:
+                continue
+            if any(name in rec for rec in recommendation_names):
+                continue
+        # 这里不对中文公司名做宽松猜测，避免误伤；代码级别不一致已经足够拦截主要问题。
+    return sorted(set(unsupported))
+
+
+def _high_confidence_topics(judgment_candidates: Optional[List[Dict]]) -> set[str]:
+    if not judgment_candidates:
+        return set()
+    return {
+        str(item.get('topic') or '').strip()
+        for item in judgment_candidates
+        if bool(item.get('high_confidence_topic')) and str(item.get('topic') or '').strip()
+    }
+
+
+def _extract_topic_headers(report_text: str) -> List[str]:
+    topic_section_match = re.search(r'##\s+.*投资主题(.*?)(?:\n##\s+|\Z)', report_text, flags=re.S)
+    if not topic_section_match:
+        return []
+    section = topic_section_match.group(1)
+    return [
+        match.group(1).strip()
+        for match in re.finditer(r'###\s+([^\n]+)', section)
+        if match.group(1).strip()
+    ]
+
+
+def _data_integrity_statement_passed(report_text: str, data_quality_stats: Optional[Dict[str, Any]]) -> bool:
+    if not data_quality_stats:
+        return True
+    full_ratio = float((data_quality_stats.get('ratios') or {}).get('full') or 0.0)
+    full_count = int((data_quality_stats.get('counts') or {}).get('full') or 0)
+    partial_count = int((data_quality_stats.get('counts') or {}).get('partial') or 0)
+    summary_only_count = int((data_quality_stats.get('counts') or {}).get('summary_only') or 0)
+
+    impossible_claim = re.search(r'100(?:\.0+)?%[^。\n]{0,12}(?:文章)?包含完整内容', report_text)
+    if impossible_claim and full_ratio < 99.95:
+        return False
+
+    required_fragments = [
+        f"完整正文 {full_count}",
+        f"部分正文 {partial_count}",
+        f"仅摘要 {summary_only_count}",
+    ]
+    if '数据质量说明' in report_text or '数据质量分布' in report_text:
+        return all(fragment in report_text for fragment in required_fragments)
+    return True
+
+
 def check_report_quality_v2(
     report_text: str,
     claims: Optional[List] = None,
     realtime_data: Optional[Dict] = None,
     report_mode: str = 'markdown-report',
+    stock_recommendations: Optional[List[Dict[str, Any]]] = None,
+    judgment_candidates: Optional[List[Dict[str, Any]]] = None,
+    data_quality_stats: Optional[Dict[str, Any]] = None,
 ) -> Dict:
     """
     增强版质量检查 (集成事实核查)
@@ -63,11 +164,15 @@ def check_report_quality_v2(
     accuracy_score = 0
     timeliness_score = 0
     reliability_score = 0
+    claim_coverage_score = 0
+    narrative_consistency_passed = True
+    data_integrity_statement_passed = _data_integrity_statement_passed(report_text, data_quality_stats)
 
     # ============================================================
     # 1. 准确性评分 (60分) - 核心指标
     # ============================================================
     realtime_claims = _realtime_claims(claims)
+    news_claims = _news_fact_claims(claims)
 
     if realtime_claims is not None:
         verified_count = sum(1 for c in realtime_claims if c.verified)
@@ -100,6 +205,24 @@ def check_report_quality_v2(
         accuracy_score = 30  # 给基础分
 
     score += accuracy_score
+
+    # ============================================================
+    # 1.5 断言覆盖度评分 (附加门槛，不单独计入总分)
+    # ============================================================
+    total_realtime_claims = len(realtime_claims) if realtime_claims is not None else 0
+    total_news_claims = len(news_claims) if news_claims is not None else 0
+    narrative_body = _section_before_stock_table(report_text)
+    narrative_length = len(narrative_body)
+    if total_realtime_claims + total_news_claims >= 6:
+        claim_coverage_score = 20
+    elif total_realtime_claims + total_news_claims >= 4:
+        claim_coverage_score = 15
+    elif total_realtime_claims + total_news_claims >= 2:
+        claim_coverage_score = 10
+    else:
+        claim_coverage_score = 5 if narrative_length < 1800 else 0
+    if narrative_length > 2500 and total_realtime_claims + total_news_claims < 3:
+        issues.append("❌ 报告篇幅较长，但可验证断言覆盖过少")
 
     # ============================================================
     # 2. 时效性评分 (20分)
@@ -226,6 +349,16 @@ def check_report_quality_v2(
         score -= 10
         issues.append("❌ 检测到N/A或待定占位符,未填写完整")
 
+    strong_phrases = _extract_strong_phrases(report_text)
+    if strong_phrases:
+        actionable_count = len((stock_recommendations or []))
+        high_confidence_count = len(_high_confidence_topics(judgment_candidates))
+        if not actionable_count or high_confidence_count == 0:
+            score -= min(15, len(strong_phrases) * 5)
+            issues.append(f"❌ 存在过强措辞但缺少对应高置信证据: {', '.join(strong_phrases)}")
+        else:
+            warnings.append(f"⚠️ 检测到较强措辞: {', '.join(strong_phrases)}")
+
     # ============================================================
     # 5. 基础结构检查 (额外加分项)
     # ============================================================
@@ -241,6 +374,30 @@ def check_report_quality_v2(
         score -= len(missing_sections) * 5
 
     # ============================================================
+    # 5.5 一致性检查
+    # ============================================================
+    unsupported_stock_mentions = _find_unsupported_stock_mentions(report_text, stock_recommendations)
+    if unsupported_stock_mentions:
+        narrative_consistency_passed = False
+        issues.append(f"❌ 正文出现结构化推荐层未支持的股票代码: {', '.join(unsupported_stock_mentions)}")
+
+    high_confidence_topics = _high_confidence_topics(judgment_candidates)
+    if high_confidence_topics:
+        mentioned_topics = set(_extract_topic_headers(report_text))
+        unsupported_topics = {
+            topic for topic in mentioned_topics
+            if topic not in {'高置信主题', '观察主题', '高置信主题：', '观察主题：'}
+            and '观察' not in topic
+            and topic not in high_confidence_topics
+        }
+        if unsupported_topics:
+            narrative_consistency_passed = False
+            issues.append(f"❌ 正文出现未进入高置信候选的主题标题: {', '.join(sorted(unsupported_topics))}")
+
+    if not data_integrity_statement_passed:
+        issues.append("❌ 数据质量说明与真实文章分布不一致")
+
+    # ============================================================
     # 6. 确保得分在合理范围
     # ============================================================
     score = max(0, min(100, score))
@@ -249,7 +406,14 @@ def check_report_quality_v2(
     # 7. 判断是否通过
     # ============================================================
     # 通过标准: 总分>=80 且 无严重问题 且 未检测到编造内容
-    passed = score >= 80 and len(issues) == 0 and not fabrication_detected
+    passed = (
+        score >= 80
+        and len(issues) == 0
+        and not fabrication_detected
+        and claim_coverage_score >= 10
+        and narrative_consistency_passed
+        and data_integrity_statement_passed
+    )
 
     # ============================================================
     # 8. 返回结果
@@ -260,6 +424,9 @@ def check_report_quality_v2(
         'accuracy_score': round(accuracy_score, 1),
         'timeliness_score': round(timeliness_score, 1),
         'reliability_score': round(reliability_score, 1),
+        'claim_coverage_score': claim_coverage_score,
+        'narrative_consistency_passed': narrative_consistency_passed,
+        'data_integrity_statement_passed': data_integrity_statement_passed,
         'issues': issues,
         'warnings': warnings,
         'stats': {
@@ -268,6 +435,7 @@ def check_report_quality_v2(
             'citation_count': citation_count,
             'verified_claims': sum(1 for c in realtime_claims if c.verified) if realtime_claims is not None else 0,
             'total_claims': len(realtime_claims) if realtime_claims is not None else 0,
+            'news_fact_claims': len(news_claims) if news_claims is not None else 0,
             'fabrication_detected': fabrication_detected
         },
         'timestamp': datetime.now().isoformat()
@@ -312,6 +480,7 @@ def print_quality_report_v2(quality_result: Dict, verbose: bool = True):
         print(f"  • 准确性: {quality_result['accuracy_score']:.1f}/60 (基于事实核查)")
         print(f"  • 时效性: {quality_result['timeliness_score']:.1f}/20 (数据新鲜度)")
         print(f"  • 可靠性: {quality_result['reliability_score']:.1f}/20 (来源标注)")
+        print(f"  • 断言覆盖: {quality_result.get('claim_coverage_score', 0)}/20 (非总分门槛)")
 
     # 严重问题
     if quality_result['issues']:
@@ -334,8 +503,11 @@ def print_quality_report_v2(quality_result: Dict, verbose: bool = True):
             print(f"  • 数据时效: {stats['data_age_hours']:.1f} 小时前")
         print(f"  • 引用来源: {stats.get('citation_count', 0)}处")
         print(f"  • 验证断言: {stats.get('verified_claims', 0)}/{stats.get('total_claims', 0)}")
+        print(f"  • 新闻数值断言: {stats.get('news_fact_claims', 0)}")
         if stats.get('fabrication_detected'):
             print(f"  • ⚠️ 检测到编造内容")
+        print(f"  • 叙事一致性: {'通过' if quality_result.get('narrative_consistency_passed', True) else '失败'}")
+        print(f"  • 数据质量说明: {'通过' if quality_result.get('data_integrity_statement_passed', True) else '失败'}")
 
     # 最终判断
     print(f"\n{'='*70}")

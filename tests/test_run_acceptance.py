@@ -139,6 +139,11 @@ def test_validate_stock_recommendations_payload_rejects_incomplete_high_grade():
                     'pool_mode': 'strict',
                     'value_acceptance_enabled': True,
                 },
+                'decision_views': {
+                    'actionable_candidates': [],
+                    'conditional_watchlist': [],
+                    'stale_or_rejected': [],
+                },
             },
             'stock_recommendations': [
                 {
@@ -169,6 +174,9 @@ def test_validate_stock_recommendations_payload_rejects_incomplete_high_grade():
                         'score': 0,
                         'as_of': None,
                     },
+                    'stale_opportunity_flag': True,
+                    'crowding_flag': True,
+                    'fresh_evidence_flag': False,
                     'source_type': 'theme_mapping',
                 }
             ],
@@ -177,6 +185,11 @@ def test_validate_stock_recommendations_payload_rejects_incomplete_high_grade():
                 'pool_mode': 'strict',
                 'value_acceptance_enabled': True,
             },
+            'decision_views': {
+                'actionable_candidates': [],
+                'conditional_watchlist': [],
+                'stale_or_rejected': [],
+            },
         }
     )
 
@@ -184,6 +197,9 @@ def test_validate_stock_recommendations_payload_rejects_incomplete_high_grade():
     assert result['high_grade_without_evidence'] >= 1
     assert result['strong_focus_with_incomplete'] == 1
     assert result['theme_mapping_strong_focus_count'] == 1
+    assert result['stale_high_grade_count'] == 1
+    assert result['crowded_high_grade_count'] == 1
+    assert result['theme_only_overgraded_count'] == 1
     assert result['output_json_schema_passed'] is True
 
 
@@ -220,6 +236,12 @@ def test_validate_stock_recommendations_payload_prefers_metadata_recommendations
                             'score': 0,
                             'as_of': '2026-05-07',
                         },
+                        'stale_opportunity_flag': False,
+                        'crowding_flag': False,
+                        'fresh_evidence_flag': True,
+                        'validation_points': ['确认后续是否出现第二条独立个股证据或进一步官方/主流跟进'],
+                        'catalyst_path': ['跟踪个股级直接催化是否继续被主流来源确认'],
+                        'failure_triggers': ['若后续催化未兑现或证据链减弱，需要下调关注度'],
                         'source_type': 'direct_news',
                     }
                 ],
@@ -227,6 +249,13 @@ def test_validate_stock_recommendations_payload_prefers_metadata_recommendations
                 'scoring_config': {
                     'pool_mode': 'strict',
                     'value_acceptance_enabled': True,
+                },
+                'decision_views': {
+                    'actionable_candidates': [
+                        {'symbol': 'sh600519', 'grade': '关注'},
+                    ],
+                    'conditional_watchlist': [],
+                    'stale_or_rejected': [],
                 },
             },
             'stock_recommendations': [
@@ -258,6 +287,9 @@ def test_validate_stock_recommendations_payload_prefers_metadata_recommendations
                         'score': 0,
                         'as_of': None,
                     },
+                    'stale_opportunity_flag': False,
+                    'crowding_flag': False,
+                    'fresh_evidence_flag': False,
                     'source_type': 'theme_mapping',
                 }
             ],
@@ -266,12 +298,151 @@ def test_validate_stock_recommendations_payload_prefers_metadata_recommendations
                 'pool_mode': 'strict',
                 'value_acceptance_enabled': True,
             },
+            'decision_views': {
+                'actionable_candidates': [],
+                'conditional_watchlist': [],
+                'stale_or_rejected': [],
+            },
         }
     )
 
     assert result['passed'] is True
     assert result['count'] == 1
     assert result['high_grade_without_evidence'] == 0
+    assert result['decision_views_schema_passed'] is True
+
+
+def test_validate_stock_recommendations_payload_warns_on_missing_forward_fields():
+    result = validate_stock_recommendations_payload(
+        {
+            'metadata': {
+                'stock_recommendations': [
+                    {
+                        'symbol': 'sh603019',
+                        'name': '中科曙光',
+                        'base_grade': '观察',
+                        'grade': '观察',
+                        'grade_caps': [],
+                        'total_score': 60,
+                        'scores': {
+                            'news_catalyst': 18,
+                            'technical': 14,
+                            'valuation': 10,
+                            'quality_risk': 10,
+                            'market_regime': 8,
+                        },
+                        'data_completeness': 0.88,
+                        'evidence_article_ids': [1],
+                        'candidate_confidence': 'medium',
+                        'evidence_strength': {
+                            'direct_mentions': 1,
+                            'independent_evidence_count': 1,
+                            'source_tier_max': 'mainstream',
+                        },
+                        'industry_trend': {
+                            'status': 'available',
+                            'direction': 'up',
+                            'score': 1,
+                            'as_of': '2026-05-07',
+                        },
+                        'stale_opportunity_flag': False,
+                        'crowding_flag': False,
+                        'fresh_evidence_flag': True,
+                        'source_type': 'direct_news',
+                    }
+                ],
+                'score_distribution': {},
+                'scoring_config': {
+                    'pool_mode': 'strict',
+                    'value_acceptance_enabled': True,
+                },
+                'decision_views': {
+                    'actionable_candidates': [],
+                    'conditional_watchlist': [
+                        {'symbol': 'sh603019', 'grade': '观察'},
+                    ],
+                    'stale_or_rejected': [],
+                },
+            },
+            'stock_recommendations': [],
+            'score_distribution': {},
+            'scoring_config': {
+                'pool_mode': 'strict',
+                'value_acceptance_enabled': True,
+            },
+            'decision_views': {
+                'actionable_candidates': [],
+                'conditional_watchlist': [],
+                'stale_or_rejected': [],
+            },
+        }
+    )
+
+    assert result['passed'] is True
+    assert result['missing_forward_fields_count'] == 3
+    assert any('缺少 validation_points' in item for item in result['warnings'])
+
+
+def test_validate_stock_recommendations_payload_rejects_missing_decision_views():
+    result = validate_stock_recommendations_payload(
+        {
+            'metadata': {
+                'stock_recommendations': [
+                    {
+                        'symbol': 'sh603019',
+                        'name': '中科曙光',
+                        'base_grade': '观察',
+                        'grade': '观察',
+                        'grade_caps': [],
+                        'total_score': 60,
+                        'scores': {
+                            'news_catalyst': 18,
+                            'technical': 14,
+                            'valuation': 10,
+                            'quality_risk': 10,
+                            'market_regime': 8,
+                        },
+                        'data_completeness': 0.88,
+                        'evidence_article_ids': [1],
+                        'candidate_confidence': 'medium',
+                        'evidence_strength': {
+                            'direct_mentions': 1,
+                            'independent_evidence_count': 1,
+                            'source_tier_max': 'mainstream',
+                        },
+                        'industry_trend': {
+                            'status': 'available',
+                            'direction': 'up',
+                            'score': 1,
+                            'as_of': '2026-05-07',
+                        },
+                        'stale_opportunity_flag': False,
+                        'crowding_flag': False,
+                        'fresh_evidence_flag': True,
+                        'validation_points': ['确认后续是否出现第二条独立个股证据或进一步官方/主流跟进'],
+                        'catalyst_path': ['跟踪个股级直接催化是否继续被主流来源确认'],
+                        'failure_triggers': ['若后续催化未兑现或证据链减弱，需要下调关注度'],
+                        'source_type': 'direct_news',
+                    }
+                ],
+                'score_distribution': {},
+                'scoring_config': {
+                    'pool_mode': 'strict',
+                    'value_acceptance_enabled': True,
+                },
+            },
+            'stock_recommendations': [],
+            'score_distribution': {},
+            'scoring_config': {
+                'pool_mode': 'strict',
+                'value_acceptance_enabled': True,
+            },
+        }
+    )
+
+    assert result['passed'] is False
+    assert result['decision_views_schema_passed'] is False
+    assert any('decision_views' in item for item in result['issues'])
 
 
 def test_analyze_mode_output_fails_when_structured_export_is_missing(tmp_path: Path):

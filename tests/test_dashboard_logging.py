@@ -181,6 +181,188 @@ def test_report_generator_emits_stage_sequence(monkeypatch):
     assert any(item[1] == '保存报告与元数据' for item in starts)
 
 
+def test_report_generator_save_result_persists_enhanced_context(monkeypatch, tmp_path):
+    class FakeProvider:
+        def get_provider_name(self):
+            return 'DeepSeek'
+
+    generator = ReportGenerator(provider=FakeProvider(), enable_verification=False)
+    captured = {}
+
+    monkeypatch.setattr('scripts.utils.report_generator.save_markdown', lambda *args, **kwargs: tmp_path / 'report.md')
+    monkeypatch.setattr('scripts.utils.report_generator.save_metadata', lambda *args, **kwargs: captured.setdefault('metadata_saved', True))
+    monkeypatch.setattr('scripts.utils.report_generator.save_enhanced_context', lambda *args, **kwargs: tmp_path / 'enhanced.json')
+    monkeypatch.setattr('scripts.utils.report_generator.update_stage', lambda detail: None)
+    monkeypatch.setattr('scripts.utils.report_generator.print_progress', lambda detail: None)
+    monkeypatch.setattr('scripts.utils.report_generator.print_success', lambda detail: None)
+    monkeypatch.setattr('scripts.utils.report_generator.note_event', lambda detail: None)
+    monkeypatch.setattr('scripts.utils.report_generator.finish_stage', lambda *args, **kwargs: None)
+
+    meta = {}
+    saved = generator._save_result(
+        end_date='2026-05-09',
+        report_text='# report',
+        usage={'model': 'deepseek'},
+        meta=meta,
+        output_json=None,
+        json_payload={'summary_markdown': '# report'},
+        enhanced_context_payload={'selected_articles': [], 'judgment_candidates': []},
+        artifact_suffix='markdown-report',
+    )
+
+    assert saved == tmp_path / 'report.md'
+    assert meta['enhanced_context_path'] == str(tmp_path / 'enhanced.json')
+    assert captured['metadata_saved'] is True
+
+
+def test_report_generator_judgment_cards_enhanced_context_contains_candidate_stocks(monkeypatch):
+    class FakeProvider:
+        def get_provider_name(self):
+            return 'DeepSeek'
+
+        def generate(self, prompt, content, **kwargs):
+            return '{"theses":[],"watch_items":[],"evidence_summary":"","market_scope":"中国与全球联动","time_horizon":"1-4周","degraded":false}', {'model': 'deepseek-v4-pro', 'total_tokens': 12}
+
+    generator = ReportGenerator(provider=FakeProvider(), enable_verification=False)
+    captured = {}
+
+    monkeypatch.setattr(generator, 'load_prompt', lambda _version: 'prompt')
+    monkeypatch.setattr('scripts.utils.report_generator.build_judgment_candidates', lambda *args, **kwargs: [
+        {
+            'topic': '科技与产业主题',
+            'independent_evidence_count': 2,
+            'evidence_count': 2,
+            'source_tier_max': 'mainstream',
+            'high_relevance_article_count': 1,
+            'high_confidence_topic': True,
+            'topic_article_count': 3,
+            'articles': [{'id': 1, 'title': '景气支撑', 'source_tier': 'mainstream'}],
+        }
+    ])
+    monkeypatch.setattr(generator.security_master_provider, 'build_candidates', lambda **kwargs: [
+        type('Candidate', (), {'to_dict': lambda self: {'symbol': 'sh603019', 'direct_mentions': 1}})()
+    ])
+    monkeypatch.setattr('scripts.utils.report_generator.build_judgment_prompt_context', lambda *args, **kwargs: 'context')
+    monkeypatch.setattr('scripts.utils.report_generator.extract_json_payload', lambda raw: {'theses': [], 'watch_items': [], 'evidence_summary': '', 'market_scope': '中国与全球联动', 'time_horizon': '1-4周', 'degraded': False})
+    monkeypatch.setattr('scripts.utils.report_generator.enforce_judgment_rules', lambda payload, *args, **kwargs: payload)
+    monkeypatch.setattr('scripts.utils.report_generator.render_judgment_markdown', lambda payload: '# judgment')
+    monkeypatch.setattr(generator, '_run_fact_check', lambda *args, **kwargs: ([], ''))
+    monkeypatch.setattr('scripts.utils.report_generator.check_report_quality_v2', lambda *args, **kwargs: {'score': 85, 'passed': True, 'issues': [], 'warnings': []})
+    monkeypatch.setattr('scripts.utils.report_generator.start_stage', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.utils.report_generator.finish_stage', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.utils.report_generator.print_warning', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.utils.report_generator.print_success', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.utils.report_generator.print_statistics', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.utils.report_generator.note_event', lambda *args, **kwargs: None)
+
+    class FakeHeartbeat:
+        def __enter__(self):
+            return self
+        def __exit__(self, exc_type, exc, tb):
+            return False
+
+    monkeypatch.setattr('scripts.utils.report_generator.heartbeat', lambda *args, **kwargs: FakeHeartbeat())
+    monkeypatch.setattr(generator, '_save_result', lambda *args, **kwargs: captured.setdefault('enhanced', kwargs.get('enhanced_context_payload') if 'enhanced_context_payload' in kwargs else args[6]) or Path('/tmp/judgment.md'))
+
+    result = generator._generate_judgment_cards(
+        start_date='2026-05-09',
+        end_date='2026-05-09',
+        selected=[{'id': 1, 'title': 'A', 'summary': 's'}],
+        realtime_data=None,
+        max_retries=0,
+        min_score=80,
+        output_json=None,
+        max_theses=3,
+        min_source_tier='mainstream',
+        min_independent_evidence=2,
+        degrade_on_weak_evidence=True,
+        output_observation_only_when_weak=True,
+    )
+
+    assert result['success'] is True
+    assert captured['enhanced']['candidate_stocks'] == [{'symbol': 'sh603019', 'direct_mentions': 1}]
+
+
+def test_report_generator_markdown_report_uses_structured_truth_sources(monkeypatch):
+    class FakeProvider:
+        def get_provider_name(self):
+            return 'DeepSeek'
+
+        def generate(self, prompt, content, **kwargs):
+            return (
+                "## 市场概况\n\n### 市场状态\n- 市场偏震荡【新闻1】。\n\n"
+                "## 投资主题\n\n### 高置信主题\n- **科技与产业主题**: 跟踪 AI 基建【新闻2】。\n\n"
+                "## 建议\n\n### 推荐摘要\n- 聚焦结构化推荐。\n\n"
+                "## 风险\n\n- 警惕追高【新闻3】。\n",
+                {'model': 'deepseek-v4-pro', 'total_tokens': 12},
+            )
+
+    generator = ReportGenerator(provider=FakeProvider(), enable_verification=False)
+    captured = {}
+
+    monkeypatch.setattr(generator, 'load_prompt', lambda _version: 'prompt')
+    monkeypatch.setattr('scripts.utils.report_generator.resolve_date_range', lambda _args: ('2026-05-09', '2026-05-09'))
+    monkeypatch.setattr('scripts.utils.report_generator.filter_articles', lambda rows, **kwargs: rows)
+    monkeypatch.setattr('scripts.utils.report_generator.filter_and_rank_articles', lambda rows: (rows, {'kept': 2}))
+    monkeypatch.setattr('scripts.utils.report_generator.build_corpus', lambda rows, *args, **kwargs: ([('A', ['chunk'])], 5))
+    monkeypatch.setattr('scripts.utils.report_generator.build_source_stats_block', lambda *args, **kwargs: 'stats')
+    monkeypatch.setattr('scripts.utils.report_generator.summarize_content_quality', lambda rows: {
+        'counts': {'full': 1, 'partial': 1, 'summary_only': 0},
+        'ratios': {'full': 50.0, 'partial': 50.0, 'summary_only': 0.0},
+        'total': 2,
+    })
+    monkeypatch.setattr(generator.security_master_provider, 'build_candidates', lambda **kwargs: [])
+    monkeypatch.setattr('scripts.utils.report_generator.build_judgment_candidates', lambda *args, **kwargs: [
+        {'topic': '科技与产业主题', 'high_confidence_topic': True, 'topic_article_count': 3, 'independent_evidence_count': 2, 'source_tier_max': 'mainstream'},
+    ])
+    monkeypatch.setattr('scripts.utils.report_generator.RecommendationScorer', lambda **kwargs: type('Scorer', (), {
+        'score_candidates': lambda self, _candidates: {
+            'recommendations': [
+                {'symbol': 'sh603019', 'name': '中科曙光', 'grade': '关注', 'total_score': 72, 'source_type': 'direct_news', 'grade_caps': []}
+            ],
+            'score_distribution': {'strong_focus': 0, 'focus': 1, 'watch': 0, 'avoid': 0},
+            'decision_views': {
+                'actionable_candidates': [{'symbol': 'sh603019', 'name': '中科曙光', 'grade': '关注', 'total_score': 72}],
+                'conditional_watchlist': [],
+                'stale_or_rejected': [],
+            },
+            'scoring_config': {'market': 'CN', 'style': 'balanced', 'lookback_days': 60},
+        }
+    })())
+    monkeypatch.setattr('scripts.utils.report_generator.render_stock_recommendation_markdown', lambda *args, **kwargs: '## 股票推荐评分\n')
+    monkeypatch.setattr(generator, '_run_fact_check', lambda *args, **kwargs: ([], ''))
+    monkeypatch.setattr('scripts.utils.report_generator.check_report_quality_v2', lambda *args, **kwargs: {'score': 85, 'passed': True, 'issues': [], 'warnings': []})
+    monkeypatch.setattr('scripts.utils.report_generator.start_stage', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.utils.report_generator.finish_stage', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.utils.report_generator.update_stage', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.utils.report_generator.note_event', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.utils.report_generator.print_info', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.utils.report_generator.print_progress', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.utils.report_generator.print_success', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.utils.report_generator.print_statistics', lambda *args, **kwargs: None)
+
+    class FakeConn:
+        def close(self):
+            return None
+
+    class FakeHeartbeat:
+        def __enter__(self):
+            return self
+        def __exit__(self, exc_type, exc, tb):
+            return False
+
+    monkeypatch.setattr('scripts.utils.report_generator.open_connection', lambda _path: FakeConn())
+    monkeypatch.setattr('scripts.utils.report_generator.query_articles', lambda conn, *args: [{'id': 1, 'title': 'A', 'summary': 's'}])
+    monkeypatch.setattr('scripts.utils.report_generator.heartbeat', lambda *args, **kwargs: FakeHeartbeat())
+    monkeypatch.setattr(generator, '_save_result', lambda *args, **kwargs: captured.setdefault('payload', kwargs.get('json_payload') if 'json_payload' in kwargs else args[5]) or Path('/tmp/report.md'))
+
+    result = generator.generate(mode='markdown-report', quality_check=False)
+
+    assert result['success'] is True
+    assert 'judgment_candidates' in captured['payload']
+    assert 'data_quality_stats' in captured['payload']
+
+
 def test_heartbeat_with_details_emits_single_visible_line_per_tick(monkeypatch):
     stream = StringIO()
     monkeypatch.setattr(sys, 'stdout', stream)

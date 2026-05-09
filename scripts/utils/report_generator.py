@@ -39,8 +39,8 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from scripts.utils.ai_analyzer_common import (
     resolve_date_range, open_connection, query_articles,
-    filter_articles, build_corpus, build_source_stats_block,
-    save_markdown, save_metadata, write_json
+    filter_articles, build_corpus, build_source_stats_block, summarize_content_quality,
+    save_markdown, save_metadata, save_enhanced_context, write_json
 )
 from scripts.utils.quality_filter import filter_and_rank_articles
 from scripts.utils.quality_checker import (
@@ -178,6 +178,9 @@ class ReportGenerator:
         min_score: int = 80,
         realtime_data: Optional[Dict[str, Any]] = None,
         report_mode: str = 'markdown-report',
+        stock_recommendations: Optional[list] = None,
+        judgment_candidates: Optional[list] = None,
+        data_quality_stats: Optional[Dict[str, Any]] = None,
         **kwargs
     ) -> Tuple[str, Dict[str, Any], Dict[str, Any]]:
         """
@@ -231,6 +234,9 @@ class ReportGenerator:
                         claims=verified_claims,
                         realtime_data=realtime_data,
                         report_mode=report_mode,
+                        stock_recommendations=stock_recommendations,
+                        judgment_candidates=judgment_candidates,
+                        data_quality_stats=data_quality_stats,
                     )
                 else:
                     update_stage('计算基础质量评分')
@@ -281,6 +287,136 @@ class ReportGenerator:
         verification_report = checker.generate_report_annotation(verified_claims)
         return verified_claims, verification_report
 
+    @staticmethod
+    def _build_prompt_signal_context(
+        judgment_candidates: list,
+        stock_payload: Dict[str, Any],
+        data_quality_stats: Dict[str, Any],
+    ) -> str:
+        """把结构化主题、推荐和数据质量约束显式注入给 markdown-report。"""
+        high_confidence = [
+            item for item in judgment_candidates
+            if bool(item.get('high_confidence_topic'))
+        ]
+        watch_topics = [
+            item for item in judgment_candidates
+            if not bool(item.get('high_confidence_topic'))
+        ][:4]
+        recommendations = stock_payload.get('recommendations') or []
+        actionable = stock_payload.get('decision_views', {}).get('actionable_candidates') or []
+        watchlist = stock_payload.get('decision_views', {}).get('conditional_watchlist') or []
+        stale = stock_payload.get('decision_views', {}).get('stale_or_rejected') or []
+        counts = data_quality_stats.get('counts') or {}
+        ratios = data_quality_stats.get('ratios') or {}
+
+        lines = [
+            "=== 高信号输出约束 ===",
+            f"- 高置信主题数量: {len(high_confidence)}",
+            f"- 观察主题数量: {len(watch_topics)}",
+            f"- 结构化推荐数量: {len(recommendations)}",
+            f"- 可行动推荐数量: {len(actionable)}",
+            f"- 观察清单数量: {len(watchlist)}",
+            f"- 拒绝/拥挤清单数量: {len(stale)}",
+            f"- 数据质量: 完整正文 {counts.get('full', 0)}篇({ratios.get('full', 0.0):.1f}%), 部分正文 {counts.get('partial', 0)}篇({ratios.get('partial', 0.0):.1f}%), 仅摘要 {counts.get('summary_only', 0)}篇({ratios.get('summary_only', 0.0):.1f}%)",
+            "- 正文只能使用下列主题和标的，禁止自行扩写新的股票池、行业配比或宏大资产配置口号。",
+        ]
+
+        if high_confidence:
+            lines.append("- 可写成高置信主题:")
+            for item in high_confidence[:3]:
+                lines.append(
+                    f"  * {item.get('topic')}: topic_article_count={item.get('topic_article_count', 0)}, independent_evidence_count={item.get('independent_evidence_count', 0)}, source_tier_max={item.get('source_tier_max')}"
+                )
+        else:
+            lines.append("- 当前没有可写成高置信结论的主题，正文必须以观察项为主。")
+
+        if watch_topics:
+            lines.append("- 仅允许写成观察项的主题:")
+            for item in watch_topics:
+                lines.append(
+                    f"  * {item.get('topic')}: topic_article_count={item.get('topic_article_count', 0)}, independent_evidence_count={item.get('independent_evidence_count', 0)}"
+                )
+
+        if recommendations:
+            lines.append("- 允许在正文中提到的结构化标的:")
+            for item in recommendations[:8]:
+                lines.append(
+                    f"  * {item.get('symbol')} {item.get('name')} / {item.get('grade')} / source_type={item.get('source_type')} / grade_caps={','.join(item.get('grade_caps') or ['none'])}"
+                )
+        else:
+            lines.append("- 当前没有满足规则门槛的结构化股票推荐，正文不得写具体股票推荐。")
+
+        if len(actionable) <= 1:
+            lines.append("- 由于可行动推荐少于等于1个，正文不得写成多只核心持仓组合。")
+        if not high_confidence and not actionable:
+            lines.append("- 若主题与推荐都偏弱，正文必须退化为“观察清单 + 风险 + 验证点”。")
+
+        return "\n".join(lines)
+
+    @staticmethod
+    def _render_structured_recommendation_summary(
+        judgment_candidates: list,
+        stock_payload: Dict[str, Any],
+    ) -> str:
+        """基于结构化真相源补一段短摘要，避免正文与评分层分裂。"""
+        high_confidence = [
+            item for item in judgment_candidates
+            if bool(item.get('high_confidence_topic'))
+        ]
+        watch_topics = [
+            item for item in judgment_candidates
+            if not bool(item.get('high_confidence_topic'))
+        ]
+        actionable = stock_payload.get('decision_views', {}).get('actionable_candidates') or []
+        watchlist = stock_payload.get('decision_views', {}).get('conditional_watchlist') or []
+        stale = stock_payload.get('decision_views', {}).get('stale_or_rejected') or []
+
+        lines = [
+            "## 📌 结构化推荐摘要",
+            "",
+            "### 高置信主题",
+        ]
+        if high_confidence:
+            for item in high_confidence[:3]:
+                lines.append(
+                    f"- **{item.get('topic')}**：{item.get('topic_article_count', 0)}篇主题文章，独立证据 {item.get('independent_evidence_count', 0)} 条。"
+                )
+        else:
+            lines.append("- 当前没有足够证据支撑的高置信主题，建议以观察项为主。")
+
+        lines.extend(["", "### 建议与观察"])
+        if actionable:
+            lines.append("- **可行动标的**:")
+            for item in actionable[:3]:
+                lines.append(
+                    f"  - {item.get('name')}（{item.get('symbol')}，{item.get('grade')}，总分 {item.get('total_score')}）"
+                )
+        else:
+            lines.append("- 当前没有满足高信号门槛的可行动标的。")
+
+        if watchlist:
+            lines.append("- **继续观察**:")
+            for item in watchlist[:5]:
+                lines.append(
+                    f"  - {item.get('name')}（{item.get('symbol')}，{item.get('grade')}）"
+                )
+
+        if stale:
+            lines.append("- **拥挤或后手机会**:")
+            for item in stale[:3]:
+                lines.append(
+                    f"  - {item.get('name')}（{item.get('symbol')}，{item.get('grade')}）"
+                )
+
+        if watch_topics:
+            lines.extend(["", "### 主题观察清单"])
+            for item in watch_topics[:4]:
+                lines.append(
+                    f"- {item.get('topic')}：证据密度不足以形成高置信结论，暂列观察。"
+                )
+
+        return "\n".join(lines)
+
     def _save_result(
         self,
         end_date: str,
@@ -289,6 +425,7 @@ class ReportGenerator:
         meta: Dict[str, Any],
         output_json: Optional[str],
         json_payload: Optional[Dict[str, Any]] = None,
+        enhanced_context_payload: Optional[Dict[str, Any]] = None,
         artifact_suffix: str = '',
     ) -> Path:
         """保存报告、元数据和可选JSON"""
@@ -303,6 +440,16 @@ class ReportGenerator:
         )
         note_event(f'报告已保存: {saved_path.name}')
         update_stage('写入 metadata')
+        if enhanced_context_payload:
+            update_stage('写入增强特征归档')
+            context_path = save_enhanced_context(
+                end_date,
+                enhanced_context_payload,
+                model_suffix=model_suffix,
+                artifact_suffix=artifact_suffix,
+            )
+            meta['enhanced_context_path'] = str(context_path)
+            note_event(f'增强特征归档已保存: {context_path.name}')
         save_metadata(
             end_date,
             meta,
@@ -342,6 +489,11 @@ class ReportGenerator:
         **provider_kwargs,
     ) -> Dict[str, Any]:
         candidates = build_judgment_candidates(selected, max_candidates=max(max_theses + 3, 6))
+        candidate_stocks = self.security_master_provider.build_candidates(
+            articles=selected,
+            judgment_candidates=candidates,
+            max_candidates=max(max_theses + 3, 6),
+        )
         prompt = self.load_prompt('judgment_cards')
         base_content = build_judgment_prompt_context(candidates, bool(realtime_data), max_theses)
         retry_feedback = ''
@@ -425,6 +577,14 @@ class ReportGenerator:
             'backtest_ready': True,
             'backtest_generated_at': datetime.now().isoformat(),
         }
+        enhanced_context_payload = self._build_enhanced_context_payload(
+            selected=selected,
+            judgment_candidates=candidates,
+            candidate_stocks=candidate_stocks,
+            stock_payload=None,
+            analysis_mode='judgment-cards',
+            date_range=meta['date_range'],
+        )
         export_payload = {
             'theses': payload.get('theses') or [],
             'watch_items': payload.get('watch_items') or [],
@@ -445,6 +605,7 @@ class ReportGenerator:
             meta,
             output_json,
             export_payload,
+            enhanced_context_payload,
             artifact_suffix='judgment-cards',
         )
 
@@ -594,6 +755,40 @@ class ReportGenerator:
         enable_stock_scoring = bool(provider_kwargs.pop('enable_stock_scoring', True))
         max_stock_picks = int(provider_kwargs.pop('max_stock_picks', 10))
         stock_market = provider_kwargs.pop('stock_market', 'CN')
+        judgment_candidates = build_judgment_candidates(selected, max_candidates=8)
+        candidate_stocks = []
+        stock_payload = {
+            'recommendations': [],
+            'score_distribution': {'strong_focus': 0, 'focus': 0, 'watch': 0, 'avoid': 0},
+            'decision_views': {
+                'actionable_candidates': [],
+                'conditional_watchlist': [],
+                'stale_or_rejected': [],
+            },
+            'scoring_config': {
+                'market': stock_market,
+                'style': 'balanced',
+                'lookback_days': 60,
+            },
+        }
+        if enable_stock_scoring and stock_market == 'CN':
+            note_event('预计算 A 股结构化推荐评分')
+            print_progress('生成 A 股结构化推荐评分...')
+            candidate_stocks = self.security_master_provider.build_candidates(
+                articles=selected,
+                judgment_candidates=judgment_candidates,
+                max_candidates=max_stock_picks,
+            )
+            scorer = RecommendationScorer(
+                security_master=self.security_master_provider,
+                price_history_provider=self.price_history_provider,
+                valuation_provider=self.valuation_provider,
+                lookback_days=60,
+                style='balanced',
+                as_of_date=end_date,
+            )
+            stock_payload = scorer.score_candidates(candidate_stocks)
+            print_success(f"✓ 已生成 {len(stock_payload['recommendations'])} 条股票评分结果")
 
         # 构建语料
         start_stage('构建语料', step=3, total=6, detail='拼接文章语料与来源统计')
@@ -606,7 +801,13 @@ class ReportGenerator:
             print_warning(f'语料已按上限截断：{total_len:,} → {current_len:,}')
 
         # 构建统计信息
+        data_quality_stats = summarize_content_quality(selected)
         stats_info = build_source_stats_block(selected, content_field, start_date, end_date)
+        prompt_signal_context = self._build_prompt_signal_context(
+            judgment_candidates=judgment_candidates,
+            stock_payload=stock_payload,
+            data_quality_stats=data_quality_stats,
+        )
 
         # 注入实时数据（如果有）
         if realtime_data:
@@ -616,7 +817,7 @@ class ReportGenerator:
             stats_info = realtime_block + "\n\n" + stats_info
 
         joined = '\n\n'.join(c for _, chunks in pairs for c in chunks)
-        full_content = stats_info + "\n\n" + joined
+        full_content = stats_info + "\n\n" + prompt_signal_context + "\n\n" + joined
         finish_stage('语料构建完成', duration=True)
 
         # 加载提示词
@@ -632,6 +833,9 @@ class ReportGenerator:
                 min_score=min_score,
                 realtime_data=realtime_data,
                 report_mode='markdown-report',
+                stock_recommendations=stock_payload['recommendations'],
+                judgment_candidates=judgment_candidates,
+                data_quality_stats=data_quality_stats,
                 **provider_kwargs
             )
         except Exception as e:
@@ -639,6 +843,18 @@ class ReportGenerator:
             import traceback
             traceback.print_exc()
             return {'success': False, 'error': str(e)}
+
+        structured_summary = self._render_structured_recommendation_summary(
+            judgment_candidates=judgment_candidates,
+            stock_payload=stock_payload,
+        )
+        summary_md = f"{summary_md.rstrip()}\n\n{structured_summary}\n"
+        if stock_payload['recommendations']:
+            stock_section = render_stock_recommendation_markdown(
+                stock_payload['recommendations'],
+                scoring_config=stock_payload['scoring_config'],
+            )
+            summary_md = f"{summary_md.rstrip()}\n\n{stock_section}\n"
 
         # 事实核查（如果启用验证）
         verified_claims, verification_report = self._run_fact_check(summary_md, realtime_data)
@@ -648,39 +864,16 @@ class ReportGenerator:
             print_success(f'✓ 事实核查完成: {len(verified_claims)} 个断言')
             finish_stage('事实核查附注已合并', duration=False)
 
-        stock_payload = {
-            'recommendations': [],
-            'score_distribution': {'strong_focus': 0, 'focus': 0, 'watch': 0, 'avoid': 0},
-            'scoring_config': {
-                'market': stock_market,
-                'style': 'balanced',
-                'lookback_days': 60,
-            },
-        }
-        if enable_stock_scoring and stock_market == 'CN':
-            start_stage('事实核查 / 质量检查', step=5, total=6, detail='生成 A 股结构化推荐评分')
-            print_progress('生成 A 股结构化推荐评分...')
-            judgment_candidates = build_judgment_candidates(selected, max_candidates=8)
-            candidate_stocks = self.security_master_provider.build_candidates(
-                articles=selected,
+        if self.enable_verification:
+            quality_result = check_report_quality_v2(
+                summary_md,
+                claims=verified_claims,
+                realtime_data=realtime_data,
+                report_mode='markdown-report',
+                stock_recommendations=stock_payload['recommendations'],
                 judgment_candidates=judgment_candidates,
-                max_candidates=max_stock_picks,
+                data_quality_stats=data_quality_stats,
             )
-            scorer = RecommendationScorer(
-                security_master=self.security_master_provider,
-                price_history_provider=self.price_history_provider,
-                valuation_provider=self.valuation_provider,
-                lookback_days=60,
-                style='balanced',
-            )
-            stock_payload = scorer.score_candidates(candidate_stocks)
-            stock_section = render_stock_recommendation_markdown(
-                stock_payload['recommendations'],
-                scoring_config=stock_payload['scoring_config'],
-            )
-            summary_md = f"{summary_md.rstrip()}\n\n{stock_section}\n"
-            print_success(f"✓ 已生成 {len(stock_payload['recommendations'])} 条股票评分结果")
-            finish_stage('股票评分生成完成', duration=True)
 
         # 保存报告
         meta = {
@@ -695,9 +888,20 @@ class ReportGenerator:
             'stock_recommendations': stock_payload['recommendations'],
             'score_distribution': stock_payload['score_distribution'],
             'scoring_config': stock_payload['scoring_config'],
+            'decision_views': stock_payload.get('decision_views') or {},
+            'judgment_candidates': judgment_candidates,
+            'data_quality_stats': data_quality_stats,
             'backtest_ready': True,
             'backtest_generated_at': datetime.now().isoformat(),
         }
+        enhanced_context_payload = self._build_enhanced_context_payload(
+            selected=selected,
+            judgment_candidates=judgment_candidates,
+            candidate_stocks=candidate_stocks,
+            stock_payload=stock_payload,
+            analysis_mode='markdown-report',
+            date_range=meta['date_range'],
+        )
         export_payload = {
             'summary_markdown': summary_md,
             'articles': rows,
@@ -705,6 +909,9 @@ class ReportGenerator:
             'stock_recommendations': stock_payload['recommendations'],
             'score_distribution': stock_payload['score_distribution'],
             'scoring_config': stock_payload['scoring_config'],
+            'decision_views': stock_payload.get('decision_views') or {},
+            'judgment_candidates': judgment_candidates,
+            'data_quality_stats': data_quality_stats,
         }
         start_stage('保存报告与元数据', step=6, total=6, detail='准备写入报告归档与 metadata')
         saved_path = self._save_result(
@@ -714,6 +921,7 @@ class ReportGenerator:
             meta,
             output_json,
             export_payload,
+            enhanced_context_payload,
             artifact_suffix='markdown-report',
         )
 
@@ -736,6 +944,42 @@ class ReportGenerator:
             'report_text': summary_md,
             'metadata': meta,
             'quality_result': quality_result
+        }
+
+    @staticmethod
+    def _serialize_selected_articles(selected: list) -> list:
+        """输出时序判断需要的最小文章特征集。"""
+        fields = (
+            'id', 'title', 'source', 'published', 'collection_date',
+            'source_tier', 'investment_relevance', 'primary_topic',
+            'content_quality_status', 'is_original_source',
+        )
+        result = []
+        for article in selected:
+            result.append({field: article.get(field) for field in fields})
+        return result
+
+    def _build_enhanced_context_payload(
+        self,
+        *,
+        selected: list,
+        judgment_candidates: list,
+        candidate_stocks: list,
+        stock_payload: Optional[Dict[str, Any]],
+        analysis_mode: str,
+        date_range: Dict[str, str],
+    ) -> Dict[str, Any]:
+        """构建增强特征归档，供次日回看与后续时序统计。"""
+        return {
+            'analysis_mode': analysis_mode,
+            'date_range': date_range,
+            'selected_articles': self._serialize_selected_articles(selected),
+            'judgment_candidates': judgment_candidates,
+            'candidate_stocks': [item.to_dict() for item in candidate_stocks],
+            'stock_recommendations': (stock_payload or {}).get('recommendations') or [],
+            'decision_views': (stock_payload or {}).get('decision_views') or {},
+            'score_distribution': (stock_payload or {}).get('score_distribution') or {},
+            'scoring_config': (stock_payload or {}).get('scoring_config') or {},
         }
 
     def _format_realtime_data(self, realtime_data: Dict[str, Any]) -> str:

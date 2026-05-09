@@ -1,0 +1,2309 @@
+{
+  "analysis_mode": "markdown-report",
+  "date_range": {
+    "start": "2026-05-09",
+    "end": "2026-05-09"
+  },
+  "selected_articles": [
+    {
+      "id": 3685,
+      "title": "“英伟达挑战者”Cerebras据称下周上市，或为美国年内最大IPO",
+      "source": "华尔街见闻",
+      "published": "Sat, 09 May 2026 08:09:07 +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "汇率与大宗",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 3686,
+      "title": "美联储金融稳定报告：地缘政治与石油冲击跃升头号风险，私募信贷风险“可控”",
+      "source": "华尔街见闻",
+      "published": "Sat, 09 May 2026 07:41:41 +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3687,
+      "title": "华尔街见闻早餐FM-Radio | 2026年5月9日",
+      "source": "华尔街见闻",
+      "published": "Sat, 09 May 2026 07:28:31 +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3688,
+      "title": "非农缓解“滞胀”担忧，美股新高，英特尔和存储芯片股暴涨，Rocket Lab绩后涨34%",
+      "source": "华尔街见闻",
+      "published": "Sat, 09 May 2026 07:10:39 +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "宏观与流动性",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3675,
+      "title": "全球市场：纳指、标普再创历史新高 存储芯片股大涨 现货白银涨超2%",
+      "source": "东方财富网",
+      "published": "Sat, 09 May 2026 05:15:25 +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3689,
+      "title": "“新美联储通讯社”：4月非农数据促使美联储按兵不动，政策焦点转向通胀",
+      "source": "华尔街见闻",
+      "published": "Sat, 09 May 2026 06:52:04 +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 3735,
+      "title": "What The Indiana Primaries Tell Us About Trump's Grip On The GOP",
+      "source": "ZeroHedge",
+      "published": "Sat, 09 May 2026 00:30:00 +0000",
+      "collection_date": "2026-05-09",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3736,
+      "title": "Nick Shirley Went To Cuba... He Almost Didn't Make It Home",
+      "source": "ZeroHedge",
+      "published": "Sat, 09 May 2026 00:05:00 +0000",
+      "collection_date": "2026-05-09",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3737,
+      "title": "UCLA Med School Illegally Using Race In Admissions: DOJ",
+      "source": "ZeroHedge",
+      "published": "Fri, 08 May 2026 23:40:00 +0000",
+      "collection_date": "2026-05-09",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3738,
+      "title": "Clinton-Appointed Federal Judge Rules DOGE's Terminations Of Humanities Grants Unlawful",
+      "source": "ZeroHedge",
+      "published": "Fri, 08 May 2026 23:15:00 +0000",
+      "collection_date": "2026-05-09",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3739,
+      "title": "Thailand Emerges As Possible Hub In Nvidia Chip-Smuggling Channel To Alibaba",
+      "source": "ZeroHedge",
+      "published": "Fri, 08 May 2026 22:50:00 +0000",
+      "collection_date": "2026-05-09",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3676,
+      "title": "5月8日东方财富财经晚报（附新闻联播）",
+      "source": "东方财富网",
+      "published": "Fri, 08 May 2026 21:00:00 +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3730,
+      "title": "S&P 500 Snapshot: Index Flirts With 7,400",
+      "source": "ETF Trends",
+      "published": "Fri, 08 May 2026 20:45:27 +0000",
+      "collection_date": "2026-05-09",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3677,
+      "title": "5月8日晚间上市公司利好消息一览(附名单)",
+      "source": "东方财富网",
+      "published": "Fri, 08 May 2026 20:37:06 +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "财报与公司经营",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3731,
+      "title": "Treasury Yields Snapshot: May 8, 2026",
+      "source": "ETF Trends",
+      "published": "Fri, 08 May 2026 20:20:37 +0000",
+      "collection_date": "2026-05-09",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3732,
+      "title": "Small-Cap Awakening Sparks This Momentum ETF",
+      "source": "ETF Trends",
+      "published": "Fri, 08 May 2026 19:46:14 +0000",
+      "collection_date": "2026-05-09",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3678,
+      "title": "5月8日晚间沪深上市公司重大事项公告最新快递",
+      "source": "东方财富网",
+      "published": "Fri, 08 May 2026 19:32:30 +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3733,
+      "title": "Metals in Motion: Why Rare Earths Are the New Strategic Frontier",
+      "source": "ETF Trends",
+      "published": "Fri, 08 May 2026 18:00:31 +0000",
+      "collection_date": "2026-05-09",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3734,
+      "title": "S&P Persistence Scorecard Reveals Universal Struggles for Active Strategies",
+      "source": "ETF Trends",
+      "published": "Fri, 08 May 2026 17:37:15 +0000",
+      "collection_date": "2026-05-09",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3679,
+      "title": "沪指震荡整理 创业板指跌近1% 机器人概念股持续走强",
+      "source": "东方财富网",
+      "published": "Fri, 08 May 2026 15:00:38 +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3680,
+      "title": "「维新宇航」完成数千万元天使+轮融资，7座3吨级eVTOL将于7月进行首飞测试｜36氪首发",
+      "source": "36氪",
+      "published": "2026-05-08 18:25:58  +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "汇率与大宗",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3681,
+      "title": "卡位黄金价格带，问界M6向下争夺年轻群体｜最前线",
+      "source": "36氪",
+      "published": "2026-05-08 13:18:58  +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "汇率与大宗",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3682,
+      "title": "小红书四年AI 路：FOMO、犹豫，到突然加速",
+      "source": "36氪",
+      "published": "2026-05-08 12:38:43  +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3683,
+      "title": "第一代全固态电池迈入规模化市场，「纯锂新能源」完成数千万元Pre-A+轮融资 | 36氪首发",
+      "source": "36氪",
+      "published": "2026-05-08 10:25:30  +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "财报与公司经营",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3684,
+      "title": "36氪首发 | 清华系AI Infra厂商完成数亿元融资，以GPU为核心重构计算机系统架构",
+      "source": "36氪",
+      "published": "2026-05-08 09:45:14  +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "汇率与大宗",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3666,
+      "title": "一只帝王蟹，如何“带火”一座边境小城？",
+      "source": "中新网",
+      "published": "Sat, 9 May 2026 07:58:01 +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3698,
+      "title": "Intel shares soar on Apple chip deal report. Here's why it signals a total pivot for chipmaking",
+      "source": "CNBC",
+      "published": "Fri, 08 May 2026 22:18:30 GMT",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 3696,
+      "title": "The Federal Reserve is quickly running out of reasons to cut interest rates",
+      "source": "CNBC",
+      "published": "Fri, 08 May 2026 21:44:14 GMT",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 3699,
+      "title": "Dunkin' owner Inspire Brands confidentially files for IPO",
+      "source": "CNBC",
+      "published": "Fri, 08 May 2026 20:28:13 GMT",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 3697,
+      "title": "Wall Street sees 'changing of the guard in AI' as Intel, AMD shares soar while Nvidia lags",
+      "source": "CNBC",
+      "published": "Fri, 08 May 2026 20:07:35 GMT",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 3665,
+      "title": "4月份中国仓储指数保持扩张 仓储行业延续平稳向好运行态势",
+      "source": "中新网",
+      "published": "Sat, 9 May 2026 08:03:28 +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "汇率与大宗",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 3720,
+      "title": "Federal Reserve Board announces approval of related applications by Columbia Bank MHC, and Columbia Financial, Inc.",
+      "source": "Federal Reserve Board",
+      "published": "Fri, 8 May 2026 21:00:00 GMT",
+      "collection_date": "2026-05-09",
+      "source_tier": "official",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 3695,
+      "title": "U.S. payrolls jump more than expected, but the report had several red flags for the economy",
+      "source": "CNBC",
+      "published": "Fri, 08 May 2026 18:22:51 GMT",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 3670,
+      "title": "对话MONOCLE创始人Tyler Brûlé：全球眼光与本地故事",
+      "source": "FT中文网",
+      "published": "Fri, 08 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 3667,
+      "title": "4月份中国物流业景气指数49.7% 新订单指数连续回升",
+      "source": "中新网",
+      "published": "Sat, 9 May 2026 07:38:58 +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "汇率与大宗",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3668,
+      "title": "压缩试验成本 我国室内最大全季冰雪汽车试验基地开建",
+      "source": "中新网",
+      "published": "Sat, 9 May 2026 06:54:01 +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 3669,
+      "title": "专家：中国消费市场正从“规模扩张”转向“创新驱动”",
+      "source": "中新网",
+      "published": "Fri, 8 May 2026 22:55:55 +0800",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "汇率与大宗",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 3671,
+      "title": "全球冲击时期保护主义不符合任何人利益",
+      "source": "FT中文网",
+      "published": "Fri, 08 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "汇率与大宗",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 3674,
+      "title": "美国4月新增11.5万个就业岗位",
+      "source": "FT中文网",
+      "published": "Fri, 08 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "风险事件",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 3700,
+      "title": "US jet fuel could be used in Europe to ease possible shortages",
+      "source": "BBC全球经济",
+      "published": "Fri, 08 May 2026 14:42:13 GMT",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 3703,
+      "title": "US jobs data beats expectations for second month in a row",
+      "source": "BBC全球经济",
+      "published": "Fri, 08 May 2026 20:41:19 GMT",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "summary_only",
+      "is_original_source": 0
+    },
+    {
+      "id": 3701,
+      "title": "Major train operator to be renationalised in months",
+      "source": "BBC全球经济",
+      "published": "Fri, 08 May 2026 16:14:48 GMT",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "summary_only",
+      "is_original_source": 0
+    },
+    {
+      "id": 3672,
+      "title": "白宫世界杯负责人为高昂票价辩护",
+      "source": "FT中文网",
+      "published": "Fri, 08 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 3673,
+      "title": "特朗普：美伊停火“仍然有效”",
+      "source": "FT中文网",
+      "published": "Fri, 08 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "风险事件",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 3704,
+      "title": "South East Water boss quits after supply failures",
+      "source": "BBC全球经济",
+      "published": "Fri, 08 May 2026 11:20:48 GMT",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "summary_only",
+      "is_original_source": 0
+    },
+    {
+      "id": 3702,
+      "title": "The companies making billions from the Iran war",
+      "source": "BBC全球经济",
+      "published": "Fri, 08 May 2026 08:13:07 GMT",
+      "collection_date": "2026-05-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    }
+  ],
+  "judgment_candidates": [
+    {
+      "candidate_id": "C04",
+      "topic": "科技与产业主题",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "2-6周",
+      "evidence_count": 7,
+      "independent_evidence_count": 2,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "official",
+      "original_source_count": 2,
+      "articles": [
+        {
+          "id": 3720,
+          "title": "Federal Reserve Board announces approval of related applications by Columbia Bank MHC, and Columbia Financial, Inc.",
+          "source": "Federal Reserve Board",
+          "summary": "Federal Reserve Board announces approval of related applications by Columbia Bank MHC, and Columbia Financial, Inc.",
+          "source_tier": "official",
+          "content_quality_status": "full",
+          "published": "Fri, 8 May 2026 21:00:00 GMT",
+          "collection_date": "2026-05-09"
+        },
+        {
+          "id": 3682,
+          "title": "小红书四年AI 路：FOMO、犹豫，到突然加速",
+          "source": "36氪",
+          "summary": "<p>作者&nbsp;|&nbsp;肖思佳</p> <p>编辑&nbsp;|&nbsp;乔芊 杨轩</p> <p>所有互联网大中厂都渴望在AI时代博得位置，在这场比赛中，小红书曾是克制的那个。</p> <p>在一个搜索属性与社区属性并存，以真实经验分享为核心的产品中，活人感与AI、温情和算法，始终像天平的两端。</p> <p>很长一段时间里，小红书既没有完全",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-08 12:38:43  +0800",
+          "collection_date": "2026-05-09"
+        },
+        {
+          "id": 3670,
+          "title": "对话MONOCLE创始人Tyler Brûlé：全球眼光与本地故事",
+          "source": "FT中文网",
+          "summary": "这位以全球为视野的媒体人表示，中国企业应有讲好本地故事的信心，“若由我来运营中国品牌，我一定会将地域特色与在地工艺作为重点。”",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Fri, 08 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-09"
+        },
+        {
+          "id": 3668,
+          "title": "压缩试验成本 我国室内最大全季冰雪汽车试验基地开建",
+          "source": "中新网",
+          "summary": "昨天(8日)，我国室内最大的全季冰雪汽车试验基地在内蒙古呼伦贝尔开工建设。一年四季都能模拟冰雪环境，这对于汽车的试验有怎样的意义呢？",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Sat, 9 May 2026 06:54:01 +0800",
+          "collection_date": "2026-05-09"
+        }
+      ],
+      "topic_article_count": 10,
+      "priority_score": 69,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C02",
+      "topic": "政策与监管",
+      "market_scope": [
+        "A股",
+        "港股",
+        "宏观"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 6,
+      "independent_evidence_count": 5,
+      "high_relevance_article_count": 7,
+      "source_tier_max": "mainstream",
+      "original_source_count": 5,
+      "articles": [
+        {
+          "id": 3687,
+          "title": "华尔街见闻早餐FM-Radio | 2026年5月9日",
+          "source": "华尔街见闻",
+          "summary": "<h2>华见早安之声</h2> <p><img class=\"wscnph editor-placeholder\" src=\"https://wdl-wscn.awtmt.com/2ed0c8c8-fb82-499d-b81c-3fd1de114eae\" /></p> <h2>市场概述</h2> <p><span style=\"color: #ff0000;",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 09 May 2026 07:28:31 +0800",
+          "collection_date": "2026-05-09"
+        },
+        {
+          "id": 3678,
+          "title": "5月8日晚间沪深上市公司重大事项公告最新快递",
+          "source": "东方财富网",
+          "summary": "<p> 沪深两市多家上市公司5月8日晚间发布公司公告，以下为重要公告汇总。</p><p> <strong>【品大事】</strong></p><p> <strong>大普微：AI带动的企业级SSD存储需求发展存在一定波动和不确定性</strong></p><p> 大普微(301666)5月8日发布股票交易严重异常波动公告称，公司股票连续6个交易日收盘价格涨幅",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Fri, 08 May 2026 19:32:30 +0800",
+          "collection_date": "2026-05-09"
+        },
+        {
+          "id": 3676,
+          "title": "5月8日东方财富财经晚报（附新闻联播）",
+          "source": "东方财富网",
+          "summary": "<center><img src=\"https://np-newspic.dfcfw.com/download/D25558721618399732588_w1240h918.jpg\" width=\"580\" /></center><h3 class=\"emh3\"> <strong>热点聚焦</strong></h3><p> <strong>外交部回应中美元",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Fri, 08 May 2026 21:00:00 +0800",
+          "collection_date": "2026-05-09"
+        },
+        {
+          "id": 3675,
+          "title": "全球市场：纳指、标普再创历史新高 存储芯片股大涨 现货白银涨超2%",
+          "source": "东方财富网",
+          "summary": "<p style=\"text-align: center;\"> <img src=\"https://np-newspic.dfcfw.com/download/D26605F97C34DC70065489E2B87C889D3A_w750h1762.jpg\" /></p><p><span style=\"font-weight: bold;\"> 美股市场：</",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 09 May 2026 05:15:25 +0800",
+          "collection_date": "2026-05-09"
+        }
+      ],
+      "topic_article_count": 20,
+      "priority_score": 68,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C01",
+      "topic": "汇率与大宗",
+      "market_scope": [
+        "汇率",
+        "商品",
+        "A股",
+        "港股"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 4,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 5,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "articles": [
+        {
+          "id": 3684,
+          "title": "36氪首发 | 清华系AI Infra厂商完成数亿元融资，以GPU为核心重构计算机系统架构",
+          "source": "36氪",
+          "summary": "<p>作者&nbsp;|&nbsp;乔钰杰</p> <p>编辑&nbsp;|&nbsp;袁斯来</p> <p>硬氪获悉，北京容芯致远科技有限公司（以下简称“容芯致远”）近日完成天使轮数亿元融资。本轮由北京绿色能源和低碳产业基金与赛富投资基金领投，顺禧基金、富华资本、万利达集团、长江创新投、水木清华校友基金、梅花创投等跟投。云岫资本此前参与了公司种子轮投资，本",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-08 09:45:14  +0800",
+          "collection_date": "2026-05-09"
+        },
+        {
+          "id": 3680,
+          "title": "「维新宇航」完成数千万元天使+轮融资，7座3吨级eVTOL将于7月进行首飞测试｜36氪首发",
+          "source": "36氪",
+          "summary": "<p>文&nbsp;|&nbsp;阿至</p> <p>36氪获悉，<strong>低空出行产品研制商「维新宇航」已完成数千万元天使+轮融资，本轮融资由策源资本领投、金舵投资跟投，</strong>资金将主要用于加速公司首款主力机型 Vector 5的研发迭代、首飞测试与适航取证进程。</p> <p>维新宇航成立于2023年，是36氪长期关注的企业，其专注于大",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-08 18:25:58  +0800",
+          "collection_date": "2026-05-09"
+        },
+        {
+          "id": 3681,
+          "title": "卡位黄金价格带，问界M6向下争夺年轻群体｜最前线",
+          "source": "36氪",
+          "summary": "<p>2026年的中国新能源SUV市场正经历着前所未有的内卷。</p> <p>问界依托华为技术体系，推出了定位更亲民的全新车型 M6， 瞄准主流家用消费群体。放在问界品牌整体销量连续数月下滑、赛力斯盈利能力承压的背景下，M6的到来既是“救兵”，更是一场不容有失的“大考”。</p> <h3>卡位黄金价格带，向下争夺年轻群体</h3> <p>从产品命名逻辑看，M",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-08 13:18:58  +0800",
+          "collection_date": "2026-05-09"
+        },
+        {
+          "id": 3667,
+          "title": "4月份中国物流业景气指数49.7% 新订单指数连续回升",
+          "source": "中新网",
+          "summary": "中国物流与采购联合会今天(9日)公布4月份中国物流业景气指数。指数在上月大幅回升之后，本月呈现小幅回落。新订单指数连续两个月环比回升，消费、生产等市场需求不断改善，带动相关行业保持扩张势头。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 9 May 2026 07:38:58 +0800",
+          "collection_date": "2026-05-09"
+        }
+      ],
+      "topic_article_count": 8,
+      "priority_score": 46,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C06",
+      "topic": "其他观察",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 3,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "articles": [
+        {
+          "id": 3666,
+          "title": "一只帝王蟹，如何“带火”一座边境小城？",
+          "source": "中新网",
+          "summary": "你知道吗？中国人每吃掉5只俄罗斯帝王蟹，就有4只，是从一个不靠海的东北小城吉林珲春发出的。这听上去有点反常识。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 9 May 2026 07:58:01 +0800",
+          "collection_date": "2026-05-09"
+        },
+        {
+          "id": 3672,
+          "title": "白宫世界杯负责人为高昂票价辩护",
+          "source": "FT中文网",
+          "summary": "朱利亚尼称“市场将决定价格”，买不起票的人可以参加免费观赛活动。本届世界杯的高昂票价已使国际足联招致批评。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Fri, 08 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-09"
+        },
+        {
+          "id": 3702,
+          "title": "The companies making billions from the Iran war",
+          "source": "BBC全球经济",
+          "summary": "Through surging profits or soaring share prices, the war has been a boon for some firms.",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Fri, 08 May 2026 08:13:07 GMT",
+          "collection_date": "2026-05-09"
+        }
+      ],
+      "topic_article_count": 3,
+      "priority_score": 43,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C07",
+      "topic": "风险事件",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股",
+        "商品"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 1,
+      "independent_evidence_count": 2,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 2,
+      "articles": [
+        {
+          "id": 3674,
+          "title": "美国4月新增11.5万个就业岗位",
+          "source": "FT中文网",
+          "summary": "该数字低于3月经上修后的18.5万个，但超出华尔街预期，显示尽管受到中东冲突影响，美国劳动力市场仍在稳步增长。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Fri, 08 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-09"
+        },
+        {
+          "id": 3673,
+          "title": "特朗普：美伊停火“仍然有效”",
+          "source": "FT中文网",
+          "summary": "此前美国与伊朗互相指责对方在周四挑起交火事件。伊朗称美国对伊朗油轮开火，而美国称伊朗“无端”向美国军舰发动导弹、无人机和小艇袭击。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Fri, 08 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-09"
+        }
+      ],
+      "topic_article_count": 2,
+      "priority_score": 41,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C05",
+      "topic": "财报与公司经营",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 2,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 2,
+      "source_tier_max": "mainstream",
+      "original_source_count": 0,
+      "articles": [
+        {
+          "id": 3683,
+          "title": "第一代全固态电池迈入规模化市场，「纯锂新能源」完成数千万元Pre-A+轮融资 | 36氪首发",
+          "source": "36氪",
+          "summary": "<p>文&nbsp;|&nbsp;张冰冰</p> <p>编辑&nbsp;|&nbsp;阿至</p> <p>36氪获悉，<strong>北京纯锂新能源科技有限公司（以下简称「纯锂新能源」）近日宣布完成数千万元Pre-A+轮融资，投资方为亦庄国投，云道资本担任独家财务顾问，</strong>资金将用于产品研发、市场拓展及产线落地。</p> <p>「纯锂新能源」成",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-08 10:25:30  +0800",
+          "collection_date": "2026-05-09"
+        },
+        {
+          "id": 3677,
+          "title": "5月8日晚间上市公司利好消息一览(附名单)",
+          "source": "东方财富网",
+          "summary": "<p> 沪深两市多家上市公司5月8日晚间发布重要公告，以下为利好的消息汇总：</p><p> <strong><span id=\"stock_0.300819\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300819\">聚杰微纤</a></span><span id=\"quote_",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Fri, 08 May 2026 20:37:06 +0800",
+          "collection_date": "2026-05-09"
+        }
+      ],
+      "topic_article_count": 2,
+      "priority_score": 36,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C03",
+      "topic": "宏观与流动性",
+      "market_scope": [
+        "美股",
+        "A股",
+        "港股",
+        "美元",
+        "利率"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 1,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "mainstream",
+      "original_source_count": 0,
+      "articles": [
+        {
+          "id": 3688,
+          "title": "非农缓解“滞胀”担忧，美股新高，英特尔和存储芯片股暴涨，Rocket Lab绩后涨34%",
+          "source": "华尔街见闻",
+          "summary": "<p>强劲就业数据与AI芯片交易热潮，共同推动美股周五再创历史新高，标普500指数连续第六周收涨。与此同时，中东局势的和谈预期压低油价，美债涨跌互现，美元走弱。</p> <p style=\"text-align: center;\"><img class=\" wscnph\" src=\"https://wpimg-wscn.awtmt.com/588d874c-",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 09 May 2026 07:10:39 +0800",
+          "collection_date": "2026-05-09"
+        }
+      ],
+      "topic_article_count": 1,
+      "priority_score": 33,
+      "high_confidence_topic": false
+    }
+  ],
+  "candidate_stocks": [
+    {
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "industry": "算力基础设施",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        3686,
+        3687,
+        3682,
+        3684,
+        3670
+      ],
+      "evidence_summaries": [
+        "美联储金融稳定报告：地缘政治与石油冲击跃升头号风险，私募信贷风险“可控”",
+        "华尔街见闻早餐FM-Radio | 2026年5月9日",
+        "小红书四年AI 路：FOMO、犹豫，到突然加速",
+        "36氪首发 | 清华系AI Infra厂商完成数亿元融资，以GPU为核心重构计算机系统架构",
+        "对话MONOCLE创始人Tyler Brûlé：全球眼光与本地故事"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 1,
+      "direct_mentions": 5,
+      "risk_flags": [
+        "调查",
+        "违约"
+      ],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "Sat, 09 May 2026 07:41:41 +0800",
+        "Sat, 09 May 2026 07:28:31 +0800",
+        "2026-05-08 12:38:43  +0800",
+        "2026-05-08 09:45:14  +0800",
+        "Fri, 08 May 2026 16:00:00 GMT"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "sz002594",
+      "name": "比亚迪",
+      "industry": "新能源车",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        3681,
+        3670
+      ],
+      "evidence_summaries": [
+        "卡位黄金价格带，问界M6向下争夺年轻群体｜最前线",
+        "对话MONOCLE创始人Tyler Brûlé：全球眼光与本地故事"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 1,
+      "direct_mentions": 2,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "2026-05-08 13:18:58  +0800",
+        "Fri, 08 May 2026 16:00:00 GMT"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "sh600941",
+      "name": "中国移动",
+      "industry": "通信运营",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        3676
+      ],
+      "evidence_summaries": [
+        "5月8日东方财富财经晚报（附新闻联播）"
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 1,
+      "risk_flags": [
+        "退市",
+        "减持",
+        "处罚"
+      ],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_published_dates": [
+        "Fri, 08 May 2026 21:00:00 +0800"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "sh688981",
+      "name": "中芯国际",
+      "industry": "半导体",
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "evidence_article_ids": [
+        3720,
+        3682,
+        3670,
+        3668
+      ],
+      "evidence_summaries": [
+        "Federal Reserve Board announces approval of related applications by Columbia Bank MHC, and Columbia Financial, Inc.",
+        "小红书四年AI 路：FOMO、犹豫，到突然加速",
+        "对话MONOCLE创始人Tyler Brûlé：全球眼光与本地故事",
+        "压缩试验成本 我国室内最大全季冰雪汽车试验基地开建"
+      ],
+      "source_tiers": [
+        "official",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 2,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "official",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "Fri, 8 May 2026 21:00:00 GMT",
+        "2026-05-08 12:38:43  +0800",
+        "Fri, 08 May 2026 16:00:00 GMT",
+        "Sat, 9 May 2026 06:54:01 +0800"
+      ],
+      "topic_article_count": 10
+    },
+    {
+      "symbol": "sh603019",
+      "name": "中科曙光",
+      "industry": "算力基础设施",
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "evidence_article_ids": [
+        3720,
+        3682,
+        3670,
+        3668
+      ],
+      "evidence_summaries": [
+        "Federal Reserve Board announces approval of related applications by Columbia Bank MHC, and Columbia Financial, Inc.",
+        "小红书四年AI 路：FOMO、犹豫，到突然加速",
+        "对话MONOCLE创始人Tyler Brûlé：全球眼光与本地故事",
+        "压缩试验成本 我国室内最大全季冰雪汽车试验基地开建"
+      ],
+      "source_tiers": [
+        "official",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 2,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "official",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "Fri, 8 May 2026 21:00:00 GMT",
+        "2026-05-08 12:38:43  +0800",
+        "Fri, 08 May 2026 16:00:00 GMT",
+        "Sat, 9 May 2026 06:54:01 +0800"
+      ],
+      "topic_article_count": 10
+    },
+    {
+      "symbol": "sh600036",
+      "name": "招商银行",
+      "industry": "银行",
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "evidence_article_ids": [
+        3687,
+        3678,
+        3676,
+        3675
+      ],
+      "evidence_summaries": [
+        "华尔街见闻早餐FM-Radio | 2026年5月9日",
+        "5月8日晚间沪深上市公司重大事项公告最新快递",
+        "5月8日东方财富财经晚报（附新闻联播）",
+        "全球市场：纳指、标普再创历史新高 存储芯片股大涨 现货白银涨超2%"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 5,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_published_dates": [
+        "Sat, 09 May 2026 07:28:31 +0800",
+        "Fri, 08 May 2026 19:32:30 +0800",
+        "Fri, 08 May 2026 21:00:00 +0800",
+        "Sat, 09 May 2026 05:15:25 +0800"
+      ],
+      "topic_article_count": 20
+    },
+    {
+      "symbol": "sh601318",
+      "name": "中国平安",
+      "industry": "保险",
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "evidence_article_ids": [
+        3687,
+        3678,
+        3676,
+        3675
+      ],
+      "evidence_summaries": [
+        "华尔街见闻早餐FM-Radio | 2026年5月9日",
+        "5月8日晚间沪深上市公司重大事项公告最新快递",
+        "5月8日东方财富财经晚报（附新闻联播）",
+        "全球市场：纳指、标普再创历史新高 存储芯片股大涨 现货白银涨超2%"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 5,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_published_dates": [
+        "Sat, 09 May 2026 07:28:31 +0800",
+        "Fri, 08 May 2026 19:32:30 +0800",
+        "Fri, 08 May 2026 21:00:00 +0800",
+        "Sat, 09 May 2026 05:15:25 +0800"
+      ],
+      "topic_article_count": 20
+    }
+  ],
+  "stock_recommendations": [
+    {
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "industry": "算力基础设施",
+      "candidate_confidence": "medium",
+      "base_grade": "强关注",
+      "grade": "观察",
+      "grade_caps": [
+        "risk_flag_present"
+      ],
+      "total_score": 82,
+      "scores": {
+        "news_catalyst": 23,
+        "technical": 25,
+        "valuation": 19,
+        "quality_risk": 6,
+        "market_regime": 9
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构"
+      ],
+      "risks": [
+        "调查",
+        "违约",
+        "新闻风险信号: 调查",
+        "新闻风险信号: 违约",
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        3686,
+        3687,
+        3682,
+        3684,
+        3670
+      ],
+      "evidence_summaries": [
+        "美联储金融稳定报告：地缘政治与石油冲击跃升头号风险，私募信贷风险“可控”",
+        "华尔街见闻早餐FM-Radio | 2026年5月9日",
+        "小红书四年AI 路：FOMO、犹豫，到突然加速",
+        "36氪首发 | 清华系AI Infra厂商完成数亿元融资，以GPU为核心重构计算机系统架构",
+        "对话MONOCLE创始人Tyler Brûlé：全球眼光与本地故事"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 5,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 2,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh603019",
+      "name": "中科曙光",
+      "industry": "算力基础设施",
+      "candidate_confidence": "medium",
+      "base_grade": "强关注",
+      "grade": "观察",
+      "grade_caps": [
+        "no_direct_stock_evidence",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 81,
+      "scores": {
+        "news_catalyst": 17,
+        "technical": 25,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 10
+      },
+      "signals": [
+        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_article_ids": [
+        3720,
+        3682,
+        3670,
+        3668
+      ],
+      "evidence_summaries": [
+        "Federal Reserve Board announces approval of related applications by Columbia Bank MHC, and Columbia Financial, Inc.",
+        "小红书四年AI 路：FOMO、犹豫，到突然加速",
+        "对话MONOCLE创始人Tyler Brûlé：全球眼光与本地故事",
+        "压缩试验成本 我国室内最大全季冰雪汽车试验基地开建"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 2,
+        "source_tier_max": "official"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 2,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh688981",
+      "name": "中芯国际",
+      "industry": "半导体",
+      "candidate_confidence": "medium",
+      "base_grade": "强关注",
+      "grade": "观察",
+      "grade_caps": [
+        "no_direct_stock_evidence",
+        "score_gate_not_met",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 80,
+      "scores": {
+        "news_catalyst": 17,
+        "technical": 24,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 10
+      },
+      "signals": [
+        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+        "近20日与60日均线呈多头排列",
+        "MACD 维持多头结构",
+        "估值层已纳入行业相对比较"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_article_ids": [
+        3720,
+        3682,
+        3670,
+        3668
+      ],
+      "evidence_summaries": [
+        "Federal Reserve Board announces approval of related applications by Columbia Bank MHC, and Columbia Financial, Inc.",
+        "小红书四年AI 路：FOMO、犹豫，到突然加速",
+        "对话MONOCLE创始人Tyler Brûlé：全球眼光与本地故事",
+        "压缩试验成本 我国室内最大全季冰雪汽车试验基地开建"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 2,
+        "source_tier_max": "official"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 1,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh601318",
+      "name": "中国平安",
+      "industry": "保险",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "no_direct_stock_evidence",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 71,
+      "scores": {
+        "news_catalyst": 22,
+        "technical": 20,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构",
+        "估值层已纳入行业相对比较"
+      ],
+      "risks": [],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_article_ids": [
+        3687,
+        3678,
+        3676,
+        3675
+      ],
+      "evidence_summaries": [
+        "华尔街见闻早餐FM-Radio | 2026年5月9日",
+        "5月8日晚间沪深上市公司重大事项公告最新快递",
+        "5月8日东方财富财经晚报（附新闻联播）",
+        "全球市场：纳指、标普再创历史新高 存储芯片股大涨 现货白银涨超2%"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 5,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "flat",
+        "score": 0,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sz002594",
+      "name": "比亚迪",
+      "industry": "新能源车",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "关注",
+      "grade_caps": [],
+      "total_score": 66,
+      "scores": {
+        "news_catalyst": 21,
+        "technical": 10,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        3681,
+        3670
+      ],
+      "evidence_summaries": [
+        "卡位黄金价格带，问界M6向下争夺年轻群体｜最前线",
+        "对话MONOCLE创始人Tyler Brûlé：全球眼光与本地故事"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600941",
+      "name": "中国移动",
+      "industry": "通信运营",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 63,
+      "scores": {
+        "news_catalyst": 15,
+        "technical": 20,
+        "valuation": 17,
+        "quality_risk": 4,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "MACD 维持多头结构",
+        "估值层已纳入行业相对比较"
+      ],
+      "risks": [
+        "退市",
+        "减持",
+        "处罚",
+        "新闻风险信号: 退市",
+        "新闻风险信号: 减持",
+        "新闻风险信号: 处罚",
+        "估值处于相对合理或偏低区间",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        3676
+      ],
+      "evidence_summaries": [
+        "5月8日东方财富财经晚报（附新闻联播）"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600036",
+      "name": "招商银行",
+      "industry": "银行",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 59,
+      "scores": {
+        "news_catalyst": 22,
+        "technical": 9,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        3687,
+        3678,
+        3676,
+        3675
+      ],
+      "evidence_summaries": [
+        "华尔街见闻早餐FM-Radio | 2026年5月9日",
+        "5月8日晚间沪深上市公司重大事项公告最新快递",
+        "5月8日东方财富财经晚报（附新闻联播）",
+        "全球市场：纳指、标普再创历史新高 存储芯片股大涨 现货白银涨超2%"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 5,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    }
+  ],
+  "decision_views": {
+    "actionable_candidates": [
+      {
+        "symbol": "sz002594",
+        "name": "比亚迪",
+        "industry": "新能源车",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "关注",
+        "grade_caps": [],
+        "total_score": 66,
+        "scores": {
+          "news_catalyst": 21,
+          "technical": 10,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          3681,
+          3670
+        ],
+        "evidence_summaries": [
+          "卡位黄金价格带，问界M6向下争夺年轻群体｜最前线",
+          "对话MONOCLE创始人Tyler Brûlé：全球眼光与本地故事"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "conditional_watchlist": [
+      {
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "industry": "算力基础设施",
+        "candidate_confidence": "medium",
+        "base_grade": "强关注",
+        "grade": "观察",
+        "grade_caps": [
+          "risk_flag_present"
+        ],
+        "total_score": 82,
+        "scores": {
+          "news_catalyst": 23,
+          "technical": 25,
+          "valuation": 19,
+          "quality_risk": 6,
+          "market_regime": 9
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构"
+        ],
+        "risks": [
+          "调查",
+          "违约",
+          "新闻风险信号: 调查",
+          "新闻风险信号: 违约",
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_article_ids": [
+          3686,
+          3687,
+          3682,
+          3684,
+          3670
+        ],
+        "evidence_summaries": [
+          "美联储金融稳定报告：地缘政治与石油冲击跃升头号风险，私募信贷风险“可控”",
+          "华尔街见闻早餐FM-Radio | 2026年5月9日",
+          "小红书四年AI 路：FOMO、犹豫，到突然加速",
+          "36氪首发 | 清华系AI Infra厂商完成数亿元融资，以GPU为核心重构计算机系统架构",
+          "对话MONOCLE创始人Tyler Brûlé：全球眼光与本地故事"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 5,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 2,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh603019",
+        "name": "中科曙光",
+        "industry": "算力基础设施",
+        "candidate_confidence": "medium",
+        "base_grade": "强关注",
+        "grade": "观察",
+        "grade_caps": [
+          "no_direct_stock_evidence",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 81,
+        "scores": {
+          "news_catalyst": 17,
+          "technical": 25,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 10
+        },
+        "signals": [
+          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_article_ids": [
+          3720,
+          3682,
+          3670,
+          3668
+        ],
+        "evidence_summaries": [
+          "Federal Reserve Board announces approval of related applications by Columbia Bank MHC, and Columbia Financial, Inc.",
+          "小红书四年AI 路：FOMO、犹豫，到突然加速",
+          "对话MONOCLE创始人Tyler Brûlé：全球眼光与本地故事",
+          "压缩试验成本 我国室内最大全季冰雪汽车试验基地开建"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "科技与产业主题",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 2,
+          "source_tier_max": "official"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 2,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh601318",
+        "name": "中国平安",
+        "industry": "保险",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "no_direct_stock_evidence",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 71,
+        "scores": {
+          "news_catalyst": 22,
+          "technical": 20,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_article_ids": [
+          3687,
+          3678,
+          3676,
+          3675
+        ],
+        "evidence_summaries": [
+          "华尔街见闻早餐FM-Radio | 2026年5月9日",
+          "5月8日晚间沪深上市公司重大事项公告最新快递",
+          "5月8日东方财富财经晚报（附新闻联播）",
+          "全球市场：纳指、标普再创历史新高 存储芯片股大涨 现货白银涨超2%"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 5,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "flat",
+          "score": 0,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh600941",
+        "name": "中国移动",
+        "industry": "通信运营",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 63,
+        "scores": {
+          "news_catalyst": 15,
+          "technical": 20,
+          "valuation": 17,
+          "quality_risk": 4,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "MACD 维持多头结构",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [
+          "退市",
+          "减持",
+          "处罚",
+          "新闻风险信号: 退市",
+          "新闻风险信号: 减持",
+          "新闻风险信号: 处罚",
+          "估值处于相对合理或偏低区间",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_article_ids": [
+          3676
+        ],
+        "evidence_summaries": [
+          "5月8日东方财富财经晚报（附新闻联播）"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh600036",
+        "name": "招商银行",
+        "industry": "银行",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 59,
+        "scores": {
+          "news_catalyst": 22,
+          "technical": 9,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          3687,
+          3678,
+          3676,
+          3675
+        ],
+        "evidence_summaries": [
+          "华尔街见闻早餐FM-Radio | 2026年5月9日",
+          "5月8日晚间沪深上市公司重大事项公告最新快递",
+          "5月8日东方财富财经晚报（附新闻联播）",
+          "全球市场：纳指、标普再创历史新高 存储芯片股大涨 现货白银涨超2%"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 5,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "stale_or_rejected": [
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "industry": "半导体",
+        "candidate_confidence": "medium",
+        "base_grade": "强关注",
+        "grade": "观察",
+        "grade_caps": [
+          "no_direct_stock_evidence",
+          "score_gate_not_met",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 80,
+        "scores": {
+          "news_catalyst": 17,
+          "technical": 24,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 10
+        },
+        "signals": [
+          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+          "近20日与60日均线呈多头排列",
+          "MACD 维持多头结构",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_article_ids": [
+          3720,
+          3682,
+          3670,
+          3668
+        ],
+        "evidence_summaries": [
+          "Federal Reserve Board announces approval of related applications by Columbia Bank MHC, and Columbia Financial, Inc.",
+          "小红书四年AI 路：FOMO、犹豫，到突然加速",
+          "对话MONOCLE创始人Tyler Brûlé：全球眼光与本地故事",
+          "压缩试验成本 我国室内最大全季冰雪汽车试验基地开建"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "科技与产业主题",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 2,
+          "source_tier_max": "official"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 1,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      }
+    ]
+  },
+  "score_distribution": {
+    "strong_focus": 0,
+    "focus": 1,
+    "watch": 6,
+    "avoid": 0
+  },
+  "scoring_config": {
+    "market": "CN",
+    "style": "balanced",
+    "lookback_days": 60,
+    "pool_mode": "strict",
+    "theme_mapping_max_grade": "watch",
+    "value_acceptance_enabled": true,
+    "industry_trend_enabled": true
+  },
+  "session": "morning",
+  "session_time": "2026-05-09 10:48:40"
+}
