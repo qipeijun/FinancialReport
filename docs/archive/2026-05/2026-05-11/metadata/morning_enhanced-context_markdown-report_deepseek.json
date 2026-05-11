@@ -1,0 +1,2526 @@
+{
+  "analysis_mode": "markdown-report",
+  "date_range": {
+    "start": "2026-05-11",
+    "end": "2026-05-11"
+  },
+  "selected_articles": [
+    {
+      "id": 3765,
+      "title": "美伊局势再度紧张，油价跳涨、黄金下跌，AI浪潮下韩股涨超4%，SK海力士涨10%、三星再创新高",
+      "source": "华尔街见闻",
+      "published": "Mon, 11 May 2026 08:37:22 +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3766,
+      "title": "伊朗回应“提议30天内撤销石油制裁”，特朗普称“完全不可接受”，内塔尼亚胡“美以对伊朗的军事行动尚未结束”",
+      "source": "华尔街见闻",
+      "published": "Mon, 11 May 2026 08:22:06 +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3767,
+      "title": "差一点点“反超英伟达”！谷歌距离“全球第一市值”一步之遥",
+      "source": "华尔街见闻",
+      "published": "Mon, 11 May 2026 08:09:37 +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "汇率与大宗",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3768,
+      "title": "报道：投资者热捧，“热门芯片新股”Cerebras考虑大幅上调IPO定价区间",
+      "source": "华尔街见闻",
+      "published": "Mon, 11 May 2026 08:09:02 +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "汇率与大宗",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3755,
+      "title": "8点1氪丨SK海力士回应“员工人均奖金达610万元”传闻；世界杯中国转播费从3亿美元腰斩到1.5亿；曝三星中国家电部门裁员补偿N+4，还送手机",
+      "source": "36氪",
+      "published": "2026-05-11 08:06:43  +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "宏观与流动性",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 3769,
+      "title": "华尔街见闻早餐FM-Radio | 2026年5月11日",
+      "source": "华尔街见闻",
+      "published": "Mon, 11 May 2026 07:00:11 +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3750,
+      "title": "5月11日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+      "source": "东方财富网",
+      "published": "Mon, 11 May 2026 06:03:28 +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3815,
+      "title": "The Gerrymander Debacle In Virginia Leaves The Democratic Party With A Dangerous Agenda",
+      "source": "ZeroHedge",
+      "published": "Sun, 10 May 2026 23:15:00 +0000",
+      "collection_date": "2026-05-11",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3816,
+      "title": "SPLC Leader Pleads Not Guilty To Charges Of Funneling Millions To Neo-Nazis",
+      "source": "ZeroHedge",
+      "published": "Sun, 10 May 2026 22:05:00 +0000",
+      "collection_date": "2026-05-11",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3817,
+      "title": "Kim Jong Un Creates Ultimate Deadman Switch: North Korea To Auto-Launch Nukes If Assassinated",
+      "source": "ZeroHedge",
+      "published": "Sun, 10 May 2026 21:30:00 +0000",
+      "collection_date": "2026-05-11",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3745,
+      "title": "未来5年20万亿元增量 以“中国服务”托举产业攀高",
+      "source": "中新网",
+      "published": "Mon, 11 May 2026 08:06:11 +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3818,
+      "title": "How The American System Reshaped The World",
+      "source": "ZeroHedge",
+      "published": "Sun, 10 May 2026 20:55:00 +0000",
+      "collection_date": "2026-05-11",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3819,
+      "title": "Vegetable-Oil Inflation Sends World Food Prices Higher",
+      "source": "ZeroHedge",
+      "published": "Sun, 10 May 2026 20:20:00 +0000",
+      "collection_date": "2026-05-11",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3752,
+      "title": "十大机构论市：A股行情未完 科技成长继续占优",
+      "source": "东方财富网",
+      "published": "Sun, 10 May 2026 19:00:07 +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3800,
+      "title": "Powell Stays…Should the Dot Plot?",
+      "source": "ETF Trends",
+      "published": "Sun, 10 May 2026 14:03:28 +0000",
+      "collection_date": "2026-05-11",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3753,
+      "title": "周末要闻汇总：国常会要求加强新型电网、算力网、新一代通信网等规划建设",
+      "source": "东方财富网",
+      "published": "Sun, 10 May 2026 14:00:08 +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3789,
+      "title": "South Korea's Kospi hits fresh record as Asia markets trade mixed amid oil surge, Iran risks",
+      "source": "CNBC",
+      "published": "Mon, 11 May 2026 00:22:07 GMT",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 3756,
+      "title": "Ozon大中华区总裁Simon Huang：中国卖家，正在涌向俄罗斯｜专访",
+      "source": "36氪",
+      "published": "2026-05-10 10:18:57  +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3757,
+      "title": "融资超亿元、割草机器人公司拿下数亿订单，瞄准庭院具身终端｜硬氪首发",
+      "source": "36氪",
+      "published": "2026-05-10 09:27:31  +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3801,
+      "title": "Re-Electrification of the U.S.",
+      "source": "ETF Trends",
+      "published": "Sat, 09 May 2026 14:53:59 +0000",
+      "collection_date": "2026-05-11",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3758,
+      "title": "AI开始接管年轻人的「精神自留地」",
+      "source": "36氪",
+      "published": "2026-05-09 10:54:40  +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3759,
+      "title": "36氪首发 | 航空航天电气系统互联组件方案商获数千万融资，细分赛道市占率第一",
+      "source": "36氪",
+      "published": "2026-05-09 09:43:25  +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "财报与公司经营",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3746,
+      "title": "科学家为无人机安装“氢能心脏”破解续航难题",
+      "source": "中新网",
+      "published": "Mon, 11 May 2026 06:21:10 +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 3747,
+      "title": "伪造合格证、电池以旧代新 总台曝光危险的“手搓汽车”",
+      "source": "中新网",
+      "published": "Mon, 11 May 2026 06:17:56 +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3751,
+      "title": "伊朗已回应美国提出的结束战争方案",
+      "source": "东方财富网",
+      "published": "Sun, 10 May 2026 20:30:01 +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 3786,
+      "title": "Netanyahu says Iran war is 'not over' as Trump rejects latest Iranian offer",
+      "source": "CNBC",
+      "published": "Sun, 10 May 2026 20:28:55 GMT",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 3788,
+      "title": "Meet the YouTube whisperers, a booming class of advisors behind MrBeast and other million-dollar channels",
+      "source": "CNBC",
+      "published": "Sun, 10 May 2026 13:00:01 GMT",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 3754,
+      "title": "国常会：加强水网、新型电网、算力网、新一代通信网、城市地下管网、物流网等规划建设",
+      "source": "东方财富网",
+      "published": "Sat, 09 May 2026 19:16:28 +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3787,
+      "title": "Oil climbs as Netanyahu and Trump remarks stoke worries over rising Middle East tensions",
+      "source": "CNBC",
+      "published": "Mon, 11 May 2026 00:45:02 GMT",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 3785,
+      "title": "From Singapore to Brussels, world leaders eye Trump-Xi summit from afar",
+      "source": "CNBC",
+      "published": "Mon, 11 May 2026 00:26:25 GMT",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 3762,
+      "title": "威慑免疫：大国竞争逻辑的结构性转变",
+      "source": "FT中文网",
+      "published": "Sun, 10 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 3763,
+      "title": "去美元化进行时，人民币国际化的重大机遇？",
+      "source": "FT中文网",
+      "published": "Sat, 09 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 3764,
+      "title": "离群的中债和科技股",
+      "source": "FT中文网",
+      "published": "Sat, 09 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 3777,
+      "title": "The UK is set for a staycation summer - and there are plenty of hidden gems",
+      "source": "BBC全球经济",
+      "published": "Fri, 08 May 2026 23:30:12 GMT",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 3748,
+      "title": "“AI硅光芯片第一股”创始人：三次抉择见证科创与城市共生",
+      "source": "中新网",
+      "published": "Sun, 10 May 2026 23:53:32 +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 3775,
+      "title": "No summer border delays for Brits, Greek tourism minister says",
+      "source": "BBC全球经济",
+      "published": "Sun, 10 May 2026 23:33:43 GMT",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 3776,
+      "title": "This couple lost £1,000 after their flight was cancelled - here is what to check so you don't",
+      "source": "BBC全球经济",
+      "published": "Sun, 10 May 2026 23:32:40 GMT",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 3749,
+      "title": "中美将在韩国举行经贸磋商",
+      "source": "中新网",
+      "published": "Sun, 10 May 2026 23:13:52 +0800",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "summary_only",
+      "is_original_source": 0
+    },
+    {
+      "id": 3761,
+      "title": "特朗普关税已对欧洲汽车制造商造成80亿欧元打击",
+      "source": "FT中文网",
+      "published": "Sun, 10 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 3760,
+      "title": "沙特阿美首季盈利增长",
+      "source": "FT中文网",
+      "published": "Sun, 10 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-11",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "汇率与大宗",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    }
+  ],
+  "judgment_candidates": [
+    {
+      "candidate_id": "C01",
+      "topic": "政策与监管",
+      "market_scope": [
+        "A股",
+        "港股",
+        "宏观"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 8,
+      "independent_evidence_count": 6,
+      "high_relevance_article_count": 14,
+      "source_tier_max": "mainstream",
+      "original_source_count": 6,
+      "articles": [
+        {
+          "id": 3769,
+          "title": "华尔街见闻早餐FM-Radio | 2026年5月11日",
+          "source": "华尔街见闻",
+          "summary": "<h2>华见早安之声</h2> <p><img class=\"wscnph editor-placeholder\" src=\"https://wdl-wscn.awtmt.com/2ed0c8c8-fb82-499d-b81c-3fd1de114eae\" /></p> <h2>市场概述</h2> <p>上周五：</p> <ul> <li><span styl",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 11 May 2026 07:00:11 +0800",
+          "collection_date": "2026-05-11"
+        },
+        {
+          "id": 3750,
+          "title": "5月11日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "source": "东方财富网",
+          "summary": "<p> 5月11日(星期一)，今日报刊头条主要内容精华如下：</p><h3 class=\"emh3\"> 中国证券报</h3><p> <a href=\"http://finance.eastmoney.com/a/202605113732490675.html\"><strong>14.9% 前4个月外贸延续良好增长态势 出口结构加速“向新向绿向智”转变</st",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 11 May 2026 06:03:28 +0800",
+          "collection_date": "2026-05-11"
+        },
+        {
+          "id": 3762,
+          "title": "威慑免疫：大国竞争逻辑的结构性转变",
+          "source": "FT中文网",
+          "summary": "陈功：威慑工具正从传统意义上的“行为约束机制”转变为一种嵌入日常战略互动的环境变量。这一背景下，国际关系运行逻辑正在发生微妙变化。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sun, 10 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-11"
+        },
+        {
+          "id": 3753,
+          "title": "周末要闻汇总：国常会要求加强新型电网、算力网、新一代通信网等规划建设",
+          "source": "东方财富网",
+          "summary": "<p> 本周末影响市场的重要资讯有：国常会要求加强水网、新型电网、算力网、新一代<span id=\"bk_90.BK1215\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1215\">通信</a></span><span id=\"bkquote_90.BK1215\"></sp",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sun, 10 May 2026 14:00:08 +0800",
+          "collection_date": "2026-05-11"
+        }
+      ],
+      "topic_article_count": 24,
+      "priority_score": 78,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C04",
+      "topic": "科技与产业主题",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "2-6周",
+      "evidence_count": 4,
+      "independent_evidence_count": 2,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "mainstream",
+      "original_source_count": 2,
+      "articles": [
+        {
+          "id": 3757,
+          "title": "融资超亿元、割草机器人公司拿下数亿订单，瞄准庭院具身终端｜硬氪首发",
+          "source": "36氪",
+          "summary": "<p>作者｜黄楠</p> <p>编辑｜袁斯来</p> <p>硬氪获悉，智能庭院机器人公司「长曜创新」近日完成数千万元A+融资，领投方为美的系上市公司盈峰环境，老股东XGROUP持续加注。资金将重点投入技术研发迭代、多SKU量产交付及产品矩阵拓展，持续夯实供应链能力，完善全球化渠道布局。此前，公司已于2025年12月完成A轮融资，半年累计融资金额超亿元。</p",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-10 09:27:31  +0800",
+          "collection_date": "2026-05-11"
+        },
+        {
+          "id": 3758,
+          "title": "AI开始接管年轻人的「精神自留地」",
+          "source": "36氪",
+          "summary": "<h4><strong>撰文｜锅包柚</strong></h4> <h4><strong>封面来源｜Unsplash（AI辅助扩图）</strong></h4> <p>五一假期已经结束，但打工人的“节后综合症”并未消退。</p> <p>面对永远99+的工作群消息，和改不完的PPT，打工人蝈蝈在摸鱼时打开灵光APP里的一个小游戏——“老板被我fire了”。</",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-09 10:54:40  +0800",
+          "collection_date": "2026-05-11"
+        },
+        {
+          "id": 3787,
+          "title": "Oil climbs as Netanyahu and Trump remarks stoke worries over rising Middle East tensions",
+          "source": "CNBC",
+          "summary": "Oil prices jumped on Monday after Israel warned that the conflict with Iran was still ongoing.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 11 May 2026 00:45:02 GMT",
+          "collection_date": "2026-05-11"
+        },
+        {
+          "id": 3789,
+          "title": "South Korea's Kospi hits fresh record as Asia markets trade mixed amid oil surge, Iran risks",
+          "source": "CNBC",
+          "summary": "Investors headed into Monday on edge as Trump’s rejection of Iran’s ceasefire proposal fueled concerns about a prolonged Middle East conflict.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 11 May 2026 00:22:07 GMT",
+          "collection_date": "2026-05-11"
+        }
+      ],
+      "topic_article_count": 8,
+      "priority_score": 50,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C06",
+      "topic": "其他观察",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 3,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "articles": [
+        {
+          "id": 3746,
+          "title": "科学家为无人机安装“氢能心脏”破解续航难题",
+          "source": "中新网",
+          "summary": "新华社大连5月10日电(记者蔡拥军、张博群)记者10日从中国科学院大连化学物理研究所获悉，当日，该所研发的“高比功率阴极闭合式风冷电堆”技术在大连通过科技成果鉴定。这款新型电堆是为工业级无人机量身打造的集轻量化、高功率、风冷散热等特点于一体的“氢能心脏”，可使工业级无人机续航时间提升2倍以上。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 11 May 2026 06:21:10 +0800",
+          "collection_date": "2026-05-11"
+        },
+        {
+          "id": 3751,
+          "title": "伊朗已回应美国提出的结束战争方案",
+          "source": "东方财富网",
+          "summary": "<p> <strong>总台记者</strong>当地时间5月10日获悉，伊朗已向巴基斯坦转交对美国结束战争方案的回应。</p><p> 据知情人士消息，伊朗已向巴基斯坦调解方正式提交了对美国旨在结束战争的最新方案的回应。当前阶段的谈判将完全聚焦于停止地区内敌对行动。伊朗外交部发言人此前曾表示，就美国方案，伊朗方面会在完成内部评估并形成最终结论后，转达伊方考虑",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Sun, 10 May 2026 20:30:01 +0800",
+          "collection_date": "2026-05-11"
+        },
+        {
+          "id": 3761,
+          "title": "特朗普关税已对欧洲汽车制造商造成80亿欧元打击",
+          "source": "FT中文网",
+          "summary": "该数字基于大众、宝马、梅赛德斯-奔驰、斯泰兰蒂斯和沃尔沃汽车高管的公开声明。欧洲汽车制造业正准备迎接特朗普再度升级对欧贸易战。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Sun, 10 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-11"
+        }
+      ],
+      "topic_article_count": 3,
+      "priority_score": 43,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C02",
+      "topic": "汇率与大宗",
+      "market_scope": [
+        "汇率",
+        "商品",
+        "A股",
+        "港股"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 2,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "articles": [
+        {
+          "id": 3767,
+          "title": "差一点点“反超英伟达”！谷歌距离“全球第一市值”一步之遥",
+          "source": "华尔街见闻",
+          "summary": "<p style=\"text-align: left;\">Alphabet正以惊人速度逼近英伟达，距离夺得全球市值第一宝座仅一步之遥。这家谷歌母公司在不到一年时间里完成了从\"AI局外人\"到\"AI全面赢家\"的蜕变，其股价的强势表现正在重塑科技巨头的市值格局。</p> <p style=\"text-align: left;\">截至上周五收盘，Alphabet市值",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 11 May 2026 08:09:37 +0800",
+          "collection_date": "2026-05-11"
+        },
+        {
+          "id": 3768,
+          "title": "报道：投资者热捧，“热门芯片新股”Cerebras考虑大幅上调IPO定价区间",
+          "source": "华尔街见闻",
+          "summary": "<p style=\"text-align: left;\">AI芯片设计公司Cerebras Systems正考虑大幅上调IPO发行价区间，强劲的投资者需求推动这家公司的上市估值持续走高。</p> <p style=\"text-align: left;\">据路透社5月10日报道，<strong>Cerebras正考虑将IPO定价区间从此前的每股115至125美",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 11 May 2026 08:09:02 +0800",
+          "collection_date": "2026-05-11"
+        },
+        {
+          "id": 3760,
+          "title": "沙特阿美首季盈利增长",
+          "source": "FT中文网",
+          "summary": "横贯阿拉伯半岛的东-西输油管道使该公司得以从红海港口发运石油，减少了对霍尔木兹海峡的依赖。该公司还受益于油价上涨。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Sun, 10 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-11"
+        }
+      ],
+      "topic_article_count": 3,
+      "priority_score": 40,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C03",
+      "topic": "宏观与流动性",
+      "market_scope": [
+        "美股",
+        "A股",
+        "港股",
+        "美元",
+        "利率"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 1,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "mainstream",
+      "original_source_count": 0,
+      "articles": [
+        {
+          "id": 3755,
+          "title": "8点1氪丨SK海力士回应“员工人均奖金达610万元”传闻；世界杯中国转播费从3亿美元腰斩到1.5亿；曝三星中国家电部门裁员补偿N+4，还送手机",
+          "source": "36氪",
+          "summary": "<h2>今日热点导览</h2> <p>一季度全国结婚登记169.7万对</p> <p>bosie创始人刘光耀成为Kimi顾问？刘光耀回复“没入职”</p> <p>英特尔与苹果据悉达成初步协议，将为后者设备制造芯片</p> <p>业内人士称阿里未参与DeepSeek融资</p> <p>新华社调查“胖东来为啥总被黑”</p> <h2>TOP3大新闻</h2> <",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "2026-05-11 08:06:43  +0800",
+          "collection_date": "2026-05-11"
+        }
+      ],
+      "topic_article_count": 1,
+      "priority_score": 33,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C05",
+      "topic": "财报与公司经营",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 1,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "mainstream",
+      "original_source_count": 0,
+      "articles": [
+        {
+          "id": 3759,
+          "title": "36氪首发 | 航空航天电气系统互联组件方案商获数千万融资，细分赛道市占率第一",
+          "source": "36氪",
+          "summary": "<p>作者&nbsp;|&nbsp;乔钰杰</p> <p>编辑&nbsp;|&nbsp;袁斯来</p> <p>硬氪获悉，青岛北辰航天航天科技有限公司（下称“北辰航天”）近日完成数千万元天使轮融资，由云启资本独家投资，翊荣资本担任长期独家财务顾问。</p> <p>北辰航天旗下全资子公司青岛北辰数智科技有限公司成立于2014年，长期深耕航空航天电气系统互联组件研",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-09 09:43:25  +0800",
+          "collection_date": "2026-05-11"
+        }
+      ],
+      "topic_article_count": 1,
+      "priority_score": 33,
+      "high_confidence_topic": false
+    }
+  ],
+  "candidate_stocks": [
+    {
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "industry": "算力基础设施",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        3765,
+        3769,
+        3750
+      ],
+      "evidence_summaries": [
+        "美伊局势再度紧张，油价跳涨、黄金下跌，AI浪潮下韩股涨超4%，SK海力士涨10%、三星再创新高",
+        "华尔街见闻早餐FM-Radio | 2026年5月11日",
+        "5月11日国内四大证券报纸、重要财经媒体头版头条内容精华摘要"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 3,
+      "risk_flags": [
+        "调查",
+        "立案",
+        "违约",
+        "停牌",
+        "退市"
+      ],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "Mon, 11 May 2026 08:37:22 +0800",
+        "Mon, 11 May 2026 07:00:11 +0800",
+        "Mon, 11 May 2026 06:03:28 +0800"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "sh601857",
+      "name": "中国石油",
+      "industry": "石油石化",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        3746
+      ],
+      "evidence_summaries": [
+        "科学家为无人机安装“氢能心脏”破解续航难题"
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "Mon, 11 May 2026 06:21:10 +0800"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "sh600519",
+      "name": "贵州茅台",
+      "industry": "白酒",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        3755
+      ],
+      "evidence_summaries": [
+        "8点1氪丨SK海力士回应“员工人均奖金达610万元”传闻；世界杯中国转播费从3亿美元腰斩到1.5亿；曝三星中国家电部门裁员补偿N+4，还送手机"
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 1,
+      "risk_flags": [
+        "立案",
+        "调查"
+      ],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "2026-05-11 08:06:43  +0800"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "sz002594",
+      "name": "比亚迪",
+      "industry": "新能源车",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        3755
+      ],
+      "evidence_summaries": [
+        "8点1氪丨SK海力士回应“员工人均奖金达610万元”传闻；世界杯中国转播费从3亿美元腰斩到1.5亿；曝三星中国家电部门裁员补偿N+4，还送手机"
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 1,
+      "risk_flags": [
+        "立案",
+        "调查"
+      ],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "2026-05-11 08:06:43  +0800"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "sh600036",
+      "name": "招商银行",
+      "industry": "银行",
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "evidence_article_ids": [
+        3769,
+        3750,
+        3762,
+        3753
+      ],
+      "evidence_summaries": [
+        "华尔街见闻早餐FM-Radio | 2026年5月11日",
+        "5月11日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "威慑免疫：大国竞争逻辑的结构性转变",
+        "周末要闻汇总：国常会要求加强新型电网、算力网、新一代通信网等规划建设"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 6,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_published_dates": [
+        "Mon, 11 May 2026 07:00:11 +0800",
+        "Mon, 11 May 2026 06:03:28 +0800",
+        "Sun, 10 May 2026 16:00:00 GMT",
+        "Sun, 10 May 2026 14:00:08 +0800"
+      ],
+      "topic_article_count": 24
+    },
+    {
+      "symbol": "sh601318",
+      "name": "中国平安",
+      "industry": "保险",
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "evidence_article_ids": [
+        3769,
+        3750,
+        3762,
+        3753
+      ],
+      "evidence_summaries": [
+        "华尔街见闻早餐FM-Radio | 2026年5月11日",
+        "5月11日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "威慑免疫：大国竞争逻辑的结构性转变",
+        "周末要闻汇总：国常会要求加强新型电网、算力网、新一代通信网等规划建设"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 6,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_published_dates": [
+        "Mon, 11 May 2026 07:00:11 +0800",
+        "Mon, 11 May 2026 06:03:28 +0800",
+        "Sun, 10 May 2026 16:00:00 GMT",
+        "Sun, 10 May 2026 14:00:08 +0800"
+      ],
+      "topic_article_count": 24
+    },
+    {
+      "symbol": "sh600941",
+      "name": "中国移动",
+      "industry": "通信运营",
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "evidence_article_ids": [
+        3769,
+        3750,
+        3762,
+        3753
+      ],
+      "evidence_summaries": [
+        "华尔街见闻早餐FM-Radio | 2026年5月11日",
+        "5月11日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "威慑免疫：大国竞争逻辑的结构性转变",
+        "周末要闻汇总：国常会要求加强新型电网、算力网、新一代通信网等规划建设"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 6,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_published_dates": [
+        "Mon, 11 May 2026 07:00:11 +0800",
+        "Mon, 11 May 2026 06:03:28 +0800",
+        "Sun, 10 May 2026 16:00:00 GMT",
+        "Sun, 10 May 2026 14:00:08 +0800"
+      ],
+      "topic_article_count": 24
+    },
+    {
+      "symbol": "sh688981",
+      "name": "中芯国际",
+      "industry": "半导体",
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "evidence_article_ids": [
+        3757,
+        3758,
+        3787,
+        3789
+      ],
+      "evidence_summaries": [
+        "融资超亿元、割草机器人公司拿下数亿订单，瞄准庭院具身终端｜硬氪首发",
+        "AI开始接管年轻人的「精神自留地」",
+        "Oil climbs as Netanyahu and Trump remarks stoke worries over rising Middle East tensions",
+        "South Korea's Kospi hits fresh record as Asia markets trade mixed amid oil surge, Iran risks"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 2,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "2026-05-10 09:27:31  +0800",
+        "2026-05-09 10:54:40  +0800",
+        "Mon, 11 May 2026 00:45:02 GMT",
+        "Mon, 11 May 2026 00:22:07 GMT"
+      ],
+      "topic_article_count": 8
+    },
+    {
+      "symbol": "sh603019",
+      "name": "中科曙光",
+      "industry": "算力基础设施",
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "evidence_article_ids": [
+        3757,
+        3758,
+        3787,
+        3789
+      ],
+      "evidence_summaries": [
+        "融资超亿元、割草机器人公司拿下数亿订单，瞄准庭院具身终端｜硬氪首发",
+        "AI开始接管年轻人的「精神自留地」",
+        "Oil climbs as Netanyahu and Trump remarks stoke worries over rising Middle East tensions",
+        "South Korea's Kospi hits fresh record as Asia markets trade mixed amid oil surge, Iran risks"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 2,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "2026-05-10 09:27:31  +0800",
+        "2026-05-09 10:54:40  +0800",
+        "Mon, 11 May 2026 00:45:02 GMT",
+        "Mon, 11 May 2026 00:22:07 GMT"
+      ],
+      "topic_article_count": 8
+    }
+  ],
+  "stock_recommendations": [
+    {
+      "symbol": "sh603019",
+      "name": "中科曙光",
+      "industry": "算力基础设施",
+      "candidate_confidence": "medium",
+      "base_grade": "强关注",
+      "grade": "观察",
+      "grade_caps": [
+        "no_direct_stock_evidence",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 80,
+      "scores": {
+        "news_catalyst": 16,
+        "technical": 25,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 10
+      },
+      "signals": [
+        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_article_ids": [
+        3757,
+        3758,
+        3787,
+        3789
+      ],
+      "evidence_summaries": [
+        "融资超亿元、割草机器人公司拿下数亿订单，瞄准庭院具身终端｜硬氪首发",
+        "AI开始接管年轻人的「精神自留地」",
+        "Oil climbs as Netanyahu and Trump remarks stoke worries over rising Middle East tensions",
+        "South Korea's Kospi hits fresh record as Asia markets trade mixed amid oil surge, Iran risks"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 2,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 2,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh688981",
+      "name": "中芯国际",
+      "industry": "半导体",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "no_direct_stock_evidence",
+        "score_gate_not_met",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 79,
+      "scores": {
+        "news_catalyst": 16,
+        "technical": 24,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 10
+      },
+      "signals": [
+        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+        "近20日与60日均线呈多头排列",
+        "MACD 维持多头结构",
+        "估值层已纳入行业相对比较"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_article_ids": [
+        3757,
+        3758,
+        3787,
+        3789
+      ],
+      "evidence_summaries": [
+        "融资超亿元、割草机器人公司拿下数亿订单，瞄准庭院具身终端｜硬氪首发",
+        "AI开始接管年轻人的「精神自留地」",
+        "Oil climbs as Netanyahu and Trump remarks stoke worries over rising Middle East tensions",
+        "South Korea's Kospi hits fresh record as Asia markets trade mixed amid oil surge, Iran risks"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 2,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 1,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600941",
+      "name": "中国移动",
+      "industry": "通信运营",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "no_direct_stock_evidence",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 78,
+      "scores": {
+        "news_catalyst": 22,
+        "technical": 20,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "近20日与60日均线呈多头排列",
+        "MACD 维持多头结构",
+        "估值层已纳入行业相对比较"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_article_ids": [
+        3769,
+        3750,
+        3762,
+        3753
+      ],
+      "evidence_summaries": [
+        "华尔街见闻早餐FM-Radio | 2026年5月11日",
+        "5月11日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "威慑免疫：大国竞争逻辑的结构性转变",
+        "周末要闻汇总：国常会要求加强新型电网、算力网、新一代通信网等规划建设"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 6,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "industry": "算力基础设施",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "risk_flag_present"
+      ],
+      "total_score": 76,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 25,
+        "valuation": 19,
+        "quality_risk": 4,
+        "market_regime": 9
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构"
+      ],
+      "risks": [
+        "调查",
+        "立案",
+        "违约",
+        "停牌",
+        "退市",
+        "新闻风险信号: 调查",
+        "新闻风险信号: 立案",
+        "新闻风险信号: 违约",
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        3765,
+        3769,
+        3750
+      ],
+      "evidence_summaries": [
+        "美伊局势再度紧张，油价跳涨、黄金下跌，AI浪潮下韩股涨超4%，SK海力士涨10%、三星再创新高",
+        "华尔街见闻早餐FM-Radio | 2026年5月11日",
+        "5月11日国内四大证券报纸、重要财经媒体头版头条内容精华摘要"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 3,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 2,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh601318",
+      "name": "中国平安",
+      "industry": "保险",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "no_direct_stock_evidence",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 71,
+      "scores": {
+        "news_catalyst": 22,
+        "technical": 20,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构",
+        "估值层已纳入行业相对比较"
+      ],
+      "risks": [],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_article_ids": [
+        3769,
+        3750,
+        3762,
+        3753
+      ],
+      "evidence_summaries": [
+        "华尔街见闻早餐FM-Radio | 2026年5月11日",
+        "5月11日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "威慑免疫：大国竞争逻辑的结构性转变",
+        "周末要闻汇总：国常会要求加强新型电网、算力网、新一代通信网等规划建设"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 6,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "flat",
+        "score": 0,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600036",
+      "name": "招商银行",
+      "industry": "银行",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 59,
+      "scores": {
+        "news_catalyst": 22,
+        "technical": 9,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        3769,
+        3750,
+        3762,
+        3753
+      ],
+      "evidence_summaries": [
+        "华尔街见闻早餐FM-Radio | 2026年5月11日",
+        "5月11日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "威慑免疫：大国竞争逻辑的结构性转变",
+        "周末要闻汇总：国常会要求加强新型电网、算力网、新一代通信网等规划建设"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 6,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh601857",
+      "name": "中国石油",
+      "industry": "石油石化",
+      "candidate_confidence": "low",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 57,
+      "scores": {
+        "news_catalyst": 15,
+        "technical": 10,
+        "valuation": 14,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        3746
+      ],
+      "evidence_summaries": [
+        "科学家为无人机安装“氢能心脏”破解续航难题"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sz002594",
+      "name": "比亚迪",
+      "industry": "新能源车",
+      "candidate_confidence": "low",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 54,
+      "scores": {
+        "news_catalyst": 15,
+        "technical": 10,
+        "valuation": 17,
+        "quality_risk": 6,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "立案",
+        "调查",
+        "新闻风险信号: 立案",
+        "新闻风险信号: 调查",
+        "估值处于相对合理或偏低区间",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        3755
+      ],
+      "evidence_summaries": [
+        "8点1氪丨SK海力士回应“员工人均奖金达610万元”传闻；世界杯中国转播费从3亿美元腰斩到1.5亿；曝三星中国家电部门裁员补偿N+4，还送手机"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600519",
+      "name": "贵州茅台",
+      "industry": "白酒",
+      "candidate_confidence": "low",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 53,
+      "scores": {
+        "news_catalyst": 15,
+        "technical": 9,
+        "valuation": 17,
+        "quality_risk": 6,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "立案",
+        "调查",
+        "新闻风险信号: 立案",
+        "新闻风险信号: 调查",
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        3755
+      ],
+      "evidence_summaries": [
+        "8点1氪丨SK海力士回应“员工人均奖金达610万元”传闻；世界杯中国转播费从3亿美元腰斩到1.5亿；曝三星中国家电部门裁员补偿N+4，还送手机"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "flat",
+        "score": 0,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    }
+  ],
+  "decision_views": {
+    "actionable_candidates": [],
+    "conditional_watchlist": [
+      {
+        "symbol": "sh603019",
+        "name": "中科曙光",
+        "industry": "算力基础设施",
+        "candidate_confidence": "medium",
+        "base_grade": "强关注",
+        "grade": "观察",
+        "grade_caps": [
+          "no_direct_stock_evidence",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 80,
+        "scores": {
+          "news_catalyst": 16,
+          "technical": 25,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 10
+        },
+        "signals": [
+          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_article_ids": [
+          3757,
+          3758,
+          3787,
+          3789
+        ],
+        "evidence_summaries": [
+          "融资超亿元、割草机器人公司拿下数亿订单，瞄准庭院具身终端｜硬氪首发",
+          "AI开始接管年轻人的「精神自留地」",
+          "Oil climbs as Netanyahu and Trump remarks stoke worries over rising Middle East tensions",
+          "South Korea's Kospi hits fresh record as Asia markets trade mixed amid oil surge, Iran risks"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "科技与产业主题",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 2,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 2,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh600941",
+        "name": "中国移动",
+        "industry": "通信运营",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "no_direct_stock_evidence",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 78,
+        "scores": {
+          "news_catalyst": 22,
+          "technical": 20,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "近20日与60日均线呈多头排列",
+          "MACD 维持多头结构",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_article_ids": [
+          3769,
+          3750,
+          3762,
+          3753
+        ],
+        "evidence_summaries": [
+          "华尔街见闻早餐FM-Radio | 2026年5月11日",
+          "5月11日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "威慑免疫：大国竞争逻辑的结构性转变",
+          "周末要闻汇总：国常会要求加强新型电网、算力网、新一代通信网等规划建设"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 6,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "industry": "算力基础设施",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "risk_flag_present"
+        ],
+        "total_score": 76,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 25,
+          "valuation": 19,
+          "quality_risk": 4,
+          "market_regime": 9
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构"
+        ],
+        "risks": [
+          "调查",
+          "立案",
+          "违约",
+          "停牌",
+          "退市",
+          "新闻风险信号: 调查",
+          "新闻风险信号: 立案",
+          "新闻风险信号: 违约",
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_article_ids": [
+          3765,
+          3769,
+          3750
+        ],
+        "evidence_summaries": [
+          "美伊局势再度紧张，油价跳涨、黄金下跌，AI浪潮下韩股涨超4%，SK海力士涨10%、三星再创新高",
+          "华尔街见闻早餐FM-Radio | 2026年5月11日",
+          "5月11日国内四大证券报纸、重要财经媒体头版头条内容精华摘要"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 3,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 2,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh601318",
+        "name": "中国平安",
+        "industry": "保险",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "no_direct_stock_evidence",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 71,
+        "scores": {
+          "news_catalyst": 22,
+          "technical": 20,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_article_ids": [
+          3769,
+          3750,
+          3762,
+          3753
+        ],
+        "evidence_summaries": [
+          "华尔街见闻早餐FM-Radio | 2026年5月11日",
+          "5月11日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "威慑免疫：大国竞争逻辑的结构性转变",
+          "周末要闻汇总：国常会要求加强新型电网、算力网、新一代通信网等规划建设"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 6,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "flat",
+          "score": 0,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh600036",
+        "name": "招商银行",
+        "industry": "银行",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 59,
+        "scores": {
+          "news_catalyst": 22,
+          "technical": 9,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          3769,
+          3750,
+          3762,
+          3753
+        ],
+        "evidence_summaries": [
+          "华尔街见闻早餐FM-Radio | 2026年5月11日",
+          "5月11日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "威慑免疫：大国竞争逻辑的结构性转变",
+          "周末要闻汇总：国常会要求加强新型电网、算力网、新一代通信网等规划建设"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 6,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh601857",
+        "name": "中国石油",
+        "industry": "石油石化",
+        "candidate_confidence": "low",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 57,
+        "scores": {
+          "news_catalyst": 15,
+          "technical": 10,
+          "valuation": 14,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          3746
+        ],
+        "evidence_summaries": [
+          "科学家为无人机安装“氢能心脏”破解续航难题"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sz002594",
+        "name": "比亚迪",
+        "industry": "新能源车",
+        "candidate_confidence": "low",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 54,
+        "scores": {
+          "news_catalyst": 15,
+          "technical": 10,
+          "valuation": 17,
+          "quality_risk": 6,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "立案",
+          "调查",
+          "新闻风险信号: 立案",
+          "新闻风险信号: 调查",
+          "估值处于相对合理或偏低区间",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_article_ids": [
+          3755
+        ],
+        "evidence_summaries": [
+          "8点1氪丨SK海力士回应“员工人均奖金达610万元”传闻；世界杯中国转播费从3亿美元腰斩到1.5亿；曝三星中国家电部门裁员补偿N+4，还送手机"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh600519",
+        "name": "贵州茅台",
+        "industry": "白酒",
+        "candidate_confidence": "low",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 53,
+        "scores": {
+          "news_catalyst": 15,
+          "technical": 9,
+          "valuation": 17,
+          "quality_risk": 6,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "立案",
+          "调查",
+          "新闻风险信号: 立案",
+          "新闻风险信号: 调查",
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_article_ids": [
+          3755
+        ],
+        "evidence_summaries": [
+          "8点1氪丨SK海力士回应“员工人均奖金达610万元”传闻；世界杯中国转播费从3亿美元腰斩到1.5亿；曝三星中国家电部门裁员补偿N+4，还送手机"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "flat",
+          "score": 0,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "stale_or_rejected": [
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "industry": "半导体",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "no_direct_stock_evidence",
+          "score_gate_not_met",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 79,
+        "scores": {
+          "news_catalyst": 16,
+          "technical": 24,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 10
+        },
+        "signals": [
+          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+          "近20日与60日均线呈多头排列",
+          "MACD 维持多头结构",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_article_ids": [
+          3757,
+          3758,
+          3787,
+          3789
+        ],
+        "evidence_summaries": [
+          "融资超亿元、割草机器人公司拿下数亿订单，瞄准庭院具身终端｜硬氪首发",
+          "AI开始接管年轻人的「精神自留地」",
+          "Oil climbs as Netanyahu and Trump remarks stoke worries over rising Middle East tensions",
+          "South Korea's Kospi hits fresh record as Asia markets trade mixed amid oil surge, Iran risks"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "科技与产业主题",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 2,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 1,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      }
+    ]
+  },
+  "score_distribution": {
+    "strong_focus": 0,
+    "focus": 0,
+    "watch": 9,
+    "avoid": 0
+  },
+  "scoring_config": {
+    "market": "CN",
+    "style": "balanced",
+    "lookback_days": 60,
+    "pool_mode": "strict",
+    "theme_mapping_max_grade": "watch",
+    "value_acceptance_enabled": true,
+    "industry_trend_enabled": true
+  },
+  "session": "morning",
+  "session_time": "2026-05-11 08:58:08"
+}
