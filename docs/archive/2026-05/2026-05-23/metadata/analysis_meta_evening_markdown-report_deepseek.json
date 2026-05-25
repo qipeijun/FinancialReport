@@ -1,0 +1,1831 @@
+{
+  "date_range": {
+    "start": "2026-05-23",
+    "end": "2026-05-23"
+  },
+  "articles_used": 46,
+  "chunks": 93,
+  "model_usage": {
+    "model": "deepseek-v4-pro",
+    "provider": "deepseek",
+    "prompt_tokens": 77192,
+    "completion_tokens": 1877,
+    "total_tokens": 79069
+  },
+  "quality_check": {
+    "score": 80.0,
+    "passed": false,
+    "accuracy_score": 60.0,
+    "timeliness_score": 5,
+    "reliability_score": 15,
+    "claim_coverage_score": 10,
+    "narrative_consistency_passed": true,
+    "data_integrity_statement_passed": true,
+    "issues": [
+      "❌ 报告篇幅较长，但可验证断言覆盖过少"
+    ],
+    "warnings": [
+      "⚠️ 数据更新于27.7小时前,时效性较差"
+    ],
+    "stats": {
+      "has_realtime_data": true,
+      "data_age_hours": 27.6796173625,
+      "citation_count": 14,
+      "verified_claims": 1,
+      "total_claims": 1,
+      "realtime_verified_claims": 1,
+      "realtime_total_claims": 1,
+      "news_fact_claims": 1,
+      "analytical_judgment_count": 0,
+      "fabrication_detected": false,
+      "watchlist_promoted_in_narrative_count": 0,
+      "verification_boundary_overclaim_count": 0,
+      "implausible_signals": {
+        "over_precision_count": 0,
+        "rounded_ratio": 0.0,
+        "cross_asset_repeated_value_count": 0
+      }
+    },
+    "timestamp": "2026-05-23T18:40:46.623022"
+  },
+  "verification_enabled": true,
+  "output_mode": "markdown-report",
+  "live_data_degraded": false,
+  "stock_recommendations": [
+    {
+      "symbol": "sh688981",
+      "name": "中芯国际",
+      "industry": "半导体",
+      "candidate_confidence": "medium",
+      "base_grade": "强关注",
+      "grade": "观察",
+      "grade_caps": [
+        "no_direct_stock_evidence",
+        "score_gate_not_met",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 81,
+      "scores": {
+        "news_catalyst": 17,
+        "technical": 25,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 10
+      },
+      "signals": [
+        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_article_ids": [
+        4536,
+        4535,
+        4476,
+        4478
+      ],
+      "evidence_summaries": [
+        "Agencies publish resolution plan feedback letters for certain domestic and foreign banking organizations",
+        "Kevin Warsh takes oath of office as chairman and a member of the Board of Governors of the Federal Reserve System, and t",
+        "圆桌对话：当AI进入产业前线：未来最稀缺的AI人才，会是谁？| 2026AI Partner·北京亦庄AI+产业大会",
+        "对话王小川：离开通用人工智能的主干道之后"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 2,
+        "source_tier_max": "official"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 1,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600941",
+      "name": "中国移动",
+      "industry": "通信运营",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "no_direct_stock_evidence",
+        "score_gate_not_met",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 69,
+      "scores": {
+        "news_catalyst": 21,
+        "technical": 13,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "RSI 处于健康区间，趋势未明显过热",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_article_ids": [
+        4525,
+        4472,
+        4470,
+        4510
+      ],
+      "evidence_summaries": [
+        "2025年全国1%人口抽样调查主要数据公报",
+        "5月22日东方财富财经晚报（附新闻联播）",
+        "全球市场：美股三大指数收涨 道指续创新高 特斯拉涨近2% 中国金龙指数跌超2%",
+        "Kevin Warsh's real Fed 'regime change' may happen deep inside Wall Street's plumbing"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 2,
+        "source_tier_max": "official"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh603019",
+      "name": "中科曙光",
+      "industry": "算力基础设施",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "no_direct_stock_evidence",
+        "score_gate_not_met",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 67,
+      "scores": {
+        "news_catalyst": 17,
+        "technical": 11,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 10
+      },
+      "signals": [
+        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+        "RSI 处于健康区间，趋势未明显过热",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_article_ids": [
+        4536,
+        4535,
+        4476,
+        4478
+      ],
+      "evidence_summaries": [
+        "Agencies publish resolution plan feedback letters for certain domestic and foreign banking organizations",
+        "Kevin Warsh takes oath of office as chairman and a member of the Board of Governors of the Federal Reserve System, and t",
+        "圆桌对话：当AI进入产业前线：未来最稀缺的AI人才，会是谁？| 2026AI Partner·北京亦庄AI+产业大会",
+        "对话王小川：离开通用人工智能的主干道之后"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 2,
+        "source_tier_max": "official"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 2,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "industry": "算力基础设施",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 63,
+      "scores": {
+        "news_catalyst": 17,
+        "technical": 5,
+        "valuation": 19,
+        "quality_risk": 12,
+        "market_regime": 10
+      },
+      "signals": [
+        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4536,
+        4535,
+        4476,
+        4478
+      ],
+      "evidence_summaries": [
+        "Agencies publish resolution plan feedback letters for certain domestic and foreign banking organizations",
+        "Kevin Warsh takes oath of office as chairman and a member of the Board of Governors of the Federal Reserve System, and t",
+        "圆桌对话：当AI进入产业前线：未来最稀缺的AI人才，会是谁？| 2026AI Partner·北京亦庄AI+产业大会",
+        "对话王小川：离开通用人工智能的主干道之后"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 2,
+        "source_tier_max": "official"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 2,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sz000858",
+      "name": "五粮液",
+      "industry": "白酒",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 60,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 4,
+        "valuation": 19,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4467
+      ],
+      "evidence_summaries": [
+        "西洽会上“闻”酒香：当传统白酒遇上风味精酿"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "宏观与流动性"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "insufficient_independent_confirmation"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "flat",
+        "score": 0,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600519",
+      "name": "贵州茅台",
+      "industry": "白酒",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 58,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 4,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4467
+      ],
+      "evidence_summaries": [
+        "西洽会上“闻”酒香：当传统白酒遇上风味精酿"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "宏观与流动性"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "insufficient_independent_confirmation"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "flat",
+        "score": 0,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600036",
+      "name": "招商银行",
+      "industry": "银行",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 56,
+      "scores": {
+        "news_catalyst": 21,
+        "technical": 7,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4525,
+        4472,
+        4470,
+        4510
+      ],
+      "evidence_summaries": [
+        "2025年全国1%人口抽样调查主要数据公报",
+        "5月22日东方财富财经晚报（附新闻联播）",
+        "全球市场：美股三大指数收涨 道指续创新高 特斯拉涨近2% 中国金龙指数跌超2%",
+        "Kevin Warsh's real Fed 'regime change' may happen deep inside Wall Street's plumbing"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 2,
+        "source_tier_max": "official"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh601318",
+      "name": "中国平安",
+      "industry": "保险",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 56,
+      "scores": {
+        "news_catalyst": 21,
+        "technical": 7,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4525,
+        4472,
+        4470,
+        4510
+      ],
+      "evidence_summaries": [
+        "2025年全国1%人口抽样调查主要数据公报",
+        "5月22日东方财富财经晚报（附新闻联播）",
+        "全球市场：美股三大指数收涨 道指续创新高 特斯拉涨近2% 中国金龙指数跌超2%",
+        "Kevin Warsh's real Fed 'regime change' may happen deep inside Wall Street's plumbing"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 2,
+        "source_tier_max": "official"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "flat",
+        "score": 0,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    }
+  ],
+  "score_distribution": {
+    "strong_focus": 0,
+    "focus": 0,
+    "watch": 8,
+    "avoid": 0
+  },
+  "scoring_config": {
+    "market": "CN",
+    "style": "balanced",
+    "lookback_days": 60,
+    "pool_mode": "strict",
+    "theme_mapping_max_grade": "watch",
+    "value_acceptance_enabled": true,
+    "industry_trend_enabled": true
+  },
+  "decision_views": {
+    "actionable_candidates": [],
+    "conditional_watchlist": [
+      {
+        "symbol": "sz000858",
+        "name": "五粮液",
+        "industry": "白酒",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 60,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 4,
+          "valuation": 19,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4467
+        ],
+        "evidence_summaries": [
+          "西洽会上“闻”酒香：当传统白酒遇上风味精酿"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "宏观与流动性"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "insufficient_independent_confirmation"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "flat",
+          "score": 0,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh600519",
+        "name": "贵州茅台",
+        "industry": "白酒",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 58,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 4,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4467
+        ],
+        "evidence_summaries": [
+          "西洽会上“闻”酒香：当传统白酒遇上风味精酿"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "宏观与流动性"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "insufficient_independent_confirmation"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "flat",
+          "score": 0,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "stale_or_rejected": [
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "industry": "半导体",
+        "candidate_confidence": "medium",
+        "base_grade": "强关注",
+        "grade": "观察",
+        "grade_caps": [
+          "no_direct_stock_evidence",
+          "score_gate_not_met",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 81,
+        "scores": {
+          "news_catalyst": 17,
+          "technical": 25,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 10
+        },
+        "signals": [
+          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_article_ids": [
+          4536,
+          4535,
+          4476,
+          4478
+        ],
+        "evidence_summaries": [
+          "Agencies publish resolution plan feedback letters for certain domestic and foreign banking organizations",
+          "Kevin Warsh takes oath of office as chairman and a member of the Board of Governors of the Federal Reserve System, and t",
+          "圆桌对话：当AI进入产业前线：未来最稀缺的AI人才，会是谁？| 2026AI Partner·北京亦庄AI+产业大会",
+          "对话王小川：离开通用人工智能的主干道之后"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "科技与产业主题",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 2,
+          "source_tier_max": "official"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 1,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh600941",
+        "name": "中国移动",
+        "industry": "通信运营",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "no_direct_stock_evidence",
+          "score_gate_not_met",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 69,
+        "scores": {
+          "news_catalyst": 21,
+          "technical": 13,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "RSI 处于健康区间，趋势未明显过热",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_article_ids": [
+          4525,
+          4472,
+          4470,
+          4510
+        ],
+        "evidence_summaries": [
+          "2025年全国1%人口抽样调查主要数据公报",
+          "5月22日东方财富财经晚报（附新闻联播）",
+          "全球市场：美股三大指数收涨 道指续创新高 特斯拉涨近2% 中国金龙指数跌超2%",
+          "Kevin Warsh's real Fed 'regime change' may happen deep inside Wall Street's plumbing"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 2,
+          "source_tier_max": "official"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh603019",
+        "name": "中科曙光",
+        "industry": "算力基础设施",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "no_direct_stock_evidence",
+          "score_gate_not_met",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 67,
+        "scores": {
+          "news_catalyst": 17,
+          "technical": 11,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 10
+        },
+        "signals": [
+          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+          "RSI 处于健康区间，趋势未明显过热",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_article_ids": [
+          4536,
+          4535,
+          4476,
+          4478
+        ],
+        "evidence_summaries": [
+          "Agencies publish resolution plan feedback letters for certain domestic and foreign banking organizations",
+          "Kevin Warsh takes oath of office as chairman and a member of the Board of Governors of the Federal Reserve System, and t",
+          "圆桌对话：当AI进入产业前线：未来最稀缺的AI人才，会是谁？| 2026AI Partner·北京亦庄AI+产业大会",
+          "对话王小川：离开通用人工智能的主干道之后"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "科技与产业主题",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 2,
+          "source_tier_max": "official"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 2,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "industry": "算力基础设施",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 63,
+        "scores": {
+          "news_catalyst": 17,
+          "technical": 5,
+          "valuation": 19,
+          "quality_risk": 12,
+          "market_regime": 10
+        },
+        "signals": [
+          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4536,
+          4535,
+          4476,
+          4478
+        ],
+        "evidence_summaries": [
+          "Agencies publish resolution plan feedback letters for certain domestic and foreign banking organizations",
+          "Kevin Warsh takes oath of office as chairman and a member of the Board of Governors of the Federal Reserve System, and t",
+          "圆桌对话：当AI进入产业前线：未来最稀缺的AI人才，会是谁？| 2026AI Partner·北京亦庄AI+产业大会",
+          "对话王小川：离开通用人工智能的主干道之后"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "科技与产业主题",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 2,
+          "source_tier_max": "official"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 2,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh600036",
+        "name": "招商银行",
+        "industry": "银行",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 56,
+        "scores": {
+          "news_catalyst": 21,
+          "technical": 7,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4525,
+          4472,
+          4470,
+          4510
+        ],
+        "evidence_summaries": [
+          "2025年全国1%人口抽样调查主要数据公报",
+          "5月22日东方财富财经晚报（附新闻联播）",
+          "全球市场：美股三大指数收涨 道指续创新高 特斯拉涨近2% 中国金龙指数跌超2%",
+          "Kevin Warsh's real Fed 'regime change' may happen deep inside Wall Street's plumbing"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 2,
+          "source_tier_max": "official"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh601318",
+        "name": "中国平安",
+        "industry": "保险",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 56,
+        "scores": {
+          "news_catalyst": 21,
+          "technical": 7,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4525,
+          4472,
+          4470,
+          4510
+        ],
+        "evidence_summaries": [
+          "2025年全国1%人口抽样调查主要数据公报",
+          "5月22日东方财富财经晚报（附新闻联播）",
+          "全球市场：美股三大指数收涨 道指续创新高 特斯拉涨近2% 中国金龙指数跌超2%",
+          "Kevin Warsh's real Fed 'regime change' may happen deep inside Wall Street's plumbing"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 2,
+          "source_tier_max": "official"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "flat",
+          "score": 0,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      }
+    ]
+  },
+  "judgment_candidates": [
+    {
+      "candidate_id": "C02",
+      "topic": "科技与产业主题",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "2-6周",
+      "evidence_count": 6,
+      "independent_evidence_count": 2,
+      "high_relevance_article_count": 5,
+      "source_tier_max": "official",
+      "original_source_count": 2,
+      "mainstream_or_better_count": 13,
+      "articles": [
+        {
+          "id": 4536,
+          "title": "Agencies publish resolution plan feedback letters for certain domestic and foreign banking organizations",
+          "source": "Federal Reserve Board",
+          "summary": "Agencies publish resolution plan feedback letters for certain domestic and foreign banking organizations",
+          "source_tier": "official",
+          "content_quality_status": "full",
+          "published": "Fri, 22 May 2026 20:00:00 GMT",
+          "collection_date": "2026-05-23"
+        },
+        {
+          "id": 4535,
+          "title": "Kevin Warsh takes oath of office as chairman and a member of the Board of Governors of the Federal Reserve System, and the Federal Open Market Committee unanimously selects Warsh as its chairman",
+          "source": "Federal Reserve Board",
+          "summary": "Kevin Warsh takes oath of office as chairman and a member of the Board of Governors of the Federal Reserve System, and the Federal Open Market Committee unanimously selects Warsh a",
+          "source_tier": "official",
+          "content_quality_status": "full",
+          "published": "Fri, 22 May 2026 20:15:00 GMT",
+          "collection_date": "2026-05-23"
+        },
+        {
+          "id": 4476,
+          "title": "圆桌对话：当AI进入产业前线：未来最稀缺的AI人才，会是谁？| 2026AI Partner·北京亦庄AI+产业大会",
+          "source": "36氪",
+          "summary": "<p>稀缺的，到底是懂AI的人，还是懂业务的人？</p> <p>一个反直觉的判断——懂AI这件事正在快速贬值，而能在关键低频决策中做出判断的人，才是未来的稀缺品。高频重复的工作最容易被AI替代，但在打造爆品、建立品牌等低频高影响力的决策上，人的判断依然不可替代，企业AI转型的最大卡点也不是技术或数据，而是“想不到应用场景”， 当前AI的利润大头仍在基础设施层",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-23 15:14:29  +0800",
+          "collection_date": "2026-05-23"
+        },
+        {
+          "id": 4478,
+          "title": "对话王小川：离开通用人工智能的主干道之后",
+          "source": "36氪",
+          "summary": "<p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20260523/v2_1bcbe99c94144e16a662a304451ba9f8@2057308263_oswg935427oswg900oswg1027_img_000?x-oss-process=image/for",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-23 14:53:35  +0800",
+          "collection_date": "2026-05-23"
+        }
+      ],
+      "topic_article_count": 16,
+      "priority_score": 66,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C06",
+      "topic": "政策与监管",
+      "market_scope": [
+        "A股",
+        "港股",
+        "宏观"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 5,
+      "independent_evidence_count": 2,
+      "high_relevance_article_count": 3,
+      "source_tier_max": "official",
+      "original_source_count": 2,
+      "mainstream_or_better_count": 6,
+      "articles": [
+        {
+          "id": 4525,
+          "title": "2025年全国1%人口抽样调查主要数据公报",
+          "source": "国家统计局-最新发布",
+          "summary": "2025年全国1%人口抽样调查主要数据公报[1] 国家统计局2026年5月22日 全国1%人口抽样调查是一项重大国情国力调查。根据《全国人口普查条例》规定和《国务院办公厅关于开展2025年全国1%人口抽样调查的通知》（国办函〔2024〕71号）要求，我国进行了2025年全国1%人口抽样调查，调查的标准时点为2025年11月1日零时。按...",
+          "source_tier": "official",
+          "content_quality_status": "full",
+          "published": "2026-05-22 03:00:00",
+          "collection_date": "2026-05-23"
+        },
+        {
+          "id": 4472,
+          "title": "5月22日东方财富财经晚报（附新闻联播）",
+          "source": "东方财富网",
+          "summary": "<center><img src=\"https://np-newspic.dfcfw.com/download/D25057418069882820739_w1240h918.jpg\" width=\"580\" /></center><h3 class=\"emh3\"> <strong>热点聚焦</strong></h3><p> <strong>整治非法跨境证券",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Fri, 22 May 2026 21:00:00 +0800",
+          "collection_date": "2026-05-23"
+        },
+        {
+          "id": 4470,
+          "title": "全球市场：美股三大指数收涨 道指续创新高 特斯拉涨近2% 中国金龙指数跌超2%",
+          "source": "东方财富网",
+          "summary": "<p style=\"text-align: center;\"> <img src=\"https://np-newspic.dfcfw.com/download/D2D9089D34DDF2F825D4873574DC9640F7_w750h1762.jpg\" /></p><p><span style=\"font-weight: bold;\"> 美股市场：</",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 23 May 2026 06:15:20 +0800",
+          "collection_date": "2026-05-23"
+        },
+        {
+          "id": 4510,
+          "title": "Kevin Warsh's real Fed 'regime change' may happen deep inside Wall Street's plumbing",
+          "source": "CNBC",
+          "summary": "Warsh could guide to a smaller role in day-to-day markets, while also setting clearer rules for how and when it should intervene.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Fri, 22 May 2026 18:23:49 GMT",
+          "collection_date": "2026-05-23"
+        }
+      ],
+      "topic_article_count": 13,
+      "priority_score": 63,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C01",
+      "topic": "宏观与流动性",
+      "market_scope": [
+        "美股",
+        "A股",
+        "港股",
+        "美元",
+        "利率"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 4,
+      "independent_evidence_count": 2,
+      "high_relevance_article_count": 5,
+      "source_tier_max": "mainstream",
+      "original_source_count": 2,
+      "mainstream_or_better_count": 6,
+      "articles": [
+        {
+          "id": 4480,
+          "title": "厄尔尼诺现象下，哪些资产将受益？",
+          "source": "华尔街见闻",
+          "summary": "<p>2026年的天气变量，已经不只是气象新闻。国家气候中心4月监测预计，2026年5月进入厄尔尼诺状态，并在夏秋季形成一次中等及以上强度的厄尔尼诺事件，至少持续至今年年底。NOAA 5月预测也给出较高概率：2026年5月至7月发生厄尔尼诺的可能性在82%以上，持续到北半球冬季的概率为96%，11月发展成超强级别的概率超过30%。</p> <p>国盛证券分析",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 23 May 2026 17:42:42 +0800",
+          "collection_date": "2026-05-23"
+        },
+        {
+          "id": 4514,
+          "title": "Qualcomm's stock pop shows investors are 'waking up' to boom in AI devices",
+          "source": "CNBC",
+          "summary": "Qualcomm is on a big run, powered by investor bullishness that the company will be at the center of a boom in AI devices.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Fri, 22 May 2026 20:52:39 GMT",
+          "collection_date": "2026-05-23"
+        },
+        {
+          "id": 4513,
+          "title": "Trump skipping wedding of son Donald Jr. to Bettina Anderson",
+          "source": "CNBC",
+          "summary": "Donald Trump Jr. was previously married to Vanessa Trump, with whom he has five children. She disclosed this week that she has breast cancer.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Fri, 22 May 2026 21:04:00 GMT",
+          "collection_date": "2026-05-23"
+        },
+        {
+          "id": 4483,
+          "title": "美股和美债的“矛盾走势”，接下来谁会赢？",
+          "source": "华尔街见闻",
+          "summary": "<p>美股与美债正走向一场无法回避的碰撞。在通胀持续高企、美联储政策空间受限的背景下，股价与债券收益率同步攀升的局面难以为继，两者之间的裂口终将以其中一方的大幅回调来弥合。</p> <p>近日BCA Research首席策略师Arthur Budaghyan发布报告指出，当前美国股市涨势高度集中于科技板块，市场内部结构已明显恶化，而债券收益率的持续上行将成为",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 23 May 2026 15:22:12 +0800",
+          "collection_date": "2026-05-23"
+        }
+      ],
+      "topic_article_count": 6,
+      "priority_score": 50,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C03",
+      "topic": "汇率与大宗",
+      "market_scope": [
+        "汇率",
+        "商品",
+        "A股",
+        "港股"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 2,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 3,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 3,
+      "articles": [
+        {
+          "id": 4467,
+          "title": "西洽会上“闻”酒香：当传统白酒遇上风味精酿",
+          "source": "中新网",
+          "summary": "中新网重庆5月23日电 题：西洽会上“闻”酒香：当传统白酒遇上风味精酿",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 23 May 2026 17:46:58 +0800",
+          "collection_date": "2026-05-23"
+        },
+        {
+          "id": 4465,
+          "title": "评论：西洽会“西”引力何在？不惟其“新”，惟其“心”",
+          "source": "中新网",
+          "summary": "图为第八届西洽会现场，观众参观重庆馆。黄维正 摄 中新网重庆5月23日电(黄维正)5月21日至24日，第八届中国西部国际投资贸易洽谈会(以下简称“西洽会”)在重庆市两江新区悦来国际会展城举行。以“新西部、新制造、新服务”为主题，这场盛会吸引全球50个国家(地区)近1400家企业、机构走进重庆，洽谈合作。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 23 May 2026 17:48:50 +0800",
+          "collection_date": "2026-05-23"
+        },
+        {
+          "id": 4485,
+          "title": "全球金融治理的三重转向：效率、安全与韧性的新平衡",
+          "source": "FT中文网",
+          "summary": "陆一丰：在\"十五五\"开局之年，全球金融格局正从单一效率导向转向效率、安全、韧性并重，AI与数字经济已不再是\"选择题\"，而是金融行业的\"生存题\"。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Fri, 22 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-23"
+        }
+      ],
+      "topic_article_count": 3,
+      "priority_score": 40,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C07",
+      "topic": "其他观察",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 2,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 3,
+      "articles": [
+        {
+          "id": 4466,
+          "title": "“广东礼物”品牌在文博会发布 公布遴选标准",
+          "source": "中新网",
+          "summary": "中新网深圳5月23日电 (记者 程景伟)“广东礼物”品牌23日于深圳举行的第二十二届文博会上发布，现场公布“广东礼物”的遴选标准、2025年入选产品及2026年首推的“匠心培育系列”首批产品。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Sat, 23 May 2026 17:47:46 +0800",
+          "collection_date": "2026-05-23"
+        },
+        {
+          "id": 4486,
+          "title": "中俄关系的一边倒倾向",
+          "source": "FT中文网",
+          "summary": "加布耶夫：普京选择的路线，把俄罗斯困在了一段日益不平衡的双边关系中，俄罗斯可能变得日益依附中国。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Thu, 21 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-23"
+        },
+        {
+          "id": 4489,
+          "title": "从苦咖啡到全地形车：中俄经贸关系蓬勃发展",
+          "source": "FT中文网",
+          "summary": "2022年以来，中俄贸易额已经飙升至历史新高。主要原因是中国企业取代退出俄罗斯市场的西方供应商，满足了俄罗斯战时经济对各种物资的需求。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Thu, 21 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-23"
+        }
+      ],
+      "topic_article_count": 3,
+      "priority_score": 40,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C04",
+      "topic": "风险事件",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股",
+        "商品"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 2,
+      "independent_evidence_count": 0,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "mainstream",
+      "original_source_count": 0,
+      "mainstream_or_better_count": 2,
+      "articles": [
+        {
+          "id": 4481,
+          "title": "霍尔木兹海峡的“不可能三角”",
+          "source": "华尔街见闻",
+          "summary": "<p>全球市场正在同时押注三个相互矛盾的命题——风险溢价处于20年低位、石油库存即将告急、海峡重开遥遥无期。美银美林警告，这一\"不可能三角\"意味着市场严重低估了需求破坏风险。</p> <p>据追风交易台，美银美林策略师Sebastian Raedler等在5月22日发布的报告中指出，自今年2月底伊朗战争爆发以来，欧洲股市仅下跌2%，全球股市则上涨4%并创历史",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 23 May 2026 16:48:47 +0800",
+          "collection_date": "2026-05-23"
+        },
+        {
+          "id": 4469,
+          "title": "泛大湾区交通行业可信数据空间联盟在广州成立",
+          "source": "中新网",
+          "summary": "中新网广州5月23日电 (记者 蔡敏婕)泛大湾区交通行业可信数据空间联盟23日在广州成立。该联盟汇聚广东、湖南、广西、福建、江西、海南六省区60余家单位，旨在打破省界数据壁垒，在安全合规前提下推动跨省(区)出行信息实时共享与预警响应协同，从根本上解决信息不连贯、标准不统一等长期影响公众出行的痛点问题。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Sat, 23 May 2026 17:36:39 +0800",
+          "collection_date": "2026-05-23"
+        }
+      ],
+      "topic_article_count": 2,
+      "priority_score": 36,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C05",
+      "topic": "财报与公司经营",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 2,
+      "independent_evidence_count": 0,
+      "high_relevance_article_count": 3,
+      "source_tier_max": "mainstream",
+      "original_source_count": 0,
+      "mainstream_or_better_count": 3,
+      "articles": [
+        {
+          "id": 4474,
+          "title": "5月22日晚间沪深上市公司重大事项公告最新快递",
+          "source": "东方财富网",
+          "summary": "<p> 沪深两市多家上市公司5月22日晚间发布公司公告，以下为重要公告汇总。</p><p> <strong>【品大事】</strong></p><p> <strong><span id=\"stock_0.002185\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002185\">华",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Fri, 22 May 2026 19:33:20 +0800",
+          "collection_date": "2026-05-23"
+        },
+        {
+          "id": 4482,
+          "title": "叮咚买菜等待并入美团，前置仓仍在贡献增长",
+          "source": "华尔街见闻",
+          "summary": "<p style=\"text-align: left;\">叮咚买菜交出了美团宣布收购其中国业务后的首份财报。</p> <p style=\"text-align: left;\">一季度，叮咚买菜GMV为63.33亿元，同比增长6.3%；总营收58.93亿元，同比增长7.5%；连续第9个季度实现GMV和收入同比增长。</p> <p style=\"text-ali",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 23 May 2026 15:24:17 +0800",
+          "collection_date": "2026-05-23"
+        },
+        {
+          "id": 4473,
+          "title": "5月22日晚间上市公司利好消息一览(附名单)",
+          "source": "东方财富网",
+          "summary": "<p> 沪深两市多家上市公司5月22日晚间发布重要公告，以下为利好的消息汇总：</p><p> <strong><span id=\"stock_0.002185\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002185\">华天科技</a></span><span id=\"quote",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Fri, 22 May 2026 20:35:44 +0800",
+          "collection_date": "2026-05-23"
+        }
+      ],
+      "topic_article_count": 3,
+      "priority_score": 36,
+      "high_confidence_topic": false
+    }
+  ],
+  "data_quality_stats": {
+    "counts": {
+      "full": 36,
+      "partial": 9,
+      "summary_only": 1,
+      "other": 0
+    },
+    "ratios": {
+      "full": 78.26086956521739,
+      "partial": 19.565217391304348,
+      "summary_only": 2.1739130434782608,
+      "other": 0.0
+    },
+    "total": 46
+  },
+  "backtest_ready": true,
+  "backtest_generated_at": "2026-05-23T18:40:46.623162",
+  "quality_score": 80.0,
+  "quality_stats": {
+    "has_realtime_data": true,
+    "data_age_hours": 27.6796173625,
+    "citation_count": 14,
+    "verified_claims": 1,
+    "total_claims": 1,
+    "realtime_verified_claims": 1,
+    "realtime_total_claims": 1,
+    "news_fact_claims": 1,
+    "analytical_judgment_count": 0,
+    "fabrication_detected": false,
+    "watchlist_promoted_in_narrative_count": 0,
+    "verification_boundary_overclaim_count": 0,
+    "implausible_signals": {
+      "over_precision_count": 0,
+      "rounded_ratio": 0.0,
+      "cross_asset_repeated_value_count": 0
+    }
+  },
+  "quality_issues": [
+    "❌ 报告篇幅较长，但可验证断言覆盖过少"
+  ],
+  "quality_warnings": [
+    "⚠️ 数据更新于27.7小时前,时效性较差"
+  ],
+  "enhanced_context_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-05/2026-05-23/metadata/evening_enhanced-context_markdown-report_deepseek.json",
+  "session": "evening",
+  "session_time": "2026-05-23 18:40:46"
+}

@@ -103,6 +103,68 @@ def _extract_topic_headers(report_text: str) -> List[str]:
     ]
 
 
+def _extract_recommendation_section(report_text: str) -> str:
+    match = re.search(r'##\s+.*建议(.*?)(?:\n##\s+|\Z)', report_text, flags=re.S)
+    return match.group(1) if match else ''
+
+
+def _extract_recommendation_blocks(recommendation_section: str) -> List[str]:
+    blocks: List[str] = []
+    current: List[str] = []
+    for raw_line in recommendation_section.splitlines():
+        line = raw_line.rstrip()
+        stripped = line.strip()
+        if not stripped:
+            if current:
+                current.append('')
+            continue
+        if re.match(r'^\s*[-*]\s+', line):
+            if current:
+                blocks.append('\n'.join(current).strip())
+            current = [line]
+            continue
+        if current:
+            current.append(line)
+    if current:
+        blocks.append('\n'.join(current).strip())
+    return blocks
+
+
+def _watchlist_promotion_issues(report_text: str, stock_recommendations: Optional[List[Dict[str, Any]]]) -> List[str]:
+    if not stock_recommendations:
+        return []
+    recommendation_section = _extract_recommendation_section(report_text)
+    if not recommendation_section:
+        return []
+    strong_action_words = ('核心配置', '重点配置', '直接买入', '可执行买点', '立即加仓', '核心受益')
+    recommendation_blocks = _extract_recommendation_blocks(recommendation_section)
+    issues = []
+    for item in stock_recommendations:
+        name = str(item.get('name') or '').strip()
+        symbol = str(item.get('symbol') or '').strip()
+        if not name and not symbol:
+            continue
+        if item.get('actionability_passed'):
+            continue
+        matched_blocks = [
+            block for block in recommendation_blocks
+            if (name and name in block) or (symbol and symbol in block)
+        ]
+        if any(word in block for block in matched_blocks for word in strong_action_words):
+                issues.append(f"❌ {name or symbol} 属于观察/非可行动层级，却在建议段落被写成明确动作建议")
+    return issues
+
+
+def _has_verification_boundary_overclaim(report_text: str, realtime_claims: Optional[List], news_claims: Optional[List]) -> bool:
+    narrative = report_text
+    overclaim_phrases = ('整份报告已验证', '整篇报告已验证', '整份thesis已验证', '整篇thesis已验证', '整份报告高可信已验证')
+    if not any(phrase in narrative for phrase in overclaim_phrases):
+        return False
+    realtime_total = len(realtime_claims) if realtime_claims is not None else 0
+    news_total = len(news_claims) if news_claims is not None else 0
+    return realtime_total + news_total <= 4
+
+
 def _data_integrity_statement_passed(report_text: str, data_quality_stats: Optional[Dict[str, Any]]) -> bool:
     if not data_quality_stats:
         return True
@@ -167,6 +229,8 @@ def check_report_quality_v2(
     claim_coverage_score = 0
     narrative_consistency_passed = True
     data_integrity_statement_passed = _data_integrity_statement_passed(report_text, data_quality_stats)
+    watchlist_promoted_in_narrative_count = 0
+    verification_boundary_overclaim_count = 0
 
     # ============================================================
     # 1. 准确性评分 (60分) - 核心指标
@@ -381,6 +445,12 @@ def check_report_quality_v2(
         narrative_consistency_passed = False
         issues.append(f"❌ 正文出现结构化推荐层未支持的股票代码: {', '.join(unsupported_stock_mentions)}")
 
+    watchlist_promotion_issues = _watchlist_promotion_issues(report_text, stock_recommendations)
+    if watchlist_promotion_issues:
+        narrative_consistency_passed = False
+        watchlist_promoted_in_narrative_count = len(watchlist_promotion_issues)
+        issues.extend(watchlist_promotion_issues)
+
     high_confidence_topics = _high_confidence_topics(judgment_candidates)
     if high_confidence_topics:
         mentioned_topics = set(_extract_topic_headers(report_text))
@@ -396,6 +466,11 @@ def check_report_quality_v2(
 
     if not data_integrity_statement_passed:
         issues.append("❌ 数据质量说明与真实文章分布不一致")
+
+    if _has_verification_boundary_overclaim(report_text, realtime_claims, news_claims):
+        verification_boundary_overclaim_count = 1
+        narrative_consistency_passed = False
+        issues.append("❌ 把局部已验证断言扩写成整份报告已验证，超出了事实核查边界")
 
     # ============================================================
     # 6. 确保得分在合理范围
@@ -435,8 +510,13 @@ def check_report_quality_v2(
             'citation_count': citation_count,
             'verified_claims': sum(1 for c in realtime_claims if c.verified) if realtime_claims is not None else 0,
             'total_claims': len(realtime_claims) if realtime_claims is not None else 0,
+            'realtime_verified_claims': sum(1 for c in realtime_claims if c.verified) if realtime_claims is not None else 0,
+            'realtime_total_claims': len(realtime_claims) if realtime_claims is not None else 0,
             'news_fact_claims': len(news_claims) if news_claims is not None else 0,
-            'fabrication_detected': fabrication_detected
+            'analytical_judgment_count': 0,
+            'fabrication_detected': fabrication_detected,
+            'watchlist_promoted_in_narrative_count': watchlist_promoted_in_narrative_count,
+            'verification_boundary_overclaim_count': verification_boundary_overclaim_count,
         },
         'timestamp': datetime.now().isoformat()
     }

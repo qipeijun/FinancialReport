@@ -142,9 +142,18 @@ def score_investment_relevance(article: Dict[str, Any]) -> str:
 
 def infer_topic(article: Dict[str, Any]) -> Tuple[str, List[str], str]:
     text = f"{article.get('title', '')} {article.get('summary', '')} {article.get('content', '')}".lower()
-    for topic, config in TOPIC_RULES:
-        if any(keyword.lower() in text for keyword in config['keywords']):
-            return topic, config['markets'], config['time_horizon']
+    best_match: Tuple[int, int, str, List[str], str] | None = None
+    for index, (topic, config) in enumerate(TOPIC_RULES):
+        matches = sum(1 for keyword in config['keywords'] if keyword.lower() in text)
+        if matches <= 0:
+            continue
+        # 命中数优先，其次保留既有 topic 顺序作为稳定 tie-breaker。
+        score = (matches, -index)
+        if best_match is None or score > (best_match[0], best_match[1]):
+            best_match = (matches, -index, topic, config['markets'], config['time_horizon'])
+    if best_match is not None:
+        _, _, topic, markets, time_horizon = best_match
+        return topic, markets, time_horizon
     return '其他观察', ['A股', '港股', '美股'], '1-2周'
 
 
@@ -197,7 +206,17 @@ def build_judgment_candidates(
         )
         top_items = items[:4]
         source_names = sorted({item.get('source') or '未知来源' for item in items})
-        original_sources = sum(1 for item in items if item.get('is_original_source'))
+        original_source_names = {
+            item.get('source') or '未知来源'
+            for item in items
+            if item.get('is_original_source')
+        }
+        mainstream_or_better_count = sum(
+            1
+            for item in items
+            if SOURCE_TIER_RANK.get(item.get('source_tier', 'mainstream'), 0) >= SOURCE_TIER_RANK['mainstream']
+        )
+        original_sources = len(original_source_names)
         high_relevance_article_count = sum(
             1 for item in items if item.get('investment_relevance') == 'high'
         )
@@ -207,13 +226,14 @@ def build_judgment_candidates(
             'market_scope': top_items[0].get('market_scope', ['A股', '港股']),
             'time_horizon': top_items[0].get('time_horizon', '1-2周'),
             'evidence_count': len(source_names),
-            'independent_evidence_count': original_sources or min(len(source_names), 1),
+            'independent_evidence_count': original_sources,
             'high_relevance_article_count': high_relevance_article_count,
             'source_tier_max': max(
                 (item.get('source_tier', 'mainstream') for item in items),
                 key=lambda tier: SOURCE_TIER_RANK.get(tier, 0),
             ),
             'original_source_count': original_sources,
+            'mainstream_or_better_count': mainstream_or_better_count,
             'articles': [
                 {
                     'id': item.get('id'),
@@ -239,6 +259,7 @@ def build_judgment_candidates(
             and candidate['independent_evidence_count'] >= 2
             and candidate['evidence_count'] >= 2
             and candidate['high_relevance_article_count'] >= 1
+            and candidate['mainstream_or_better_count'] >= 1
         )
         candidates.append(candidate)
 
@@ -396,8 +417,58 @@ def build_retry_feedback(quality_result: Dict[str, Any]) -> str:
     problems = (issues + warnings)[:6]
     if not problems:
         return ''
+    instructions: List[str] = []
+
+    if any('目标涨幅' in item or '目标价格' in item for item in problems):
+        instructions.append("严禁在报告中出现“目标涨幅”或“目标价”类表述；若已写出，请删除对应整段建议。")
+
+    watchlist_symbols = sorted({
+        match.group(1)
+        for item in problems
+        for match in [re.search(r'❌\s+(.+?)\s+属于观察/非可行动层级', item)]
+        if match
+    })
+    if watchlist_symbols:
+        instructions.append(
+            f"以下股票在系统中属于观察/非可行动层级，请改写为“继续观察”或“等待验证”：{', '.join(watchlist_symbols)}。"
+        )
+
+    unsupported_symbols = sorted({
+        symbol.strip()
+        for item in problems
+        if '未支持的股票代码' in item
+        for symbol in item.split(':', 1)[-1].split(',')
+        if symbol.strip()
+    })
+    if unsupported_symbols:
+        instructions.append(
+            f"以下标的未在系统许可列表中，请从正文删除所有相关建议：{', '.join(unsupported_symbols)}。"
+        )
+
+    unsupported_topics = sorted({
+        topic.strip()
+        for item in problems
+        if '未进入高置信候选的主题标题' in item
+        for topic in item.split(':', 1)[-1].split(',')
+        if topic.strip()
+    })
+    if unsupported_topics:
+        instructions.append(
+            f"以下主题未进入系统高置信候选，请删除对应主题段落或改写为观察项：{', '.join(unsupported_topics)}。"
+        )
+
+    if any('事实核查边界' in item or '整份报告已验证' in item for item in problems):
+        instructions.append("不得使用“整份报告已验证”“整篇 thesis 已验证”等超出事实核查边界的表述。")
+
+    if any('数据质量说明与真实文章分布不一致' in item for item in problems):
+        instructions.append("请严格按照系统提供的 data_quality_stats 描述数据质量分布，不要自行改写比例。")
+
     joined = '\n'.join(f"- {item}" for item in problems)
+    instruction_block = '\n'.join(f"- {item}" for item in instructions)
+    prefix = "请先按以下修正规则重写，再输出完整结果：\n"
+    if instruction_block:
+        prefix += f"{instruction_block}\n"
     return (
-        '上一次输出存在以下问题，请只保留高置信度判断，并把证据不足内容放入观察项：\n'
+        f'{prefix}上一次输出存在以下问题，请只保留高置信度判断，并把证据不足内容放入观察项：\n'
         f'{joined}'
     )

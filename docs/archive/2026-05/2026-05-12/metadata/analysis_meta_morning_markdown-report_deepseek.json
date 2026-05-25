@@ -1,0 +1,1559 @@
+{
+  "date_range": {
+    "start": "2026-05-12",
+    "end": "2026-05-12"
+  },
+  "articles_used": 47,
+  "chunks": 72,
+  "model_usage": {
+    "model": "deepseek-v4-pro",
+    "provider": "deepseek",
+    "prompt_tokens": 50366,
+    "completion_tokens": 2052,
+    "total_tokens": 52418
+  },
+  "quality_check": {
+    "score": 100,
+    "passed": true,
+    "accuracy_score": 60.0,
+    "timeliness_score": 20,
+    "reliability_score": 20,
+    "claim_coverage_score": 20,
+    "narrative_consistency_passed": true,
+    "data_integrity_statement_passed": true,
+    "issues": [],
+    "warnings": [],
+    "stats": {
+      "has_realtime_data": true,
+      "data_age_hours": 0.04609054694444445,
+      "citation_count": 16,
+      "verified_claims": 4,
+      "total_claims": 4,
+      "news_fact_claims": 2,
+      "fabrication_detected": false
+    },
+    "timestamp": "2026-05-12T09:24:45.926394"
+  },
+  "verification_enabled": true,
+  "output_mode": "markdown-report",
+  "live_data_degraded": false,
+  "stock_recommendations": [
+    {
+      "symbol": "sh603019",
+      "name": "中科曙光",
+      "industry": "算力基础设施",
+      "candidate_confidence": "medium",
+      "base_grade": "强关注",
+      "grade": "观察",
+      "grade_caps": [
+        "no_direct_stock_evidence",
+        "score_gate_not_met",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 84,
+      "scores": {
+        "news_catalyst": 20,
+        "technical": 25,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 10
+      },
+      "signals": [
+        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_article_ids": [
+        3839,
+        3859,
+        3826,
+        3844
+      ],
+      "evidence_summaries": [
+        "硬氪专访 | 拿到行业最大单笔融资后，余轶南说万里长征才走了第一步",
+        "Hantavirus cases spark brief surge in pharma and biotech stocks — here’s why trading is so volatile",
+        "算力网、物流网——“六张网”何以成扩大内需发力点",
+        "比鞭打更困难的是反霸凌教育"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 3,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 2,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "industry": "算力基础设施",
+      "candidate_confidence": "medium",
+      "base_grade": "强关注",
+      "grade": "观察",
+      "grade_caps": [
+        "risk_flag_present"
+      ],
+      "total_score": 81,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 25,
+        "valuation": 19,
+        "quality_risk": 9,
+        "market_regime": 9
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构"
+      ],
+      "risks": [
+        "诉讼",
+        "新闻风险信号: 诉讼",
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        3847,
+        3830,
+        3839
+      ],
+      "evidence_summaries": [
+        "开启AI大时代的投资！微软对OpenAI持股“浮盈”1220亿美元",
+        "两融余额突破2.8万亿元 部分券商增设115%即时平仓线",
+        "硬氪专访 | 拿到行业最大单笔融资后，余轶南说万里长征才走了第一步"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 3,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 2,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600941",
+      "name": "中国移动",
+      "industry": "通信运营",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "关注",
+      "grade_caps": [],
+      "total_score": 71,
+      "scores": {
+        "news_catalyst": 15,
+        "technical": 20,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "MACD 维持多头结构",
+        "估值层已纳入行业相对比较"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        3826
+      ],
+      "evidence_summaries": [
+        "算力网、物流网——“六张网”何以成扩大内需发力点"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh688981",
+      "name": "中芯国际",
+      "industry": "半导体",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "risk_flag_present"
+      ],
+      "total_score": 70,
+      "scores": {
+        "news_catalyst": 17,
+        "technical": 24,
+        "valuation": 17,
+        "quality_risk": 4,
+        "market_regime": 8
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "MACD 维持多头结构",
+        "估值层已纳入行业相对比较"
+      ],
+      "risks": [
+        "立案",
+        "减持",
+        "处罚",
+        "亏损",
+        "调查",
+        "退市",
+        "新闻风险信号: 立案",
+        "新闻风险信号: 减持",
+        "新闻风险信号: 处罚",
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        3835,
+        3831
+      ],
+      "evidence_summaries": [
+        "8点1氪丨美国总统特朗普：非常期待中国之行 ；OPPO发布母亲节文案事件问责通告；快手计划分拆可灵AI，融资20亿美元",
+        "5月12日国内四大证券报纸、重要财经媒体头版头条内容精华摘要"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 1,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh601318",
+      "name": "中国平安",
+      "industry": "保险",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 64,
+      "scores": {
+        "news_catalyst": 15,
+        "technical": 20,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构",
+        "估值层已纳入行业相对比较"
+      ],
+      "risks": [],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        3830
+      ],
+      "evidence_summaries": [
+        "两融余额突破2.8万亿元 部分券商增设115%即时平仓线"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "flat",
+        "score": 0,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600036",
+      "name": "招商银行",
+      "industry": "银行",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 59,
+      "scores": {
+        "news_catalyst": 22,
+        "technical": 9,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        3835,
+        3843,
+        3831,
+        3837
+      ],
+      "evidence_summaries": [
+        "8点1氪丨美国总统特朗普：非常期待中国之行 ；OPPO发布母亲节文案事件问责通告；快手计划分拆可灵AI，融资20亿美元",
+        "谷歌“注水”利润？当 AI 利润看起来最好的时候，恰恰是最该警惕的时候",
+        "5月12日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "氪星晚报 ｜千问与淘宝打通，正式上线AI购物；泡泡玛特将在5月13日举行2026年一季度业务更新电话会"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 3,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600519",
+      "name": "贵州茅台",
+      "industry": "白酒",
+      "candidate_confidence": "low",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 53,
+      "scores": {
+        "news_catalyst": 17,
+        "technical": 9,
+        "valuation": 17,
+        "quality_risk": 4,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "立案",
+        "退市",
+        "调查",
+        "亏损",
+        "新闻风险信号: 立案",
+        "新闻风险信号: 退市",
+        "新闻风险信号: 调查",
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        3831,
+        3837
+      ],
+      "evidence_summaries": [
+        "5月12日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "氪星晚报 ｜千问与淘宝打通，正式上线AI购物；泡泡玛特将在5月13日举行2026年一季度业务更新电话会"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "flat",
+        "score": 0,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    }
+  ],
+  "score_distribution": {
+    "strong_focus": 0,
+    "focus": 1,
+    "watch": 6,
+    "avoid": 0
+  },
+  "scoring_config": {
+    "market": "CN",
+    "style": "balanced",
+    "lookback_days": 60,
+    "pool_mode": "strict",
+    "theme_mapping_max_grade": "watch",
+    "value_acceptance_enabled": true,
+    "industry_trend_enabled": true
+  },
+  "decision_views": {
+    "actionable_candidates": [
+      {
+        "symbol": "sh600941",
+        "name": "中国移动",
+        "industry": "通信运营",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "关注",
+        "grade_caps": [],
+        "total_score": 71,
+        "scores": {
+          "news_catalyst": 15,
+          "technical": 20,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "MACD 维持多头结构",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          3826
+        ],
+        "evidence_summaries": [
+          "算力网、物流网——“六张网”何以成扩大内需发力点"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "conditional_watchlist": [
+      {
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "industry": "算力基础设施",
+        "candidate_confidence": "medium",
+        "base_grade": "强关注",
+        "grade": "观察",
+        "grade_caps": [
+          "risk_flag_present"
+        ],
+        "total_score": 81,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 25,
+          "valuation": 19,
+          "quality_risk": 9,
+          "market_regime": 9
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构"
+        ],
+        "risks": [
+          "诉讼",
+          "新闻风险信号: 诉讼",
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_article_ids": [
+          3847,
+          3830,
+          3839
+        ],
+        "evidence_summaries": [
+          "开启AI大时代的投资！微软对OpenAI持股“浮盈”1220亿美元",
+          "两融余额突破2.8万亿元 部分券商增设115%即时平仓线",
+          "硬氪专访 | 拿到行业最大单笔融资后，余轶南说万里长征才走了第一步"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 3,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 2,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "industry": "半导体",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "risk_flag_present"
+        ],
+        "total_score": 70,
+        "scores": {
+          "news_catalyst": 17,
+          "technical": 24,
+          "valuation": 17,
+          "quality_risk": 4,
+          "market_regime": 8
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "MACD 维持多头结构",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [
+          "立案",
+          "减持",
+          "处罚",
+          "亏损",
+          "调查",
+          "退市",
+          "新闻风险信号: 立案",
+          "新闻风险信号: 减持",
+          "新闻风险信号: 处罚",
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_article_ids": [
+          3835,
+          3831
+        ],
+        "evidence_summaries": [
+          "8点1氪丨美国总统特朗普：非常期待中国之行 ；OPPO发布母亲节文案事件问责通告；快手计划分拆可灵AI，融资20亿美元",
+          "5月12日国内四大证券报纸、重要财经媒体头版头条内容精华摘要"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 1,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh601318",
+        "name": "中国平安",
+        "industry": "保险",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 64,
+        "scores": {
+          "news_catalyst": 15,
+          "technical": 20,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          3830
+        ],
+        "evidence_summaries": [
+          "两融余额突破2.8万亿元 部分券商增设115%即时平仓线"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "flat",
+          "score": 0,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh600519",
+        "name": "贵州茅台",
+        "industry": "白酒",
+        "candidate_confidence": "low",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 53,
+        "scores": {
+          "news_catalyst": 17,
+          "technical": 9,
+          "valuation": 17,
+          "quality_risk": 4,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "立案",
+          "退市",
+          "调查",
+          "亏损",
+          "新闻风险信号: 立案",
+          "新闻风险信号: 退市",
+          "新闻风险信号: 调查",
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_article_ids": [
+          3831,
+          3837
+        ],
+        "evidence_summaries": [
+          "5月12日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "氪星晚报 ｜千问与淘宝打通，正式上线AI购物；泡泡玛特将在5月13日举行2026年一季度业务更新电话会"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "flat",
+          "score": 0,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "stale_or_rejected": [
+      {
+        "symbol": "sh603019",
+        "name": "中科曙光",
+        "industry": "算力基础设施",
+        "candidate_confidence": "medium",
+        "base_grade": "强关注",
+        "grade": "观察",
+        "grade_caps": [
+          "no_direct_stock_evidence",
+          "score_gate_not_met",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 84,
+        "scores": {
+          "news_catalyst": 20,
+          "technical": 25,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 10
+        },
+        "signals": [
+          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_article_ids": [
+          3839,
+          3859,
+          3826,
+          3844
+        ],
+        "evidence_summaries": [
+          "硬氪专访 | 拿到行业最大单笔融资后，余轶南说万里长征才走了第一步",
+          "Hantavirus cases spark brief surge in pharma and biotech stocks — here’s why trading is so volatile",
+          "算力网、物流网——“六张网”何以成扩大内需发力点",
+          "比鞭打更困难的是反霸凌教育"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "科技与产业主题",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 3,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 2,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh600036",
+        "name": "招商银行",
+        "industry": "银行",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 59,
+        "scores": {
+          "news_catalyst": 22,
+          "technical": 9,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          3835,
+          3843,
+          3831,
+          3837
+        ],
+        "evidence_summaries": [
+          "8点1氪丨美国总统特朗普：非常期待中国之行 ；OPPO发布母亲节文案事件问责通告；快手计划分拆可灵AI，融资20亿美元",
+          "谷歌“注水”利润？当 AI 利润看起来最好的时候，恰恰是最该警惕的时候",
+          "5月12日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "氪星晚报 ｜千问与淘宝打通，正式上线AI购物；泡泡玛特将在5月13日举行2026年一季度业务更新电话会"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 3,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ]
+  },
+  "judgment_candidates": [
+    {
+      "candidate_id": "C05",
+      "topic": "科技与产业主题",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "2-6周",
+      "evidence_count": 8,
+      "independent_evidence_count": 3,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "mainstream",
+      "original_source_count": 3,
+      "articles": [
+        {
+          "id": 3839,
+          "title": "硬氪专访 | 拿到行业最大单笔融资后，余轶南说万里长征才走了第一步",
+          "source": "36氪",
+          "summary": "<p>作者&nbsp;|&nbsp;邱晓芬</p> <p>编辑&nbsp;|&nbsp;袁斯来</p> <p>余轶南似乎是那种总能提前踩中风口的冒险家。</p> <p>他总在追逐更新、更刺激，早期甚至带着些浪漫想象。博士毕业后，他没有如很多同侪一般，进入学术圈，过上平稳安定的一生，而是冲入互联网浪潮，2015年，他又因为余凯一句“我们一起去做 AI 芯片吧？",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-11 10:38:17  +0800",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3859,
+          "title": "Hantavirus cases spark brief surge in pharma and biotech stocks — here’s why trading is so volatile",
+          "source": "CNBC",
+          "summary": "The outbreak of Hantavirus on a cruise ship has led to biotech and pharmaceutical stocks surging on reports of firms developing vaccines.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 11 May 2026 16:29:52 GMT",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3826,
+          "title": "算力网、物流网——“六张网”何以成扩大内需发力点",
+          "source": "中新网",
+          "summary": "水网、新型电网、算力网、新一代通信网、城市地下管网、物流网——",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 12 May 2026 08:09:32 +0800",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3844,
+          "title": "比鞭打更困难的是反霸凌教育",
+          "source": "FT中文网",
+          "summary": "徐海娜：因为现代社会中的很多霸凌，并不只是源于恶意，它常常开始于一种更隐蔽的东西，就是我们如何对待人与人之间的差异。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 11 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-12"
+        }
+      ],
+      "topic_article_count": 11,
+      "priority_score": 66,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C01",
+      "topic": "政策与监管",
+      "market_scope": [
+        "A股",
+        "港股",
+        "宏观"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 7,
+      "independent_evidence_count": 3,
+      "high_relevance_article_count": 6,
+      "source_tier_max": "mainstream",
+      "original_source_count": 3,
+      "articles": [
+        {
+          "id": 3835,
+          "title": "8点1氪丨美国总统特朗普：非常期待中国之行 ；OPPO发布母亲节文案事件问责通告；快手计划分拆可灵AI，融资20亿美元",
+          "source": "36氪",
+          "summary": "<h2>今日热点导览</h2> <p>天舟十号货运飞船与空间站组合体完成交会对接</p> <p>国家广播电视总局：4月经备案国产电视动画片51部、9659分钟</p> <p>任天堂股价因Switch 2游戏前景不佳大幅下跌</p> <p><strong>千问与淘宝打通，正式上线AI购物</strong></p> <h2>TOP3大新闻</h2> <p><st",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-12 08:16:27  +0800",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3843,
+          "title": "谷歌“注水”利润？当 AI 利润看起来最好的时候，恰恰是最该警惕的时候",
+          "source": "FT中文网",
+          "summary": "陆媛：我们拆开了利润表，发现了一个反直觉真相：规则下巨头们构建了一个自循环增高的闭环，不是虚假，但确实有泡沫了。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 11 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3831,
+          "title": "5月12日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "source": "东方财富网",
+          "summary": "<p> 5月12日(星期二)，今日报刊头条主要内容精华如下：</p><h3 class=\"emh3\"> 中国证券报</h3><p> <a href=\"http://finance.eastmoney.com/a/202605113733408496.html\"><strong>央行发布 关于货币政策、利率、汇率等</strong></a></p><p> 中国",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 12 May 2026 06:03:05 +0800",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3837,
+          "title": "氪星晚报 ｜千问与淘宝打通，正式上线AI购物；泡泡玛特将在5月13日举行2026年一季度业务更新电话会",
+          "source": "36氪",
+          "summary": "<h2>大公司：</h2> <p><strong>百济神州：第一季度净利润为16.08亿元，同比扭亏为盈</strong></p> <p>36氪获悉，百济神州发布2026年一季度业绩报告。报告显示，2026年第一季度实现营业收入105.44亿元，同比增长31.0%；归属于上市公司股东的净利润为16.08亿元，上年同期亏损，同比扭亏为盈。业绩变动主要系产品收入",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-11 19:24:52  +0800",
+          "collection_date": "2026-05-12"
+        }
+      ],
+      "topic_article_count": 14,
+      "priority_score": 63,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C03",
+      "topic": "宏观与流动性",
+      "market_scope": [
+        "美股",
+        "A股",
+        "港股",
+        "美元",
+        "利率"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 5,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 3,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "articles": [
+        {
+          "id": 3855,
+          "title": "OpenAI trial: Nadella says Musk never raised concerns to him about Microsoft investment",
+          "source": "CNBC",
+          "summary": "Elon Musk named Microsoft as a defendant in his lawsuit against OpenAI",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 11 May 2026 23:30:35 GMT",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3849,
+          "title": "“大多头”Ed Yardeni：标普年底必破8000点，三年后破10000点！",
+          "source": "华尔街见闻",
+          "summary": "<p>强劲的企业盈利表现正推动标普500指数重返历史高位，华尔街资深投资策略师Ed Yardeni大幅上调了对美国股市的预测，预计该基准指数将在年底前突破8000点，并在三年后站上10000点大关。</p> <p>据彭博报道，<strong>Yardeni将其对标普500指数的年底目标价从7700点上调至8250点。这一目标价较上周五的收盘水平有近12%的上",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 12 May 2026 08:01:29 +0800",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3848,
+          "title": "AI的大瓶颈始终是：台积电",
+          "source": "华尔街见闻",
+          "summary": "<p style=\"text-align: left;\">科技巨头争相砸钱抢筹AI芯片，全球芯片制造能力正承受前所未有的压力，而这场供给紧张的最大受益者，指向同一个名字——台积电。</p> <p style=\"text-align: left;\">微软、Meta、Alphabet和亚马逊今年合计资本支出计划高达7250亿美元，其中大部分流向AI芯片采购。这股",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 12 May 2026 08:19:01 +0800",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3861,
+          "title": "China should stop hoarding food and fertiliser, says former World Bank chief",
+          "source": "BBC全球经济",
+          "summary": "David Malpass' comments come as US President Donald Trump and China's Xi Jinping are due to meet in Beijing.",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Tue, 12 May 2026 00:02:58 GMT",
+          "collection_date": "2026-05-12"
+        }
+      ],
+      "topic_article_count": 6,
+      "priority_score": 49,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C07",
+      "topic": "其他观察",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 2,
+      "independent_evidence_count": 2,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 2,
+      "articles": [
+        {
+          "id": 3840,
+          "title": "斯塔默已经无力自救",
+          "source": "FT中文网",
+          "summary": "罗伯特•施里姆斯利：英国首相宣称选民需要希望，但工党议员也需要希望，而他并未给予他们希望。他继续任职的最大理由是国家禁不起动荡，而这没有说服力。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 11 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3841,
+          "title": "斯塔默誓言“不会一走了之”",
+          "source": "FT中文网",
+          "summary": "上周工党在地方选举中遭遇惨败后，英国首相周一对党内议员发表重要讲话，称该党面临“非常危险”的政治对手，他不会离开。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 11 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3862,
+          "title": "British Steel nationalisation plans announced by Starmer",
+          "source": "BBC全球经济",
+          "summary": "The steelworks has been under government control for almost a year, but leglistation to nationalise it will be put forward this week.",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 11 May 2026 11:22:01 GMT",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3864,
+          "title": "Elon Musk and Tim Cook among CEOs expected to accompany Trump on China trip",
+          "source": "BBC全球经济",
+          "summary": "A total of 17 US executives are set to join the president on his visit, where he will meet his Chinese counterpart Xi Jinping.",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 11 May 2026 18:26:20 GMT",
+          "collection_date": "2026-05-12"
+        }
+      ],
+      "topic_article_count": 4,
+      "priority_score": 44,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C02",
+      "topic": "汇率与大宗",
+      "market_scope": [
+        "汇率",
+        "商品",
+        "A股",
+        "港股"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 3,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 3,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "articles": [
+        {
+          "id": 3846,
+          "title": "“量子英伟达”Rigetti一季度营收翻了三倍、但亏损扩大，量子计算商业化还要等多久",
+          "source": "华尔街见闻",
+          "summary": "<p style=\"text-align: left;\">营收翻了三倍，但“量子英伟达”Rigetti股价却在盘后下跌。</p> <p style=\"text-align: left;\">5月11日，量子计算公司Rigetti Computing美股盘后发布2026年一季度财报。</p> <p style=\"text-align: left;\"><stron",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 12 May 2026 08:40:21 +0800",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3825,
+          "title": "美股收盘：三大指数集体收涨，纳指、标普500指数再创新高",
+          "source": "中新网",
+          "summary": "美股收盘：三大指数集体收涨，纳指、标普500指数再创新高；芯片股又爆发，大型科技股多数下跌",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 12 May 2026 08:30:07 +0800",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3827,
+          "title": "美股三大指数集体收涨，纳指、标普500指数续创新高，芯片股多数上涨",
+          "source": "中新网",
+          "summary": "中新经纬5月12日电 美东时间周一，美股三大指数集体上涨，纳指、标普500指数续创盘中和收盘新高。截至收盘，道指涨0.19%，报49704.47点；纳指涨0.1%，报26274.13点；标普500指数涨0.19%，报7412.84点。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 12 May 2026 08:06:26 +0800",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3847,
+          "title": "开启AI大时代的投资！微软对OpenAI持股“浮盈”1220亿美元",
+          "source": "华尔街见闻",
+          "summary": "<p style=\"text-align: left;\">微软对OpenAI的早期押注，正在兑现为一笔改变科技格局的历史性回报。</p> <p style=\"text-align: left;\">5月12日，据彭博报道，微软内部规划文件显示，<strong>该公司曾将对OpenAI投资的目标回报设定为920亿美元。</strong>这批文件于本周一在联邦法庭",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 12 May 2026 08:24:04 +0800",
+          "collection_date": "2026-05-12"
+        }
+      ],
+      "topic_article_count": 5,
+      "priority_score": 43,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C04",
+      "topic": "财报与公司经营",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 3,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 2,
+      "source_tier_max": "mainstream",
+      "original_source_count": 0,
+      "articles": [
+        {
+          "id": 3830,
+          "title": "两融余额突破2.8万亿元 部分券商增设115%即时平仓线",
+          "source": "东方财富网",
+          "summary": "<p> 截至5月8日，A股两融余额站上2.8万亿元关口，杠杆资金加速布局科技主线。与此同时，<span id=\"stock_1.600958\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/1.600958\">东方证券</a></span><span id=\"quote_1.600958",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 12 May 2026 06:29:32 +0800",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3833,
+          "title": "折价约20%！力芯微控股股东拟转让10%股份引入战投 背后浮现东山精密等公司",
+          "source": "东方财富网",
+          "summary": "<p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.co",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 12 May 2026 00:44:11 +0800",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3838,
+          "title": "理想整车研发负责人刘立国：说理想不重视技术，是大大的误解",
+          "source": "36氪",
+          "summary": "<p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20260511/v2_45abe9e6e11a4260adccea3884e45ea0@6310690_oswg3765504oswg2408oswg1702_img_png?x-oss-process=image/qual",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-11 14:59:01  +0800",
+          "collection_date": "2026-05-12"
+        },
+        {
+          "id": 3828,
+          "title": "8月实施 自然保护地标识国家标准来了",
+          "source": "中新网",
+          "summary": "记者昨天从国家标准委了解到，《自然保护地标识通用要求》国家标准将于今年八月正式实施。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Tue, 12 May 2026 07:24:57 +0800",
+          "collection_date": "2026-05-12"
+        }
+      ],
+      "topic_article_count": 4,
+      "priority_score": 39,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C06",
+      "topic": "风险事件",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股",
+        "商品"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 1,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 0,
+      "articles": [
+        {
+          "id": 3829,
+          "title": "为全球能源市场提供“中国方案”！我国牵头制定5项天然气国际标准发布",
+          "source": "中新网",
+          "summary": "国际标准化组织近日正式发布由我国牵头制定的5项天然气领域国际标准。将通过精准的量化指标，为全球能源市场提供降本增效与安全保障的“中国方案”。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 12 May 2026 07:22:59 +0800",
+          "collection_date": "2026-05-12"
+        }
+      ],
+      "topic_article_count": 1,
+      "priority_score": 33,
+      "high_confidence_topic": false
+    }
+  ],
+  "data_quality_stats": {
+    "counts": {
+      "full": 36,
+      "partial": 9,
+      "summary_only": 0,
+      "other": 2
+    },
+    "ratios": {
+      "full": 76.59574468085107,
+      "partial": 19.148936170212767,
+      "summary_only": 0.0,
+      "other": 4.25531914893617
+    },
+    "total": 47
+  },
+  "backtest_ready": true,
+  "backtest_generated_at": "2026-05-12T09:24:45.926425",
+  "enhanced_context_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-05/2026-05-12/metadata/morning_enhanced-context_markdown-report_deepseek.json",
+  "session": "morning",
+  "session_time": "2026-05-12 09:24:45"
+}

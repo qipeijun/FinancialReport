@@ -233,6 +233,7 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
         'symbol', 'name', 'grade', 'base_grade', 'grade_caps', 'total_score', 'scores',
         'data_completeness', 'candidate_confidence', 'evidence_strength', 'industry_trend',
         'stale_opportunity_flag', 'crowding_flag', 'fresh_evidence_flag',
+        'actionability_passed', 'actionability_reasons',
     }
     issues = []
     warnings = []
@@ -247,6 +248,9 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
     theme_only_overgraded_count = 0
     missing_forward_fields_count = 0
     decision_views_schema_passed = False
+    actionable_count = 0
+    actionable_with_fresh_evidence_count = 0
+    actionable_without_independent_confirmation_count = 0
     allowed_grade_caps = {
         'insufficient_evidence',
         'no_direct_stock_evidence',
@@ -262,6 +266,9 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
     )
     scoring_config = metadata.get('scoring_config') or normalized.get('scoring_config') or {}
     expected_decision_view_keys = {'actionable_candidates', 'conditional_watchlist', 'stale_or_rejected'}
+    recommendation_by_symbol = {
+        item.get('symbol'): item for item in recommendations if item.get('symbol')
+    }
 
     for item in recommendations:
         missing = sorted(required_fields - set(item.keys()))
@@ -340,6 +347,26 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
                 symbol = item.get('symbol')
                 if symbol not in known_symbols:
                     decision_view_issues.append(f'decision_views.{key} 包含未知 symbol: {symbol}')
+                    continue
+                full_item = recommendation_by_symbol.get(symbol) or {}
+                if key == 'actionable_candidates':
+                    actionable_count += 1
+                    if full_item.get('fresh_evidence_flag'):
+                        actionable_with_fresh_evidence_count += 1
+                    if int((full_item.get('evidence_strength') or {}).get('independent_evidence_count') or 0) < 1:
+                        actionable_without_independent_confirmation_count += 1
+                    if not full_item.get('actionability_passed'):
+                        decision_view_issues.append(f'{symbol} 未通过 actionability 门槛却进入 actionable_candidates')
+                    if not full_item.get('fresh_evidence_flag'):
+                        decision_view_issues.append(f'{symbol} fresh_evidence_flag=false 不得进入 actionable_candidates')
+                    if (
+                        full_item.get('source_type') == 'theme_mapping'
+                        and int((full_item.get('evidence_strength') or {}).get('direct_mentions') or 0) < 1
+                    ):
+                        decision_view_issues.append(f'{symbol} theme_mapping 且无 direct evidence，不得进入 actionable_candidates')
+                elif key == 'conditional_watchlist':
+                    if full_item.get('stale_opportunity_flag') or full_item.get('crowding_flag') or full_item.get('grade') == '回避':
+                        decision_view_issues.append(f'{symbol} 满足 stale/rejected 条件，不得进入 conditional_watchlist')
         if decision_view_issues:
             issues.extend(decision_view_issues)
         else:
@@ -360,6 +387,9 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
         'strong_focus_with_incomplete': strong_focus_with_incomplete,
         'missing_grade_caps_count': missing_grade_caps_count,
         'missing_forward_fields_count': missing_forward_fields_count,
+        'actionable_count': actionable_count,
+        'actionable_with_fresh_evidence_count': actionable_with_fresh_evidence_count,
+        'actionable_without_independent_confirmation_count': actionable_without_independent_confirmation_count,
         'candidate_pool_low_quality': candidate_pool_low_quality,
         'output_json_schema_passed': output_json_schema_passed,
         'decision_views_schema_passed': decision_views_schema_passed,
@@ -431,6 +461,7 @@ def analyze_report_quality(
     ]
     if realtime_data is None:
         suspicious_realtime_phrases = []
+    quality_stats = quality_result.get('stats') or {}
 
     payload = {
         'report_path': str(report_path),
@@ -464,6 +495,15 @@ def analyze_report_quality(
         'stock_scoring': validate_stock_recommendations_payload(export_payload) if mode == 'markdown-report' else {},
         'passed': all(structure.values()) and quality_result.get('passed', False) and not quality_result.get('issues'),
     }
+    if mode == 'markdown-report':
+        stock_scoring = payload['stock_scoring']
+        payload['actionability'] = {
+            'actionable_count': stock_scoring.get('actionable_count', 0),
+            'actionable_with_fresh_evidence_count': stock_scoring.get('actionable_with_fresh_evidence_count', 0),
+            'actionable_without_independent_confirmation_count': stock_scoring.get('actionable_without_independent_confirmation_count', 0),
+            'watchlist_promoted_in_narrative_count': quality_stats.get('watchlist_promoted_in_narrative_count', 0),
+            'verification_boundary_overclaim_count': quality_stats.get('verification_boundary_overclaim_count', 0),
+        }
     if mode == 'markdown-report':
         payload['passed'] = payload['passed'] and payload['stock_scoring'].get('passed', True)
     return payload

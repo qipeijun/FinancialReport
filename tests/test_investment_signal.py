@@ -8,6 +8,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 
 from scripts.utils.investment_signal import (
+    build_retry_feedback,
     build_judgment_candidates,
     enforce_judgment_rules,
 )
@@ -89,3 +90,60 @@ def test_enforce_judgment_rules_degrades_weak_thesis_to_watch_item():
     assert result['theses'] == []
     assert result['degraded'] is True
     assert len(result['watch_items']) == 1
+
+
+def test_build_judgment_candidates_does_not_treat_aggregators_as_independent_confirmation():
+    articles = [
+        {
+            'id': 1,
+            'title': '芯片股继续走强',
+            'summary': '聚合站点跟踪芯片板块表现。',
+            'content': '芯片板块延续走强，市场继续交易 AI 算力。',
+            'source': 'ZeroHedge',
+            'source_tier': 'aggregator',
+            'content_quality_status': 'full',
+            'investment_relevance': 'high',
+            'is_original_source': 0,
+        },
+        {
+            'id': 2,
+            'title': 'AI 算力景气延续',
+            'summary': '另一家聚合站点继续引用相同主题。',
+            'content': '聚合来源继续讨论芯片、算力与 AI 投资热度。',
+            'source': 'ETF Trends',
+            'source_tier': 'aggregator',
+            'content_quality_status': 'full',
+            'investment_relevance': 'high',
+            'is_original_source': 0,
+        },
+    ]
+
+    candidates = build_judgment_candidates(articles, max_candidates=5)
+
+    assert len(candidates) == 1
+    assert candidates[0]['topic'] == '科技与产业主题'
+    assert candidates[0]['independent_evidence_count'] == 0
+    assert candidates[0]['high_confidence_topic'] is False
+
+
+def test_build_retry_feedback_outputs_targeted_fix_instructions():
+    feedback = build_retry_feedback(
+        {
+            'issues': [
+                '❌❌❌ 严重违规: AI编造目标涨幅 (25%),明确禁止!',
+                '❌ 中科曙光 属于观察/非可行动层级，却在建议段落被写成明确动作建议',
+                '❌ 正文出现结构化推荐层未支持的股票代码: sh600522',
+                '❌ 正文出现未进入高置信候选的主题标题: 机器人主题',
+                '❌ 把局部已验证断言扩写成整份报告已验证，超出了事实核查边界',
+                '❌ 数据质量说明与真实文章分布不一致',
+            ],
+            'warnings': [],
+        }
+    )
+
+    assert '目标涨幅' in feedback
+    assert '中科曙光' in feedback
+    assert 'sh600522' in feedback
+    assert '机器人主题' in feedback
+    assert '整份报告已验证' in feedback
+    assert 'data_quality_stats' in feedback

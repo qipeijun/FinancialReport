@@ -84,6 +84,26 @@ def test_security_master_merges_direct_and_theme_hits_into_single_candidate():
     assert '科技与产业主题' in (target.theme_topics or [])
 
 
+def test_security_master_risk_flags_only_apply_to_mentioned_stock_sentence():
+    provider = SecurityMasterProvider()
+    articles = [
+        {
+            'id': 1,
+            'title': '贵州茅台继续获机构关注',
+            'summary': '贵州茅台业绩稳健。另一家公司因退市风险被问询。',
+            'content': '贵州茅台维持增长。某小盘公司因退市风险被监管问询。',
+            'source_tier': 'mainstream',
+            'is_original_source': 1,
+        }
+    ]
+
+    candidates = provider.build_candidates(articles=articles, judgment_candidates=[], max_candidates=5)
+
+    maotai = next(item for item in candidates if item.symbol == 'sh600519')
+    assert '退市' not in maotai.risk_flags
+    assert '问询' not in maotai.risk_flags
+
+
 def test_merged_direct_candidate_is_not_forced_into_theme_watch_only():
     security_master = SecurityMasterProvider()
     candidate = CandidateStock(
@@ -123,7 +143,9 @@ def test_merged_direct_candidate_is_not_forced_into_theme_watch_only():
         price_history_provider=price_provider,
         valuation_provider=valuation_provider,
         lookback_days=60,
+        as_of_date='2026-05-09',
     )
+    scorer.symbol_recent_direct_days = {}
 
     result = scorer.score_candidates([candidate])['recommendations'][0]
 
@@ -245,7 +267,9 @@ def test_recommendation_scorer_caps_grade_when_data_incomplete():
         price_history_provider=price_provider,
         valuation_provider=valuation_provider,
         lookback_days=60,
+        as_of_date='2026-05-09',
     )
+    scorer.symbol_recent_direct_days = {}
 
     result = scorer.score_candidates([candidate])['recommendations'][0]
 
@@ -295,7 +319,9 @@ def test_recommendation_scorer_caps_theme_only_candidate_to_watch():
         price_history_provider=price_provider,
         valuation_provider=valuation_provider,
         lookback_days=60,
+        as_of_date='2026-05-09',
     )
+    scorer.symbol_recent_direct_days = {}
 
     result = scorer.score_candidates([candidate])['recommendations'][0]
 
@@ -483,7 +509,9 @@ def test_recommendation_scorer_flags_stale_direct_candidate():
         price_history_provider=price_provider,
         valuation_provider=valuation_provider,
         lookback_days=60,
+        as_of_date='2026-05-09',
     )
+    scorer.symbol_recent_direct_days = {}
 
     result = scorer.score_candidates([candidate])['recommendations'][0]
 
@@ -708,3 +736,156 @@ def test_recommendation_scorer_decision_views_are_mutually_exclusive():
     assert [item['symbol'] for item in payload['decision_views']['actionable_candidates']] == ['sh600519']
     assert payload['decision_views']['conditional_watchlist'] == []
     assert payload['decision_views']['stale_or_rejected'] == []
+    assert payload['recommendations'][0]['actionability_passed'] is True
+    assert payload['recommendations'][0]['actionability_reasons'] == []
+
+
+def test_non_fresh_focus_candidate_stays_in_watchlist():
+    security_master = SecurityMasterProvider()
+    candidate = CandidateStock(
+        symbol='sh600519',
+        name='贵州茅台',
+        industry='白酒',
+        source_type='direct_news',
+        topic='新闻直接提及',
+        evidence_article_ids=[1, 2],
+        evidence_summaries=['新增回购', '盈利改善'],
+        source_tiers=['official', 'mainstream'],
+        independent_evidence_count=2,
+        direct_mentions=2,
+        risk_flags=[],
+        source_tier_max='official',
+        high_confidence_topic=True,
+        evidence_published_dates=['2026-05-01', '2026-05-02'],
+        topic_article_count=2,
+    )
+    price_provider = FakePriceHistoryProvider({'sh600519': build_bars(count=90)})
+    valuation_provider = FakeValuationProvider(
+        {
+            'sh600519': {
+                'symbol': 'sh600519',
+                'pe_ttm': 20.0,
+                'pb_lf': 5.0,
+                'industry': '白酒',
+                'profitability': 'profitable',
+                'company_type': 'general',
+                'pe_history': [18.0, 19.0, 22.0],
+                'pb_history': [4.5, 5.1, 5.4],
+            }
+        }
+    )
+    scorer = RecommendationScorer(
+        security_master=security_master,
+        price_history_provider=price_provider,
+        valuation_provider=valuation_provider,
+        lookback_days=60,
+        as_of_date='2026-05-09',
+    )
+    scorer.symbol_recent_direct_days = {'sh600519': ['2026-05-08']}
+
+    payload = scorer.score_candidates([candidate])
+
+    assert payload['decision_views']['actionable_candidates'] == []
+    assert [item['symbol'] for item in payload['decision_views']['conditional_watchlist']] == ['sh600519']
+    assert payload['recommendations'][0]['actionability_passed'] is False
+    assert 'no_fresh_evidence' in payload['recommendations'][0]['actionability_reasons']
+
+
+def test_old_evidence_is_not_treated_as_fresh_and_decay_lowers_news_score():
+    security_master = SecurityMasterProvider()
+    candidate = CandidateStock(
+        symbol='sh600519',
+        name='贵州茅台',
+        industry='白酒',
+        source_type='direct_news',
+        topic='财报与公司经营',
+        evidence_article_ids=[1, 2],
+        evidence_summaries=['新增回购', '盈利改善'],
+        source_tiers=['official', 'mainstream'],
+        independent_evidence_count=2,
+        direct_mentions=2,
+        risk_flags=[],
+        source_tier_max='official',
+        high_confidence_topic=True,
+        evidence_published_dates=['2026-05-01', '2026-05-02'],
+        topic_article_count=2,
+    )
+    price_provider = FakePriceHistoryProvider({'sh600519': build_bars(count=90)})
+    valuation_provider = FakeValuationProvider(
+        {
+            'sh600519': {
+                'symbol': 'sh600519',
+                'pe_ttm': 20.0,
+                'pb_lf': 5.0,
+                'industry': '白酒',
+                'profitability': 'profitable',
+                'company_type': 'general',
+                'pe_history': [18.0, 19.0, 22.0],
+                'pb_history': [4.5, 5.1, 5.4],
+            }
+        }
+    )
+    scorer = RecommendationScorer(
+        security_master=security_master,
+        price_history_provider=price_provider,
+        valuation_provider=valuation_provider,
+        lookback_days=60,
+        as_of_date='2026-05-09',
+    )
+    scorer.symbol_recent_direct_days = {}
+
+    payload = scorer.score_candidates([candidate])
+
+    assert scorer._has_fresh_evidence(candidate) is False
+    assert payload['recommendations'][0]['scores']['news_catalyst'] < 30
+
+
+def test_theme_only_candidate_is_never_actionable():
+    security_master = SecurityMasterProvider()
+    candidate = CandidateStock(
+        symbol='sh603019',
+        name='中科曙光',
+        industry='算力基础设施',
+        source_type='theme_mapping',
+        topic='科技与产业主题',
+        evidence_article_ids=[1, 2],
+        evidence_summaries=['算力投资景气', '行业政策催化'],
+        source_tiers=['mainstream', 'mainstream'],
+        independent_evidence_count=2,
+        direct_mentions=0,
+        risk_flags=[],
+        source_tier_max='mainstream',
+        high_confidence_topic=True,
+        theme_topics=['科技与产业主题'],
+        evidence_published_dates=['2026-05-08', '2026-05-09'],
+        topic_article_count=2,
+    )
+    price_provider = FakePriceHistoryProvider({'sh603019': build_bars(count=90)})
+    valuation_provider = FakeValuationProvider(
+        {
+            'sh603019': {
+                'symbol': 'sh603019',
+                'pe_ttm': 24.0,
+                'pb_lf': 3.6,
+                'industry': '算力基础设施',
+                'profitability': 'profitable',
+                'company_type': 'general',
+                'pe_history': [22.0, 23.0, 25.0],
+                'pb_history': [3.2, 3.4, 3.7],
+            }
+        }
+    )
+    scorer = RecommendationScorer(
+        security_master=security_master,
+        price_history_provider=price_provider,
+        valuation_provider=valuation_provider,
+        lookback_days=60,
+        as_of_date='2026-05-09',
+    )
+
+    payload = scorer.score_candidates([candidate])
+
+    assert payload['decision_views']['actionable_candidates'] == []
+    assert [item['symbol'] for item in payload['decision_views']['conditional_watchlist']] == ['sh603019']
+    assert payload['recommendations'][0]['actionability_passed'] is False
+    assert 'theme_only_not_actionable' in payload['recommendations'][0]['actionability_reasons']

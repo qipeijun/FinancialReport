@@ -69,6 +69,24 @@ nav:
 - 首页: index.md
 - 分析报告:
   - 2026年05月:
+    - '2026-05-23':
+      - PM DeepSeek报告: archive/2026-05/2026-05-23/reports/📅 2026-05-23 财经分析报告_evening_markdown-report_deepseek.md
+    - '2026-05-22':
+      - AM DeepSeek报告: archive/2026-05/2026-05-22/reports/📅 2026-05-22 财经分析报告_morning_markdown-report_deepseek.md
+    - '2026-05-21':
+      - AM DeepSeek报告: archive/2026-05/2026-05-21/reports/📅 2026-05-21 财经分析报告_morning_markdown-report_deepseek.md
+    - '2026-05-19':
+      - AM DeepSeek报告: archive/2026-05/2026-05-19/reports/📅 2026-05-19 财经分析报告_morning_markdown-report_deepseek.md
+    - '2026-05-18':
+      - PM DeepSeek报告: archive/2026-05/2026-05-18/reports/📅 2026-05-18 财经分析报告_afternoon_markdown-report_deepseek.md
+    - '2026-05-15':
+      - AM DeepSeek报告: archive/2026-05/2026-05-15/reports/📅 2026-05-15 财经分析报告_morning_markdown-report_deepseek.md
+    - '2026-05-14':
+      - AM DeepSeek报告: archive/2026-05/2026-05-14/reports/📅 2026-05-14 财经分析报告_morning_markdown-report_deepseek.md
+    - '2026-05-13':
+      - PM DeepSeek报告: archive/2026-05/2026-05-13/reports/📅 2026-05-13 财经分析报告_afternoon_markdown-report_deepseek.md
+    - '2026-05-12':
+      - AM DeepSeek报告: archive/2026-05/2026-05-12/reports/📅 2026-05-12 财经分析报告_morning_markdown-report_deepseek.md
     - '2026-05-11':
       - AM DeepSeek报告: archive/2026-05/2026-05-11/reports/📅 2026-05-11 财经分析报告_morning_markdown-report_deepseek.md
     - '2026-05-09':
@@ -585,8 +603,3 @@ nav:
         - 潜力话题1 地缘政治: archive/2025-09/2025-09-28/analysis/潜力话题1_地缘政治.md
         - 潜力话题2 中国数据: archive/2025-09/2025-09-28/analysis/潜力话题2_中国数据.md
         - 潜力话题3 房地产: archive/2025-09/2025-09-28/analysis/潜力话题3_房地产.md
-extra:
-  social:
-  - icon: fontawesome/brands/github
-    link: https://github.com/qipeijun
-copyright: Copyright &copy; 2025 财经分析报告系统

@@ -122,18 +122,55 @@ class FactChecker:
         result: List[Claim] = []
         for claim in claims:
             normalized_context = re.sub(r'[\s，。；：:,.]+', '', (claim.context or claim.content or ''))
-            key = (
-                claim.type.value,
-                claim.scope.value,
-                claim.asset_hint,
-                claim.extracted_value,
-                normalized_context,
-            )
+            if claim.scope == ClaimScope.NEWS_FACT:
+                key = (
+                    claim.type.value,
+                    claim.scope.value,
+                    claim.asset_hint,
+                    claim.extracted_value,
+                )
+            else:
+                key = (
+                    claim.type.value,
+                    claim.scope.value,
+                    claim.asset_hint,
+                    claim.extracted_value,
+                    normalized_context,
+                )
             if key in seen:
                 continue
             seen.add(key)
             result.append(claim)
         return result
+
+    def collect_implausible_signals(self, claims: List[Claim]) -> Dict[str, object]:
+        """统计可疑数字信号，仅用于 warning/stats，不参与通过判定。"""
+        numeric_claims = [claim for claim in claims if claim.extracted_value and re.fullmatch(r'-?\d+\.?\d*', str(claim.extracted_value))]
+        if not numeric_claims:
+            return {
+                'over_precision_count': 0,
+                'rounded_ratio': 0.0,
+                'cross_asset_repeated_value_count': 0,
+            }
+
+        over_precision_count = 0
+        rounded_count = 0
+        value_assets: Dict[str, set[str]] = {}
+        for claim in numeric_claims:
+            value = str(claim.extracted_value or '')
+            if '.' in value and len(value.split('.', 1)[1]) >= 3:
+                over_precision_count += 1
+            if value.endswith('.00') or value.endswith('.50'):
+                rounded_count += 1
+            asset = claim.asset_hint or claim.type.value
+            value_assets.setdefault(value, set()).add(asset)
+
+        cross_asset_repeated_value_count = sum(1 for assets in value_assets.values() if len(assets) >= 2)
+        return {
+            'over_precision_count': over_precision_count,
+            'rounded_ratio': round(rounded_count / len(numeric_claims), 3),
+            'cross_asset_repeated_value_count': cross_asset_repeated_value_count,
+        }
 
     def _extract_price_claims(self, text: str) -> List[Claim]:
         """提取价格断言"""
@@ -404,15 +441,18 @@ class FactChecker:
                 claim.evidence = "缺少实时数据上下文,无法验证"
                 return
 
+            candidate_codes = [claim.asset_hint] if claim.asset_hint in stocks_data else list(stocks_data.keys())
+
             # 查找匹配的股票
-            for code, stock_dict in stocks_data.items():
+            for code in candidate_codes:
+                stock_dict = stocks_data.get(code) or {}
                 actual_price = stock_dict.get('price', 0)
 
-                # 允许5%误差
+                tolerance = 0.02 if code in {'sh000001', 'sz399001', 'sz399006'} else 0.03
                 if actual_price > 0:
                     diff_pct = abs(actual_price - claimed_price) / actual_price
 
-                    if diff_pct < 0.05:
+                    if diff_pct < tolerance:
                         claim.verified = True
                         claim.confidence = 1.0 - diff_pct
                         claim.evidence = f"实时数据验证: ¥{actual_price:.2f} (误差 {diff_pct*100:.1f}%)"
@@ -446,6 +486,10 @@ class FactChecker:
                     claim.evidence = "缺少黄金涨跌幅实时数据,无法验证"
                     return
                 actual_change = float(gold_data.get('change_24h') or 0)
+                if self._direction_conflicts(claim, actual_change):
+                    claim.verified = False
+                    claim.evidence = "涨跌方向与实时黄金数据不一致"
+                    return
                 if abs(actual_change - claimed_change) < 0.5:
                     claim.verified = True
                     claim.confidence = 0.95
@@ -462,8 +506,10 @@ class FactChecker:
                 stock_dict = stocks_data.get(code) or {}
                 actual_change = stock_dict.get('change_pct', 0)
 
-                # 允许0.5%绝对误差
-                if abs(actual_change - claimed_change) < 0.5:
+                if self._direction_conflicts(claim, actual_change):
+                    continue
+                tolerance = 0.3 if code in {'sh000001', 'sz399001', 'sz399006'} else 0.5
+                if abs(actual_change - claimed_change) < tolerance:
                     claim.verified = True
                     claim.confidence = 0.95
                     claim.evidence = f"实时涨跌幅: {actual_change:+.2f}%"
@@ -501,10 +547,10 @@ class FactChecker:
                 actual_price = gold_data.get('price_usd', 0)
                 timestamp = gold_data.get('timestamp', '')
 
-            # 允许2%误差
+            # 允许1%误差
             diff_pct = abs(actual_price - claimed_price) / actual_price if actual_price > 0 else 1.0
 
-            if diff_pct < 0.02:
+            if diff_pct < 0.01:
                 claim.verified = True
                 claim.confidence = 1.0 - diff_pct
                 claim.evidence = f"实时金价: ${actual_price:.2f}/盎司 (误差 {diff_pct*100:.1f}%)"
@@ -559,6 +605,19 @@ class FactChecker:
 
         except ValueError:
             claim.error = "汇率格式错误"
+
+    @staticmethod
+    def _direction_conflicts(claim: Claim, actual_change: float) -> bool:
+        text = f"{claim.content} {claim.context}"
+        positive_words = ('上涨', '收涨', '涨幅', '涨')
+        negative_words = ('下跌', '收跌', '跌幅', '跌')
+        expects_positive = any(word in text for word in positive_words)
+        expects_negative = any(word in text for word in negative_words)
+        if expects_positive and not expects_negative:
+            return actual_change < 0
+        if expects_negative and not expects_positive:
+            return actual_change > 0
+        return False
 
     def generate_report_annotation(self, claims: List[Claim]) -> str:
         """

@@ -38,6 +38,14 @@ GRADE_CAP_REASONS = {
     'score_gate_not_met',
 }
 
+ACTIONABILITY_REASONS = {
+    'no_fresh_evidence',
+    'insufficient_independent_confirmation',
+    'theme_only_not_actionable',
+    'stale_or_crowded',
+    'grade_not_actionable',
+}
+
 TOPIC_MARKET_SCOPE = {
     '政策与监管': 'broad',
     '宏观与流动性': 'broad',
@@ -156,6 +164,27 @@ class SecurityMasterProvider:
                 found.add(symbol)
         return sorted(found)
 
+    @staticmethod
+    def _split_sentences(text: str) -> List[str]:
+        return [item.strip() for item in re.split(r'[。！？；\n]+', text or '') if item.strip()]
+
+    @staticmethod
+    def _sentence_mentions_security(sentence: str, symbol: str, name: str) -> bool:
+        normalized_symbol = SecurityMasterProvider.normalize_symbol(symbol) or symbol.lower()
+        raw_code = normalized_symbol[-6:] if len(normalized_symbol) >= 6 else normalized_symbol
+        lowered = (sentence or '').lower()
+        return any(token for token in (name, normalized_symbol, raw_code) if token and token.lower() in lowered)
+
+    def _extract_risk_flags_for_symbol(self, text: str, symbol: str, name: str) -> List[str]:
+        matched: List[str] = []
+        for sentence in self._split_sentences(text):
+            if not self._sentence_mentions_security(sentence, symbol, name):
+                continue
+            for keyword in NEGATIVE_RISK_KEYWORDS:
+                if keyword in sentence and keyword not in matched:
+                    matched.append(keyword)
+        return matched
+
     def build_candidates(
         self,
         *,
@@ -167,7 +196,7 @@ class SecurityMasterProvider:
         direct_map: Dict[str, CandidateStock] = {}
 
         for article in articles:
-            text = ' '.join(
+            text = '\n'.join(
                 str(article.get(key, '') or '')
                 for key in ('title', 'summary', 'content')
             )
@@ -177,9 +206,13 @@ class SecurityMasterProvider:
 
             source_tier = article.get('source_tier', 'mainstream')
             is_original = 1 if article.get('is_original_source') else 0
-            risk_flags = [kw for kw in NEGATIVE_RISK_KEYWORDS if kw in text]
             for symbol in symbols:
                 security = self.securities[symbol]
+                risk_flags = self._extract_risk_flags_for_symbol(
+                    text=text,
+                    symbol=symbol,
+                    name=security.get('name', symbol),
+                )
                 item = direct_map.get(symbol)
                 if not item:
                     item = CandidateStock(
@@ -613,12 +646,7 @@ class RecommendationScorer:
             'watch': sum(1 for item in recommendations if item['grade'] == '观察'),
             'avoid': sum(1 for item in recommendations if item['grade'] == '回避'),
         }
-        actionable_candidates = [
-            item for item in recommendations
-            if item['grade'] in {'关注', '强关注'}
-            and not item['stale_opportunity_flag']
-            and not item['crowding_flag']
-        ]
+        actionable_candidates = [item for item in recommendations if item.get('actionability_passed')]
         actionable_symbols = {item['symbol'] for item in actionable_candidates}
         stale_or_rejected = [
             item for item in recommendations
@@ -633,10 +661,7 @@ class RecommendationScorer:
                 item for item in recommendations
                 if item['symbol'] not in actionable_symbols
                 and item['symbol'] not in stale_or_rejected_symbols
-                and (
-                    item['grade'] == '观察'
-                    or item['fresh_evidence_flag']
-                )
+                and item['grade'] != '回避'
             ],
             'stale_or_rejected': stale_or_rejected,
         }
@@ -766,6 +791,14 @@ class RecommendationScorer:
         risks = list(dict.fromkeys(candidate.risk_flags + risk_flags + valuation_flags + regime_flags))
         invalidators = self._build_invalidators(candidate, indicators, snapshot, grade_caps)
         candidate_confidence = self._candidate_confidence(candidate)
+        actionability_reasons = self._build_actionability_reasons(
+            candidate=candidate,
+            grade=grade,
+            stale_opportunity_flag=stale_opportunity_flag,
+            crowding_flag=crowding_flag,
+            fresh_evidence_flag=fresh_evidence_flag,
+        )
+        actionability_passed = not actionability_reasons
 
         return {
             'symbol': candidate.symbol,
@@ -789,6 +822,8 @@ class RecommendationScorer:
             'stale_opportunity_flag': stale_opportunity_flag,
             'crowding_flag': crowding_flag,
             'fresh_evidence_flag': fresh_evidence_flag,
+            'actionability_passed': actionability_passed,
+            'actionability_reasons': actionability_reasons,
             'forward_window': '1-4周',
             'catalyst_path': self._build_catalyst_path(candidate, fresh_evidence_flag),
             'validation_points': self._build_validation_points(candidate, indicators, stale_opportunity_flag),
@@ -800,6 +835,30 @@ class RecommendationScorer:
             },
             'industry_trend': industry_trend,
         }
+
+    @staticmethod
+    def _build_actionability_reasons(
+        *,
+        candidate: CandidateStock,
+        grade: str,
+        stale_opportunity_flag: bool,
+        crowding_flag: bool,
+        fresh_evidence_flag: bool,
+    ) -> List[str]:
+        reasons: List[str] = []
+        if grade not in {'关注', '强关注'}:
+            reasons.append('grade_not_actionable')
+        if not fresh_evidence_flag:
+            reasons.append('no_fresh_evidence')
+        if stale_opportunity_flag or crowding_flag:
+            reasons.append('stale_or_crowded')
+        independent_count = int(candidate.independent_evidence_count or 0)
+        direct_mentions = int(candidate.direct_mentions or 0)
+        if independent_count < 2 and not (direct_mentions >= 1 and independent_count >= 1):
+            reasons.append('insufficient_independent_confirmation')
+        if candidate.source_type == 'theme_mapping' and direct_mentions < 1:
+            reasons.append('theme_only_not_actionable')
+        return [item for item in reasons if item in ACTIONABILITY_REASONS]
 
     @staticmethod
     def _parse_date(value: str) -> Optional[datetime]:
@@ -897,7 +956,19 @@ class RecommendationScorer:
             return candidate.direct_mentions >= 1 and candidate.independent_evidence_count >= 1
         latest = max(evidence_dates)
         earliest = min(evidence_dates)
+        if (self.as_of_date.date() - latest.date()).days > 2:
+            return False
         return (latest - earliest).days <= 3
+
+    def _evidence_decay_weights(self, candidate: CandidateStock) -> List[float]:
+        weights: List[float] = []
+        for published in candidate.evidence_published_dates or []:
+            parsed = self._parse_date(published)
+            if parsed is None:
+                continue
+            days_old = max((self.as_of_date.date() - parsed.date()).days, 0)
+            weights.append(max(0.0, 1.0 - (days_old / 7.0)))
+        return weights
 
     def _is_stale_opportunity(
         self,
@@ -977,7 +1048,11 @@ class RecommendationScorer:
         }
         best_source = max((source_rank.get(item, 2) for item in candidate.source_tiers), default=1)
         direct_bonus = 8 if candidate.source_type == 'direct_news' else 3
-        evidence_bonus = min(candidate.independent_evidence_count * 4, 12)
+        decay_weights = self._evidence_decay_weights(candidate)
+        if decay_weights:
+            evidence_bonus = min(sum(weight * 4 for weight in decay_weights), 12)
+        else:
+            evidence_bonus = min(candidate.independent_evidence_count * 4, 12)
         mention_bonus = min(candidate.direct_mentions * 2, 6)
         topic_bonus = 4 if candidate.topic in {'财报与公司经营', '政策与监管'} else 2
         score = direct_bonus + evidence_bonus + mention_bonus + topic_bonus + best_source

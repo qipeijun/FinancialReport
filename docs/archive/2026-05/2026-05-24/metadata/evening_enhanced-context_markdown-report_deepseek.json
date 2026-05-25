@@ -1,0 +1,951 @@
+{
+  "analysis_mode": "markdown-report",
+  "date_range": {
+    "start": "2026-05-24",
+    "end": "2026-05-24"
+  },
+  "selected_articles": [
+    {
+      "id": 4560,
+      "title": "下周重磅日程：“美联储最爱通胀指标”、中国PMI、长鑫科技上会、拼多多小米财报",
+      "source": "华尔街见闻",
+      "published": "Sun, 24 May 2026 19:24:15 +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "宏观与流动性",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4555,
+      "title": "功效洗护市场，跑不出下一个完美日记",
+      "source": "36氪",
+      "published": "2026-05-24 19:23:19  +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "财报与公司经营",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4561,
+      "title": "什么情况下，本轮AI大行情会结束？",
+      "source": "华尔街见闻",
+      "published": "Sun, 24 May 2026 19:22:07 +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4550,
+      "title": "十大机构论市：对比科网泡沫 本轮AI行情走到哪了？",
+      "source": "东方财富网",
+      "published": "Sun, 24 May 2026 19:00:24 +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4562,
+      "title": "“白宫股神”推了“最火的存储”！特朗普公开大赞美光",
+      "source": "华尔街见闻",
+      "published": "Sun, 24 May 2026 18:49:43 +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4556,
+      "title": "珀莱雅收购花知晓，但美妆界的“安踏”还没诞生",
+      "source": "36氪",
+      "published": "2026-05-24 19:22:23  +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "财报与公司经营",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4557,
+      "title": "对话VITURE姜公略：什么才是XR眼镜该有的样子？",
+      "source": "36氪",
+      "published": "2026-05-24 17:09:30  +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4563,
+      "title": "摩根大通CEO戴蒙坦承：AI终将减少银行业岗位",
+      "source": "华尔街见闻",
+      "published": "Sun, 24 May 2026 14:45:48 +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "财报与公司经营",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4551,
+      "title": "周末要闻汇总：八部门联合整治非法跨境证券期货基金经营活动",
+      "source": "东方财富网",
+      "published": "Sun, 24 May 2026 14:00:23 +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4564,
+      "title": "重仓AI芯片还不够，韩国散户再获\"加速器\"：个股杠杆ETF即将登场",
+      "source": "华尔街见闻",
+      "published": "Sun, 24 May 2026 13:46:30 +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4590,
+      "title": "The Vice Market Is Shifting",
+      "source": "ETF Trends",
+      "published": "Sun, 24 May 2026 11:25:23 +0000",
+      "collection_date": "2026-05-24",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4587,
+      "title": "The Middle East war is testing the Gulf's ambitions to become an AI hub",
+      "source": "CNBC",
+      "published": "Sun, 24 May 2026 13:21:38 GMT",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4588,
+      "title": "Top Wall Street analysts like these dividend stocks for steady income",
+      "source": "CNBC",
+      "published": "Sun, 24 May 2026 12:52:28 GMT",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4552,
+      "title": "“厕所爆满 都在查看股票账户！”全球“最牛股市” 还能走多远？",
+      "source": "东方财富网",
+      "published": "Sun, 24 May 2026 07:21:00 +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "财报与公司经营",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4553,
+      "title": "星舰V3首飞成功但异常不断 会拖累SpaceX的IPO吗？",
+      "source": "东方财富网",
+      "published": "Sun, 24 May 2026 05:20:12 +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "财报与公司经营",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4554,
+      "title": "有待最终敲定 特朗普称美伊协议基本谈成 细节将于近期公布",
+      "source": "东方财富网",
+      "published": "Sun, 24 May 2026 04:45:47 +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "风险事件",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4591,
+      "title": "Vanguard’s World Stock Market ETF: Is the Whole Better than the Parts?",
+      "source": "ETF Trends",
+      "published": "Sat, 23 May 2026 11:21:36 +0000",
+      "collection_date": "2026-05-24",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4547,
+      "title": "青海绿电交易累计超200亿千瓦时",
+      "source": "中新网",
+      "published": "Sun, 24 May 2026 19:35:19 +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "宏观与流动性",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4586,
+      "title": "Trump says Iran deal reopening Strait of Hormuz 'largely negotiated,' will be announced soon",
+      "source": "CNBC",
+      "published": "Sun, 24 May 2026 08:27:31 GMT",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4615,
+      "title": "2026年5月中旬流通领域重要生产资料市场价格变动情况",
+      "source": "国家统计局-最新发布",
+      "published": "2026-05-24 09:30:00",
+      "collection_date": "2026-05-24",
+      "source_tier": "official",
+      "investment_relevance": "high",
+      "primary_topic": "其他观察",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4589,
+      "title": "Spirit's collapse, high fuel prices test limits of summer vacation spending",
+      "source": "CNBC",
+      "published": "Sat, 23 May 2026 14:01:03 GMT",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4585,
+      "title": "Americans are feeling inflation's pinch into the holiday weekend. Here's where prices are rising the most",
+      "source": "CNBC",
+      "published": "Sat, 23 May 2026 12:32:36 GMT",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "宏观与流动性",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4548,
+      "title": "探访青海哇让抽水蓄能电站：西部最大“超级充电宝”加紧建设中",
+      "source": "中新网",
+      "published": "Sun, 24 May 2026 18:49:08 +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4549,
+      "title": "广州南沙多举措发展文旅产业 邀约全球文旅企业和游客",
+      "source": "中新网",
+      "published": "Sun, 24 May 2026 18:29:13 +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4545,
+      "title": "织密“全国一张网” 我国油气供应能力持续提升",
+      "source": "中新网",
+      "published": "Sun, 24 May 2026 22:12:47 +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4546,
+      "title": "我国将适时发布以粤港澳大湾区为整体的外贸数据",
+      "source": "中新网",
+      "published": "Sun, 24 May 2026 21:04:45 +0800",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4565,
+      "title": "在角逐“第三超级大国”中，欧盟关于自身的两大设想",
+      "source": "FT中文网",
+      "published": "Sat, 23 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "风险事件",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4566,
+      "title": "算法无处不在的时代，营销终局是人类判断力对决",
+      "source": "FT中文网",
+      "published": "Sat, 23 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4567,
+      "title": "全网集体踏入“奥德赛时期”？",
+      "source": "FT中文网",
+      "published": "Sat, 23 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "风险事件",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4568,
+      "title": "人们都在讨论真迹还是赝品，却无人追问这些作品为何存在",
+      "source": "FT中文网",
+      "published": "Sat, 23 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "风险事件",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4576,
+      "title": "'Shameful' more spent on benefits than jobs for young people, says Milburn",
+      "source": "BBC全球经济",
+      "published": "Sun, 24 May 2026 10:21:58 GMT",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "summary_only",
+      "is_original_source": 0
+    },
+    {
+      "id": 4575,
+      "title": "'Six eggs used to be £1' - why everyday essentials cost so much more now",
+      "source": "BBC全球经济",
+      "published": "Sun, 24 May 2026 01:02:55 GMT",
+      "collection_date": "2026-05-24",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    }
+  ],
+  "judgment_candidates": [
+    {
+      "candidate_id": "C03",
+      "topic": "科技与产业主题",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "2-6周",
+      "evidence_count": 7,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 5,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 9,
+      "articles": [
+        {
+          "id": 4550,
+          "title": "十大机构论市：对比科网泡沫 本轮AI行情走到哪了？",
+          "source": "东方财富网",
+          "summary": "<p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.co",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sun, 24 May 2026 19:00:24 +0800",
+          "collection_date": "2026-05-24"
+        },
+        {
+          "id": 4562,
+          "title": "“白宫股神”推了“最火的存储”！特朗普公开大赞美光",
+          "source": "华尔街见闻",
+          "summary": "<p>特朗普又在集会上\"推票\"了，这次点的是美光。</p> <p>当地时间5月22日，特朗普在纽约萨弗恩（Suffern）的大型集会上公开点名美光科技（Micron）：\"大公司美光，美光太棒了……（Big company Micron, boy, Micron is great…）\"。</p> <p><img class=\" wscnph\" src=\"htt",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sun, 24 May 2026 18:49:43 +0800",
+          "collection_date": "2026-05-24"
+        },
+        {
+          "id": 4566,
+          "title": "算法无处不在的时代，营销终局是人类判断力对决",
+          "source": "FT中文网",
+          "summary": "赵莹：营销的未来或许不在于驾驭机器，而在于重新发现人类智能的价值。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 23 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-24"
+        },
+        {
+          "id": 4564,
+          "title": "重仓AI芯片还不够，韩国散户再获\"加速器\"：个股杠杆ETF即将登场",
+          "source": "华尔街见闻",
+          "summary": "<p>韩国散户投资者对AI芯片股的热情即将获得新的放大工具。首批挂钩个股的杠杆ETF本周登场，目标资产直指三星电子与SK海力士——两家处于全球AI交易核心的芯片巨头。这批产品在提供潜在超额收益的同时，也可能将韩国股市本已高企的波动性推向新高。</p> <p>据彭博报道，此次预计于5月下旬上市的14只杠杆ETF均挂钩三星或SK海力士，承诺提供标的股票每日涨跌幅",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sun, 24 May 2026 13:46:30 +0800",
+          "collection_date": "2026-05-24"
+        }
+      ],
+      "topic_article_count": 10,
+      "priority_score": 55,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C06",
+      "topic": "其他观察",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 2,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "official",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 3,
+      "articles": [
+        {
+          "id": 4615,
+          "title": "2026年5月中旬流通领域重要生产资料市场价格变动情况",
+          "source": "国家统计局-最新发布",
+          "summary": "中国统计信息服务中心 卓创资讯 据对全国流通领域9大类50种重要生产资料市场价格的监测显示，2026年5月中旬与5月上旬相比，20种产品价格上涨，23种下降，7种持平。 2026年5月中旬流通领域重要生产资料市场价格变动情况 产品名称单位本期价格（元）比上期价格涨跌（元）涨跌幅（%）一、黑色金属 螺纹钢（...",
+          "source_tier": "official",
+          "content_quality_status": "full",
+          "published": "2026-05-24 09:30:00",
+          "collection_date": "2026-05-24"
+        },
+        {
+          "id": 4546,
+          "title": "我国将适时发布以粤港澳大湾区为整体的外贸数据",
+          "source": "中新网",
+          "summary": "新华社北京5月24日电(记者邹多为、丁乐)记者从海关总署获悉，为便于各界掌握数据，内地海关将联合港澳研究编制并适时发布以粤港澳大湾区为整体的对外货物贸易统计数据。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Sun, 24 May 2026 21:04:45 +0800",
+          "collection_date": "2026-05-24"
+        },
+        {
+          "id": 4545,
+          "title": "织密“全国一张网” 我国油气供应能力持续提升",
+          "source": "中新网",
+          "summary": "央视新闻客户端消息(新闻联播)：今年以来，我国重大油气基础设施持续完善，“全国一张网”不断织密筑牢，我国油气供应保障能力稳步提升。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Sun, 24 May 2026 22:12:47 +0800",
+          "collection_date": "2026-05-24"
+        }
+      ],
+      "topic_article_count": 3,
+      "priority_score": 50,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C04",
+      "topic": "政策与监管",
+      "market_scope": [
+        "A股",
+        "港股",
+        "宏观"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 4,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 3,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 6,
+      "articles": [
+        {
+          "id": 4589,
+          "title": "Spirit's collapse, high fuel prices test limits of summer vacation spending",
+          "source": "CNBC",
+          "summary": "The unofficial start of the summer travel season on Memorial Day weekend will show just how much travelers want to fly and how much they're willing to pay.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 23 May 2026 14:01:03 GMT",
+          "collection_date": "2026-05-24"
+        },
+        {
+          "id": 4551,
+          "title": "周末要闻汇总：八部门联合整治非法跨境证券期货基金经营活动",
+          "source": "东方财富网",
+          "summary": "<p> 本周末影响市场的重要资讯有：国务院印发《关于推行常住地提供基本公共服务的实施意见》；证监会等八部门联合出手，整治非法跨境证券<span id=\"bk_90.BK1361\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK1361\">期货</a></span><span i",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sun, 24 May 2026 14:00:23 +0800",
+          "collection_date": "2026-05-24"
+        },
+        {
+          "id": 4549,
+          "title": "广州南沙多举措发展文旅产业 邀约全球文旅企业和游客",
+          "source": "中新网",
+          "summary": "中新网广州5月24日电 (记者 王坚)据广州市南沙区政府24日消息，该区近日向全球正式发布“1+6+N”全域文旅盛事体系，并集中释放了涵盖文创赛事、邮轮航线、旅游线路、体育文化、区域联动等领域的文旅成果，向全球文旅企业和游客发出邀约。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Sun, 24 May 2026 18:29:13 +0800",
+          "collection_date": "2026-05-24"
+        },
+        {
+          "id": 4587,
+          "title": "The Middle East war is testing the Gulf's ambitions to become an AI hub",
+          "source": "CNBC",
+          "summary": "Attacks on data centers in the Middle East and persistently high energy prices have altered the calculus for operators of the facilities, analysts say.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sun, 24 May 2026 13:21:38 GMT",
+          "collection_date": "2026-05-24"
+        }
+      ],
+      "topic_article_count": 7,
+      "priority_score": 46,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C01",
+      "topic": "宏观与流动性",
+      "market_scope": [
+        "美股",
+        "A股",
+        "港股",
+        "美元",
+        "利率"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 3,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 2,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 3,
+      "articles": [
+        {
+          "id": 4560,
+          "title": "下周重磅日程：“美联储最爱通胀指标”、中国PMI、长鑫科技上会、拼多多小米财报",
+          "source": "华尔街见闻",
+          "summary": "<p style=\"text-align: left;\"><strong> 05月25日 - 05月31日当周重磅财经事件一览，以下均为北京时间：</strong></p> <p style=\"text-align: left;\"><strong><img class=\" wscnph\" src=\"https://wpimg-wscn.awtmt.com/a",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sun, 24 May 2026 19:24:15 +0800",
+          "collection_date": "2026-05-24"
+        },
+        {
+          "id": 4585,
+          "title": "Americans are feeling inflation's pinch into the holiday weekend. Here's where prices are rising the most",
+          "source": "CNBC",
+          "summary": "Prices related to travel, recreation and food saw particularly steep increases, stretching Americans' wallets as they celebrate the unofficial start of summer.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 23 May 2026 12:32:36 GMT",
+          "collection_date": "2026-05-24"
+        },
+        {
+          "id": 4547,
+          "title": "青海绿电交易累计超200亿千瓦时",
+          "source": "中新网",
+          "summary": "中新社西宁5月24日电 (李隽 谢莉蓉)中国国家电网青海省电力公司(以下简称“国网青海电力”)24日消息，截至今年5月中旬，青海绿电交易规模达200.9亿千瓦时，相当于减排二氧化碳超1500万吨，其中省间交易电量占比超九成。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Sun, 24 May 2026 19:35:19 +0800",
+          "collection_date": "2026-05-24"
+        }
+      ],
+      "topic_article_count": 3,
+      "priority_score": 43,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C05",
+      "topic": "风险事件",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股",
+        "商品"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 2,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 2,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 4,
+      "articles": [
+        {
+          "id": 4554,
+          "title": "有待最终敲定 特朗普称美伊协议基本谈成 细节将于近期公布",
+          "source": "东方财富网",
+          "summary": "<p> 美国总统特朗普23日宣称，美伊已“基本谈成”一份协议，最终细节将很快公布，并透露霍尔木兹海峡将随之开放。美国国务卿鲁比奥同日确认谈判“正在取得进展”。伊朗方面则表示，双方正处于一份谅解备忘录的最终敲定阶段，但强调现阶段不涉及核问题细节，仅聚焦结束战争。</p><p> 据悉，斡旋方巴基斯坦已促成双方接近达成临时协议。然而，以色列担忧条款对以“非常不利”",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sun, 24 May 2026 04:45:47 +0800",
+          "collection_date": "2026-05-24"
+        },
+        {
+          "id": 4565,
+          "title": "在角逐“第三超级大国”中，欧盟关于自身的两大设想",
+          "source": "FT中文网",
+          "summary": "张冬方：欧盟人想让欧盟成为一个超级力量，成为与中美相抗衡的另一极。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 23 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-24"
+        },
+        {
+          "id": 4567,
+          "title": "全网集体踏入“奥德赛时期”？",
+          "source": "FT中文网",
+          "summary": "徐瑾：现代人的宿命就是漂泊，所以奥德赛时期不仅属于年轻人，也属于全体人类。奥德赛时期流行，暴露什么集体心理？",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 23 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-24"
+        },
+        {
+          "id": 4568,
+          "title": "人们都在讨论真迹还是赝品，却无人追问这些作品为何存在",
+          "source": "FT中文网",
+          "summary": "影片《克里斯托弗系列》最终留下了一个问题：艺术真正能够延续的也许并不是笔触本身，而是某种人格、情感与目光的残留。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sat, 23 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-24"
+        }
+      ],
+      "topic_article_count": 4,
+      "priority_score": 40,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C02",
+      "topic": "财报与公司经营",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 3,
+      "independent_evidence_count": 0,
+      "high_relevance_article_count": 5,
+      "source_tier_max": "mainstream",
+      "original_source_count": 0,
+      "mainstream_or_better_count": 5,
+      "articles": [
+        {
+          "id": 4555,
+          "title": "功效洗护市场，跑不出下一个完美日记",
+          "source": "36氪",
+          "summary": "<p>走进美国 Sephora、Ulta 或欧洲 Douglas 这样的美妆零售集合店，货架上的景象或许会让你感到意外：占据大量陈列面积的，不只是护肤品，还有护发产品。从基础清洁，到去屑、防脱，再到头皮微生态、蛋白键修护、抗热损伤等护理产品，护发区的复杂程度已经几乎与护肤区无异。</p> <p>根据市场研究机构 Circana 的数据，2025 年美国高端护",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-24 19:23:19  +0800",
+          "collection_date": "2026-05-24"
+        },
+        {
+          "id": 4556,
+          "title": "珀莱雅收购花知晓，但美妆界的“安踏”还没诞生",
+          "source": "36氪",
+          "summary": "<p>作者｜任彩茹</p> <p>编辑｜乔芊</p> <p>一家富有“少女心”与“童话感”的美妆新锐品牌，找到了自己的阶段性归宿。</p> <p>5月21日晚，珀莱雅公告称，旗下全资子公司珀莱雅（海南）拟以3.51亿元现金收购深圳花知晓电子商务有限公司12.5479%的股权。交易完成后，珀莱雅对花知晓的持股比例将从38.4521%提升至51%。财务层面，花知",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-24 19:22:23  +0800",
+          "collection_date": "2026-05-24"
+        },
+        {
+          "id": 4552,
+          "title": "“厕所爆满 都在查看股票账户！”全球“最牛股市” 还能走多远？",
+          "source": "东方财富网",
+          "summary": "<p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.co",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sun, 24 May 2026 07:21:00 +0800",
+          "collection_date": "2026-05-24"
+        },
+        {
+          "id": 4553,
+          "title": "星舰V3首飞成功但异常不断 会拖累SpaceX的IPO吗？",
+          "source": "东方财富网",
+          "summary": "<p> 在经历数次推迟后，埃隆·马斯克旗下SpaceX的最强火箭星舰V3(Starship V3)，终于完成了首飞。</p><p> 当地时间2026年5月23日，SpaceX星舰V3在得克萨斯州Starbase基地完成首次试飞，这是星舰系列第十二次飞行测试。</p><p> SpaceX原定于5月19日首次试飞，后因故多次推迟。</p><p> 本次任务完成V3",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sun, 24 May 2026 05:20:12 +0800",
+          "collection_date": "2026-05-24"
+        }
+      ],
+      "topic_article_count": 5,
+      "priority_score": 39,
+      "high_confidence_topic": false
+    }
+  ],
+  "candidate_stocks": [
+    {
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "industry": "算力基础设施",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        4557,
+        4552
+      ],
+      "evidence_summaries": [
+        "对话VITURE姜公略：什么才是XR眼镜该有的样子？",
+        "“厕所爆满 都在查看股票账户！”全球“最牛股市” 还能走多远？"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 2,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "2026-05-24 17:09:30  +0800",
+        "Sun, 24 May 2026 07:21:00 +0800"
+      ],
+      "topic_article_count": 0
+    }
+  ],
+  "stock_recommendations": [
+    {
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "industry": "算力基础设施",
+      "candidate_confidence": "low",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 63,
+      "scores": {
+        "news_catalyst": 21,
+        "technical": 5,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 8
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4557,
+        4552
+      ],
+      "evidence_summaries": [
+        "对话VITURE姜公略：什么才是XR眼镜该有的样子？",
+        "“厕所爆满 都在查看股票账户！”全球“最牛股市” 还能走多远？"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "insufficient_independent_confirmation"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 2,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    }
+  ],
+  "decision_views": {
+    "actionable_candidates": [],
+    "conditional_watchlist": [
+      {
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "industry": "算力基础设施",
+        "candidate_confidence": "low",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 63,
+        "scores": {
+          "news_catalyst": 21,
+          "technical": 5,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 8
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4557,
+          4552
+        ],
+        "evidence_summaries": [
+          "对话VITURE姜公略：什么才是XR眼镜该有的样子？",
+          "“厕所爆满 都在查看股票账户！”全球“最牛股市” 还能走多远？"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "insufficient_independent_confirmation"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 2,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "stale_or_rejected": []
+  },
+  "score_distribution": {
+    "strong_focus": 0,
+    "focus": 0,
+    "watch": 1,
+    "avoid": 0
+  },
+  "scoring_config": {
+    "market": "CN",
+    "style": "balanced",
+    "lookback_days": 60,
+    "pool_mode": "strict",
+    "theme_mapping_max_grade": "watch",
+    "value_acceptance_enabled": true,
+    "industry_trend_enabled": true
+  },
+  "session": "evening",
+  "session_time": "2026-05-24 22:24:17"
+}

@@ -276,6 +276,16 @@ class ReportGenerator:
         # 返回最后一次的结果
         return report, usage, quality_result if quality_check else {}
 
+    @staticmethod
+    def _quality_metadata_fields(quality_result: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+        payload = quality_result or {}
+        return {
+            'quality_score': payload.get('score'),
+            'quality_stats': payload.get('stats'),
+            'quality_issues': payload.get('issues'),
+            'quality_warnings': payload.get('warnings'),
+        }
+
     def _run_fact_check(self, report_text: str, realtime_data: Optional[Dict[str, Any]]) -> Tuple[list, str]:
         """运行事实核查并返回断言与附加报告"""
         if not (self.enable_verification and realtime_data):
@@ -319,6 +329,8 @@ class ReportGenerator:
             f"- 拒绝/拥挤清单数量: {len(stale)}",
             f"- 数据质量: 完整正文 {counts.get('full', 0)}篇({ratios.get('full', 0.0):.1f}%), 部分正文 {counts.get('partial', 0)}篇({ratios.get('partial', 0.0):.1f}%), 仅摘要 {counts.get('summary_only', 0)}篇({ratios.get('summary_only', 0.0):.1f}%)",
             "- 正文只能使用下列主题和标的，禁止自行扩写新的股票池、行业配比或宏大资产配置口号。",
+            "- 事实核查只覆盖实时数值与部分新闻事实；不得把“已验证的实时断言”扩写成“整份报告已证实”或“整篇 thesis 已验证”。",
+            "- 只有 actionable_candidates 可以写成“可行动标的”；conditional_watchlist 只能写成“继续观察”，stale_or_rejected 只能写成风险或等待项。",
         ]
 
         if high_confidence:
@@ -341,7 +353,7 @@ class ReportGenerator:
             lines.append("- 允许在正文中提到的结构化标的:")
             for item in recommendations[:8]:
                 lines.append(
-                    f"  * {item.get('symbol')} {item.get('name')} / {item.get('grade')} / source_type={item.get('source_type')} / grade_caps={','.join(item.get('grade_caps') or ['none'])}"
+                    f"  * {item.get('symbol')} {item.get('name')} / {item.get('grade')} / source_type={item.get('source_type')} / grade_caps={','.join(item.get('grade_caps') or ['none'])} / actionable={'yes' if item.get('actionability_passed') else 'no'}"
                 )
         else:
             lines.append("- 当前没有满足规则门槛的结构化股票推荐，正文不得写具体股票推荐。")
@@ -392,7 +404,7 @@ class ReportGenerator:
                     f"  - {item.get('name')}（{item.get('symbol')}，{item.get('grade')}，总分 {item.get('total_score')}）"
                 )
         else:
-            lines.append("- 当前没有满足高信号门槛的可行动标的。")
+            lines.append("- **无新增高信号标的**：当前没有满足高信号门槛的可行动标的。")
 
         if watchlist:
             lines.append("- **继续观察**:")
@@ -562,6 +574,7 @@ class ReportGenerator:
             rendered_md = f"{rendered_md}\n\n{verification_report}"
 
         live_data_degraded = bool(self.enable_verification and realtime_data is None)
+        meta_quality_fields = self._quality_metadata_fields(quality_result)
         meta = {
             'date_range': {'start': start_date, 'end': end_date},
             'articles_used': len(selected),
@@ -577,6 +590,7 @@ class ReportGenerator:
             'backtest_ready': True,
             'backtest_generated_at': datetime.now().isoformat(),
         }
+        meta.update(meta_quality_fields)
         enhanced_context_payload = self._build_enhanced_context_payload(
             selected=selected,
             judgment_candidates=candidates,
@@ -874,8 +888,12 @@ class ReportGenerator:
                 judgment_candidates=judgment_candidates,
                 data_quality_stats=data_quality_stats,
             )
+            quality_result = quality_result or {}
+            quality_result['stats'] = quality_result.get('stats') or {}
+            quality_result['stats']['implausible_signals'] = FactChecker().collect_implausible_signals(verified_claims)
 
         # 保存报告
+        meta_quality_fields = self._quality_metadata_fields(quality_result)
         meta = {
             'date_range': {'start': start_date, 'end': end_date},
             'articles_used': len(selected),
@@ -894,6 +912,7 @@ class ReportGenerator:
             'backtest_ready': True,
             'backtest_generated_at': datetime.now().isoformat(),
         }
+        meta.update(meta_quality_fields)
         enhanced_context_payload = self._build_enhanced_context_payload(
             selected=selected,
             judgment_candidates=judgment_candidates,

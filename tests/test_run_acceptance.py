@@ -177,6 +177,8 @@ def test_validate_stock_recommendations_payload_rejects_incomplete_high_grade():
                     'stale_opportunity_flag': True,
                     'crowding_flag': True,
                     'fresh_evidence_flag': False,
+                    'actionability_passed': False,
+                    'actionability_reasons': ['grade_not_actionable', 'no_fresh_evidence', 'stale_or_crowded', 'insufficient_independent_confirmation', 'theme_only_not_actionable'],
                     'source_type': 'theme_mapping',
                 }
             ],
@@ -239,6 +241,8 @@ def test_validate_stock_recommendations_payload_prefers_metadata_recommendations
                         'stale_opportunity_flag': False,
                         'crowding_flag': False,
                         'fresh_evidence_flag': True,
+                        'actionability_passed': True,
+                        'actionability_reasons': [],
                         'validation_points': ['确认后续是否出现第二条独立个股证据或进一步官方/主流跟进'],
                         'catalyst_path': ['跟踪个股级直接催化是否继续被主流来源确认'],
                         'failure_triggers': ['若后续催化未兑现或证据链减弱，需要下调关注度'],
@@ -290,6 +294,8 @@ def test_validate_stock_recommendations_payload_prefers_metadata_recommendations
                     'stale_opportunity_flag': False,
                     'crowding_flag': False,
                     'fresh_evidence_flag': False,
+                    'actionability_passed': False,
+                    'actionability_reasons': ['no_fresh_evidence', 'insufficient_independent_confirmation', 'theme_only_not_actionable'],
                     'source_type': 'theme_mapping',
                 }
             ],
@@ -348,6 +354,8 @@ def test_validate_stock_recommendations_payload_warns_on_missing_forward_fields(
                         'stale_opportunity_flag': False,
                         'crowding_flag': False,
                         'fresh_evidence_flag': True,
+                        'actionability_passed': False,
+                        'actionability_reasons': ['grade_not_actionable'],
                         'source_type': 'direct_news',
                     }
                 ],
@@ -381,6 +389,83 @@ def test_validate_stock_recommendations_payload_warns_on_missing_forward_fields(
     assert result['passed'] is True
     assert result['missing_forward_fields_count'] == 3
     assert any('缺少 validation_points' in item for item in result['warnings'])
+
+
+def test_validate_stock_recommendations_payload_rejects_non_actionable_item_inside_actionable_bucket():
+    result = validate_stock_recommendations_payload(
+        {
+            'metadata': {
+                'stock_recommendations': [
+                    {
+                        'symbol': 'sh603019',
+                        'name': '中科曙光',
+                        'base_grade': '关注',
+                        'grade': '关注',
+                        'grade_caps': [],
+                        'total_score': 72,
+                        'scores': {
+                            'news_catalyst': 18,
+                            'technical': 20,
+                            'valuation': 12,
+                            'quality_risk': 12,
+                            'market_regime': 10,
+                        },
+                        'data_completeness': 0.9,
+                        'evidence_article_ids': [1],
+                        'candidate_confidence': 'high',
+                        'evidence_strength': {
+                            'direct_mentions': 1,
+                            'independent_evidence_count': 1,
+                            'source_tier_max': 'mainstream',
+                        },
+                        'industry_trend': {
+                            'status': 'available',
+                            'direction': 'up',
+                            'score': 1,
+                            'as_of': '2026-05-07',
+                        },
+                        'stale_opportunity_flag': False,
+                        'crowding_flag': False,
+                        'fresh_evidence_flag': False,
+                        'actionability_passed': False,
+                        'actionability_reasons': ['no_fresh_evidence'],
+                        'validation_points': ['确认后续是否出现第二条独立个股证据或进一步官方/主流跟进'],
+                        'catalyst_path': ['跟踪个股级直接催化是否继续被主流来源确认'],
+                        'failure_triggers': ['若后续催化未兑现或证据链减弱，需要下调关注度'],
+                        'source_type': 'direct_news',
+                    }
+                ],
+                'score_distribution': {},
+                'scoring_config': {
+                    'pool_mode': 'strict',
+                    'value_acceptance_enabled': True,
+                },
+                'decision_views': {
+                    'actionable_candidates': [
+                        {'symbol': 'sh603019', 'grade': '关注'},
+                    ],
+                    'conditional_watchlist': [],
+                    'stale_or_rejected': [],
+                },
+            },
+            'stock_recommendations': [],
+            'score_distribution': {},
+            'scoring_config': {
+                'pool_mode': 'strict',
+                'value_acceptance_enabled': True,
+            },
+            'decision_views': {
+                'actionable_candidates': [],
+                'conditional_watchlist': [],
+                'stale_or_rejected': [],
+            },
+        }
+    )
+
+    assert result['passed'] is False
+    assert result['actionable_count'] == 1
+    assert result['actionable_with_fresh_evidence_count'] == 0
+    assert any('未通过 actionability 门槛却进入 actionable_candidates' in item for item in result['issues'])
 
 
 def test_validate_stock_recommendations_payload_rejects_missing_decision_views():
@@ -419,6 +504,8 @@ def test_validate_stock_recommendations_payload_rejects_missing_decision_views()
                         'stale_opportunity_flag': False,
                         'crowding_flag': False,
                         'fresh_evidence_flag': True,
+                        'actionability_passed': False,
+                        'actionability_reasons': ['grade_not_actionable'],
                         'validation_points': ['确认后续是否出现第二条独立个股证据或进一步官方/主流跟进'],
                         'catalyst_path': ['跟踪个股级直接催化是否继续被主流来源确认'],
                         'failure_triggers': ['若后续催化未兑现或证据链减弱，需要下调关注度'],

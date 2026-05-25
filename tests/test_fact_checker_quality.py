@@ -9,7 +9,7 @@ if str(PROJECT_ROOT / 'scripts') not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT / 'scripts'))
 
 
-from scripts.utils.fact_checker import ClaimScope, ClaimType, FactChecker
+from scripts.utils.fact_checker import Claim, ClaimScope, ClaimType, FactChecker
 from scripts.utils.quality_checker_v2 import check_report_quality_v2
 from scripts.utils.ai_analyzer_common import build_source_stats_block, summarize_content_quality
 
@@ -118,6 +118,33 @@ def test_extract_claims_dedupes_same_realtime_fact_with_same_context():
     assert realtime_claims[0].extracted_value == '2.93'
 
 
+def test_extract_claims_dedupes_same_news_fact_across_different_contexts():
+    report = """
+    - 市场概况：制造业 PMI 同比3.8%，景气度回升。
+    - 投资主题：上游设备订单同比3.8%，板块情绪修复。
+    """
+
+    claims = FactChecker().extract_claims(report)
+    news_fact_claims = [c for c in claims if c.scope == ClaimScope.NEWS_FACT and c.extracted_value == '3.8']
+
+    assert len(news_fact_claims) == 1
+
+
+def test_collect_implausible_signals_returns_warning_level_stats():
+    checker = FactChecker()
+    claims = [
+        Claim(type=ClaimType.PRICE_CHANGE, content='上证上涨3.817%', extracted_value='3.817', asset_hint='sh000001'),
+        Claim(type=ClaimType.FOREX_RATE, content='美元兑人民币7.50', extracted_value='7.50', asset_hint='USD/CNY'),
+        Claim(type=ClaimType.GOLD_PRICE, content='黄金7.50美元', extracted_value='7.50', asset_hint='gold'),
+    ]
+
+    stats = checker.collect_implausible_signals(claims)
+
+    assert stats['over_precision_count'] == 1
+    assert stats['rounded_ratio'] > 0
+    assert stats['cross_asset_repeated_value_count'] == 1
+
+
 def test_build_source_stats_block_uses_content_quality_distribution():
     selected = [
         {'source': '华尔街见闻', 'content_quality_status': 'full'},
@@ -201,3 +228,126 @@ def test_quality_checker_rejects_data_integrity_mismatch_and_unsupported_stock_m
     assert result['data_integrity_statement_passed'] is False
     assert any('未支持的股票代码' in issue for issue in result['issues'])
     assert any('数据质量说明与真实文章分布不一致' in issue for issue in result['issues'])
+
+
+def test_quality_checker_rejects_watchlist_promotion_and_verification_overclaim():
+    report = """
+    ## 市场概况
+    基于实时数据，上证指数收涨1.81%【新闻1】。
+
+    ## 投资主题
+    ### 科技与产业主题
+    - AI 基建仍有热度【新闻2】。
+
+    ## 建议
+    ### 推荐摘要
+    - 中科曙光（sh603019）属于核心配置，可执行买点已经出现。
+    - 整份报告已验证，可直接参考执行。
+
+    ## 风险
+    警惕追高【新闻3】。
+    """
+    claims = FactChecker().extract_claims(report)
+    for claim in claims:
+        if claim.scope == ClaimScope.REALTIME_MARKET:
+            claim.verified = True
+
+    result = check_report_quality_v2(
+        report_text=report,
+        claims=claims,
+        realtime_data={'timestamp': '2099-01-01 00:00:00'},
+        report_mode='markdown-report',
+        stock_recommendations=[
+            {
+                'symbol': 'sh603019',
+                'name': '中科曙光',
+                'grade': '关注',
+                'fresh_evidence_flag': False,
+                'actionability_passed': False,
+            }
+        ],
+        judgment_candidates=[{'topic': '科技与产业主题', 'high_confidence_topic': True}],
+    )
+
+    assert result['passed'] is False
+    assert result['stats']['watchlist_promoted_in_narrative_count'] == 1
+    assert result['stats']['verification_boundary_overclaim_count'] == 1
+    assert any('明确动作建议' in issue for issue in result['issues'])
+    assert any('事实核查边界' in issue for issue in result['issues'])
+
+
+def test_quality_checker_does_not_flag_watchlist_when_strong_words_only_apply_to_actionable_pick():
+    report = """
+    ## 市场概况
+    基于实时数据，上证指数收涨1.81%【新闻1】。
+
+    ## 投资主题
+    ### 科技与产业主题
+    - AI 基建仍有热度【新闻2】。
+
+    ## 建议
+    - **可行动标的**: 中国移动（sh600941）属于核心配置，可执行买点已经出现。
+    - **继续观察**:
+      - 中科曙光（sh603019）：证据链未达高信号门槛，继续观察。
+    """
+
+    result = check_report_quality_v2(
+        report_text=report,
+        claims=[],
+        realtime_data={'timestamp': '2099-01-01 00:00:00'},
+        report_mode='markdown-report',
+        stock_recommendations=[
+            {
+                'symbol': 'sh600941',
+                'name': '中国移动',
+                'grade': '关注',
+                'fresh_evidence_flag': True,
+                'actionability_passed': True,
+            },
+            {
+                'symbol': 'sh603019',
+                'name': '中科曙光',
+                'grade': '观察',
+                'fresh_evidence_flag': False,
+                'actionability_passed': False,
+            },
+        ],
+        judgment_candidates=[{'topic': '科技与产业主题', 'high_confidence_topic': True}],
+    )
+
+    assert result['stats']['watchlist_promoted_in_narrative_count'] == 0
+    assert not any('中科曙光' in issue and '明确动作建议' in issue for issue in result['issues'])
+
+
+def test_quality_checker_rejects_fresh_but_non_actionable_promotion():
+    report = """
+    ## 市场概况
+    基于实时数据，上证指数收涨1.81%【新闻1】。
+
+    ## 投资主题
+    ### 科技与产业主题
+    - AI 基建仍有热度【新闻2】。
+
+    ## 建议
+    - 浪潮信息（sz000977）属于核心配置，可执行买点已经出现。
+    """
+
+    result = check_report_quality_v2(
+        report_text=report,
+        claims=[],
+        realtime_data={'timestamp': '2099-01-01 00:00:00'},
+        report_mode='markdown-report',
+        stock_recommendations=[
+            {
+                'symbol': 'sz000977',
+                'name': '浪潮信息',
+                'grade': '关注',
+                'fresh_evidence_flag': True,
+                'actionability_passed': False,
+            }
+        ],
+        judgment_candidates=[{'topic': '科技与产业主题', 'high_confidence_topic': True}],
+    )
+
+    assert result['stats']['watchlist_promoted_in_narrative_count'] == 1
+    assert any('浪潮信息' in issue and '明确动作建议' in issue for issue in result['issues'])
