@@ -361,6 +361,12 @@ class SecurityMasterProvider:
         }.get(tier, 0)
 
 
+def _is_valid_yahoo_symbol(symbol: str) -> bool:
+    """校验 Yahoo Finance symbol 字符白名单：仅允许 A-Z 0-9 . ^ -"""
+    import re
+    return bool(re.fullmatch(r'[A-Za-z0-9.^\-]+', symbol))
+
+
 class PriceHistoryProvider:
     """历史行情与技术指标"""
 
@@ -376,6 +382,10 @@ class PriceHistoryProvider:
             return f'{symbol[2:]}.SS'
         if symbol.startswith('sz') and len(symbol) == 8:
             return f'{symbol[2:]}.SZ'
+        # Yahoo Finance symbols: only A-Z, 0-9, ., ^, -
+        # Reject symbols with path-like characters to prevent SSRF via URL injection
+        if not _is_valid_yahoo_symbol(symbol):
+            raise ValueError(f'无效的股票代码（包含非法字符）: {symbol!r}')
         return symbol
 
     def _cache_path(self, symbol: str) -> Path:

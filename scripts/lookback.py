@@ -54,8 +54,10 @@ def main():
 
     if args.output:
         out_path = Path(args.output)
-        if not out_path.is_absolute():
-            out_path = PROJECT_ROOT / out_path
+        if out_path.is_absolute():
+            print(f'错误: --output 不允许绝对路径，请使用相对路径（如 data/lookback_result.json）', file=sys.stderr)
+            sys.exit(1)
+        out_path = PROJECT_ROOT / out_path
         out_path.parent.mkdir(parents=True, exist_ok=True)
         payload = {
             'config': {

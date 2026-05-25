@@ -125,6 +125,9 @@ def compute_forward_returns(
     # 缓存：同一 symbol 只取一次行情
     bars_cache: Dict[str, List] = {}
     results: List[LookbackEntry] = []
+    skipped_no_bars = 0
+    skipped_no_index = 0
+    skipped_bad_close = 0
 
     for entry in entries:
         symbol = entry['symbol']
@@ -135,15 +138,18 @@ def compute_forward_returns(
         bars = bars_cache[symbol]
 
         if not bars:
+            skipped_no_bars += 1
             continue
 
         # 找到推荐日的 bar 索引
         base_idx = _find_bar_index(bars, date_str)
         if base_idx is None:
+            skipped_no_index += 1
             continue
 
         base_close = bars[base_idx].close
         if base_close <= 0:
+            skipped_bad_close += 1
             continue
 
         returns: Dict[str, Optional[float]] = {}
@@ -168,6 +174,10 @@ def compute_forward_returns(
             decision_view=entry['decision_view'],
             forward_returns=returns,
         ))
+
+    total_skipped = skipped_no_bars + skipped_no_index + skipped_bad_close
+    if total_skipped > 0:
+        print(f'[lookback] 跳过 {total_skipped} 条：无行情 {skipped_no_bars} / 日期无匹配 {skipped_no_index} / 收盘价异常 {skipped_bad_close}')
 
     return results
 
@@ -212,7 +222,7 @@ def summarize(results: List[LookbackEntry], horizons: List[int] | None = None) -
     outliers = []
     for hk in horizon_keys:
         vals = [(r, r.forward_returns.get(hk)) for r in results if r.forward_returns.get(hk) is not None]
-        if len(vals) < 5:
+        if len(vals) < 10:
             continue
         returns_only = [v for _, v in vals]
         avg = mean(returns_only)

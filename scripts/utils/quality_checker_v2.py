@@ -187,6 +187,42 @@ def _data_integrity_statement_passed(report_text: str, data_quality_stats: Optio
     return True
 
 
+def _parse_quality_time(value: str) -> Optional[datetime]:
+    normalized = str(value or '').strip().replace('T', ' ')
+    if not normalized:
+        return None
+    for fmt in ('%Y-%m-%d %H:%M:%S', '%Y-%m-%d %H:%M', '%Y-%m-%d'):
+        try:
+            return datetime.strptime(normalized, fmt)
+        except ValueError:
+            continue
+    return None
+
+
+def _extract_report_update_time(report_text: str) -> Optional[datetime]:
+    match = re.search(
+        r'(?:更新时间|数据时效).*?(\d{4}-\d{2}-\d{2}(?:[ T]\d{2}:\d{2}(?::\d{2})?)?)',
+        report_text,
+    )
+    if not match:
+        return None
+    return _parse_quality_time(match.group(1))
+
+
+def _timeliness_score(data_age_hours: Optional[float], warnings: List[str]) -> int:
+    if data_age_hours is None:
+        return 10
+    if data_age_hours < 1:
+        return 20
+    if data_age_hours < 4:
+        return 15
+    if data_age_hours < 24:
+        warnings.append(f"⚠️ 数据更新于{data_age_hours:.1f}小时前,时效性一般")
+        return 10
+    warnings.append(f"⚠️ 数据更新于{data_age_hours:.1f}小时前,时效性较差")
+    return 5
+
+
 def check_report_quality_v2(
     report_text: str,
     claims: Optional[List] = None,
@@ -231,6 +267,8 @@ def check_report_quality_v2(
     data_integrity_statement_passed = _data_integrity_statement_passed(report_text, data_quality_stats)
     watchlist_promoted_in_narrative_count = 0
     verification_boundary_overclaim_count = 0
+    time_source = None
+    source_annotation_missing = False
 
     # ============================================================
     # 1. 准确性评分 (60分) - 核心指标
@@ -291,67 +329,39 @@ def check_report_quality_v2(
     # ============================================================
     # 2. 时效性评分 (20分)
     # ============================================================
-    has_realtime_data = False
+    has_source_annotation = '数据来源' in report_text or '来源：' in report_text
+    has_time_annotation = '更新时间' in report_text or '数据时效' in report_text
+    source_annotation_missing = not has_source_annotation
+    report_update_time = _extract_report_update_time(report_text)
+    system_update_time = _parse_quality_time((realtime_data or {}).get('timestamp'))
+    has_realtime_data = bool(report_update_time or system_update_time)
     data_age_hours = None
 
-    # 检查是否包含实时数据标注
-    if '数据来源' in report_text and '更新时间' in report_text:
-        has_realtime_data = True
-
-        # 提取更新时间
-        time_match = re.search(r'更新时间.*?(\d{4}-\d{2}-\d{2}(?:\s+\d{2}:\d{2})?)', report_text)
-        if time_match:
-            try:
-                update_time_str = time_match.group(1)
-                if len(update_time_str.strip()) == 10:
-                    if realtime_data and realtime_data.get('timestamp'):
-                        update_time = datetime.strptime(realtime_data['timestamp'], '%Y-%m-%d %H:%M:%S')
-                    else:
-                        update_time = datetime.strptime(update_time_str, '%Y-%m-%d')
-                else:
-                    update_time = datetime.strptime(update_time_str, '%Y-%m-%d %H:%M')
-                data_age_hours = (datetime.now() - update_time).total_seconds() / 3600
-
-                if data_age_hours < 1:
-                    timeliness_score = 20  # 数据非常新鲜
-                    logger.info("实时数据: 非常新鲜 (<1小时)")
-                elif data_age_hours < 4:
-                    timeliness_score = 15  # 数据较新
-                    logger.info(f"实时数据: 较新 ({data_age_hours:.1f}小时)")
-                elif data_age_hours < 24:
-                    timeliness_score = 10  # 数据有些陈旧
-                    warnings.append(f"⚠️ 数据更新于{data_age_hours:.1f}小时前,时效性一般")
-                else:
-                    timeliness_score = 5
-                    warnings.append(f"⚠️ 数据更新于{data_age_hours:.1f}小时前,时效性较差")
-            except Exception as e:
-                timeliness_score = 10
-                logger.warning(f"时间解析失败: {e}")
-        else:
-            timeliness_score = 10
+    if report_update_time and system_update_time:
+        if abs((system_update_time - report_update_time).total_seconds()) > 3600:
+            warnings.append("⚠️ 报告更新时间与系统实时数据时间不一致,已按更保守时间计算时效性")
+        update_time = min(report_update_time, system_update_time)
+        time_source = 'report_text' if update_time == report_update_time else 'system_realtime_data'
+        data_age_hours = (datetime.now() - update_time).total_seconds() / 3600
+        timeliness_score = _timeliness_score(data_age_hours, warnings)
+    elif report_update_time:
+        time_source = 'report_text'
+        data_age_hours = (datetime.now() - report_update_time).total_seconds() / 3600
+        timeliness_score = _timeliness_score(data_age_hours, warnings)
+    elif system_update_time:
+        time_source = 'system_realtime_data'
+        data_age_hours = (datetime.now() - system_update_time).total_seconds() / 3600
+        timeliness_score = _timeliness_score(data_age_hours, warnings)
+        if not has_time_annotation:
+            warnings.append("⚠️ 报告中缺少实时数据更新时间标注,已按系统注入时间计算时效性")
     else:
-        # 检查是否注入了实时数据
-        if realtime_data and realtime_data.get('timestamp'):
-            has_realtime_data = True
-            try:
-                update_time = datetime.strptime(realtime_data['timestamp'], '%Y-%m-%d %H:%M:%S')
-                data_age_hours = (datetime.now() - update_time).total_seconds() / 3600
-                if data_age_hours < 1:
-                    timeliness_score = 20
-                elif data_age_hours < 4:
-                    timeliness_score = 15
-                elif data_age_hours < 24:
-                    timeliness_score = 10
-                else:
-                    timeliness_score = 5
-                warnings.append("⚠️ 报告中缺少实时数据标注,已按系统注入时间计算时效性")
-            except Exception as e:
-                timeliness_score = 10
-                warnings.append("⚠️ 报告中缺少实时数据标注,但系统已注入数据")
-                logger.warning(f"系统实时数据时间解析失败: {e}")
-        else:
-            issues.append("❌ 缺少实时数据注入,报告时效性差")
-            timeliness_score = 0
+        issues.append("❌ 缺少实时数据注入,报告时效性差")
+        timeliness_score = 0
+
+    if has_realtime_data and not has_source_annotation:
+        warnings.append("⚠️ 报告中缺少实时数据来源标注")
+    if data_age_hours is not None and data_age_hours >= 24:
+        issues.append("❌ 实时数据更新时间超过24小时,不满足发布时效要求")
 
     score += timeliness_score
 
@@ -363,9 +373,6 @@ def check_report_quality_v2(
     citation_count = len(citations)
     judgment_cards_count = len(re.findall(r'^###\s+\d+\.', report_text, flags=re.MULTILINE))
 
-    # 检查数据来源标注
-    has_source_annotation = '数据来源' in report_text or '来源：' in report_text
-
     # 计算可靠性得分
     if report_mode == 'judgment-cards' and judgment_cards_count > 0:
         reliability_score = min(20, 8 + judgment_cards_count * 3)
@@ -373,11 +380,16 @@ def check_report_quality_v2(
             warnings.append("⚠️ 缺少观察项章节，判断边界可能不够清晰")
     elif citation_count >= 15 and has_source_annotation:
         reliability_score = 20
+    elif citation_count >= 15:
+        reliability_score = 15
     elif citation_count >= 10 and has_source_annotation:
         reliability_score = 15
+    elif citation_count >= 10:
+        reliability_score = 10
     elif citation_count >= 5 or has_source_annotation:
         reliability_score = 10
-        warnings.append(f"⚠️ 引用来源偏少 ({citation_count}处),建议增加到15处以上")
+        if citation_count < 15:
+            warnings.append(f"⚠️ 引用来源偏少 ({citation_count}处),建议增加到15处以上")
     else:
         reliability_score = 5
         issues.append(f"❌ 引用来源严重不足 ({citation_count}处),缺乏可信度")
@@ -500,6 +512,8 @@ def check_report_quality_v2(
         'timeliness_score': round(timeliness_score, 1),
         'reliability_score': round(reliability_score, 1),
         'claim_coverage_score': claim_coverage_score,
+        'time_source': time_source,
+        'source_annotation_missing': source_annotation_missing,
         'narrative_consistency_passed': narrative_consistency_passed,
         'data_integrity_statement_passed': data_integrity_statement_passed,
         'issues': issues,
@@ -507,6 +521,9 @@ def check_report_quality_v2(
         'stats': {
             'has_realtime_data': has_realtime_data,
             'data_age_hours': data_age_hours,
+            'time_source': time_source,
+            'source_annotation_missing': source_annotation_missing,
+            'claim_coverage_score': claim_coverage_score,
             'citation_count': citation_count,
             'verified_claims': sum(1 for c in realtime_claims if c.verified) if realtime_claims is not None else 0,
             'total_claims': len(realtime_claims) if realtime_claims is not None else 0,

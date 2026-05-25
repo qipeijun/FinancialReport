@@ -517,10 +517,13 @@ def analyze_report_quality(
                 f"meta.market={meta_market} != scoring_config.market={scoring_market}"
             )
     else:
+        # judgment-cards / realtime-monitor 模式：旧归档可能无 market 字段
+        # 仅当 mode 名明确标记了市场后缀时才严格要求（如 "judgment-cards-us"）
+        market_required = '-' in mode  # mode like "judgment-cards-us" indicates market suffix
         market_consistency = {
             'meta_market': meta_market,
-            'passed': meta_market is not None,
-            'issues': [] if meta_market is not None else ['meta.market 缺失'],
+            'passed': meta_market is not None if market_required else True,
+            'issues': [] if (meta_market is not None or not market_required) else ['meta.market 缺失（mode 要求 market 后缀但缺失）'],
         }
     payload['market_consistency'] = market_consistency
     payload['passed'] = (
@@ -807,13 +810,13 @@ def main() -> int:
         )
     elif args.run_started_at is not None:
         live_passed = (
-            all(item.get('passed', True) for item in mode_checks.values()) if mode_checks else True
+            all(item.get('passed', True) for item in mode_checks.values()) if mode_checks else False
         ) and (
             freshness_check['markdown-report'].get('fresh_artifacts', False)
             and freshness_check['markdown-report'].get('artifact_session_match', False)
         )
     else:
-        live_passed = all(item.get('passed', True) for item in mode_checks.values()) if mode_checks else True
+        live_passed = all(item.get('passed', True) for item in mode_checks.values()) if mode_checks else False
 
     report['passed'] = (
         report['automation']['passed']

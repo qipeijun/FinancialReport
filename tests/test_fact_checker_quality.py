@@ -31,6 +31,56 @@ def test_extract_claims_separates_realtime_market_from_news_facts():
     assert all(c.extracted_value != '5.85' for c in realtime_claims)
 
 
+def test_extract_claims_supports_us_index_realtime_claims():
+    report = """
+    - 基于实时数据（更新时间：2026-05-25 19:14），道指收涨2.13%至$50,579.70，标普500收涨0.88%至$7,473.47，纳指收涨0.45%至$26,343.97。
+    """
+
+    claims = FactChecker().extract_claims(report)
+    realtime_claims = [c for c in claims if c.scope == ClaimScope.REALTIME_MARKET]
+
+    assert any(
+        c.type == ClaimType.PRICE_CHANGE and c.asset_hint == '^DJI' and c.extracted_value == '2.13'
+        for c in realtime_claims
+    )
+    assert any(
+        c.type == ClaimType.PRICE_CHANGE and c.asset_hint == '^GSPC' and c.extracted_value == '0.88'
+        for c in realtime_claims
+    )
+    assert any(
+        c.type == ClaimType.PRICE_CHANGE and c.asset_hint == '^IXIC' and c.extracted_value == '0.45'
+        for c in realtime_claims
+    )
+    assert any(
+        c.type == ClaimType.STOCK_PRICE and c.asset_hint == '^DJI' and c.extracted_value == '50579.70'
+        for c in realtime_claims
+    )
+    assert any(
+        c.type == ClaimType.STOCK_PRICE and c.asset_hint == '^GSPC' and c.extracted_value == '7473.47'
+        for c in realtime_claims
+    )
+    assert any(
+        c.type == ClaimType.STOCK_PRICE and c.asset_hint == '^IXIC' and c.extracted_value == '26343.97'
+        for c in realtime_claims
+    )
+
+
+def test_extract_claims_counts_news_money_and_percent_claims_only_as_news_facts():
+    report = """
+    - 人形机器人商业化出现早期信号，旧金山已推出$150的人形机器人清洁服务【新闻3】。
+    - 机器人清洁服务的$150定价已低于传统家政服务$200-$400的价格区间【新闻3】。
+    - 迪士尼新片首周末国内票房仅$8,200万【新闻8】，国际油价应声下跌约5%【新闻6】。
+    """
+
+    claims = FactChecker().extract_claims(report)
+    realtime_claims = [c for c in claims if c.scope == ClaimScope.REALTIME_MARKET]
+    news_fact_claims = [c for c in claims if c.scope == ClaimScope.NEWS_FACT]
+    news_values = {c.extracted_value for c in news_fact_claims}
+
+    assert not realtime_claims
+    assert {'150', '200', '400', '8200', '5'}.issubset(news_values)
+
+
 def test_extract_claims_marks_target_gain_as_violation():
     report = "建议关注某股票，目标涨幅25%。"
 
@@ -67,6 +117,73 @@ def test_quality_checker_uses_system_realtime_timestamp_when_text_omits_it():
     assert result['stats']['has_realtime_data'] is True
     assert result['timeliness_score'] == 20
     assert result['accuracy_score'] == 45
+
+
+def test_quality_checker_reports_missing_source_without_calling_citations_insufficient():
+    report = """
+    ## 市场概况
+    基于实时数据（更新时间：2099-01-01 08:00），道指收涨2.13%至$50,579.70【新闻1】。
+
+    ## 投资主题
+    机器人清洁服务定价为$150【新闻2】。
+
+    ## 风险
+    油价下跌约5%【新闻3】。
+
+    ## 建议
+    继续观察【新闻4】【新闻5】【新闻6】【新闻7】【新闻8】【新闻9】【新闻10】【新闻11】【新闻12】【新闻13】【新闻14】【新闻15】。
+    """
+    claims = FactChecker().extract_claims(report)
+    for claim in claims:
+        if claim.scope == ClaimScope.REALTIME_MARKET:
+            claim.verified = True
+
+    result = check_report_quality_v2(
+        report_text=report,
+        claims=claims,
+        realtime_data={'timestamp': '2099-01-01 08:00:00'},
+        report_mode='markdown-report',
+    )
+
+    assert result['reliability_score'] == 15
+    assert result['source_annotation_missing'] is True
+    assert result['stats']['claim_coverage_score'] >= 10
+    assert any('缺少实时数据来源标注' in warning for warning in result['warnings'])
+    assert not any('引用来源偏少' in warning for warning in result['warnings'])
+
+
+def test_quality_checker_uses_more_conservative_time_when_report_and_system_conflict():
+    report = """
+    ## 市场概况
+    基于实时数据（更新时间：2000-01-01），道指收涨2.13%至$50,579.70【新闻1】。
+
+    ## 投资主题
+    机器人清洁服务定价为$150【新闻2】。
+
+    ## 风险
+    油价下跌约5%【新闻3】。
+
+    ## 建议
+    继续观察【新闻4】【新闻5】【新闻6】【新闻7】【新闻8】【新闻9】【新闻10】【新闻11】【新闻12】【新闻13】【新闻14】【新闻15】。
+    """
+    claims = FactChecker().extract_claims(report)
+    for claim in claims:
+        if claim.scope == ClaimScope.REALTIME_MARKET:
+            claim.verified = True
+
+    result = check_report_quality_v2(
+        report_text=report,
+        claims=claims,
+        realtime_data={'timestamp': '2099-01-01 08:00:00'},
+        report_mode='markdown-report',
+    )
+
+    assert result['time_source'] == 'report_text'
+    assert result['timeliness_score'] == 5
+    assert result['passed'] is False
+    assert result['stats']['data_age_hours'] > 24
+    assert any('超过24小时' in issue for issue in result['issues'])
+    assert any('更保守时间' in warning for warning in result['warnings'])
 
 
 def test_quality_checker_counts_only_realtime_claims_in_accuracy():

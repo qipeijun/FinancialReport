@@ -83,6 +83,11 @@ class FactChecker:
         """
         self.fetcher = realtime_fetcher or RealtimeDataFetcher()
 
+    @staticmethod
+    def _normalize_number(value: str) -> str:
+        """移除金融数字中的千分位逗号，保留小数精度。"""
+        return str(value or '').replace(',', '').strip()
+
     def extract_claims(self, report_text: str) -> List[Claim]:
         """
         从报告中提取所有可验证的断言
@@ -194,6 +199,26 @@ class FactChecker:
                         asset_hint=self._infer_asset_hint(match.group(0))
                     ))
 
+        # 美股/指数常见写法: "道指收涨2.13%至$50,579.70"
+        for line in text.splitlines():
+            if not any(cue in line for cue in ('基于实时数据', '实时', '收涨', '收跌', '现价')):
+                continue
+            for clause in re.split(r'[，。；]', line):
+                clause = clause.strip()
+                asset_hint = self._infer_asset_hint(clause)
+                if not asset_hint:
+                    continue
+                for match in re.finditer(r'(?:至|报|收于|站上|突破)\s*[$¥￥]?\s*([0-9,]+(?:\.\d+)?)', clause):
+                    if asset_hint not in {'^DJI', '^GSPC', '^IXIC'} and '$' not in match.group(0):
+                        continue
+                    claims.append(Claim(
+                        type=ClaimType.STOCK_PRICE,
+                        content=match.group(0),
+                        extracted_value=self._normalize_number(match.group(1)),
+                        context=clause,
+                        asset_hint=asset_hint,
+                    ))
+
         return claims
 
     def _extract_change_claims(self, text: str) -> List[Claim]:
@@ -202,13 +227,15 @@ class FactChecker:
         realtime_cues = (
             '基于实时数据', '实时', '现价', '收涨', '收跌',
             '上证指数', '深证成指', '创业板指', '黄金', '金价',
-            '美元兑人民币', '汇率'
+            '美元兑人民币', '汇率', '道指', '标普', '标普500',
+            '纳指', 'S&P 500', 'NASDAQ', 'Dow Jones'
         )
 
         # 模式: "涨幅XX%", "上涨XX%", "下跌XX%", "涨XX%"
         patterns = [
             r'([涨跌]幅?)\s*(\+?-?\d+\.?\d*)\s*%',
             r'(上涨|下跌)\s*(\d+\.?\d*)\s*%',
+            r'(收涨|收跌)\s*(\d+\.?\d*)\s*%',
             r'([\u4e00-\u9fa5]+)(?:涨|跌)\s*(\d+\.?\d*)\s*%',
         ]
 
@@ -322,21 +349,32 @@ class FactChecker:
         return claims
 
     def _extract_news_fact_claims(self, text: str) -> List[Claim]:
-        """提取新闻事实断言（同比/环比/财报增速等）"""
+        """提取新闻事实断言（只统计覆盖，不纳入实时行情校验）"""
         claims = []
         patterns = [
-            r'(?:同比|环比)(?:增长|上涨|下滑|下降)?\s*\+?(\d+\.?\d*)\s*%',
-            r'(?:营收|收入|净利润|利润)(?:同比|环比)(?:增长|上涨|下滑|下降)?\s*\+?(\d+\.?\d*)\s*%',
-            r'(?:非农就业|新增就业|融资|募资|订单|产能|销量|零售)\D{0,8}(\d+\.?\d*)\s*(万亿|亿|万|%)',
-            r'(?:指数|价格|收益率|汇率)\D{0,8}(\d+\.?\d*)\s*(点|美元|%|元)',
+            (r'(?:同比|环比)(?:增长|上涨|下滑|下降)?\s*\+?(\d+\.?\d*)\s*%', False),
+            (r'(?:营收|收入|净利润|利润)(?:同比|环比)(?:增长|上涨|下滑|下降)?\s*\+?(\d+\.?\d*)\s*%', False),
+            (r'(?:非农就业|新增就业|融资|募资|订单|产能|销量|零售)\D{0,8}(\d+\.?\d*)\s*(万亿|亿|万|%)', False),
+            (r'(?:指数|价格|收益率|汇率)\D{0,8}(\d+\.?\d*)\s*(点|美元|%|元)', False),
+            (r'[$]\s*([0-9,]+(?:\.\d+)?)\s*(万|亿|百万|million|billion)?', True),
+            (r'([0-9,]+(?:\.\d+)?)\s*%', True),
         ]
 
         for line in text.splitlines():
             if '基于实时数据' in line or '现价' in line or '收涨' in line or '收跌' in line:
                 continue
-            for pattern in patterns:
+            for pattern, requires_citation in patterns:
+                if requires_citation and '【新闻' not in line:
+                    continue
                 for match in re.finditer(pattern, line):
-                    value = next((group for group in match.groups() if re.fullmatch(r'\d+\.?\d*', str(group or ''))), '')
+                    value = next(
+                        (
+                            self._normalize_number(group)
+                            for group in match.groups()
+                            if re.fullmatch(r'[0-9,]+(?:\.\d+)?', str(group or ''))
+                        ),
+                        ''
+                    )
                     claims.append(Claim(
                         type=ClaimType.MARKET_TREND,
                         content=match.group(0),
@@ -359,6 +397,9 @@ class FactChecker:
             'sh000001': ['上证指数', '沪指', '上证'],
             'sz399001': ['深证成指', '深成指'],
             'sz399006': ['创业板指', '创业板'],
+            '^DJI': ['道指', '道琼斯', 'Dow Jones', 'DJIA'],
+            '^GSPC': ['标普500', '标普 500', '标普', 'S&P 500', 'S&P500'],
+            '^IXIC': ['纳指', '纳斯达克', 'NASDAQ', 'Nasdaq'],
             'gold': ['黄金', '金价', '现货黄金', '黄金ETF'],
             'USD/CNY': ['美元兑人民币', 'USD/CNY', '汇率'],
         }
@@ -430,7 +471,7 @@ class FactChecker:
             return
 
         try:
-            claimed_price = float(claim.extracted_value)
+            claimed_price = float(self._normalize_number(claim.extracted_value))
 
             # 从上下文获取股票数据(避免重复API调用)
             stocks_data = context_data.get('stocks', {}) if context_data else {}
@@ -448,14 +489,14 @@ class FactChecker:
                 stock_dict = stocks_data.get(code) or {}
                 actual_price = stock_dict.get('price', 0)
 
-                tolerance = 0.02 if code in {'sh000001', 'sz399001', 'sz399006'} else 0.03
+                tolerance = 0.02 if code in {'sh000001', 'sz399001', 'sz399006', '^DJI', '^GSPC', '^IXIC'} else 0.03
                 if actual_price > 0:
                     diff_pct = abs(actual_price - claimed_price) / actual_price
 
                     if diff_pct < tolerance:
                         claim.verified = True
                         claim.confidence = 1.0 - diff_pct
-                        claim.evidence = f"实时数据验证: ¥{actual_price:.2f} (误差 {diff_pct*100:.1f}%)"
+                        claim.evidence = f"实时数据验证: {actual_price:.2f} (误差 {diff_pct*100:.1f}%)"
                         claim.source = "Yahoo Finance"
                         claim.timestamp = stock_dict.get('timestamp', '')
                         return
@@ -473,7 +514,7 @@ class FactChecker:
             return
 
         try:
-            claimed_change = float(claim.extracted_value)
+            claimed_change = float(self._normalize_number(claim.extracted_value))
 
             stocks_data = context_data.get('stocks', {}) if context_data else {}
             if not stocks_data:
@@ -508,7 +549,7 @@ class FactChecker:
 
                 if self._direction_conflicts(claim, actual_change):
                     continue
-                tolerance = 0.3 if code in {'sh000001', 'sz399001', 'sz399006'} else 0.5
+                tolerance = 0.3 if code in {'sh000001', 'sz399001', 'sz399006', '^DJI', '^GSPC', '^IXIC'} else 0.5
                 if abs(actual_change - claimed_change) < tolerance:
                     claim.verified = True
                     claim.confidence = 0.95

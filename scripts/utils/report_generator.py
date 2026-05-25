@@ -237,6 +237,7 @@ class ReportGenerator:
             ai_details = ('整理摘要结构', '等待模型返回', '校对生成片段')
             with heartbeat('AI 报告生成', interval_seconds=6.0, frames=ai_frames, details=ai_details):
                 report, usage = self.provider.generate(prompt, content, **kwargs)
+            report = self._attach_realtime_source_annotation(report, realtime_data)
 
             if attempt == 0:
                 print_success('✓ 报告生成完成')
@@ -301,11 +302,15 @@ class ReportGenerator:
     @staticmethod
     def _quality_metadata_fields(quality_result: Optional[Dict[str, Any]]) -> Dict[str, Any]:
         payload = quality_result or {}
+        stats = payload.get('stats') or {}
         return {
             'quality_score': payload.get('score'),
             'quality_stats': payload.get('stats'),
             'quality_issues': payload.get('issues'),
             'quality_warnings': payload.get('warnings'),
+            'time_source': payload.get('time_source') or stats.get('time_source'),
+            'source_annotation_missing': payload.get('source_annotation_missing') if 'source_annotation_missing' in payload else stats.get('source_annotation_missing'),
+            'claim_coverage_score': payload.get('claim_coverage_score') if 'claim_coverage_score' in payload else stats.get('claim_coverage_score'),
         }
 
     def _run_fact_check(self, report_text: str, realtime_data: Optional[Dict[str, Any]]) -> Tuple[list, str]:
@@ -318,6 +323,26 @@ class ReportGenerator:
         verified_claims = checker.verify_claims(claims, realtime_data)
         verification_report = checker.generate_report_annotation(verified_claims)
         return verified_claims, verification_report
+
+    @staticmethod
+    def _realtime_source_annotation(realtime_data: Optional[Dict[str, Any]]) -> str:
+        if not realtime_data:
+            return ''
+        timestamp = realtime_data.get('timestamp')
+        if not timestamp:
+            return ''
+        return (
+            "## 📊 实时数据来源\n\n"
+            "- 数据来源: Yahoo Finance、Gold-API、Frankfurter\n"
+            f"- 更新时间: {timestamp}\n"
+        )
+
+    def _attach_realtime_source_annotation(self, report_text: str, realtime_data: Optional[Dict[str, Any]]) -> str:
+        """把确定性的实时数据来源写入报告文本，避免模型自由生成来源口径。"""
+        annotation = self._realtime_source_annotation(realtime_data)
+        if not annotation or '## 📊 实时数据来源' in report_text:
+            return report_text
+        return f"{report_text.rstrip()}\n\n{annotation}"
 
     @staticmethod
     def _build_prompt_signal_context(
@@ -920,6 +945,7 @@ class ReportGenerator:
                 scoring_config=stock_payload['scoring_config'],
             )
             summary_md = f"{summary_md.rstrip()}\n\n{stock_section}\n"
+        summary_md = self._attach_realtime_source_annotation(summary_md, realtime_data)
 
         # 事实核查（如果启用验证）
         verified_claims, verification_report = self._run_fact_check(summary_md, realtime_data)

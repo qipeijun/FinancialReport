@@ -1,0 +1,639 @@
+{
+  "analysis_mode": "markdown-report",
+  "market": "US",
+  "date_range": {
+    "start": "2026-05-25",
+    "end": "2026-05-25"
+  },
+  "selected_articles": [
+    {
+      "id": 4673,
+      "title": "Child Safety Groups Urge FTC To Investigate Roblox",
+      "source": "ZeroHedge",
+      "published": "Sun, 24 May 2026 23:50:00 +0000",
+      "collection_date": "2026-05-25",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4674,
+      "title": "My Retirement Accounts Fail In The World I Actually Live In",
+      "source": "ZeroHedge",
+      "published": "Sun, 24 May 2026 22:40:00 +0000",
+      "collection_date": "2026-05-25",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4670,
+      "title": "$150 Humanoid Robot House Cleaning Service Threatens To Undercut Maid Services",
+      "source": "ZeroHedge",
+      "published": "Mon, 25 May 2026 01:35:00 +0000",
+      "collection_date": "2026-05-25",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4671,
+      "title": "Trump Indicates He'll Sign Bill Making Daylight Saving Time Permanent",
+      "source": "ZeroHedge",
+      "published": "Mon, 25 May 2026 01:00:00 +0000",
+      "collection_date": "2026-05-25",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4672,
+      "title": "Colbert Blames Trump, But Massive Losses Killed His Show",
+      "source": "ZeroHedge",
+      "published": "Mon, 25 May 2026 00:25:00 +0000",
+      "collection_date": "2026-05-25",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4655,
+      "title": "Oil prices fall 5% after Trump says Iran talks proceeding in a 'constructive manner'",
+      "source": "CNBC",
+      "published": "Sun, 24 May 2026 23:21:45 GMT",
+      "collection_date": "2026-05-25",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "宏观与流动性",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4656,
+      "title": "Japan’s Nikkei 225 tops 65,000 for first time as oil falls on Hormuz reopening hopes",
+      "source": "CNBC",
+      "published": "Mon, 25 May 2026 01:54:21 GMT",
+      "collection_date": "2026-05-25",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4657,
+      "title": "'The Mandalorian and Grogu' is Disney's lowest-ever Star Wars film opening",
+      "source": "CNBC",
+      "published": "Sun, 24 May 2026 16:04:57 GMT",
+      "collection_date": "2026-05-25",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4643,
+      "title": "“抬头率”救不了大学课堂",
+      "source": "FT中文网",
+      "published": "Sun, 24 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-25",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4668,
+      "title": "How Saudi Arabia's spending spree reached the end of the line",
+      "source": "BBC全球经济",
+      "published": "Mon, 25 May 2026 01:08:39 GMT",
+      "collection_date": "2026-05-25",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4665,
+      "title": "Oil prices slide on hopes of US-Iran peace deal",
+      "source": "BBC全球经济",
+      "published": "Mon, 25 May 2026 00:50:29 GMT",
+      "collection_date": "2026-05-25",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4642,
+      "title": "IPO热潮可能标志着美股见顶",
+      "source": "FT中文网",
+      "published": "Sun, 24 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-25",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 4666,
+      "title": "'I live in survival mode': The rise of the multi-job workforce",
+      "source": "BBC全球经济",
+      "published": "Mon, 25 May 2026 00:26:38 GMT",
+      "collection_date": "2026-05-25",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4667,
+      "title": "Beer boom goes flat as breweries call last orders",
+      "source": "BBC全球经济",
+      "published": "Mon, 25 May 2026 00:21:24 GMT",
+      "collection_date": "2026-05-25",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "summary_only",
+      "is_original_source": 0
+    },
+    {
+      "id": 4640,
+      "title": "俄罗斯再度动用“榛树”高超音速导弹袭击乌克兰",
+      "source": "FT中文网",
+      "published": "Sun, 24 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-25",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 4641,
+      "title": "燃料涨价引发玻利维亚全国抗议",
+      "source": "FT中文网",
+      "published": "Sun, 24 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-25",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "风险事件",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    }
+  ],
+  "judgment_candidates": [
+    {
+      "candidate_id": "C02",
+      "topic": "科技与产业主题",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "2-6周",
+      "evidence_count": 4,
+      "independent_evidence_count": 2,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 2,
+      "mainstream_or_better_count": 4,
+      "articles": [
+        {
+          "id": 4657,
+          "title": "'The Mandalorian and Grogu' is Disney's lowest-ever Star Wars film opening",
+          "source": "CNBC",
+          "summary": "Disney's \"The Mandalorian and Grogu\" tallied and estimated $82 million in domestic ticket sales through its first three days in theaters.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sun, 24 May 2026 16:04:57 GMT",
+          "collection_date": "2026-05-25"
+        },
+        {
+          "id": 4656,
+          "title": "Japan’s Nikkei 225 tops 65,000 for first time as oil falls on Hormuz reopening hopes",
+          "source": "CNBC",
+          "summary": "Japan’s Nikkei 225 breached 64,000 for the first time Monday as a sharp decline in oil prices lifted risk sentiment in holiday-thinned trading.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 25 May 2026 01:54:21 GMT",
+          "collection_date": "2026-05-25"
+        },
+        {
+          "id": 4642,
+          "title": "IPO热潮可能标志着美股见顶",
+          "source": "FT中文网",
+          "summary": "帕里克：SpaceX、Anthropic和OpenAI大规模上市的前景让选股者振奋。但历史似乎表明，这波潜在的IPO热潮可能标志着科技股涨势开始走向终结。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Sun, 24 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-25"
+        },
+        {
+          "id": 4665,
+          "title": "Oil prices slide on hopes of US-Iran peace deal",
+          "source": "BBC全球经济",
+          "summary": "Trump said on Saturday that an agreement would include the reopening of the Strait of Hormuz, without giving further details.",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 25 May 2026 00:50:29 GMT",
+          "collection_date": "2026-05-25"
+        }
+      ],
+      "topic_article_count": 6,
+      "priority_score": 50,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C01",
+      "topic": "政策与监管",
+      "market_scope": [
+        "A股",
+        "港股",
+        "宏观"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 3,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 2,
+      "articles": [
+        {
+          "id": 4643,
+          "title": "“抬头率”救不了大学课堂",
+          "source": "FT中文网",
+          "summary": "勾尧：真正的抬头，发生在一个人感到自己被另一个生命真实地看见的那一刻。这是任何KPI都无法测量的。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sun, 24 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-25"
+        },
+        {
+          "id": 4666,
+          "title": "'I live in survival mode': The rise of the multi-job workforce",
+          "source": "BBC全球经济",
+          "summary": "More people are taking second jobs as rising costs and insecure work reshape how we earn a living.",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 25 May 2026 00:26:38 GMT",
+          "collection_date": "2026-05-25"
+        },
+        {
+          "id": 4673,
+          "title": "Child Safety Groups Urge FTC To Investigate Roblox",
+          "source": "ZeroHedge",
+          "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">Child Safety Groups Urge FTC To Investigate Roblox</span> <div class=\"clearfix text-formatted field fie",
+          "source_tier": "aggregator",
+          "content_quality_status": "full",
+          "published": "Sun, 24 May 2026 23:50:00 +0000",
+          "collection_date": "2026-05-25"
+        },
+        {
+          "id": 4674,
+          "title": "My Retirement Accounts Fail In The World I Actually Live In",
+          "source": "ZeroHedge",
+          "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">My Retirement Accounts Fail In The World I Actually Live In</span> <div class=\"clearfix text-formatted ",
+          "source_tier": "aggregator",
+          "content_quality_status": "full",
+          "published": "Sun, 24 May 2026 22:40:00 +0000",
+          "collection_date": "2026-05-25"
+        }
+      ],
+      "topic_article_count": 5,
+      "priority_score": 43,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C04",
+      "topic": "其他观察",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 2,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 3,
+      "articles": [
+        {
+          "id": 4668,
+          "title": "How Saudi Arabia's spending spree reached the end of the line",
+          "source": "BBC全球经济",
+          "summary": "MBS's Vison 2030 project seemed the stuff of science fiction. Now reality has bitten",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 25 May 2026 01:08:39 GMT",
+          "collection_date": "2026-05-25"
+        },
+        {
+          "id": 4640,
+          "title": "俄罗斯再度动用“榛树”高超音速导弹袭击乌克兰",
+          "source": "FT中文网",
+          "summary": "发射极难拦截的“榛树”导弹被广泛视为政治信号，意在恐吓乌克兰及其西方伙伴。此型导弹这一次的打击目标是迄今最靠近乌克兰首都的。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Sun, 24 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-25"
+        },
+        {
+          "id": 4667,
+          "title": "Beer boom goes flat as breweries call last orders",
+          "source": "BBC全球经济",
+          "summary": "The UK's brewery scene is shrinking as pubs close, costs rise and drinking habits change.",
+          "source_tier": "mainstream",
+          "content_quality_status": "summary_only",
+          "published": "Mon, 25 May 2026 00:21:24 GMT",
+          "collection_date": "2026-05-25"
+        }
+      ],
+      "topic_article_count": 3,
+      "priority_score": 40,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C03",
+      "topic": "宏观与流动性",
+      "market_scope": [
+        "美股",
+        "A股",
+        "港股",
+        "美元",
+        "利率"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 1,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 1,
+      "articles": [
+        {
+          "id": 4655,
+          "title": "Oil prices fall 5% after Trump says Iran talks proceeding in a 'constructive manner'",
+          "source": "CNBC",
+          "summary": "Trump had said an agreement with Iran to open the Strait of Hormuz, among other issues, was largely negotiated and would be announced soon.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Sun, 24 May 2026 23:21:45 GMT",
+          "collection_date": "2026-05-25"
+        }
+      ],
+      "topic_article_count": 1,
+      "priority_score": 37,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C05",
+      "topic": "风险事件",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股",
+        "商品"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 1,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 1,
+      "articles": [
+        {
+          "id": 4641,
+          "title": "燃料涨价引发玻利维亚全国抗议",
+          "source": "FT中文网",
+          "summary": "劳工和农民工会封锁道路，抗议燃料成本上涨和供应短缺，并要求去年当选的中右翼总统帕斯辞职。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Sun, 24 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-25"
+        }
+      ],
+      "topic_article_count": 1,
+      "priority_score": 37,
+      "high_confidence_topic": false
+    }
+  ],
+  "candidate_stocks": [
+    {
+      "symbol": "DIS",
+      "name": "Disney",
+      "industry": "传媒娱乐",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        4657
+      ],
+      "evidence_summaries": [
+        "'The Mandalorian and Grogu' is Disney's lowest-ever Star Wars film opening"
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 1,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "Sun, 24 May 2026 16:04:57 GMT"
+      ],
+      "topic_article_count": 0
+    }
+  ],
+  "stock_recommendations": [
+    {
+      "symbol": "DIS",
+      "name": "Disney",
+      "industry": "传媒娱乐",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 58,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 11,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "RSI 处于健康区间，趋势未明显过热",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4657
+      ],
+      "evidence_summaries": [
+        "'The Mandalorian and Grogu' is Disney's lowest-ever Star Wars film opening"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    }
+  ],
+  "decision_views": {
+    "actionable_candidates": [],
+    "conditional_watchlist": [
+      {
+        "symbol": "DIS",
+        "name": "Disney",
+        "industry": "传媒娱乐",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 58,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 11,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "RSI 处于健康区间，趋势未明显过热",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4657
+        ],
+        "evidence_summaries": [
+          "'The Mandalorian and Grogu' is Disney's lowest-ever Star Wars film opening"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "stale_or_rejected": []
+  },
+  "score_distribution": {
+    "strong_focus": 0,
+    "focus": 0,
+    "watch": 1,
+    "avoid": 0
+  },
+  "scoring_config": {
+    "market": "US",
+    "style": "balanced",
+    "lookback_days": 60,
+    "pool_mode": "strict",
+    "theme_mapping_max_grade": "watch",
+    "value_acceptance_enabled": true,
+    "industry_trend_enabled": true
+  },
+  "session": "evening",
+  "session_time": "2026-05-25 19:14:01"
+}
