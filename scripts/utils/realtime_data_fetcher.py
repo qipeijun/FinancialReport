@@ -141,6 +141,9 @@ class RealtimeDataFetcher:
             'sh000001': '上证指数',
             'sz399001': '深证成指',
             'sz399006': '创业板指',
+            '^GSPC': 'S&P 500',
+            '^IXIC': 'NASDAQ',
+            '^DJI': 'Dow Jones',
         }
         return (
             known_names.get(original_code)
@@ -335,12 +338,13 @@ class RealtimeDataFetcher:
     def format_for_prompt(self,
                          stocks: Optional[Dict[str, StockData]] = None,
                          gold: Optional[GoldData] = None,
-                         forex: Optional[Dict[str, ForexData]] = None) -> str:
+                         forex: Optional[Dict[str, ForexData]] = None,
+                         market: str = 'CN') -> str:
         """
         格式化数据为Prompt文本(供AI理解)
 
-        Returns:
-            Markdown格式的实时数据摘要
+        Args:
+            market: 市场标识，'CN' 用人民币/手，'US' 用美元/股
         """
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
@@ -353,15 +357,15 @@ class RealtimeDataFetcher:
         # 股票行情
         if stocks:
             prompt += "### 股票行情\n\n"
-            prompt += "| 股票代码 | 股票名称 | 现价 | 涨跌幅 | 成交量 | 成交额 | 更新时间 |\n"
-            prompt += "|---------|---------|------|--------|--------|--------|----------|\n"
+            currency = '$' if market == 'US' else '¥'
+            prompt += "| 股票代码 | 股票名称 | 现价 | 涨跌幅 | 成交量 | 更新时间 |\n"
+            prompt += "|---------|---------|------|--------|--------|----------|\n"
 
             for code, stock in stocks.items():
                 prompt += f"| {stock.code} | {stock.name} | "
-                prompt += f"¥{stock.price:.2f} | "
+                prompt += f"{currency}{stock.price:.2f} | "
                 prompt += f"{stock.change_pct:+.2f}% | "
-                prompt += f"{stock.volume:,}手 | "
-                prompt += f"¥{stock.amount/100000000:.2f}亿 | "
+                prompt += f"{stock.volume:,} | "
                 prompt += f"{stock.timestamp} |\n"
 
             prompt += "\n"
@@ -396,9 +400,12 @@ class RealtimeDataFetcher:
 
         return prompt
 
-    def fetch_all(self) -> Dict:
+    def fetch_all(self, market: str = 'CN') -> Dict:
         """
         获取通用的实时市场数据（不依赖具体文章）
+
+        Args:
+            market: 市场标识，'CN' 或 'US'
 
         Returns:
             {
@@ -408,12 +415,19 @@ class RealtimeDataFetcher:
                 'prompt': '格式化的Prompt文本'
             }
         """
-        # 获取常见的核心股票
-        common_stock_codes = [
-            'sh000001',  # 上证指数
-            'sz399001',  # 深证成指
-            'sz399006',  # 创业板指
-        ]
+        # 获取核心指数
+        if market == 'US':
+            common_stock_codes = [
+                '^GSPC',  # S&P 500
+                '^IXIC',  # NASDAQ
+                '^DJI',   # Dow Jones
+            ]
+        else:
+            common_stock_codes = [
+                'sh000001',  # 上证指数
+                'sz399001',  # 深证成指
+                'sz399006',  # 创业板指
+            ]
 
         # 获取股票数据
         stocks = {}
@@ -443,7 +457,7 @@ class RealtimeDataFetcher:
             logger.warning(f"获取外汇数据失败: {e}")
 
         # 格式化为Prompt
-        prompt_text = self.format_for_prompt(stocks=stocks, gold=gold, forex=forex)
+        prompt_text = self.format_for_prompt(stocks=stocks, gold=gold, forex=forex, market=market)
 
         return {
             'stocks': {k: v.to_dict() for k, v in stocks.items()},
@@ -453,7 +467,7 @@ class RealtimeDataFetcher:
             'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         }
 
-    def fetch_all_for_articles(self, articles: List[Dict]) -> Dict:
+    def fetch_all_for_articles(self, articles: List[Dict], market: str = 'CN') -> Dict:
         """
         为一批文章获取所有相关实时数据
 
@@ -498,7 +512,7 @@ class RealtimeDataFetcher:
                 logger.info(f"获取美元汇率: {usd_cny.rate:.4f}")
 
         # 5. 格式化为Prompt
-        prompt_text = self.format_for_prompt(stocks=stocks, gold=gold, forex=forex)
+        prompt_text = self.format_for_prompt(stocks=stocks, gold=gold, forex=forex, market=market)
 
         return {
             'stocks': {k: v.to_dict() for k, v in stocks.items()},

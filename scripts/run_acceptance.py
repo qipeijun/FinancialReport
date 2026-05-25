@@ -66,6 +66,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--skip-live', action='store_true', help='跳过需要调用模型的实时验收步骤')
     parser.add_argument('--output', type=str, help='验收报告输出路径（JSON）')
     parser.add_argument('--run-started-at', type=float, help='本次自动化启动时间戳（epoch秒）')
+    parser.add_argument('--stock-market', type=str, default='CN', choices=['CN', 'US'], help='股票市场: CN=A股, US=美股')
     return parser.parse_args()
 
 
@@ -102,18 +103,22 @@ def acceptance_output_dir(date_str: str) -> Path:
     return out_dir
 
 
-def find_mode_artifacts(date_str: str, mode: str, model_suffix: str = 'deepseek') -> Dict[str, List[Path]]:
+def find_mode_artifacts(date_str: str, mode: str, model_suffix: str = 'deepseek', market: str = 'CN') -> Dict[str, List[Path]]:
     dirs = archive_dirs_for_date(date_str)
-    report_glob = f"*_{mode}_{model_suffix}.md"
-    meta_glob = f"analysis_meta_*_{mode}_{model_suffix}.json"
-    return {
-        'reports': sorted(dirs['reports'].glob(report_glob), key=lambda p: p.stat().st_mtime),
-        'metadata': sorted(dirs['metadata'].glob(meta_glob), key=lambda p: p.stat().st_mtime),
-    }
+    mode_with_market = f"{mode}-{market.lower()}"
+    # 新格式优先（含市场后缀）
+    reports = sorted(dirs['reports'].glob(f"*_{mode_with_market}_{model_suffix}.md"), key=lambda p: p.stat().st_mtime)
+    metadata = sorted(dirs['metadata'].glob(f"analysis_meta_*_{mode_with_market}_{model_suffix}.json"), key=lambda p: p.stat().st_mtime)
+    # 回退旧格式（仅 CN 兼容无市场后缀的历史归档）
+    if not reports and market == 'CN':
+        reports = sorted(dirs['reports'].glob(f"*_{mode}_{model_suffix}.md"), key=lambda p: p.stat().st_mtime)
+    if not metadata and market == 'CN':
+        metadata = sorted(dirs['metadata'].glob(f"analysis_meta_*_{mode}_{model_suffix}.json"), key=lambda p: p.stat().st_mtime)
+    return {'reports': reports, 'metadata': metadata}
 
 
-def latest_artifact(date_str: str, mode: str, model_suffix: str = 'deepseek') -> Dict[str, Optional[Path]]:
-    artifacts = find_mode_artifacts(date_str, mode, model_suffix=model_suffix)
+def latest_artifact(date_str: str, mode: str, model_suffix: str = 'deepseek', market: str = 'CN') -> Dict[str, Optional[Path]]:
+    artifacts = find_mode_artifacts(date_str, mode, model_suffix=model_suffix, market=market)
     return {
         'report': artifacts['reports'][-1] if artifacts['reports'] else None,
         'metadata': artifacts['metadata'][-1] if artifacts['metadata'] else None,
@@ -182,6 +187,7 @@ def build_analysis_command(
     content_field: str,
     max_articles: int,
     output_json: Path,
+    stock_market: str = 'CN',
 ) -> List[str]:
     cmd = [
         python_bin,
@@ -193,6 +199,7 @@ def build_analysis_command(
         '--max-retries', '1',
         '--min-score', '80',
         '--output', str(output_json),
+        '--stock-market', stock_market,
     ]
     if mode == 'markdown-report':
         cmd.append('--enable-stock-scoring')
@@ -214,6 +221,7 @@ def normalize_export_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
             'articles_used': payload.get('articles_used'),
             'verification_enabled': payload.get('verification_enabled'),
             'quality_check': payload.get('quality_check'),
+            'market': payload.get('market'),
         },
         'stock_recommendations': payload.get('stock_recommendations') or [],
         'score_distribution': payload.get('score_distribution') or {},
@@ -493,8 +501,34 @@ def analyze_report_quality(
         'citation_count': report_text.count('【新闻'),
         'suspicious_realtime_phrases': suspicious_realtime_phrases,
         'stock_scoring': validate_stock_recommendations_payload(export_payload) if mode == 'markdown-report' else {},
-        'passed': all(structure.values()) and quality_result.get('passed', False) and not quality_result.get('issues'),
     }
+    # market 一致性校验（judgment-cards 无 scoring_config，仅校验 meta.market 存在）
+    meta_market = metadata.get('market')
+    if mode == 'markdown-report':
+        scoring_market = (metadata.get('scoring_config') or {}).get('market')
+        market_consistency = {
+            'meta_market': meta_market,
+            'scoring_config_market': scoring_market,
+            'passed': meta_market is not None and meta_market == scoring_market,
+            'issues': [],
+        }
+        if not market_consistency['passed']:
+            market_consistency['issues'].append(
+                f"meta.market={meta_market} != scoring_config.market={scoring_market}"
+            )
+    else:
+        market_consistency = {
+            'meta_market': meta_market,
+            'passed': meta_market is not None,
+            'issues': [] if meta_market is not None else ['meta.market 缺失'],
+        }
+    payload['market_consistency'] = market_consistency
+    payload['passed'] = (
+        all(structure.values())
+        and quality_result.get('passed', False)
+        and not quality_result.get('issues')
+        and market_consistency['passed']
+    )
     if mode == 'markdown-report':
         stock_scoring = payload['stock_scoring']
         payload['actionability'] = {
@@ -625,11 +659,13 @@ def main() -> int:
         date_str,
         'markdown-report',
         run_started_at=args.run_started_at,
+        market=args.stock_market,
     )
     judgment_freshness = inspect_mode_artifacts(
         date_str,
         'judgment-cards',
         run_started_at=args.run_started_at,
+        market=args.stock_market,
     )
     freshness_check = {
         'markdown-report': markdown_freshness.to_dict(),
@@ -666,6 +702,7 @@ def main() -> int:
                 content_field=args.content_field,
                 max_articles=args.max_articles,
                 output_json=output_json,
+                stock_market=args.stock_market,
             )
             result = run_command(f'generate_{mode}', cmd, env=env)
             live_runs.append({
@@ -683,6 +720,7 @@ def main() -> int:
                 date_str,
                 mode,
                 run_started_at=args.run_started_at,
+                market=args.stock_market,
             )
             if not freshness.complete:
                 mode_checks[mode] = {
@@ -699,8 +737,8 @@ def main() -> int:
             )
             mode_checks[mode].update(freshness.to_dict())
 
-        markdown_artifacts = find_mode_artifacts(date_str, 'markdown-report')
-        judgment_artifacts = find_mode_artifacts(date_str, 'judgment-cards')
+        markdown_artifacts = find_mode_artifacts(date_str, 'markdown-report', market=args.stock_market)
+        judgment_artifacts = find_mode_artifacts(date_str, 'judgment-cards', market=args.stock_market)
         overlap_check = {
             'markdown_reports': [str(p) for p in markdown_artifacts['reports']],
             'judgment_reports': [str(p) for p in judgment_artifacts['reports']],
@@ -720,12 +758,14 @@ def main() -> int:
             content_field=args.content_field,
             max_articles=args.max_articles,
             output_json=degrade_output,
+            stock_market=args.stock_market,
         )
         degrade_result = run_command('generate_markdown_degraded', degrade_cmd, env=degrade_env)
         latest_degrade = inspect_mode_artifacts(
             date_str,
             'markdown-report',
             run_started_at=args.run_started_at,
+            market=args.stock_market,
         )
         degrade_analysis = None
         if latest_degrade.report and latest_degrade.metadata:
@@ -766,7 +806,14 @@ def main() -> int:
             and degrade_check.get('passed', False)
         )
     elif args.run_started_at is not None:
-        live_passed = freshness_check['markdown-report'].get('fresh_artifacts', False) and freshness_check['markdown-report'].get('artifact_session_match', False)
+        live_passed = (
+            all(item.get('passed', True) for item in mode_checks.values()) if mode_checks else True
+        ) and (
+            freshness_check['markdown-report'].get('fresh_artifacts', False)
+            and freshness_check['markdown-report'].get('artifact_session_match', False)
+        )
+    else:
+        live_passed = all(item.get('passed', True) for item in mode_checks.values()) if mode_checks else True
 
     report['passed'] = (
         report['automation']['passed']

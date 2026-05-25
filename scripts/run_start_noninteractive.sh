@@ -45,9 +45,9 @@ TODAY_STR="$(today_in_shanghai)"
 export TODAY_STR
 
 if has_today_data; then
-  responses=$'1\nn\nn\ny\n1\nn\n'
+  responses=$'1\nn\nn\ny\n1\n1\nn\n'
 else
-  responses=$'1\ny\ny\n\ny\n1\nn\n'
+  responses=$'1\ny\ny\n\ny\n1\n1\nn\n'
 fi
 
 printf '%s' "$responses" | bash "$PROJECT_ROOT/start.sh"

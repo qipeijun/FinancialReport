@@ -80,6 +80,16 @@ except ImportError:
     VERIFICATION_AVAILABLE = False
 
 
+# 美股模式默认消费的新闻源（美股聚焦 + 国际财经 + 美国官方）
+US_MARKET_SOURCE_NAMES = [
+    'Yahoo Finance', 'MarketWatch', 'Seeking Alpha', 'CNBC Top News',
+    "Investor's Business Daily",
+    'FT中文网', 'Wall Street Journal', '经济学人 Economist',
+    'BBC全球经济', 'CNBC', 'ZeroHedge', 'ETF Trends', 'Thomson Reuters',
+    'Federal Reserve Board', '美国证监会-新闻发布',
+]
+
+
 class ReportGenerator:
     """统一报告生成引擎"""
 
@@ -109,10 +119,13 @@ class ReportGenerator:
             self.enable_verification = False
 
         self.security_master_provider = SecurityMasterProvider()
+        self.security_master_us = SecurityMasterProvider(
+            config_path=PROJECT_ROOT / 'config' / 'theme_stock_map_us.json'
+        )
         self.price_history_provider = PriceHistoryProvider()
         self.valuation_provider = ValuationProvider(self.security_master_provider)
 
-    def load_prompt(self, prompt_version: str = 'pro_v2') -> str:
+    def load_prompt(self, prompt_version: str = 'pro_v2', market: str = 'CN') -> str:
         """
         加载提示词模板
 
@@ -121,10 +134,19 @@ class ReportGenerator:
                 - 'pro_v2': 专业版v2（带实时数据注入）
                 - 'pro': 专业版
                 - 'safe': 安全版
+            market: 市场标识，'US' 时优先加载美股专用提示词
 
         Returns:
             str: 提示词内容
         """
+        # 美股专用提示词
+        if market == 'US' and prompt_version in ('pro_v2', 'pro', 'safe'):
+            us_file = f'financial_analysis_prompt_us.md'
+            us_path = PROJECT_ROOT / 'task' / us_file
+            if us_path.exists():
+                with open(us_path, 'r', encoding='utf-8') as f:
+                    return f.read()
+
         prompt_files = {
             'judgment_cards': 'judgment_cards_prompt.md',
             'pro_v2': 'financial_analysis_prompt_pro_v2.md',
@@ -146,7 +168,7 @@ class ReportGenerator:
         with open(prompt_path, 'r', encoding='utf-8') as f:
             return f.read()
 
-    def fetch_realtime_data(self) -> Optional[Dict[str, Any]]:
+    def fetch_realtime_data(self, market: str = 'CN') -> Optional[Dict[str, Any]]:
         """获取实时市场数据（如果启用验证）"""
         if not self.enable_verification:
             return None
@@ -154,7 +176,7 @@ class ReportGenerator:
         try:
             print_progress('获取实时市场数据...')
             fetcher = RealtimeDataFetcher()
-            data = fetcher.fetch_all()
+            data = fetcher.fetch_all(market=market)
             available_kinds = sum(
                 1 for key in ('stocks', 'gold', 'forex')
                 if data.get(key)
@@ -498,10 +520,12 @@ class ReportGenerator:
         min_independent_evidence: int,
         degrade_on_weak_evidence: bool,
         output_observation_only_when_weak: bool,
+        stock_market: str = 'CN',
         **provider_kwargs,
     ) -> Dict[str, Any]:
+        active_sm = self.security_master_us if stock_market == 'US' else self.security_master_provider
         candidates = build_judgment_candidates(selected, max_candidates=max(max_theses + 3, 6))
-        candidate_stocks = self.security_master_provider.build_candidates(
+        candidate_stocks = active_sm.build_candidates(
             articles=selected,
             judgment_candidates=candidates,
             max_candidates=max(max_theses + 3, 6),
@@ -577,6 +601,7 @@ class ReportGenerator:
         meta_quality_fields = self._quality_metadata_fields(quality_result)
         meta = {
             'date_range': {'start': start_date, 'end': end_date},
+            'market': stock_market,
             'articles_used': len(selected),
             'candidate_count': len(candidates),
             'model_usage': usage,
@@ -598,6 +623,7 @@ class ReportGenerator:
             stock_payload=None,
             analysis_mode='judgment-cards',
             date_range=meta['date_range'],
+            market=stock_market,
         )
         export_payload = {
             'theses': payload.get('theses') or [],
@@ -620,7 +646,7 @@ class ReportGenerator:
             output_json,
             export_payload,
             enhanced_context_payload,
-            artifact_suffix='judgment-cards',
+            artifact_suffix=f'judgment-cards-{stock_market.lower()}',
         )
 
         print_success('判断卡片生成完成！')
@@ -708,9 +734,25 @@ class ReportGenerator:
             print_info(f"质量检查: 已启用（最多重试{max_retries}次，最低评分{min_score}）")
         print()
 
+        # 提前提取市场参数（后续多处使用，需 pop 避免传入 AI provider）
+        stock_market = provider_kwargs.pop('stock_market', 'CN')
+
+        # 美股模式：限定美股相关新闻源，避免 A 股/国内宏观语料污染
+        if stock_market == 'US':
+            if filter_source:
+                user_sources = [s.strip() for s in filter_source.split(',') if s.strip()]
+                valid = [s for s in user_sources if s in US_MARKET_SOURCE_NAMES]
+                rejected = [s for s in user_sources if s not in US_MARKET_SOURCE_NAMES]
+                if rejected:
+                    print_warning(f'美股模式：以下来源不在美股 allowlist 中，已自动剔除：{", ".join(rejected)}')
+                filter_source = ','.join(valid) if valid else None
+            if not filter_source:
+                filter_source = ','.join(US_MARKET_SOURCE_NAMES)
+                print_info(f'美股模式：自动限定 {len(US_MARKET_SOURCE_NAMES)} 个美股相关新闻源')
+
         # 获取实时数据（如果启用验证）
         start_stage('获取实时数据', step=1, total=6, detail='检查实时行情可用性')
-        realtime_data = self.fetch_realtime_data()
+        realtime_data = self.fetch_realtime_data(market=stock_market)
         live_data_degraded = bool(self.enable_verification and realtime_data is None)
         finish_stage('实时数据阶段完成', duration=True)
 
@@ -763,12 +805,12 @@ class ReportGenerator:
                 min_independent_evidence=int(provider_kwargs.pop('min_independent_evidence', 2)),
                 degrade_on_weak_evidence=bool(provider_kwargs.pop('degrade_on_weak_evidence', True)),
                 output_observation_only_when_weak=bool(provider_kwargs.pop('output_observation_only_when_weak', True)),
+                stock_market=stock_market,
                 **provider_kwargs,
             )
 
         enable_stock_scoring = bool(provider_kwargs.pop('enable_stock_scoring', True))
         max_stock_picks = int(provider_kwargs.pop('max_stock_picks', 10))
-        stock_market = provider_kwargs.pop('stock_market', 'CN')
         judgment_candidates = build_judgment_candidates(selected, max_candidates=8)
         candidate_stocks = []
         stock_payload = {
@@ -785,21 +827,30 @@ class ReportGenerator:
                 'lookback_days': 60,
             },
         }
-        if enable_stock_scoring and stock_market == 'CN':
-            note_event('预计算 A 股结构化推荐评分')
-            print_progress('生成 A 股结构化推荐评分...')
-            candidate_stocks = self.security_master_provider.build_candidates(
+        if enable_stock_scoring and stock_market in ('CN', 'US'):
+            if stock_market == 'US':
+                active_sm = self.security_master_us
+                active_valuation = ValuationProvider(active_sm)
+                market_label = '美股'
+            else:
+                active_sm = self.security_master_provider
+                active_valuation = self.valuation_provider
+                market_label = 'A 股'
+            note_event(f'预计算 {market_label} 结构化推荐评分')
+            print_progress(f'生成 {market_label} 结构化推荐评分...')
+            candidate_stocks = active_sm.build_candidates(
                 articles=selected,
                 judgment_candidates=judgment_candidates,
                 max_candidates=max_stock_picks,
             )
             scorer = RecommendationScorer(
-                security_master=self.security_master_provider,
+                security_master=active_sm,
                 price_history_provider=self.price_history_provider,
-                valuation_provider=self.valuation_provider,
+                valuation_provider=active_valuation,
                 lookback_days=60,
                 style='balanced',
                 as_of_date=end_date,
+                market=stock_market,
             )
             stock_payload = scorer.score_candidates(candidate_stocks)
             print_success(f"✓ 已生成 {len(stock_payload['recommendations'])} 条股票评分结果")
@@ -835,7 +886,7 @@ class ReportGenerator:
         finish_stage('语料构建完成', duration=True)
 
         # 加载提示词
-        prompt = self.load_prompt(prompt_version)
+        prompt = self.load_prompt(prompt_version, market=stock_market)
 
         # 生成报告（集成质量检查）
         print()
@@ -896,6 +947,7 @@ class ReportGenerator:
         meta_quality_fields = self._quality_metadata_fields(quality_result)
         meta = {
             'date_range': {'start': start_date, 'end': end_date},
+            'market': stock_market,
             'articles_used': len(selected),
             'chunks': sum(len(ch) for _, ch in pairs),
             'model_usage': usage,
@@ -920,6 +972,7 @@ class ReportGenerator:
             stock_payload=stock_payload,
             analysis_mode='markdown-report',
             date_range=meta['date_range'],
+            market=stock_market,
         )
         export_payload = {
             'summary_markdown': summary_md,
@@ -941,7 +994,7 @@ class ReportGenerator:
             output_json,
             export_payload,
             enhanced_context_payload,
-            artifact_suffix='markdown-report',
+            artifact_suffix=f'markdown-report-{stock_market.lower()}',
         )
 
         print_success('分析完成！')
@@ -987,10 +1040,12 @@ class ReportGenerator:
         stock_payload: Optional[Dict[str, Any]],
         analysis_mode: str,
         date_range: Dict[str, str],
+        market: str = 'CN',
     ) -> Dict[str, Any]:
         """构建增强特征归档，供次日回看与后续时序统计。"""
         return {
             'analysis_mode': analysis_mode,
+            'market': market,
             'date_range': date_range,
             'selected_articles': self._serialize_selected_articles(selected),
             'judgment_candidates': judgment_candidates,

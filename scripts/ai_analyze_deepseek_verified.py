@@ -60,7 +60,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--output-observation-only-when-weak', action='store_true', default=True, help='弱证据时仅输出观察项')
     parser.add_argument('--enable-stock-scoring', action='store_true', help='启用 A 股结构化推荐评分')
     parser.add_argument('--disable-stock-scoring', action='store_true', help='禁用 A 股结构化推荐评分')
-    parser.add_argument('--stock-market', type=str, default='CN', help='股票市场，v1 仅支持 CN')
+    parser.add_argument('--stock-market', type=str, default='CN', choices=['CN', 'US'], help='股票市场: CN=A股, US=美股')
     parser.add_argument('--max-stock-picks', type=int, default=10, help='最多输出多少只股票评分结果')
     parser.add_argument('--output', type=str, help='输出文件路径')
     parser.add_argument('--verbose', action='store_true', help='详细日志')

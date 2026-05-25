@@ -16,6 +16,7 @@ def test_main_returns_analysis_failure_code(monkeypatch):
     answers = iter([False, False, True])
     monkeypatch.setattr(interactive_runner, 'ask_yes_no', lambda *args, **kwargs: next(answers))
     monkeypatch.setattr(interactive_runner, 'ask_content_field', lambda: 'summary')
+    monkeypatch.setattr(interactive_runner, 'ask_market', lambda: 'CN')
     monkeypatch.setattr(interactive_runner, 'run_script', lambda cmd, task_label='执行任务': 7)
 
     code = interactive_runner.main()

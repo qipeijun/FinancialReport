@@ -86,6 +86,11 @@ def classify_source_tier(source_name: str, source_category: str | None = None) -
         return 'mainstream'
     if source in {'36氪', '东方财富网', '中新网', 'BBC全球经济'}:
         return 'mainstream'
+    # US 来源
+    if source in {'Yahoo Finance', 'MarketWatch', 'CNBC Top News', "Investor's Business Daily"}:
+        return 'mainstream'
+    if source in {'Seeking Alpha'}:
+        return 'aggregator'
     if source in {'百度股票焦点', 'ZeroHedge', 'ETF Trends'}:
         return 'aggregator'
     if source in {'Investing_com', 'CoinDesk'}:
@@ -96,7 +101,8 @@ def classify_source_tier(source_name: str, source_category: str | None = None) -
 def is_original_source(source_tier: str, source_name: str) -> int:
     if source_tier == 'official':
         return 1
-    if source_name in {'Wall Street Journal', 'CNBC', 'Thomson Reuters', 'FT中文网', '经济学人 Economist'}:
+    if source_name in {'Wall Street Journal', 'CNBC', 'Thomson Reuters', 'FT中文网',
+                       '经济学人 Economist', 'Yahoo Finance', 'MarketWatch'}:
         return 1
     return 0
 

@@ -188,7 +188,7 @@ class FakePriceHistoryProvider:
     def fetch_history(self, symbol, lookback_days=180):
         return self.history_map.get(symbol, [])
 
-    def fetch_market_regime(self):
+    def fetch_market_regime(self, market='CN'):
         return self.regime
 
     @staticmethod

@@ -44,6 +44,39 @@ def ask_yes_no(prompt: str, default: bool | None = None) -> bool:
     return prompt_yes_no(prompt, default=default)
 
 
+def ask_market() -> str:
+    """询问用户选择分析市场"""
+    import sys as _sys
+    print_info('🌍 市场选择：')
+    print_plain('  选择分析的目标市场：')
+    print_plain()
+    print_plain('  1. A 股（默认）')
+    print_plain('     · 上证指数 / 深证成指 / 创业板指')
+    print_plain('     · 中文财经新闻源')
+    print_plain()
+    print_plain('  2. 美股')
+    print_plain('     · S&P 500 / NASDAQ / Dow Jones')
+    print_plain('     · 英文财经新闻源 + 中文美股报道')
+    print_plain()
+
+    while True:
+        try:
+            choice = prompt_input('请选择 [1/2，默认1-A股]: ').strip()
+        except (EOFError, OSError):
+            # 非交互模式（管道输入耗尽），静默返回默认值
+            return 'CN'
+        if not choice or choice == '1':
+            print_info('已选择：A 股')
+            return 'CN'
+        elif choice == '2':
+            print_info('已选择：美股')
+            return 'US'
+        if not _sys.stdin.isatty():
+            # 非 TTY 下输入不匹配，不再循环警告
+            return 'CN'
+        print_warning('请输入 1 或 2')
+
+
 def ask_content_field() -> str:
     """询问用户选择分析字段"""
     print_info('📝 分析字段选择：')
@@ -294,7 +327,11 @@ def main() -> int:
             # 添加字段选择
             content_field = ask_content_field()
             cmd += ['--content-field', content_field]
-            
+
+            # 添加市场选择
+            market = ask_market()
+            cmd += ['--stock-market', market]
+
             print_info('🚀 开始执行自定义分析...')
             print_plain(f'   命令：{" ".join(cmd)}')
             print_plain()
@@ -307,7 +344,8 @@ def main() -> int:
             print_plain()
             # 添加字段选择
             content_field = ask_content_field()
-            cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek_verified.py'), '--mode', 'markdown-report', '--content-field', content_field]
+            market = ask_market()
+            cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek_verified.py'), '--mode', 'markdown-report', '--content-field', content_field, '--stock-market', market]
             print_info('🚀 开始执行标准分析...')
             print_plain(f'   命令：{" ".join(cmd)}')
             print_plain()
@@ -373,7 +411,8 @@ def main() -> int:
             print_plain()
             # 添加字段选择
             content_field = ask_content_field()
-            cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek_verified.py'), '--mode', 'markdown-report', '--content-field', content_field]
+            market = ask_market()
+            cmd = ['python3', str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek_verified.py'), '--mode', 'markdown-report', '--content-field', content_field, '--stock-market', market]
             print_info('🚀 开始执行AI分析...')
             print_plain(f'   命令：{" ".join(cmd)}')
             print_plain()

@@ -56,11 +56,20 @@ TOPIC_MARKET_SCOPE = {
 }
 
 NEGATIVE_RISK_KEYWORDS = [
+    # 中文（A股 + 美股通用）
     '立案', '停牌', '退市', '暴雷', '减持', '处罚', '问询', '亏损', '违约', '调查', '诉讼',
+    '做空', '评级下调', '召回', '集体诉讼', '监管调查', '做空报告',
+    # 英文（美股）
+    'lawsuit', 'fraud', 'recall', 'downgrade', 'restatement',
+    'short report', 'class action', 'SEC investigation', 'DOJ',
 ]
 
 POSITIVE_CATALYST_KEYWORDS = [
+    # 中文
     '订单', '回购', '分红', '中标', '产能', '扩产', '财报', '业绩', '增长', '新品', '合作',
+    '超预期', '上调指引', 'FDA 批准', '突破',
+    # 英文
+    'beat estimates', 'guidance raise', 'upgrade', 'FDA approval',
 ]
 
 
@@ -138,15 +147,19 @@ class SecurityMasterProvider:
 
     @staticmethod
     def normalize_symbol(value: str) -> Optional[str]:
-        code = (value or '').strip().lower()
+        code = (value or '').strip().upper()
         if not code:
             return None
-        if re.fullmatch(r'(sh|sz)\d{6}', code):
-            return code
+        # CN格式: SH600519 / SZ000858（存储用小写）
+        if re.fullmatch(r'(SH|SZ)\d{6}', code):
+            return code.lower()
         if re.fullmatch(r'6\d{5}', code):
             return f'sh{code}'
         if re.fullmatch(r'[03]\d{5}', code):
             return f'sz{code}'
+        # US格式: 1-5个大写字母，可带.后缀（如 BRK.B）
+        if re.fullmatch(r'[A-Z]{1,5}(\.[A-Z])?', code):
+            return code
         return None
 
     def get_security(self, symbol: str) -> Optional[Dict[str, Any]]:
@@ -155,10 +168,17 @@ class SecurityMasterProvider:
     def resolve_symbol_from_text(self, text: str) -> List[str]:
         found = set()
         lowered = (text or '').lower()
+        # CN: 6位数字代码
         for raw in re.findall(r'\b(?:sh|sz)?\d{6}\b', lowered):
             symbol = self.normalize_symbol(raw)
             if symbol and symbol in self.securities:
                 found.add(symbol)
+        # US: $TICKER 格式或大写ticker
+        for raw in re.findall(r'\$?([A-Z]{1,5})\b', text or ''):
+            symbol = self.normalize_symbol(raw)
+            if symbol and symbol in self.securities:
+                found.add(symbol)
+        # 别名匹配（中英文名称）
         for alias, symbol in self.alias_map.items():
             if alias and alias in lowered:
                 found.add(symbol)
@@ -170,10 +190,20 @@ class SecurityMasterProvider:
 
     @staticmethod
     def _sentence_mentions_security(sentence: str, symbol: str, name: str) -> bool:
-        normalized_symbol = SecurityMasterProvider.normalize_symbol(symbol) or symbol.lower()
-        raw_code = normalized_symbol[-6:] if len(normalized_symbol) >= 6 else normalized_symbol
         lowered = (sentence or '').lower()
-        return any(token for token in (name, normalized_symbol, raw_code) if token and token.lower() in lowered)
+        # CN symbol: 提取尾部6位数字码（数字码不会误匹配其他词）
+        if symbol.startswith(('sh', 'sz')) and len(symbol) >= 6:
+            raw_code = symbol[-6:]
+            return any(token for token in (name.lower(), symbol.lower(), raw_code) if token in lowered)
+        # US ticker: 使用词边界避免短代码误匹配（如 BA 命中 Bank）
+        import re as _re
+        ticker_lower = symbol.lower()
+        if _re.search(r'\b' + _re.escape(ticker_lower) + r'\b', lowered):
+            return True
+        name_lower = name.lower()
+        if len(name_lower) >= 3 and _re.search(r'\b' + _re.escape(name_lower) + r'\b', lowered):
+            return True
+        return False
 
     def _extract_risk_flags_for_symbol(self, text: str, symbol: str, name: str) -> List[str]:
         matched: List[str] = []
@@ -514,11 +544,19 @@ class PriceHistoryProvider:
             'momentum_20d': momentum_20d,
         }
 
-    def fetch_market_regime(self) -> Dict[str, Any]:
-        indices = {
-            'sh000001': self.fetch_history('sh000001'),
-            'sz399001': self.fetch_history('sz399001'),
-        }
+    def fetch_market_regime(self, market: str = 'CN') -> Dict[str, Any]:
+        if market == 'US':
+            index_symbols = {
+                '^GSPC': 'S&P 500',
+                '^IXIC': 'NASDAQ',
+                '^DJI': 'Dow Jones',
+            }
+        else:
+            index_symbols = {
+                'sh000001': '上证指数',
+                'sz399001': '深证成指',
+            }
+        indices = {sym: self.fetch_history(sym) for sym in index_symbols}
         trends = {}
         style_bias = 'balanced'
         for symbol, bars in indices.items():
@@ -533,10 +571,16 @@ class PriceHistoryProvider:
                 'ma60': ma60,
                 'bullish': bullish,
             }
-        if trends.get('sz399001', {}).get('bullish'):
-            style_bias = 'growth'
-        elif trends.get('sh000001', {}).get('bullish'):
-            style_bias = 'value'
+        if market == 'US':
+            if trends.get('^IXIC', {}).get('bullish'):
+                style_bias = 'growth'
+            elif trends.get('^GSPC', {}).get('bullish'):
+                style_bias = 'value'
+        else:
+            if trends.get('sz399001', {}).get('bullish'):
+                style_bias = 'growth'
+            elif trends.get('sh000001', {}).get('bullish'):
+                style_bias = 'value'
         risk_on = sum(1 for item in trends.values() if item.get('bullish')) >= 1
         return {
             'indices': trends,
@@ -605,6 +649,7 @@ class RecommendationScorer:
         as_of_date: Optional[str] = None,
         enhanced_context_root: Optional[Path] = None,
         recent_context_days: int = 5,
+        market: str = 'CN',
     ):
         self.security_master = security_master
         self.price_history_provider = price_history_provider
@@ -614,13 +659,14 @@ class RecommendationScorer:
         self.as_of_date = self._resolve_as_of_date(as_of_date)
         self.enhanced_context_root = enhanced_context_root or (PROJECT_ROOT / 'docs' / 'archive')
         self.recent_context_days = recent_context_days
+        self.market = market
         self.industry_trend_snapshot = self._load_industry_trend_snapshot()
         self.recent_contexts = self._load_recent_enhanced_contexts()
         self.symbol_recent_direct_days = self._build_symbol_recent_direct_days(self.recent_contexts)
         self.topic_recent_daily_counts = self._build_topic_recent_daily_counts(self.recent_contexts)
 
     def score_candidates(self, candidates: List[CandidateStock]) -> Dict[str, Any]:
-        market_regime = self.price_history_provider.fetch_market_regime()
+        market_regime = self.price_history_provider.fetch_market_regime(market=self.market)
         snapshots = [self.valuation_provider.get_snapshot(item.symbol) for item in candidates]
 
         recommendations = []
@@ -670,7 +716,7 @@ class RecommendationScorer:
             'score_distribution': distribution,
             'decision_views': decision_views,
             'scoring_config': {
-                'market': 'CN',
+                'market': self.market,
                 'style': self.style,
                 'lookback_days': self.lookback_days,
                 'pool_mode': 'strict',
@@ -1416,9 +1462,10 @@ def render_stock_recommendation_markdown(
     scoring_config: Dict[str, Any],
 ) -> str:
     if not recommendations:
+        market_label = '美股' if scoring_config.get('market') == 'US' else 'A 股'
         return (
             "## 股票推荐评分\n\n"
-            "当前未形成满足规则门槛的 A 股推荐列表，建议继续观察主题催化与数据完整性。\n"
+            f"当前未形成满足规则门槛的 {market_label} 推荐列表，建议继续观察主题催化与数据完整性。\n"
         )
 
     lines = [

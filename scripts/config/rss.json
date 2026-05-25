@@ -16,6 +16,13 @@
     "ETF Trends": "https://www.etftrends.com/feed/",
     "Thomson Reuters": "https://ir.thomsonreuters.com/rss/news-releases.xml"
   },
+  "美股聚焦": {
+    "Yahoo Finance": "https://finance.yahoo.com/news/rssindex",
+    "MarketWatch": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+    "Seeking Alpha": "https://seekingalpha.com/market_currents.xml",
+    "CNBC Top News": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
+    "Investor's Business Daily": "https://www.investors.com/category/ibd-rss-feed/"
+  },
   "政府组织与官方数据": {
     "国家统计局-最新发布": "https://www.stats.gov.cn/sj/zxfb/rss.xml",
     "Federal Reserve Board": "https://www.federalreserve.gov/feeds/press_all.xml",

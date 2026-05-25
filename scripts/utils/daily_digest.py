@@ -70,14 +70,18 @@ def load_json(path: Path) -> Dict[str, Any]:
         return json.load(f)
 
 
-def find_mode_artifacts(date_str: str, mode: str, model_suffix: str = 'deepseek') -> Dict[str, List[Path]]:
+def find_mode_artifacts(date_str: str, mode: str, model_suffix: str = 'deepseek', market: str = 'CN') -> Dict[str, List[Path]]:
     dirs = archive_dirs_for_date(date_str)
-    report_glob = f"*_{mode}_{model_suffix}.md"
-    meta_glob = f"analysis_meta_*_{mode}_{model_suffix}.json"
-    return {
-        'reports': sorted(dirs['reports'].glob(report_glob), key=lambda p: p.stat().st_mtime),
-        'metadata': sorted(dirs['metadata'].glob(meta_glob), key=lambda p: p.stat().st_mtime),
-    }
+    mode_with_market = f"{mode}-{market.lower()}"
+    # 新格式优先（含市场后缀）
+    reports = sorted(dirs['reports'].glob(f"*_{mode_with_market}_{model_suffix}.md"), key=lambda p: p.stat().st_mtime)
+    metadata = sorted(dirs['metadata'].glob(f"analysis_meta_*_{mode_with_market}_{model_suffix}.json"), key=lambda p: p.stat().st_mtime)
+    # 回退旧格式（仅 CN 兼容无市场后缀的历史归档）
+    if not reports and market == 'CN':
+        reports = sorted(dirs['reports'].glob(f"*_{mode}_{model_suffix}.md"), key=lambda p: p.stat().st_mtime)
+    if not metadata and market == 'CN':
+        metadata = sorted(dirs['metadata'].glob(f"analysis_meta_*_{mode}_{model_suffix}.json"), key=lambda p: p.stat().st_mtime)
+    return {'reports': reports, 'metadata': metadata}
 
 
 @dataclass
@@ -117,8 +121,9 @@ def inspect_mode_artifacts(
     *,
     run_started_at: Optional[float] = None,
     model_suffix: str = 'deepseek',
+    market: str = 'CN',
 ) -> ArtifactInspection:
-    artifacts = find_mode_artifacts(date_str, mode, model_suffix=model_suffix)
+    artifacts = find_mode_artifacts(date_str, mode, model_suffix=model_suffix, market=market)
     report = artifacts['reports'][-1] if artifacts['reports'] else None
     metadata = artifacts['metadata'][-1] if artifacts['metadata'] else None
 

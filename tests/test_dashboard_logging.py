@@ -164,7 +164,7 @@ def test_report_generator_emits_stage_sequence(monkeypatch):
     monkeypatch.setattr('scripts.utils.report_generator.build_source_stats_block', lambda *args, **kwargs: 'stats')
     monkeypatch.setattr('scripts.utils.report_generator.save_markdown', lambda *args, **kwargs: Path('/tmp/report.md'))
     monkeypatch.setattr('scripts.utils.report_generator.save_metadata', lambda *args, **kwargs: None)
-    monkeypatch.setattr(generator, 'load_prompt', lambda _version: 'prompt')
+    monkeypatch.setattr(generator, 'load_prompt', lambda _version, market='CN': 'prompt')
     monkeypatch.setattr(generator, '_run_fact_check', lambda *args, **kwargs: ([], ''))
 
     class FakeConn:
@@ -226,7 +226,7 @@ def test_report_generator_judgment_cards_enhanced_context_contains_candidate_sto
     generator = ReportGenerator(provider=FakeProvider(), enable_verification=False)
     captured = {}
 
-    monkeypatch.setattr(generator, 'load_prompt', lambda _version: 'prompt')
+    monkeypatch.setattr(generator, 'load_prompt', lambda _version, market='CN': 'prompt')
     monkeypatch.setattr('scripts.utils.report_generator.build_judgment_candidates', lambda *args, **kwargs: [
         {
             'topic': '科技与产业主题',
@@ -300,7 +300,7 @@ def test_report_generator_markdown_report_uses_structured_truth_sources(monkeypa
     generator = ReportGenerator(provider=FakeProvider(), enable_verification=False)
     captured = {}
 
-    monkeypatch.setattr(generator, 'load_prompt', lambda _version: 'prompt')
+    monkeypatch.setattr(generator, 'load_prompt', lambda _version, market='CN': 'prompt')
     monkeypatch.setattr('scripts.utils.report_generator.resolve_date_range', lambda _args: ('2026-05-09', '2026-05-09'))
     monkeypatch.setattr('scripts.utils.report_generator.filter_articles', lambda rows, **kwargs: rows)
     monkeypatch.setattr('scripts.utils.report_generator.filter_and_rank_articles', lambda rows: (rows, {'kept': 2}))

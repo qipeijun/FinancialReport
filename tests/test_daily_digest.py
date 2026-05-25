@@ -30,8 +30,8 @@ def test_inspect_mode_artifacts_marks_stale_when_files_are_older(tmp_path, monke
     reports.mkdir(parents=True)
     metadata.mkdir(parents=True)
 
-    report_path = reports / '📅 2026-05-07 财经分析报告_morning_markdown-report_deepseek.md'
-    meta_path = metadata / 'analysis_meta_morning_markdown-report_deepseek.json'
+    report_path = reports / '📅 2026-05-07 财经分析报告_morning_markdown-report-cn_deepseek.md'
+    meta_path = metadata / 'analysis_meta_morning_markdown-report-cn_deepseek.json'
     report_path.write_text('# report', encoding='utf-8')
     meta_path.write_text('{"session":"morning","live_data_degraded":false}', encoding='utf-8')
 

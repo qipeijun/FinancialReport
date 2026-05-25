@@ -1,0 +1,152 @@
+{
+  "securities": {
+    "AAPL": {
+      "name": "Apple",
+      "industry": "消费电子",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["Apple", "苹果"]
+    },
+    "MSFT": {
+      "name": "Microsoft",
+      "industry": "软件与云服务",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["Microsoft", "微软"]
+    },
+    "NVDA": {
+      "name": "NVIDIA",
+      "industry": "半导体",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["NVIDIA", "英伟达", "Nvidia"]
+    },
+    "GOOGL": {
+      "name": "Alphabet",
+      "industry": "互联网",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["Alphabet", "Google", "谷歌"]
+    },
+    "AMZN": {
+      "name": "Amazon",
+      "industry": "电商与云服务",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["Amazon", "亚马逊"]
+    },
+    "META": {
+      "name": "Meta",
+      "industry": "互联网",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["Meta", "Facebook", "脸书"]
+    },
+    "TSLA": {
+      "name": "Tesla",
+      "industry": "新能源车",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["Tesla", "特斯拉"]
+    },
+    "JPM": {
+      "name": "JPMorgan Chase",
+      "industry": "银行",
+      "company_type": "financial",
+      "profitability": "profitable",
+      "aliases": ["JPMorgan", "摩根大通"]
+    },
+    "BAC": {
+      "name": "Bank of America",
+      "industry": "银行",
+      "company_type": "financial",
+      "profitability": "profitable",
+      "aliases": ["Bank of America", "美国银行"]
+    },
+    "GS": {
+      "name": "Goldman Sachs",
+      "industry": "投行",
+      "company_type": "financial",
+      "profitability": "profitable",
+      "aliases": ["Goldman Sachs", "高盛"]
+    },
+    "XOM": {
+      "name": "Exxon Mobil",
+      "industry": "石油石化",
+      "company_type": "cyclical",
+      "profitability": "profitable",
+      "aliases": ["Exxon", "埃克森美孚"]
+    },
+    "CVX": {
+      "name": "Chevron",
+      "industry": "石油石化",
+      "company_type": "cyclical",
+      "profitability": "profitable",
+      "aliases": ["Chevron", "雪佛龙"]
+    },
+    "JNJ": {
+      "name": "Johnson & Johnson",
+      "industry": "医疗健康",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["Johnson", "强生"]
+    },
+    "PFE": {
+      "name": "Pfizer",
+      "industry": "医药",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["Pfizer", "辉瑞"]
+    },
+    "WMT": {
+      "name": "Walmart",
+      "industry": "零售",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["Walmart", "沃尔玛"]
+    },
+    "COST": {
+      "name": "Costco",
+      "industry": "零售",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["Costco", "好市多"]
+    },
+    "NKE": {
+      "name": "Nike",
+      "industry": "消费品",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["Nike", "耐克"]
+    },
+    "HD": {
+      "name": "Home Depot",
+      "industry": "零售",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["Home Depot", "家得宝"]
+    },
+    "BA": {
+      "name": "Boeing",
+      "industry": "航空航天",
+      "company_type": "cyclical",
+      "profitability": "profitable",
+      "aliases": ["Boeing", "波音"]
+    },
+    "DIS": {
+      "name": "Disney",
+      "industry": "传媒娱乐",
+      "company_type": "general",
+      "profitability": "profitable",
+      "aliases": ["Disney", "迪士尼"]
+    }
+  },
+  "topic_stock_map": {
+    "政策与监管": ["JPM", "BAC", "GS"],
+    "宏观与流动性": ["AAPL", "MSFT", "JPM", "XOM"],
+    "汇率与大宗": ["XOM", "CVX"],
+    "财报与公司经营": ["AAPL", "MSFT", "NVDA", "WMT"],
+    "科技与产业主题": ["NVDA", "GOOGL", "META", "TSLA", "AMZN"],
+    "风险事件": ["JPM", "GS", "XOM"]
+  }
+}
