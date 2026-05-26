@@ -44,6 +44,7 @@ ACTIONABILITY_REASONS = {
     'theme_only_not_actionable',
     'stale_or_crowded',
     'grade_not_actionable',
+    'cross_verification_conflicted',
 }
 
 TOPIC_MARKET_SCOPE = {

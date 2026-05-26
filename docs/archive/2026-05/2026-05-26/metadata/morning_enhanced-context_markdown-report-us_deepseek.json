@@ -1,0 +1,2288 @@
+{
+  "analysis_mode": "markdown-report",
+  "market": "US",
+  "date_range": {
+    "start": "2026-05-26",
+    "end": "2026-05-26"
+  },
+  "selected_articles": [
+    {
+      "id": 4750,
+      "title": "'Weeks Inside Highly Fortified Bunkers': Report Details Painfully Slow Communication Within Iran's Leadership",
+      "source": "ZeroHedge",
+      "published": "Mon, 25 May 2026 23:20:00 +0000",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4751,
+      "title": "Democrats Using Black Athletes As Pawns In Redistricting War",
+      "source": "ZeroHedge",
+      "published": "Mon, 25 May 2026 22:10:00 +0000",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4752,
+      "title": "Reports Of Deadly US-Israeli Airstrikes On Iran's Port Of Bandar Abbas As Trump Issues Enriched Uranium Demand",
+      "source": "ZeroHedge",
+      "published": "Mon, 25 May 2026 22:00:00 +0000",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4753,
+      "title": "\"It Should Be Studied\": RFK Jr Says 'Trump Derangement Syndrome Is 'A Real Thing'",
+      "source": "ZeroHedge",
+      "published": "Mon, 25 May 2026 21:35:00 +0000",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4741,
+      "title": "Oil prices mixed as U.S. military strikes against Iran cloud Middle East peace prospects",
+      "source": "CNBC",
+      "published": "Tue, 26 May 2026 00:43:54 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4744,
+      "title": "South Korea's Kospi hits fresh record as hopes of U.S.-Iran breakthrough rise",
+      "source": "CNBC",
+      "published": "Tue, 26 May 2026 00:32:36 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4743,
+      "title": "CNBC's The China Connection newsletter: Tariffs eased. Trust didn't.",
+      "source": "CNBC",
+      "published": "Mon, 25 May 2026 23:01:25 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4754,
+      "title": "Huckabee Tells Lebanese To Thank Israel For Seedless Watermelons, While Under IDF Bombs",
+      "source": "ZeroHedge",
+      "published": "Mon, 25 May 2026 20:25:00 +0000",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4755,
+      "title": "The Power Bottleneck: Electricity as the New Strategic Asset",
+      "source": "ETF Trends",
+      "published": "Mon, 25 May 2026 11:08:03 +0000",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4742,
+      "title": "Iran is in the 'process of blinking' over the Strait of Hormuz, Petraeus says",
+      "source": "CNBC",
+      "published": "Mon, 25 May 2026 06:59:06 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4746,
+      "title": "Social media as bad for young people as smoking, top doctors say",
+      "source": "BBC全球经济",
+      "published": "Tue, 26 May 2026 01:13:57 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4740,
+      "title": "U.S. conducts \"self-defense strikes\" in Iran as Trump tries to push for peace deal",
+      "source": "CNBC",
+      "published": "Tue, 26 May 2026 01:13:09 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4745,
+      "title": "Next boss warns of 'dramatic' fall in entry-level jobs",
+      "source": "BBC全球经济",
+      "published": "Mon, 25 May 2026 23:51:24 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4722,
+      "title": "中美AI竞争：从技术追赶走向生态博弈",
+      "source": "FT中文网",
+      "published": "Mon, 25 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4723,
+      "title": "从TACO到NACHO：霍尔木兹危机如何改写加密市场的宏观定价逻辑",
+      "source": "FT中文网",
+      "published": "Mon, 25 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "宏观与流动性",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4724,
+      "title": "《给阿嬷的情书》：一部电影，两个故事",
+      "source": "FT中文网",
+      "published": "Mon, 25 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "风险事件",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4765,
+      "title": "Lowe’s sounds the alarm as customers change their tune",
+      "source": "Yahoo Finance",
+      "published": "2026-05-24T14:37:00Z",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4769,
+      "title": "Is KKR & Co. (KKR) One of the Best Long-Term Stocks to Buy Now for High Returns?",
+      "source": "Yahoo Finance",
+      "published": "2026-05-24T13:30:12Z",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4767,
+      "title": "Here’s Why AppLovin (APP) Is One of the Best Long-Term Stocks to Buy Now for High Returns",
+      "source": "Yahoo Finance",
+      "published": "2026-05-24T13:30:03Z",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4768,
+      "title": "When Growth Stocks Finally Collapse, You’ll Want This 1 Anti-Beta ETF in Your Portfolio",
+      "source": "Yahoo Finance",
+      "published": "2026-05-24T13:30:02Z",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4766,
+      "title": "5 moves retirees should make before a recession hits — so you're never forced to sell investments at a loss",
+      "source": "Yahoo Finance",
+      "published": "2026-05-24T13:15:00Z",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4770,
+      "title": "Oil prices tumble as deal to end Iran war appears close, though Trump says there’s no rush",
+      "source": "MarketWatch",
+      "published": "Tue, 26 May 2026 00:27:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 4771,
+      "title": "These underdogs are a big reason why S&P 500 profit growth is the fastest in nearly 5 years",
+      "source": "MarketWatch",
+      "published": "Mon, 25 May 2026 19:50:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 4772,
+      "title": "I’m 67. Our family trust earns $300,000 annually for my kids. How do I ensure they won’t get killed on taxes?",
+      "source": "MarketWatch",
+      "published": "Mon, 25 May 2026 18:30:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "summary_only",
+      "is_original_source": 1
+    },
+    {
+      "id": 4720,
+      "title": "伊朗谈判代表前往卡塔尔 美伊有望谈拢",
+      "source": "FT中文网",
+      "published": "Mon, 25 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 4721,
+      "title": "伊朗比特朗普更擅长“交易的艺术”",
+      "source": "FT中文网",
+      "published": "Mon, 25 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "风险事件",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 4775,
+      "title": "Here are the major earnings before the open Tuesday",
+      "source": "Seeking Alpha",
+      "published": "Mon, 25 May 2026 18:00:05 -0400",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 0
+    },
+    {
+      "id": 4773,
+      "title": "‘There is zero transparency’: My friend’s sister controls their mother’s estate. How can we stop her from stealing?",
+      "source": "MarketWatch",
+      "published": "Mon, 25 May 2026 17:45:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 1
+    },
+    {
+      "id": 4776,
+      "title": "Modine Manufacturing Q4 2026 Earnings Preview",
+      "source": "Seeking Alpha",
+      "published": "Mon, 25 May 2026 17:35:57 -0400",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4777,
+      "title": "Box Q1 2027 Earnings Preview",
+      "source": "Seeking Alpha",
+      "published": "Mon, 25 May 2026 17:35:18 -0400",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 0
+    },
+    {
+      "id": 4778,
+      "title": "Sociedad Quimica y Minera de Chile Q1 2026 Earnings Preview",
+      "source": "Seeking Alpha",
+      "published": "Mon, 25 May 2026 17:35:16 -0400",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 0
+    },
+    {
+      "id": 4779,
+      "title": "Zscaler Q3 2026 Earnings Preview",
+      "source": "Seeking Alpha",
+      "published": "Mon, 25 May 2026 17:35:08 -0400",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 0
+    },
+    {
+      "id": 4774,
+      "title": "Is the stock market open today? Does the post office deliver mail on Memorial Day?",
+      "source": "MarketWatch",
+      "published": "Mon, 25 May 2026 15:49:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "summary_only",
+      "is_original_source": 1
+    },
+    {
+      "id": 4735,
+      "title": "Offshore finance is thriving despite crackdowns",
+      "source": "经济学人 Economist",
+      "published": "Mon, 25 May 2026 15:38:01 +0000",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "summary_only",
+      "is_original_source": 1
+    }
+  ],
+  "judgment_candidates": [
+    {
+      "candidate_id": "C02",
+      "topic": "科技与产业主题",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "2-6周",
+      "evidence_count": 6,
+      "independent_evidence_count": 4,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "mainstream",
+      "original_source_count": 4,
+      "mainstream_or_better_count": 9,
+      "articles": [
+        {
+          "id": 4722,
+          "title": "中美AI竞争：从技术追赶走向生态博弈",
+          "source": "FT中文网",
+          "summary": "一个更深层的判断正在成形：这场竞争的胜负手，或许并不在于谁的算法领先多少个月，而在于谁的社会经济体系能更高效地将AI释放的生产力转化为可持续的商业霸权。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 25 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4741,
+          "title": "Oil prices mixed as U.S. military strikes against Iran cloud Middle East peace prospects",
+          "source": "CNBC",
+          "summary": "Donald Trump also said negotiations with Iran were \"proceeding nicely,\" but cautioned that the U.S. could resume military action if discussions were to collapse.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 26 May 2026 00:43:54 GMT",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4767,
+          "title": "Here’s Why AppLovin (APP) Is One of the Best Long-Term Stocks to Buy Now for High Returns",
+          "source": "Yahoo Finance",
+          "summary": "N/A",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-24T13:30:03Z",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4744,
+          "title": "South Korea's Kospi hits fresh record as hopes of U.S.-Iran breakthrough rise",
+          "source": "CNBC",
+          "summary": "Asia-Pacific markets were set to open broadly higher Tuesday, amid hopes for a breakthrough in the U.S.-Iran peace negotiations.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 26 May 2026 00:32:36 GMT",
+          "collection_date": "2026-05-26"
+        }
+      ],
+      "topic_article_count": 11,
+      "priority_score": 64,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C05",
+      "topic": "其他观察",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 3,
+      "independent_evidence_count": 3,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 3,
+      "mainstream_or_better_count": 4,
+      "articles": [
+        {
+          "id": 4720,
+          "title": "伊朗谈判代表前往卡塔尔 美伊有望谈拢",
+          "source": "FT中文网",
+          "summary": "伊朗议会议长加利巴夫和外交部长阿拉格齐周一前往卡塔尔。各方正努力敲定美伊协议，以延长停火60天并重新开放霍尔木兹海峡。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 25 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4771,
+          "title": "These underdogs are a big reason why S&P 500 profit growth is the fastest in nearly 5 years",
+          "source": "MarketWatch",
+          "summary": "Ever since Big Tech went all in on artificial intelligence more than three years ago, seven companies have done the heavy lifting for overall S&amp;P 500 earnings growth. But more ",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 25 May 2026 19:50:00 GMT",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4772,
+          "title": "I’m 67. Our family trust earns $300,000 annually for my kids. How do I ensure they won’t get killed on taxes?",
+          "source": "MarketWatch",
+          "summary": "“My thought is to distribute all of the income to my children each year so that the trust itself pays little to no tax.”",
+          "source_tier": "mainstream",
+          "content_quality_status": "summary_only",
+          "published": "Mon, 25 May 2026 18:30:00 GMT",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4735,
+          "title": "Offshore finance is thriving despite crackdowns",
+          "source": "经济学人 Economist",
+          "summary": "There is a lot more to havens than crystal-clear waters and a promise of opacity",
+          "source_tier": "mainstream",
+          "content_quality_status": "summary_only",
+          "published": "Mon, 25 May 2026 15:38:01 +0000",
+          "collection_date": "2026-05-26"
+        }
+      ],
+      "topic_article_count": 4,
+      "priority_score": 51,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C01",
+      "topic": "政策与监管",
+      "market_scope": [
+        "A股",
+        "港股",
+        "宏观"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 4,
+      "independent_evidence_count": 2,
+      "high_relevance_article_count": 2,
+      "source_tier_max": "mainstream",
+      "original_source_count": 2,
+      "mainstream_or_better_count": 6,
+      "articles": [
+        {
+          "id": 4765,
+          "title": "Lowe’s sounds the alarm as customers change their tune",
+          "source": "Yahoo Finance",
+          "summary": "N/A",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-24T14:37:00Z",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4742,
+          "title": "Iran is in the 'process of blinking' over the Strait of Hormuz, Petraeus says",
+          "source": "CNBC",
+          "summary": "Ex-CIA director David Petraeus said that an initial successful peace deal with Tehran would see the Strait opened without any conditions.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 25 May 2026 06:59:06 GMT",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4743,
+          "title": "CNBC's The China Connection newsletter: Tariffs eased. Trust didn't.",
+          "source": "CNBC",
+          "summary": "As the largest consumer market globally, the U.S. still remains a prized destination for Chinese companies that are finding ways to address local concerns.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 25 May 2026 23:01:25 GMT",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4766,
+          "title": "5 moves retirees should make before a recession hits — so you're never forced to sell investments at a loss",
+          "source": "Yahoo Finance",
+          "summary": "N/A",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-24T13:15:00Z",
+          "collection_date": "2026-05-26"
+        }
+      ],
+      "topic_article_count": 10,
+      "priority_score": 50,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C03",
+      "topic": "宏观与流动性",
+      "market_scope": [
+        "美股",
+        "A股",
+        "港股",
+        "美元",
+        "利率"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 1,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 1,
+      "articles": [
+        {
+          "id": 4723,
+          "title": "从TACO到NACHO：霍尔木兹危机如何改写加密市场的宏观定价逻辑",
+          "source": "FT中文网",
+          "summary": "Lacie Zhang：TACO交易赌的是政治退让，NACHO交易面对的则是更难被快速扭转的物理瓶颈和信任裂口。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 25 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-26"
+        }
+      ],
+      "topic_article_count": 1,
+      "priority_score": 37,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C04",
+      "topic": "风险事件",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股",
+        "商品"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 1,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 2,
+      "articles": [
+        {
+          "id": 4724,
+          "title": "《给阿嬷的情书》：一部电影，两个故事",
+          "source": "FT中文网",
+          "summary": "刘远举：一个电影，两个故事，也反映了中国电影创作所面临的困境。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 25 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4721,
+          "title": "伊朗比特朗普更擅长“交易的艺术”",
+          "source": "FT中文网",
+          "summary": "拉赫曼：根据潜在的和平协议，冲突结束后的伊朗政权将会更自信、更强硬，还有新的资源来重建核计划和代理人网络。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 25 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-26"
+        }
+      ],
+      "topic_article_count": 2,
+      "priority_score": 37,
+      "high_confidence_topic": false
+    }
+  ],
+  "candidate_stocks": [
+    {
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "industry": "互联网",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        4722,
+        4769,
+        4767
+      ],
+      "evidence_summaries": [
+        "中美AI竞争：从技术追赶走向生态博弈",
+        "Is KKR & Co. (KKR) One of the Best Long-Term Stocks to Buy Now for High Returns?",
+        "Here’s Why AppLovin (APP) Is One of the Best Long-Term Stocks to Buy Now for High Returns"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 3,
+      "direct_mentions": 3,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "Mon, 25 May 2026 16:00:00 GMT",
+        "2026-05-24T13:30:12Z",
+        "2026-05-24T13:30:03Z"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "GS",
+      "name": "Goldman Sachs",
+      "industry": "投行",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        4755,
+        4723
+      ],
+      "evidence_summaries": [
+        "The Power Bottleneck: Electricity as the New Strategic Asset",
+        "从TACO到NACHO：霍尔木兹危机如何改写加密市场的宏观定价逻辑"
+      ],
+      "source_tiers": [
+        "aggregator",
+        "mainstream"
+      ],
+      "independent_evidence_count": 1,
+      "direct_mentions": 2,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_published_dates": [
+        "Mon, 25 May 2026 11:08:03 +0000",
+        "Mon, 25 May 2026 16:00:00 GMT"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "META",
+      "name": "Meta",
+      "industry": "互联网",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        4722
+      ],
+      "evidence_summaries": [
+        "中美AI竞争：从技术追赶走向生态博弈"
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 1,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "Mon, 25 May 2026 16:00:00 GMT"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "industry": "半导体",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        4722
+      ],
+      "evidence_summaries": [
+        "中美AI竞争：从技术追赶走向生态博弈"
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 1,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "Mon, 25 May 2026 16:00:00 GMT"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "JPM",
+      "name": "JPMorgan Chase",
+      "industry": "银行",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        4723
+      ],
+      "evidence_summaries": [
+        "从TACO到NACHO：霍尔木兹危机如何改写加密市场的宏观定价逻辑"
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 1,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_published_dates": [
+        "Mon, 25 May 2026 16:00:00 GMT"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America",
+      "industry": "银行",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        4765
+      ],
+      "evidence_summaries": [
+        "Lowe’s sounds the alarm as customers change their tune"
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 1,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_published_dates": [
+        "2026-05-24T14:37:00Z"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "HD",
+      "name": "Home Depot",
+      "industry": "零售",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        4765
+      ],
+      "evidence_summaries": [
+        "Lowe’s sounds the alarm as customers change their tune"
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 1,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "2026-05-24T14:37:00Z"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "industry": "电商与云服务",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        4755
+      ],
+      "evidence_summaries": [
+        "The Power Bottleneck: Electricity as the New Strategic Asset"
+      ],
+      "source_tiers": [
+        "aggregator"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "aggregator",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "Mon, 25 May 2026 11:08:03 +0000"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "industry": "软件与云服务",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        4755
+      ],
+      "evidence_summaries": [
+        "The Power Bottleneck: Electricity as the New Strategic Asset"
+      ],
+      "source_tiers": [
+        "aggregator"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "aggregator",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "Mon, 25 May 2026 11:08:03 +0000"
+      ],
+      "topic_article_count": 0
+    }
+  ],
+  "stock_recommendations": [
+    {
+      "symbol": "GS",
+      "name": "Goldman Sachs",
+      "industry": "投行",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "关注",
+      "grade_caps": [],
+      "total_score": 70,
+      "scores": {
+        "news_catalyst": 20,
+        "technical": 21,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "MACD 维持多头结构",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4755,
+        4723
+      ],
+      "evidence_summaries": [
+        "The Power Bottleneck: Electricity as the New Strategic Asset",
+        "从TACO到NACHO：霍尔木兹危机如何改写加密市场的宏观定价逻辑"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": true,
+      "actionability_reasons": [],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "industry": "半导体",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "关注",
+      "grade_caps": [],
+      "total_score": 70,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 21,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 8
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4722
+      ],
+      "evidence_summaries": [
+        "中美AI竞争：从技术追赶走向生态博弈"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": true,
+      "actionability_reasons": [],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 1,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "industry": "互联网",
+      "candidate_confidence": "high",
+      "base_grade": "关注",
+      "grade": "关注",
+      "grade_caps": [],
+      "total_score": 67,
+      "scores": {
+        "news_catalyst": 24,
+        "technical": 15,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "RSI 处于健康区间，趋势未明显过热",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4722,
+        4769,
+        4767
+      ],
+      "evidence_summaries": [
+        "中美AI竞争：从技术追赶走向生态博弈",
+        "Is KKR & Co. (KKR) One of the Best Long-Term Stocks to Buy Now for High Returns?",
+        "Here’s Why AppLovin (APP) Is One of the Best Long-Term Stocks to Buy Now for High Returns"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": true,
+      "actionability_reasons": [],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 3,
+        "independent_evidence_count": 3,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "JPM",
+      "name": "JPMorgan Chase",
+      "industry": "银行",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "关注",
+      "grade_caps": [],
+      "total_score": 67,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 19,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4723
+      ],
+      "evidence_summaries": [
+        "从TACO到NACHO：霍尔木兹危机如何改写加密市场的宏观定价逻辑"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": true,
+      "actionability_reasons": [],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America",
+      "industry": "银行",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "关注",
+      "grade_caps": [],
+      "total_score": 67,
+      "scores": {
+        "news_catalyst": 17,
+        "technical": 21,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4765
+      ],
+      "evidence_summaries": [
+        "Lowe’s sounds the alarm as customers change their tune"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": true,
+      "actionability_reasons": [],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "industry": "软件与云服务",
+      "candidate_confidence": "low",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 64,
+      "scores": {
+        "news_catalyst": 16,
+        "technical": 19,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4755
+      ],
+      "evidence_summaries": [
+        "The Power Bottleneck: Electricity as the New Strategic Asset"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "insufficient_independent_confirmation"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "aggregator"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "HD",
+      "name": "Home Depot",
+      "industry": "零售",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 60,
+      "scores": {
+        "news_catalyst": 17,
+        "technical": 15,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4765
+      ],
+      "evidence_summaries": [
+        "Lowe’s sounds the alarm as customers change their tune"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "META",
+      "name": "Meta",
+      "industry": "互联网",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 55,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 8,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "RSI 处于健康区间，趋势未明显过热",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4722
+      ],
+      "evidence_summaries": [
+        "中美AI竞争：从技术追赶走向生态博弈"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "industry": "电商与云服务",
+      "candidate_confidence": "low",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 52,
+      "scores": {
+        "news_catalyst": 16,
+        "technical": 8,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4755
+      ],
+      "evidence_summaries": [
+        "The Power Bottleneck: Electricity as the New Strategic Asset"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "insufficient_independent_confirmation"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "aggregator"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    }
+  ],
+  "decision_views": {
+    "actionable_candidates": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "industry": "投行",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "关注",
+        "grade_caps": [],
+        "total_score": 70,
+        "scores": {
+          "news_catalyst": 20,
+          "technical": 21,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "MACD 维持多头结构",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4755,
+          4723
+        ],
+        "evidence_summaries": [
+          "The Power Bottleneck: Electricity as the New Strategic Asset",
+          "从TACO到NACHO：霍尔木兹危机如何改写加密市场的宏观定价逻辑"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": true,
+        "actionability_reasons": [],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA",
+        "industry": "半导体",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "关注",
+        "grade_caps": [],
+        "total_score": 70,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 21,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 8
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4722
+        ],
+        "evidence_summaries": [
+          "中美AI竞争：从技术追赶走向生态博弈"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": true,
+        "actionability_reasons": [],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 1,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "industry": "互联网",
+        "candidate_confidence": "high",
+        "base_grade": "关注",
+        "grade": "关注",
+        "grade_caps": [],
+        "total_score": 67,
+        "scores": {
+          "news_catalyst": 24,
+          "technical": 15,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "RSI 处于健康区间，趋势未明显过热",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4722,
+          4769,
+          4767
+        ],
+        "evidence_summaries": [
+          "中美AI竞争：从技术追赶走向生态博弈",
+          "Is KKR & Co. (KKR) One of the Best Long-Term Stocks to Buy Now for High Returns?",
+          "Here’s Why AppLovin (APP) Is One of the Best Long-Term Stocks to Buy Now for High Returns"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": true,
+        "actionability_reasons": [],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 3,
+          "independent_evidence_count": 3,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase",
+        "industry": "银行",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "关注",
+        "grade_caps": [],
+        "total_score": 67,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 19,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4723
+        ],
+        "evidence_summaries": [
+          "从TACO到NACHO：霍尔木兹危机如何改写加密市场的宏观定价逻辑"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": true,
+        "actionability_reasons": [],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "BAC",
+        "name": "Bank of America",
+        "industry": "银行",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "关注",
+        "grade_caps": [],
+        "total_score": 67,
+        "scores": {
+          "news_catalyst": 17,
+          "technical": 21,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4765
+        ],
+        "evidence_summaries": [
+          "Lowe’s sounds the alarm as customers change their tune"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": true,
+        "actionability_reasons": [],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "conditional_watchlist": [
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "industry": "软件与云服务",
+        "candidate_confidence": "low",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 64,
+        "scores": {
+          "news_catalyst": 16,
+          "technical": 19,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4755
+        ],
+        "evidence_summaries": [
+          "The Power Bottleneck: Electricity as the New Strategic Asset"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "insufficient_independent_confirmation"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "aggregator"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "HD",
+        "name": "Home Depot",
+        "industry": "零售",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 60,
+        "scores": {
+          "news_catalyst": 17,
+          "technical": 15,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4765
+        ],
+        "evidence_summaries": [
+          "Lowe’s sounds the alarm as customers change their tune"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "META",
+        "name": "Meta",
+        "industry": "互联网",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 55,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 8,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "RSI 处于健康区间，趋势未明显过热",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4722
+        ],
+        "evidence_summaries": [
+          "中美AI竞争：从技术追赶走向生态博弈"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "industry": "电商与云服务",
+        "candidate_confidence": "low",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 52,
+        "scores": {
+          "news_catalyst": 16,
+          "technical": 8,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4755
+        ],
+        "evidence_summaries": [
+          "The Power Bottleneck: Electricity as the New Strategic Asset"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "insufficient_independent_confirmation"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "aggregator"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "stale_or_rejected": []
+  },
+  "score_distribution": {
+    "strong_focus": 0,
+    "focus": 5,
+    "watch": 4,
+    "avoid": 0
+  },
+  "scoring_config": {
+    "market": "US",
+    "style": "balanced",
+    "lookback_days": 60,
+    "pool_mode": "strict",
+    "theme_mapping_max_grade": "watch",
+    "value_acceptance_enabled": true,
+    "industry_trend_enabled": true
+  },
+  "session": "morning",
+  "session_time": "2026-05-26 09:24:31"
+}

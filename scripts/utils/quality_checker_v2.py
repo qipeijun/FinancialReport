@@ -165,6 +165,90 @@ def _has_verification_boundary_overclaim(report_text: str, realtime_claims: Opti
     return realtime_total + news_total <= 4
 
 
+def _cross_verification_overclaim_check(
+    report_text: str,
+    cross_verification: Dict[str, Any],
+) -> List[str]:
+    """检查正文是否对 weak/conflicted 标的过度宣称交叉验真结果。
+
+    正文不能把 weak/conflicted 的主题或标的写成"已验证""强确认""可行动"等措辞。
+    遍历每个强措辞在文中的所有出现位置，检查窗口内是否有 non-confirmed 实体。
+    """
+    if not cross_verification:
+        return []
+
+    stock_checks = cross_verification.get('stock_checks', [])
+    topic_checks = cross_verification.get('topic_checks', [])
+
+    # 构建 non-confirmed 实体的 {匹配文本 -> 类型} 映射
+    # 按长度降序排列，优先匹配更具体的实体
+    non_confirmed_entities: List[Tuple[str, str]] = []  # (match_text, label)
+    seen_entities: set[Tuple[str, str]] = set()
+
+    for sc in stock_checks:
+        status = sc.get('status', '')
+        if status != 'confirmed':
+            name = sc.get('name', '')
+            symbol = sc.get('symbol', '')
+            if symbol:
+                key = (symbol, 'symbol')
+                if key not in seen_entities:
+                    seen_entities.add(key)
+                    non_confirmed_entities.append((symbol, f"标的 {symbol}"))
+            if name and name != symbol:
+                key = (name, 'name')
+                if key not in seen_entities:
+                    seen_entities.add(key)
+                    non_confirmed_entities.append((name, f"标的 {name}"))
+
+    for tc in topic_checks:
+        status = tc.get('status', '')
+        if status != 'confirmed':
+            topic = tc.get('topic', '')
+            if topic:
+                key = (topic, 'topic')
+                if key not in seen_entities:
+                    seen_entities.add(key)
+                    non_confirmed_entities.append((topic, f"主题 {topic}"))
+
+    # 按匹配文本长度降序，优先长匹配
+    non_confirmed_entities.sort(key=lambda x: -len(x[0]))
+
+    issues: List[str] = []
+    reported: set[Tuple[str, str]] = set()  # (phrase, entity) 去重
+
+    strong_phrases = [
+        '已验证', '强确认', '多来源验证', '交叉验证通过',
+        '多源确认', '多方验证', '证据充分', '确定性高',
+    ]
+
+    for phrase in strong_phrases:
+        # 用 finditer 遍历所有出现位置
+        start = 0
+        while True:
+            idx_phrase = report_text.find(phrase, start)
+            if idx_phrase == -1:
+                break
+            # 检查每个 non-confirmed 实体是否在 200 字符窗口内
+            for entity_text, entity_label in non_confirmed_entities:
+                if entity_text not in report_text:
+                    continue
+                # 查 entity 在窗口内的出现
+                entity_start = max(0, idx_phrase - 200)
+                entity_end = idx_phrase + len(phrase) + 200
+                window = report_text[entity_start:entity_end]
+                if entity_text in window:
+                    key = (phrase, entity_text)
+                    if key not in reported:
+                        reported.add(key)
+                        issues.append(
+                            f"❌ 交叉验真: 正文将 weak/conflicted {entity_label} 写成'{phrase}'"
+                        )
+            start = idx_phrase + len(phrase)
+
+    return issues
+
+
 def _data_integrity_statement_passed(report_text: str, data_quality_stats: Optional[Dict[str, Any]]) -> bool:
     if not data_quality_stats:
         return True
@@ -231,6 +315,7 @@ def check_report_quality_v2(
     stock_recommendations: Optional[List[Dict[str, Any]]] = None,
     judgment_candidates: Optional[List[Dict[str, Any]]] = None,
     data_quality_stats: Optional[Dict[str, Any]] = None,
+    cross_verification: Optional[Dict[str, Any]] = None,
 ) -> Dict:
     """
     增强版质量检查 (集成事实核查)
@@ -267,6 +352,7 @@ def check_report_quality_v2(
     data_integrity_statement_passed = _data_integrity_statement_passed(report_text, data_quality_stats)
     watchlist_promoted_in_narrative_count = 0
     verification_boundary_overclaim_count = 0
+    cross_verification_overclaim_count = 0
     time_source = None
     source_annotation_missing = False
 
@@ -484,6 +570,13 @@ def check_report_quality_v2(
         narrative_consistency_passed = False
         issues.append("❌ 把局部已验证断言扩写成整份报告已验证，超出了事实核查边界")
 
+    if cross_verification:
+        cv_issues = _cross_verification_overclaim_check(report_text, cross_verification)
+        if cv_issues:
+            cross_verification_overclaim_count = len(cv_issues)
+            narrative_consistency_passed = False
+            issues.extend(cv_issues)
+
     # ============================================================
     # 6. 确保得分在合理范围
     # ============================================================
@@ -534,6 +627,7 @@ def check_report_quality_v2(
             'fabrication_detected': fabrication_detected,
             'watchlist_promoted_in_narrative_count': watchlist_promoted_in_narrative_count,
             'verification_boundary_overclaim_count': verification_boundary_overclaim_count,
+            'cross_verification_overclaim_count': cross_verification_overclaim_count,
         },
         'timestamp': datetime.now().isoformat()
     }

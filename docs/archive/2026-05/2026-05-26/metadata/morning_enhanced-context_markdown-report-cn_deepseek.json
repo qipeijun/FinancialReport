@@ -1,0 +1,2393 @@
+{
+  "analysis_mode": "markdown-report",
+  "market": "CN",
+  "date_range": {
+    "start": "2026-05-26",
+    "end": "2026-05-26"
+  },
+  "selected_articles": [
+    {
+      "id": 4715,
+      "title": "ComputeX 2026即将开幕，黄仁勋、苏姿丰和陈立武先后抵台“密访”供应链",
+      "source": "华尔街见闻",
+      "published": "Tue, 26 May 2026 08:43:17 +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4705,
+      "title": "两部 AI 剧集闯入戛纳，水母智能要做 AI 内容工业化的破局者｜项目报道",
+      "source": "36氪",
+      "published": "2026-05-26 09:00:00  +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4716,
+      "title": "美伊协议尚在“拉锯”，以色列下令“猛踩油门”打击黎真主党",
+      "source": "华尔街见闻",
+      "published": "Tue, 26 May 2026 08:17:58 +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "汇率与大宗",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4717,
+      "title": "如果债市风暴继续在全球蔓延，接下来会发生什么？高盛：没什么好事",
+      "source": "华尔街见闻",
+      "published": "Tue, 26 May 2026 08:17:36 +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "宏观与流动性",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4718,
+      "title": "OpenAI上市在望，软银创历史新高",
+      "source": "华尔街见闻",
+      "published": "Tue, 26 May 2026 08:04:17 +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "汇率与大宗",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4719,
+      "title": "刚果和津巴布韦限制钴、锂出口后，“全球最大铝土矿生产国”几内亚计划6月宣布出口管制措施",
+      "source": "华尔街见闻",
+      "published": "Tue, 26 May 2026 08:03:31 +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4706,
+      "title": "8点1氪丨胖东来投资65亿的“梦之城”开工；“稚晖君”彭志辉正式出任上纬新材董事长；“死了么”App改名“在么在么”",
+      "source": "36氪",
+      "published": "2026-05-26 07:58:09  +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4710,
+      "title": "5月26日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+      "source": "东方财富网",
+      "published": "Tue, 26 May 2026 06:03:21 +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "财报与公司经营",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4750,
+      "title": "'Weeks Inside Highly Fortified Bunkers': Report Details Painfully Slow Communication Within Iran's Leadership",
+      "source": "ZeroHedge",
+      "published": "Mon, 25 May 2026 23:20:00 +0000",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4751,
+      "title": "Democrats Using Black Athletes As Pawns In Redistricting War",
+      "source": "ZeroHedge",
+      "published": "Mon, 25 May 2026 22:10:00 +0000",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4752,
+      "title": "Reports Of Deadly US-Israeli Airstrikes On Iran's Port Of Bandar Abbas As Trump Issues Enriched Uranium Demand",
+      "source": "ZeroHedge",
+      "published": "Mon, 25 May 2026 22:00:00 +0000",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4753,
+      "title": "\"It Should Be Studied\": RFK Jr Says 'Trump Derangement Syndrome Is 'A Real Thing'",
+      "source": "ZeroHedge",
+      "published": "Mon, 25 May 2026 21:35:00 +0000",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4741,
+      "title": "Oil prices mixed as U.S. military strikes against Iran cloud Middle East peace prospects",
+      "source": "CNBC",
+      "published": "Tue, 26 May 2026 00:43:54 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4744,
+      "title": "South Korea's Kospi hits fresh record as hopes of U.S.-Iran breakthrough rise",
+      "source": "CNBC",
+      "published": "Tue, 26 May 2026 00:32:36 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4743,
+      "title": "CNBC's The China Connection newsletter: Tariffs eased. Trust didn't.",
+      "source": "CNBC",
+      "published": "Mon, 25 May 2026 23:01:25 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4711,
+      "title": "5月25日东方财富财经晚报（附新闻联播）",
+      "source": "东方财富网",
+      "published": "Mon, 25 May 2026 21:00:14 +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4712,
+      "title": "5月25日晚间上市公司利好消息一览(附名单)",
+      "source": "东方财富网",
+      "published": "Mon, 25 May 2026 20:32:43 +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4754,
+      "title": "Huckabee Tells Lebanese To Thank Israel For Seedless Watermelons, While Under IDF Bombs",
+      "source": "ZeroHedge",
+      "published": "Mon, 25 May 2026 20:25:00 +0000",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4714,
+      "title": "5月25日晚间沪深上市公司重大事项公告最新快递",
+      "source": "东方财富网",
+      "published": "Mon, 25 May 2026 19:31:25 +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4755,
+      "title": "The Power Bottleneck: Electricity as the New Strategic Asset",
+      "source": "ETF Trends",
+      "published": "Mon, 25 May 2026 11:08:03 +0000",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4708,
+      "title": "用AI重构增长：新通教育集团的实践| 2026AI Partner·北京亦庄AI+产业大会",
+      "source": "36氪",
+      "published": "2026-05-25 16:54:18  +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "财报与公司经营",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4709,
+      "title": "氪星晚报｜全国首单挂钩蓝色债券合约类信用衍生品交易落地山东；到2030年底全国城市生活垃圾资源化利用率力争达到76%以上；新加坡寻求将富人开户时间缩短至一个月",
+      "source": "36氪",
+      "published": "2026-05-25 16:24:54  +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4700,
+      "title": "AI商业化：“收费”是大模型的趋势吗？",
+      "source": "中新网",
+      "published": "Tue, 26 May 2026 07:15:14 +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4713,
+      "title": "宇树科技科创板IPO将于6月1日上会 拟募资42.02亿元",
+      "source": "东方财富网",
+      "published": "Mon, 25 May 2026 20:14:55 +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "财报与公司经营",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4742,
+      "title": "Iran is in the 'process of blinking' over the Strait of Hormuz, Petraeus says",
+      "source": "CNBC",
+      "published": "Mon, 25 May 2026 06:59:06 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4701,
+      "title": "从“舌尖”到“心头” 夜经济点亮消费新活力",
+      "source": "中新网",
+      "published": "Tue, 26 May 2026 01:24:48 +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 4746,
+      "title": "Social media as bad for young people as smoking, top doctors say",
+      "source": "BBC全球经济",
+      "published": "Tue, 26 May 2026 01:13:57 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4740,
+      "title": "U.S. conducts \"self-defense strikes\" in Iran as Trump tries to push for peace deal",
+      "source": "CNBC",
+      "published": "Tue, 26 May 2026 01:13:09 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4702,
+      "title": "2026中德（欧）隐形冠军论坛在北京开幕",
+      "source": "中新网",
+      "published": "Mon, 25 May 2026 23:56:22 +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "风险事件",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4745,
+      "title": "Next boss warns of 'dramatic' fall in entry-level jobs",
+      "source": "BBC全球经济",
+      "published": "Mon, 25 May 2026 23:51:24 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4703,
+      "title": "宇树科技IPO6月1日上会 最新业绩公布",
+      "source": "中新网",
+      "published": "Mon, 25 May 2026 23:28:15 +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "财报与公司经营",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4704,
+      "title": "4月份中国销售彩票540多亿元",
+      "source": "中新网",
+      "published": "Mon, 25 May 2026 23:26:12 +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4722,
+      "title": "中美AI竞争：从技术追赶走向生态博弈",
+      "source": "FT中文网",
+      "published": "Mon, 25 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4723,
+      "title": "从TACO到NACHO：霍尔木兹危机如何改写加密市场的宏观定价逻辑",
+      "source": "FT中文网",
+      "published": "Mon, 25 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "宏观与流动性",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4724,
+      "title": "《给阿嬷的情书》：一部电影，两个故事",
+      "source": "FT中文网",
+      "published": "Mon, 25 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "风险事件",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4707,
+      "title": "消除“罪证”：给写作去除“AI味”的不完全手册（2026版）",
+      "source": "36氪",
+      "published": "2026-05-25 19:32:24  +0800",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4765,
+      "title": "Lowe’s sounds the alarm as customers change their tune",
+      "source": "Yahoo Finance",
+      "published": "2026-05-24T14:37:00Z",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4769,
+      "title": "Is KKR & Co. (KKR) One of the Best Long-Term Stocks to Buy Now for High Returns?",
+      "source": "Yahoo Finance",
+      "published": "2026-05-24T13:30:12Z",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4767,
+      "title": "Here’s Why AppLovin (APP) Is One of the Best Long-Term Stocks to Buy Now for High Returns",
+      "source": "Yahoo Finance",
+      "published": "2026-05-24T13:30:03Z",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4768,
+      "title": "When Growth Stocks Finally Collapse, You’ll Want This 1 Anti-Beta ETF in Your Portfolio",
+      "source": "Yahoo Finance",
+      "published": "2026-05-24T13:30:02Z",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4766,
+      "title": "5 moves retirees should make before a recession hits — so you're never forced to sell investments at a loss",
+      "source": "Yahoo Finance",
+      "published": "2026-05-24T13:15:00Z",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 4770,
+      "title": "Oil prices tumble as deal to end Iran war appears close, though Trump says there’s no rush",
+      "source": "MarketWatch",
+      "published": "Tue, 26 May 2026 00:27:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 4771,
+      "title": "These underdogs are a big reason why S&P 500 profit growth is the fastest in nearly 5 years",
+      "source": "MarketWatch",
+      "published": "Mon, 25 May 2026 19:50:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 4772,
+      "title": "I’m 67. Our family trust earns $300,000 annually for my kids. How do I ensure they won’t get killed on taxes?",
+      "source": "MarketWatch",
+      "published": "Mon, 25 May 2026 18:30:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "summary_only",
+      "is_original_source": 1
+    },
+    {
+      "id": 4720,
+      "title": "伊朗谈判代表前往卡塔尔 美伊有望谈拢",
+      "source": "FT中文网",
+      "published": "Mon, 25 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 4721,
+      "title": "伊朗比特朗普更擅长“交易的艺术”",
+      "source": "FT中文网",
+      "published": "Mon, 25 May 2026 16:00:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "风险事件",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 4775,
+      "title": "Here are the major earnings before the open Tuesday",
+      "source": "Seeking Alpha",
+      "published": "Mon, 25 May 2026 18:00:05 -0400",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 0
+    },
+    {
+      "id": 4773,
+      "title": "‘There is zero transparency’: My friend’s sister controls their mother’s estate. How can we stop her from stealing?",
+      "source": "MarketWatch",
+      "published": "Mon, 25 May 2026 17:45:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 1
+    },
+    {
+      "id": 4776,
+      "title": "Modine Manufacturing Q4 2026 Earnings Preview",
+      "source": "Seeking Alpha",
+      "published": "Mon, 25 May 2026 17:35:57 -0400",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 4777,
+      "title": "Box Q1 2027 Earnings Preview",
+      "source": "Seeking Alpha",
+      "published": "Mon, 25 May 2026 17:35:18 -0400",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 0
+    },
+    {
+      "id": 4778,
+      "title": "Sociedad Quimica y Minera de Chile Q1 2026 Earnings Preview",
+      "source": "Seeking Alpha",
+      "published": "Mon, 25 May 2026 17:35:16 -0400",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 0
+    },
+    {
+      "id": 4779,
+      "title": "Zscaler Q3 2026 Earnings Preview",
+      "source": "Seeking Alpha",
+      "published": "Mon, 25 May 2026 17:35:08 -0400",
+      "collection_date": "2026-05-26",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 0
+    },
+    {
+      "id": 4774,
+      "title": "Is the stock market open today? Does the post office deliver mail on Memorial Day?",
+      "source": "MarketWatch",
+      "published": "Mon, 25 May 2026 15:49:00 GMT",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "summary_only",
+      "is_original_source": 1
+    },
+    {
+      "id": 4735,
+      "title": "Offshore finance is thriving despite crackdowns",
+      "source": "经济学人 Economist",
+      "published": "Mon, 25 May 2026 15:38:01 +0000",
+      "collection_date": "2026-05-26",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "summary_only",
+      "is_original_source": 1
+    }
+  ],
+  "judgment_candidates": [
+    {
+      "candidate_id": "C01",
+      "topic": "科技与产业主题",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "2-6周",
+      "evidence_count": 10,
+      "independent_evidence_count": 4,
+      "high_relevance_article_count": 7,
+      "source_tier_max": "mainstream",
+      "original_source_count": 4,
+      "mainstream_or_better_count": 16,
+      "articles": [
+        {
+          "id": 4714,
+          "title": "5月25日晚间沪深上市公司重大事项公告最新快递",
+          "source": "东方财富网",
+          "summary": "<p> 沪深两市多家上市公司5月25日晚间发布公司公告，以下为重要公告汇总。</p><p> <strong>【品大事】</strong></p><p> <strong><span id=\"stock_0.300054\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300054\">鼎",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 25 May 2026 19:31:25 +0800",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4706,
+          "title": "8点1氪丨胖东来投资65亿的“梦之城”开工；“稚晖君”彭志辉正式出任上纬新材董事长；“死了么”App改名“在么在么”",
+          "source": "36氪",
+          "summary": "<h2>今日热点导览</h2> <p>美媒：美伊已就全面开放霍尔木兹海峡达成一致</p> <p>拉勾网及创始人被限消</p> <p>宇树科技6月1日科创板IPO上会，一季度扣非净利润同比下降52.55%</p> <p>1瓶水蜜桃只有0.01克水蜜桃汁，康师傅被指蹭奉化水蜜桃玩文字游戏</p> <p>寒武纪盘中涨超11%，总市值超9000亿创历史新高</p> ",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-26 07:58:09  +0800",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4722,
+          "title": "中美AI竞争：从技术追赶走向生态博弈",
+          "source": "FT中文网",
+          "summary": "一个更深层的判断正在成形：这场竞争的胜负手，或许并不在于谁的算法领先多少个月，而在于谁的社会经济体系能更高效地将AI释放的生产力转化为可持续的商业霸权。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 25 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4711,
+          "title": "5月25日东方财富财经晚报（附新闻联播）",
+          "source": "东方财富网",
+          "summary": "<center><img src=\"https://np-newspic.dfcfw.com/download/D25131206932314805904_w1240h918.jpg\" width=\"580\" /></center><h3 class=\"emh3\"> <strong>热点聚焦</strong></h3><p> <strong>人民日报评价韬（",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 25 May 2026 21:00:14 +0800",
+          "collection_date": "2026-05-26"
+        }
+      ],
+      "topic_article_count": 18,
+      "priority_score": 76,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C04",
+      "topic": "政策与监管",
+      "market_scope": [
+        "A股",
+        "港股",
+        "宏观"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 7,
+      "independent_evidence_count": 2,
+      "high_relevance_article_count": 4,
+      "source_tier_max": "mainstream",
+      "original_source_count": 2,
+      "mainstream_or_better_count": 9,
+      "articles": [
+        {
+          "id": 4765,
+          "title": "Lowe’s sounds the alarm as customers change their tune",
+          "source": "Yahoo Finance",
+          "summary": "N/A",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-24T14:37:00Z",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4742,
+          "title": "Iran is in the 'process of blinking' over the Strait of Hormuz, Petraeus says",
+          "source": "CNBC",
+          "summary": "Ex-CIA director David Petraeus said that an initial successful peace deal with Tehran would see the Strait opened without any conditions.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 25 May 2026 06:59:06 GMT",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4709,
+          "title": "氪星晚报｜全国首单挂钩蓝色债券合约类信用衍生品交易落地山东；到2030年底全国城市生活垃圾资源化利用率力争达到76%以上；新加坡寻求将富人开户时间缩短至一个月",
+          "source": "36氪",
+          "summary": "<h2><strong>大公司：</strong></h2> <p><a href=\"https://36kr.com/newsflashes/3824432259699072\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>番茄小说持续加强低质内容治理，5月处置低质书籍超15万本</strong></a",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-25 16:24:54  +0800",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4719,
+          "title": "刚果和津巴布韦限制钴、锂出口后，“全球最大铝土矿生产国”几内亚计划6月宣布出口管制措施",
+          "source": "华尔街见闻",
+          "summary": "<p style=\"text-align: left;\">全球铝土矿供应格局面临新一轮收紧压力。</p> <p style=\"text-align: left;\">5月25日，据彭博报道，全球最大铝土矿生产国几内亚计划于6月正式宣布针对铝土矿出口的管制改革措施，<strong>目标是通过限制出口量来推动价格回升至\"合理水平\"</strong>。几内亚矿业与地",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 26 May 2026 08:03:31 +0800",
+          "collection_date": "2026-05-26"
+        }
+      ],
+      "topic_article_count": 13,
+      "priority_score": 59,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C06",
+      "topic": "其他观察",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 4,
+      "independent_evidence_count": 3,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 3,
+      "mainstream_or_better_count": 5,
+      "articles": [
+        {
+          "id": 4701,
+          "title": "从“舌尖”到“心头” 夜经济点亮消费新活力",
+          "source": "中新网",
+          "summary": "夏日消费观察之一",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 26 May 2026 01:24:48 +0800",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4720,
+          "title": "伊朗谈判代表前往卡塔尔 美伊有望谈拢",
+          "source": "FT中文网",
+          "summary": "伊朗议会议长加利巴夫和外交部长阿拉格齐周一前往卡塔尔。各方正努力敲定美伊协议，以延长停火60天并重新开放霍尔木兹海峡。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 25 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4771,
+          "title": "These underdogs are a big reason why S&P 500 profit growth is the fastest in nearly 5 years",
+          "source": "MarketWatch",
+          "summary": "Ever since Big Tech went all in on artificial intelligence more than three years ago, seven companies have done the heavy lifting for overall S&amp;P 500 earnings growth. But more ",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 25 May 2026 19:50:00 GMT",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4772,
+          "title": "I’m 67. Our family trust earns $300,000 annually for my kids. How do I ensure they won’t get killed on taxes?",
+          "source": "MarketWatch",
+          "summary": "“My thought is to distribute all of the income to my children each year so that the trust itself pays little to no tax.”",
+          "source_tier": "mainstream",
+          "content_quality_status": "summary_only",
+          "published": "Mon, 25 May 2026 18:30:00 GMT",
+          "collection_date": "2026-05-26"
+        }
+      ],
+      "topic_article_count": 5,
+      "priority_score": 54,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C03",
+      "topic": "宏观与流动性",
+      "market_scope": [
+        "美股",
+        "A股",
+        "港股",
+        "美元",
+        "利率"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 2,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 2,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 2,
+      "articles": [
+        {
+          "id": 4723,
+          "title": "从TACO到NACHO：霍尔木兹危机如何改写加密市场的宏观定价逻辑",
+          "source": "FT中文网",
+          "summary": "Lacie Zhang：TACO交易赌的是政治退让，NACHO交易面对的则是更难被快速扭转的物理瓶颈和信任裂口。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 25 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4717,
+          "title": "如果债市风暴继续在全球蔓延，接下来会发生什么？高盛：没什么好事",
+          "source": "华尔街见闻",
+          "summary": "<p>当前全球债市正经历一场由实际利率驱动的紧缩冲击，高盛警告，若这一趋势持续，风险资产、新兴市场乃至长久期股票都将面临更大压力，而这一切发生在通胀预期依然温和的背景下，令市场的应对空间格外有限。</p> <p>高盛全球市场策略主管Vitali Meschoulam指出，近期美国10年期国债名义收益率上行约25个基点，几乎全部由实际收益率攀升至约2.1%至2",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 26 May 2026 08:17:36 +0800",
+          "collection_date": "2026-05-26"
+        }
+      ],
+      "topic_article_count": 2,
+      "priority_score": 40,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C07",
+      "topic": "风险事件",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股",
+        "商品"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 2,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 3,
+      "articles": [
+        {
+          "id": 4724,
+          "title": "《给阿嬷的情书》：一部电影，两个故事",
+          "source": "FT中文网",
+          "summary": "刘远举：一个电影，两个故事，也反映了中国电影创作所面临的困境。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 25 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4702,
+          "title": "2026中德（欧）隐形冠军论坛在北京开幕",
+          "source": "中新网",
+          "summary": "中新社北京5月25日电 (记者 吕少威)北京中德产业合作发展论坛——2026中德(欧)隐形冠军论坛25日在北京中德国际会议会展中心开幕。论坛以“联合创新·融合发展”为主题，来自政、商、学等各界400余位嘉宾聚焦德国及欧洲隐形冠军和创新型中小企业来华发展的“最后一公里”，探讨合作新机遇。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 25 May 2026 23:56:22 +0800",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4721,
+          "title": "伊朗比特朗普更擅长“交易的艺术”",
+          "source": "FT中文网",
+          "summary": "拉赫曼：根据潜在的和平协议，冲突结束后的伊朗政权将会更自信、更强硬，还有新的资源来重建核计划和代理人网络。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 25 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-26"
+        }
+      ],
+      "topic_article_count": 3,
+      "priority_score": 40,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C05",
+      "topic": "财报与公司经营",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 3,
+      "independent_evidence_count": 0,
+      "high_relevance_article_count": 3,
+      "source_tier_max": "mainstream",
+      "original_source_count": 0,
+      "mainstream_or_better_count": 4,
+      "articles": [
+        {
+          "id": 4710,
+          "title": "5月26日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "source": "东方财富网",
+          "summary": "<p> 5月26日(星期二)，今日报刊头条主要内容精华如下：</p><h3 class=\"emh3\"> 中国证券报</h3><p> <a href=\"http://finance.eastmoney.com/a/202605263748570153.html\"><strong>1至4月消费市场呈现向新向优发展态势 商品和服务零售合并计算同比增长3.2%</s",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 26 May 2026 06:03:21 +0800",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4708,
+          "title": "用AI重构增长：新通教育集团的实践| 2026AI Partner·北京亦庄AI+产业大会",
+          "source": "36氪",
+          "summary": "<blockquote> <p>新通教育创始人麻亚炜坦诚分享了过去五年的转型历程——从数字化基建到全员AI Must，从AI in All到AI Native新业务。她的实践证明：传统企业拥抱AI，最难的不是技术，而是让战略从董事会走到一线。</p> </blockquote> <p>麻亚炜将AI转型划分为四个递进阶段：</p> <p>第一阶段（2021-2",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-25 16:54:18  +0800",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4713,
+          "title": "宇树科技科创板IPO将于6月1日上会 拟募资42.02亿元",
+          "source": "东方财富网",
+          "summary": "<p> 5月25日，上交所公告称，上海证券交易所上市审核委员会定于2026年6月1日召开2026年第31次上市审核委员会审议会议，审议宇树科技股份有限公司（首发）。</p><center><img alt=\"图片\" class=\"rich_pages wxw-img\" src=\"https://np-newspic.dfcfw.com/download/D2",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 25 May 2026 20:14:55 +0800",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4703,
+          "title": "宇树科技IPO6月1日上会 最新业绩公布",
+          "source": "中新网",
+          "summary": "中新网5月25日电(吴家驹)上交所网站5月25日发布公告，上海证券交易所上市审核委员会定于2026年6月1日召开2026年第31次上市审核委员会审议会议，审议宇树科技股份有限公司(首发)。今年3月，上交所受理宇树科技股份有限公司科创板IPO申请，拟融资金额42.02亿元。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 25 May 2026 23:28:15 +0800",
+          "collection_date": "2026-05-26"
+        }
+      ],
+      "topic_article_count": 4,
+      "priority_score": 39,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C02",
+      "topic": "汇率与大宗",
+      "market_scope": [
+        "汇率",
+        "商品",
+        "A股",
+        "港股"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 1,
+      "independent_evidence_count": 0,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "mainstream",
+      "original_source_count": 0,
+      "mainstream_or_better_count": 2,
+      "articles": [
+        {
+          "id": 4716,
+          "title": "美伊协议尚在“拉锯”，以色列下令“猛踩油门”打击黎真主党",
+          "source": "华尔街见闻",
+          "summary": "<p style=\"text-align: left;\">美国与伊朗结束敌对状态的谈判进入关键的“拉锯”阶段，而以色列在黎巴嫩战线大幅升级军事行动，令中东地缘政治局势面临双向拉扯的复杂局面。</p> <p style=\"text-align: left;\">据<a href=\"https://world.huanqiu.com/article/4RiIsN9",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 26 May 2026 08:17:58 +0800",
+          "collection_date": "2026-05-26"
+        },
+        {
+          "id": 4718,
+          "title": "OpenAI上市在望，软银创历史新高",
+          "source": "华尔街见闻",
+          "summary": "<p>OpenAI和SB Energy上市在望，软银股价创历史新高，市值一举突破40万亿日元。</p> <p>周一，软银股价在日本股市上涨4.6%。自5月20日以来，软银累计涨幅已达40%，市值一举突破40万亿日元（约合2520亿美元）。</p> <p><img class=\" wscnph\" src=\"https://wpimg-wscn.awtmt.co",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 26 May 2026 08:04:17 +0800",
+          "collection_date": "2026-05-26"
+        }
+      ],
+      "topic_article_count": 2,
+      "priority_score": 33,
+      "high_confidence_topic": false
+    }
+  ],
+  "candidate_stocks": [
+    {
+      "symbol": "sh688981",
+      "name": "中芯国际",
+      "industry": "半导体",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        4706,
+        4711
+      ],
+      "evidence_summaries": [
+        "8点1氪丨胖东来投资65亿的“梦之城”开工；“稚晖君”彭志辉正式出任上纬新材董事长；“死了么”App改名“在么在么”",
+        "5月25日东方财富财经晚报（附新闻联播）"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 2,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "2026-05-26 07:58:09  +0800",
+        "Mon, 25 May 2026 21:00:14 +0800"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "sh601318",
+      "name": "中国平安",
+      "industry": "保险",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        4710,
+        4709
+      ],
+      "evidence_summaries": [
+        "5月26日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "氪星晚报｜全国首单挂钩蓝色债券合约类信用衍生品交易落地山东；到2030年底全国城市生活垃圾资源化利用率力争达到76%以上；新加坡寻求将富人开户时间缩短至一个月"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 2,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_published_dates": [
+        "Tue, 26 May 2026 06:03:21 +0800",
+        "2026-05-25 16:24:54  +0800"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "sh600941",
+      "name": "中国移动",
+      "industry": "通信运营",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        4710
+      ],
+      "evidence_summaries": [
+        "5月26日国内四大证券报纸、重要财经媒体头版头条内容精华摘要"
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_published_dates": [
+        "Tue, 26 May 2026 06:03:21 +0800"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "sz002594",
+      "name": "比亚迪",
+      "industry": "新能源车",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        4711
+      ],
+      "evidence_summaries": [
+        "5月25日东方财富财经晚报（附新闻联播）"
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "Mon, 25 May 2026 21:00:14 +0800"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "industry": "算力基础设施",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        4708
+      ],
+      "evidence_summaries": [
+        "用AI重构增长：新通教育集团的实践| 2026AI Partner·北京亦庄AI+产业大会"
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "2026-05-25 16:54:18  +0800"
+      ],
+      "topic_article_count": 0
+    },
+    {
+      "symbol": "sh603019",
+      "name": "中科曙光",
+      "industry": "算力基础设施",
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "evidence_article_ids": [
+        4714,
+        4706,
+        4722,
+        4711
+      ],
+      "evidence_summaries": [
+        "5月25日晚间沪深上市公司重大事项公告最新快递",
+        "8点1氪丨胖东来投资65亿的“梦之城”开工；“稚晖君”彭志辉正式出任上纬新材董事长；“死了么”App改名“在么在么”",
+        "中美AI竞争：从技术追赶走向生态博弈",
+        "5月25日东方财富财经晚报（附新闻联播）"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 4,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "Mon, 25 May 2026 19:31:25 +0800",
+        "2026-05-26 07:58:09  +0800",
+        "Mon, 25 May 2026 16:00:00 GMT",
+        "Mon, 25 May 2026 21:00:14 +0800"
+      ],
+      "topic_article_count": 18
+    },
+    {
+      "symbol": "sh600036",
+      "name": "招商银行",
+      "industry": "银行",
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "evidence_article_ids": [
+        4765,
+        4742,
+        4709,
+        4719
+      ],
+      "evidence_summaries": [
+        "Lowe’s sounds the alarm as customers change their tune",
+        "Iran is in the 'process of blinking' over the Strait of Hormuz, Petraeus says",
+        "氪星晚报｜全国首单挂钩蓝色债券合约类信用衍生品交易落地山东；到2030年底全国城市生活垃圾资源化利用率力争达到76%以上；新加坡寻求将富人开户时间缩短至一个月",
+        "刚果和津巴布韦限制钴、锂出口后，“全球最大铝土矿生产国”几内亚计划6月宣布出口管制措施"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 2,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_published_dates": [
+        "2026-05-24T14:37:00Z",
+        "Mon, 25 May 2026 06:59:06 GMT",
+        "2026-05-25 16:24:54  +0800",
+        "Tue, 26 May 2026 08:03:31 +0800"
+      ],
+      "topic_article_count": 13
+    }
+  ],
+  "stock_recommendations": [
+    {
+      "symbol": "sh688981",
+      "name": "中芯国际",
+      "industry": "半导体",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "关注",
+      "grade_caps": [],
+      "total_score": 76,
+      "scores": {
+        "news_catalyst": 20,
+        "technical": 19,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 8
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "MACD 维持多头结构",
+        "估值层已纳入行业相对比较"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4706,
+        4711
+      ],
+      "evidence_summaries": [
+        "8点1氪丨胖东来投资65亿的“梦之城”开工；“稚晖君”彭志辉正式出任上纬新材董事长；“死了么”App改名“在么在么”",
+        "5月25日东方财富财经晚报（附新闻联播）"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": true,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "insufficient_independent_confirmation"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能",
+        "若短线继续放量冲高且无新增证据，应下调为后手交易机会"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 1,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh603019",
+      "name": "中科曙光",
+      "industry": "算力基础设施",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "no_direct_stock_evidence",
+        "score_gate_not_met",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 76,
+      "scores": {
+        "news_catalyst": 14,
+        "technical": 23,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 10
+      },
+      "signals": [
+        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "估值层已纳入行业相对比较"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_article_ids": [
+        4714,
+        4706,
+        4722,
+        4711
+      ],
+      "evidence_summaries": [
+        "5月25日晚间沪深上市公司重大事项公告最新快递",
+        "8点1氪丨胖东来投资65亿的“梦之城”开工；“稚晖君”彭志辉正式出任上纬新材董事长；“死了么”App改名“在么在么”",
+        "中美AI竞争：从技术追赶走向生态博弈",
+        "5月25日东方财富财经晚报（附新闻联播）"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 4,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 2,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600941",
+      "name": "中国移动",
+      "industry": "通信运营",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "关注",
+      "grade_caps": [],
+      "total_score": 67,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 13,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "RSI 处于健康区间，趋势未明显过热",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4710
+      ],
+      "evidence_summaries": [
+        "5月26日国内四大证券报纸、重要财经媒体头版头条内容精华摘要"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "no_fresh_evidence",
+        "insufficient_independent_confirmation"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "industry": "算力基础设施",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "关注",
+      "grade_caps": [],
+      "total_score": 65,
+      "scores": {
+        "news_catalyst": 15,
+        "technical": 11,
+        "valuation": 19,
+        "quality_risk": 12,
+        "market_regime": 8
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "RSI 处于健康区间，趋势未明显过热",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4708
+      ],
+      "evidence_summaries": [
+        "用AI重构增长：新通教育集团的实践| 2026AI Partner·北京亦庄AI+产业大会"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "no_fresh_evidence",
+        "insufficient_independent_confirmation"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 2,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sz002594",
+      "name": "比亚迪",
+      "industry": "新能源车",
+      "candidate_confidence": "low",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 60,
+      "scores": {
+        "news_catalyst": 18,
+        "technical": 7,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4711
+      ],
+      "evidence_summaries": [
+        "5月25日东方财富财经晚报（附新闻联播）"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "insufficient_independent_confirmation"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh601318",
+      "name": "中国平安",
+      "industry": "保险",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 56,
+      "scores": {
+        "news_catalyst": 21,
+        "technical": 7,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4710,
+        4709
+      ],
+      "evidence_summaries": [
+        "5月26日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "氪星晚报｜全国首单挂钩蓝色债券合约类信用衍生品交易落地山东；到2030年底全国城市生活垃圾资源化利用率力争达到76%以上；新加坡寻求将富人开户时间缩短至一个月"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "insufficient_independent_confirmation"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "flat",
+        "score": 0,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600036",
+      "name": "招商银行",
+      "industry": "银行",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 51,
+      "scores": {
+        "news_catalyst": 16,
+        "technical": 7,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4765,
+        4742,
+        4709,
+        4719
+      ],
+      "evidence_summaries": [
+        "Lowe’s sounds the alarm as customers change their tune",
+        "Iran is in the 'process of blinking' over the Strait of Hormuz, Petraeus says",
+        "氪星晚报｜全国首单挂钩蓝色债券合约类信用衍生品交易落地山东；到2030年底全国城市生活垃圾资源化利用率力争达到76%以上；新加坡寻求将富人开户时间缩短至一个月",
+        "刚果和津巴布韦限制钴、锂出口后，“全球最大铝土矿生产国”几内亚计划6月宣布出口管制措施"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 2,
+        "source_tier_max": "mainstream"
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    }
+  ],
+  "decision_views": {
+    "actionable_candidates": [],
+    "conditional_watchlist": [
+      {
+        "symbol": "sh600941",
+        "name": "中国移动",
+        "industry": "通信运营",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "关注",
+        "grade_caps": [],
+        "total_score": 67,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 13,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "RSI 处于健康区间，趋势未明显过热",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4710
+        ],
+        "evidence_summaries": [
+          "5月26日国内四大证券报纸、重要财经媒体头版头条内容精华摘要"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "no_fresh_evidence",
+          "insufficient_independent_confirmation"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "industry": "算力基础设施",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "关注",
+        "grade_caps": [],
+        "total_score": 65,
+        "scores": {
+          "news_catalyst": 15,
+          "technical": 11,
+          "valuation": 19,
+          "quality_risk": 12,
+          "market_regime": 8
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "RSI 处于健康区间，趋势未明显过热",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4708
+        ],
+        "evidence_summaries": [
+          "用AI重构增长：新通教育集团的实践| 2026AI Partner·北京亦庄AI+产业大会"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "no_fresh_evidence",
+          "insufficient_independent_confirmation"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 2,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sz002594",
+        "name": "比亚迪",
+        "industry": "新能源车",
+        "candidate_confidence": "low",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 60,
+        "scores": {
+          "news_catalyst": 18,
+          "technical": 7,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4711
+        ],
+        "evidence_summaries": [
+          "5月25日东方财富财经晚报（附新闻联播）"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "insufficient_independent_confirmation"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh601318",
+        "name": "中国平安",
+        "industry": "保险",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 56,
+        "scores": {
+          "news_catalyst": 21,
+          "technical": 7,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4710,
+          4709
+        ],
+        "evidence_summaries": [
+          "5月26日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "氪星晚报｜全国首单挂钩蓝色债券合约类信用衍生品交易落地山东；到2030年底全国城市生活垃圾资源化利用率力争达到76%以上；新加坡寻求将富人开户时间缩短至一个月"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "insufficient_independent_confirmation"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "flat",
+          "score": 0,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "stale_or_rejected": [
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "industry": "半导体",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "关注",
+        "grade_caps": [],
+        "total_score": 76,
+        "scores": {
+          "news_catalyst": 20,
+          "technical": 19,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 8
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "MACD 维持多头结构",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4706,
+          4711
+        ],
+        "evidence_summaries": [
+          "8点1氪丨胖东来投资65亿的“梦之城”开工；“稚晖君”彭志辉正式出任上纬新材董事长；“死了么”App改名“在么在么”",
+          "5月25日东方财富财经晚报（附新闻联播）"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": true,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "insufficient_independent_confirmation"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能",
+          "若短线继续放量冲高且无新增证据，应下调为后手交易机会"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 1,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh603019",
+        "name": "中科曙光",
+        "industry": "算力基础设施",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "no_direct_stock_evidence",
+          "score_gate_not_met",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 76,
+        "scores": {
+          "news_catalyst": 14,
+          "technical": 23,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 10
+        },
+        "signals": [
+          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_article_ids": [
+          4714,
+          4706,
+          4722,
+          4711
+        ],
+        "evidence_summaries": [
+          "5月25日晚间沪深上市公司重大事项公告最新快递",
+          "8点1氪丨胖东来投资65亿的“梦之城”开工；“稚晖君”彭志辉正式出任上纬新材董事长；“死了么”App改名“在么在么”",
+          "中美AI竞争：从技术追赶走向生态博弈",
+          "5月25日东方财富财经晚报（附新闻联播）"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "科技与产业主题",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 4,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 2,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh600036",
+        "name": "招商银行",
+        "industry": "银行",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 51,
+        "scores": {
+          "news_catalyst": 16,
+          "technical": 7,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4765,
+          4742,
+          4709,
+          4719
+        ],
+        "evidence_summaries": [
+          "Lowe’s sounds the alarm as customers change their tune",
+          "Iran is in the 'process of blinking' over the Strait of Hormuz, Petraeus says",
+          "氪星晚报｜全国首单挂钩蓝色债券合约类信用衍生品交易落地山东；到2030年底全国城市生活垃圾资源化利用率力争达到76%以上；新加坡寻求将富人开户时间缩短至一个月",
+          "刚果和津巴布韦限制钴、锂出口后，“全球最大铝土矿生产国”几内亚计划6月宣布出口管制措施"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 2,
+          "source_tier_max": "mainstream"
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ]
+  },
+  "score_distribution": {
+    "strong_focus": 0,
+    "focus": 3,
+    "watch": 4,
+    "avoid": 0
+  },
+  "scoring_config": {
+    "market": "CN",
+    "style": "balanced",
+    "lookback_days": 60,
+    "pool_mode": "strict",
+    "theme_mapping_max_grade": "watch",
+    "value_acceptance_enabled": true,
+    "industry_trend_enabled": true
+  },
+  "session": "morning",
+  "session_time": "2026-05-26 09:24:02"
+}

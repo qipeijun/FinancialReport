@@ -62,6 +62,12 @@ from scripts.utils.stock_recommendation import (
     RecommendationScorer,
     render_stock_recommendation_markdown,
 )
+from scripts.utils.cross_verification import (
+    run_cross_verification,
+    CROSS_STATUS_CONFIRMED,
+    CROSS_STATUS_WEAK,
+    CROSS_STATUS_CONFLICTED,
+)
 from scripts.utils.print_utils import (
     print_header, print_success, print_warning, print_error,
     print_info, print_progress, print_statistics,
@@ -349,6 +355,7 @@ class ReportGenerator:
         judgment_candidates: list,
         stock_payload: Dict[str, Any],
         data_quality_stats: Dict[str, Any],
+        cross_verification_result: Dict[str, Any] | None = None,
     ) -> str:
         """把结构化主题、推荐和数据质量约束显式注入给 markdown-report。"""
         high_confidence = [
@@ -410,12 +417,49 @@ class ReportGenerator:
         if not high_confidence and not actionable:
             lines.append("- 若主题与推荐都偏弱，正文必须退化为“观察清单 + 风险 + 验证点”。")
 
+        if cross_verification_result:
+            cv = cross_verification_result
+            cv_summary = cv.get('summary', {})
+            lines.append("")
+            lines.append("=== 交叉验真约束 ===")
+            lines.append(
+                f"- 主题交叉验真: {cv_summary.get('topics_confirmed', 0)} confirmed, "
+                f"{cv_summary.get('topics_weak', 0)} weak, "
+                f"{cv_summary.get('topics_conflicted', 0)} conflicted"
+            )
+            lines.append(
+                f"- 标的交叉验真: {cv_summary.get('stocks_confirmed', 0)} confirmed, "
+                f"{cv_summary.get('stocks_weak', 0)} weak, "
+                f"{cv_summary.get('stocks_conflicted', 0)} conflicted"
+            )
+            conflicted_topics = [
+                tc.get('topic', '') for tc in cv.get('topic_checks', [])
+                if tc.get('status') == CROSS_STATUS_CONFLICTED
+            ]
+            if conflicted_topics:
+                lines.append(
+                    f"- 冲突主题: {', '.join(conflicted_topics[:3])} "
+                    "-- 正文必须标注为'证据矛盾，待进一步确认'"
+                )
+            conflicted_stocks = [
+                sc.get('symbol', '') for sc in cv.get('stock_checks', [])
+                if sc.get('status') == CROSS_STATUS_CONFLICTED
+            ]
+            if conflicted_stocks:
+                lines.append(
+                    f"- 冲突标的: {', '.join(conflicted_stocks[:5])} "
+                    "-- 禁止写成'可行动'，必须注明正反证据并存"
+                )
+            lines.append("- 正文中只有 cross_verification_status=confirmed 的标的才能写成'已验证''强确认'")
+            lines.append("- weak/conflicted 标的禁止使用'多来源验证''确定性高''可行动'等表述")
+
         return "\n".join(lines)
 
     @staticmethod
     def _render_structured_recommendation_summary(
         judgment_candidates: list,
         stock_payload: Dict[str, Any],
+        cross_verification_result: Dict[str, Any] | None = None,
     ) -> str:
         """基于结构化真相源补一段短摘要，避免正文与评分层分裂。"""
         high_confidence = [
@@ -473,6 +517,27 @@ class ReportGenerator:
                 lines.append(
                     f"- {item.get('topic')}：证据密度不足以形成高置信结论，暂列观察。"
                 )
+
+        if cross_verification_result:
+            cv_stocks = cross_verification_result.get('stock_checks', [])
+            confirmed = [s for s in cv_stocks if s.get('status') == CROSS_STATUS_CONFIRMED]
+            conflicted = [s for s in cv_stocks if s.get('status') == CROSS_STATUS_CONFLICTED]
+            if confirmed or conflicted:
+                lines.extend(["", "### 交叉验真信号"])
+                if confirmed:
+                    lines.append("- **多来源确认**:")
+                    for sc in confirmed[:3]:
+                        lines.append(
+                            f"  - {sc.get('name')}（{sc.get('symbol')}）："
+                            f"{sc.get('independent_source_count')} 个独立来源，证据新鲜"
+                        )
+                if conflicted:
+                    lines.append("- **信号冲突**:")
+                    for sc in conflicted[:3]:
+                        lines.append(
+                            f"  - {sc.get('name')}（{sc.get('symbol')}）："
+                            f"{sc.get('conflict_detail') or '正反证据并存'}"
+                        )
 
         return "\n".join(lines)
 
@@ -852,6 +917,7 @@ class ReportGenerator:
                 'lookback_days': 60,
             },
         }
+        cv_result = None
         if enable_stock_scoring and stock_market in ('CN', 'US'):
             if stock_market == 'US':
                 active_sm = self.security_master_us
@@ -880,6 +946,74 @@ class ReportGenerator:
             stock_payload = scorer.score_candidates(candidate_stocks)
             print_success(f"✓ 已生成 {len(stock_payload['recommendations'])} 条股票评分结果")
 
+            # ---- 交叉验真 V1 ----
+            cv_result = run_cross_verification(
+                selected_articles=selected,
+                judgment_candidates=judgment_candidates,
+                candidate_stocks=candidate_stocks,
+                stock_recommendations=stock_payload['recommendations'],
+                as_of_date=end_date,
+                market=stock_market,
+            )
+            # 将交叉验真结果注入每个推荐项的 evidence_strength
+            stock_check_map = {
+                sc.get('symbol'): sc for sc in cv_result.get('stock_checks', [])
+            }
+            for rec in stock_payload['recommendations']:
+                symbol = rec.get('symbol', '')
+                check = stock_check_map.get(symbol)
+                evidence_strength = rec.setdefault('evidence_strength', {})
+                if check:
+                    evidence_strength['cross_verification_status'] = check['status']
+                    evidence_strength['cross_verified_source_count'] = check['independent_source_count']
+                    evidence_strength['cross_verification_reasons'] = []
+                else:
+                    evidence_strength['cross_verification_status'] = CROSS_STATUS_WEAK
+                    evidence_strength['cross_verified_source_count'] = 0
+                    evidence_strength['cross_verification_reasons'] = ['未进入交叉验真流程']
+
+                # conflicted 标的强制不可行动
+                cv_status = evidence_strength.get('cross_verification_status')
+                if cv_status == CROSS_STATUS_CONFLICTED:
+                    reasons = rec.setdefault('actionability_reasons', [])
+                    if 'cross_verification_conflicted' not in reasons:
+                        reasons.append('cross_verification_conflicted')
+                    rec['actionability_passed'] = False
+
+                # theme-only 不能 confirmed
+                source_type = rec.get('source_type', '')
+                direct_mentions = int(evidence_strength.get('direct_mentions', 0) or 0)
+                if cv_status == CROSS_STATUS_CONFIRMED and source_type == 'theme_mapping' and direct_mentions < 1:
+                    evidence_strength['cross_verification_status'] = CROSS_STATUS_WEAK
+                    evidence_strength['cross_verification_reasons'] = ['theme_only_cannot_be_confirmed']
+
+            # 重建 decision_views 三桶（因为 actionability 可能被修改）
+            actionable = [r for r in stock_payload['recommendations'] if r.get('actionability_passed')]
+            actionable_symbols = {r['symbol'] for r in actionable}
+            stale_or_rejected = [
+                r for r in stock_payload['recommendations']
+                if r.get('grade') == '回避'
+                or r.get('stale_opportunity_flag')
+                or r.get('crowding_flag')
+                or (r.get('evidence_strength') or {}).get('cross_verification_status') == CROSS_STATUS_CONFLICTED
+            ]
+            stale_symbols = {r['symbol'] for r in stale_or_rejected}
+            conditional = [
+                r for r in stock_payload['recommendations']
+                if r['symbol'] not in actionable_symbols
+                and r['symbol'] not in stale_symbols
+            ]
+            stock_payload['decision_views'] = {
+                'actionable_candidates': actionable,
+                'conditional_watchlist': conditional,
+                'stale_or_rejected': stale_or_rejected,
+            }
+            print_success(
+                f"✓ 交叉验真: 标的 {cv_result['summary']['stocks_confirmed']} confirmed, "
+                f"{cv_result['summary']['stocks_weak']} weak, "
+                f"{cv_result['summary']['stocks_conflicted']} conflicted"
+            )
+
         # 构建语料
         start_stage('构建语料', step=3, total=6, detail='拼接文章语料与来源统计')
         pairs, total_len = build_corpus(selected, max_chars, per_chunk_chars=3000, content_field=content_field)
@@ -897,6 +1031,7 @@ class ReportGenerator:
             judgment_candidates=judgment_candidates,
             stock_payload=stock_payload,
             data_quality_stats=data_quality_stats,
+            cross_verification_result=cv_result,
         )
 
         # 注入实时数据（如果有）
@@ -937,6 +1072,7 @@ class ReportGenerator:
         structured_summary = self._render_structured_recommendation_summary(
             judgment_candidates=judgment_candidates,
             stock_payload=stock_payload,
+            cross_verification_result=cv_result,
         )
         summary_md = f"{summary_md.rstrip()}\n\n{structured_summary}\n"
         if stock_payload['recommendations']:
@@ -964,6 +1100,7 @@ class ReportGenerator:
                 stock_recommendations=stock_payload['recommendations'],
                 judgment_candidates=judgment_candidates,
                 data_quality_stats=data_quality_stats,
+                cross_verification=cv_result if cv_result else None,
             )
             quality_result = quality_result or {}
             quality_result['stats'] = quality_result.get('stats') or {}
@@ -989,6 +1126,8 @@ class ReportGenerator:
             'data_quality_stats': data_quality_stats,
             'backtest_ready': True,
             'backtest_generated_at': datetime.now().isoformat(),
+            'cross_verification': cv_result if cv_result else {},
+            'cross_verification_required': cv_result is not None,
         }
         meta.update(meta_quality_fields)
         enhanced_context_payload = self._build_enhanced_context_payload(
@@ -999,6 +1138,7 @@ class ReportGenerator:
             analysis_mode='markdown-report',
             date_range=meta['date_range'],
             market=stock_market,
+            cross_verification_result=cv_result,
         )
         export_payload = {
             'summary_markdown': summary_md,
@@ -1067,6 +1207,7 @@ class ReportGenerator:
         analysis_mode: str,
         date_range: Dict[str, str],
         market: str = 'CN',
+        cross_verification_result: Dict[str, Any] | None = None,
     ) -> Dict[str, Any]:
         """构建增强特征归档，供次日回看与后续时序统计。"""
         return {
@@ -1080,6 +1221,7 @@ class ReportGenerator:
             'decision_views': (stock_payload or {}).get('decision_views') or {},
             'score_distribution': (stock_payload or {}).get('score_distribution') or {},
             'scoring_config': (stock_payload or {}).get('scoring_config') or {},
+            'cross_verification': cross_verification_result if cross_verification_result else {},
         }
 
     def _format_realtime_data(self, realtime_data: Dict[str, Any]) -> str:

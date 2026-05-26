@@ -558,3 +558,282 @@ def test_detect_blocked_reason_marks_missing_pytest():
     )
 
     assert blocked == 'pytest_missing'
+
+
+def test_validate_rejects_theme_only_cross_confirmed():
+    """theme-only 标的不允许 cross_verification_status=confirmed"""
+    payload = {
+        'metadata': {
+            'stock_recommendations': [
+                {
+                    'symbol': '688001',
+                    'name': '某科技股',
+                    'grade': '关注',
+                    'base_grade': '关注',
+                    'grade_caps': [],
+                    'total_score': 60,
+                    'scores': {'news_catalyst': 20, 'technical': 15, 'valuation': 15, 'quality_risk': 5, 'market_regime': 5},
+                    'data_completeness': 0.8,
+                    'candidate_confidence': 'medium',
+                    'evidence_strength': {
+                        'direct_mentions': 0,
+                        'independent_evidence_count': 1,
+                        'source_tier_max': 'mainstream',
+                        'cross_verification_status': 'confirmed',
+                        'cross_verified_source_count': 1,
+                        'cross_verification_reasons': [],
+                    },
+                    'industry_trend': 'neutral',
+                    'stale_opportunity_flag': False,
+                    'crowding_flag': False,
+                    'fresh_evidence_flag': True,
+                    'actionability_passed': True,
+                    'actionability_reasons': [],
+                    'source_type': 'theme_mapping',
+                    'evidence_article_ids': [1],
+                }
+            ],
+            'decision_views': {
+                'actionable_candidates': [
+                    {'symbol': '688001', 'name': '某科技股', 'grade': '关注'}
+                ],
+                'conditional_watchlist': [],
+                'stale_or_rejected': [],
+            },
+            'scoring_config': {'pool_mode': 'strict', 'value_acceptance_enabled': True},
+        },
+        'stock_recommendations': [],
+        'score_distribution': {},
+        'scoring_config': {'pool_mode': 'strict', 'value_acceptance_enabled': True},
+        'decision_views': {},
+    }
+    result = validate_stock_recommendations_payload(payload)
+    assert any('theme-only' in issue for issue in result['issues']), \
+        f"应拒绝 theme-only cross confirmed，但 issues={result['issues']}"
+
+
+def test_validate_rejects_conflicted_in_actionable():
+    """conflicted 标的不允许 actionability_passed=True"""
+    payload = {
+        'metadata': {
+            'stock_recommendations': [
+                {
+                    'symbol': '000001',
+                    'name': '平安银行',
+                    'grade': '关注',
+                    'base_grade': '关注',
+                    'grade_caps': [],
+                    'total_score': 70,
+                    'scores': {'news_catalyst': 25, 'technical': 15, 'valuation': 15, 'quality_risk': 10, 'market_regime': 5},
+                    'data_completeness': 0.9,
+                    'candidate_confidence': 'high',
+                    'evidence_strength': {
+                        'direct_mentions': 2,
+                        'independent_evidence_count': 2,
+                        'source_tier_max': 'mainstream',
+                        'cross_verification_status': 'conflicted',
+                        'cross_verified_source_count': 2,
+                        'cross_verification_reasons': ['cross_verification_conflicted'],
+                    },
+                    'industry_trend': 'positive',
+                    'stale_opportunity_flag': False,
+                    'crowding_flag': False,
+                    'fresh_evidence_flag': True,
+                    'actionability_passed': True,
+                    'actionability_reasons': [],
+                    'source_type': 'direct_news',
+                    'evidence_article_ids': [1, 2],
+                }
+            ],
+            'decision_views': {
+                'actionable_candidates': [
+                    {'symbol': '000001', 'name': '平安银行', 'grade': '关注'}
+                ],
+                'conditional_watchlist': [],
+                'stale_or_rejected': [],
+            },
+            'scoring_config': {'pool_mode': 'strict', 'value_acceptance_enabled': True},
+            'cross_verification': {
+                'topic_checks': [],
+                'stock_checks': [
+                    {
+                        'symbol': '000001', 'name': '平安银行', 'status': 'conflicted',
+                        'evidence_article_ids': [1, 2], 'direct_mentions': 2,
+                        'independent_source_count': 2, 'has_fresh_evidence': True,
+                        'source_type': 'direct_news',
+                    }
+                ],
+                'summary': {'stocks_conflicted': 1},
+            },
+        },
+        'stock_recommendations': [],
+        'score_distribution': {},
+        'scoring_config': {'pool_mode': 'strict', 'value_acceptance_enabled': True},
+        'decision_views': {},
+    }
+    result = validate_stock_recommendations_payload(payload)
+    assert any('conflicted' in issue and 'actionability_passed' in issue
+               for issue in result['issues']), \
+        f"应拒绝 conflicted + actionability_passed=True，但 issues={result['issues']}"
+
+
+def test_validate_accepts_valid_cross_verification_metadata():
+    """合法的 cross_verification metadata 应通过 schema 校验"""
+    payload = {
+        'metadata': {
+            'stock_recommendations': [
+                {
+                    'symbol': '000001',
+                    'name': '平安银行',
+                    'grade': '关注',
+                    'base_grade': '关注',
+                    'grade_caps': [],
+                    'total_score': 75,
+                    'scores': {'news_catalyst': 25, 'technical': 15, 'valuation': 15, 'quality_risk': 15, 'market_regime': 5},
+                    'data_completeness': 0.9,
+                    'candidate_confidence': 'high',
+                    'evidence_strength': {
+                        'direct_mentions': 2,
+                        'independent_evidence_count': 2,
+                        'source_tier_max': 'mainstream',
+                        'cross_verification_status': 'confirmed',
+                        'cross_verified_source_count': 2,
+                        'cross_verification_reasons': [],
+                    },
+                    'industry_trend': 'positive',
+                    'stale_opportunity_flag': False,
+                    'crowding_flag': False,
+                    'fresh_evidence_flag': True,
+                    'actionability_passed': True,
+                    'actionability_reasons': [],
+                    'source_type': 'direct_news',
+                    'evidence_article_ids': [1, 2],
+                }
+            ],
+            'decision_views': {
+                'actionable_candidates': [
+                    {'symbol': '000001', 'name': '平安银行', 'grade': '关注'}
+                ],
+                'conditional_watchlist': [],
+                'stale_or_rejected': [],
+            },
+            'scoring_config': {'pool_mode': 'strict', 'value_acceptance_enabled': True},
+            'cross_verification': {
+                'topic_checks': [
+                    {
+                        'topic': '科技', 'status': 'confirmed',
+                        'evidence_article_ids': [1, 2], 'independent_source_count': 2,
+                        'mainstream_or_better_count': 2, 'has_fresh_evidence': True,
+                    }
+                ],
+                'stock_checks': [
+                    {
+                        'symbol': '000001', 'name': '平安银行', 'status': 'confirmed',
+                        'evidence_article_ids': [1, 2], 'direct_mentions': 2,
+                        'independent_source_count': 2, 'has_fresh_evidence': True,
+                        'source_type': 'direct_news',
+                    }
+                ],
+                'summary': {'topics_confirmed': 1, 'stocks_confirmed': 1},
+            },
+        },
+        'stock_recommendations': [],
+        'score_distribution': {},
+        'scoring_config': {'pool_mode': 'strict', 'value_acceptance_enabled': True},
+        'decision_views': {},
+    }
+    result = validate_stock_recommendations_payload(payload)
+    # 不应有 cross_verification 相关的 issue
+    cv_issues = [i for i in result['issues'] if 'cross_verification' in i.lower()]
+    assert len(cv_issues) == 0, f"不应有 cross_verification issue，但: {cv_issues}"
+
+
+def test_validate_allows_legacy_artifact_without_cross_verification():
+    """旧产物即使已有 output_mode/backtest_ready，也不强制要求新字段。"""
+    payload = {
+        'metadata': {
+            'output_mode': 'markdown-report',
+            'backtest_ready': True,
+            'stock_recommendations': [
+                {
+                    'symbol': '000001',
+                    'name': '平安银行',
+                    'grade': '观察',
+                    'base_grade': '观察',
+                    'grade_caps': [],
+                    'total_score': 60,
+                    'scores': {'news_catalyst': 20, 'technical': 10, 'valuation': 10, 'quality_risk': 10, 'market_regime': 10},
+                    'data_completeness': 0.8,
+                    'candidate_confidence': 'medium',
+                    'evidence_strength': {
+                        'direct_mentions': 1,
+                        'independent_evidence_count': 1,
+                        'source_tier_max': 'mainstream',
+                    },
+                    'industry_trend': 'neutral',
+                    'stale_opportunity_flag': False,
+                    'crowding_flag': False,
+                    'fresh_evidence_flag': True,
+                    'actionability_passed': False,
+                    'actionability_reasons': ['insufficient_independent_confirmation'],
+                    'source_type': 'direct_news',
+                    'evidence_article_ids': [1],
+                }
+            ],
+            'decision_views': {
+                'actionable_candidates': [],
+                'conditional_watchlist': [
+                    {'symbol': '000001', 'name': '平安银行', 'grade': '观察'}
+                ],
+                'stale_or_rejected': [],
+            },
+            'scoring_config': {'pool_mode': 'strict', 'value_acceptance_enabled': True},
+        },
+    }
+    result = validate_stock_recommendations_payload(payload)
+    assert not any('缺少 cross_verification' in issue for issue in result['issues'])
+
+
+def test_validate_requires_cross_verification_when_marked_required():
+    """生成器显式标记 required 时，缺少 cross_verification 必须失败。"""
+    payload = {
+        'metadata': {
+            'cross_verification_required': True,
+            'stock_recommendations': [
+                {
+                    'symbol': '000001',
+                    'name': '平安银行',
+                    'grade': '观察',
+                    'base_grade': '观察',
+                    'grade_caps': [],
+                    'total_score': 60,
+                    'scores': {'news_catalyst': 20, 'technical': 10, 'valuation': 10, 'quality_risk': 10, 'market_regime': 10},
+                    'data_completeness': 0.8,
+                    'candidate_confidence': 'medium',
+                    'evidence_strength': {
+                        'direct_mentions': 1,
+                        'independent_evidence_count': 1,
+                        'source_tier_max': 'mainstream',
+                    },
+                    'industry_trend': 'neutral',
+                    'stale_opportunity_flag': False,
+                    'crowding_flag': False,
+                    'fresh_evidence_flag': True,
+                    'actionability_passed': False,
+                    'actionability_reasons': ['insufficient_independent_confirmation'],
+                    'source_type': 'direct_news',
+                    'evidence_article_ids': [1],
+                }
+            ],
+            'decision_views': {
+                'actionable_candidates': [],
+                'conditional_watchlist': [
+                    {'symbol': '000001', 'name': '平安银行', 'grade': '观察'}
+                ],
+                'stale_or_rejected': [],
+            },
+            'scoring_config': {'pool_mode': 'strict', 'value_acceptance_enabled': True},
+        },
+    }
+    result = validate_stock_recommendations_payload(payload)
+    assert any('缺少 cross_verification' in issue for issue in result['issues'])

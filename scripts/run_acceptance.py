@@ -35,6 +35,11 @@ if str(PROJECT_ROOT) not in sys.path:
 from scripts.utils.fact_checker import FactChecker
 from scripts.utils.quality_checker_v2 import check_report_quality_v2
 from scripts.utils.realtime_data_fetcher import RealtimeDataFetcher
+from scripts.utils.cross_verification import (
+    CROSS_STATUS_CONFIRMED,
+    CROSS_STATUS_WEAK,
+    CROSS_STATUS_CONFLICTED,
+)
 from scripts.utils.daily_digest import (
     archive_dirs_for_date,
     inspect_mode_artifacts,
@@ -222,6 +227,8 @@ def normalize_export_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
             'verification_enabled': payload.get('verification_enabled'),
             'quality_check': payload.get('quality_check'),
             'market': payload.get('market'),
+            'cross_verification': payload.get('cross_verification') or {},
+            'cross_verification_required': payload.get('cross_verification_required') is True,
         },
         'stock_recommendations': payload.get('stock_recommendations') or [],
         'score_distribution': payload.get('score_distribution') or {},
@@ -229,6 +236,8 @@ def normalize_export_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
         'decision_views': payload.get('decision_views') or {},
         'judgment_candidates': payload.get('judgment_candidates') or [],
         'data_quality_stats': payload.get('data_quality_stats') or {},
+        'cross_verification': payload.get('cross_verification') or {},
+        'cross_verification_required': payload.get('cross_verification_required') is True,
     }
 
 
@@ -382,6 +391,81 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
     else:
         issues.append('缺少完整 decision_views 结构')
 
+    # ---- 交叉验真 V1 校验 ----
+    # 1. 对每个 recommendation 的 evidence_strength 校验
+    for item in recommendations:
+        evidence_strength = item.get('evidence_strength') or {}
+        cv_status = evidence_strength.get('cross_verification_status')
+
+        # Schema: status 枚举合法性
+        if cv_status and cv_status not in {CROSS_STATUS_CONFIRMED, CROSS_STATUS_WEAK, CROSS_STATUS_CONFLICTED}:
+            issues.append(f"{item.get('symbol')} 非法的 cross_verification_status: {cv_status}")
+
+        # 语义 gate: theme-only 不能 cross confirmed
+        source_type = item.get('source_type', '')
+        direct_mentions = int(evidence_strength.get('direct_mentions', 0) or 0)
+        if cv_status == CROSS_STATUS_CONFIRMED and source_type == 'theme_mapping' and direct_mentions < 1:
+            issues.append(f"{item.get('symbol')} theme-only 不能 cross_verification_status=confirmed")
+
+        # 语义 gate: conflicted 标的 actionability_passed 必须为 false
+        if cv_status == CROSS_STATUS_CONFLICTED and item.get('actionability_passed'):
+            issues.append(f"{item.get('symbol')} conflicted 标的 actionability_passed 必须为 false")
+
+        # Schema: cross_verified_source_count >= 0
+        cv_source_count = evidence_strength.get('cross_verified_source_count')
+        if cv_source_count is not None and (not isinstance(cv_source_count, int) or cv_source_count < 0):
+            issues.append(f"{item.get('symbol')} cross_verified_source_count 值非法: {cv_source_count}")
+
+        # Schema: cross_verification_reasons 必须是 list
+        cv_reasons = evidence_strength.get('cross_verification_reasons')
+        if cv_reasons is not None and not isinstance(cv_reasons, list):
+            issues.append(f"{item.get('symbol')} cross_verification_reasons 必须是 list")
+
+    # 2. metadata 级别的 cross_verification schema 校验（兼容 --skip-fetch --skip-live 模式）
+    metadata = normalized.get('metadata') or {}
+    cv_meta = metadata.get('cross_verification')
+    if cv_meta and isinstance(cv_meta, dict):
+        if not isinstance(cv_meta.get('topic_checks'), list):
+            issues.append('metadata.cross_verification.topic_checks 必须是 list')
+        if not isinstance(cv_meta.get('stock_checks'), list):
+            issues.append('metadata.cross_verification.stock_checks 必须是 list')
+        if not isinstance(cv_meta.get('summary'), dict):
+            issues.append('metadata.cross_verification.summary 必须是 dict')
+
+        # 校验 stock_check 的 evidence_article_ids 可回溯
+        for sc in cv_meta.get('stock_checks', []):
+            if not isinstance(sc, dict):
+                continue
+            if not isinstance(sc.get('evidence_article_ids'), list):
+                issues.append(
+                    f"cross_verification stock_check {sc.get('symbol', '?')} 缺少 evidence_article_ids"
+                )
+            status = sc.get('status')
+            if status not in {CROSS_STATUS_CONFIRMED, CROSS_STATUS_WEAK, CROSS_STATUS_CONFLICTED, None}:
+                issues.append(
+                    f"cross_verification stock_check {sc.get('symbol', '?')} status 非法: {status}"
+                )
+
+    # 3. 新产物强制存在 cross_verification
+    metadata = normalized.get('metadata') or {}
+    cross_verification_required = metadata.get('cross_verification_required') is True
+    if recommendations and cross_verification_required:
+        cv_meta = metadata.get('cross_verification')
+        if not cv_meta or not isinstance(cv_meta, dict):
+            issues.append('❌ 新产物 metadata 缺少 cross_verification 字段')
+        else:
+            # 检查每个推荐项是否有 cross_verification_status
+            missing_cv = []
+            for item in recommendations:
+                evidence = item.get('evidence_strength') or {}
+                if 'cross_verification_status' not in evidence:
+                    missing_cv.append(item.get('symbol', '?'))
+            if missing_cv:
+                issues.append(
+                    f"❌ 以下标的 evidence_strength 缺少 cross_verification_status: "
+                    f"{', '.join(missing_cv)}"
+                )
+
     return {
         'count': len(recommendations),
         'issues': issues,
@@ -455,6 +539,7 @@ def analyze_report_quality(
         stock_recommendations=metadata.get('stock_recommendations') or export_payload.get('stock_recommendations') or [],
         judgment_candidates=metadata.get('judgment_candidates') or export_payload.get('judgment_candidates') or [],
         data_quality_stats=metadata.get('data_quality_stats') or export_payload.get('data_quality_stats') or {},
+        cross_verification=metadata.get('cross_verification'),
     )
 
     required_sections = (
@@ -488,6 +573,8 @@ def analyze_report_quality(
             'scoring_config': metadata.get('scoring_config') or {},
             'judgment_candidates': metadata.get('judgment_candidates') or [],
             'data_quality_stats': metadata.get('data_quality_stats') or {},
+            'cross_verification': metadata.get('cross_verification') or {},
+            'cross_verification_required': metadata.get('cross_verification_required') is True,
         },
         'required_sections': structure,
         'claims': {
@@ -618,7 +705,7 @@ def main() -> int:
 
     automation_results = []
     for name, cmd in (
-        ('pytest', [args.python_bin, '-m', 'pytest', '-q', 'tests/test_fact_checker_quality.py', 'tests/test_investment_signal.py', 'tests/test_run_acceptance.py', 'tests/test_stock_recommendation.py']),
+        ('pytest', [args.python_bin, '-m', 'pytest', '-q', 'tests/test_fact_checker_quality.py', 'tests/test_investment_signal.py', 'tests/test_run_acceptance.py', 'tests/test_stock_recommendation.py', 'tests/test_cross_verification.py']),
         ('compileall', [args.python_bin, '-m', 'compileall', 'scripts', 'tests']),
     ):
         result = run_command(name, cmd, env=env)

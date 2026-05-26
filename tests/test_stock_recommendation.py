@@ -889,3 +889,56 @@ def test_theme_only_candidate_is_never_actionable():
     assert [item['symbol'] for item in payload['decision_views']['conditional_watchlist']] == ['sh603019']
     assert payload['recommendations'][0]['actionability_passed'] is False
     assert 'theme_only_not_actionable' in payload['recommendations'][0]['actionability_reasons']
+
+
+def test_evidence_strength_contains_cross_verification_fields():
+    """验证 RecommendationScorer 输出的 evidence_strength 包含交叉验真字段（字段存在性检查）。"""
+    security_master = SecurityMasterProvider()
+    candidate = CandidateStock(
+        symbol='sh600519',
+        name='贵州茅台',
+        industry='白酒',
+        source_type='direct_news',
+        topic='消费主题',
+        evidence_article_ids=[1, 2],
+        evidence_summaries=['白酒消费回暖', '茅台业绩稳健'],
+        source_tiers=['mainstream', 'mainstream'],
+        independent_evidence_count=2,
+        direct_mentions=2,
+        risk_flags=[],
+        source_tier_max='mainstream',
+        high_confidence_topic=True,
+        evidence_published_dates=['2026-05-09', '2026-05-08'],
+        topic_article_count=3,
+    )
+    price_provider = FakePriceHistoryProvider({'sh600519': build_bars(count=90)})
+    valuation_provider = FakeValuationProvider(
+        {
+            'sh600519': {
+                'symbol': 'sh600519',
+                'pe_ttm': 22.0,
+                'pb_lf': 8.0,
+                'industry': '白酒',
+                'profitability': 'profitable',
+                'company_type': 'general',
+                'pe_history': [20.0, 21.0, 23.0],
+                'pb_history': [7.0, 7.5, 8.5],
+            }
+        }
+    )
+    scorer = RecommendationScorer(
+        security_master=security_master,
+        price_history_provider=price_provider,
+        valuation_provider=valuation_provider,
+        lookback_days=60,
+        as_of_date='2026-05-09',
+    )
+
+    payload = scorer.score_candidates([candidate])
+    recommendation = payload['recommendations'][0]
+    evidence_strength = recommendation.get('evidence_strength') or {}
+
+    # 验证 evidence_strength 核心字段存在
+    assert 'direct_mentions' in evidence_strength
+    assert 'independent_evidence_count' in evidence_strength
+    assert 'source_tier_max' in evidence_strength
