@@ -1,0 +1,1913 @@
+{
+  "date_range": {
+    "start": "2026-05-28",
+    "end": "2026-05-28"
+  },
+  "market": "CN",
+  "articles_used": 67,
+  "chunks": 108,
+  "model_usage": {
+    "model": "deepseek-v4-pro",
+    "provider": "deepseek",
+    "prompt_tokens": 68184,
+    "completion_tokens": 2102,
+    "total_tokens": 70286
+  },
+  "quality_check": {
+    "score": 90.0,
+    "passed": true,
+    "accuracy_score": 60.0,
+    "timeliness_score": 20,
+    "reliability_score": 10,
+    "claim_coverage_score": 20,
+    "time_source": "report_text",
+    "source_annotation_missing": false,
+    "narrative_consistency_passed": true,
+    "data_integrity_statement_passed": true,
+    "issues": [],
+    "warnings": [
+      "⚠️ 引用来源偏少 (0处),建议增加到15处以上"
+    ],
+    "stats": {
+      "has_realtime_data": true,
+      "data_age_hours": 0.2667547338888889,
+      "time_source": "report_text",
+      "source_annotation_missing": false,
+      "claim_coverage_score": 20,
+      "citation_count": 0,
+      "verified_claims": 1,
+      "total_claims": 1,
+      "realtime_verified_claims": 1,
+      "realtime_total_claims": 1,
+      "news_fact_claims": 7,
+      "analytical_judgment_count": 0,
+      "fabrication_detected": false,
+      "watchlist_promoted_in_narrative_count": 0,
+      "verification_boundary_overclaim_count": 0,
+      "cross_verification_overclaim_count": 0,
+      "implausible_signals": {
+        "over_precision_count": 0,
+        "rounded_ratio": 0.0,
+        "cross_asset_repeated_value_count": 0
+      }
+    },
+    "timestamp": "2026-05-28T10:04:00.317570"
+  },
+  "verification_enabled": true,
+  "output_mode": "markdown-report",
+  "live_data_degraded": false,
+  "stock_recommendations": [
+    {
+      "symbol": "sh688981",
+      "name": "中芯国际",
+      "industry": "半导体",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "关注",
+      "grade_caps": [],
+      "total_score": 74,
+      "scores": {
+        "news_catalyst": 18,
+        "technical": 19,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 8
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "MACD 维持多头结构",
+        "估值层已纳入行业相对比较"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4806
+      ],
+      "evidence_summaries": [
+        "5月27日东方财富财经晚报（附新闻联播）"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "no_fresh_evidence",
+        "insufficient_independent_confirmation"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 0,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 1,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600519",
+      "name": "贵州茅台",
+      "industry": "白酒",
+      "candidate_confidence": "low",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "risk_flag_present"
+      ],
+      "total_score": 67,
+      "scores": {
+        "news_catalyst": 29,
+        "technical": 6,
+        "valuation": 17,
+        "quality_risk": 9,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "减持",
+        "新闻风险信号: 减持",
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        4806,
+        4807,
+        4808
+      ],
+      "evidence_summaries": [
+        "5月27日东方财富财经晚报（附新闻联播）",
+        "5月27日晚间上市公司利好消息一览(附名单)",
+        "5月27日晚间沪深上市公司重大事项公告最新快递"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "insufficient_independent_confirmation",
+        "cross_verification_conflicted"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 3,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "conflicted",
+        "cross_verified_source_count": 0,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "flat",
+        "score": 0,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "industry": "算力基础设施",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "关注",
+      "grade_caps": [],
+      "total_score": 67,
+      "scores": {
+        "news_catalyst": 24,
+        "technical": 4,
+        "valuation": 19,
+        "quality_risk": 12,
+        "market_regime": 8
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4815,
+        4806
+      ],
+      "evidence_summaries": [
+        "韩国婚恋市场换顶流了，不找医生找三星",
+        "5月27日东方财富财经晚报（附新闻联播）"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "no_fresh_evidence",
+        "insufficient_independent_confirmation"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 0,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 2,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh603019",
+      "name": "中科曙光",
+      "industry": "算力基础设施",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "no_direct_stock_evidence",
+        "score_gate_not_met",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 67,
+      "scores": {
+        "news_catalyst": 20,
+        "technical": 8,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 10
+      },
+      "signals": [
+        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_article_ids": [
+        4885,
+        4808,
+        4805,
+        4804
+      ],
+      "evidence_summaries": [
+        "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
+        "5月27日晚间沪深上市公司重大事项公告最新快递",
+        "5月28日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "爱康集团荣获2026年《财富》“最受赞赏的中国公司”"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 6,
+        "source_tier_max": "official",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 6,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 2,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600941",
+      "name": "中国移动",
+      "industry": "通信运营",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 60,
+      "scores": {
+        "news_catalyst": 14,
+        "technical": 11,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "RSI 处于健康区间，趋势未明显过热",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4890,
+        4891,
+        4823,
+        4822
+      ],
+      "evidence_summaries": [
+        "SEC Investor Advisory Committee to Host June 4 Meeting",
+        "SEC and NFA Announce Memorandum of Understanding to Further Harmonize Regulatory Coordination",
+        "出海投资按下暂停键，万亿资金何去何从？",
+        "龙虾经济的崛起"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 4,
+        "source_tier_max": "official",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 4,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600036",
+      "name": "招商银行",
+      "industry": "银行",
+      "candidate_confidence": "medium",
+      "base_grade": "回避",
+      "grade": "回避",
+      "grade_caps": [],
+      "total_score": 49,
+      "scores": {
+        "news_catalyst": 14,
+        "technical": 7,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4890,
+        4891,
+        4823,
+        4822
+      ],
+      "evidence_summaries": [
+        "SEC Investor Advisory Committee to Host June 4 Meeting",
+        "SEC and NFA Announce Memorandum of Understanding to Further Harmonize Regulatory Coordination",
+        "出海投资按下暂停键，万亿资金何去何从？",
+        "龙虾经济的崛起"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 4,
+        "source_tier_max": "official",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 4,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh601318",
+      "name": "中国平安",
+      "industry": "保险",
+      "candidate_confidence": "medium",
+      "base_grade": "回避",
+      "grade": "回避",
+      "grade_caps": [],
+      "total_score": 46,
+      "scores": {
+        "news_catalyst": 14,
+        "technical": 4,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        4890,
+        4891,
+        4823,
+        4822
+      ],
+      "evidence_summaries": [
+        "SEC Investor Advisory Committee to Host June 4 Meeting",
+        "SEC and NFA Announce Memorandum of Understanding to Further Harmonize Regulatory Coordination",
+        "出海投资按下暂停键，万亿资金何去何从？",
+        "龙虾经济的崛起"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 4,
+        "source_tier_max": "official",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 4,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "flat",
+        "score": 0,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    }
+  ],
+  "score_distribution": {
+    "strong_focus": 0,
+    "focus": 2,
+    "watch": 3,
+    "avoid": 2
+  },
+  "scoring_config": {
+    "market": "CN",
+    "style": "balanced",
+    "lookback_days": 60,
+    "pool_mode": "strict",
+    "theme_mapping_max_grade": "watch",
+    "value_acceptance_enabled": true,
+    "industry_trend_enabled": true
+  },
+  "decision_views": {
+    "actionable_candidates": [],
+    "conditional_watchlist": [
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "industry": "半导体",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "关注",
+        "grade_caps": [],
+        "total_score": 74,
+        "scores": {
+          "news_catalyst": 18,
+          "technical": 19,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 8
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "MACD 维持多头结构",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4806
+        ],
+        "evidence_summaries": [
+          "5月27日东方财富财经晚报（附新闻联播）"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "no_fresh_evidence",
+          "insufficient_independent_confirmation"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 0,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 1,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "industry": "算力基础设施",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "关注",
+        "grade_caps": [],
+        "total_score": 67,
+        "scores": {
+          "news_catalyst": 24,
+          "technical": 4,
+          "valuation": 19,
+          "quality_risk": 12,
+          "market_regime": 8
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4815,
+          4806
+        ],
+        "evidence_summaries": [
+          "韩国婚恋市场换顶流了，不找医生找三星",
+          "5月27日东方财富财经晚报（附新闻联播）"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "no_fresh_evidence",
+          "insufficient_independent_confirmation"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 0,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 2,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "stale_or_rejected": [
+      {
+        "symbol": "sh600519",
+        "name": "贵州茅台",
+        "industry": "白酒",
+        "candidate_confidence": "low",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "risk_flag_present"
+        ],
+        "total_score": 67,
+        "scores": {
+          "news_catalyst": 29,
+          "technical": 6,
+          "valuation": 17,
+          "quality_risk": 9,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "减持",
+          "新闻风险信号: 减持",
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_article_ids": [
+          4806,
+          4807,
+          4808
+        ],
+        "evidence_summaries": [
+          "5月27日东方财富财经晚报（附新闻联播）",
+          "5月27日晚间上市公司利好消息一览(附名单)",
+          "5月27日晚间沪深上市公司重大事项公告最新快递"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "insufficient_independent_confirmation",
+          "cross_verification_conflicted"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 3,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "conflicted",
+          "cross_verified_source_count": 0,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "flat",
+          "score": 0,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh603019",
+        "name": "中科曙光",
+        "industry": "算力基础设施",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "no_direct_stock_evidence",
+          "score_gate_not_met",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 67,
+        "scores": {
+          "news_catalyst": 20,
+          "technical": 8,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 10
+        },
+        "signals": [
+          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_article_ids": [
+          4885,
+          4808,
+          4805,
+          4804
+        ],
+        "evidence_summaries": [
+          "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
+          "5月27日晚间沪深上市公司重大事项公告最新快递",
+          "5月28日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "爱康集团荣获2026年《财富》“最受赞赏的中国公司”"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "科技与产业主题",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 6,
+          "source_tier_max": "official",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 6,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 2,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh600941",
+        "name": "中国移动",
+        "industry": "通信运营",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 60,
+        "scores": {
+          "news_catalyst": 14,
+          "technical": 11,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "RSI 处于健康区间，趋势未明显过热",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4890,
+          4891,
+          4823,
+          4822
+        ],
+        "evidence_summaries": [
+          "SEC Investor Advisory Committee to Host June 4 Meeting",
+          "SEC and NFA Announce Memorandum of Understanding to Further Harmonize Regulatory Coordination",
+          "出海投资按下暂停键，万亿资金何去何从？",
+          "龙虾经济的崛起"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 4,
+          "source_tier_max": "official",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 4,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh600036",
+        "name": "招商银行",
+        "industry": "银行",
+        "candidate_confidence": "medium",
+        "base_grade": "回避",
+        "grade": "回避",
+        "grade_caps": [],
+        "total_score": 49,
+        "scores": {
+          "news_catalyst": 14,
+          "technical": 7,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4890,
+          4891,
+          4823,
+          4822
+        ],
+        "evidence_summaries": [
+          "SEC Investor Advisory Committee to Host June 4 Meeting",
+          "SEC and NFA Announce Memorandum of Understanding to Further Harmonize Regulatory Coordination",
+          "出海投资按下暂停键，万亿资金何去何从？",
+          "龙虾经济的崛起"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 4,
+          "source_tier_max": "official",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 4,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh601318",
+        "name": "中国平安",
+        "industry": "保险",
+        "candidate_confidence": "medium",
+        "base_grade": "回避",
+        "grade": "回避",
+        "grade_caps": [],
+        "total_score": 46,
+        "scores": {
+          "news_catalyst": 14,
+          "technical": 4,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          4890,
+          4891,
+          4823,
+          4822
+        ],
+        "evidence_summaries": [
+          "SEC Investor Advisory Committee to Host June 4 Meeting",
+          "SEC and NFA Announce Memorandum of Understanding to Further Harmonize Regulatory Coordination",
+          "出海投资按下暂停键，万亿资金何去何从？",
+          "龙虾经济的崛起"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 4,
+          "source_tier_max": "official",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 4,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "flat",
+          "score": 0,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      }
+    ]
+  },
+  "judgment_candidates": [
+    {
+      "candidate_id": "C01",
+      "topic": "科技与产业主题",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "2-6周",
+      "evidence_count": 12,
+      "independent_evidence_count": 6,
+      "high_relevance_article_count": 5,
+      "source_tier_max": "official",
+      "original_source_count": 6,
+      "mainstream_or_better_count": 18,
+      "articles": [
+        {
+          "id": 4885,
+          "title": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
+          "source": "Federal Reserve Board",
+          "summary": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
+          "source_tier": "official",
+          "content_quality_status": "partial",
+          "published": "Tue, 26 May 2026 18:00:00 GMT",
+          "collection_date": "2026-05-28"
+        },
+        {
+          "id": 4808,
+          "title": "5月27日晚间沪深上市公司重大事项公告最新快递",
+          "source": "东方财富网",
+          "summary": "<p> 沪深两市多家上市公司5月27日晚间发布公司公告，以下为重要公告汇总。</p><p> <strong>【品大事】</strong></p><p> <strong><span id=\"stock_0.300759\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.300759\">康",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Wed, 27 May 2026 19:32:18 +0800",
+          "collection_date": "2026-05-28"
+        },
+        {
+          "id": 4805,
+          "title": "5月28日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "source": "东方财富网",
+          "summary": "<p> 5月28日(星期四)，今日报刊头条主要内容精华如下：</p><h3 class=\"emh3\"> 中国证券报</h3><p> <a href=\"http://finance.eastmoney.com/a/202605283751723187.html\"><strong>前4个月规上工业企业利润同比增长18.2%</strong></a></p><p>",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Thu, 28 May 2026 06:03:30 +0800",
+          "collection_date": "2026-05-28"
+        },
+        {
+          "id": 4804,
+          "title": "爱康集团荣获2026年《财富》“最受赞赏的中国公司”",
+          "source": "中新网",
+          "summary": "5月27日，《财富》发布2026年“最受赞赏的中国公司”榜单，爱康健康科技集团有限公司(简称“爱康集团”)荣登行业明星榜。这是爱康集团第三度获《财富》“最受赞赏的中国公司”殊荣。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Thu, 28 May 2026 09:08:02 +0800",
+          "collection_date": "2026-05-28"
+        }
+      ],
+      "topic_article_count": 19,
+      "priority_score": 100,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C05",
+      "topic": "政策与监管",
+      "market_scope": [
+        "A股",
+        "港股",
+        "宏观"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 8,
+      "independent_evidence_count": 4,
+      "high_relevance_article_count": 3,
+      "source_tier_max": "official",
+      "original_source_count": 4,
+      "mainstream_or_better_count": 13,
+      "articles": [
+        {
+          "id": 4890,
+          "title": "SEC Investor Advisory Committee to Host June 4 Meeting",
+          "source": "美国证监会-新闻发布",
+          "summary": "The Securities and Exchange Commission’s&nbsp;Investor Advisory Committee will hold a public meeting at the SEC Headquarters in Washington D.C. on June 4 at 10 a.m. ET to discuss p",
+          "source_tier": "official",
+          "content_quality_status": "partial",
+          "published": "Wed, 27 May 2026 10:59:13 -0400",
+          "collection_date": "2026-05-28"
+        },
+        {
+          "id": 4891,
+          "title": "SEC and NFA Announce Memorandum of Understanding to Further Harmonize Regulatory Coordination",
+          "source": "美国证监会-新闻发布",
+          "summary": "The Securities and Exchange Commission and National Futures Association (NFA) today announced that they have entered into a Memorandum of Understanding (MOU) to enhance their coope",
+          "source_tier": "official",
+          "content_quality_status": "partial",
+          "published": "Thu, 21 May 2026 08:51:10 -0400",
+          "collection_date": "2026-05-28"
+        },
+        {
+          "id": 4823,
+          "title": "出海投资按下暂停键，万亿资金何去何从？",
+          "source": "FT中文网",
+          "summary": "黄凡：本次监管升级不仅是针对“非法展业”的行业规范行动，更意味着跨境资本流动治理逻辑发生了阶段性变化。如何看待其影响和应对？",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Wed, 27 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-28"
+        },
+        {
+          "id": 4822,
+          "title": "龙虾经济的崛起",
+          "source": "FT中文网",
+          "summary": "陈炳雄：真正的问题不是智能体会不会改变世界，而是我们该如何使用它。智能体时代已经来临，未来正由云端的智能体协助我们一同创造与书写。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Wed, 27 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-28"
+        }
+      ],
+      "topic_article_count": 20,
+      "priority_score": 80,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C06",
+      "topic": "风险事件",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股",
+        "商品"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 1,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "official",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 1,
+      "articles": [
+        {
+          "id": 4895,
+          "title": "2026年1—4月份全国规模以上工业企业利润增长18.2%",
+          "source": "国家统计局-最新发布",
+          "summary": "1—4月份，全国规模以上工业企业实现利润总额24358.4亿元，同比增长18.2%（按可比口径计算，详见附注二）。 1—4月份，规模以上工业企业中，国有控股企业实现利润总额8271.5亿元，同比增长17.1%；股份制企业实现利润总额18834.4亿元，增长24.0%；外商及港澳台投资企业实现利润总额5422.4亿元，增长2.3%；私营企...",
+          "source_tier": "official",
+          "content_quality_status": "full",
+          "published": "2026-05-27 09:30:01",
+          "collection_date": "2026-05-28"
+        }
+      ],
+      "topic_article_count": 1,
+      "priority_score": 47,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C03",
+      "topic": "宏观与流动性",
+      "market_scope": [
+        "美股",
+        "A股",
+        "港股",
+        "美元",
+        "利率"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 4,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 2,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 2,
+      "articles": [
+        {
+          "id": 4818,
+          "title": "伊朗与美联储--接下来影响全球市场的“三种场景”",
+          "source": "华尔街见闻",
+          "summary": "<p style=\"text-align: left;\">伊朗局势走向与美联储货币政策前景，正在成为左右全球市场的两条最关键主线。</p> <p style=\"text-align: left;\">德意志银行经济研究团队在最新报告中，围绕伊朗停火谈判的三种可能结局，系统梳理了其对美联储政策路径的潜在影响——从近期加息风险消退，到2026年多次加息，再到政策方",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Thu, 28 May 2026 08:30:00 +0800",
+          "collection_date": "2026-05-28"
+        },
+        {
+          "id": 4835,
+          "title": "Fed’s Kashkari says inflation fight takes priority as labor market is 'in decent shape'",
+          "source": "CNBC",
+          "summary": "The Minneapolis Fed President warned that persistently high inflation risks becoming embedded in consumer expectations, potentially forcing tougher policy action later.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Thu, 28 May 2026 00:47:25 GMT",
+          "collection_date": "2026-05-28"
+        },
+        {
+          "id": 4874,
+          "title": "Viruses For Dummies",
+          "source": "ZeroHedge",
+          "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">Viruses For Dummies</span> <div class=\"clearfix text-formatted field field--name-body field--type-text-",
+          "source_tier": "aggregator",
+          "content_quality_status": "full",
+          "published": "Thu, 28 May 2026 00:05:00 +0000",
+          "collection_date": "2026-05-28"
+        },
+        {
+          "id": 4863,
+          "title": "Goldman Sachs ETFs Hit $100 Billion AUM",
+          "source": "ETF Trends",
+          "summary": "<p>Goldman Sachs Asset Management (GSAM) made a big announcement this week, touting $100 billion in total ETF AUM. The milestone comes following the firm’s recent acquisition of In",
+          "source_tier": "aggregator",
+          "content_quality_status": "full",
+          "published": "Wed, 27 May 2026 18:55:00 +0000",
+          "collection_date": "2026-05-28"
+        }
+      ],
+      "topic_article_count": 4,
+      "priority_score": 46,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C02",
+      "topic": "财报与公司经营",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 4,
+      "independent_evidence_count": 0,
+      "high_relevance_article_count": 7,
+      "source_tier_max": "mainstream",
+      "original_source_count": 0,
+      "mainstream_or_better_count": 8,
+      "articles": [
+        {
+          "id": 4817,
+          "title": "“ASIC巨头”Marvell季度营收创纪录、连续上调指引，CEO称数据中心业务“燃爆了”",
+          "source": "华尔街见闻",
+          "summary": "<p style=\"text-align: left;\">营收创纪录、指引大幅上调，Marvell交出了一份看起来相当亮眼的成绩单。</p> <p style=\"text-align: left;\">5月27日美股盘后，AI定制芯片、光通信与数据中心互联龙头Marvell发布2027财年第一季度财报，并召开业绩电话会议。数据中心业务持续爆发，公司再度大幅上调",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Thu, 28 May 2026 08:48:11 +0800",
+          "collection_date": "2026-05-28"
+        },
+        {
+          "id": 4806,
+          "title": "5月27日东方财富财经晚报（附新闻联播）",
+          "source": "东方财富网",
+          "summary": "<center><img src=\"https://np-newspic.dfcfw.com/download/D25259389926350341415_w1240h918.jpg\" width=\"580\" /></center><h3 class=\"emh3\"> <strong>热点聚焦</strong></h3><p> <strong>大宗商品资源配置",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Wed, 27 May 2026 21:00:03 +0800",
+          "collection_date": "2026-05-28"
+        },
+        {
+          "id": 4812,
+          "title": "腾讯游戏的One More Thing，是AI",
+          "source": "36氪",
+          "summary": "<p>文丨贝果树</p> <p>编辑丨刘士武</p> <p>5月27日，2026年腾讯游戏发布会于晚上八点举办。在发布会上，腾讯从制作、发行、投资三个板块带来了42款游戏的新动态，其中包含15款新品，新品的数量相较于2025年发布会的24款有所减少。</p> <p class=\"image-wrapper\"><img src=\"https://img.36k",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-28 07:00:49  +0800",
+          "collection_date": "2026-05-28"
+        },
+        {
+          "id": 4813,
+          "title": "氪星晚报 ｜高盛策略师将标普500指数目标点位上调至8000点，受AI和盈利所推动；阿里员工十三薪并入年终奖",
+          "source": "36氪",
+          "summary": "<h2>大公司：</h2> <p><strong>程一笑：可灵AI 3月ARR近5亿美元，较去年同期增长4倍</strong></p> <p>36氪获悉，在2026年第一季度业绩电话会上，快手科技创始人兼首席执行官程一笑表示，2026年3月，可灵AI年化收入运行率（ARR）近5亿美元，较去年3月的1亿美元增长4倍。程一笑表示，可灵AI一季度收入高速增长，主要",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-05-27 20:17:05  +0800",
+          "collection_date": "2026-05-28"
+        }
+      ],
+      "topic_article_count": 8,
+      "priority_score": 42,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C07",
+      "topic": "其他观察",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 2,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 3,
+      "articles": [
+        {
+          "id": 4821,
+          "title": "退欧反而使英国更像欧洲",
+          "source": "FT中文网",
+          "summary": "加内什：与退欧之前相比，如今政府在英国经济生活中扮演着更大的角色。加入欧盟？在真正重要的方面，我们已经加入了。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Wed, 27 May 2026 16:00:00 GMT",
+          "collection_date": "2026-05-28"
+        },
+        {
+          "id": 4843,
+          "title": "Energy bills to rise for millions as impact of Iran war hits",
+          "source": "BBC全球经济",
+          "summary": "A household using a typical amount of energy will pay £221 a year more, under the regulator's new price cap.",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Wed, 27 May 2026 07:39:33 GMT",
+          "collection_date": "2026-05-28"
+        },
+        {
+          "id": 4844,
+          "title": "How you can save money on your energy bill",
+          "source": "BBC全球经济",
+          "summary": "Experts say action now can save money when the pinch comes this winter.",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Wed, 27 May 2026 16:13:04 GMT",
+          "collection_date": "2026-05-28"
+        }
+      ],
+      "topic_article_count": 3,
+      "priority_score": 40,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C04",
+      "topic": "汇率与大宗",
+      "market_scope": [
+        "汇率",
+        "商品",
+        "A股",
+        "港股"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 2,
+      "independent_evidence_count": 0,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 0,
+      "mainstream_or_better_count": 3,
+      "articles": [
+        {
+          "id": 4819,
+          "title": "金主也缺钱了！阿布扎比主权基金抛售数十亿美元美股持仓",
+          "source": "华尔街见闻",
+          "summary": "<p style=\"text-align: left;\">阿布扎比主权基金密集抛售持股，借市场高位套现数十亿美元。</p> <p>本周二，<strong>穆巴达拉投资公司</strong>（Mubadala Investment Co.）通过大宗交易出售芯片制造商GlobalFoundries股份，套现约19亿美元。</p> <p><strong>阿布扎比投",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Thu, 28 May 2026 08:04:44 +0800",
+          "collection_date": "2026-05-28"
+        },
+        {
+          "id": 4802,
+          "title": "国际油价27日大幅下跌",
+          "source": "中新网",
+          "summary": "国际油价27日大幅下跌，截至当天收盘，纽约商品交易所7月交货的轻质原油期货价格下跌5.21美元，收于每桶88.68美元，跌幅为5.55%；7月交货的伦敦布伦特原油期货价格下跌5.29美元，收于每桶94.29美元，跌幅为5.31%。",
+          "source_tier": "mainstream",
+          "content_quality_status": "summary_only",
+          "published": "Thu, 28 May 2026 09:18:25 +0800",
+          "collection_date": "2026-05-28"
+        },
+        {
+          "id": 4801,
+          "title": "5月28日人民币对美元中间价报6.8240 上调51个基点",
+          "source": "中新网",
+          "summary": "中新网5月28日电 据中国外汇交易中心网站消息，中国人民银行授权中国外汇交易中心公布，2026年5月28日银行间外汇市场人民币汇率中间价为1美元对人民币6.8240元，上调51个基点。",
+          "source_tier": "mainstream",
+          "content_quality_status": "summary_only",
+          "published": "Thu, 28 May 2026 09:23:17 +0800",
+          "collection_date": "2026-05-28"
+        }
+      ],
+      "topic_article_count": 3,
+      "priority_score": 36,
+      "high_confidence_topic": false
+    }
+  ],
+  "data_quality_stats": {
+    "counts": {
+      "full": 39,
+      "partial": 13,
+      "summary_only": 7,
+      "other": 8
+    },
+    "ratios": {
+      "full": 58.2089552238806,
+      "partial": 19.402985074626866,
+      "summary_only": 10.44776119402985,
+      "other": 11.940298507462686
+    },
+    "total": 67
+  },
+  "backtest_ready": true,
+  "backtest_generated_at": "2026-05-28T10:04:00.317677",
+  "cross_verification": {
+    "topic_checks": [
+      {
+        "topic": "科技与产业主题",
+        "status": "confirmed",
+        "evidence_article_ids": [
+          4885,
+          4808,
+          4805,
+          4804
+        ],
+        "independent_source_count": 6,
+        "mainstream_or_better_count": 18,
+        "has_fresh_evidence": true,
+        "conflict_detail": null
+      },
+      {
+        "topic": "政策与监管",
+        "status": "confirmed",
+        "evidence_article_ids": [
+          4890,
+          4891,
+          4823,
+          4822
+        ],
+        "independent_source_count": 4,
+        "mainstream_or_better_count": 13,
+        "has_fresh_evidence": true,
+        "conflict_detail": null
+      },
+      {
+        "topic": "风险事件",
+        "status": "weak",
+        "evidence_article_ids": [
+          4895
+        ],
+        "independent_source_count": 1,
+        "mainstream_or_better_count": 1,
+        "has_fresh_evidence": true,
+        "conflict_detail": null
+      },
+      {
+        "topic": "宏观与流动性",
+        "status": "weak",
+        "evidence_article_ids": [
+          4818,
+          4835,
+          4874,
+          4863
+        ],
+        "independent_source_count": 1,
+        "mainstream_or_better_count": 2,
+        "has_fresh_evidence": true,
+        "conflict_detail": null
+      },
+      {
+        "topic": "财报与公司经营",
+        "status": "conflicted",
+        "evidence_article_ids": [
+          4817,
+          4806,
+          4812,
+          4813
+        ],
+        "independent_source_count": 0,
+        "mainstream_or_better_count": 8,
+        "has_fresh_evidence": true,
+        "conflict_detail": "数值方向矛盾: 「营收创纪录、连续上调指引，CEO称数据中心业务“燃爆了” <p style=\"text-align: left;\">营收创纪录、指引大幅上调，Marvell交出」vs「净利润为3450万美元，较上年同期的1.779亿美元大幅下滑，主要原因是收购Celestial AI和XConn带来的一次性费用及非现金摊销。</p> <p s」"
+      },
+      {
+        "topic": "其他观察",
+        "status": "weak",
+        "evidence_article_ids": [
+          4821,
+          4843,
+          4844
+        ],
+        "independent_source_count": 1,
+        "mainstream_or_better_count": 3,
+        "has_fresh_evidence": false,
+        "conflict_detail": null
+      },
+      {
+        "topic": "汇率与大宗",
+        "status": "weak",
+        "evidence_article_ids": [
+          4819,
+          4802,
+          4801
+        ],
+        "independent_source_count": 0,
+        "mainstream_or_better_count": 3,
+        "has_fresh_evidence": true,
+        "conflict_detail": null
+      }
+    ],
+    "stock_checks": [
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "status": "weak",
+        "evidence_article_ids": [
+          4806
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 0,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "sh600519",
+        "name": "贵州茅台",
+        "status": "conflicted",
+        "evidence_article_ids": [
+          4806,
+          4807,
+          4808
+        ],
+        "direct_mentions": 3,
+        "independent_source_count": 0,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": "数值方向矛盾: 「收入1100亿元至1200亿元，同比增长612.53%」vs「净利润为125亿元，同比下降15%」"
+      },
+      {
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "status": "weak",
+        "evidence_article_ids": [
+          4815,
+          4806
+        ],
+        "direct_mentions": 2,
+        "independent_source_count": 0,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "sh603019",
+        "name": "中科曙光",
+        "status": "weak",
+        "evidence_article_ids": [
+          4885,
+          4808,
+          4805,
+          4804
+        ],
+        "direct_mentions": 0,
+        "independent_source_count": 6,
+        "has_fresh_evidence": true,
+        "source_type": "theme_mapping",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "sh600941",
+        "name": "中国移动",
+        "status": "weak",
+        "evidence_article_ids": [
+          4890,
+          4891,
+          4823,
+          4822
+        ],
+        "direct_mentions": 0,
+        "independent_source_count": 4,
+        "has_fresh_evidence": true,
+        "source_type": "theme_mapping",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "sh600036",
+        "name": "招商银行",
+        "status": "weak",
+        "evidence_article_ids": [
+          4890,
+          4891,
+          4823,
+          4822
+        ],
+        "direct_mentions": 0,
+        "independent_source_count": 4,
+        "has_fresh_evidence": true,
+        "source_type": "theme_mapping",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "sh601318",
+        "name": "中国平安",
+        "status": "weak",
+        "evidence_article_ids": [
+          4890,
+          4891,
+          4823,
+          4822
+        ],
+        "direct_mentions": 0,
+        "independent_source_count": 4,
+        "has_fresh_evidence": true,
+        "source_type": "theme_mapping",
+        "conflict_detail": null
+      }
+    ],
+    "summary": {
+      "topics_confirmed": 2,
+      "topics_weak": 4,
+      "topics_conflicted": 1,
+      "stocks_confirmed": 0,
+      "stocks_weak": 6,
+      "stocks_conflicted": 1
+    },
+    "issues": [],
+    "warnings": []
+  },
+  "cross_verification_required": true,
+  "quality_score": 90.0,
+  "quality_stats": {
+    "has_realtime_data": true,
+    "data_age_hours": 0.2667547338888889,
+    "time_source": "report_text",
+    "source_annotation_missing": false,
+    "claim_coverage_score": 20,
+    "citation_count": 0,
+    "verified_claims": 1,
+    "total_claims": 1,
+    "realtime_verified_claims": 1,
+    "realtime_total_claims": 1,
+    "news_fact_claims": 7,
+    "analytical_judgment_count": 0,
+    "fabrication_detected": false,
+    "watchlist_promoted_in_narrative_count": 0,
+    "verification_boundary_overclaim_count": 0,
+    "cross_verification_overclaim_count": 0,
+    "implausible_signals": {
+      "over_precision_count": 0,
+      "rounded_ratio": 0.0,
+      "cross_asset_repeated_value_count": 0
+    }
+  },
+  "quality_issues": [],
+  "quality_warnings": [
+    "⚠️ 引用来源偏少 (0处),建议增加到15处以上"
+  ],
+  "time_source": "report_text",
+  "source_annotation_missing": false,
+  "claim_coverage_score": 20,
+  "enhanced_context_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-05/2026-05-28/metadata/morning_enhanced-context_markdown-report-cn_deepseek.json",
+  "session": "morning",
+  "session_time": "2026-05-28 10:04:00"
+}

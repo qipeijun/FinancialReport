@@ -69,7 +69,7 @@ def test_daily_digest_main_uses_noninteractive_runner(tmp_path: Path, monkeypatc
     monkeypatch.setattr(
         run_daily_digest,
         'parse_args',
-        lambda: SimpleNamespace(date='2026-05-07', content_field='summary', output=None),
+        lambda: SimpleNamespace(date='2026-05-07', content_field='summary', markets='CN,US', output=None),
     )
     monkeypatch.setattr(run_daily_digest, 'choose_python', lambda: '/tmp/fake-python')
 
@@ -82,9 +82,12 @@ def test_daily_digest_main_uses_noninteractive_runner(tmp_path: Path, monkeypatc
         if name == 'run_start_noninteractive':
             return {'name': name, 'cmd': cmd, 'returncode': 0, 'passed': True, 'stdout_tail': '', 'stderr_tail': '', 'failure': None}
         if name == 'run_acceptance':
-            out_path = tmp_path / 'data' / 'acceptance' / '2026-05-07' / 'acceptance_report.json'
+            out_path = tmp_path / 'data' / 'acceptance' / '2026-05-07' / 'acceptance_summary.json'
             out_path.parent.mkdir(parents=True, exist_ok=True)
-            out_path.write_text('{"passed": true, "automation": {}}', encoding='utf-8')
+            out_path.write_text(
+                '{"passed": true, "markets": {"CN": {"passed": true}, "US": {"passed": true}}}',
+                encoding='utf-8',
+            )
             return {'name': name, 'cmd': cmd, 'returncode': 0, 'passed': True, 'stdout_tail': '', 'stderr_tail': '', 'failure': None}
         raise AssertionError(name)
 
@@ -106,7 +109,7 @@ def test_daily_digest_main_uses_noninteractive_runner(tmp_path: Path, monkeypatc
 
     monkeypatch.setattr(run_daily_digest, 'inspect_mode_artifacts', lambda *args, **kwargs: FakeInspection())
     monkeypatch.setattr(run_daily_digest, 'archive_dirs_for_date', lambda date_str: {'base': tmp_path / 'docs' / 'archive' / '2026-05' / date_str})
-    monkeypatch.setattr(run_daily_digest, 'load_json', lambda path: {'passed': True, 'automation': {}})
+    monkeypatch.setattr(run_daily_digest, 'load_json', lambda path: {'passed': True, 'markets': {'CN': {'passed': True}, 'US': {'passed': True}}})
     monkeypatch.setattr(run_daily_digest, 'build_digest_summary', lambda **kwargs: 'ok')
 
     code = run_daily_digest.main()
@@ -114,3 +117,5 @@ def test_daily_digest_main_uses_noninteractive_runner(tmp_path: Path, monkeypatc
     assert code == 0
     assert [name for name, _ in captured] == ['check_deepseek_key', 'run_start_noninteractive', 'run_acceptance']
     assert captured[1][1] == [str(tmp_path / 'scripts' / 'run_start_noninteractive.sh')]
+    assert '--all-markets' in captured[2][1]
+    assert '--output' not in captured[2][1]

@@ -137,8 +137,8 @@ python3 scripts/ai_analyze_deepseek_verified.py \
 ### 执行验收
 
 ```bash
-python3 scripts/run_acceptance.py --date 2026-05-06 --skip-live
-python3 scripts/run_acceptance.py --date 2026-05-06
+python3 scripts/run_acceptance.py --date 2026-05-06 --all-markets --skip-live
+python3 scripts/run_acceptance.py --date 2026-05-06 --stock-market CN
 ```
 
 ---

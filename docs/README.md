@@ -138,16 +138,18 @@ python3 scripts/ai_analyze_deepseek_verified.py \
 
 ```bash
 # 轻量验收
-python3 scripts/run_acceptance.py --date 2026-05-06 --skip-live
+python3 scripts/run_acceptance.py --date 2026-05-06 --all-markets --skip-live
 
-# 全量验收
-python3 scripts/run_acceptance.py --date 2026-05-06
+# 单市场全量验收
+python3 scripts/run_acceptance.py --date 2026-05-06 --stock-market CN
 ```
 
 输出：
 
 ```text
-data/acceptance/YYYY-MM-DD/acceptance_report.json
+data/acceptance/YYYY-MM-DD/acceptance_report-cn.json
+data/acceptance/YYYY-MM-DD/acceptance_report-us.json
+data/acceptance/YYYY-MM-DD/acceptance_summary.json
 ```
 
 ---
@@ -210,12 +212,15 @@ docs/archive/YYYY-MM/YYYY-MM-DD/
 
 - `collected_data.json`
 - `reports/*.md`
-- `metadata/*.json`
+- `metadata/analysis_meta_*.json`
+- `metadata/*enhanced-context*.json`
+- `metadata/*evidence-audit*.json`
 
 当前文件名会区分：
 
 - 时段（morning / afternoon / evening / overnight）
 - 模式（markdown-report / judgment-cards）
+- 市场（cn / us）
 - 模型（deepseek）
 
 这样同一时段连续跑两种模式时不会互相覆盖。

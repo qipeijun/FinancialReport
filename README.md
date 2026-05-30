@@ -161,17 +161,19 @@ python3 scripts/interactive_runner.py
 ### 执行验收
 
 ```bash
-# 轻量验收：测试、编译、入口、数据库
-python3 scripts/run_acceptance.py --date 2026-05-06 --skip-live
+# 轻量验收：测试、编译、入口、数据库，并分别检查 CN/US 产物
+python3 scripts/run_acceptance.py --date 2026-05-06 --all-markets --skip-live
 
-# 全量验收：包含真实分析产物、质量评分与降级场景
-python3 scripts/run_acceptance.py --date 2026-05-06
+# 单市场全量验收：包含真实分析产物、质量评分与降级场景
+python3 scripts/run_acceptance.py --date 2026-05-06 --stock-market CN
 ```
 
 验收结果会输出到：
 
 ```text
-data/acceptance/YYYY-MM-DD/acceptance_report.json
+data/acceptance/YYYY-MM-DD/acceptance_report-cn.json
+data/acceptance/YYYY-MM-DD/acceptance_report-us.json
+data/acceptance/YYYY-MM-DD/acceptance_summary.json
 ```
 
 ---
@@ -182,11 +184,12 @@ data/acceptance/YYYY-MM-DD/acceptance_report.json
 docs/archive/YYYY-MM/YYYY-MM-DD/
 ├── collected_data.json
 ├── metadata/
-│   ├── analysis_meta_afternoon_markdown-report_deepseek.json
-│   └── analysis_meta_afternoon_judgment-cards_deepseek.json
+│   ├── analysis_meta_afternoon_markdown-report-cn_deepseek.json
+│   ├── afternoon_enhanced-context_markdown-report-cn_deepseek.json
+│   └── afternoon_evidence-audit_markdown-report-cn_deepseek.json
 └── reports/
-    ├── 📅 YYYY-MM-DD 财经分析报告_afternoon_markdown-report_deepseek.md
-    └── 📅 YYYY-MM-DD 财经分析报告_afternoon_judgment-cards_deepseek.md
+    ├── 📅 YYYY-MM-DD 财经分析报告_afternoon_markdown-report-cn_deepseek.md
+    └── 📅 YYYY-MM-DD 财经分析报告_afternoon_markdown-report-us_deepseek.md
 ```
 
 ---

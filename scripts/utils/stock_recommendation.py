@@ -29,6 +29,7 @@ logger = logging.getLogger(__name__)
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 GRADE_CAP_REASONS = {
     'insufficient_evidence',
+    'insufficient_independent_confirmation',
     'no_direct_stock_evidence',
     'theme_mapping_watch_only',
     'data_incomplete',
@@ -38,6 +39,13 @@ GRADE_CAP_REASONS = {
     'score_gate_not_met',
 }
 
+EVIDENCE_RELEVANCE_STATUSES = {
+    'direct_material_news',
+    'incidental_mention',
+    'theme_proxy',
+    'irrelevant_match',
+}
+
 ACTIONABILITY_REASONS = {
     'no_fresh_evidence',
     'insufficient_independent_confirmation',
@@ -45,6 +53,7 @@ ACTIONABILITY_REASONS = {
     'stale_or_crowded',
     'grade_not_actionable',
     'cross_verification_conflicted',
+    'cross_verification_not_confirmed',
 }
 
 TOPIC_MARKET_SCOPE = {
@@ -71,6 +80,20 @@ POSITIVE_CATALYST_KEYWORDS = [
     '超预期', '上调指引', 'FDA 批准', '突破',
     # 英文
     'beat estimates', 'guidance raise', 'upgrade', 'FDA approval',
+]
+
+MATERIAL_EVIDENCE_KEYWORDS = [
+    # 公司经营 / 业绩 / 资本动作
+    '财报', '业绩', '盈利', '营收', '利润', '订单', '中标', '合同', '回购', '分红',
+    '增持', '减持', '并购', '收购', '重组', '融资', '上市', '指引', '预告',
+    # 产品 / 产能 / 监管 / 价格异动
+    '新品', '产品', '合作', '投资', '扩产', '产能', '监管', '处罚', '调查', '诉讼',
+    '召回', '评级', '上调', '下调', '目标价', '涨', '跌', '大涨', '大跌', '拉升',
+    # English material catalysts
+    'earnings', 'revenue', 'profit', 'guidance', 'order', 'contract', 'buyback',
+    'dividend', 'acquisition', 'merger', 'investment', 'invests', 'partnership',
+    'launch', 'product', 'sec', 'doj', 'antitrust', 'lawsuit', 'recall',
+    'upgrade', 'downgrade', 'price target', 'shares', 'stock', 'rally', 'falls',
 ]
 
 
@@ -105,6 +128,9 @@ class CandidateStock:
     theme_topics: List[str] | None = None
     evidence_published_dates: List[str] | None = None
     topic_article_count: int = 0
+    evidence_relevance_status: str = 'irrelevant_match'
+    evidence_relevance_reasons: List[str] | None = None
+    rejected_false_positive_mentions: List[Dict[str, Any]] | None = None
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
@@ -129,6 +155,7 @@ class SecurityMasterProvider:
         self.securities = self.config.get('securities', {})
         self.alias_map = self._build_alias_map(self.securities)
         self.topic_map = self.config.get('topic_stock_map', {})
+        self.rejected_false_positive_mentions: List[Dict[str, Any]] = []
 
     def _load_config(self) -> Dict[str, Any]:
         if not self.config_path.exists():
@@ -216,6 +243,60 @@ class SecurityMasterProvider:
                     matched.append(keyword)
         return matched
 
+    @staticmethod
+    def _material_keyword_hits(sentence: str) -> List[str]:
+        lowered = (sentence or '').lower()
+        hits = []
+        for keyword in MATERIAL_EVIDENCE_KEYWORDS:
+            if keyword.lower() in lowered and keyword not in hits:
+                hits.append(keyword)
+        return hits[:5]
+
+    def _classify_article_relevance(
+        self,
+        *,
+        article: Dict[str, Any],
+        text: str,
+        symbol: str,
+        name: str,
+    ) -> Dict[str, Any]:
+        """判断新闻是否真能支撑个股候选，而不是只发生了弱相关提及。"""
+        matched_sentences = [
+            sentence for sentence in self._split_sentences(text)
+            if self._sentence_mentions_security(sentence, symbol, name)
+        ]
+        if not matched_sentences:
+            return {
+                'status': 'irrelevant_match',
+                'reasons': ['no_sentence_level_mention'],
+                'material_keywords': [],
+            }
+
+        keyword_hits: List[str] = []
+        for sentence in matched_sentences:
+            keyword_hits.extend(self._material_keyword_hits(sentence))
+        keyword_hits = list(dict.fromkeys(keyword_hits))
+        if keyword_hits:
+            return {
+                'status': 'direct_material_news',
+                'reasons': [f"material_keyword:{item}" for item in keyword_hits[:3]],
+                'material_keywords': keyword_hits[:5],
+            }
+
+        primary_topic = str(article.get('primary_topic') or '').strip()
+        if primary_topic == '财报与公司经营':
+            return {
+                'status': 'direct_material_news',
+                'reasons': ['company_operation_topic'],
+                'material_keywords': [],
+            }
+
+        return {
+            'status': 'incidental_mention',
+            'reasons': ['sentence_mentions_symbol_but_no_material_catalyst'],
+            'material_keywords': [],
+        }
+
     def build_candidates(
         self,
         *,
@@ -225,6 +306,7 @@ class SecurityMasterProvider:
         max_theme_stocks: int = 3,
     ) -> List[CandidateStock]:
         direct_map: Dict[str, CandidateStock] = {}
+        self.rejected_false_positive_mentions = []
 
         for article in articles:
             text = '\n'.join(
@@ -239,6 +321,22 @@ class SecurityMasterProvider:
             is_original = 1 if article.get('is_original_source') else 0
             for symbol in symbols:
                 security = self.securities[symbol]
+                relevance = self._classify_article_relevance(
+                    article=article,
+                    text=text,
+                    symbol=symbol,
+                    name=security.get('name', symbol),
+                )
+                if relevance['status'] != 'direct_material_news':
+                    self.rejected_false_positive_mentions.append({
+                        'article_id': article.get('id'),
+                        'title': article.get('title', ''),
+                        'symbol': symbol,
+                        'name': security.get('name', symbol),
+                        'status': relevance['status'],
+                        'reasons': relevance['reasons'],
+                    })
+                    continue
                 risk_flags = self._extract_risk_flags_for_symbol(
                     text=text,
                     symbol=symbol,
@@ -262,6 +360,9 @@ class SecurityMasterProvider:
                         theme_topics=[],
                         evidence_published_dates=[],
                         topic_article_count=0,
+                        evidence_relevance_status='direct_material_news',
+                        evidence_relevance_reasons=[],
+                        rejected_false_positive_mentions=[],
                     )
                     direct_map[symbol] = item
                 item.evidence_article_ids.append(int(article.get('id') or 0))
@@ -269,6 +370,9 @@ class SecurityMasterProvider:
                 item.source_tiers.append(source_tier)
                 item.direct_mentions += 1
                 item.independent_evidence_count += is_original
+                item.evidence_relevance_reasons = list(dict.fromkeys(
+                    (item.evidence_relevance_reasons or []) + relevance['reasons']
+                ))
                 published = str(article.get('published') or article.get('collection_date') or '').strip()
                 if published:
                     item.evidence_published_dates = (item.evidence_published_dates or []) + [published]
@@ -344,6 +448,9 @@ class SecurityMasterProvider:
                                 if str(item.get('published') or item.get('collection_date') or '').strip()
                             ],
                             topic_article_count=int(candidate.get('topic_article_count') or 0),
+                            evidence_relevance_status='theme_proxy',
+                            evidence_relevance_reasons=['mapped_from_high_confidence_topic'],
+                            rejected_false_positive_mentions=[],
                         )
                     )
                     result_symbols.add(symbol)
@@ -734,6 +841,8 @@ class RecommendationScorer:
                 'theme_mapping_max_grade': 'watch',
                 'value_acceptance_enabled': True,
                 'industry_trend_enabled': True,
+                'evidence_relevance_enabled': True,
+                'historical_calibration_enabled': True,
             },
         }
 
@@ -810,6 +919,9 @@ class RecommendationScorer:
         if not candidate.evidence_article_ids:
             grade = self._cap_grade(grade, '观察')
             grade_caps.append('insufficient_evidence')
+        if candidate.independent_evidence_count < 1 and base_grade in {'关注', '强关注'}:
+            grade = self._cap_grade(grade, '观察')
+            grade_caps.append('insufficient_independent_confirmation')
         if news_score < 15:
             grade = self._cap_grade(grade, '观察')
             grade_caps.append('score_gate_not_met')
@@ -848,6 +960,9 @@ class RecommendationScorer:
         risks = list(dict.fromkeys(candidate.risk_flags + risk_flags + valuation_flags + regime_flags))
         invalidators = self._build_invalidators(candidate, indicators, snapshot, grade_caps)
         candidate_confidence = self._candidate_confidence(candidate)
+        evidence_relevance_status = self._resolve_evidence_relevance_status(candidate)
+        evidence_relevance_reasons = candidate.evidence_relevance_reasons or [evidence_relevance_status]
+        historical_calibration = self._historical_calibration_for_candidate(candidate)
         actionability_reasons = self._build_actionability_reasons(
             candidate=candidate,
             grade=grade,
@@ -876,6 +991,10 @@ class RecommendationScorer:
             'source_type': candidate.source_type,
             'topic': candidate.topic,
             'theme_topics': candidate.theme_topics or [],
+            'evidence_relevance_status': evidence_relevance_status,
+            'evidence_relevance_reasons': evidence_relevance_reasons,
+            'historical_calibration_status': historical_calibration['status'],
+            'historical_forward_stats': historical_calibration['forward_stats'],
             'stale_opportunity_flag': stale_opportunity_flag,
             'crowding_flag': crowding_flag,
             'fresh_evidence_flag': fresh_evidence_flag,
@@ -892,6 +1011,17 @@ class RecommendationScorer:
             },
             'industry_trend': industry_trend,
         }
+
+    @staticmethod
+    def _resolve_evidence_relevance_status(candidate: CandidateStock) -> str:
+        if candidate.evidence_relevance_status in EVIDENCE_RELEVANCE_STATUSES:
+            if candidate.evidence_relevance_status != 'irrelevant_match':
+                return candidate.evidence_relevance_status
+        if candidate.source_type == 'theme_mapping':
+            return 'theme_proxy'
+        if candidate.source_type == 'direct_news' and candidate.evidence_article_ids:
+            return 'direct_material_news'
+        return 'irrelevant_match'
 
     @staticmethod
     def _build_actionability_reasons(
@@ -916,6 +1046,55 @@ class RecommendationScorer:
         if candidate.source_type == 'theme_mapping' and direct_mentions < 1:
             reasons.append('theme_only_not_actionable')
         return [item for item in reasons if item in ACTIONABILITY_REASONS]
+
+    def _historical_calibration_for_candidate(self, candidate: CandidateStock) -> Dict[str, Any]:
+        """从历史 enhanced-context 读取同类证据的前向表现；无样本时显式标为未校准。"""
+        comparable = []
+        target_status = self._resolve_evidence_relevance_status(candidate)
+        for payload in self.recent_contexts:
+            for item in payload.get('stock_recommendations') or []:
+                if not isinstance(item, dict):
+                    continue
+                if item.get('source_type') != candidate.source_type:
+                    continue
+                if item.get('evidence_relevance_status') != target_status:
+                    continue
+                stats = item.get('historical_forward_stats') or {}
+                if stats.get('sample_count'):
+                    comparable.append(stats)
+        if not comparable:
+            return {
+                'status': '样本不足',
+                'forward_stats': {
+                    'sample_count': 0,
+                    'horizons': [5, 10, 20],
+                    'note': '尚无已完成前向收益样本，当前评分只作解释，不作已验证方向',
+                },
+            }
+        total_samples = sum(int(item.get('sample_count') or 0) for item in comparable)
+        win_rates = [
+            float(item.get('win_rate_10d'))
+            for item in comparable
+            if isinstance(item.get('win_rate_10d'), (int, float))
+        ]
+        avg_win_rate = sum(win_rates) / len(win_rates) if win_rates else None
+        if avg_win_rate is None:
+            status = '样本不足'
+        elif avg_win_rate >= 55:
+            status = '初步有效'
+        elif avg_win_rate <= 40:
+            status = '反向失效'
+        else:
+            status = '未校准'
+        return {
+            'status': status,
+            'forward_stats': {
+                'sample_count': total_samples,
+                'win_rate_10d': round(avg_win_rate, 1) if avg_win_rate is not None else None,
+                'horizons': [5, 10, 20],
+                'note': '基于历史 enhanced-context 同类证据样本聚合',
+            },
+        }
 
     @staticmethod
     def _parse_date(value: str) -> Optional[datetime]:
@@ -1485,15 +1664,17 @@ def render_stock_recommendation_markdown(
         f"- 市场: {scoring_config.get('market', 'CN')}",
         f"- 风格: {scoring_config.get('style', 'balanced')}",
         f"- 时间窗: {scoring_config.get('lookback_days', 60)} 日历史样本，默认决策窗口 5-20 个交易日",
+        f"- 评分校准: {'已启用历史回看字段' if scoring_config.get('historical_calibration_enabled') else '未启用'}",
         '',
-        '| 股票代码 | 股票名称 | 总分 | 推荐等级 | 新闻 | 技术 | 估值 | 风险 | 环境 | 数据完整度 |',
-        '|---------|---------|-----:|---------|----:|----:|----:|----:|----:|-----------:|',
+        '| 股票代码 | 股票名称 | 总分 | 推荐等级 | 方向有效性 | 新闻 | 技术 | 估值 | 风险 | 环境 | 数据完整度 |',
+        '|---------|---------|-----:|---------|-----------|----:|----:|----:|----:|----:|-----------:|',
     ]
 
     for item in recommendations:
         score_map = item.get('scores') or {}
         lines.append(
             f"| {item['symbol']} | {item['name']} | {item['total_score']} | {item['grade']} | "
+            f"{item.get('historical_calibration_status', '样本不足')} | "
             f"{score_map.get('news_catalyst', 0)} | {score_map.get('technical', 0)} | "
             f"{score_map.get('valuation', 0)} | {score_map.get('quality_risk', 0)} | "
             f"{score_map.get('market_regime', 0)} | {item.get('data_completeness', 0):.2f} |"
@@ -1505,6 +1686,8 @@ def render_stock_recommendation_markdown(
             [
                 f"#### {index}. {item['name']}（{item['symbol']}）",
                 f"- 推荐等级: {item['grade']} / 总分 {item['total_score']}",
+                f"- 方向有效性: {item.get('historical_calibration_status', '样本不足')}",
+                f"- 证据相关性: {item.get('evidence_relevance_status', '未知')}（{'；'.join(item.get('evidence_relevance_reasons') or ['无'])}）",
                 f"- 压级原因: {'；'.join(item.get('grade_caps') or ['无'])}",
                 f"- 核心催化: {'；'.join(item.get('signals') or ['暂无'])}",
                 f"- 主要风险: {'；'.join(item.get('risks') or ['暂无'])}",

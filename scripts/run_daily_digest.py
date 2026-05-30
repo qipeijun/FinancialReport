@@ -34,6 +34,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description='运行财经日报自动化摘要流程')
     parser.add_argument('--date', type=str, help='指定日期 YYYY-MM-DD，默认按 Asia/Shanghai 取今天')
     parser.add_argument('--content-field', choices=['summary', 'content', 'auto'], default='summary')
+    parser.add_argument('--markets', default='CN,US', help='逗号分隔的市场列表，默认 CN,US')
     parser.add_argument('--output', type=str, help='结构化结果输出路径')
     return parser.parse_args()
 
@@ -60,6 +61,15 @@ def run_command(name: str, cmd: List[str]) -> Dict[str, Any]:
         'stderr_tail': (proc.stderr or '')[-4000:],
         'failure': classify_failure_text(combined) if proc.returncode != 0 else None,
     }
+
+
+def parse_markets(value: str) -> List[str]:
+    markets = []
+    for item in (value or '').split(','):
+        market = item.strip().upper()
+        if market in {'CN', 'US'} and market not in markets:
+            markets.append(market)
+    return markets or ['CN', 'US']
 
 
 def read_text(path: Optional[Path]) -> str:
@@ -187,11 +197,12 @@ def main() -> int:
     args = parse_args()
     python_bin = choose_python()
     date_str = args.date or shanghai_today()
+    markets = parse_markets(args.markets)
     run_started_at = shanghai_now().timestamp()
 
     out_dir = PROJECT_ROOT / 'data' / 'acceptance' / date_str
     out_dir.mkdir(parents=True, exist_ok=True)
-    acceptance_output = out_dir / 'acceptance_report.json'
+    acceptance_summary_output = out_dir / 'acceptance_summary.json'
 
     key_check = run_command(
         'check_deepseek_key',
@@ -200,6 +211,7 @@ def main() -> int:
 
     result: Dict[str, Any] = {
         'date': date_str,
+        'markets': markets,
         'run_started_at': run_started_at,
         'python_bin': python_bin,
         'steps': {
@@ -222,49 +234,79 @@ def main() -> int:
     main_result = run_command('run_start_noninteractive', main_cmd)
     result['steps']['run_start_noninteractive'] = main_result
 
+    market_artifacts: Dict[str, Any] = {}
+    market_generation_results: Dict[str, Any] = {}
+    for market in markets:
+        freshness = inspect_mode_artifacts(
+            date_str,
+            'markdown-report',
+            run_started_at=run_started_at,
+            market=market,
+        )
+        if not freshness.complete:
+            output_json = out_dir / f'markdown-report-{market.lower()}-daily.json'
+            generation_cmd = [
+                python_bin,
+                str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek_verified.py'),
+                '--date', date_str,
+                '--mode', 'markdown-report',
+                '--content-field', args.content_field,
+                '--enable-stock-scoring',
+                '--stock-market', market,
+                '--output', str(output_json),
+            ]
+            generation_result = run_command(f'generate_markdown_{market.lower()}', generation_cmd)
+            market_generation_results[market] = generation_result
+            freshness = inspect_mode_artifacts(
+                date_str,
+                'markdown-report',
+                run_started_at=run_started_at,
+                market=market,
+            )
+        market_artifacts[market] = freshness.to_dict()
+
+    if market_generation_results:
+        result['steps']['market_generation'] = market_generation_results
+
     acceptance_cmd = [
         python_bin,
         str(PROJECT_ROOT / 'scripts' / 'run_acceptance.py'),
         '--date', date_str,
+        '--all-markets',
         '--skip-fetch',
         '--skip-live',
         '--run-started-at', str(run_started_at),
-        '--output', str(acceptance_output),
     ]
     acceptance_result = run_command('run_acceptance', acceptance_cmd)
     result['steps']['run_acceptance'] = acceptance_result
-    acceptance_report = load_json(acceptance_output) if acceptance_output.exists() else None
+    acceptance_report = load_json(acceptance_summary_output) if acceptance_summary_output.exists() else None
 
-    markdown_freshness = inspect_mode_artifacts(
-        date_str,
-        'markdown-report',
-        run_started_at=run_started_at,
-    )
     result['artifacts'] = {
-        'markdown-report': markdown_freshness.to_dict(),
+        'markets': market_artifacts,
+        'acceptance_summary_path': str(acceptance_summary_output),
         'collected_data_exists': (archive_dirs_for_date(date_str)['base'] / 'collected_data.json').exists(),
     }
 
     acceptance_passed = bool(acceptance_result['passed'] and acceptance_report and acceptance_report.get('passed'))
     success = bool(
-        main_result['passed']
-        and markdown_freshness.complete
-        and acceptance_output.exists()
+        acceptance_summary_output.exists()
+        and all((market_artifacts.get(market) or {}).get('complete') for market in markets)
         and acceptance_passed
     )
     result['passed'] = success
-    if success and (markdown_freshness.metadata_payload or {}).get('live_data_degraded'):
+    if success and any((market_artifacts.get(market) or {}).get('live_data_degraded') for market in markets):
         result['live_data_degraded'] = True
     if not success:
         result['failure_type'] = (main_result.get('failure') or {}).get('failure_type') or 'logic_failed'
-        if markdown_freshness.stale_artifacts:
+        if any((market_artifacts.get(market) or {}).get('stale_artifacts') for market in markets):
             result['stale_artifacts'] = True
 
+    primary_market = markets[0]
     result['summary'] = build_digest_summary(
         date_str=date_str,
         main_result=main_result,
         acceptance_report=acceptance_report,
-        artifact_info={'markdown-report': markdown_freshness.to_dict()},
+        artifact_info={'markdown-report': market_artifacts.get(primary_market) or {}},
     )
 
     if args.output:

@@ -165,6 +165,98 @@ def _has_verification_boundary_overclaim(report_text: str, realtime_claims: Opti
     return realtime_total + news_total <= 4
 
 
+def _coverage_boundary_issues(report_text: str, coverage_matrix: Optional[Dict[str, Any]]) -> List[str]:
+    if not coverage_matrix:
+        return []
+    gaps = coverage_matrix.get('coverage_gaps') or []
+    if not gaps:
+        return []
+    report_text = _strip_generated_audit_section(report_text)
+
+    boundary_phrases = (
+        '覆盖不足',
+        '证据缺口',
+        '仅作观察',
+        '观察项',
+        '样本不足',
+        '来源不足',
+        '有限覆盖',
+        '降级表达',
+        '不能形成完整市场结论',
+        '不构成完整市场判断',
+        '待验证',
+    )
+    overclaim_phrases = (
+        '完整市场结论',
+        '完整市场判断',
+        '全面判断',
+        '全面覆盖',
+        '全市场判断',
+        '市场全景',
+        '整体市场结论',
+        '确定性结论',
+        '已覆盖主要维度',
+        '覆盖所有关键维度',
+        '充分覆盖',
+    )
+
+    issues: List[str] = []
+    gap_text = ', '.join(str(item) for item in gaps)
+    if not any(phrase in report_text for phrase in boundary_phrases):
+        issues.append(f"❌ 覆盖矩阵存在缺口({gap_text})，正文缺少覆盖不足/观察边界说明")
+    overclaim_text = report_text
+    for boundary in ('不构成完整市场判断', '不能形成完整市场结论'):
+        overclaim_text = overclaim_text.replace(boundary, '')
+    matched_overclaims = [phrase for phrase in overclaim_phrases if phrase in overclaim_text]
+    if matched_overclaims:
+        issues.append(f"❌ 覆盖不足却写成完整市场判断: {', '.join(matched_overclaims)}")
+    return issues
+
+
+def _evidence_diversity_issues(evidence_diversity: Optional[Dict[str, Any]]) -> List[str]:
+    if not evidence_diversity:
+        return []
+    flags = evidence_diversity.get('concentration_flags') or []
+    if not flags:
+        return []
+
+    flag_labels = {
+        'insufficient_source_diversity': '独立来源数量不足',
+        'source_concentration': '单一来源占比过高',
+        'topic_concentration': '单一主题占比过高',
+        'entity_concentration': '单一公司/标的占比过高',
+        'insufficient_mainstream_sources': '主流/官方来源不足',
+        'aggregator_concentration': '聚合来源占比过高',
+        'no_original_sources': '缺少原始来源',
+    }
+    labels = [flag_labels.get(flag, str(flag)) for flag in flags]
+    return [
+        "❌ 证据集中度过高，可能导致信号跑偏: "
+        + ", ".join(labels)
+    ]
+
+
+def _counter_evidence_issues(report_text: str, counter_evidence_ledger: Optional[Dict[str, Any]]) -> List[str]:
+    if not counter_evidence_ledger:
+        return []
+    summary = counter_evidence_ledger.get('summary') or {}
+    counter_count = int(summary.get('high_confidence_topics_with_counter_evidence') or 0)
+    if counter_count <= 0:
+        return []
+    report_text = _strip_generated_audit_section(report_text)
+    boundary_phrases = (
+        '反证', '相反证据', '冲突证据', '冲突信号', '风险边界',
+        '负面证据', '不一致', '待验证', '需验证', '仅作观察',
+    )
+    if any(phrase in report_text for phrase in boundary_phrases):
+        return []
+    return [f"❌ {counter_count} 个高置信主题存在反证/风险证据，但正文未说明反证边界"]
+
+
+def _strip_generated_audit_section(report_text: str) -> str:
+    return re.split(r'\n\s*## 证据审计摘要\b', report_text or '', maxsplit=1)[0]
+
+
 def _cross_verification_overclaim_check(
     report_text: str,
     cross_verification: Dict[str, Any],
@@ -316,6 +408,9 @@ def check_report_quality_v2(
     judgment_candidates: Optional[List[Dict[str, Any]]] = None,
     data_quality_stats: Optional[Dict[str, Any]] = None,
     cross_verification: Optional[Dict[str, Any]] = None,
+    coverage_matrix: Optional[Dict[str, Any]] = None,
+    evidence_diversity: Optional[Dict[str, Any]] = None,
+    counter_evidence_ledger: Optional[Dict[str, Any]] = None,
 ) -> Dict:
     """
     增强版质量检查 (集成事实核查)
@@ -353,6 +448,9 @@ def check_report_quality_v2(
     watchlist_promoted_in_narrative_count = 0
     verification_boundary_overclaim_count = 0
     cross_verification_overclaim_count = 0
+    coverage_boundary_overclaim_count = 0
+    evidence_diversity_issue_count = 0
+    counter_evidence_issue_count = 0
     time_source = None
     source_annotation_missing = False
 
@@ -457,6 +555,9 @@ def check_report_quality_v2(
     # 检查引用来源
     citations = re.findall(r'【新闻\d+】', report_text)
     citation_count = len(citations)
+    placeholder_citation_count = len(re.findall(r'【新闻X】', report_text))
+    if placeholder_citation_count:
+        issues.append(f"❌ 存在未回溯的新闻占位引用: 【新闻X】 {placeholder_citation_count}处")
     judgment_cards_count = len(re.findall(r'^###\s+\d+\.', report_text, flags=re.MULTILINE))
 
     # 计算可靠性得分
@@ -577,6 +678,24 @@ def check_report_quality_v2(
             narrative_consistency_passed = False
             issues.extend(cv_issues)
 
+    coverage_issues = _coverage_boundary_issues(report_text, coverage_matrix)
+    if coverage_issues:
+        coverage_boundary_overclaim_count = len(coverage_issues)
+        narrative_consistency_passed = False
+        issues.extend(coverage_issues)
+
+    diversity_issues = _evidence_diversity_issues(evidence_diversity)
+    if diversity_issues:
+        evidence_diversity_issue_count = len(diversity_issues)
+        narrative_consistency_passed = False
+        issues.extend(diversity_issues)
+
+    counter_issues = _counter_evidence_issues(report_text, counter_evidence_ledger)
+    if counter_issues:
+        counter_evidence_issue_count = len(counter_issues)
+        narrative_consistency_passed = False
+        issues.extend(counter_issues)
+
     # ============================================================
     # 6. 确保得分在合理范围
     # ============================================================
@@ -618,6 +737,7 @@ def check_report_quality_v2(
             'source_annotation_missing': source_annotation_missing,
             'claim_coverage_score': claim_coverage_score,
             'citation_count': citation_count,
+            'placeholder_citation_count': placeholder_citation_count,
             'verified_claims': sum(1 for c in realtime_claims if c.verified) if realtime_claims is not None else 0,
             'total_claims': len(realtime_claims) if realtime_claims is not None else 0,
             'realtime_verified_claims': sum(1 for c in realtime_claims if c.verified) if realtime_claims is not None else 0,
@@ -628,6 +748,19 @@ def check_report_quality_v2(
             'watchlist_promoted_in_narrative_count': watchlist_promoted_in_narrative_count,
             'verification_boundary_overclaim_count': verification_boundary_overclaim_count,
             'cross_verification_overclaim_count': cross_verification_overclaim_count,
+            'coverage_gap_count': len((coverage_matrix or {}).get('coverage_gaps') or []),
+            'coverage_boundary_overclaim_count': coverage_boundary_overclaim_count,
+            'evidence_diversity_issue_count': evidence_diversity_issue_count,
+            'evidence_source_count': (evidence_diversity or {}).get('source_count'),
+            'evidence_topic_count': (evidence_diversity or {}).get('topic_count'),
+            'evidence_max_source_share': (evidence_diversity or {}).get('max_source_share'),
+            'evidence_max_topic_share': (evidence_diversity or {}).get('max_topic_share'),
+            'evidence_max_aggregator_share': (evidence_diversity or {}).get('max_aggregator_share'),
+            'evidence_original_source_share': (evidence_diversity or {}).get('original_source_share'),
+            'counter_evidence_issue_count': counter_evidence_issue_count,
+            'counter_evidence_high_confidence_topics': (
+                ((counter_evidence_ledger or {}).get('summary') or {}).get('high_confidence_topics_with_counter_evidence')
+            ),
         },
         'timestamp': datetime.now().isoformat()
     }
@@ -709,7 +842,7 @@ def print_quality_report_v2(quality_result: Dict, verbose: bool = True):
         print("\n改进建议:")
         print("  1. 确保所有断言基于实时数据")
         print("  2. 删除所有编造的目标涨幅/价格")
-        print("  3. 增加引用来源标注(【新闻X】)")
+        print("  3. 增加真实 article_id 引用标注，例如【新闻4885】")
         print("  4. 在报告中标注数据来源和更新时间")
 
     print("="*70 + "\n")

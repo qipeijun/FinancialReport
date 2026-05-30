@@ -135,10 +135,12 @@ def build_corpus(articles: List[Dict[str, Any]], max_chars: int, per_chunk_chars
                 body = content or summary or ''
 
         title = a.get('title') or ''
+        article_id = a.get('id') or ''
         source = a.get('source') or ''
         published = a.get('published') or ''
         link = a.get('link') or ''
-        header = f"【{title}】\n来源: {source} | 时间: {published}\n链接: {link}\n"
+        citation = f"【新闻{article_id}】" if article_id != '' else "【新闻ID缺失】"
+        header = f"{citation}【{title}】\n来源: {source} | 时间: {published}\n链接: {link}\n"
         text = header + body
         total_len += len(text)
         chunks = chunk_text(text, per_chunk_chars)
@@ -392,6 +394,45 @@ def save_enhanced_context(
     with open(payload_file, 'w', encoding='utf-8') as f:
         json.dump(archive_payload, f, ensure_ascii=False, indent=2)
     print_info(f'增强特征归档已保存到: {payload_file}')
+    return payload_file
+
+
+def save_evidence_audit(
+    date_str: str,
+    payload: Dict[str, Any],
+    model_suffix: str = '',
+    artifact_suffix: str = '',
+) -> Path:
+    """保存证据审计归档，集中承载报告可信度相关结构化证据。"""
+    year_month = date_str[:7]
+    metadata_dir = PROJECT_ROOT / 'docs' / 'archive' / year_month / date_str / 'metadata'
+    metadata_dir.mkdir(parents=True, exist_ok=True)
+
+    now = datetime.now(pytz.timezone('Asia/Shanghai'))
+    hour = now.hour
+    if 6 <= hour < 12:
+        session = 'morning'
+    elif 12 <= hour < 18:
+        session = 'afternoon'
+    elif 18 <= hour < 24:
+        session = 'evening'
+    else:
+        session = 'overnight'
+
+    suffix_parts = [session, 'evidence-audit']
+    if artifact_suffix:
+        suffix_parts.append(artifact_suffix)
+    if model_suffix:
+        suffix_parts.append(model_suffix)
+    payload_file = metadata_dir / f"{'_'.join(suffix_parts)}.json"
+
+    archive_payload = dict(payload)
+    archive_payload.setdefault('session', session)
+    archive_payload.setdefault('session_time', now.strftime('%Y-%m-%d %H:%M:%S'))
+
+    with open(payload_file, 'w', encoding='utf-8') as f:
+        json.dump(archive_payload, f, ensure_ascii=False, indent=2)
+    print_info(f'证据审计归档已保存到: {payload_file}')
     return payload_file
 
 

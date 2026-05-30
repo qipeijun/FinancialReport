@@ -4,13 +4,43 @@
 DeepSeek 模型提供商
 """
 
-from typing import Tuple, Dict, Any
+import os
+from typing import Mapping, Tuple, Dict, Any
+from urllib.parse import urlparse
+
 from .base_provider import BaseProvider
 
 try:
+    import httpx
     from openai import OpenAI
 except ImportError:
+    httpx = None
     OpenAI = None
+
+
+PROXY_ENV_KEYS = ('HTTPS_PROXY', 'https_proxy', 'HTTP_PROXY', 'http_proxy', 'ALL_PROXY', 'all_proxy')
+
+
+def get_proxy_url(env: Mapping[str, str] | None = None) -> str | None:
+    """读取可用于 DeepSeek 请求的代理地址。"""
+    env = env or os.environ
+    for key in PROXY_ENV_KEYS:
+        value = (env.get(key) or '').strip()
+        if value:
+            parsed = urlparse(value)
+            if parsed.scheme and parsed.netloc:
+                return value
+            raise ValueError(f'{key} 配置不是有效的代理 URL: {value}')
+    return None
+
+
+def build_http_client():
+    """构造 OpenAI SDK 专用 HTTP 客户端，避免解析异常的 NO_PROXY。"""
+    if httpx is None:
+        raise ImportError('未安装 httpx，请运行: pip install httpx')
+
+    proxy_url = get_proxy_url()
+    return httpx.Client(proxy=proxy_url, trust_env=False)
 
 
 class DeepSeekProvider(BaseProvider):
@@ -25,7 +55,8 @@ class DeepSeekProvider(BaseProvider):
         self.base_url = kwargs.get('base_url', 'https://api.deepseek.com')
         self.default_model = kwargs.get('model', 'deepseek-v4-pro')
 
-        self.client = OpenAI(api_key=self.api_key, base_url=self.base_url)
+        self.http_client = build_http_client()
+        self.client = OpenAI(api_key=self.api_key, base_url=self.base_url, http_client=self.http_client)
 
     def get_available_models(self) -> list:
         """获取可用的DeepSeek模型列表"""

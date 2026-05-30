@@ -128,7 +128,7 @@ def test_run_script_reports_success(monkeypatch):
     assert ('event', '执行标准 AI 分析已完成') in events
 
 
-def test_report_generator_emits_stage_sequence(monkeypatch):
+def test_report_generator_emits_stage_sequence(monkeypatch, tmp_path):
     class FakeProvider:
         def get_provider_name(self):
             return 'DeepSeek'
@@ -164,6 +164,8 @@ def test_report_generator_emits_stage_sequence(monkeypatch):
     monkeypatch.setattr('scripts.utils.report_generator.build_source_stats_block', lambda *args, **kwargs: 'stats')
     monkeypatch.setattr('scripts.utils.report_generator.save_markdown', lambda *args, **kwargs: Path('/tmp/report.md'))
     monkeypatch.setattr('scripts.utils.report_generator.save_metadata', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.utils.report_generator.save_enhanced_context', lambda *args, **kwargs: tmp_path / 'enhanced.json')
+    monkeypatch.setattr('scripts.utils.report_generator.save_evidence_audit', lambda *args, **kwargs: tmp_path / 'evidence-audit.json')
     monkeypatch.setattr(generator, 'load_prompt', lambda _version, market='CN': 'prompt')
     monkeypatch.setattr(generator, '_run_fact_check', lambda *args, **kwargs: ([], ''))
 
@@ -192,6 +194,7 @@ def test_report_generator_save_result_persists_enhanced_context(monkeypatch, tmp
     monkeypatch.setattr('scripts.utils.report_generator.save_markdown', lambda *args, **kwargs: tmp_path / 'report.md')
     monkeypatch.setattr('scripts.utils.report_generator.save_metadata', lambda *args, **kwargs: captured.setdefault('metadata_saved', True))
     monkeypatch.setattr('scripts.utils.report_generator.save_enhanced_context', lambda *args, **kwargs: tmp_path / 'enhanced.json')
+    monkeypatch.setattr('scripts.utils.report_generator.save_evidence_audit', lambda *args, **kwargs: tmp_path / 'evidence-audit.json')
     monkeypatch.setattr('scripts.utils.report_generator.update_stage', lambda detail: None)
     monkeypatch.setattr('scripts.utils.report_generator.print_progress', lambda detail: None)
     monkeypatch.setattr('scripts.utils.report_generator.print_success', lambda detail: None)
@@ -207,12 +210,92 @@ def test_report_generator_save_result_persists_enhanced_context(monkeypatch, tmp
         output_json=None,
         json_payload={'summary_markdown': '# report'},
         enhanced_context_payload={'selected_articles': [], 'judgment_candidates': []},
+        evidence_audit_payload={'source_references': {}, 'claim_ledger': {}, 'coverage_matrix': {}},
         artifact_suffix='markdown-report',
     )
 
     assert saved == tmp_path / 'report.md'
     assert meta['enhanced_context_path'] == str(tmp_path / 'enhanced.json')
+    assert meta['evidence_audit_path'] == str(tmp_path / 'evidence-audit.json')
     assert captured['metadata_saved'] is True
+
+
+def test_report_generator_evidence_diversity_flags_concentrated_sources():
+    selected = [
+        {'source': 'ZeroHedge', 'primary_topic': '政策与监管', 'source_tier': 'aggregator', 'is_original_source': 0},
+        {'source': 'ZeroHedge', 'primary_topic': '政策与监管', 'source_tier': 'aggregator', 'is_original_source': 0},
+        {'source': 'ZeroHedge', 'primary_topic': '政策与监管', 'source_tier': 'aggregator', 'is_original_source': 0},
+        {'source': 'ZeroHedge', 'primary_topic': '政策与监管', 'source_tier': 'aggregator', 'is_original_source': 0},
+        {'source': 'ZeroHedge', 'primary_topic': '政策与监管', 'source_tier': 'aggregator', 'is_original_source': 0},
+        {'source': 'ZeroHedge', 'primary_topic': '政策与监管', 'source_tier': 'aggregator', 'is_original_source': 0},
+        {'source': 'Reuters', 'primary_topic': '政策与监管', 'source_tier': 'mainstream', 'is_original_source': 1},
+        {'source': 'Bloomberg', 'primary_topic': '政策与监管', 'source_tier': 'mainstream', 'is_original_source': 1},
+    ]
+
+    diversity = ReportGenerator._build_evidence_diversity(selected, market='US')
+
+    assert diversity['required'] is True
+    assert diversity['source_count'] == 3
+    assert diversity['topic_count'] == 1
+    assert 'source_concentration' in diversity['concentration_flags']
+    assert 'topic_concentration' in diversity['concentration_flags']
+    assert 'aggregator_concentration' in diversity['concentration_flags']
+    assert diversity['max_aggregator_share'] == 0.75
+    assert diversity['original_source_share'] == 0.25
+    assert diversity['passed'] is False
+
+
+def test_report_generator_counter_evidence_ledger_records_topic_risks():
+    selected = [
+        {
+            'id': 1,
+            'title': 'AI 公司订单超预期',
+            'summary': 'AI 算力订单大幅增长',
+            'source': 'Reuters',
+            'source_tier': 'mainstream',
+        },
+        {
+            'id': 2,
+            'title': 'AI 公司遭监管调查',
+            'summary': '监管调查带来风险',
+            'source': 'Bloomberg',
+            'source_tier': 'mainstream',
+        },
+    ]
+    candidates = [
+        {
+            'topic': '科技与产业主题',
+            'high_confidence_topic': True,
+            'articles': [{'id': 1}, {'id': 2}],
+        }
+    ]
+
+    ledger = ReportGenerator._build_counter_evidence_ledger(selected, candidates, market='US')
+    row = ledger['topics'][0]
+
+    assert ledger['required'] is True
+    assert row['supporting_article_ids'] == [1]
+    assert row['counter_article_ids'] == [2]
+    assert row['status'] == 'mixed'
+    assert ledger['summary']['high_confidence_topics_with_counter_evidence'] == 1
+    assert ledger['passed'] is False
+
+
+def test_report_generator_evidence_audit_markdown_exposes_core_gates():
+    text = ReportGenerator._build_evidence_audit_markdown(
+        source_references={'articles': [{'article_id': 1}, {'article_id': 2}]},
+        coverage_matrix={'coverage_gaps': ['policy_regulation']},
+        evidence_diversity={'concentration_flags': ['source_concentration']},
+        counter_evidence_ledger={'summary': {'high_confidence_topics_with_counter_evidence': 1}},
+        quality_result={'passed': False, 'score': 72},
+    )
+
+    assert '## 证据审计摘要' in text
+    assert '2 篇可回溯文章' in text
+    assert 'policy_regulation' in text
+    assert 'source_concentration' in text
+    assert '高置信主题反证数: 1' in text
+    assert '质量门禁: 未通过 / 分数 72' in text
 
 
 def test_report_generator_judgment_cards_enhanced_context_contains_candidate_stocks(monkeypatch):
@@ -318,7 +401,17 @@ def test_report_generator_markdown_report_uses_structured_truth_sources(monkeypa
     monkeypatch.setattr('scripts.utils.report_generator.RecommendationScorer', lambda **kwargs: type('Scorer', (), {
         'score_candidates': lambda self, _candidates: {
             'recommendations': [
-                {'symbol': 'sh603019', 'name': '中科曙光', 'grade': '关注', 'total_score': 72, 'source_type': 'direct_news', 'grade_caps': []}
+                {
+                    'symbol': 'sh603019',
+                    'name': '中科曙光',
+                    'grade': '关注',
+                    'total_score': 72,
+                    'source_type': 'theme_mapping',
+                    'actionability_passed': True,
+                    'actionability_reasons': [],
+                    'evidence_strength': {'direct_mentions': 0},
+                    'grade_caps': [],
+                }
             ],
             'score_distribution': {'strong_focus': 0, 'focus': 1, 'watch': 0, 'avoid': 0},
             'decision_views': {
@@ -329,6 +422,10 @@ def test_report_generator_markdown_report_uses_structured_truth_sources(monkeypa
             'scoring_config': {'market': 'CN', 'style': 'balanced', 'lookback_days': 60},
         }
     })())
+    monkeypatch.setattr('scripts.utils.report_generator.run_cross_verification', lambda **kwargs: {
+        'stock_checks': [{'symbol': 'sh603019', 'status': 'confirmed', 'independent_source_count': 2}],
+        'summary': {'stocks_confirmed': 1, 'stocks_weak': 0, 'stocks_conflicted': 0},
+    })
     monkeypatch.setattr('scripts.utils.report_generator.render_stock_recommendation_markdown', lambda *args, **kwargs: '## 股票推荐评分\n')
     monkeypatch.setattr(generator, '_run_fact_check', lambda *args, **kwargs: ([], ''))
     monkeypatch.setattr('scripts.utils.report_generator.check_report_quality_v2', lambda *args, **kwargs: {'score': 85, 'passed': True, 'issues': [], 'warnings': []})
@@ -361,6 +458,11 @@ def test_report_generator_markdown_report_uses_structured_truth_sources(monkeypa
     assert result['success'] is True
     assert 'judgment_candidates' in captured['payload']
     assert 'data_quality_stats' in captured['payload']
+    rec = captured['payload']['stock_recommendations'][0]
+    assert rec['evidence_strength']['cross_verification_status'] == 'weak'
+    assert rec['actionability_passed'] is False
+    assert 'cross_verification_not_confirmed' in rec['actionability_reasons']
+    assert captured['payload']['decision_views']['actionable_candidates'] == []
 
 
 def test_heartbeat_with_details_emits_single_visible_line_per_tick(monkeypatch):

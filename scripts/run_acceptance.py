@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sqlite3
 import subprocess
 import sys
@@ -72,6 +73,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--output', type=str, help='验收报告输出路径（JSON）')
     parser.add_argument('--run-started-at', type=float, help='本次自动化启动时间戳（epoch秒）')
     parser.add_argument('--stock-market', type=str, default='CN', choices=['CN', 'US'], help='股票市场: CN=A股, US=美股')
+    parser.add_argument('--all-markets', action='store_true', help='依次验收 CN/US 并生成双市场总账')
     return parser.parse_args()
 
 
@@ -106,6 +108,98 @@ def acceptance_output_dir(date_str: str) -> Path:
     out_dir = PROJECT_ROOT / 'data' / 'acceptance' / date_str
     out_dir.mkdir(parents=True, exist_ok=True)
     return out_dir
+
+
+def market_acceptance_report_path(date_str: str, market: str) -> Path:
+    return acceptance_output_dir(date_str) / f'acceptance_report-{market.lower()}.json'
+
+
+def acceptance_summary_path(date_str: str) -> Path:
+    return acceptance_output_dir(date_str) / 'acceptance_summary.json'
+
+
+def update_acceptance_summary(date_str: str, market: str, report_path: Path, report: Dict[str, Any]) -> Dict[str, Any]:
+    path = acceptance_summary_path(date_str)
+    if path.exists():
+        try:
+            summary = load_json(path)
+        except (OSError, json.JSONDecodeError):
+            summary = {}
+    else:
+        summary = {}
+
+    markets = summary.setdefault('markets', {})
+    mode_checks = ((report.get('artifacts') or {}).get('modes') or {})
+    markdown = mode_checks.get('markdown-report') or {}
+    freshness = ((report.get('artifacts') or {}).get('freshness') or {}).get('markdown-report') or {}
+    source_citations = markdown.get('source_citations') or {}
+    claim_ledger = markdown.get('claim_ledger') or {}
+    coverage_matrix = markdown.get('coverage_matrix') or {}
+    evidence_diversity = markdown.get('evidence_diversity') or {}
+    counter_evidence = markdown.get('counter_evidence') or {}
+    evidence_audit = markdown.get('evidence_audit') or {}
+
+    def required_passed(check: Dict[str, Any]) -> Optional[bool]:
+        if not check.get('required'):
+            return None
+        return bool(check.get('passed'))
+
+    def issues_from(label: str, check: Dict[str, Any], limit: int = 3) -> List[str]:
+        if not isinstance(check, dict):
+            return []
+        return [
+            f'{label}: {issue}'
+            for issue in (check.get('issues') or [])[:limit]
+        ]
+
+    failure_reasons: List[str] = []
+    if not freshness.get('fresh_artifacts'):
+        failure_reasons.append('freshness: 未找到同日新鲜 markdown-report 产物')
+    if (markdown.get('quality') or {}).get('passed') is False:
+        failure_reasons.append('quality: 质量门禁未通过')
+    if (markdown.get('stock_scoring') or {}).get('passed') is False:
+        failure_reasons.append('stock_scoring: 结构化推荐门禁未通过')
+    for label, check in (
+        ('quality', markdown.get('quality') or {}),
+        ('stock_scoring', markdown.get('stock_scoring') or {}),
+        ('source_citations', source_citations),
+        ('claim_ledger', claim_ledger),
+        ('coverage_matrix', coverage_matrix),
+        ('evidence_diversity', evidence_diversity),
+        ('counter_evidence', counter_evidence),
+        ('evidence_audit', evidence_audit),
+    ):
+        failure_reasons.extend(issues_from(label, check))
+    failure_reasons = failure_reasons[:12]
+
+    markets[market] = {
+        'acceptance_report_path': str(report_path),
+        'passed': bool(report.get('passed')),
+        'report_path': markdown.get('report_path') or freshness.get('report_path'),
+        'metadata_path': markdown.get('metadata_path') or freshness.get('metadata_path'),
+        'fresh_artifacts': freshness.get('fresh_artifacts'),
+        'quality_passed': (markdown.get('quality') or {}).get('passed'),
+        'stock_scoring_passed': (markdown.get('stock_scoring') or {}).get('passed'),
+        'cross_verification_required': ((markdown.get('metadata') or {}).get('cross_verification_required')),
+        'source_citations_required': bool(source_citations.get('required')),
+        'source_citations_passed': required_passed(source_citations),
+        'claim_ledger_required': bool(claim_ledger.get('required')),
+        'claim_ledger_passed': required_passed(claim_ledger),
+        'coverage_matrix_required': bool(coverage_matrix.get('required')),
+        'coverage_matrix_passed': required_passed(coverage_matrix),
+        'evidence_diversity_required': bool(evidence_diversity.get('required')),
+        'evidence_diversity_passed': required_passed(evidence_diversity),
+        'counter_evidence_required': bool(counter_evidence.get('required')),
+        'counter_evidence_passed': required_passed(counter_evidence),
+        'evidence_audit_required': bool(evidence_audit.get('required')),
+        'evidence_audit_passed': required_passed(evidence_audit),
+        'failure_reasons': failure_reasons,
+    }
+    summary['date'] = date_str
+    summary['generated_at'] = datetime.now(pytz.timezone('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M:%S')
+    summary['passed'] = all(item.get('passed') for item in markets.values()) if markets else False
+    path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding='utf-8')
+    return summary
 
 
 def find_mode_artifacts(date_str: str, mode: str, model_suffix: str = 'deepseek', market: str = 'CN') -> Dict[str, List[Path]]:
@@ -229,6 +323,21 @@ def normalize_export_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
             'market': payload.get('market'),
             'cross_verification': payload.get('cross_verification') or {},
             'cross_verification_required': payload.get('cross_verification_required') is True,
+            'source_references': payload.get('source_references') or {},
+            'source_references_required': payload.get('source_references_required') is True,
+            'claim_ledger': payload.get('claim_ledger') or {},
+            'claim_ledger_required': payload.get('claim_ledger_required') is True,
+            'coverage_matrix': payload.get('coverage_matrix') or {},
+            'coverage_matrix_required': payload.get('coverage_matrix_required') is True,
+            'evidence_diversity': payload.get('evidence_diversity') or {},
+            'evidence_diversity_required': payload.get('evidence_diversity_required') is True,
+            'counter_evidence_ledger': payload.get('counter_evidence_ledger') or {},
+            'counter_evidence_required': payload.get('counter_evidence_required') is True,
+            'evidence_audit_path': payload.get('evidence_audit_path'),
+            'evidence_audit_required': payload.get('evidence_audit_required') is True,
+            'candidate_evidence_audit': payload.get('candidate_evidence_audit') or {},
+            'scoring_calibration': payload.get('scoring_calibration') or {},
+            'rejected_false_positive_mentions': payload.get('rejected_false_positive_mentions') or [],
         },
         'stock_recommendations': payload.get('stock_recommendations') or [],
         'score_distribution': payload.get('score_distribution') or {},
@@ -238,6 +347,311 @@ def normalize_export_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
         'data_quality_stats': payload.get('data_quality_stats') or {},
         'cross_verification': payload.get('cross_verification') or {},
         'cross_verification_required': payload.get('cross_verification_required') is True,
+        'source_references': payload.get('source_references') or {},
+        'source_references_required': payload.get('source_references_required') is True,
+        'claim_ledger': payload.get('claim_ledger') or {},
+        'claim_ledger_required': payload.get('claim_ledger_required') is True,
+        'coverage_matrix': payload.get('coverage_matrix') or {},
+        'coverage_matrix_required': payload.get('coverage_matrix_required') is True,
+        'evidence_diversity': payload.get('evidence_diversity') or {},
+        'evidence_diversity_required': payload.get('evidence_diversity_required') is True,
+        'counter_evidence_ledger': payload.get('counter_evidence_ledger') or {},
+        'counter_evidence_required': payload.get('counter_evidence_required') is True,
+        'evidence_audit_path': payload.get('evidence_audit_path'),
+        'evidence_audit_required': payload.get('evidence_audit_required') is True,
+        'candidate_evidence_audit': payload.get('candidate_evidence_audit') or {},
+        'scoring_calibration': payload.get('scoring_calibration') or {},
+        'rejected_false_positive_mentions': payload.get('rejected_false_positive_mentions') or [],
+    }
+
+
+def validate_source_citations(report_text: str, metadata: Dict[str, Any]) -> Dict[str, Any]:
+    refs = metadata.get('source_references') or {}
+    required = metadata.get('source_references_required') is True or refs.get('required') is True
+    articles = refs.get('articles') if isinstance(refs, dict) else []
+    articles = articles if isinstance(articles, list) else []
+    known_ids = {str(item) for item in refs.get('article_ids') or []}
+    known_ids.update(str(item.get('article_id')) for item in articles if isinstance(item, dict) and item.get('article_id') is not None)
+    real_ids = re.findall(r'【新闻(\d+)】', report_text or '')
+    placeholder_count = len(re.findall(r'【新闻X】', report_text or ''))
+    unresolved_ids = sorted({item for item in real_ids if known_ids and item not in known_ids})
+    issues: List[str] = []
+    incomplete_refs: List[str] = []
+    for item in articles:
+        if not isinstance(item, dict):
+            incomplete_refs.append('非对象引用')
+            continue
+        missing = [
+            key for key in ('article_id', 'source', 'title', 'published')
+            if item.get(key) in (None, '')
+        ]
+        if missing:
+            incomplete_refs.append(f"{item.get('article_id', '?')}缺少{','.join(missing)}")
+    if required and placeholder_count:
+        issues.append(f'存在未回溯的新闻占位引用: 【新闻X】 {placeholder_count}处')
+    if required and not real_ids:
+        issues.append('报告正文缺少真实 article_id 新闻引用')
+    if required and unresolved_ids:
+        issues.append(f"存在未登记 source_references 的新闻引用: {', '.join(unresolved_ids[:10])}")
+    if required and not articles:
+        issues.append('metadata.source_references 缺少真实文章索引')
+    if required and incomplete_refs:
+        issues.append(f"metadata.source_references 存在不完整引用: {', '.join(incomplete_refs[:10])}")
+    return {
+        'required': required,
+        'real_citation_count': len(real_ids),
+        'placeholder_citation_count': placeholder_count,
+        'registered_article_count': len(articles),
+        'unresolved_ids': unresolved_ids,
+        'incomplete_refs': incomplete_refs,
+        'issues': issues,
+        'passed': not issues,
+    }
+
+
+def validate_claim_ledger(metadata: Dict[str, Any]) -> Dict[str, Any]:
+    ledger = metadata.get('claim_ledger') or {}
+    required = metadata.get('claim_ledger_required') is True or ledger.get('required') is True
+    claims = ledger.get('claims') if isinstance(ledger, dict) else None
+    issues: List[str] = []
+    if required and not isinstance(claims, list):
+        issues.append('metadata.claim_ledger.claims 必须是列表')
+    if isinstance(claims, list):
+        required_fields = {
+            'claim_id', 'market', 'claim_type', 'scope', 'content',
+            'verified', 'verification_status', 'source', 'realtime_source',
+            'timestamp', 'freshness_status', 'failure_reason', 'source_articles',
+        }
+        for item in claims:
+            if not isinstance(item, dict):
+                issues.append('claim_ledger 存在非对象条目')
+                continue
+            missing = sorted(required_fields - set(item.keys()))
+            if missing:
+                issues.append(f"{item.get('claim_id', '?')} 缺少字段: {', '.join(missing)}")
+            if 'source_articles' in item and not isinstance(item.get('source_articles'), list):
+                issues.append(f"{item.get('claim_id', '?')} source_articles 必须是列表")
+            if item.get('verification_status') not in {'verified', 'failed'}:
+                issues.append(f"{item.get('claim_id', '?')} verification_status 非法: {item.get('verification_status')}")
+            if item.get('freshness_status') not in {'timestamped', 'missing_timestamp', 'not_applicable'}:
+                issues.append(f"{item.get('claim_id', '?')} freshness_status 非法: {item.get('freshness_status')}")
+    return {
+        'required': required,
+        'count': len(claims) if isinstance(claims, list) else 0,
+        'summary': ledger.get('summary') if isinstance(ledger, dict) else {},
+        'issues': issues,
+        'passed': not issues,
+    }
+
+
+def validate_coverage_matrix(metadata: Dict[str, Any]) -> Dict[str, Any]:
+    matrix = metadata.get('coverage_matrix') or {}
+    required = metadata.get('coverage_matrix_required') is True or matrix.get('required') is True
+    categories = matrix.get('categories') if isinstance(matrix, dict) else None
+    issues: List[str] = []
+    expected = {
+        'macro_liquidity', 'policy_regulation', 'company_earnings',
+        'industry_theme', 'risk_event', 'realtime_market',
+    }
+    if required and not isinstance(categories, dict):
+        issues.append('metadata.coverage_matrix.categories 必须是对象')
+    if isinstance(categories, dict):
+        missing = sorted(expected - set(categories.keys()))
+        if missing:
+            issues.append(f"coverage_matrix 缺少类别: {', '.join(missing)}")
+        for key, item in categories.items():
+            if not isinstance(item, dict):
+                issues.append(f'coverage_matrix.{key} 不是对象')
+                continue
+            if item.get('status') not in {'sufficient', 'partial', 'missing'}:
+                issues.append(f"coverage_matrix.{key}.status 非法: {item.get('status')}")
+    return {
+        'required': required,
+        'coverage_gaps': matrix.get('coverage_gaps') if isinstance(matrix, dict) else [],
+        'issues': issues,
+        'passed': not issues,
+    }
+
+
+def validate_evidence_diversity(metadata: Dict[str, Any]) -> Dict[str, Any]:
+    diversity = metadata.get('evidence_diversity') or {}
+    required = metadata.get('evidence_diversity_required') is True or diversity.get('required') is True
+    issues: List[str] = []
+    if required and not isinstance(diversity, dict):
+        issues.append('metadata.evidence_diversity 必须是对象')
+        diversity = {}
+    if required:
+        required_fields = {
+            'market', 'total_articles', 'source_count', 'topic_count',
+            'max_source_share', 'max_topic_share',
+            'source_distribution', 'topic_distribution', 'source_tier_distribution',
+            'concentration_flags',
+            'passed',
+        }
+        missing = sorted(required_fields - set(diversity.keys()))
+        if missing:
+            issues.append(f"metadata.evidence_diversity 缺少字段: {', '.join(missing)}")
+    for key in ('source_distribution', 'topic_distribution', 'entity_distribution', 'source_tier_distribution'):
+        value = diversity.get(key)
+        if value is not None and not isinstance(value, list):
+            issues.append(f'metadata.evidence_diversity.{key} 必须是列表')
+    for key in ('max_source_share', 'max_topic_share', 'max_entity_share', 'max_aggregator_share', 'original_source_share'):
+        value = diversity.get(key)
+        if value is not None and not isinstance(value, (int, float)):
+            issues.append(f'metadata.evidence_diversity.{key} 必须是数字')
+        elif isinstance(value, (int, float)) and not 0 <= float(value) <= 1:
+            issues.append(f'metadata.evidence_diversity.{key} 超出0-1范围: {value}')
+    flags = diversity.get('concentration_flags') or []
+    if not isinstance(flags, list):
+        issues.append('metadata.evidence_diversity.concentration_flags 必须是列表')
+        flags = []
+    if required and flags and diversity.get('passed') is True:
+        issues.append('evidence_diversity 有集中度风险但 passed=true')
+    if required and not flags and diversity.get('passed') is False:
+        issues.append('evidence_diversity 无集中度风险但 passed=false')
+    return {
+        'required': required,
+        'source_count': diversity.get('source_count'),
+        'topic_count': diversity.get('topic_count'),
+        'max_source_share': diversity.get('max_source_share'),
+        'max_topic_share': diversity.get('max_topic_share'),
+        'concentration_flags': flags,
+        'issues': issues,
+        'passed': not issues,
+    }
+
+
+def validate_counter_evidence(metadata: Dict[str, Any]) -> Dict[str, Any]:
+    ledger = metadata.get('counter_evidence_ledger') or {}
+    required = metadata.get('counter_evidence_required') is True or ledger.get('required') is True
+    topics = ledger.get('topics') if isinstance(ledger, dict) else None
+    issues: List[str] = []
+    if required and not isinstance(topics, list):
+        issues.append('metadata.counter_evidence_ledger.topics 必须是列表')
+    if isinstance(topics, list):
+        required_fields = {
+            'topic', 'market', 'high_confidence_topic', 'evidence_article_ids',
+            'supporting_article_ids', 'counter_article_ids',
+            'counter_evidence_count', 'status',
+        }
+        for item in topics:
+            if not isinstance(item, dict):
+                issues.append('counter_evidence_ledger 存在非对象条目')
+                continue
+            missing = sorted(required_fields - set(item.keys()))
+            if missing:
+                issues.append(f"{item.get('topic', '?')} 缺少字段: {', '.join(missing)}")
+            for key in ('evidence_article_ids', 'supporting_article_ids', 'counter_article_ids'):
+                if key in item and not isinstance(item.get(key), list):
+                    issues.append(f"{item.get('topic', '?')} {key} 必须是列表")
+            if item.get('status') not in {'balanced', 'support_only', 'mixed', 'counter_only'}:
+                issues.append(f"{item.get('topic', '?')} status 非法: {item.get('status')}")
+            counter_count = item.get('counter_evidence_count')
+            if not isinstance(counter_count, int) or counter_count < 0:
+                issues.append(f"{item.get('topic', '?')} counter_evidence_count 非法: {counter_count}")
+            elif isinstance(item.get('counter_article_ids'), list) and counter_count != len(item.get('counter_article_ids')):
+                issues.append(f"{item.get('topic', '?')} counter_evidence_count 与 counter_article_ids 数量不一致")
+    summary = ledger.get('summary') if isinstance(ledger, dict) else {}
+    if required and not isinstance(summary, dict):
+        issues.append('metadata.counter_evidence_ledger.summary 必须是对象')
+        summary = {}
+    return {
+        'required': required,
+        'topic_count': summary.get('topic_count') if isinstance(summary, dict) else None,
+        'high_confidence_topics_with_counter_evidence': (
+            summary.get('high_confidence_topics_with_counter_evidence') if isinstance(summary, dict) else None
+        ),
+        'issues': issues,
+        'passed': not issues,
+    }
+
+
+def validate_evidence_audit(metadata: Dict[str, Any]) -> Dict[str, Any]:
+    required = metadata.get('evidence_audit_required') is True
+    audit_path = metadata.get('evidence_audit_path')
+    issues: List[str] = []
+    payload: Dict[str, Any] = {}
+    if required and not audit_path:
+        issues.append('metadata.evidence_audit_path 缺失')
+    if audit_path:
+        path = Path(audit_path)
+        if not path.exists():
+            issues.append(f'evidence_audit_path 不存在: {audit_path}')
+        else:
+            try:
+                payload = load_json(path)
+            except (OSError, json.JSONDecodeError) as exc:
+                issues.append(f'evidence_audit_path 无法读取: {exc}')
+    if payload:
+        required_sections = {
+            'source_references', 'claim_ledger', 'coverage_matrix', 'evidence_diversity',
+            'counter_evidence_ledger', 'decision_views', 'quality_check',
+        }
+        scoring_config = metadata.get('scoring_config') or {}
+        if (
+            metadata.get('candidate_evidence_audit')
+            or scoring_config.get('evidence_relevance_enabled') is True
+            or scoring_config.get('historical_calibration_enabled') is True
+        ):
+            required_sections.update({
+                'candidate_evidence_audit',
+                'scoring_calibration',
+                'rejected_false_positive_mentions',
+            })
+        missing = sorted(required_sections - set(payload.keys()))
+        if missing:
+            issues.append(f"evidence_audit 缺少字段: {', '.join(missing)}")
+        if payload.get('market') != metadata.get('market'):
+            issues.append(f"evidence_audit.market={payload.get('market')} != metadata.market={metadata.get('market')}")
+        if metadata.get('source_references_required') is True:
+            meta_ids = {str(item) for item in ((metadata.get('source_references') or {}).get('article_ids') or [])}
+            audit_ids = {str(item) for item in ((payload.get('source_references') or {}).get('article_ids') or [])}
+            if meta_ids != audit_ids:
+                issues.append('evidence_audit.source_references 与 metadata.source_references 不一致')
+        if metadata.get('claim_ledger_required') is True:
+            meta_summary = (metadata.get('claim_ledger') or {}).get('summary') or {}
+            audit_summary = (payload.get('claim_ledger') or {}).get('summary') or {}
+            if meta_summary != audit_summary:
+                issues.append('evidence_audit.claim_ledger.summary 与 metadata.claim_ledger.summary 不一致')
+        if metadata.get('coverage_matrix_required') is True:
+            meta_categories = (metadata.get('coverage_matrix') or {}).get('categories') or {}
+            audit_categories = (payload.get('coverage_matrix') or {}).get('categories') or {}
+            if meta_categories != audit_categories:
+                issues.append('evidence_audit.coverage_matrix.categories 与 metadata.coverage_matrix.categories 不一致')
+        if metadata.get('evidence_diversity_required') is True:
+            meta_diversity = metadata.get('evidence_diversity') or {}
+            audit_diversity = payload.get('evidence_diversity') or {}
+            for key in (
+                'source_count', 'topic_count', 'max_source_share', 'max_topic_share',
+                'max_aggregator_share', 'original_source_share', 'concentration_flags',
+            ):
+                if meta_diversity.get(key) != audit_diversity.get(key):
+                    issues.append(f'evidence_audit.evidence_diversity.{key} 与 metadata.evidence_diversity.{key} 不一致')
+        if metadata.get('counter_evidence_required') is True:
+            meta_summary = (metadata.get('counter_evidence_ledger') or {}).get('summary') or {}
+            audit_summary = (payload.get('counter_evidence_ledger') or {}).get('summary') or {}
+            if meta_summary != audit_summary:
+                issues.append('evidence_audit.counter_evidence_ledger.summary 与 metadata.counter_evidence_ledger.summary 不一致')
+        if metadata.get('stock_recommendations'):
+            meta_views = metadata.get('decision_views') or {}
+            audit_views = payload.get('decision_views') or {}
+            if meta_views != audit_views:
+                issues.append('evidence_audit.decision_views 与 metadata.decision_views 不一致')
+        if metadata.get('quality_check'):
+            meta_quality = metadata.get('quality_check') or {}
+            audit_quality = payload.get('quality_check') or {}
+            for key in ('passed', 'score'):
+                if meta_quality.get(key) != audit_quality.get(key):
+                    issues.append(f'evidence_audit.quality_check.{key} 与 metadata.quality_check.{key} 不一致')
+        for key in ('candidate_evidence_audit', 'scoring_calibration', 'rejected_false_positive_mentions'):
+            meta_value = metadata.get(key)
+            if meta_value and payload.get(key) != meta_value:
+                issues.append(f'evidence_audit.{key} 与 metadata.{key} 不一致')
+    return {
+        'required': required,
+        'path': audit_path,
+        'issues': issues,
+        'passed': not issues,
     }
 
 
@@ -270,6 +684,7 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
     actionable_without_independent_confirmation_count = 0
     allowed_grade_caps = {
         'insufficient_evidence',
+        'insufficient_independent_confirmation',
         'no_direct_stock_evidence',
         'theme_mapping_watch_only',
         'data_incomplete',
@@ -278,10 +693,28 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
         'risk_flag_present',
         'score_gate_not_met',
     }
+    allowed_actionability_reasons = {
+        'no_fresh_evidence',
+        'insufficient_independent_confirmation',
+        'theme_only_not_actionable',
+        'stale_or_crowded',
+        'grade_not_actionable',
+        'cross_verification_conflicted',
+        'cross_verification_not_confirmed',
+    }
     output_json_schema_passed = all(
         key in normalized for key in ('metadata', 'stock_recommendations', 'score_distribution', 'scoring_config', 'decision_views')
     )
     scoring_config = metadata.get('scoring_config') or normalized.get('scoring_config') or {}
+    cross_required = metadata.get('cross_verification_required') is True
+    evidence_relevance_required = scoring_config.get('evidence_relevance_enabled') is True
+    historical_calibration_required = scoring_config.get('historical_calibration_enabled') is True
+    allowed_evidence_relevance_statuses = {
+        'direct_material_news',
+        'incidental_mention',
+        'theme_proxy',
+        'irrelevant_match',
+    }
     expected_decision_view_keys = {'actionable_candidates', 'conditional_watchlist', 'stale_or_rejected'}
     recommendation_by_symbol = {
         item.get('symbol'): item for item in recommendations if item.get('symbol')
@@ -339,6 +772,29 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
             if field not in item:
                 missing_forward_fields_count += 1
                 warnings.append(f"{item.get('symbol')} 缺少 {field}")
+        if evidence_relevance_required:
+            relevance_status = item.get('evidence_relevance_status')
+            relevance_reasons = item.get('evidence_relevance_reasons')
+            if relevance_status not in allowed_evidence_relevance_statuses:
+                issues.append(f"{item.get('symbol')} evidence_relevance_status 非法或缺失: {relevance_status}")
+            if relevance_reasons is None or not isinstance(relevance_reasons, list):
+                issues.append(f"{item.get('symbol')} evidence_relevance_reasons 必须是列表")
+            if item.get('source_type') == 'direct_news' and relevance_status != 'direct_material_news':
+                issues.append(f"{item.get('symbol')} direct_news 缺少实质个股证据，不得进入评分池")
+            if item.get('source_type') == 'theme_mapping' and relevance_status != 'theme_proxy':
+                issues.append(f"{item.get('symbol')} theme_mapping 必须标记为 theme_proxy")
+        if historical_calibration_required:
+            calibration_status = item.get('historical_calibration_status')
+            forward_stats = item.get('historical_forward_stats')
+            if calibration_status not in {'样本不足', '未校准', '初步有效', '反向失效'}:
+                issues.append(f"{item.get('symbol')} historical_calibration_status 非法或缺失: {calibration_status}")
+            if not isinstance(forward_stats, dict):
+                issues.append(f"{item.get('symbol')} historical_forward_stats 必须是对象")
+            if item.get('grade') in {'关注', '强关注'} and calibration_status == '反向失效':
+                issues.append(f"{item.get('symbol')} 历史校准反向失效，不得保持高等级")
+        reasons = item.get('actionability_reasons') or []
+        if any(reason not in allowed_actionability_reasons for reason in reasons):
+            issues.append(f"{item.get('symbol')} 存在非法 actionability_reasons 枚举")
 
     if recommendations and all(
         item.get('source_type') == 'theme_mapping'
@@ -372,6 +828,8 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
                         actionable_with_fresh_evidence_count += 1
                     if int((full_item.get('evidence_strength') or {}).get('independent_evidence_count') or 0) < 1:
                         actionable_without_independent_confirmation_count += 1
+                    if int((full_item.get('evidence_strength') or {}).get('direct_mentions') or 0) < 1:
+                        decision_view_issues.append(f'{symbol} direct_mentions<1，不得进入 actionable_candidates')
                     if not full_item.get('actionability_passed'):
                         decision_view_issues.append(f'{symbol} 未通过 actionability 门槛却进入 actionable_candidates')
                     if not full_item.get('fresh_evidence_flag'):
@@ -381,6 +839,13 @@ def validate_stock_recommendations_payload(payload: Dict[str, Any]) -> Dict[str,
                         and int((full_item.get('evidence_strength') or {}).get('direct_mentions') or 0) < 1
                     ):
                         decision_view_issues.append(f'{symbol} theme_mapping 且无 direct evidence，不得进入 actionable_candidates')
+                    if evidence_relevance_required and full_item.get('evidence_relevance_status') != 'direct_material_news':
+                        decision_view_issues.append(f'{symbol} 未通过实质证据相关性，不得进入 actionable_candidates')
+                    if historical_calibration_required and full_item.get('historical_calibration_status') in {'未校准', '反向失效'}:
+                        decision_view_issues.append(f'{symbol} 历史方向校准不足，不得进入 actionable_candidates')
+                    cv_status = (full_item.get('evidence_strength') or {}).get('cross_verification_status')
+                    if (cross_required or cv_status is not None) and cv_status != CROSS_STATUS_CONFIRMED:
+                        decision_view_issues.append(f'{symbol} cross_verification_status 未 confirmed，不得进入 actionable_candidates')
                 elif key == 'conditional_watchlist':
                     if full_item.get('stale_opportunity_flag') or full_item.get('crowding_flag') or full_item.get('grade') == '回避':
                         decision_view_issues.append(f'{symbol} 满足 stale/rejected 条件，不得进入 conditional_watchlist')
@@ -540,6 +1005,9 @@ def analyze_report_quality(
         judgment_candidates=metadata.get('judgment_candidates') or export_payload.get('judgment_candidates') or [],
         data_quality_stats=metadata.get('data_quality_stats') or export_payload.get('data_quality_stats') or {},
         cross_verification=metadata.get('cross_verification'),
+        coverage_matrix=metadata.get('coverage_matrix'),
+        evidence_diversity=metadata.get('evidence_diversity'),
+        counter_evidence_ledger=metadata.get('counter_evidence_ledger'),
     )
 
     required_sections = (
@@ -575,6 +1043,15 @@ def analyze_report_quality(
             'data_quality_stats': metadata.get('data_quality_stats') or {},
             'cross_verification': metadata.get('cross_verification') or {},
             'cross_verification_required': metadata.get('cross_verification_required') is True,
+            'source_references_required': metadata.get('source_references_required') is True,
+            'claim_ledger_required': metadata.get('claim_ledger_required') is True,
+            'coverage_matrix_required': metadata.get('coverage_matrix_required') is True,
+            'evidence_diversity_required': metadata.get('evidence_diversity_required') is True,
+            'counter_evidence_required': metadata.get('counter_evidence_required') is True,
+            'evidence_audit_required': metadata.get('evidence_audit_required') is True,
+            'candidate_evidence_audit': metadata.get('candidate_evidence_audit') or {},
+            'scoring_calibration': metadata.get('scoring_calibration') or {},
+            'rejected_false_positive_mentions': metadata.get('rejected_false_positive_mentions') or [],
         },
         'required_sections': structure,
         'claims': {
@@ -586,6 +1063,12 @@ def analyze_report_quality(
         },
         'quality': quality_result,
         'citation_count': report_text.count('【新闻'),
+        'source_citations': validate_source_citations(report_text, metadata),
+        'claim_ledger': validate_claim_ledger(metadata),
+        'coverage_matrix': validate_coverage_matrix(metadata),
+        'evidence_diversity': validate_evidence_diversity(metadata),
+        'counter_evidence': validate_counter_evidence(metadata),
+        'evidence_audit': validate_evidence_audit(metadata),
         'suspicious_realtime_phrases': suspicious_realtime_phrases,
         'stock_scoring': validate_stock_recommendations_payload(export_payload) if mode == 'markdown-report' else {},
     }
@@ -618,6 +1101,12 @@ def analyze_report_quality(
         and quality_result.get('passed', False)
         and not quality_result.get('issues')
         and market_consistency['passed']
+        and payload['source_citations']['passed']
+        and payload['claim_ledger']['passed']
+        and payload['coverage_matrix']['passed']
+        and payload['evidence_diversity']['passed']
+        and payload['counter_evidence']['passed']
+        and payload['evidence_audit']['passed']
     )
     if mode == 'markdown-report':
         stock_scoring = payload['stock_scoring']
@@ -686,7 +1175,55 @@ def main() -> int:
     args = parse_args()
     date_str = args.date or beijing_today()
     out_dir = acceptance_output_dir(date_str)
-    acceptance_report_path = Path(args.output) if args.output else (out_dir / 'acceptance_report.json')
+    if args.all_markets:
+        if args.output:
+            raise SystemExit('--all-markets 会生成 market-specific 文件和 acceptance_summary.json，请不要同时传 --output')
+        overall_passed = True
+        market_reports = {}
+        for market in ('CN', 'US'):
+            output_path = market_acceptance_report_path(date_str, market)
+            cmd = [
+                args.python_bin,
+                str(PROJECT_ROOT / 'scripts' / 'run_acceptance.py'),
+                '--date', date_str,
+                '--python', args.python_bin,
+                '--max-articles', str(args.max_articles),
+                '--content-field', args.content_field,
+                '--stock-market', market,
+                '--output', str(output_path),
+            ]
+            if args.skip_fetch:
+                cmd.append('--skip-fetch')
+            if args.skip_live:
+                cmd.append('--skip-live')
+            if args.api_key:
+                cmd.extend(['--api-key', args.api_key])
+            if args.run_started_at is not None:
+                cmd.extend(['--run-started-at', str(args.run_started_at)])
+            result = run_command(f'acceptance_{market.lower()}', cmd)
+            report_payload = load_json(output_path) if output_path.exists() else {}
+            market_reports[market] = {
+                'command': {
+                    'returncode': result.returncode,
+                    'passed': result.passed,
+                    'stdout_tail': result.stdout[-2000:],
+                    'stderr_tail': result.stderr[-2000:],
+                },
+                'report_path': str(output_path),
+                'passed': bool(result.passed and report_payload.get('passed')),
+            }
+            overall_passed = overall_passed and market_reports[market]['passed']
+        summary = load_json(acceptance_summary_path(date_str)) if acceptance_summary_path(date_str).exists() else {}
+        summary['market_runs'] = market_reports
+        summary['passed'] = bool(overall_passed and all((summary.get('markets') or {}).get(m, {}).get('passed') for m in ('CN', 'US')))
+        acceptance_summary_path(date_str).write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding='utf-8')
+        print(json.dumps({
+            'acceptance_summary': str(acceptance_summary_path(date_str)),
+            'passed': summary['passed'],
+        }, ensure_ascii=False))
+        return 0 if summary['passed'] else 1
+
+    acceptance_report_path = Path(args.output) if args.output else market_acceptance_report_path(date_str, args.stock_market)
 
     env = os.environ.copy()
     if args.api_key:
@@ -916,10 +1453,13 @@ def main() -> int:
     acceptance_report_path.parent.mkdir(parents=True, exist_ok=True)
     with open(acceptance_report_path, 'w', encoding='utf-8') as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
+    summary = update_acceptance_summary(date_str, args.stock_market, acceptance_report_path, report)
 
     print(json.dumps({
         'acceptance_report': str(acceptance_report_path),
+        'acceptance_summary': str(acceptance_summary_path(date_str)),
         'passed': report['passed'],
+        'markets': sorted((summary.get('markets') or {}).keys()),
     }, ensure_ascii=False))
     return 0 if report['passed'] else 1
 

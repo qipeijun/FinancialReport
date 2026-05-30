@@ -11,7 +11,7 @@ AI报告事实核查器
 """
 
 import re
-from typing import List, Dict, Optional, Tuple
+from typing import Any, List, Dict, Optional, Tuple
 from dataclasses import dataclass, field
 from enum import Enum
 from datetime import datetime
@@ -436,6 +436,73 @@ class FactChecker:
         logger.info(f"验证完成: {verified_count}/{len(claims)} 个断言通过验证")
 
         return claims
+
+    @staticmethod
+    def build_claim_ledger(
+        claims: List[Claim],
+        *,
+        market: str,
+        selected_articles: Optional[List[Dict[str, Any]]] = None,
+    ) -> Dict[str, Any]:
+        """把事实核查结果落成结构化断言账本，供报告、metadata 与验收共用。"""
+        article_map = {
+            str(article.get('id')): {
+                'article_id': article.get('id'),
+                'source': article.get('source'),
+                'title': article.get('title'),
+                'published': article.get('published') or article.get('collection_date'),
+            }
+            for article in (selected_articles or [])
+            if article.get('id') is not None
+        }
+
+        rows: List[Dict[str, Any]] = []
+        for index, claim in enumerate(claims, start=1):
+            citation_ids = [
+                item for item in re.findall(r'【新闻(\d+)】', claim.context or claim.content or '')
+                if item in article_map
+            ]
+            verification_status = 'verified' if claim.verified else 'failed'
+            freshness_status = (
+                'timestamped'
+                if claim.timestamp
+                else ('missing_timestamp' if claim.scope == ClaimScope.REALTIME_MARKET else 'not_applicable')
+            )
+            rows.append({
+                'claim_id': f'{market.lower()}-claim-{index:03d}',
+                'market': market,
+                'claim_type': claim.type.value,
+                'scope': claim.scope.value,
+                'content': claim.content,
+                'context': claim.context,
+                'asset_hint': claim.asset_hint,
+                'extracted_value': claim.extracted_value,
+                'verified': claim.verified,
+                'verification_status': verification_status,
+                'confidence': claim.confidence,
+                'source': claim.source,
+                'realtime_source': claim.source if claim.scope == ClaimScope.REALTIME_MARKET else '',
+                'timestamp': claim.timestamp,
+                'freshness_status': freshness_status,
+                'evidence': claim.evidence,
+                'failure_reason': claim.error or ('' if claim.verified else claim.evidence),
+                'source_articles': [article_map[item] for item in citation_ids],
+            })
+
+        realtime_claims = [claim for claim in claims if claim.scope == ClaimScope.REALTIME_MARKET]
+        news_claims = [claim for claim in claims if claim.scope == ClaimScope.NEWS_FACT]
+        return {
+            'required': True,
+            'market': market,
+            'summary': {
+                'total_claims': len(claims),
+                'realtime_claims': len(realtime_claims),
+                'verified_realtime_claims': sum(1 for claim in realtime_claims if claim.verified),
+                'news_fact_claims': len(news_claims),
+                'failed_claims': sum(1 for claim in realtime_claims if not claim.verified),
+            },
+            'claims': rows,
+        }
 
     def _skip_live_fetch(self, context_data: Optional[Dict] = None) -> bool:
         return bool(context_data and context_data.get('_skip_live_fetch'))

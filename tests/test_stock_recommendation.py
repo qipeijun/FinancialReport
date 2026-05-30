@@ -104,6 +104,46 @@ def test_security_master_risk_flags_only_apply_to_mentioned_stock_sentence():
     assert '问询' not in maotai.risk_flags
 
 
+def test_security_master_rejects_incidental_us_lifestyle_mentions():
+    provider = SecurityMasterProvider(config_path=PROJECT_ROOT / 'config' / 'theme_stock_map_us.json')
+    articles = [
+        {
+            'id': 101,
+            'title': 'How to save money on gas and groceries this summer',
+            'summary': 'Some shoppers compare Walmart, Costco and Amazon prices before holiday travel.',
+            'content': 'The article is a consumer guide with shopping tips and travel budgeting examples.',
+            'source_tier': 'mainstream',
+            'is_original_source': 1,
+        }
+    ]
+
+    candidates = provider.build_candidates(articles=articles, judgment_candidates=[], max_candidates=5)
+
+    assert candidates == []
+    rejected_symbols = {item['symbol'] for item in provider.rejected_false_positive_mentions}
+    assert {'AMZN', 'COST', 'WMT'}.issubset(rejected_symbols)
+
+
+def test_security_master_keeps_material_us_company_catalyst():
+    provider = SecurityMasterProvider(config_path=PROJECT_ROOT / 'config' / 'theme_stock_map_us.json')
+    articles = [
+        {
+            'id': 102,
+            'title': 'Amazon earnings beat estimates as revenue guidance rises',
+            'summary': 'Amazon shares rally after earnings and guidance raise.',
+            'content': 'Amazon reported stronger revenue and raised guidance.',
+            'source_tier': 'mainstream',
+            'is_original_source': 1,
+        }
+    ]
+
+    candidates = provider.build_candidates(articles=articles, judgment_candidates=[], max_candidates=5)
+
+    assert [item.symbol for item in candidates] == ['AMZN']
+    assert candidates[0].evidence_relevance_status == 'direct_material_news'
+    assert any('material_keyword' in item for item in candidates[0].evidence_relevance_reasons or [])
+
+
 def test_merged_direct_candidate_is_not_forced_into_theme_watch_only():
     security_master = SecurityMasterProvider()
     candidate = CandidateStock(
@@ -380,6 +420,9 @@ def test_recommendation_scorer_clears_grade_caps_when_grade_unchanged():
     assert 'validation_points' in result
     assert 'catalyst_path' in result
     assert 'failure_triggers' in result
+    assert 'evidence_relevance_status' in result
+    assert 'historical_calibration_status' in result
+    assert 'historical_forward_stats' in result
 
 
 def test_render_stock_recommendation_markdown_contains_required_section():
@@ -889,6 +932,57 @@ def test_theme_only_candidate_is_never_actionable():
     assert [item['symbol'] for item in payload['decision_views']['conditional_watchlist']] == ['sh603019']
     assert payload['recommendations'][0]['actionability_passed'] is False
     assert 'theme_only_not_actionable' in payload['recommendations'][0]['actionability_reasons']
+
+
+def test_direct_candidate_without_independent_confirmation_is_capped_to_watch():
+    security_master = SecurityMasterProvider()
+    candidate = CandidateStock(
+        symbol='AAPL',
+        name='Apple',
+        industry='科技',
+        source_type='direct_news',
+        topic='财报与公司经营',
+        evidence_article_ids=[1],
+        evidence_summaries=['Apple 单一来源直接提及'],
+        source_tiers=['mainstream'],
+        independent_evidence_count=0,
+        direct_mentions=1,
+        risk_flags=[],
+        source_tier_max='mainstream',
+        high_confidence_topic=True,
+        evidence_published_dates=['2026-05-09'],
+        topic_article_count=1,
+    )
+    price_provider = FakePriceHistoryProvider({'AAPL': build_bars(count=90)})
+    valuation_provider = FakeValuationProvider(
+        {
+            'AAPL': {
+                'symbol': 'AAPL',
+                'pe_ttm': 24.0,
+                'pb_lf': 7.0,
+                'industry': '科技',
+                'profitability': 'profitable',
+                'company_type': 'general',
+                'pe_history': [22.0, 23.0, 25.0],
+                'pb_history': [6.2, 6.7, 7.2],
+            }
+        }
+    )
+    scorer = RecommendationScorer(
+        security_master=security_master,
+        price_history_provider=price_provider,
+        valuation_provider=valuation_provider,
+        lookback_days=60,
+        as_of_date='2026-05-09',
+        market='US',
+    )
+    scorer.symbol_recent_direct_days = {}
+
+    recommendation = scorer.score_candidates([candidate])['recommendations'][0]
+
+    assert recommendation['grade'] == '观察'
+    assert 'insufficient_independent_confirmation' in recommendation['grade_caps']
+    assert recommendation['actionability_passed'] is False
 
 
 def test_evidence_strength_contains_cross_verification_fields():

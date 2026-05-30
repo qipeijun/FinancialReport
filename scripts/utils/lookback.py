@@ -38,6 +38,7 @@ class LookbackEntry:
     grade: str
     total_score: int
     source_type: str
+    evidence_relevance_status: str
     decision_view: str  # actionable / watchlist / stale
     forward_returns: Dict[str, Optional[float]]  # {"5": 1.2, "10": 2.8, ...}
 
@@ -103,6 +104,9 @@ def collect_recommendations(
                     'grade': rec.get('grade', ''),
                     'total_score': rec.get('total_score', 0),
                     'source_type': rec.get('source_type', ''),
+                    'evidence_relevance_status': rec.get('evidence_relevance_status') or (
+                        'theme_proxy' if rec.get('source_type') == 'theme_mapping' else 'unknown'
+                    ),
                     'decision_view': view,
                 })
 
@@ -171,6 +175,7 @@ def compute_forward_returns(
             grade=entry['grade'],
             total_score=entry['total_score'],
             source_type=entry['source_type'],
+            evidence_relevance_status=entry.get('evidence_relevance_status', 'unknown'),
             decision_view=entry['decision_view'],
             forward_returns=returns,
         ))
@@ -218,6 +223,11 @@ def summarize(results: List[LookbackEntry], horizons: List[int] | None = None) -
     for r in results:
         by_source[r.source_type].append(r)
 
+    # 按证据相关性
+    by_relevance: Dict[str, List[LookbackEntry]] = defaultdict(list)
+    for r in results:
+        by_relevance[r.evidence_relevance_status].append(r)
+
     # 异常标的（超出均值 ±2 标准差）
     outliers = []
     for hk in horizon_keys:
@@ -245,6 +255,7 @@ def summarize(results: List[LookbackEntry], horizons: List[int] | None = None) -
         'by_grade': {g: _group_stats(items) for g, items in sorted(by_grade.items())},
         'by_decision_view': {v: _group_stats(items) for v, items in sorted(by_view.items())},
         'by_source_type': {s: _group_stats(items) for s, items in sorted(by_source.items())},
+        'by_evidence_relevance': {s: _group_stats(items) for s, items in sorted(by_relevance.items())},
         'outliers': outliers[:10],
     }
 
@@ -304,6 +315,31 @@ def render_summary(summary: Dict[str, Any], from_date: str, to_date: str, market
                 continue
             label = {'actionable': '可行动', 'watchlist': '观察', 'stale': '拒绝/拥挤'}.get(view, view)
             row = f'| {label} | {stats["count"]} |'
+            for hk in horizon_keys:
+                avg = stats.get(f'avg_return_{hk}d')
+                wr = stats.get(f'win_rate_{hk}d')
+                row += f' {avg:+.1f}% |' if avg is not None else ' — |'
+                row += f' {wr:.0f}% |' if wr is not None else ' — |'
+            lines.append(row)
+        lines.append('')
+
+    # 异常标的
+    by_relevance = summary.get('by_evidence_relevance', {})
+    if by_relevance:
+        lines.append('### 按证据相关性')
+        lines.append('')
+        header = '| 证据类型 | 样本 |'
+        sep = '|------|------|'
+        for hk in horizon_keys:
+            header += f' {hk}日平均 | {hk}日胜率 |'
+            sep += '--------|--------|'
+        lines.append(header)
+        lines.append(sep)
+        for status in ['direct_material_news', 'theme_proxy', 'incidental_mention', 'irrelevant_match', 'unknown']:
+            stats = by_relevance.get(status)
+            if not stats:
+                continue
+            row = f'| {status} | {stats["count"]} |'
             for hk in horizon_keys:
                 avg = stats.get(f'avg_return_{hk}d')
                 wr = stats.get(f'win_rate_{hk}d')

@@ -65,6 +65,32 @@ def test_extract_claims_supports_us_index_realtime_claims():
     )
 
 
+def test_claim_ledger_records_verification_and_freshness_status():
+    claim = Claim(
+        type=ClaimType.PRICE_CHANGE,
+        content='上证指数收跌0.7%【新闻101】',
+        verified=True,
+        source='Yahoo Finance',
+        timestamp='2026-05-28 10:00:00',
+        scope=ClaimScope.REALTIME_MARKET,
+        context='上证指数收跌0.7%【新闻101】',
+    )
+
+    ledger = FactChecker.build_claim_ledger(
+        [claim],
+        market='CN',
+        selected_articles=[
+            {'id': 101, 'source': '来源A', 'title': '标题A', 'published': '2026-05-28'},
+        ],
+    )
+
+    row = ledger['claims'][0]
+    assert row['verification_status'] == 'verified'
+    assert row['freshness_status'] == 'timestamped'
+    assert row['realtime_source'] == 'Yahoo Finance'
+    assert row['source_articles'][0]['article_id'] == 101
+
+
 def test_extract_claims_counts_news_money_and_percent_claims_only_as_news_facts():
     report = """
     - 人形机器人商业化出现早期信号，旧金山已推出$150的人形机器人清洁服务【新闻3】。
@@ -150,6 +176,232 @@ def test_quality_checker_reports_missing_source_without_calling_citations_insuff
     assert result['stats']['claim_coverage_score'] >= 10
     assert any('缺少实时数据来源标注' in warning for warning in result['warnings'])
     assert not any('引用来源偏少' in warning for warning in result['warnings'])
+
+
+def test_quality_checker_rejects_complete_market_claim_when_coverage_has_gaps():
+    report = """
+    ## 市场概况
+    本报告形成完整市场判断，已覆盖主要维度【新闻1】【新闻2】【新闻3】【新闻4】【新闻5】。
+
+    ## 投资主题
+    AI 产业链维持活跃【新闻6】【新闻7】【新闻8】。
+
+    ## 风险
+    波动风险可控【新闻9】【新闻10】。
+
+    ## 建议
+    继续跟踪【新闻11】【新闻12】【新闻13】【新闻14】【新闻15】。
+
+    ## 📊 实时数据来源
+    - 数据来源: Yahoo Finance
+    - 更新时间: 2099-01-01 00:00:00
+    """
+
+    result = check_report_quality_v2(
+        report_text=report,
+        claims=[],
+        realtime_data={'timestamp': '2099-01-01 00:00:00'},
+        report_mode='markdown-report',
+        coverage_matrix={
+            'coverage_gaps': ['policy_regulation', 'company_earnings'],
+        },
+    )
+
+    assert result['passed'] is False
+    assert result['stats']['coverage_gap_count'] == 2
+    assert result['stats']['coverage_boundary_overclaim_count'] == 2
+    assert any('覆盖矩阵存在缺口' in issue for issue in result['issues'])
+    assert any('完整市场判断' in issue for issue in result['issues'])
+
+
+def test_quality_checker_accepts_observation_boundary_when_coverage_has_gaps():
+    report = """
+    ## 市场概况
+    覆盖不足：政策监管和公司财报样本不足，以下仅作观察，不构成完整市场判断【新闻1】【新闻2】【新闻3】【新闻4】【新闻5】。
+
+    ## 投资主题
+    AI 产业链维持活跃【新闻6】【新闻7】【新闻8】。
+
+    ## 风险
+    波动风险仍需跟踪【新闻9】【新闻10】。
+
+    ## 建议
+    继续观察【新闻11】【新闻12】【新闻13】【新闻14】【新闻15】。
+
+    ## 📊 实时数据来源
+    - 数据来源: Yahoo Finance
+    - 更新时间: 2099-01-01 00:00:00
+    """
+
+    result = check_report_quality_v2(
+        report_text=report,
+        claims=[],
+        realtime_data={'timestamp': '2099-01-01 00:00:00'},
+        report_mode='markdown-report',
+        coverage_matrix={
+            'coverage_gaps': ['policy_regulation', 'company_earnings'],
+        },
+    )
+
+    assert result['stats']['coverage_gap_count'] == 2
+    assert result['stats']['coverage_boundary_overclaim_count'] == 0
+    assert not any('覆盖矩阵存在缺口' in issue for issue in result['issues'])
+
+
+def test_quality_checker_rejects_evidence_concentration_flags():
+    report = """
+    ## 市场概况
+    覆盖不足：样本来源集中，以下仅作观察【新闻1】【新闻2】【新闻3】【新闻4】【新闻5】。
+
+    ## 投资主题
+    AI 产业链维持活跃【新闻6】【新闻7】【新闻8】。
+
+    ## 风险
+    波动风险仍需跟踪【新闻9】【新闻10】。
+
+    ## 建议
+    继续观察【新闻11】【新闻12】【新闻13】【新闻14】【新闻15】。
+
+    ## 📊 实时数据来源
+    - 数据来源: Yahoo Finance
+    - 更新时间: 2099-01-01 00:00:00
+    """
+
+    result = check_report_quality_v2(
+        report_text=report,
+        claims=[],
+        realtime_data={'timestamp': '2099-01-01 00:00:00'},
+        report_mode='markdown-report',
+        evidence_diversity={
+            'source_count': 1,
+            'topic_count': 1,
+            'max_source_share': 0.9,
+            'max_topic_share': 0.9,
+            'max_aggregator_share': 0.9,
+            'original_source_share': 0.0,
+            'concentration_flags': ['source_concentration', 'topic_concentration', 'aggregator_concentration'],
+        },
+    )
+
+    assert result['passed'] is False
+    assert result['stats']['evidence_diversity_issue_count'] == 1
+    assert result['stats']['evidence_source_count'] == 1
+    assert result['stats']['evidence_max_aggregator_share'] == 0.9
+    assert any('证据集中度过高' in issue for issue in result['issues'])
+
+
+def test_quality_checker_requires_counter_evidence_boundary():
+    report = """
+    ## 市场概况
+    AI 产业链形成高置信机会【新闻1】【新闻2】【新闻3】【新闻4】【新闻5】。
+
+    ## 投资主题
+    AI 产业链维持活跃【新闻6】【新闻7】【新闻8】。
+
+    ## 风险
+    波动风险仍需跟踪【新闻9】【新闻10】。
+
+    ## 建议
+    继续观察【新闻11】【新闻12】【新闻13】【新闻14】【新闻15】。
+
+    ## 📊 实时数据来源
+    - 数据来源: Yahoo Finance
+    - 更新时间: 2099-01-01 00:00:00
+    """
+
+    result = check_report_quality_v2(
+        report_text=report,
+        claims=[],
+        realtime_data={'timestamp': '2099-01-01 00:00:00'},
+        report_mode='markdown-report',
+        counter_evidence_ledger={
+            'summary': {'high_confidence_topics_with_counter_evidence': 1},
+            'topics': [
+                {'topic': '科技与产业主题', 'counter_article_ids': [2], 'counter_evidence_count': 1}
+            ],
+        },
+    )
+
+    assert result['passed'] is False
+    assert result['stats']['counter_evidence_issue_count'] == 1
+    assert any('反证/风险证据' in issue for issue in result['issues'])
+
+
+def test_quality_checker_accepts_counter_evidence_boundary():
+    report = """
+    ## 市场概况
+    AI 产业链存在反证和风险边界，以下仅作观察【新闻1】【新闻2】【新闻3】【新闻4】【新闻5】。
+
+    ## 投资主题
+    AI 产业链维持活跃【新闻6】【新闻7】【新闻8】。
+
+    ## 风险
+    监管调查构成冲突证据【新闻9】【新闻10】。
+
+    ## 建议
+    继续观察【新闻11】【新闻12】【新闻13】【新闻14】【新闻15】。
+
+    ## 📊 实时数据来源
+    - 数据来源: Yahoo Finance
+    - 更新时间: 2099-01-01 00:00:00
+    """
+
+    result = check_report_quality_v2(
+        report_text=report,
+        claims=[],
+        realtime_data={'timestamp': '2099-01-01 00:00:00'},
+        report_mode='markdown-report',
+        counter_evidence_ledger={
+            'summary': {'high_confidence_topics_with_counter_evidence': 1},
+            'topics': [
+                {'topic': '科技与产业主题', 'counter_article_ids': [2], 'counter_evidence_count': 1}
+            ],
+        },
+    )
+
+    assert result['stats']['counter_evidence_issue_count'] == 0
+    assert not any('反证/风险证据' in issue for issue in result['issues'])
+
+
+def test_quality_checker_ignores_generated_audit_appendix_for_boundaries():
+    report = """
+    ## 市场概况
+    AI 产业链形成高置信机会【新闻1】【新闻2】【新闻3】【新闻4】【新闻5】。
+
+    ## 投资主题
+    AI 产业链维持活跃【新闻6】【新闻7】【新闻8】。
+
+    ## 风险
+    波动风险仍需跟踪【新闻9】【新闻10】。
+
+    ## 建议
+    继续观察【新闻11】【新闻12】【新闻13】【新闻14】【新闻15】。
+
+    ## 📊 实时数据来源
+    - 数据来源: Yahoo Finance
+    - 更新时间: 2099-01-01 00:00:00
+
+    ## 证据审计摘要
+
+    - 覆盖缺口: policy_regulation
+    - 高置信主题反证数: 1
+    - 自动附录写了反证和风险边界
+    """
+
+    result = check_report_quality_v2(
+        report_text=report,
+        claims=[],
+        realtime_data={'timestamp': '2099-01-01 00:00:00'},
+        report_mode='markdown-report',
+        coverage_matrix={'coverage_gaps': ['policy_regulation']},
+        counter_evidence_ledger={
+            'summary': {'high_confidence_topics_with_counter_evidence': 1},
+        },
+    )
+
+    assert result['passed'] is False
+    assert result['stats']['coverage_boundary_overclaim_count'] == 1
+    assert result['stats']['counter_evidence_issue_count'] == 1
 
 
 def test_quality_checker_uses_more_conservative_time_when_report_and_system_conflict():

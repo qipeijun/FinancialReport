@@ -189,7 +189,7 @@ def generate_quality_feedback(quality_result: Dict) -> str:
     
     for problem in all_problems:
         if '引用来源' in problem:
-            feedback_items.append('请增加【新闻X】引用标注，每个重要观点都要注明具体来源')
+            feedback_items.append('请增加真实 article_id 引用标注，例如【新闻4885】，每个重要观点都要注明具体来源')
         
         if '可操作性' in problem:
             feedback_items.append('请在"操作建议"部分增加：具体时间窗口、仓位建议、止损策略、买入/卖出时机')
