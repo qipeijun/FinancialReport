@@ -118,7 +118,7 @@ def test_run_script_reports_success(monkeypatch):
     monkeypatch.setattr(interactive_runner, 'heartbeat', lambda *args, **kwargs: FakeHeartbeat())
     monkeypatch.setattr(interactive_runner.subprocess, 'Popen', FakeProc)
 
-    code = interactive_runner.run_script(['python3', 'demo.py'], task_label='执行标准 AI 分析')
+    code = interactive_runner._run_streaming(['python3', 'demo.py'], label='执行标准 AI 分析')
 
     assert code == 0
     assert ('start', '启动 执行标准 AI 分析') in events

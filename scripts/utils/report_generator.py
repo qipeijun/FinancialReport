@@ -697,6 +697,82 @@ class ReportGenerator:
         return "\n".join(lines)
 
     @staticmethod
+    def _prepend_trust_card(report_text: str, meta: Dict[str, Any]) -> str:
+        """在报告标题之后插入可信度摘要卡（代码拼接，不经过 AI）。
+
+        数据全部来自 meta dict，分层展示：
+        - 第一行：总评（质量检查通过/未通过 + 评分）
+        - 常驻字段：事实核查、交叉验真
+        - 仅在异常时展示：实时行情降级、覆盖缺口
+        """
+        quality = meta.get('quality_check') or {}
+        stats = quality.get('stats') or {}
+        cv = meta.get('cross_verification') or {}
+        cv_summary = cv.get('summary') or {}
+        coverage = meta.get('coverage_matrix') or {}
+        gaps = coverage.get('coverage_gaps') or []
+        degraded = meta.get('live_data_degraded', False)
+
+        score = quality.get('score')
+        passed = quality.get('passed')
+        verified = stats.get('verified_claims')
+        total = stats.get('total_claims')
+        cv_confirmed = cv_summary.get('stocks_confirmed')
+        cv_weak = cv_summary.get('stocks_weak')
+
+        # 总评（注意：这里展示的是报告生成阶段的质量检查，非 run_acceptance 验收）
+        if passed is True and score is not None:
+            status_line = f'🟢 **质量检查通过** · 评分 {score}/100'
+        elif passed is False:
+            status_line = f'🔴 **质量检查未通过** · 评分 {score or "?"}/100'
+        else:
+            status_line = '⚪ **未运行质量检查**'
+
+        lines = [
+            '> 📋 **可信度摘要** · 系统根据实际数据源状态自动生成',
+            '',
+            status_line,
+            '',
+            '| 维度 | 状态 |',
+            '|------|------|',
+        ]
+
+        # 事实核查
+        if verified is not None and total is not None:
+            lines.append(f'| 事实核查 | {verified}/{total} 断言通过验证 |')
+        elif verified is not None:
+            lines.append(f'| 事实核查 | {verified} 断言已验证 |')
+
+        # 交叉验真
+        if cv_confirmed is not None:
+            parts = [f'{cv_confirmed} confirmed']
+            if cv_weak is not None:
+                parts.append(f'{cv_weak} weak')
+            lines.append(f'| 交叉验真 | 标的 {" / ".join(parts)} |')
+
+        # 覆盖缺口（仅在非空时展示）
+        if gaps:
+            lines.append(f'| 覆盖缺口 | {", ".join(gaps[:4])} |')
+
+        lines.append('')
+
+        # 异常标记（仅在有异常时展示）
+        if degraded:
+            lines.append('⚠️ 实时行情数据降级，价格相关结论依赖新闻与本地快照，不反映盘中最新价')
+            lines.append('')
+
+        lines.append('---')
+        card = '\n'.join(lines)
+
+        # 插入到第一个 # 标题之后
+        title_match = __import__('re').search(r'^# .+$', report_text or '', __import__('re').MULTILINE)
+        if title_match:
+            pos = title_match.end()
+            return report_text[:pos] + '\n\n' + card + '\n' + report_text[pos:].lstrip('\n')
+        # 回退：没有找到 # 标题，直接放在最前面
+        return card + '\n' + (report_text or '')
+
+    @staticmethod
     def _build_evidence_audit_markdown(
         *,
         source_references: Dict[str, Any],
@@ -1252,6 +1328,7 @@ class ReportGenerator:
         meta.update({
             'export_payload_refreshed': True,
         })
+        rendered_md = ReportGenerator._prepend_trust_card(rendered_md, meta)
         saved_path = self._save_result(
             end_date,
             rendered_md,
@@ -1784,6 +1861,7 @@ class ReportGenerator:
             'scoring_calibration': scoring_calibration,
             'rejected_false_positive_mentions': rejected_false_positive_mentions,
         }
+        summary_md = ReportGenerator._prepend_trust_card(summary_md, meta)
         start_stage('保存报告与元数据', step=6, total=6, detail='准备写入报告归档与 metadata')
         saved_path = self._save_result(
             end_date,

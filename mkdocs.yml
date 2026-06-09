@@ -67,9 +67,42 @@ markdown_extensions:
     permalink: true
 nav:
 - 首页: index.md
+- 📊 最新报告: latest.md
 - 分析报告:
+  - 2026年06月:
+    - '2026-06-09':
+      - PM DeepSeek报告: archive/2026-06/2026-06-09/reports/📅 2026-06-09 财经分析报告_evening_markdown-report-cn_deepseek.md
+      - PM DeepSeek报告: archive/2026-06/2026-06-09/reports/📅 2026-06-09 财经分析报告_evening_markdown-report-us_deepseek.md
+    - '2026-06-08':
+      - AM DeepSeek报告: archive/2026-06/2026-06-08/reports/📅 2026-06-08 财经分析报告_morning_markdown-report-cn_deepseek.md
+      - AM DeepSeek报告: archive/2026-06/2026-06-08/reports/📅 2026-06-08 财经分析报告_morning_markdown-report-us_deepseek.md
+    - '2026-06-06':
+      - AM DeepSeek报告: archive/2026-06/2026-06-06/reports/📅 2026-06-06 财经分析报告_morning_markdown-report-us_deepseek.md
+      - AM DeepSeek报告: archive/2026-06/2026-06-06/reports/📅 2026-06-06 财经分析报告_morning_markdown-report-cn_deepseek.md
+    - '2026-06-05':
+      - AM DeepSeek报告: archive/2026-06/2026-06-05/reports/📅 2026-06-05 财经分析报告_morning_markdown-report-cn_deepseek.md
+      - AM DeepSeek报告: archive/2026-06/2026-06-05/reports/📅 2026-06-05 财经分析报告_morning_markdown-report-us_deepseek.md
+    - '2026-06-04':
+      - AM DeepSeek报告: archive/2026-06/2026-06-04/reports/📅 2026-06-04 财经分析报告_morning_markdown-report-cn_deepseek.md
+      - AM DeepSeek报告: archive/2026-06/2026-06-04/reports/📅 2026-06-04 财经分析报告_morning_markdown-report-us_deepseek.md
+    - '2026-06-03':
+      - AM DeepSeek报告: archive/2026-06/2026-06-03/reports/📅 2026-06-03 财经分析报告_morning_markdown-report-us_deepseek.md
+      - AM DeepSeek报告: archive/2026-06/2026-06-03/reports/📅 2026-06-03 财经分析报告_morning_markdown-report-cn_deepseek.md
+    - '2026-06-02':
+      - AM DeepSeek报告: archive/2026-06/2026-06-02/reports/📅 2026-06-02 财经分析报告_morning_markdown-report-us_deepseek.md
+      - AM DeepSeek报告: archive/2026-06/2026-06-02/reports/📅 2026-06-02 财经分析报告_morning_markdown-report-cn_deepseek.md
+    - '2026-06-01':
+      - AM DeepSeek报告: archive/2026-06/2026-06-01/reports/📅 2026-06-01 财经分析报告_morning_markdown-report-cn_deepseek.md
+      - AM DeepSeek报告: archive/2026-06/2026-06-01/reports/📅 2026-06-01 财经分析报告_morning_markdown-report-us_deepseek.md
   - 2026年05月:
+    - '2026-05-30':
+      - AM DeepSeek报告: archive/2026-05/2026-05-30/reports/📅 2026-05-30 财经分析报告_morning_markdown-report-cn_deepseek.md
+      - AM DeepSeek报告: archive/2026-05/2026-05-30/reports/📅 2026-05-30 财经分析报告_morning_markdown-report-us_deepseek.md
+    - '2026-05-29':
+      - PM DeepSeek报告: archive/2026-05/2026-05-29/reports/📅 2026-05-29 财经分析报告_afternoon_markdown-report-us_deepseek.md
+      - PM DeepSeek报告: archive/2026-05/2026-05-29/reports/📅 2026-05-29 财经分析报告_afternoon_markdown-report-cn_deepseek.md
     - '2026-05-28':
+      - AM DeepSeek报告: archive/2026-05/2026-05-28/reports/📅 2026-05-28 财经分析报告_morning_markdown-report-us_deepseek.md
       - AM DeepSeek报告: archive/2026-05/2026-05-28/reports/📅 2026-05-28 财经分析报告_morning_markdown-report-cn_deepseek.md
     - '2026-05-26':
       - AM DeepSeek报告: archive/2026-05/2026-05-26/reports/📅 2026-05-26 财经分析报告_morning_markdown-report-cn_deepseek.md

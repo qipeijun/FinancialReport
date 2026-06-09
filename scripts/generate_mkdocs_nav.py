@@ -2,16 +2,20 @@
 # -*- coding: utf-8 -*-
 """
 自动生成 MkDocs 导航配置脚本
-扫描项目中的分析报告，自动生成 mkdocs.yml 中的 nav 配置
+扫描项目中的分析报告，自动生成 mkdocs.yml 中的 nav 配置和最新报告面板
 """
 
+import json
 import os
 import re
 import yaml
 from datetime import datetime
 from pathlib import Path
+from typing import Any, Dict, List, Optional
 
 ARCHIVE_ROOT = Path('docs/archive')
+LATEST_MD_PATH = Path('docs/latest.md')
+LATEST_DAYS = 3  # 最新面板展示天数
 
 def _is_date_dir_name(name: str) -> bool:
     return re.match(r'^\d{4}-\d{2}-\d{2}', name) is not None
@@ -24,7 +28,7 @@ def get_archive_structure():
     result = {}
     if not ARCHIVE_ROOT.exists():
         return result
-    for month_dir in ARCHIVE_ROOT.iterdir():
+    for month_dir in sorted(ARCHIVE_ROOT.iterdir(), reverse=True):
         if month_dir.is_dir() and _is_month_dir_name(month_dir.name):
             date_dirs = [p for p in month_dir.iterdir() if p.is_dir() and _is_date_dir_name(p.name)]
             if date_dirs:
@@ -173,6 +177,7 @@ def generate_nav_structure():
     """生成导航结构"""
     nav = [
         {"首页": "index.md"},
+        {"📊 最新报告": "latest.md"},
         {"分析报告": []}
     ]
     
@@ -233,26 +238,218 @@ def generate_nav_structure():
                     month_nav[month_display].append(date_nav)
             
             if month_nav[month_display]:  # 只有当有内容时才添加
-                nav[1]["分析报告"].append(month_nav)
+                # 按 key 名查找"分析报告"条目，避免硬编码索引
+                analysis_entry = next((item for item in nav if "分析报告" in item), None)
+                if analysis_entry is not None:
+                    analysis_entry["分析报告"].append(month_nav)
     
     return nav
 
+def _load_json_safe(path: Path) -> Optional[Dict[str, Any]]:
+    """安全加载 JSON，失败返回 None"""
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+
+def _extract_trust_summary(metadata: Dict[str, Any]) -> Dict[str, Any]:
+    """从 metadata JSON 提取可信度摘要"""
+    quality = metadata.get('quality_check') or {}
+    stats = quality.get('stats') or {}
+    cv = metadata.get('cross_verification') or {}
+    cv_summary = cv.get('summary') or {}
+    coverage = metadata.get('coverage_matrix') or {}
+
+    return {
+        'score': quality.get('score'),
+        'passed': quality.get('passed'),
+        'verified_claims': stats.get('verified_claims'),
+        'total_claims': stats.get('total_claims'),
+        'cv_confirmed': cv_summary.get('stocks_confirmed'),
+        'cv_weak': cv_summary.get('stocks_weak'),
+        'coverage_gaps': coverage.get('coverage_gaps') or [],
+        'live_data_degraded': metadata.get('live_data_degraded', False),
+    }
+
+
+def _render_trust_badge(info: Dict[str, Any]) -> str:
+    """根据可信度信息渲染状态徽章"""
+    score = info.get('score')
+    passed = info.get('passed')
+    verified = info.get('verified_claims')
+    total = info.get('total_claims')
+
+    parts: List[str] = []
+    if passed is True and score is not None:
+        parts.append(f'🟢 通过 {score}分')
+    elif passed is False:
+        parts.append(f'🔴 未通过')
+    else:
+        parts.append('⚪ 未验收')
+
+    if verified is not None and total is not None:
+        parts.append(f'核查 {verified}/{total}')
+
+    return ' · '.join(parts) if parts else '—'
+
+
+def generate_latest_md() -> None:
+    """扫描最近 N 天 archive metadata，生成 docs/latest.md 最新报告面板"""
+    if not ARCHIVE_ROOT.exists():
+        LATEST_MD_PATH.write_text('# 最新报告\n\n暂无报告数据。\n', encoding='utf-8')
+        return
+
+    # 收集所有日期目录（倒序）
+    all_dates: List[tuple[str, Path]] = []
+    for month_dir in sorted(ARCHIVE_ROOT.iterdir(), reverse=True):
+        if not month_dir.is_dir() or not _is_month_dir_name(month_dir.name):
+            continue
+        for date_dir in sorted(month_dir.iterdir(), reverse=True):
+            if date_dir.is_dir() and _is_date_dir_name(date_dir.name):
+                all_dates.append((date_dir.name, date_dir))
+
+    # 取最近 N 天
+    recent = all_dates[:LATEST_DAYS]
+
+    lines = [
+        '# 📊 最新报告',
+        '',
+        '> 系统自动生成，展示最近 {} 天的报告产物与可信度状态。点击链接直接查看。'.format(LATEST_DAYS),
+        '',
+    ]
+
+    if not recent:
+        lines.append('暂无报告数据。')
+        LATEST_MD_PATH.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+        return
+
+    for date_str, date_dir in recent:
+        lines.append(f'## {date_str}')
+        lines.append('')
+
+        metadata_dir = date_dir / 'metadata'
+        reports_dir = date_dir / 'reports'
+
+        if not reports_dir.exists() and not metadata_dir.exists():
+            lines.append('*该日无产物*')
+            lines.append('')
+            continue
+
+        # 收集各市场报告（按 mtime 选最新的一份 metadata）
+        rows: List[Dict[str, Any]] = []
+        best_by_market: Dict[str, tuple[Path, float]] = {}
+
+        # 扫描 metadata 文件，按 mtime 保留每个市场最新的
+        if metadata_dir.exists():
+            for meta_file in metadata_dir.iterdir():
+                name = meta_file.name
+                if not name.endswith('.json') or 'analysis_meta' not in name:
+                    continue
+                market_match = re.search(r'markdown-report-([a-z]{2})', name, re.IGNORECASE)
+                market = market_match.group(1).upper() if market_match else '?'
+                mtime = meta_file.stat().st_mtime
+                if market not in best_by_market or mtime > best_by_market[market][1]:
+                    best_by_market[market] = (meta_file, mtime)
+
+        for market, (meta_file, _mtime) in best_by_market.items():
+            meta_data = _load_json_safe(meta_file)
+            trust = _extract_trust_summary(meta_data) if meta_data else {}
+
+            # 找对应报告（同样按 mtime 选最新）
+            report_path: Optional[str] = None
+            best_report_mtime = 0.0
+            if reports_dir.exists():
+                mkt_lower = market.lower()
+                for report_file in reports_dir.iterdir():
+                    rn = report_file.name.lower()
+                    if f'markdown-report-{mkt_lower}' in rn and report_file.name.endswith('.md'):
+                        rmtime = report_file.stat().st_mtime
+                        if rmtime > best_report_mtime:
+                            best_report_mtime = rmtime
+                            report_path = f'archive/{date_str[:7]}/{date_str}/reports/{report_file.name}'
+
+            rows.append({
+                'market': market,
+                'trust': trust,
+                'report_path': report_path,
+            })
+            seen_markets: set = {m for m in best_by_market}
+
+        # 也扫描 reports 目录，补漏没有 metadata 的情况
+        if reports_dir.exists():
+            best_report_by_market: Dict[str, tuple[str, float]] = {}
+            for report_file in reports_dir.iterdir():
+                name = report_file.name
+                if not name.endswith('.md'):
+                    continue
+                market_match = re.search(r'markdown-report-([a-z]{2})', name, re.IGNORECASE)
+                market = market_match.group(1).upper() if market_match else '?'
+                if market in seen_markets:
+                    continue
+                rmtime = report_file.stat().st_mtime
+                if market not in best_report_by_market or rmtime > best_report_by_market[market][1]:
+                    best_report_by_market[market] = (f'archive/{date_str[:7]}/{date_str}/reports/{name}', rmtime)
+            for market, (rpath, _) in best_report_by_market.items():
+                rows.append({
+                    'market': market,
+                    'trust': {},
+                    'report_path': rpath,
+                })
+
+        if not rows:
+            lines.append('*该日无可识别产物*')
+            lines.append('')
+            continue
+
+        # 渲染表格
+        lines.append('| 市场 | 可信度 | 报告 |')
+        lines.append('|------|--------|------|')
+        for row in rows:
+            market_label = '🇨🇳 A股' if row['market'] == 'CN' else ('🇺🇸 美股' if row['market'] == 'US' else row['market'])
+            badge = _render_trust_badge(row['trust'])
+            if row['report_path']:
+                link = f'[查看]({row["report_path"]})'
+            else:
+                link = '—'
+            lines.append(f'| {market_label} | {badge} | {link} |')
+
+        # 异常标注
+        for row in rows:
+            trust = row['trust']
+            market_label = 'CN' if row['market'] == 'CN' else 'US'
+            if trust.get('live_data_degraded'):
+                lines.append(f'\n⚠️ {market_label} 实时行情降级')
+            gaps = trust.get('coverage_gaps') or []
+            if gaps:
+                lines.append(f'\n📋 {market_label} 覆盖缺口: {", ".join(gaps[:3])}')
+
+        lines.append('')
+
+    LATEST_MD_PATH.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+    print(f'✅ 最新报告面板已生成: {LATEST_MD_PATH}')
+
+
 def update_mkdocs_config():
     """更新 mkdocs.yml 配置文件"""
+    # 先生成最新报告面板
+    generate_latest_md()
+
     # 读取现有的 mkdocs.yml
     with open('mkdocs.yml', 'r', encoding='utf-8') as f:
         config = yaml.safe_load(f)
-    
+
     # 生成新的导航结构
     new_nav = generate_nav_structure()
-    
+
     # 更新配置
     config['nav'] = new_nav
-    
+
     # 写回文件
     with open('mkdocs.yml', 'w', encoding='utf-8') as f:
         yaml.dump(config, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
-    
+
     print("✅ MkDocs 导航配置已更新！")
 
 def main():
