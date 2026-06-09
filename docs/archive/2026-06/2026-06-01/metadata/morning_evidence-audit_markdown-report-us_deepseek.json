@@ -1,0 +1,2308 @@
+{
+  "required": true,
+  "analysis_mode": "markdown-report",
+  "market": "US",
+  "date_range": {
+    "start": "2026-06-01",
+    "end": "2026-06-01"
+  },
+  "source_references": {
+    "required": true,
+    "article_ids": [
+      5166,
+      5167,
+      5168,
+      5169,
+      5165,
+      5150,
+      5141,
+      5140,
+      5151,
+      5142,
+      5143,
+      5144,
+      5146,
+      5122,
+      5123,
+      5124,
+      5156,
+      5155,
+      5157,
+      5159,
+      5158,
+      5170,
+      5145,
+      5184,
+      5120,
+      5121,
+      5148,
+      5171,
+      5174,
+      5180,
+      5181,
+      5182,
+      5183,
+      5149,
+      5147
+    ],
+    "articles": [
+      {
+        "article_id": 5166,
+        "source": "ZeroHedge",
+        "title": "Monolithic 3D Silicon Chips Achieve Near-Perfect Yields At Low Temperatures",
+        "published": "Sun, 31 May 2026 23:50:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5167,
+        "source": "ZeroHedge",
+        "title": "Israel Seizes Crusader Beaufort Castle, Marking Deepest Plunge Into Lebanon In Decades",
+        "published": "Sun, 31 May 2026 23:15:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5168,
+        "source": "ZeroHedge",
+        "title": "The End Of Digital Trust: How Quantum Computing Could Upend Security, Business, & Global Stability",
+        "published": "Sun, 31 May 2026 22:40:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5169,
+        "source": "ZeroHedge",
+        "title": "Berkshire Buys Taylor Morrison For $6.8 Billion In First Big Deal Under Greg Abel",
+        "published": "Sun, 31 May 2026 21:40:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5165,
+        "source": "ZeroHedge",
+        "title": "California Chemical Tank Emergency At F-35 Supplier Comes Amid Far-Left Campaign Against Defense Firms",
+        "published": "Mon, 01 Jun 2026 00:25:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5150,
+        "source": "ETF Trends",
+        "title": "The Muni Brief: NYC’s Pied-à-Terre Tax",
+        "published": "Sun, 31 May 2026 12:42:08 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5141,
+        "source": "CNBC",
+        "title": "Oil jumps 2% as Israel expands Lebanon offensive, rattling ceasefire hopes",
+        "published": "Mon, 01 Jun 2026 00:58:02 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5140,
+        "source": "CNBC",
+        "title": "Berkshire Hathaway makes $6.8 billion housing bet with Taylor Morrison deal",
+        "published": "Mon, 01 Jun 2026 00:16:39 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5151,
+        "source": "ETF Trends",
+        "title": "Mailbag: A Follow-Up on Pfizer & Other Questions",
+        "published": "Sat, 30 May 2026 12:25:15 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5142,
+        "source": "CNBC",
+        "title": "U.S. and Iran still without deal to end war after Trump says he's not in a 'hurry'",
+        "published": "Sun, 31 May 2026 16:22:08 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5143,
+        "source": "CNBC",
+        "title": "Former Barclays CEO Jes Staley agrees to July 23 interview about Jeffrey Epstein by Oversight panel",
+        "published": "Sun, 31 May 2026 15:53:27 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5144,
+        "source": "CNBC",
+        "title": "Top Wall Street analysts see robust growth potential in these 3 stocks",
+        "published": "Sun, 31 May 2026 11:50:08 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5146,
+        "source": "BBC全球经济",
+        "title": "A year of grief and waiting: What remains when a plane falls from the sky",
+        "published": "Mon, 01 Jun 2026 00:24:47 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5122,
+        "source": "FT中文网",
+        "title": "智利盐湖的锂矿争夺战：一场中美都不愿输掉的竞赛",
+        "published": "Sun, 31 May 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5123,
+        "source": "FT中文网",
+        "title": "韩元和海力士背离：资金去哪了？",
+        "published": "Sat, 30 May 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5124,
+        "source": "FT中文网",
+        "title": "拒绝AI焦虑：初创公司押注“情绪价值”慢赛道",
+        "published": "Sat, 30 May 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5156,
+        "source": "Yahoo Finance",
+        "title": "Warren Buffett's Berkshire dumps entire stake in dividend stock",
+        "published": "2026-05-30T20:33:00Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5155,
+        "source": "Yahoo Finance",
+        "title": "Another company shuts down Bitcoin treasury",
+        "published": "2026-05-30T16:00:00Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5157,
+        "source": "Yahoo Finance",
+        "title": "Is American Express Stock Underperforming the S&P 500?",
+        "published": "2026-05-30T14:18:47Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5159,
+        "source": "Yahoo Finance",
+        "title": "Down 28%, Netflix Stock Is Suddenly a Bargain",
+        "published": "2026-05-30T14:00:03Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5158,
+        "source": "Yahoo Finance",
+        "title": "IBM Missed the Bus on AI. New Federal Funding Means IBM Stock Could Be a Winner in Quantum Computing.",
+        "published": "2026-05-30T14:00:02Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5170,
+        "source": "MarketWatch",
+        "title": "Oil rises, U.S. stock futures flat as Wall Street looks to extend its winning streak",
+        "published": "Mon, 01 Jun 2026 00:50:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5145,
+        "source": "BBC全球经济",
+        "title": "Put a £5 deposit on vapes to stop littering, say waste companies",
+        "published": "Mon, 01 Jun 2026 00:33:49 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5184,
+        "source": "Seeking Alpha",
+        "title": "U.S. moves to tighten AI chip export rules for Chinese firms overseas",
+        "published": "Sun, 31 May 2026 16:28:02 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5120,
+        "source": "FT中文网",
+        "title": "美国药企日益依赖中国研发新药引发国安忧虑",
+        "published": "Sun, 31 May 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5121,
+        "source": "FT中文网",
+        "title": "特朗普在一天内连遭法律挫败",
+        "published": "Sun, 31 May 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5148,
+        "source": "BBC全球经济",
+        "title": "Arrive three hours before flight home, airline boss tells UK holidaymakers",
+        "published": "Sat, 30 May 2026 08:56:05 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5171,
+        "source": "MarketWatch",
+        "title": "My golf buddy dropped me when I didn’t ask him to be my financial adviser. Was I naive?",
+        "published": "Sun, 31 May 2026 23:35:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5174,
+        "source": "MarketWatch",
+        "title": "‘I have no preexisting conditions’: I’m 56, earn $198,000 and want to retire early. Can I afford private healthcare?",
+        "published": "Sun, 31 May 2026 23:03:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5180,
+        "source": "Seeking Alpha",
+        "title": "Here are the major earnings before the open Monday",
+        "published": "Sun, 31 May 2026 18:00:55 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5181,
+        "source": "Seeking Alpha",
+        "title": "Berkshire Hathaway to acquire Taylor Morrison in $8.5B deal",
+        "published": "Sun, 31 May 2026 17:33:08 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5182,
+        "source": "Seeking Alpha",
+        "title": "SA Asks: Can Salesforce thrive in an AI-dominated world?",
+        "published": "Sun, 31 May 2026 17:17:12 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5183,
+        "source": "Seeking Alpha",
+        "title": "Australians say they need more than A$1 million to retire comfortably",
+        "published": "Sun, 31 May 2026 16:31:07 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5149,
+        "source": "BBC全球经济",
+        "title": "Why Britain's notoriously bad train wi-fi might soon be a thing of the past",
+        "published": "Sat, 30 May 2026 23:02:37 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5147,
+        "source": "BBC全球经济",
+        "title": "Ferrari wanted to take on Chinese EVs with the Luce - then the backlash started",
+        "published": "Sat, 30 May 2026 22:23:32 GMT",
+        "source_tier": "mainstream"
+      }
+    ]
+  },
+  "claim_ledger": {
+    "required": true,
+    "market": "US",
+    "summary": {
+      "total_claims": 6,
+      "realtime_claims": 4,
+      "verified_realtime_claims": 2,
+      "news_fact_claims": 2,
+      "failed_claims": 2
+    },
+    "claims": [
+      {
+        "claim_id": "us-claim-001",
+        "market": "US",
+        "claim_type": "股价断言",
+        "scope": "实时行情断言",
+        "content": "报 7580.06",
+        "context": "三大指数上周五全线收涨：S&P 500 报 7580.06（+1.80%）、NASDAQ 报 26972.62（+2.58%）、道指报 51032.46（+1.49%）",
+        "asset_hint": "^DJI",
+        "extracted_value": "7580.06",
+        "verified": false,
+        "verification_status": "failed",
+        "confidence": 0.0,
+        "source": "",
+        "realtime_source": "",
+        "timestamp": "",
+        "freshness_status": "missing_timestamp",
+        "evidence": "实时数据不符或未找到对应股票",
+        "failure_reason": "实时数据不符或未找到对应股票",
+        "source_articles": []
+      },
+      {
+        "claim_id": "us-claim-002",
+        "market": "US",
+        "claim_type": "股价断言",
+        "scope": "实时行情断言",
+        "content": "报 26972.62",
+        "context": "三大指数上周五全线收涨：S&P 500 报 7580.06（+1.80%）、NASDAQ 报 26972.62（+2.58%）、道指报 51032.46（+1.49%）",
+        "asset_hint": "^DJI",
+        "extracted_value": "26972.62",
+        "verified": false,
+        "verification_status": "failed",
+        "confidence": 0.0,
+        "source": "",
+        "realtime_source": "",
+        "timestamp": "",
+        "freshness_status": "missing_timestamp",
+        "evidence": "实时数据不符或未找到对应股票",
+        "failure_reason": "实时数据不符或未找到对应股票",
+        "source_articles": []
+      },
+      {
+        "claim_id": "us-claim-003",
+        "market": "US",
+        "claim_type": "股价断言",
+        "scope": "实时行情断言",
+        "content": "报 51032.46",
+        "context": "三大指数上周五全线收涨：S&P 500 报 7580.06（+1.80%）、NASDAQ 报 26972.62（+2.58%）、道指报 51032.46（+1.49%）",
+        "asset_hint": "^DJI",
+        "extracted_value": "51032.46",
+        "verified": true,
+        "verification_status": "verified",
+        "confidence": 1.0,
+        "source": "Yahoo Finance",
+        "realtime_source": "Yahoo Finance",
+        "timestamp": "2026-05-30 05:03:44",
+        "freshness_status": "timestamped",
+        "evidence": "实时数据验证: 51032.46 (误差 0.0%)",
+        "failure_reason": "",
+        "source_articles": []
+      },
+      {
+        "claim_id": "us-claim-004",
+        "market": "US",
+        "claim_type": "金价断言",
+        "scope": "实时行情断言",
+        "content": "黄金报 4528.70 美元",
+        "context": "- **汇率与大宗**: 基于实时数据，国际黄金报 4528.70 美元/盎司，仍处于高位区间；美元/人民币报 6.7668。地缘风险与货币政策预期共同作用贵金属，但当前无足够新闻证据形成独立主题结论【实时数据】。",
+        "asset_hint": "gold",
+        "extracted_value": "4528.70",
+        "verified": true,
+        "verification_status": "verified",
+        "confidence": 0.9999999569412873,
+        "source": "Gold-API / Yahoo Finance",
+        "realtime_source": "Gold-API / Yahoo Finance",
+        "timestamp": "2026-06-01T01:12:04Z",
+        "freshness_status": "timestamped",
+        "evidence": "实时金价: $4528.70/盎司 (误差 0.0%)",
+        "failure_reason": "",
+        "source_articles": []
+      },
+      {
+        "claim_id": "us-claim-005",
+        "market": "US",
+        "claim_type": "市场趋势断言",
+        "scope": "新闻事实断言",
+        "content": "24%",
+        "context": "- 伯克希尔哈撒韦宣布以约 68 亿美元全现金收购住宅建筑商 Taylor Morrison，溢价 24%，这是 Greg Abel 接任 CEO 后首笔重大收购，金额仅占伯克希尔近 4000 亿美元现金储备的极小部分【新闻5169】【新闻5140】",
+        "asset_hint": null,
+        "extracted_value": "24",
+        "verified": false,
+        "verification_status": "failed",
+        "confidence": 0.0,
+        "source": "",
+        "realtime_source": "",
+        "timestamp": "",
+        "freshness_status": "not_applicable",
+        "evidence": "新闻事实断言，不纳入实时行情校验",
+        "failure_reason": "新闻事实断言，不纳入实时行情校验",
+        "source_articles": [
+          {
+            "article_id": 5169,
+            "source": "ZeroHedge",
+            "title": "Berkshire Buys Taylor Morrison For $6.8 Billion In First Big Deal Under Greg Abel",
+            "published": "Sun, 31 May 2026 21:40:00 +0000"
+          },
+          {
+            "article_id": 5140,
+            "source": "CNBC",
+            "title": "Berkshire Hathaway makes $6.8 billion housing bet with Taylor Morrison deal",
+            "published": "Mon, 01 Jun 2026 00:16:39 GMT"
+          }
+        ]
+      },
+      {
+        "claim_id": "us-claim-006",
+        "market": "US",
+        "claim_type": "市场趋势断言",
+        "scope": "新闻事实断言",
+        "content": "2%",
+        "context": "- 报道显示，油价周一跳涨 2%，因以色列扩大在黎巴嫩的军事行动并占领战略城堡，停火希望受挫，地缘风险溢价回升【新闻5141】【新闻5167】",
+        "asset_hint": null,
+        "extracted_value": "2",
+        "verified": false,
+        "verification_status": "failed",
+        "confidence": 0.0,
+        "source": "",
+        "realtime_source": "",
+        "timestamp": "",
+        "freshness_status": "not_applicable",
+        "evidence": "新闻事实断言，不纳入实时行情校验",
+        "failure_reason": "新闻事实断言，不纳入实时行情校验",
+        "source_articles": [
+          {
+            "article_id": 5141,
+            "source": "CNBC",
+            "title": "Oil jumps 2% as Israel expands Lebanon offensive, rattling ceasefire hopes",
+            "published": "Mon, 01 Jun 2026 00:58:02 GMT"
+          },
+          {
+            "article_id": 5167,
+            "source": "ZeroHedge",
+            "title": "Israel Seizes Crusader Beaufort Castle, Marking Deepest Plunge Into Lebanon In Decades",
+            "published": "Sun, 31 May 2026 23:15:00 +0000"
+          }
+        ]
+      }
+    ]
+  },
+  "coverage_matrix": {
+    "required": true,
+    "market": "US",
+    "categories": {
+      "macro_liquidity": {
+        "article_count": 2,
+        "source_count": 2,
+        "status": "sufficient"
+      },
+      "policy_regulation": {
+        "article_count": 16,
+        "source_count": 6,
+        "status": "sufficient"
+      },
+      "company_earnings": {
+        "article_count": 1,
+        "source_count": 1,
+        "status": "partial"
+      },
+      "industry_theme": {
+        "article_count": 16,
+        "source_count": 7,
+        "status": "sufficient"
+      },
+      "risk_event": {
+        "article_count": 0,
+        "source_count": 0,
+        "status": "missing"
+      },
+      "realtime_market": {
+        "article_count": 0,
+        "source_count": 1,
+        "status": "sufficient"
+      }
+    },
+    "coverage_gaps": [
+      "company_earnings",
+      "risk_event"
+    ]
+  },
+  "evidence_diversity": {
+    "required": true,
+    "market": "US",
+    "total_articles": 35,
+    "source_count": 8,
+    "topic_count": 6,
+    "explicit_entity_count": 0,
+    "explicit_entity_observation_count": 0,
+    "source_tier_known_count": 35,
+    "mainstream_or_better_count": 23,
+    "aggregator_count": 12,
+    "original_source_known_count": 35,
+    "original_source_count": 18,
+    "max_source_share": 0.14285714285714285,
+    "max_topic_share": 0.45714285714285713,
+    "max_entity_share": 0.0,
+    "max_aggregator_share": 0.34285714285714286,
+    "original_source_share": 0.5142857142857142,
+    "source_distribution": [
+      {
+        "name": "ZeroHedge",
+        "count": 5,
+        "share": 0.14285714285714285
+      },
+      {
+        "name": "CNBC",
+        "count": 5,
+        "share": 0.14285714285714285
+      },
+      {
+        "name": "BBC全球经济",
+        "count": 5,
+        "share": 0.14285714285714285
+      },
+      {
+        "name": "FT中文网",
+        "count": 5,
+        "share": 0.14285714285714285
+      },
+      {
+        "name": "Yahoo Finance",
+        "count": 5,
+        "share": 0.14285714285714285
+      },
+      {
+        "name": "Seeking Alpha",
+        "count": 5,
+        "share": 0.14285714285714285
+      },
+      {
+        "name": "MarketWatch",
+        "count": 3,
+        "share": 0.08571428571428572
+      },
+      {
+        "name": "ETF Trends",
+        "count": 2,
+        "share": 0.05714285714285714
+      }
+    ],
+    "topic_distribution": [
+      {
+        "name": "政策与监管",
+        "count": 16,
+        "share": 0.45714285714285713
+      },
+      {
+        "name": "科技与产业主题",
+        "count": 10,
+        "share": 0.2857142857142857
+      },
+      {
+        "name": "未分类",
+        "count": 6,
+        "share": 0.17142857142857143
+      },
+      {
+        "name": "宏观与流动性",
+        "count": 1,
+        "share": 0.02857142857142857
+      },
+      {
+        "name": "其他观察",
+        "count": 1,
+        "share": 0.02857142857142857
+      },
+      {
+        "name": "汇率与大宗",
+        "count": 1,
+        "share": 0.02857142857142857
+      }
+    ],
+    "entity_distribution": [],
+    "source_tier_distribution": [
+      {
+        "name": "mainstream",
+        "count": 23,
+        "share": 0.6571428571428571
+      },
+      {
+        "name": "aggregator",
+        "count": 12,
+        "share": 0.34285714285714286
+      }
+    ],
+    "concentration_flags": [],
+    "passed": true
+  },
+  "counter_evidence_ledger": {
+    "required": true,
+    "market": "US",
+    "topics": [
+      {
+        "topic": "政策与监管",
+        "market": "US",
+        "high_confidence_topic": true,
+        "evidence_article_ids": [
+          5122,
+          5157,
+          5158,
+          5144
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      },
+      {
+        "topic": "科技与产业主题",
+        "market": "US",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          5124,
+          5141,
+          5146,
+          5149
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      },
+      {
+        "topic": "宏观与流动性",
+        "market": "US",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          5123
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      },
+      {
+        "topic": "其他观察",
+        "market": "US",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          5170
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      },
+      {
+        "topic": "汇率与大宗",
+        "market": "US",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          5121
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      }
+    ],
+    "summary": {
+      "topic_count": 5,
+      "topics_with_counter_evidence": 0,
+      "high_confidence_topics_with_counter_evidence": 0
+    },
+    "passed": true
+  },
+  "cross_verification": {
+    "topic_checks": [
+      {
+        "topic": "政策与监管",
+        "status": "conflicted",
+        "evidence_article_ids": [
+          5122,
+          5157,
+          5158,
+          5144
+        ],
+        "independent_source_count": 3,
+        "mainstream_or_better_count": 12,
+        "has_fresh_evidence": true,
+        "conflict_detail": "数值方向矛盾: 「earnings season has eased concerns about a potential artificial intelligence bub」vs「利润丰厚的“锂资源走廊”。 智利新政府正在释放的新信号表明，他们可能会在锂资源政策上大幅转向。作为该国最具战略意义的资产之一，锂相关的的国家政策近年来频繁调整，」"
+      },
+      {
+        "topic": "科技与产业主题",
+        "status": "weak",
+        "evidence_article_ids": [
+          5124,
+          5141,
+          5146,
+          5149
+        ],
+        "independent_source_count": 3,
+        "mainstream_or_better_count": 7,
+        "has_fresh_evidence": false,
+        "conflict_detail": null
+      },
+      {
+        "topic": "宏观与流动性",
+        "status": "weak",
+        "evidence_article_ids": [
+          5123
+        ],
+        "independent_source_count": 1,
+        "mainstream_or_better_count": 1,
+        "has_fresh_evidence": false,
+        "conflict_detail": null
+      },
+      {
+        "topic": "其他观察",
+        "status": "weak",
+        "evidence_article_ids": [
+          5170
+        ],
+        "independent_source_count": 1,
+        "mainstream_or_better_count": 1,
+        "has_fresh_evidence": false,
+        "conflict_detail": null
+      },
+      {
+        "topic": "汇率与大宗",
+        "status": "weak",
+        "evidence_article_ids": [
+          5121
+        ],
+        "independent_source_count": 1,
+        "mainstream_or_better_count": 1,
+        "has_fresh_evidence": false,
+        "conflict_detail": null
+      }
+    ],
+    "stock_checks": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "status": "weak",
+        "evidence_article_ids": [
+          5141,
+          5143
+        ],
+        "direct_mentions": 2,
+        "independent_source_count": 2,
+        "has_fresh_evidence": false,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "BAC",
+        "name": "Bank of America",
+        "status": "weak",
+        "evidence_article_ids": [
+          5144
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 1,
+        "has_fresh_evidence": false,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "PFE",
+        "name": "Pfizer",
+        "status": "weak",
+        "evidence_article_ids": [
+          5151,
+          5120
+        ],
+        "direct_mentions": 2,
+        "independent_source_count": 1,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "status": "weak",
+        "evidence_article_ids": [
+          5143
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 1,
+        "has_fresh_evidence": false,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA",
+        "status": "weak",
+        "evidence_article_ids": [
+          5158
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 1,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase",
+        "status": "weak",
+        "evidence_article_ids": [
+          5143
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 1,
+        "has_fresh_evidence": false,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      }
+    ],
+    "summary": {
+      "topics_confirmed": 0,
+      "topics_weak": 4,
+      "topics_conflicted": 1,
+      "stocks_confirmed": 0,
+      "stocks_weak": 6,
+      "stocks_conflicted": 0
+    },
+    "issues": [],
+    "warnings": []
+  },
+  "decision_views": {
+    "actionable_candidates": [],
+    "conditional_watchlist": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "industry": "投行",
+        "candidate_confidence": "high",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "missing_valuation_baseline",
+          "risk_flag_present"
+        ],
+        "total_score": 72,
+        "scores": {
+          "news_catalyst": 25,
+          "technical": 21,
+          "valuation": 10,
+          "quality_risk": 9,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "MACD 维持多头结构",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "lawsuit",
+          "新闻风险信号: lawsuit",
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_article_ids": [
+          5141,
+          5143
+        ],
+        "evidence_summaries": [
+          "Oil jumps 2% as Israel expands Lebanon offensive, rattling ceasefire hopes",
+          "Former Barclays CEO Jes Staley agrees to July 23 interview about Jeffrey Epstein by Oversight panel"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:order",
+          "material_keyword:stock",
+          "material_keyword:sec",
+          "material_keyword:lawsuit"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 2,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 2,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "BAC",
+        "name": "Bank of America",
+        "industry": "银行",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "关注",
+        "grade_caps": [],
+        "total_score": 71,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 23,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          5144
+        ],
+        "evidence_summaries": [
+          "Top Wall Street analysts see robust growth potential in these 3 stocks"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:earnings",
+          "material_keyword:revenue",
+          "material_keyword:profit"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 1,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "PFE",
+        "name": "Pfizer",
+        "industry": "医药",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "关注",
+        "grade_caps": [],
+        "total_score": 66,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 18,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          5151,
+          5120
+        ],
+        "evidence_summaries": [
+          "Mailbag: A Follow-Up on Pfizer & Other Questions",
+          "美国药企日益依赖中国研发新药引发国安忧虑"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:revenue",
+          "material_keyword:stock",
+          "material_keyword:earnings",
+          "material_keyword:合作"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 1,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "industry": "软件与云服务",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "missing_valuation_baseline",
+          "risk_flag_present"
+        ],
+        "total_score": 66,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 21,
+          "valuation": 10,
+          "quality_risk": 9,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "MACD 维持多头结构",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "lawsuit",
+          "新闻风险信号: lawsuit",
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_article_ids": [
+          5143
+        ],
+        "evidence_summaries": [
+          "Former Barclays CEO Jes Staley agrees to July 23 interview about Jeffrey Epstein by Oversight panel"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:sec",
+          "material_keyword:lawsuit"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 1,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA",
+        "industry": "半导体",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 63,
+        "scores": {
+          "news_catalyst": 17,
+          "technical": 17,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "RSI 处于健康区间，趋势未明显过热",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          5158
+        ],
+        "evidence_summaries": [
+          "IBM Missed the Bus on AI. New Federal Funding Means IBM Stock Could Be a Winner in Quantum Computing."
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:earnings",
+          "material_keyword:revenue",
+          "material_keyword:dividend"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 1,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 1,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase",
+        "industry": "银行",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 57,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 13,
+          "valuation": 10,
+          "quality_risk": 9,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "RSI 处于健康区间，趋势未明显过热",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "lawsuit",
+          "新闻风险信号: lawsuit",
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_article_ids": [
+          5143
+        ],
+        "evidence_summaries": [
+          "Former Barclays CEO Jes Staley agrees to July 23 interview about Jeffrey Epstein by Oversight panel"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:sec",
+          "material_keyword:lawsuit"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 1,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "stale_or_rejected": []
+  },
+  "stock_recommendations": [
+    {
+      "symbol": "GS",
+      "name": "Goldman Sachs",
+      "industry": "投行",
+      "candidate_confidence": "high",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "missing_valuation_baseline",
+        "risk_flag_present"
+      ],
+      "total_score": 72,
+      "scores": {
+        "news_catalyst": 25,
+        "technical": 21,
+        "valuation": 10,
+        "quality_risk": 9,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "MACD 维持多头结构",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "lawsuit",
+        "新闻风险信号: lawsuit",
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        5141,
+        5143
+      ],
+      "evidence_summaries": [
+        "Oil jumps 2% as Israel expands Lebanon offensive, rattling ceasefire hopes",
+        "Former Barclays CEO Jes Staley agrees to July 23 interview about Jeffrey Epstein by Oversight panel"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:order",
+        "material_keyword:stock",
+        "material_keyword:sec",
+        "material_keyword:lawsuit"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 2,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 2,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America",
+      "industry": "银行",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "关注",
+      "grade_caps": [],
+      "total_score": 71,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 23,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        5144
+      ],
+      "evidence_summaries": [
+        "Top Wall Street analysts see robust growth potential in these 3 stocks"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:earnings",
+        "material_keyword:revenue",
+        "material_keyword:profit"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 1,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "PFE",
+      "name": "Pfizer",
+      "industry": "医药",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "关注",
+      "grade_caps": [],
+      "total_score": 66,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 18,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        5151,
+        5120
+      ],
+      "evidence_summaries": [
+        "Mailbag: A Follow-Up on Pfizer & Other Questions",
+        "美国药企日益依赖中国研发新药引发国安忧虑"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:revenue",
+        "material_keyword:stock",
+        "material_keyword:earnings",
+        "material_keyword:合作"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 1,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "industry": "软件与云服务",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "missing_valuation_baseline",
+        "risk_flag_present"
+      ],
+      "total_score": 66,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 21,
+        "valuation": 10,
+        "quality_risk": 9,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "MACD 维持多头结构",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "lawsuit",
+        "新闻风险信号: lawsuit",
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        5143
+      ],
+      "evidence_summaries": [
+        "Former Barclays CEO Jes Staley agrees to July 23 interview about Jeffrey Epstein by Oversight panel"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:sec",
+        "material_keyword:lawsuit"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 1,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "industry": "半导体",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 63,
+      "scores": {
+        "news_catalyst": 17,
+        "technical": 17,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "RSI 处于健康区间，趋势未明显过热",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        5158
+      ],
+      "evidence_summaries": [
+        "IBM Missed the Bus on AI. New Federal Funding Means IBM Stock Could Be a Winner in Quantum Computing."
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:earnings",
+        "material_keyword:revenue",
+        "material_keyword:dividend"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 1,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 1,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "JPM",
+      "name": "JPMorgan Chase",
+      "industry": "银行",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 57,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 13,
+        "valuation": 10,
+        "quality_risk": 9,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "RSI 处于健康区间，趋势未明显过热",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "lawsuit",
+        "新闻风险信号: lawsuit",
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        5143
+      ],
+      "evidence_summaries": [
+        "Former Barclays CEO Jes Staley agrees to July 23 interview about Jeffrey Epstein by Oversight panel"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:sec",
+        "material_keyword:lawsuit"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 1,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    }
+  ],
+  "quality_check": {
+    "score": 55.0,
+    "passed": false,
+    "accuracy_score": 30.0,
+    "timeliness_score": 5,
+    "reliability_score": 20,
+    "claim_coverage_score": 20,
+    "time_source": "report_text",
+    "source_annotation_missing": false,
+    "narrative_consistency_passed": true,
+    "data_integrity_statement_passed": true,
+    "issues": [
+      "❌ 实时数据更新时间超过24小时,不满足发布时效要求"
+    ],
+    "warnings": [
+      "⚠️ 准确性偏低: 50%的断言得到验证 (2/4)",
+      "⚠️ 报告更新时间与系统实时数据时间不一致,已按更保守时间计算时效性",
+      "⚠️ 数据更新于57.3小时前,时效性较差"
+    ],
+    "stats": {
+      "has_realtime_data": true,
+      "data_age_hours": 57.26337802166667,
+      "time_source": "report_text",
+      "source_annotation_missing": false,
+      "claim_coverage_score": 20,
+      "citation_count": 28,
+      "placeholder_citation_count": 0,
+      "verified_claims": 2,
+      "total_claims": 4,
+      "realtime_verified_claims": 2,
+      "realtime_total_claims": 4,
+      "news_fact_claims": 2,
+      "analytical_judgment_count": 0,
+      "fabrication_detected": false,
+      "watchlist_promoted_in_narrative_count": 0,
+      "verification_boundary_overclaim_count": 0,
+      "cross_verification_overclaim_count": 0,
+      "coverage_gap_count": 2,
+      "coverage_boundary_overclaim_count": 0,
+      "evidence_diversity_issue_count": 0,
+      "evidence_source_count": 8,
+      "evidence_topic_count": 6,
+      "evidence_max_source_share": 0.14285714285714285,
+      "evidence_max_topic_share": 0.45714285714285713,
+      "evidence_max_aggregator_share": 0.34285714285714286,
+      "evidence_original_source_share": 0.5142857142857142,
+      "counter_evidence_issue_count": 0,
+      "counter_evidence_high_confidence_topics": 0,
+      "implausible_signals": {
+        "over_precision_count": 0,
+        "rounded_ratio": 0.0,
+        "cross_asset_repeated_value_count": 0
+      }
+    },
+    "timestamp": "2026-06-01T09:15:48.161503"
+  },
+  "candidate_evidence_audit": {
+    "required": true,
+    "candidate_count": 6,
+    "recommendation_count": 6,
+    "status_counts": {
+      "direct_material_news": 6
+    },
+    "candidates": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:order",
+          "material_keyword:stock",
+          "material_keyword:sec",
+          "material_keyword:lawsuit"
+        ],
+        "evidence_article_ids": [
+          5141,
+          5143
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "BAC",
+        "name": "Bank of America",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:earnings",
+          "material_keyword:revenue",
+          "material_keyword:profit"
+        ],
+        "evidence_article_ids": [
+          5144
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "PFE",
+        "name": "Pfizer",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:revenue",
+          "material_keyword:stock",
+          "material_keyword:earnings",
+          "material_keyword:合作"
+        ],
+        "evidence_article_ids": [
+          5151,
+          5120
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:sec",
+          "material_keyword:lawsuit"
+        ],
+        "evidence_article_ids": [
+          5143
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:earnings",
+          "material_keyword:revenue",
+          "material_keyword:dividend"
+        ],
+        "evidence_article_ids": [
+          5158
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:sec",
+          "material_keyword:lawsuit"
+        ],
+        "evidence_article_ids": [
+          5143
+        ],
+        "actionability_passed": false
+      }
+    ],
+    "rejected_false_positive_mentions": [
+      {
+        "article_id": 5166,
+        "title": "Monolithic 3D Silicon Chips Achieve Near-Perfect Yields At Low Temperatures",
+        "symbol": "META",
+        "name": "Meta",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      }
+    ]
+  },
+  "scoring_calibration": {
+    "required": true,
+    "status_counts": {
+      "样本不足": 6
+    },
+    "items": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "BAC",
+        "name": "Bank of America",
+        "grade": "关注",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "PFE",
+        "name": "Pfizer",
+        "grade": "关注",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      }
+    ]
+  },
+  "rejected_false_positive_mentions": [
+    {
+      "article_id": 5166,
+      "title": "Monolithic 3D Silicon Chips Achieve Near-Perfect Yields At Low Temperatures",
+      "symbol": "META",
+      "name": "Meta",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    }
+  ],
+  "session": "morning",
+  "session_time": "2026-06-01 09:15:48"
+}

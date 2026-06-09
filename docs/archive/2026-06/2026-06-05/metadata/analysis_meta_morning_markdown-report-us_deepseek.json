@@ -1,0 +1,871 @@
+{
+  "date_range": {
+    "start": "2026-06-05",
+    "end": "2026-06-05"
+  },
+  "market": "US",
+  "articles_used": 19,
+  "chunks": 29,
+  "model_usage": {
+    "model": "deepseek-v4-pro",
+    "provider": "deepseek",
+    "prompt_tokens": 12998,
+    "completion_tokens": 1381,
+    "total_tokens": 14379
+  },
+  "quality_check": {
+    "score": 85.0,
+    "passed": false,
+    "accuracy_score": 60.0,
+    "timeliness_score": 10,
+    "reliability_score": 15,
+    "claim_coverage_score": 10,
+    "time_source": "report_text",
+    "source_annotation_missing": false,
+    "narrative_consistency_passed": false,
+    "data_integrity_statement_passed": true,
+    "issues": [
+      "❌ 交叉验真: 正文将 weak/conflicted 主题 科技与产业主题 写成'已验证'",
+      "❌ 交叉验真: 正文将 weak/conflicted 主题 政策与监管 写成'已验证'",
+      "❌ 交叉验真: 正文将 weak/conflicted 主题 其他观察 写成'已验证'"
+    ],
+    "warnings": [
+      "⚠️ 报告更新时间与系统实时数据时间不一致,已按更保守时间计算时效性",
+      "⚠️ 数据更新于5.0小时前,时效性一般"
+    ],
+    "stats": {
+      "has_realtime_data": true,
+      "data_age_hours": 4.97329752888889,
+      "time_source": "report_text",
+      "source_annotation_missing": false,
+      "claim_coverage_score": 10,
+      "citation_count": 14,
+      "placeholder_citation_count": 0,
+      "verified_claims": 1,
+      "total_claims": 1,
+      "realtime_verified_claims": 1,
+      "realtime_total_claims": 1,
+      "news_fact_claims": 2,
+      "analytical_judgment_count": 0,
+      "fabrication_detected": false,
+      "watchlist_promoted_in_narrative_count": 0,
+      "verification_boundary_overclaim_count": 0,
+      "cross_verification_overclaim_count": 3,
+      "coverage_gap_count": 3,
+      "coverage_boundary_overclaim_count": 0,
+      "evidence_diversity_issue_count": 0,
+      "evidence_source_count": 5,
+      "evidence_topic_count": 4,
+      "evidence_max_source_share": 0.2631578947368421,
+      "evidence_max_topic_share": 0.42105263157894735,
+      "evidence_max_aggregator_share": 0.2631578947368421,
+      "evidence_original_source_share": 0.7368421052631579,
+      "counter_evidence_issue_count": 0,
+      "counter_evidence_high_confidence_topics": 0,
+      "implausible_signals": {
+        "over_precision_count": 0,
+        "rounded_ratio": 0.0,
+        "cross_asset_repeated_value_count": 0
+      }
+    },
+    "timestamp": "2026-06-05T09:45:23.871238"
+  },
+  "verification_enabled": true,
+  "output_mode": "markdown-report",
+  "live_data_degraded": false,
+  "stock_recommendations": [],
+  "score_distribution": {
+    "strong_focus": 0,
+    "focus": 0,
+    "watch": 0,
+    "avoid": 0
+  },
+  "scoring_config": {
+    "market": "US",
+    "style": "balanced",
+    "lookback_days": 60,
+    "pool_mode": "strict",
+    "theme_mapping_max_grade": "watch",
+    "value_acceptance_enabled": true,
+    "industry_trend_enabled": true,
+    "evidence_relevance_enabled": true,
+    "historical_calibration_enabled": true
+  },
+  "decision_views": {
+    "actionable_candidates": [],
+    "conditional_watchlist": [],
+    "stale_or_rejected": []
+  },
+  "judgment_candidates": [
+    {
+      "candidate_id": "C01",
+      "topic": "政策与监管",
+      "market_scope": [
+        "A股",
+        "港股",
+        "宏观"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 2,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "official",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 1,
+      "articles": [
+        {
+          "id": 5565,
+          "title": "SEC Announces New Members of Small Business Capital Formation Advisory Committee",
+          "source": "美国证监会-新闻发布",
+          "summary": "The Securities and Exchange Commission today announced five new members of the&nbsp;Small Business Capital Formation Advisory Committee. The new members were appointed to four-year",
+          "source_tier": "official",
+          "content_quality_status": "partial",
+          "published": "Thu, 04 Jun 2026 14:39:49 -0400",
+          "collection_date": "2026-06-05"
+        },
+        {
+          "id": 5533,
+          "title": "The Media Wants To Know Why Men Are Walking Away From Liberal Society?",
+          "source": "ZeroHedge",
+          "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">The Media Wants To Know Why Men Are Walking Away From Liberal Society?</span> <div class=\"clearfix text",
+          "source_tier": "aggregator",
+          "content_quality_status": "full",
+          "published": "Thu, 04 Jun 2026 23:40:00 +0000",
+          "collection_date": "2026-06-05"
+        },
+        {
+          "id": 5532,
+          "title": "Texas AG Launches Investigation Into Glyphosate In Food",
+          "source": "ZeroHedge",
+          "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">Texas AG Launches Investigation Into Glyphosate In Food</span> <div class=\"clearfix text-formatted fiel",
+          "source_tier": "aggregator",
+          "content_quality_status": "full",
+          "published": "Fri, 05 Jun 2026 00:05:00 +0000",
+          "collection_date": "2026-06-05"
+        },
+        {
+          "id": 5530,
+          "title": "Mole People? What Are These Individuals Doing In New York Sewers?",
+          "source": "ZeroHedge",
+          "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">Mole People? What Are These Individuals Doing In New York Sewers?</span> <div class=\"clearfix text-form",
+          "source_tier": "aggregator",
+          "content_quality_status": "full",
+          "published": "Fri, 05 Jun 2026 00:55:00 +0000",
+          "collection_date": "2026-06-05"
+        }
+      ],
+      "topic_article_count": 5,
+      "priority_score": 50,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C03",
+      "topic": "其他观察",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 2,
+      "independent_evidence_count": 2,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 2,
+      "mainstream_or_better_count": 3,
+      "articles": [
+        {
+          "id": 5526,
+          "title": "海湾国家应该与乌克兰合作",
+          "source": "FT中文网",
+          "summary": "萨阿布：尽管美国拥有先进反导系统，但在反无人机作战方面并非能力最强、经验最丰富的国家；乌克兰才是。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Thu, 04 Jun 2026 16:00:00 GMT",
+          "collection_date": "2026-06-05"
+        },
+        {
+          "id": 5552,
+          "title": "Marvell looks poised to finally get a spot in the S&P 500 after explosive stock surge",
+          "source": "MarketWatch",
+          "summary": "S&amp;P 500 changes are likely to be announced on Friday, and Marvell is now vastly bigger than the next-largest eligible contender.",
+          "source_tier": "mainstream",
+          "content_quality_status": "summary_only",
+          "published": "Thu, 04 Jun 2026 22:50:00 GMT",
+          "collection_date": "2026-06-05"
+        },
+        {
+          "id": 5553,
+          "title": "South Korea is the ultimate backdoor tech play — but stock investors now face a looming threat",
+          "source": "MarketWatch",
+          "summary": "Samsung and SK Hynix are key to soaring South Korean stock market, but a rate hike could trigger a 15% market correction.",
+          "source_tier": "mainstream",
+          "content_quality_status": "summary_only",
+          "published": "Thu, 04 Jun 2026 22:40:00 GMT",
+          "collection_date": "2026-06-05"
+        }
+      ],
+      "topic_article_count": 3,
+      "priority_score": 44,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C02",
+      "topic": "科技与产业主题",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "2-6周",
+      "evidence_count": 2,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 2,
+      "articles": [
+        {
+          "id": 5550,
+          "title": "This investing strategy digs deeper to find hidden stocks riding the AI wave",
+          "source": "MarketWatch",
+          "summary": "There are plenty of ways to jump into the generative-AI hardware infrastructure expansion beyond the familiar chip makers and hyperscalers.",
+          "source_tier": "mainstream",
+          "content_quality_status": "summary_only",
+          "published": "Thu, 04 Jun 2026 22:56:00 GMT",
+          "collection_date": "2026-06-05"
+        },
+        {
+          "id": 5554,
+          "title": "I own a house with my sister, but the mortgage is in her name. Could this come back to bite me?",
+          "source": "MarketWatch",
+          "summary": "“My son, daughter-in-law and granddaughter live there and take care of utilities, yardwork and maintenance.”",
+          "source_tier": "mainstream",
+          "content_quality_status": "summary_only",
+          "published": "Thu, 04 Jun 2026 22:30:00 GMT",
+          "collection_date": "2026-06-05"
+        },
+        {
+          "id": 5534,
+          "title": "DOJ Opens Investigation Into Suspected Race-Based Practices At Arizona State University",
+          "source": "ZeroHedge",
+          "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">DOJ Opens Investigation Into Suspected Race-Based Practices At Arizona State University</span> <div cla",
+          "source_tier": "aggregator",
+          "content_quality_status": "full",
+          "published": "Thu, 04 Jun 2026 23:15:00 +0000",
+          "collection_date": "2026-06-05"
+        }
+      ],
+      "topic_article_count": 3,
+      "priority_score": 40,
+      "high_confidence_topic": false
+    }
+  ],
+  "data_quality_stats": {
+    "counts": {
+      "full": 5,
+      "partial": 2,
+      "summary_only": 4,
+      "other": 8
+    },
+    "ratios": {
+      "full": 26.31578947368421,
+      "partial": 10.526315789473683,
+      "summary_only": 21.052631578947366,
+      "other": 42.10526315789473
+    },
+    "total": 19
+  },
+  "source_references": {
+    "required": true,
+    "article_ids": [
+      5533,
+      5534,
+      5530,
+      5531,
+      5532,
+      5550,
+      5552,
+      5553,
+      5554,
+      5526,
+      5565,
+      5525,
+      5527,
+      5528,
+      5540,
+      5529,
+      5541,
+      5542,
+      5543
+    ],
+    "articles": [
+      {
+        "article_id": 5533,
+        "source": "ZeroHedge",
+        "title": "The Media Wants To Know Why Men Are Walking Away From Liberal Society?",
+        "published": "Thu, 04 Jun 2026 23:40:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5534,
+        "source": "ZeroHedge",
+        "title": "DOJ Opens Investigation Into Suspected Race-Based Practices At Arizona State University",
+        "published": "Thu, 04 Jun 2026 23:15:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5530,
+        "source": "ZeroHedge",
+        "title": "Mole People? What Are These Individuals Doing In New York Sewers?",
+        "published": "Fri, 05 Jun 2026 00:55:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5531,
+        "source": "ZeroHedge",
+        "title": "Trump Says Accountability Is Coming Over The 'Rigged' 2020 Election",
+        "published": "Fri, 05 Jun 2026 00:30:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5532,
+        "source": "ZeroHedge",
+        "title": "Texas AG Launches Investigation Into Glyphosate In Food",
+        "published": "Fri, 05 Jun 2026 00:05:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5550,
+        "source": "MarketWatch",
+        "title": "This investing strategy digs deeper to find hidden stocks riding the AI wave",
+        "published": "Thu, 04 Jun 2026 22:56:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5552,
+        "source": "MarketWatch",
+        "title": "Marvell looks poised to finally get a spot in the S&P 500 after explosive stock surge",
+        "published": "Thu, 04 Jun 2026 22:50:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5553,
+        "source": "MarketWatch",
+        "title": "South Korea is the ultimate backdoor tech play — but stock investors now face a looming threat",
+        "published": "Thu, 04 Jun 2026 22:40:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5554,
+        "source": "MarketWatch",
+        "title": "I own a house with my sister, but the mortgage is in her name. Could this come back to bite me?",
+        "published": "Thu, 04 Jun 2026 22:30:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5526,
+        "source": "FT中文网",
+        "title": "海湾国家应该与乌克兰合作",
+        "published": "Thu, 04 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5565,
+        "source": "美国证监会-新闻发布",
+        "title": "SEC Announces New Members of Small Business Capital Formation Advisory Committee",
+        "published": "Thu, 04 Jun 2026 14:39:49 -0400",
+        "source_tier": "official"
+      },
+      {
+        "article_id": 5525,
+        "source": "FT中文网",
+        "title": "欧洲终于开始从防御性监管转向创新发明",
+        "published": "Thu, 04 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5527,
+        "source": "FT中文网",
+        "title": "画家丘吉尔",
+        "published": "Thu, 04 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5528,
+        "source": "FT中文网",
+        "title": "贾樟柯电影中的女性：当时代“经过”她们",
+        "published": "Thu, 04 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5540,
+        "source": "经济学人 Economist",
+        "title": "Indians can now bet on the monsoon",
+        "published": "Thu, 04 Jun 2026 09:48:11 +0000",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5529,
+        "source": "FT中文网",
+        "title": "73天420亿元和一份被改了五处的风险提示：宇树过会后的“反直觉二阶投资法”",
+        "published": "Wed, 03 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5541,
+        "source": "经济学人 Economist",
+        "title": "European electricity markets have too much power",
+        "published": "Thu, 04 Jun 2026 09:37:28 +0000",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5542,
+        "source": "经济学人 Economist",
+        "title": "Some billionaires pay too little tax",
+        "published": "Thu, 04 Jun 2026 09:18:42 +0000",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5543,
+        "source": "经济学人 Economist",
+        "title": "Gen-Z socialism, from Zohran to Zack and beyond",
+        "published": "Thu, 04 Jun 2026 09:11:24 +0000",
+        "source_tier": "mainstream"
+      }
+    ]
+  },
+  "source_references_required": true,
+  "claim_ledger": {
+    "required": true,
+    "market": "US",
+    "summary": {
+      "total_claims": 3,
+      "realtime_claims": 1,
+      "verified_realtime_claims": 1,
+      "news_fact_claims": 2,
+      "failed_claims": 0
+    },
+    "claims": [
+      {
+        "claim_id": "us-claim-001",
+        "market": "US",
+        "claim_type": "股价断言",
+        "scope": "实时行情断言",
+        "content": "收于$51,561.93",
+        "context": "道琼斯指数收于$51,561.93",
+        "asset_hint": "^DJI",
+        "extracted_value": "51561.93",
+        "verified": true,
+        "verification_status": "verified",
+        "confidence": 1.0,
+        "source": "Yahoo Finance",
+        "realtime_source": "Yahoo Finance",
+        "timestamp": "2026-06-05 04:47:20",
+        "freshness_status": "timestamped",
+        "evidence": "实时数据验证: 51561.93 (误差 0.0%)",
+        "failure_reason": "",
+        "source_articles": []
+      },
+      {
+        "claim_id": "us-claim-002",
+        "market": "US",
+        "claim_type": "市场趋势断言",
+        "scope": "新闻事实断言",
+        "content": "$4,484.80",
+        "context": "- **其他观察**: 黄金价格站上$4,484.80/盎司（更新时间：2026-06-05 09:33），与部分新闻中反映的全球地缘政治不确定性（如欧洲加速科技主权立法【新闻5525】）形成宏观避险情绪的间接呼应，但缺乏直接的美股传导逻辑。",
+        "asset_hint": null,
+        "extracted_value": "4484.80",
+        "verified": false,
+        "verification_status": "failed",
+        "confidence": 0.0,
+        "source": "",
+        "realtime_source": "",
+        "timestamp": "",
+        "freshness_status": "not_applicable",
+        "evidence": "新闻事实断言，不纳入实时行情校验",
+        "failure_reason": "新闻事实断言，不纳入实时行情校验",
+        "source_articles": [
+          {
+            "article_id": 5525,
+            "source": "FT中文网",
+            "title": "欧洲终于开始从防御性监管转向创新发明",
+            "published": "Thu, 04 Jun 2026 16:00:00 GMT"
+          }
+        ]
+      },
+      {
+        "claim_id": "us-claim-003",
+        "market": "US",
+        "claim_type": "市场趋势断言",
+        "scope": "新闻事实断言",
+        "content": "15%",
+        "context": "- **后手/拥挤**: 韩国科技股面临加息威胁可能触发15%的市场回调【新闻5553】，提示全球科技板块并非普涨无虞，需警惕高估值科技股的拥挤风险。",
+        "asset_hint": null,
+        "extracted_value": "15",
+        "verified": false,
+        "verification_status": "failed",
+        "confidence": 0.0,
+        "source": "",
+        "realtime_source": "",
+        "timestamp": "",
+        "freshness_status": "not_applicable",
+        "evidence": "新闻事实断言，不纳入实时行情校验",
+        "failure_reason": "新闻事实断言，不纳入实时行情校验",
+        "source_articles": [
+          {
+            "article_id": 5553,
+            "source": "MarketWatch",
+            "title": "South Korea is the ultimate backdoor tech play — but stock investors now face a looming threat",
+            "published": "Thu, 04 Jun 2026 22:40:00 GMT"
+          }
+        ]
+      }
+    ]
+  },
+  "claim_ledger_required": true,
+  "coverage_matrix": {
+    "required": true,
+    "market": "US",
+    "categories": {
+      "macro_liquidity": {
+        "article_count": 1,
+        "source_count": 1,
+        "status": "partial"
+      },
+      "policy_regulation": {
+        "article_count": 6,
+        "source_count": 3,
+        "status": "sufficient"
+      },
+      "company_earnings": {
+        "article_count": 0,
+        "source_count": 0,
+        "status": "missing"
+      },
+      "industry_theme": {
+        "article_count": 6,
+        "source_count": 3,
+        "status": "sufficient"
+      },
+      "risk_event": {
+        "article_count": 2,
+        "source_count": 1,
+        "status": "partial"
+      },
+      "realtime_market": {
+        "article_count": 0,
+        "source_count": 1,
+        "status": "sufficient"
+      }
+    },
+    "coverage_gaps": [
+      "macro_liquidity",
+      "company_earnings",
+      "risk_event"
+    ]
+  },
+  "coverage_matrix_required": true,
+  "evidence_diversity": {
+    "required": true,
+    "market": "US",
+    "total_articles": 19,
+    "source_count": 5,
+    "topic_count": 4,
+    "explicit_entity_count": 0,
+    "explicit_entity_observation_count": 0,
+    "source_tier_known_count": 19,
+    "mainstream_or_better_count": 14,
+    "aggregator_count": 5,
+    "original_source_known_count": 19,
+    "original_source_count": 14,
+    "max_source_share": 0.2631578947368421,
+    "max_topic_share": 0.42105263157894735,
+    "max_entity_share": 0.0,
+    "max_aggregator_share": 0.2631578947368421,
+    "original_source_share": 0.7368421052631579,
+    "source_distribution": [
+      {
+        "name": "ZeroHedge",
+        "count": 5,
+        "share": 0.2631578947368421
+      },
+      {
+        "name": "FT中文网",
+        "count": 5,
+        "share": 0.2631578947368421
+      },
+      {
+        "name": "MarketWatch",
+        "count": 4,
+        "share": 0.21052631578947367
+      },
+      {
+        "name": "经济学人 Economist",
+        "count": 4,
+        "share": 0.21052631578947367
+      },
+      {
+        "name": "美国证监会-新闻发布",
+        "count": 1,
+        "share": 0.05263157894736842
+      }
+    ],
+    "topic_distribution": [
+      {
+        "name": "未分类",
+        "count": 8,
+        "share": 0.42105263157894735
+      },
+      {
+        "name": "政策与监管",
+        "count": 5,
+        "share": 0.2631578947368421
+      },
+      {
+        "name": "科技与产业主题",
+        "count": 3,
+        "share": 0.15789473684210525
+      },
+      {
+        "name": "其他观察",
+        "count": 3,
+        "share": 0.15789473684210525
+      }
+    ],
+    "entity_distribution": [],
+    "source_tier_distribution": [
+      {
+        "name": "mainstream",
+        "count": 13,
+        "share": 0.6842105263157895
+      },
+      {
+        "name": "aggregator",
+        "count": 5,
+        "share": 0.2631578947368421
+      },
+      {
+        "name": "official",
+        "count": 1,
+        "share": 0.05263157894736842
+      }
+    ],
+    "concentration_flags": [],
+    "passed": true
+  },
+  "evidence_diversity_required": true,
+  "counter_evidence_ledger": {
+    "required": true,
+    "market": "US",
+    "topics": [
+      {
+        "topic": "政策与监管",
+        "market": "US",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          5565,
+          5533,
+          5532,
+          5530
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [
+          5532
+        ],
+        "counter_evidence_count": 1,
+        "positive_keywords": [],
+        "negative_keywords": [
+          "lawsuit"
+        ],
+        "status": "counter_only"
+      },
+      {
+        "topic": "其他观察",
+        "market": "US",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          5526,
+          5552,
+          5553
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      },
+      {
+        "topic": "科技与产业主题",
+        "market": "US",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          5550,
+          5554,
+          5534
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      }
+    ],
+    "summary": {
+      "topic_count": 3,
+      "topics_with_counter_evidence": 0,
+      "high_confidence_topics_with_counter_evidence": 0
+    },
+    "passed": true
+  },
+  "counter_evidence_required": true,
+  "evidence_audit_required": true,
+  "candidate_evidence_audit": {
+    "required": true,
+    "candidate_count": 0,
+    "recommendation_count": 0,
+    "status_counts": {},
+    "candidates": [],
+    "rejected_false_positive_mentions": [
+      {
+        "article_id": 5534,
+        "title": "DOJ Opens Investigation Into Suspected Race-Based Practices At Arizona State University",
+        "symbol": "HD",
+        "name": "Home Depot",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      }
+    ]
+  },
+  "scoring_calibration": {
+    "required": true,
+    "status_counts": {},
+    "items": []
+  },
+  "rejected_false_positive_mentions": [
+    {
+      "article_id": 5534,
+      "title": "DOJ Opens Investigation Into Suspected Race-Based Practices At Arizona State University",
+      "symbol": "HD",
+      "name": "Home Depot",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    }
+  ],
+  "backtest_ready": true,
+  "backtest_generated_at": "2026-06-05T09:45:23.872253",
+  "cross_verification": {
+    "topic_checks": [
+      {
+        "topic": "政策与监管",
+        "status": "weak",
+        "evidence_article_ids": [
+          5565,
+          5533,
+          5532,
+          5530
+        ],
+        "independent_source_count": 1,
+        "mainstream_or_better_count": 1,
+        "has_fresh_evidence": true,
+        "conflict_detail": null
+      },
+      {
+        "topic": "其他观察",
+        "status": "weak",
+        "evidence_article_ids": [
+          5526,
+          5552,
+          5553
+        ],
+        "independent_source_count": 2,
+        "mainstream_or_better_count": 3,
+        "has_fresh_evidence": false,
+        "conflict_detail": null
+      },
+      {
+        "topic": "科技与产业主题",
+        "status": "weak",
+        "evidence_article_ids": [
+          5550,
+          5554,
+          5534
+        ],
+        "independent_source_count": 1,
+        "mainstream_or_better_count": 2,
+        "has_fresh_evidence": true,
+        "conflict_detail": null
+      }
+    ],
+    "stock_checks": [],
+    "summary": {
+      "topics_confirmed": 0,
+      "topics_weak": 3,
+      "topics_conflicted": 0,
+      "stocks_confirmed": 0,
+      "stocks_weak": 0,
+      "stocks_conflicted": 0
+    },
+    "issues": [],
+    "warnings": []
+  },
+  "cross_verification_required": true,
+  "quality_score": 85.0,
+  "quality_stats": {
+    "has_realtime_data": true,
+    "data_age_hours": 4.97329752888889,
+    "time_source": "report_text",
+    "source_annotation_missing": false,
+    "claim_coverage_score": 10,
+    "citation_count": 14,
+    "placeholder_citation_count": 0,
+    "verified_claims": 1,
+    "total_claims": 1,
+    "realtime_verified_claims": 1,
+    "realtime_total_claims": 1,
+    "news_fact_claims": 2,
+    "analytical_judgment_count": 0,
+    "fabrication_detected": false,
+    "watchlist_promoted_in_narrative_count": 0,
+    "verification_boundary_overclaim_count": 0,
+    "cross_verification_overclaim_count": 3,
+    "coverage_gap_count": 3,
+    "coverage_boundary_overclaim_count": 0,
+    "evidence_diversity_issue_count": 0,
+    "evidence_source_count": 5,
+    "evidence_topic_count": 4,
+    "evidence_max_source_share": 0.2631578947368421,
+    "evidence_max_topic_share": 0.42105263157894735,
+    "evidence_max_aggregator_share": 0.2631578947368421,
+    "evidence_original_source_share": 0.7368421052631579,
+    "counter_evidence_issue_count": 0,
+    "counter_evidence_high_confidence_topics": 0,
+    "implausible_signals": {
+      "over_precision_count": 0,
+      "rounded_ratio": 0.0,
+      "cross_asset_repeated_value_count": 0
+    }
+  },
+  "quality_issues": [
+    "❌ 交叉验真: 正文将 weak/conflicted 主题 科技与产业主题 写成'已验证'",
+    "❌ 交叉验真: 正文将 weak/conflicted 主题 政策与监管 写成'已验证'",
+    "❌ 交叉验真: 正文将 weak/conflicted 主题 其他观察 写成'已验证'"
+  ],
+  "quality_warnings": [
+    "⚠️ 报告更新时间与系统实时数据时间不一致,已按更保守时间计算时效性",
+    "⚠️ 数据更新于5.0小时前,时效性一般"
+  ],
+  "time_source": "report_text",
+  "source_annotation_missing": false,
+  "claim_coverage_score": 10,
+  "enhanced_context_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-06/2026-06-05/metadata/morning_enhanced-context_markdown-report-us_deepseek.json",
+  "evidence_audit_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-06/2026-06-05/metadata/morning_evidence-audit_markdown-report-us_deepseek.json",
+  "session": "morning",
+  "session_time": "2026-06-05 09:45:23"
+}
