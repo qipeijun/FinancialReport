@@ -28,20 +28,22 @@ from typing import Any, Dict, List, Optional
 
 import pytz
 
+try:
+    from scripts.bootstrap import ensure_project_root
+except ModuleNotFoundError:
+    from bootstrap import ensure_project_root
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+PROJECT_ROOT = ensure_project_root(__file__)
 
-from scripts.utils.fact_checker import FactChecker
-from scripts.utils.quality_checker_v2 import check_report_quality_v2
-from scripts.utils.realtime_data_fetcher import RealtimeDataFetcher
-from scripts.utils.cross_verification import (
+from scripts.application.fact_checker import FactChecker
+from scripts.application.quality_checker_v2 import check_report_quality_v2
+from scripts.infrastructure.realtime_data_fetcher import RealtimeDataFetcher
+from scripts.domain.cross_verification import (
     CROSS_STATUS_CONFIRMED,
     CROSS_STATUS_WEAK,
     CROSS_STATUS_CONFLICTED,
 )
-from scripts.utils.daily_digest import (
+from scripts.application.daily_digest import (
     archive_dirs_for_date,
     inspect_mode_artifacts,
     load_json,
@@ -268,9 +270,9 @@ def validate_entrypoint_wiring() -> Dict[str, Any]:
 
     checks['interactive_runner_markdown'] = '--mode' in interactive_text and 'markdown-report' in interactive_text
     checks['interactive_runner_judgment'] = '--mode' in interactive_text and 'judgment-cards' in interactive_text
-    checks['interactive_runner_entrypoint'] = 'ai_analyze_deepseek_verified.py' in interactive_text
+    checks['interactive_runner_entrypoint'] = 'ai_analyze_deepseek.py' in interactive_text
     checks['start_sh_markdown'] = '--mode markdown-report' in start_text
-    checks['start_sh_entrypoint'] = 'ai_analyze_deepseek_verified.py' in start_text
+    checks['start_sh_entrypoint'] = 'ai_analyze_deepseek.py' in start_text
 
     return {
         'checks': checks,
@@ -290,13 +292,14 @@ def build_analysis_command(
 ) -> List[str]:
     cmd = [
         python_bin,
-        str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek_verified.py'),
+        str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek.py'),
         '--date', date_str,
         '--mode', mode,
         '--content-field', content_field,
         '--max-articles', str(max_articles),
         '--max-retries', '1',
         '--min-score', '80',
+        '--verify',
         '--output', str(output_json),
         '--stock-market', stock_market,
     ]

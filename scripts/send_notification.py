@@ -31,12 +31,16 @@ from email.mime.text import MIMEText
 from pathlib import Path
 from typing import Dict, Optional
 
-# 添加项目根目录到路径
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(PROJECT_ROOT))
+try:
+    from scripts.bootstrap import ensure_project_root
+except ModuleNotFoundError:
+    from bootstrap import ensure_project_root
 
-from scripts.utils.logger import get_logger
-from scripts.utils.print_utils import print_header, print_success, print_error, print_info
+# 项目根目录
+PROJECT_ROOT = ensure_project_root(__file__)
+
+from scripts.infrastructure.logger import get_logger
+from scripts.infrastructure.print_utils import print_header, print_success, print_error, print_info
 
 logger = get_logger('notification')
 

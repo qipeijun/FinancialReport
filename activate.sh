@@ -4,6 +4,10 @@
 echo "🐍 激活Python虚拟环境..."
 source venv/bin/activate
 
+# 将项目根目录加入 Python 路径，使 scripts 包可被导入
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export PYTHONPATH="$SCRIPT_DIR:$PYTHONPATH"
+
 echo "✅ 虚拟环境已激活！"
 
 # 自动安装项目依赖

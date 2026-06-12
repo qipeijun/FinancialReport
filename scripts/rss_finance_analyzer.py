@@ -27,23 +27,30 @@ from typing import List, Dict, Any, Optional
 from urllib.parse import urlparse, urlunparse, parse_qsl, urlencode
 import html as html_lib
 
+try:
+    from scripts.bootstrap import ensure_project_root
+except ModuleNotFoundError:
+    from bootstrap import ensure_project_root
+
+PROJECT_ROOT = ensure_project_root(__file__)
+
 import feedparser
 import requests
 from tqdm import tqdm
 from bs4 import BeautifulSoup
 from readability import Document
 
-from utils.logger import get_logger
-from utils.config_manager import get_config
-from utils.db_manager import DatabaseManager, retry_on_db_error
-from utils.deduplication import deduplicate_items
-from utils.investment_signal import (
+from scripts.infrastructure.logger import get_logger
+from scripts.infrastructure.config_manager import get_config
+from scripts.infrastructure.db_manager import DatabaseManager, retry_on_db_error
+from scripts.application.deduplication import deduplicate_items
+from scripts.domain.investment_signal import (
     classify_source_tier,
     detect_content_quality_status,
     is_original_source,
     score_investment_relevance,
 )
-from utils.print_utils import (
+from scripts.infrastructure.print_utils import (
     print_header, print_success, print_warning, print_error,
     print_info, print_statistics
 )

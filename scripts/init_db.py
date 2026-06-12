@@ -1,9 +1,9 @@
-import sys
-from pathlib import Path
+try:
+    from scripts.bootstrap import ensure_project_root
+except ModuleNotFoundError:
+    from bootstrap import ensure_project_root
 
-# Add project root to sys.path
-project_root = Path(__file__).resolve().parent.parent
-sys.path.append(str(project_root))
+project_root = ensure_project_root(__file__)
 
 from scripts.rss_finance_analyzer import RSSAnalyzer
 

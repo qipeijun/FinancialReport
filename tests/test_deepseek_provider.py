@@ -1,6 +1,6 @@
 import pytest
 
-from scripts.utils.providers.deepseek_provider import get_proxy_url
+from scripts.infrastructure.providers.deepseek_provider import get_proxy_url
 
 
 def test_get_proxy_url_uses_first_valid_proxy():

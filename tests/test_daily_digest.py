@@ -10,7 +10,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from scripts.run_daily_digest import summarize_stock_views
 from scripts import run_daily_digest
-from scripts.utils import daily_digest
+from scripts.application import daily_digest
 
 
 def test_classify_failure_text_detects_network_block():

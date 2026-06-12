@@ -12,7 +12,7 @@ from scripts import interactive_runner
 
 def test_main_with_preflight_blocker_returns_1(monkeypatch):
     """前置检查有 blocker 时 main 应直接返回 1"""
-    from scripts.utils.preflight import PreflightResult, CheckItem
+    from scripts.application.preflight import PreflightResult, CheckItem
 
     blocker = CheckItem(
         name='apikey_check', label='API Key', passed=False,
@@ -38,7 +38,7 @@ def test_main_with_preflight_blocker_returns_1(monkeypatch):
 
 def test_main_returns_custom_flow_code(monkeypatch):
     """模式 2 自定义分析：子进程失败时 main 应传递退出码"""
-    from scripts.utils.preflight import PreflightResult
+    from scripts.application.preflight import PreflightResult
 
     fake_result = PreflightResult(passed=True, checks=[], blockers=[], warnings=[])
     monkeypatch.setattr(interactive_runner, 'run_preflight', lambda _: fake_result)

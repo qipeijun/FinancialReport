@@ -17,12 +17,11 @@ from datetime import datetime, timedelta
 from typing import Dict, Any, Optional
 import argparse
 
-# 添加项目路径
+# 项目根目录
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(PROJECT_ROOT))
 
-from scripts.utils.logger import get_logger
-from scripts.utils.print_utils import (
+from scripts.infrastructure.logger import get_logger
+from scripts.infrastructure.print_utils import (
     print_header, print_success, print_warning, print_error,
     print_info, print_statistics
 )

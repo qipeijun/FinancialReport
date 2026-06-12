@@ -78,10 +78,10 @@ python3 scripts/rss_finance_analyzer.py --fetch-content
 
 ```bash
 # 完整报告
-python3 scripts/ai_analyze_deepseek_verified.py --date $(date +%Y-%m-%d) --mode markdown-report
+python3 scripts/ai_analyze_deepseek.py --date $(date +%Y-%m-%d) --mode markdown-report
 
 # 判断卡片
-python3 scripts/ai_analyze_deepseek_verified.py --date $(date +%Y-%m-%d) --mode judgment-cards
+python3 scripts/ai_analyze_deepseek.py --date $(date +%Y-%m-%d) --mode judgment-cards
 ```
 
 ---
@@ -101,14 +101,14 @@ python3 scripts/rss_finance_analyzer.py --fetch-content
 - `--max-workers`：控制并发
 - `--only-source`：限制来源
 
-### 2. AI 分析主入口：`ai_analyze_deepseek_verified.py`
+### 2. AI 分析主入口：`ai_analyze_deepseek.py`
 
 这是当前推荐的主分析脚本，支持两种输出模式。
 
 #### 完整报告模式
 
 ```bash
-python3 scripts/ai_analyze_deepseek_verified.py \
+python3 scripts/ai_analyze_deepseek.py \
   --date 2026-05-06 \
   --mode markdown-report \
   --content-field summary
@@ -117,7 +117,7 @@ python3 scripts/ai_analyze_deepseek_verified.py \
 #### 判断卡片模式
 
 ```bash
-python3 scripts/ai_analyze_deepseek_verified.py \
+python3 scripts/ai_analyze_deepseek.py \
   --date 2026-05-06 \
   --mode judgment-cards \
   --max-theses 5

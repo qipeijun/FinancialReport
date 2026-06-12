@@ -9,7 +9,7 @@
 
 当前仓库中，真正应被当作“主分析入口”的脚本只有：
 
-- `scripts/ai_analyze_deepseek_verified.py`
+- `scripts/ai_analyze_deepseek.py`
 
 其余相关脚本的定位如下：
 
@@ -18,10 +18,10 @@
   - 适合轻量分析或调试
 - `scripts/interactive_runner.py`
   - 面向人工交互使用
-  - 内部已经统一调 `ai_analyze_deepseek_verified.py`
+  - 内部已经统一调 `ai_analyze_deepseek.py`
 - `start.sh`
   - 本地一键入口
-  - 内部已经统一调 `ai_analyze_deepseek_verified.py`
+  - 内部已经统一调 `ai_analyze_deepseek.py`
 - `scripts/archive/*`
   - 历史脚本备份
   - 不属于当前运行链路
@@ -34,7 +34,7 @@
 入口层
 ├── start.sh
 ├── interactive_runner.py
-└── ai_analyze_deepseek_verified.py
+└── ai_analyze_deepseek.py
 
 生成层
 └── scripts/utils/report_generator.py
@@ -76,7 +76,7 @@
 
 ## 当前主入口能力
 
-`ai_analyze_deepseek_verified.py` 现在支持：
+`ai_analyze_deepseek.py` 现在支持：
 
 - `markdown-report`
   - 完整财经分析报告
@@ -121,7 +121,7 @@ python3 scripts/rss_finance_analyzer.py --fetch-content
 ### 生成完整报告
 
 ```bash
-python3 scripts/ai_analyze_deepseek_verified.py \
+python3 scripts/ai_analyze_deepseek.py \
   --date 2026-05-06 \
   --mode markdown-report
 ```
@@ -129,7 +129,7 @@ python3 scripts/ai_analyze_deepseek_verified.py \
 ### 生成判断卡片
 
 ```bash
-python3 scripts/ai_analyze_deepseek_verified.py \
+python3 scripts/ai_analyze_deepseek.py \
   --date 2026-05-06 \
   --mode judgment-cards
 ```

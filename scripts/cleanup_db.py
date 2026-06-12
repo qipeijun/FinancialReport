@@ -8,26 +8,16 @@
 import argparse
 import sys
 from datetime import datetime, timedelta
-from pathlib import Path
 
-# 添加项目根目录到路径以便导入 utils
-current_dir = Path(__file__).resolve().parent
-project_root = current_dir.parent
-sys.path.append(str(project_root))
-
-# 尝试导入，如果失败则尝试相对导入（用于作为模块运行时）
 try:
-    from scripts.utils.db_manager import DatabaseManager
-    from scripts.utils.logger import get_logger
-except ImportError:
-    try:
-        from utils.db_manager import DatabaseManager
-        from utils.logger import get_logger
-    except ImportError:
-        # 如果都在失败，可能是直接在 scripts 目录下运行
-        sys.path.append(str(current_dir))
-        from utils.db_manager import DatabaseManager
-        from utils.logger import get_logger
+    from scripts.bootstrap import ensure_project_root
+except ModuleNotFoundError:
+    from bootstrap import ensure_project_root
+
+project_root = ensure_project_root(__file__)
+
+from scripts.infrastructure.db_manager import DatabaseManager
+from scripts.infrastructure.logger import get_logger
 
 logger = get_logger('db_cleanup')
 

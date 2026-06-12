@@ -237,7 +237,7 @@ def get_config() -> ConfigManager:
         ConfigManager: 配置管理器实例
     
     Example:
-        >>> from utils.config_manager import get_config
+        >>> from scripts.infrastructure.config_manager import get_config
         >>> config = get_config()
         >>> api_key = config.get('api_keys.deepseek')
     """

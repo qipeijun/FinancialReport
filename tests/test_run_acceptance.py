@@ -23,7 +23,7 @@ from scripts.run_acceptance import (
     validate_source_citations,
     validate_stock_recommendations_payload,
 )
-from scripts.utils.realtime_data_fetcher import RealtimeDataFetcher
+from scripts.infrastructure.realtime_data_fetcher import RealtimeDataFetcher
 
 
 def test_analyze_report_quality_accepts_well_formed_judgment_cards(tmp_path: Path):

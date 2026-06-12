@@ -156,7 +156,7 @@ def main_handler(event, context):
             try:
                 error_body = e.read().decode('utf-8')
                 print(f"📄 错误详情: {error_body}")
-            except:
+            except Exception:
                 pass
             return {
                 'statusCode': e.code,

@@ -13,7 +13,7 @@
 当前主链路已经统一到 **DeepSeek + 验证增强版分析脚本**：
 
 - 新闻抓取入口：`scripts/rss_finance_analyzer.py`
-- AI 分析主入口：`scripts/ai_analyze_deepseek_verified.py`
+- AI 分析主入口：`scripts/ai_analyze_deepseek.py`
 - 交互入口：`scripts/interactive_runner.py`
 - 一键启动入口：`./start.sh`
 - 验收入口：`scripts/run_acceptance.py`
@@ -90,12 +90,12 @@ python3 scripts/rss_finance_analyzer.py --fetch-content
 
 ```bash
 # 完整报告
-python3 scripts/ai_analyze_deepseek_verified.py \
+python3 scripts/ai_analyze_deepseek.py \
   --date $(date +%Y-%m-%d) \
   --mode markdown-report
 
 # 判断卡片
-python3 scripts/ai_analyze_deepseek_verified.py \
+python3 scripts/ai_analyze_deepseek.py \
   --date $(date +%Y-%m-%d) \
   --mode judgment-cards
 ```
@@ -127,20 +127,20 @@ python3 scripts/rss_finance_analyzer.py \
 
 ```bash
 # 标准完整报告
-python3 scripts/ai_analyze_deepseek_verified.py \
+python3 scripts/ai_analyze_deepseek.py \
   --date 2026-05-06 \
   --mode markdown-report \
   --content-field summary
 
 # 高质量完整报告
-python3 scripts/ai_analyze_deepseek_verified.py \
+python3 scripts/ai_analyze_deepseek.py \
   --date 2026-05-06 \
   --mode markdown-report \
   --min-score 90 \
   --max-retries 5
 
 # 高信号判断卡片
-python3 scripts/ai_analyze_deepseek_verified.py \
+python3 scripts/ai_analyze_deepseek.py \
   --date 2026-05-06 \
   --mode judgment-cards \
   --max-theses 5
@@ -201,7 +201,7 @@ Financial-report/
 ├── scripts/
 │   ├── rss_finance_analyzer.py
 │   ├── ai_analyze_deepseek.py
-│   ├── ai_analyze_deepseek_verified.py
+│   ├── ai_analyze_deepseek.py
 │   ├── interactive_runner.py
 │   ├── run_acceptance.py
 │   └── utils/

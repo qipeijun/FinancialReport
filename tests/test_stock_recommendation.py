@@ -8,7 +8,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 
-from scripts.utils.stock_recommendation import (
+from scripts.domain.stock_recommendation import (
     CandidateStock,
     HistoryBar,
     PriceHistoryProvider,
@@ -490,7 +490,7 @@ def test_load_industry_trend_snapshot_warns_on_invalid_json(tmp_path, caplog):
         lookback_days=60,
     )
 
-    from scripts.utils import stock_recommendation as stock_recommendation_module
+    from scripts.domain import stock_recommendation as stock_recommendation_module
     original_root = stock_recommendation_module.PROJECT_ROOT
     stock_recommendation_module.PROJECT_ROOT = tmp_path
     try:

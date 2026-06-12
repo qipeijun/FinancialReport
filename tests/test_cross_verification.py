@@ -6,7 +6,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from scripts.utils.cross_verification import (
+from scripts.domain.cross_verification import (
     run_cross_verification,
     build_cross_verification_summary,
     TopicCrossCheck,
@@ -21,7 +21,7 @@ from scripts.utils.cross_verification import (
     _extract_numeric_assertions,
     _article_mentions_security,
 )
-from scripts.utils.stock_recommendation import CandidateStock
+from scripts.domain.stock_recommendation import CandidateStock
 
 
 # ---------------------------------------------------------------------------
@@ -555,7 +555,7 @@ class TestArticleMentionsSecurity:
 
 def test_overclaim_check_catches_second_occurrence():
     """第二个强措辞出现位置附近有 weak 标的名时也应被检测。"""
-    from scripts.utils.quality_checker_v2 import _cross_verification_overclaim_check
+    from scripts.application.quality_checker_v2 import _cross_verification_overclaim_check
 
     cross_verification = {
         'stock_checks': [
@@ -578,7 +578,7 @@ def test_overclaim_check_catches_second_occurrence():
 
 def test_overclaim_check_respects_confirmed():
     """confirmed 标的旁边的强措辞不应误报。"""
-    from scripts.utils.quality_checker_v2 import _cross_verification_overclaim_check
+    from scripts.application.quality_checker_v2 import _cross_verification_overclaim_check
 
     cross_verification = {
         'stock_checks': [

@@ -11,8 +11,13 @@ if str(PROJECT_ROOT / 'scripts') not in sys.path:
 
 
 from scripts import interactive_runner
-from scripts.utils import print_utils
-from scripts.utils.report_generator import ReportGenerator
+from scripts.infrastructure import print_utils
+from scripts.application.report_generator import ReportGenerator
+from scripts.application.report_artifacts import (
+    build_counter_evidence_ledger,
+    build_evidence_audit_markdown,
+    build_evidence_diversity,
+)
 
 
 def test_terminal_dashboard_non_tty_falls_back_to_plain_text(monkeypatch):
@@ -140,11 +145,11 @@ def test_report_generator_emits_stage_sequence(monkeypatch, tmp_path):
     events = []
 
     monkeypatch.setattr(print_utils, 'configure_dashboard', lambda **kwargs: events.append(('configure', kwargs)))
-    monkeypatch.setattr('scripts.utils.report_generator.configure_dashboard', lambda **kwargs: events.append(('configure', kwargs)))
-    monkeypatch.setattr('scripts.utils.report_generator.start_stage', lambda name, **kwargs: events.append(('start', name, kwargs.get('step'))))
-    monkeypatch.setattr('scripts.utils.report_generator.update_stage', lambda detail: events.append(('update', detail)))
-    monkeypatch.setattr('scripts.utils.report_generator.finish_stage', lambda summary=None, duration=True: events.append(('finish', summary)))
-    monkeypatch.setattr('scripts.utils.report_generator.note_event', lambda detail: events.append(('event', detail)))
+    monkeypatch.setattr('scripts.application.report_generator.configure_dashboard', lambda **kwargs: events.append(('configure', kwargs)))
+    monkeypatch.setattr('scripts.application.report_generator.start_stage', lambda name, **kwargs: events.append(('start', name, kwargs.get('step'))))
+    monkeypatch.setattr('scripts.application.report_generator.update_stage', lambda detail: events.append(('update', detail)))
+    monkeypatch.setattr('scripts.application.report_generator.finish_stage', lambda summary=None, duration=True: events.append(('finish', summary)))
+    monkeypatch.setattr('scripts.application.report_generator.note_event', lambda detail: events.append(('event', detail)))
 
     class FakeHeartbeat:
         def __enter__(self):
@@ -154,18 +159,18 @@ def test_report_generator_emits_stage_sequence(monkeypatch, tmp_path):
         def __exit__(self, exc_type, exc, tb):
             events.append(('heartbeat', 'exit'))
 
-    monkeypatch.setattr('scripts.utils.report_generator.heartbeat', lambda *args, **kwargs: FakeHeartbeat())
-    monkeypatch.setattr('scripts.utils.report_generator.resolve_date_range', lambda _args: ('2026-05-07', '2026-05-07'))
-    monkeypatch.setattr('scripts.utils.report_generator.open_connection', lambda _path: object())
-    monkeypatch.setattr('scripts.utils.report_generator.query_articles', lambda conn, *args: [{'id': 1, 'title': 'A', 'summary': 's'}])
-    monkeypatch.setattr('scripts.utils.report_generator.filter_articles', lambda rows, **kwargs: rows)
-    monkeypatch.setattr('scripts.utils.report_generator.filter_and_rank_articles', lambda rows: (rows, {'kept': 1}))
-    monkeypatch.setattr('scripts.utils.report_generator.build_corpus', lambda rows, *args, **kwargs: ([('A', ['chunk'])], 5))
-    monkeypatch.setattr('scripts.utils.report_generator.build_source_stats_block', lambda *args, **kwargs: 'stats')
-    monkeypatch.setattr('scripts.utils.report_generator.save_markdown', lambda *args, **kwargs: Path('/tmp/report.md'))
-    monkeypatch.setattr('scripts.utils.report_generator.save_metadata', lambda *args, **kwargs: None)
-    monkeypatch.setattr('scripts.utils.report_generator.save_enhanced_context', lambda *args, **kwargs: tmp_path / 'enhanced.json')
-    monkeypatch.setattr('scripts.utils.report_generator.save_evidence_audit', lambda *args, **kwargs: tmp_path / 'evidence-audit.json')
+    monkeypatch.setattr('scripts.application.report_generator.heartbeat', lambda *args, **kwargs: FakeHeartbeat())
+    monkeypatch.setattr('scripts.application.report_generator.resolve_date_range', lambda _args: ('2026-05-07', '2026-05-07'))
+    monkeypatch.setattr('scripts.application.report_generator.open_connection', lambda _path: object())
+    monkeypatch.setattr('scripts.application.report_generator.query_articles', lambda conn, *args: [{'id': 1, 'title': 'A', 'summary': 's'}])
+    monkeypatch.setattr('scripts.application.report_generator.filter_articles', lambda rows, **kwargs: rows)
+    monkeypatch.setattr('scripts.application.report_generator.filter_and_rank_articles', lambda rows: (rows, {'kept': 1}))
+    monkeypatch.setattr('scripts.application.report_generator.build_corpus', lambda rows, *args, **kwargs: ([('A', ['chunk'])], 5))
+    monkeypatch.setattr('scripts.application.report_generator.build_source_stats_block', lambda *args, **kwargs: 'stats')
+    monkeypatch.setattr('scripts.application.report_generator.save_markdown', lambda *args, **kwargs: Path('/tmp/report.md'))
+    monkeypatch.setattr('scripts.application.report_generator.save_metadata', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.application.report_generator.save_enhanced_context', lambda *args, **kwargs: tmp_path / 'enhanced.json')
+    monkeypatch.setattr('scripts.application.report_generator.save_evidence_audit', lambda *args, **kwargs: tmp_path / 'evidence-audit.json')
     monkeypatch.setattr(generator, 'load_prompt', lambda _version, market='CN': 'prompt')
     monkeypatch.setattr(generator, '_run_fact_check', lambda *args, **kwargs: ([], ''))
 
@@ -173,7 +178,7 @@ def test_report_generator_emits_stage_sequence(monkeypatch, tmp_path):
         def close(self):
             return None
 
-    monkeypatch.setattr('scripts.utils.report_generator.open_connection', lambda _path: FakeConn())
+    monkeypatch.setattr('scripts.application.report_generator.open_connection', lambda _path: FakeConn())
 
     result = generator.generate(mode='markdown-report', quality_check=False)
 
@@ -191,15 +196,15 @@ def test_report_generator_save_result_persists_enhanced_context(monkeypatch, tmp
     generator = ReportGenerator(provider=FakeProvider(), enable_verification=False)
     captured = {}
 
-    monkeypatch.setattr('scripts.utils.report_generator.save_markdown', lambda *args, **kwargs: tmp_path / 'report.md')
-    monkeypatch.setattr('scripts.utils.report_generator.save_metadata', lambda *args, **kwargs: captured.setdefault('metadata_saved', True))
-    monkeypatch.setattr('scripts.utils.report_generator.save_enhanced_context', lambda *args, **kwargs: tmp_path / 'enhanced.json')
-    monkeypatch.setattr('scripts.utils.report_generator.save_evidence_audit', lambda *args, **kwargs: tmp_path / 'evidence-audit.json')
-    monkeypatch.setattr('scripts.utils.report_generator.update_stage', lambda detail: None)
-    monkeypatch.setattr('scripts.utils.report_generator.print_progress', lambda detail: None)
-    monkeypatch.setattr('scripts.utils.report_generator.print_success', lambda detail: None)
-    monkeypatch.setattr('scripts.utils.report_generator.note_event', lambda detail: None)
-    monkeypatch.setattr('scripts.utils.report_generator.finish_stage', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.application.report_generator.save_markdown', lambda *args, **kwargs: tmp_path / 'report.md')
+    monkeypatch.setattr('scripts.application.report_generator.save_metadata', lambda *args, **kwargs: captured.setdefault('metadata_saved', True))
+    monkeypatch.setattr('scripts.application.report_generator.save_enhanced_context', lambda *args, **kwargs: tmp_path / 'enhanced.json')
+    monkeypatch.setattr('scripts.application.report_generator.save_evidence_audit', lambda *args, **kwargs: tmp_path / 'evidence-audit.json')
+    monkeypatch.setattr('scripts.application.report_generator.update_stage', lambda detail: None)
+    monkeypatch.setattr('scripts.application.report_generator.print_progress', lambda detail: None)
+    monkeypatch.setattr('scripts.application.report_generator.print_success', lambda detail: None)
+    monkeypatch.setattr('scripts.application.report_generator.note_event', lambda detail: None)
+    monkeypatch.setattr('scripts.application.report_generator.finish_stage', lambda *args, **kwargs: None)
 
     meta = {}
     saved = generator._save_result(
@@ -232,7 +237,7 @@ def test_report_generator_evidence_diversity_flags_concentrated_sources():
         {'source': 'Bloomberg', 'primary_topic': '政策与监管', 'source_tier': 'mainstream', 'is_original_source': 1},
     ]
 
-    diversity = ReportGenerator._build_evidence_diversity(selected, market='US')
+    diversity = build_evidence_diversity(selected, market='US')
 
     assert diversity['required'] is True
     assert diversity['source_count'] == 3
@@ -270,7 +275,7 @@ def test_report_generator_counter_evidence_ledger_records_topic_risks():
         }
     ]
 
-    ledger = ReportGenerator._build_counter_evidence_ledger(selected, candidates, market='US')
+    ledger = build_counter_evidence_ledger(selected, candidates, market='US')
     row = ledger['topics'][0]
 
     assert ledger['required'] is True
@@ -282,7 +287,7 @@ def test_report_generator_counter_evidence_ledger_records_topic_risks():
 
 
 def test_report_generator_evidence_audit_markdown_exposes_core_gates():
-    text = ReportGenerator._build_evidence_audit_markdown(
+    text = build_evidence_audit_markdown(
         source_references={'articles': [{'article_id': 1}, {'article_id': 2}]},
         coverage_matrix={'coverage_gaps': ['policy_regulation']},
         evidence_diversity={'concentration_flags': ['source_concentration']},
@@ -310,7 +315,7 @@ def test_report_generator_judgment_cards_enhanced_context_contains_candidate_sto
     captured = {}
 
     monkeypatch.setattr(generator, 'load_prompt', lambda _version, market='CN': 'prompt')
-    monkeypatch.setattr('scripts.utils.report_generator.build_judgment_candidates', lambda *args, **kwargs: [
+    monkeypatch.setattr('scripts.application.report_generator.build_judgment_candidates', lambda *args, **kwargs: [
         {
             'topic': '科技与产业主题',
             'independent_evidence_count': 2,
@@ -325,18 +330,18 @@ def test_report_generator_judgment_cards_enhanced_context_contains_candidate_sto
     monkeypatch.setattr(generator.security_master_provider, 'build_candidates', lambda **kwargs: [
         type('Candidate', (), {'to_dict': lambda self: {'symbol': 'sh603019', 'direct_mentions': 1}})()
     ])
-    monkeypatch.setattr('scripts.utils.report_generator.build_judgment_prompt_context', lambda *args, **kwargs: 'context')
-    monkeypatch.setattr('scripts.utils.report_generator.extract_json_payload', lambda raw: {'theses': [], 'watch_items': [], 'evidence_summary': '', 'market_scope': '中国与全球联动', 'time_horizon': '1-4周', 'degraded': False})
-    monkeypatch.setattr('scripts.utils.report_generator.enforce_judgment_rules', lambda payload, *args, **kwargs: payload)
-    monkeypatch.setattr('scripts.utils.report_generator.render_judgment_markdown', lambda payload: '# judgment')
+    monkeypatch.setattr('scripts.application.report_generator.build_judgment_prompt_context', lambda *args, **kwargs: 'context')
+    monkeypatch.setattr('scripts.application.report_generator.extract_json_payload', lambda raw: {'theses': [], 'watch_items': [], 'evidence_summary': '', 'market_scope': '中国与全球联动', 'time_horizon': '1-4周', 'degraded': False})
+    monkeypatch.setattr('scripts.application.report_generator.enforce_judgment_rules', lambda payload, *args, **kwargs: payload)
+    monkeypatch.setattr('scripts.application.report_generator.render_judgment_markdown', lambda payload: '# judgment')
     monkeypatch.setattr(generator, '_run_fact_check', lambda *args, **kwargs: ([], ''))
-    monkeypatch.setattr('scripts.utils.report_generator.check_report_quality_v2', lambda *args, **kwargs: {'score': 85, 'passed': True, 'issues': [], 'warnings': []})
-    monkeypatch.setattr('scripts.utils.report_generator.start_stage', lambda *args, **kwargs: None)
-    monkeypatch.setattr('scripts.utils.report_generator.finish_stage', lambda *args, **kwargs: None)
-    monkeypatch.setattr('scripts.utils.report_generator.print_warning', lambda *args, **kwargs: None)
-    monkeypatch.setattr('scripts.utils.report_generator.print_success', lambda *args, **kwargs: None)
-    monkeypatch.setattr('scripts.utils.report_generator.print_statistics', lambda *args, **kwargs: None)
-    monkeypatch.setattr('scripts.utils.report_generator.note_event', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.application.report_generator.check_report_quality_v2', lambda *args, **kwargs: {'score': 85, 'passed': True, 'issues': [], 'warnings': []})
+    monkeypatch.setattr('scripts.application.report_generator.start_stage', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.application.report_generator.finish_stage', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.application.report_generator.print_warning', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.application.report_generator.print_success', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.application.report_generator.print_statistics', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.application.report_generator.note_event', lambda *args, **kwargs: None)
 
     class FakeHeartbeat:
         def __enter__(self):
@@ -344,7 +349,7 @@ def test_report_generator_judgment_cards_enhanced_context_contains_candidate_sto
         def __exit__(self, exc_type, exc, tb):
             return False
 
-    monkeypatch.setattr('scripts.utils.report_generator.heartbeat', lambda *args, **kwargs: FakeHeartbeat())
+    monkeypatch.setattr('scripts.application.report_generator.heartbeat', lambda *args, **kwargs: FakeHeartbeat())
     monkeypatch.setattr(generator, '_save_result', lambda *args, **kwargs: captured.setdefault('enhanced', kwargs.get('enhanced_context_payload') if 'enhanced_context_payload' in kwargs else args[6]) or Path('/tmp/judgment.md'))
 
     result = generator._generate_judgment_cards(
@@ -384,21 +389,21 @@ def test_report_generator_markdown_report_uses_structured_truth_sources(monkeypa
     captured = {}
 
     monkeypatch.setattr(generator, 'load_prompt', lambda _version, market='CN': 'prompt')
-    monkeypatch.setattr('scripts.utils.report_generator.resolve_date_range', lambda _args: ('2026-05-09', '2026-05-09'))
-    monkeypatch.setattr('scripts.utils.report_generator.filter_articles', lambda rows, **kwargs: rows)
-    monkeypatch.setattr('scripts.utils.report_generator.filter_and_rank_articles', lambda rows: (rows, {'kept': 2}))
-    monkeypatch.setattr('scripts.utils.report_generator.build_corpus', lambda rows, *args, **kwargs: ([('A', ['chunk'])], 5))
-    monkeypatch.setattr('scripts.utils.report_generator.build_source_stats_block', lambda *args, **kwargs: 'stats')
-    monkeypatch.setattr('scripts.utils.report_generator.summarize_content_quality', lambda rows: {
+    monkeypatch.setattr('scripts.application.report_generator.resolve_date_range', lambda _args: ('2026-05-09', '2026-05-09'))
+    monkeypatch.setattr('scripts.application.report_generator.filter_articles', lambda rows, **kwargs: rows)
+    monkeypatch.setattr('scripts.application.report_generator.filter_and_rank_articles', lambda rows: (rows, {'kept': 2}))
+    monkeypatch.setattr('scripts.application.report_generator.build_corpus', lambda rows, *args, **kwargs: ([('A', ['chunk'])], 5))
+    monkeypatch.setattr('scripts.application.report_generator.build_source_stats_block', lambda *args, **kwargs: 'stats')
+    monkeypatch.setattr('scripts.application.report_generator.summarize_content_quality', lambda rows: {
         'counts': {'full': 1, 'partial': 1, 'summary_only': 0},
         'ratios': {'full': 50.0, 'partial': 50.0, 'summary_only': 0.0},
         'total': 2,
     })
     monkeypatch.setattr(generator.security_master_provider, 'build_candidates', lambda **kwargs: [])
-    monkeypatch.setattr('scripts.utils.report_generator.build_judgment_candidates', lambda *args, **kwargs: [
+    monkeypatch.setattr('scripts.application.report_generator.build_judgment_candidates', lambda *args, **kwargs: [
         {'topic': '科技与产业主题', 'high_confidence_topic': True, 'topic_article_count': 3, 'independent_evidence_count': 2, 'source_tier_max': 'mainstream'},
     ])
-    monkeypatch.setattr('scripts.utils.report_generator.RecommendationScorer', lambda **kwargs: type('Scorer', (), {
+    monkeypatch.setattr('scripts.application.report_generator.RecommendationScorer', lambda **kwargs: type('Scorer', (), {
         'score_candidates': lambda self, _candidates: {
             'recommendations': [
                 {
@@ -422,21 +427,21 @@ def test_report_generator_markdown_report_uses_structured_truth_sources(monkeypa
             'scoring_config': {'market': 'CN', 'style': 'balanced', 'lookback_days': 60},
         }
     })())
-    monkeypatch.setattr('scripts.utils.report_generator.run_cross_verification', lambda **kwargs: {
+    monkeypatch.setattr('scripts.application.report_generator.run_cross_verification', lambda **kwargs: {
         'stock_checks': [{'symbol': 'sh603019', 'status': 'confirmed', 'independent_source_count': 2}],
         'summary': {'stocks_confirmed': 1, 'stocks_weak': 0, 'stocks_conflicted': 0},
     })
-    monkeypatch.setattr('scripts.utils.report_generator.render_stock_recommendation_markdown', lambda *args, **kwargs: '## 股票推荐评分\n')
+    monkeypatch.setattr('scripts.application.report_generator.render_stock_recommendation_markdown', lambda *args, **kwargs: '## 股票推荐评分\n')
     monkeypatch.setattr(generator, '_run_fact_check', lambda *args, **kwargs: ([], ''))
-    monkeypatch.setattr('scripts.utils.report_generator.check_report_quality_v2', lambda *args, **kwargs: {'score': 85, 'passed': True, 'issues': [], 'warnings': []})
-    monkeypatch.setattr('scripts.utils.report_generator.start_stage', lambda *args, **kwargs: None)
-    monkeypatch.setattr('scripts.utils.report_generator.finish_stage', lambda *args, **kwargs: None)
-    monkeypatch.setattr('scripts.utils.report_generator.update_stage', lambda *args, **kwargs: None)
-    monkeypatch.setattr('scripts.utils.report_generator.note_event', lambda *args, **kwargs: None)
-    monkeypatch.setattr('scripts.utils.report_generator.print_info', lambda *args, **kwargs: None)
-    monkeypatch.setattr('scripts.utils.report_generator.print_progress', lambda *args, **kwargs: None)
-    monkeypatch.setattr('scripts.utils.report_generator.print_success', lambda *args, **kwargs: None)
-    monkeypatch.setattr('scripts.utils.report_generator.print_statistics', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.application.report_generator.check_report_quality_v2', lambda *args, **kwargs: {'score': 85, 'passed': True, 'issues': [], 'warnings': []})
+    monkeypatch.setattr('scripts.application.report_generator.start_stage', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.application.report_generator.finish_stage', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.application.report_generator.update_stage', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.application.report_generator.note_event', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.application.report_generator.print_info', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.application.report_generator.print_progress', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.application.report_generator.print_success', lambda *args, **kwargs: None)
+    monkeypatch.setattr('scripts.application.report_generator.print_statistics', lambda *args, **kwargs: None)
 
     class FakeConn:
         def close(self):
@@ -448,9 +453,9 @@ def test_report_generator_markdown_report_uses_structured_truth_sources(monkeypa
         def __exit__(self, exc_type, exc, tb):
             return False
 
-    monkeypatch.setattr('scripts.utils.report_generator.open_connection', lambda _path: FakeConn())
-    monkeypatch.setattr('scripts.utils.report_generator.query_articles', lambda conn, *args: [{'id': 1, 'title': 'A', 'summary': 's'}])
-    monkeypatch.setattr('scripts.utils.report_generator.heartbeat', lambda *args, **kwargs: FakeHeartbeat())
+    monkeypatch.setattr('scripts.application.report_generator.open_connection', lambda _path: FakeConn())
+    monkeypatch.setattr('scripts.application.report_generator.query_articles', lambda conn, *args: [{'id': 1, 'title': 'A', 'summary': 's'}])
+    monkeypatch.setattr('scripts.application.report_generator.heartbeat', lambda *args, **kwargs: FakeHeartbeat())
     monkeypatch.setattr(generator, '_save_result', lambda *args, **kwargs: captured.setdefault('payload', kwargs.get('json_payload') if 'json_payload' in kwargs else args[5]) or Path('/tmp/report.md'))
 
     result = generator.generate(mode='markdown-report', quality_check=False)

@@ -11,12 +11,14 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+try:
+    from scripts.bootstrap import ensure_project_root
+except ModuleNotFoundError:
+    from bootstrap import ensure_project_root
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+PROJECT_ROOT = ensure_project_root(__file__)
 
-from scripts.utils.daily_digest import (  # noqa: E402
+from scripts.application.daily_digest import (  # noqa: E402
     archive_dirs_for_date,
     classify_failure_text,
     extract_risk_points,
@@ -247,10 +249,11 @@ def main() -> int:
             output_json = out_dir / f'markdown-report-{market.lower()}-daily.json'
             generation_cmd = [
                 python_bin,
-                str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek_verified.py'),
+                str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek.py'),
                 '--date', date_str,
                 '--mode', 'markdown-report',
                 '--content-field', args.content_field,
+                '--verify',
                 '--enable-stock-scoring',
                 '--stock-market', market,
                 '--output', str(output_json),

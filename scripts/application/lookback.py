@@ -123,7 +123,7 @@ def compute_forward_returns(
     if horizons is None:
         horizons = [5, 10, 20]
 
-    from scripts.utils.stock_recommendation import PriceHistoryProvider
+    from scripts.domain.stock_recommendation import PriceHistoryProvider
 
     provider = PriceHistoryProvider()
     # 缓存：同一 symbol 只取一次行情

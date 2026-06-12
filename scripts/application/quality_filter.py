@@ -13,25 +13,13 @@
 """
 
 import re
-import sys
 import yaml
 from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime
 from pathlib import Path
 
-# 添加scripts目录到路径（用于直接运行测试）
-if __name__ == '__main__':
-    scripts_path = Path(__file__).resolve().parents[1]
-    if str(scripts_path) not in sys.path:
-        sys.path.insert(0, str(scripts_path))
-
-# 尝试相对导入，失败则使用绝对导入
-try:
-    from .logger import get_logger
-    from .deduplication import deduplicate_items
-except ImportError:
-    from utils.logger import get_logger
-    from utils.deduplication import deduplicate_items
+from scripts.infrastructure.logger import get_logger
+from scripts.application.deduplication import deduplicate_items
 
 logger = get_logger('quality_filter')
 
@@ -639,13 +627,6 @@ def generate_quality_report(articles: List[Dict[str, Any]]) -> str:
 # ============================================================================
 
 if __name__ == '__main__':
-    # 修复模块导入问题
-    import sys
-    from pathlib import Path
-    scripts_path = Path(__file__).resolve().parents[1]
-    if str(scripts_path) not in sys.path:
-        sys.path.insert(0, str(scripts_path))
-    
     print("=== 测试新闻质量筛选模块 ===\n")
     
     # 测试数据

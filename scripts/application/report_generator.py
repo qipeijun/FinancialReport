@@ -12,8 +12,8 @@
 6. 报告保存和元数据记录
 
 使用示例:
-    from utils.report_generator import ReportGenerator
-    from utils.providers import DeepSeekProvider
+    from scripts.application.report_generator import ReportGenerator
+    from scripts.infrastructure.providers import DeepSeekProvider
 
     generator = ReportGenerator(
         provider=DeepSeekProvider(api_key='your-key'),
@@ -27,29 +27,46 @@
     )
 """
 
-import sys
 import json
-import re
-from collections import Counter
 from pathlib import Path
 from typing import Optional, Dict, Any, Tuple, List
 from datetime import datetime
 
-# 添加项目根目录到路径
+# 项目根目录（用于路径构建）
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(PROJECT_ROOT))
 
-from scripts.utils.ai_analyzer_common import (
+from scripts.application.ai_analyzer_common import (
     resolve_date_range, open_connection, query_articles,
     filter_articles, build_corpus, build_source_stats_block, summarize_content_quality,
     save_markdown, save_metadata, save_enhanced_context, save_evidence_audit, write_json
 )
-from scripts.utils.quality_filter import filter_and_rank_articles
-from scripts.utils.quality_checker import (
+from scripts.application.quality_filter import filter_and_rank_articles
+from scripts.application.report_artifacts import (
+    attach_realtime_source_annotation,
+    build_candidate_evidence_audit,
+    build_counter_evidence_ledger,
+    build_counter_evidence_prompt,
+    build_coverage_matrix,
+    build_coverage_prompt,
+    build_diversity_prompt,
+    build_enhanced_context_payload,
+    build_evidence_audit_markdown,
+    build_evidence_audit_payload,
+    build_evidence_diversity,
+    build_prompt_signal_context,
+    build_scoring_calibration,
+    build_source_reference_payload,
+    build_source_reference_prompt,
+    format_realtime_data,
+    prepend_trust_card,
+    quality_metadata_fields,
+    render_structured_recommendation_summary,
+)
+from scripts.application.quality_checker import (
     check_report_quality,
     print_quality_summary, add_quality_warning
 )
-from scripts.utils.investment_signal import (
+from scripts.domain.investment_signal import (
     build_judgment_candidates,
     build_judgment_prompt_context,
     build_retry_feedback,
@@ -57,14 +74,14 @@ from scripts.utils.investment_signal import (
     extract_json_payload,
     render_judgment_markdown,
 )
-from scripts.utils.stock_recommendation import (
+from scripts.domain.stock_recommendation import (
     SecurityMasterProvider,
     PriceHistoryProvider,
     ValuationProvider,
     RecommendationScorer,
     render_stock_recommendation_markdown,
 )
-from scripts.utils.cross_verification import (
+from scripts.domain.cross_verification import (
     run_cross_verification,
     CROSS_STATUS_CONFIRMED,
     CROSS_STATUS_WEAK,
@@ -72,32 +89,23 @@ from scripts.utils.cross_verification import (
     MAJOR_POSITIVE_KEYWORDS,
     MAJOR_NEGATIVE_KEYWORDS,
 )
-from scripts.utils.print_utils import (
+from scripts.infrastructure.print_utils import (
     print_header, print_success, print_warning, print_error,
     print_info, print_progress, print_statistics,
     configure_dashboard, start_stage, update_stage, finish_stage,
     note_event, heartbeat,
 )
-from scripts.utils.providers import BaseProvider
+from scripts.infrastructure.providers import BaseProvider
+from scripts.domain.market import Market
 
 # 验证系统模块（可选）
 try:
-    from scripts.utils.realtime_data_fetcher import RealtimeDataFetcher
-    from scripts.utils.fact_checker import FactChecker
-    from scripts.utils.quality_checker_v2 import check_report_quality_v2, print_quality_report_v2
+    from scripts.infrastructure.realtime_data_fetcher import RealtimeDataFetcher
+    from scripts.application.fact_checker import FactChecker
+    from scripts.application.quality_checker_v2 import check_report_quality_v2, print_quality_report_v2
     VERIFICATION_AVAILABLE = True
 except ImportError:
     VERIFICATION_AVAILABLE = False
-
-
-# 美股模式默认消费的新闻源（美股聚焦 + 国际财经 + 美国官方）
-US_MARKET_SOURCE_NAMES = [
-    'Yahoo Finance', 'MarketWatch', 'Seeking Alpha', 'CNBC Top News',
-    "Investor's Business Daily",
-    'FT中文网', 'Wall Street Journal', '经济学人 Economist',
-    'BBC全球经济', 'CNBC', 'ZeroHedge', 'ETF Trends', 'Thomson Reuters',
-    'Federal Reserve Board', '美国证监会-新闻发布',
-]
 
 
 class ReportGenerator:
@@ -135,7 +143,7 @@ class ReportGenerator:
         self.price_history_provider = PriceHistoryProvider()
         self.valuation_provider = ValuationProvider(self.security_master_provider)
 
-    def load_prompt(self, prompt_version: str = 'pro_v2', market: str = 'CN') -> str:
+    def load_prompt(self, prompt_version: str = 'pro_v2', market: Market = Market.CN) -> str:
         """
         加载提示词模板
 
@@ -144,13 +152,13 @@ class ReportGenerator:
                 - 'pro_v2': 专业版v2（带实时数据注入）
                 - 'pro': 专业版
                 - 'safe': 安全版
-            market: 市场标识，'US' 时优先加载美股专用提示词
+            market: Market 值对象，US 时优先加载美股专用提示词
 
         Returns:
             str: 提示词内容
         """
         # 美股专用提示词
-        if market == 'US' and prompt_version in ('pro_v2', 'pro', 'safe'):
+        if market.code == 'US' and prompt_version in ('pro_v2', 'pro', 'safe'):
             us_file = f'financial_analysis_prompt_us.md'
             us_path = PROJECT_ROOT / 'task' / us_file
             if us_path.exists():
@@ -178,15 +186,15 @@ class ReportGenerator:
         with open(prompt_path, 'r', encoding='utf-8') as f:
             return f.read()
 
-    def fetch_realtime_data(self, market: str = 'CN') -> Optional[Dict[str, Any]]:
-        """获取实时市场数据（如果启用验证）"""
+    def fetch_realtime_data(self, market: Market = Market.CN) -> Optional[Dict[str, Any]]:
+        """获取实时市场数据（如果启用验证），market 参数用于指定市场数据源。"""
         if not self.enable_verification:
             return None
 
         try:
             print_progress('获取实时市场数据...')
             fetcher = RealtimeDataFetcher()
-            data = fetcher.fetch_all(market=market)
+            data = fetcher.fetch_all(market=market.code)
             available_kinds = sum(
                 1 for key in ('stocks', 'gold', 'forex')
                 if data.get(key)
@@ -250,7 +258,7 @@ class ReportGenerator:
             ai_details = ('整理摘要结构', '等待模型返回', '校对生成片段')
             with heartbeat('AI 报告生成', interval_seconds=6.0, frames=ai_frames, details=ai_details):
                 report, usage = self.provider.generate(prompt, content, **kwargs)
-            report = self._attach_realtime_source_annotation(report, realtime_data)
+            report = attach_realtime_source_annotation(report, realtime_data)
 
             if attempt == 0:
                 print_success('✓ 报告生成完成')
@@ -315,19 +323,6 @@ class ReportGenerator:
         # 返回最后一次的结果
         return report, usage, quality_result if quality_check else {}
 
-    @staticmethod
-    def _quality_metadata_fields(quality_result: Optional[Dict[str, Any]]) -> Dict[str, Any]:
-        payload = quality_result or {}
-        stats = payload.get('stats') or {}
-        return {
-            'quality_score': payload.get('score'),
-            'quality_stats': payload.get('stats'),
-            'quality_issues': payload.get('issues'),
-            'quality_warnings': payload.get('warnings'),
-            'time_source': payload.get('time_source') or stats.get('time_source'),
-            'source_annotation_missing': payload.get('source_annotation_missing') if 'source_annotation_missing' in payload else stats.get('source_annotation_missing'),
-            'claim_coverage_score': payload.get('claim_coverage_score') if 'claim_coverage_score' in payload else stats.get('claim_coverage_score'),
-        }
 
     def _run_fact_check(self, report_text: str, realtime_data: Optional[Dict[str, Any]]) -> Tuple[list, str]:
         """运行事实核查并返回断言与附加报告"""
@@ -340,726 +335,24 @@ class ReportGenerator:
         verification_report = checker.generate_report_annotation(verified_claims)
         return verified_claims, verification_report
 
-    @staticmethod
-    def _realtime_source_annotation(realtime_data: Optional[Dict[str, Any]]) -> str:
-        if not realtime_data:
-            return ''
-        timestamp = realtime_data.get('timestamp')
-        if not timestamp:
-            return ''
-        return (
-            "## 📊 实时数据来源\n\n"
-            "- 数据来源: Yahoo Finance、Gold-API、Frankfurter\n"
-            f"- 更新时间: {timestamp}\n"
-        )
 
-    def _attach_realtime_source_annotation(self, report_text: str, realtime_data: Optional[Dict[str, Any]]) -> str:
-        """把确定性的实时数据来源写入报告文本，避免模型自由生成来源口径。"""
-        annotation = self._realtime_source_annotation(realtime_data)
-        if not annotation or '## 📊 实时数据来源' in report_text:
-            return report_text
-        return f"{report_text.rstrip()}\n\n{annotation}"
 
-    @staticmethod
-    def _build_source_reference_payload(selected: list) -> Dict[str, Any]:
-        """构建真实新闻引用索引，只暴露可回溯的 article_id。"""
-        articles = []
-        for article in selected:
-            article_id = article.get('id')
-            if article_id is None:
-                continue
-            articles.append({
-                'article_id': article_id,
-                'source': article.get('source'),
-                'title': article.get('title'),
-                'published': article.get('published') or article.get('collection_date'),
-                'source_tier': article.get('source_tier'),
-            })
-        return {
-            'required': True,
-            'article_ids': [item['article_id'] for item in articles],
-            'articles': articles,
-        }
 
-    @staticmethod
-    def _build_source_reference_prompt(selected: list, limit: int = 30) -> str:
-        refs = ReportGenerator._build_source_reference_payload(selected)['articles']
-        lines = [
-            "=== 新闻引用索引（必须使用真实 article_id） ===",
-            "- 重要新闻事实只能标注为【新闻<article_id>】，例如【新闻4885】。",
-            "- 禁止使用【新闻X】、【新闻1】这类占位或序号引用，除非 1 本身就是下列真实 article_id。",
-        ]
-        for item in refs[:limit]:
-            title = str(item.get('title') or '').replace('\n', ' ')[:90]
-            lines.append(
-                f"- 【新闻{item.get('article_id')}】 {item.get('source') or '未知来源'} | "
-                f"{item.get('published') or '未知时间'} | {title}"
-            )
-        return "\n".join(lines)
 
-    @staticmethod
-    def _build_coverage_matrix(
-        selected: list,
-        *,
-        market: str,
-        realtime_data: Optional[Dict[str, Any]],
-    ) -> Dict[str, Any]:
-        """统计中美报告的主题覆盖，供 prompt 与验收判断报告边界。"""
-        category_rules = {
-            'macro_liquidity': ('宏观', '流动性', '利率', '美联储', 'Fed', '债市'),
-            'policy_regulation': ('政策', '监管', '证监会', 'SEC', '关税', '财政'),
-            'company_earnings': ('财报', '公司经营', '盈利', '业绩', 'guidance', 'earnings'),
-            'industry_theme': ('科技', '产业', 'AI', '半导体', '能源', '消费'),
-            'risk_event': ('风险', '地缘', '冲突', '诉讼', '调查', '危机'),
-        }
-        buckets: Dict[str, Dict[str, Any]] = {
-            key: {'article_count': 0, 'source_count': 0, 'status': 'missing'}
-            for key in category_rules
-        }
-        source_sets: Dict[str, set[str]] = {key: set() for key in category_rules}
 
-        for article in selected:
-            text = " ".join(str(article.get(field) or '') for field in ('primary_topic', 'title', 'summary'))
-            source = str(article.get('source') or '')
-            for key, cues in category_rules.items():
-                if any(cue in text for cue in cues):
-                    buckets[key]['article_count'] += 1
-                    if source:
-                        source_sets[key].add(source)
 
-        for key, bucket in buckets.items():
-            bucket['source_count'] = len(source_sets[key])
-            if bucket['article_count'] >= 2 and bucket['source_count'] >= 2:
-                bucket['status'] = 'sufficient'
-            elif bucket['article_count'] >= 1:
-                bucket['status'] = 'partial'
 
-        realtime_available = bool(realtime_data and realtime_data.get('stocks'))
-        buckets['realtime_market'] = {
-            'article_count': 0,
-            'source_count': 1 if realtime_available else 0,
-            'status': 'sufficient' if realtime_available else 'missing',
-        }
-        return {
-            'required': True,
-            'market': market,
-            'categories': buckets,
-            'coverage_gaps': [
-                key for key, bucket in buckets.items()
-                if bucket.get('status') != 'sufficient'
-            ],
-        }
 
-    @staticmethod
-    def _build_coverage_prompt(coverage_matrix: Dict[str, Any]) -> str:
-        categories = coverage_matrix.get('categories') or {}
-        lines = ["=== 覆盖矩阵约束 ==="]
-        for key, bucket in categories.items():
-            lines.append(
-                f"- {key}: status={bucket.get('status')}, "
-                f"articles={bucket.get('article_count')}, sources={bucket.get('source_count')}"
-            )
-        gaps = coverage_matrix.get('coverage_gaps') or []
-        if gaps:
-            lines.append(
-                "- 覆盖不足的板块只能写观察或证据缺口，禁止写成完整市场结论: "
-                + ", ".join(gaps)
-            )
-        return "\n".join(lines)
 
-    @staticmethod
-    def _distribution(counter: Counter, total: int) -> List[Dict[str, Any]]:
-        rows = []
-        for name, count in counter.most_common():
-            rows.append({
-                'name': name,
-                'count': count,
-                'share': (count / total) if total else 0.0,
-            })
-        return rows
 
-    @staticmethod
-    def _explicit_article_entities(article: Dict[str, Any]) -> List[str]:
-        entities: List[str] = []
-        scalar_fields = ('company', 'company_name', 'ticker', 'symbol')
-        list_fields = ('companies', 'tickers', 'symbols', 'related_symbols', 'stock_symbols')
-        for field in scalar_fields:
-            value = article.get(field)
-            if value:
-                entities.append(str(value).strip())
-        for field in list_fields:
-            value = article.get(field)
-            if isinstance(value, list):
-                entities.extend(str(item).strip() for item in value if item)
-            elif isinstance(value, str) and value.strip():
-                entities.extend(item.strip() for item in re.split(r'[,，;；\s]+', value) if item.strip())
-        return [item for item in entities if item]
 
-    @staticmethod
-    def _build_evidence_diversity(selected: list, *, market: str) -> Dict[str, Any]:
-        """统计来源、主题和显式标的集中度，避免单一依据带偏报告。"""
-        total = len(selected)
-        source_counter: Counter = Counter()
-        topic_counter: Counter = Counter()
-        entity_counter: Counter = Counter()
-        source_tier_counter: Counter = Counter()
-        source_tier_known_count = 0
-        mainstream_or_better_count = 0
-        aggregator_count = 0
-        original_source_known_count = 0
-        original_source_count = 0
 
-        for article in selected:
-            source = str(article.get('source') or '未知来源').strip() or '未知来源'
-            topic = str(article.get('primary_topic') or '未分类').strip() or '未分类'
-            source_tier = str(article.get('source_tier') or 'unknown').strip() or 'unknown'
-            source_counter[source] += 1
-            topic_counter[topic] += 1
-            source_tier_counter[source_tier] += 1
-            if source_tier != 'unknown':
-                source_tier_known_count += 1
-                if source_tier in {'official', 'mainstream'}:
-                    mainstream_or_better_count += 1
-                if source_tier == 'aggregator':
-                    aggregator_count += 1
-            original_value = article.get('is_original_source')
-            if original_value is not None and original_value != '':
-                original_source_known_count += 1
-                if str(original_value).lower() in {'1', 'true', 'yes'}:
-                    original_source_count += 1
-            for entity in ReportGenerator._explicit_article_entities(article):
-                entity_counter[entity] += 1
 
-        def max_share(counter: Counter, denominator: int) -> float:
-            return (counter.most_common(1)[0][1] / denominator) if counter and denominator else 0.0
 
-        source_count = len(source_counter)
-        topic_count = len(topic_counter)
-        entity_total = sum(entity_counter.values())
-        flags: List[str] = []
-        if total >= 8 and source_count < 3:
-            flags.append('insufficient_source_diversity')
-        if total >= 8 and max_share(source_counter, total) > 0.60:
-            flags.append('source_concentration')
-        if total >= 8 and max_share(topic_counter, total) > 0.70:
-            flags.append('topic_concentration')
-        if entity_total >= 3 and max_share(entity_counter, entity_total) > 0.60:
-            flags.append('entity_concentration')
-        if total >= 8 and source_tier_known_count >= total * 0.8 and mainstream_or_better_count < 2:
-            flags.append('insufficient_mainstream_sources')
-        if total >= 8 and (aggregator_count / source_tier_known_count if source_tier_known_count else 0.0) > 0.50:
-            flags.append('aggregator_concentration')
-        if total >= 8 and original_source_known_count >= total * 0.8 and original_source_count == 0:
-            flags.append('no_original_sources')
 
-        return {
-            'required': True,
-            'market': market,
-            'total_articles': total,
-            'source_count': source_count,
-            'topic_count': topic_count,
-            'explicit_entity_count': len(entity_counter),
-            'explicit_entity_observation_count': entity_total,
-            'source_tier_known_count': source_tier_known_count,
-            'mainstream_or_better_count': mainstream_or_better_count,
-            'aggregator_count': aggregator_count,
-            'original_source_known_count': original_source_known_count,
-            'original_source_count': original_source_count,
-            'max_source_share': max_share(source_counter, total),
-            'max_topic_share': max_share(topic_counter, total),
-            'max_entity_share': max_share(entity_counter, entity_total),
-            'max_aggregator_share': (aggregator_count / source_tier_known_count) if source_tier_known_count else 0.0,
-            'original_source_share': (original_source_count / original_source_known_count) if original_source_known_count else None,
-            'source_distribution': ReportGenerator._distribution(source_counter, total),
-            'topic_distribution': ReportGenerator._distribution(topic_counter, total),
-            'entity_distribution': ReportGenerator._distribution(entity_counter, entity_total),
-            'source_tier_distribution': ReportGenerator._distribution(source_tier_counter, total),
-            'concentration_flags': flags,
-            'passed': not flags,
-        }
 
-    @staticmethod
-    def _build_diversity_prompt(evidence_diversity: Dict[str, Any]) -> str:
-        lines = ["=== 证据多样性约束 ==="]
-        lines.append(
-            f"- sources={evidence_diversity.get('source_count')}, "
-            f"topics={evidence_diversity.get('topic_count')}, "
-            f"max_source_share={evidence_diversity.get('max_source_share', 0):.0%}, "
-            f"max_topic_share={evidence_diversity.get('max_topic_share', 0):.0%}, "
-            f"aggregator_share={evidence_diversity.get('max_aggregator_share', 0):.0%}"
-        )
-        flags = evidence_diversity.get('concentration_flags') or []
-        if flags:
-            lines.append(
-                "- 证据集中度偏高，只能写成样本偏置/观察结论，禁止把集中样本扩写成市场整体信号: "
-                + ", ".join(flags)
-            )
-        return "\n".join(lines)
 
-    @staticmethod
-    def _keyword_hits(text: str, keywords: List[str]) -> List[str]:
-        lowered = text.lower()
-        return sorted({keyword for keyword in keywords if keyword.lower() in lowered})
 
-    @staticmethod
-    def _build_counter_evidence_ledger(
-        selected: list,
-        judgment_candidates: list,
-        *,
-        market: str,
-    ) -> Dict[str, Any]:
-        """记录每个主题候选是否检查过反证/风险证据。"""
-        article_map = {
-            article.get('id'): article
-            for article in selected
-            if article.get('id') is not None
-        }
-        topic_rows: List[Dict[str, Any]] = []
-        for item in judgment_candidates:
-            topic = str(item.get('topic') or '')
-            candidate_articles = item.get('articles') or []
-            article_ids = [article.get('id') for article in candidate_articles if article.get('id') is not None]
-            relevant = [article_map[article_id] for article_id in article_ids if article_id in article_map]
-            supporting_ids: List[Any] = []
-            counter_ids: List[Any] = []
-            positive_hits: List[str] = []
-            negative_hits: List[str] = []
-
-            for article in relevant:
-                text = " ".join(str(article.get(field) or '') for field in ('title', 'summary', 'content'))
-                pos = ReportGenerator._keyword_hits(text, MAJOR_POSITIVE_KEYWORDS)
-                neg = ReportGenerator._keyword_hits(text, MAJOR_NEGATIVE_KEYWORDS)
-                positive_hits.extend(pos)
-                negative_hits.extend(neg)
-                if topic == '风险事件':
-                    if neg:
-                        supporting_ids.append(article.get('id'))
-                    if pos:
-                        counter_ids.append(article.get('id'))
-                else:
-                    if pos:
-                        supporting_ids.append(article.get('id'))
-                    if neg:
-                        counter_ids.append(article.get('id'))
-
-            supporting_ids = sorted(set(supporting_ids))
-            counter_ids = sorted(set(counter_ids))
-            status = 'balanced'
-            if counter_ids and supporting_ids:
-                status = 'mixed'
-            elif counter_ids:
-                status = 'counter_only'
-            elif supporting_ids:
-                status = 'support_only'
-
-            topic_rows.append({
-                'topic': topic,
-                'market': market,
-                'high_confidence_topic': bool(item.get('high_confidence_topic')),
-                'evidence_article_ids': article_ids,
-                'supporting_article_ids': supporting_ids,
-                'counter_article_ids': counter_ids,
-                'counter_evidence_count': len(counter_ids),
-                'positive_keywords': sorted(set(positive_hits)),
-                'negative_keywords': sorted(set(negative_hits)),
-                'status': status,
-            })
-
-        topics_with_counter = [
-            row for row in topic_rows
-            if row.get('high_confidence_topic') and row.get('counter_evidence_count', 0) > 0
-        ]
-        return {
-            'required': True,
-            'market': market,
-            'topics': topic_rows,
-            'summary': {
-                'topic_count': len(topic_rows),
-                'topics_with_counter_evidence': len(topics_with_counter),
-                'high_confidence_topics_with_counter_evidence': len(topics_with_counter),
-            },
-            'passed': len(topics_with_counter) == 0,
-        }
-
-    @staticmethod
-    def _build_counter_evidence_prompt(counter_evidence_ledger: Dict[str, Any]) -> str:
-        lines = ["=== 反证/冲突证据约束 ==="]
-        rows = counter_evidence_ledger.get('topics') or []
-        for row in rows:
-            if row.get('counter_evidence_count', 0) <= 0:
-                continue
-            lines.append(
-                f"- {row.get('topic')}: counter_articles={row.get('counter_article_ids')}, "
-                f"negative_keywords={row.get('negative_keywords')}"
-            )
-        if (counter_evidence_ledger.get('summary') or {}).get('high_confidence_topics_with_counter_evidence', 0):
-            lines.append("- 高置信主题存在反证时，正文必须显式写出反证/风险边界，禁止单边强化结论。")
-        return "\n".join(lines)
-
-    @staticmethod
-    def _prepend_trust_card(report_text: str, meta: Dict[str, Any]) -> str:
-        """在报告标题之后插入可信度摘要卡（代码拼接，不经过 AI）。
-
-        数据全部来自 meta dict，分层展示：
-        - 第一行：总评（质量检查通过/未通过 + 评分）
-        - 常驻字段：事实核查、交叉验真
-        - 仅在异常时展示：实时行情降级、覆盖缺口
-        """
-        quality = meta.get('quality_check') or {}
-        stats = quality.get('stats') or {}
-        cv = meta.get('cross_verification') or {}
-        cv_summary = cv.get('summary') or {}
-        coverage = meta.get('coverage_matrix') or {}
-        gaps = coverage.get('coverage_gaps') or []
-        degraded = meta.get('live_data_degraded', False)
-
-        score = quality.get('score')
-        passed = quality.get('passed')
-        verified = stats.get('verified_claims')
-        total = stats.get('total_claims')
-        cv_confirmed = cv_summary.get('stocks_confirmed')
-        cv_weak = cv_summary.get('stocks_weak')
-
-        # 总评（注意：这里展示的是报告生成阶段的质量检查，非 run_acceptance 验收）
-        if passed is True and score is not None:
-            status_line = f'🟢 **质量检查通过** · 评分 {score}/100'
-        elif passed is False:
-            status_line = f'🔴 **质量检查未通过** · 评分 {score or "?"}/100'
-        else:
-            status_line = '⚪ **未运行质量检查**'
-
-        lines = [
-            '> 📋 **可信度摘要** · 系统根据实际数据源状态自动生成',
-            '',
-            status_line,
-            '',
-            '| 维度 | 状态 |',
-            '|------|------|',
-        ]
-
-        # 事实核查
-        if verified is not None and total is not None:
-            lines.append(f'| 事实核查 | {verified}/{total} 断言通过验证 |')
-        elif verified is not None:
-            lines.append(f'| 事实核查 | {verified} 断言已验证 |')
-
-        # 交叉验真
-        if cv_confirmed is not None:
-            parts = [f'{cv_confirmed} confirmed']
-            if cv_weak is not None:
-                parts.append(f'{cv_weak} weak')
-            lines.append(f'| 交叉验真 | 标的 {" / ".join(parts)} |')
-
-        # 覆盖缺口（仅在非空时展示）
-        if gaps:
-            lines.append(f'| 覆盖缺口 | {", ".join(gaps[:4])} |')
-
-        lines.append('')
-
-        # 异常标记（仅在有异常时展示）
-        if degraded:
-            lines.append('⚠️ 实时行情数据降级，价格相关结论依赖新闻与本地快照，不反映盘中最新价')
-            lines.append('')
-
-        lines.append('---')
-        card = '\n'.join(lines)
-
-        # 插入到第一个 # 标题之后
-        title_match = __import__('re').search(r'^# .+$', report_text or '', __import__('re').MULTILINE)
-        if title_match:
-            pos = title_match.end()
-            return report_text[:pos] + '\n\n' + card + '\n' + report_text[pos:].lstrip('\n')
-        # 回退：没有找到 # 标题，直接放在最前面
-        return card + '\n' + (report_text or '')
-
-    @staticmethod
-    def _build_evidence_audit_markdown(
-        *,
-        source_references: Dict[str, Any],
-        coverage_matrix: Dict[str, Any],
-        evidence_diversity: Dict[str, Any],
-        counter_evidence_ledger: Dict[str, Any],
-        quality_result: Optional[Dict[str, Any]] = None,
-        candidate_evidence_audit: Optional[Dict[str, Any]] = None,
-        scoring_calibration: Optional[Dict[str, Any]] = None,
-    ) -> str:
-        """生成确定性审计附录；它只暴露证据状态，不参与模型正文生成。"""
-        quality = quality_result or {}
-        coverage_gaps = coverage_matrix.get('coverage_gaps') or []
-        diversity_flags = evidence_diversity.get('concentration_flags') or []
-        counter_summary = counter_evidence_ledger.get('summary') or {}
-        article_count = len(source_references.get('articles') or [])
-        candidate_audit = candidate_evidence_audit or {}
-        relevance_counts = candidate_audit.get('status_counts') or {}
-        calibration = scoring_calibration or {}
-        lines = [
-            "## 证据审计摘要",
-            "",
-            f"- 新闻引用索引: {article_count} 篇可回溯文章",
-            f"- 覆盖缺口: {', '.join(coverage_gaps) if coverage_gaps else '无'}",
-            f"- 来源/主题集中度风险: {', '.join(diversity_flags) if diversity_flags else '无'}",
-            (
-                "- 高置信主题反证数: "
-                f"{counter_summary.get('high_confidence_topics_with_counter_evidence', 0)}"
-            ),
-            (
-                "- 个股证据相关性: "
-                f"实质证据 {relevance_counts.get('direct_material_news', 0)} / "
-                f"主题代理 {relevance_counts.get('theme_proxy', 0)} / "
-                f"误命中过滤 {len(candidate_audit.get('rejected_false_positive_mentions') or [])}"
-            ),
-            (
-                "- 历史方向校准: "
-                f"{', '.join(calibration.get('status_counts', {}).keys()) if calibration.get('status_counts') else '样本不足'}"
-            ),
-            f"- 质量门禁: {'通过' if quality.get('passed') else '未通过'} / 分数 {quality.get('score', '未知')}",
-        ]
-        return "\n".join(lines)
-
-    @staticmethod
-    def _build_candidate_evidence_audit(
-        *,
-        candidate_stocks: list,
-        stock_payload: Dict[str, Any],
-        rejected_false_positive_mentions: Optional[List[Dict[str, Any]]] = None,
-    ) -> Dict[str, Any]:
-        """汇总候选股证据相关性，供 acceptance 和人工审计复核。"""
-        recommendations = (stock_payload or {}).get('recommendations') or []
-        status_counts: Dict[str, int] = {}
-        rows = []
-        for item in recommendations:
-            status = item.get('evidence_relevance_status') or 'unknown'
-            status_counts[status] = status_counts.get(status, 0) + 1
-            rows.append({
-                'symbol': item.get('symbol'),
-                'name': item.get('name'),
-                'source_type': item.get('source_type'),
-                'evidence_relevance_status': status,
-                'evidence_relevance_reasons': item.get('evidence_relevance_reasons') or [],
-                'evidence_article_ids': item.get('evidence_article_ids') or [],
-                'actionability_passed': item.get('actionability_passed') is True,
-            })
-        return {
-            'required': True,
-            'candidate_count': len(candidate_stocks or []),
-            'recommendation_count': len(recommendations),
-            'status_counts': status_counts,
-            'candidates': rows,
-            'rejected_false_positive_mentions': rejected_false_positive_mentions or [],
-        }
-
-    @staticmethod
-    def _build_scoring_calibration(stock_payload: Dict[str, Any]) -> Dict[str, Any]:
-        """汇总每条推荐的历史校准状态；不把未校准分数包装成方向结论。"""
-        recommendations = (stock_payload or {}).get('recommendations') or []
-        status_counts: Dict[str, int] = {}
-        rows = []
-        for item in recommendations:
-            status = item.get('historical_calibration_status') or '样本不足'
-            status_counts[status] = status_counts.get(status, 0) + 1
-            rows.append({
-                'symbol': item.get('symbol'),
-                'name': item.get('name'),
-                'grade': item.get('grade'),
-                'historical_calibration_status': status,
-                'historical_forward_stats': item.get('historical_forward_stats') or {},
-            })
-        return {
-            'required': True,
-            'status_counts': status_counts,
-            'items': rows,
-        }
-
-    @staticmethod
-    def _build_prompt_signal_context(
-        judgment_candidates: list,
-        stock_payload: Dict[str, Any],
-        data_quality_stats: Dict[str, Any],
-        cross_verification_result: Dict[str, Any] | None = None,
-    ) -> str:
-        """把结构化主题、推荐和数据质量约束显式注入给 markdown-report。"""
-        high_confidence = [
-            item for item in judgment_candidates
-            if bool(item.get('high_confidence_topic'))
-        ]
-        watch_topics = [
-            item for item in judgment_candidates
-            if not bool(item.get('high_confidence_topic'))
-        ][:4]
-        recommendations = stock_payload.get('recommendations') or []
-        actionable = stock_payload.get('decision_views', {}).get('actionable_candidates') or []
-        watchlist = stock_payload.get('decision_views', {}).get('conditional_watchlist') or []
-        stale = stock_payload.get('decision_views', {}).get('stale_or_rejected') or []
-        counts = data_quality_stats.get('counts') or {}
-        ratios = data_quality_stats.get('ratios') or {}
-
-        lines = [
-            "=== 高信号输出约束 ===",
-            f"- 高置信主题数量: {len(high_confidence)}",
-            f"- 观察主题数量: {len(watch_topics)}",
-            f"- 结构化推荐数量: {len(recommendations)}",
-            f"- 可行动推荐数量: {len(actionable)}",
-            f"- 观察清单数量: {len(watchlist)}",
-            f"- 拒绝/拥挤清单数量: {len(stale)}",
-            f"- 数据质量: 完整正文 {counts.get('full', 0)}篇({ratios.get('full', 0.0):.1f}%), 部分正文 {counts.get('partial', 0)}篇({ratios.get('partial', 0.0):.1f}%), 仅摘要 {counts.get('summary_only', 0)}篇({ratios.get('summary_only', 0.0):.1f}%)",
-            "- 正文只能使用下列主题和标的，禁止自行扩写新的股票池、行业配比或宏大资产配置口号。",
-            "- 事实核查只覆盖实时数值与部分新闻事实；不得把“已验证的实时断言”扩写成“整份报告已证实”或“整篇 thesis 已验证”。",
-            "- 只有 actionable_candidates 可以写成“可行动标的”；conditional_watchlist 只能写成“继续观察”，stale_or_rejected 只能写成风险或等待项。",
-        ]
-
-        if high_confidence:
-            lines.append("- 可写成高置信主题:")
-            for item in high_confidence[:3]:
-                lines.append(
-                    f"  * {item.get('topic')}: topic_article_count={item.get('topic_article_count', 0)}, independent_evidence_count={item.get('independent_evidence_count', 0)}, source_tier_max={item.get('source_tier_max')}"
-                )
-        else:
-            lines.append("- 当前没有可写成高置信结论的主题，正文必须以观察项为主。")
-
-        if watch_topics:
-            lines.append("- 仅允许写成观察项的主题:")
-            for item in watch_topics:
-                lines.append(
-                    f"  * {item.get('topic')}: topic_article_count={item.get('topic_article_count', 0)}, independent_evidence_count={item.get('independent_evidence_count', 0)}"
-                )
-
-        if recommendations:
-            lines.append("- 允许在正文中提到的结构化标的:")
-            for item in recommendations[:8]:
-                lines.append(
-                    f"  * {item.get('symbol')} {item.get('name')} / {item.get('grade')} / source_type={item.get('source_type')} / grade_caps={','.join(item.get('grade_caps') or ['none'])} / actionable={'yes' if item.get('actionability_passed') else 'no'}"
-                )
-        else:
-            lines.append("- 当前没有满足规则门槛的结构化股票推荐，正文不得写具体股票推荐。")
-
-        if len(actionable) <= 1:
-            lines.append("- 由于可行动推荐少于等于1个，正文不得写成多只核心持仓组合。")
-        if not high_confidence and not actionable:
-            lines.append("- 若主题与推荐都偏弱，正文必须退化为“观察清单 + 风险 + 验证点”。")
-
-        if cross_verification_result:
-            cv = cross_verification_result
-            cv_summary = cv.get('summary', {})
-            lines.append("")
-            lines.append("=== 交叉验真约束 ===")
-            lines.append(
-                f"- 主题交叉验真: {cv_summary.get('topics_confirmed', 0)} confirmed, "
-                f"{cv_summary.get('topics_weak', 0)} weak, "
-                f"{cv_summary.get('topics_conflicted', 0)} conflicted"
-            )
-            lines.append(
-                f"- 标的交叉验真: {cv_summary.get('stocks_confirmed', 0)} confirmed, "
-                f"{cv_summary.get('stocks_weak', 0)} weak, "
-                f"{cv_summary.get('stocks_conflicted', 0)} conflicted"
-            )
-            conflicted_topics = [
-                tc.get('topic', '') for tc in cv.get('topic_checks', [])
-                if tc.get('status') == CROSS_STATUS_CONFLICTED
-            ]
-            if conflicted_topics:
-                lines.append(
-                    f"- 冲突主题: {', '.join(conflicted_topics[:3])} "
-                    "-- 正文必须标注为'证据矛盾，待进一步确认'"
-                )
-            conflicted_stocks = [
-                sc.get('symbol', '') for sc in cv.get('stock_checks', [])
-                if sc.get('status') == CROSS_STATUS_CONFLICTED
-            ]
-            if conflicted_stocks:
-                lines.append(
-                    f"- 冲突标的: {', '.join(conflicted_stocks[:5])} "
-                    "-- 禁止写成'可行动'，必须注明正反证据并存"
-                )
-            lines.append("- 正文中只有 cross_verification_status=confirmed 的标的才能写成'已验证''强确认'")
-            lines.append("- weak/conflicted 标的禁止使用'多来源验证''确定性高''可行动'等表述")
-
-        return "\n".join(lines)
-
-    @staticmethod
-    def _render_structured_recommendation_summary(
-        judgment_candidates: list,
-        stock_payload: Dict[str, Any],
-        cross_verification_result: Dict[str, Any] | None = None,
-    ) -> str:
-        """基于结构化真相源补一段短摘要，避免正文与评分层分裂。"""
-        high_confidence = [
-            item for item in judgment_candidates
-            if bool(item.get('high_confidence_topic'))
-        ]
-        watch_topics = [
-            item for item in judgment_candidates
-            if not bool(item.get('high_confidence_topic'))
-        ]
-        actionable = stock_payload.get('decision_views', {}).get('actionable_candidates') or []
-        watchlist = stock_payload.get('decision_views', {}).get('conditional_watchlist') or []
-        stale = stock_payload.get('decision_views', {}).get('stale_or_rejected') or []
-
-        lines = [
-            "## 📌 结构化推荐摘要",
-            "",
-            "### 高置信主题",
-        ]
-        if high_confidence:
-            for item in high_confidence[:3]:
-                lines.append(
-                    f"- **{item.get('topic')}**：{item.get('topic_article_count', 0)}篇主题文章，独立证据 {item.get('independent_evidence_count', 0)} 条。"
-                )
-        else:
-            lines.append("- 当前没有足够证据支撑的高置信主题，建议以观察项为主。")
-
-        lines.extend(["", "### 建议与观察"])
-        if actionable:
-            lines.append("- **可行动标的**:")
-            for item in actionable[:3]:
-                lines.append(
-                    f"  - {item.get('name')}（{item.get('symbol')}，{item.get('grade')}，总分 {item.get('total_score')}）"
-                )
-        else:
-            lines.append("- **无新增高信号标的**：当前没有满足高信号门槛的可行动标的。")
-
-        if watchlist:
-            lines.append("- **继续观察**:")
-            for item in watchlist[:5]:
-                lines.append(
-                    f"  - {item.get('name')}（{item.get('symbol')}，{item.get('grade')}）"
-                )
-
-        if stale:
-            lines.append("- **拥挤或后手机会**:")
-            for item in stale[:3]:
-                lines.append(
-                    f"  - {item.get('name')}（{item.get('symbol')}，{item.get('grade')}）"
-                )
-
-        if watch_topics:
-            lines.extend(["", "### 主题观察清单"])
-            for item in watch_topics[:4]:
-                lines.append(
-                    f"- {item.get('topic')}：证据密度不足以形成高置信结论，暂列观察。"
-                )
-
-        if cross_verification_result:
-            cv_stocks = cross_verification_result.get('stock_checks', [])
-            confirmed = [s for s in cv_stocks if s.get('status') == CROSS_STATUS_CONFIRMED]
-            conflicted = [s for s in cv_stocks if s.get('status') == CROSS_STATUS_CONFLICTED]
-            if confirmed or conflicted:
-                lines.extend(["", "### 交叉验真信号"])
-                if confirmed:
-                    lines.append("- **多来源确认**:")
-                    for sc in confirmed[:3]:
-                        lines.append(
-                            f"  - {sc.get('name')}（{sc.get('symbol')}）："
-                            f"{sc.get('independent_source_count')} 个独立来源，证据新鲜"
-                        )
-                if conflicted:
-                    lines.append("- **信号冲突**:")
-                    for sc in conflicted[:3]:
-                        lines.append(
-                            f"  - {sc.get('name')}（{sc.get('symbol')}）："
-                            f"{sc.get('conflict_detail') or '正反证据并存'}"
-                        )
-
-        return "\n".join(lines)
 
     def _save_result(
         self,
@@ -1151,14 +444,14 @@ class ReportGenerator:
             judgment_candidates=candidates,
             max_candidates=max(max_theses + 3, 6),
         )
-        source_references = self._build_source_reference_payload(selected)
-        coverage_matrix = self._build_coverage_matrix(
+        source_references = build_source_reference_payload(selected)
+        coverage_matrix = build_coverage_matrix(
             selected,
             market=stock_market,
             realtime_data=realtime_data,
         )
-        evidence_diversity = self._build_evidence_diversity(selected, market=stock_market)
-        counter_evidence_ledger = self._build_counter_evidence_ledger(
+        evidence_diversity = build_evidence_diversity(selected, market=stock_market)
+        counter_evidence_ledger = build_counter_evidence_ledger(
             selected,
             candidates,
             market=stock_market,
@@ -1166,9 +459,9 @@ class ReportGenerator:
         prompt = self.load_prompt('judgment_cards')
         base_content = (
             build_judgment_prompt_context(candidates, bool(realtime_data), max_theses)
-            + "\n\n" + self._build_coverage_prompt(coverage_matrix)
-            + "\n\n" + self._build_diversity_prompt(evidence_diversity)
-            + "\n\n" + self._build_counter_evidence_prompt(counter_evidence_ledger)
+            + "\n\n" + build_coverage_prompt(coverage_matrix)
+            + "\n\n" + build_diversity_prompt(evidence_diversity)
+            + "\n\n" + build_counter_evidence_prompt(counter_evidence_ledger)
         )
         retry_feedback = ''
         last_error = ''
@@ -1244,7 +537,7 @@ class ReportGenerator:
             market=stock_market,
             selected_articles=selected,
         )
-        meta_quality_fields = self._quality_metadata_fields(quality_result)
+        meta_quality_fields = quality_metadata_fields(quality_result)
         meta = {
             'date_range': {'start': start_date, 'end': end_date},
             'market': stock_market,
@@ -1273,7 +566,7 @@ class ReportGenerator:
             'backtest_generated_at': datetime.now().isoformat(),
         }
         meta.update(meta_quality_fields)
-        enhanced_context_payload = self._build_enhanced_context_payload(
+        enhanced_context_payload = build_enhanced_context_payload(
             selected=selected,
             judgment_candidates=candidates,
             candidate_stocks=candidate_stocks,
@@ -1287,7 +580,7 @@ class ReportGenerator:
             evidence_diversity=evidence_diversity,
             counter_evidence_ledger=counter_evidence_ledger,
         )
-        evidence_audit_payload = self._build_evidence_audit_payload(
+        evidence_audit_payload = build_evidence_audit_payload(
             analysis_mode='judgment-cards',
             market=stock_market,
             date_range=meta['date_range'],
@@ -1301,7 +594,7 @@ class ReportGenerator:
         )
         rendered_md = (
             f"{rendered_md.rstrip()}\n\n"
-            + self._build_evidence_audit_markdown(
+            + build_evidence_audit_markdown(
                 source_references=source_references,
                 coverage_matrix=coverage_matrix,
                 evidence_diversity=evidence_diversity,
@@ -1328,7 +621,7 @@ class ReportGenerator:
         meta.update({
             'export_payload_refreshed': True,
         })
-        rendered_md = ReportGenerator._prepend_trust_card(rendered_md, meta)
+        rendered_md = prepend_trust_card(rendered_md, meta)
         saved_path = self._save_result(
             end_date,
             rendered_md,
@@ -1427,20 +720,21 @@ class ReportGenerator:
         print()
 
         # 提前提取市场参数（后续多处使用，需 pop 避免传入 AI provider）
-        stock_market = provider_kwargs.pop('stock_market', 'CN')
+        stock_market = Market.from_code(provider_kwargs.pop('stock_market', 'CN'))
+        stock_market_code = stock_market.code
 
         # 美股模式：限定美股相关新闻源，避免 A 股/国内宏观语料污染
-        if stock_market == 'US':
+        if stock_market is Market.US:
             if filter_source:
                 user_sources = [s.strip() for s in filter_source.split(',') if s.strip()]
-                valid = [s for s in user_sources if s in US_MARKET_SOURCE_NAMES]
-                rejected = [s for s in user_sources if s not in US_MARKET_SOURCE_NAMES]
+                valid = [s for s in user_sources if s in Market.US.source_names]
+                rejected = [s for s in user_sources if s not in Market.US.source_names]
                 if rejected:
                     print_warning(f'美股模式：以下来源不在美股 allowlist 中，已自动剔除：{", ".join(rejected)}')
                 filter_source = ','.join(valid) if valid else None
             if not filter_source:
-                filter_source = ','.join(US_MARKET_SOURCE_NAMES)
-                print_info(f'美股模式：自动限定 {len(US_MARKET_SOURCE_NAMES)} 个美股相关新闻源')
+                filter_source = ','.join(Market.US.source_names)
+                print_info(f'美股模式：自动限定 {len(Market.US.source_names)} 个美股相关新闻源')
 
         # 获取实时数据（如果启用验证）
         start_stage('获取实时数据', step=1, total=6, detail='检查实时行情可用性')
@@ -1497,7 +791,7 @@ class ReportGenerator:
                 min_independent_evidence=int(provider_kwargs.pop('min_independent_evidence', 2)),
                 degrade_on_weak_evidence=bool(provider_kwargs.pop('degrade_on_weak_evidence', True)),
                 output_observation_only_when_weak=bool(provider_kwargs.pop('output_observation_only_when_weak', True)),
-                stock_market=stock_market,
+                stock_market=stock_market_code,
                 **provider_kwargs,
             )
 
@@ -1515,14 +809,14 @@ class ReportGenerator:
                 'stale_or_rejected': [],
             },
             'scoring_config': {
-                'market': stock_market,
+                'market': stock_market_code,
                 'style': 'balanced',
                 'lookback_days': 60,
             },
         }
         cv_result = None
-        if enable_stock_scoring and stock_market in ('CN', 'US'):
-            if stock_market == 'US':
+        if enable_stock_scoring:
+            if stock_market is Market.US:
                 active_sm = self.security_master_us
                 active_valuation = ValuationProvider(active_sm)
                 market_label = '美股'
@@ -1545,7 +839,7 @@ class ReportGenerator:
                 lookback_days=60,
                 style='balanced',
                 as_of_date=end_date,
-                market=stock_market,
+                market=stock_market_code,
             )
             stock_payload = scorer.score_candidates(candidate_stocks)
             print_success(f"✓ 已生成 {len(stock_payload['recommendations'])} 条股票评分结果")
@@ -1557,7 +851,7 @@ class ReportGenerator:
                 candidate_stocks=candidate_stocks,
                 stock_recommendations=stock_payload['recommendations'],
                 as_of_date=end_date,
-                market=stock_market,
+                market=stock_market_code,
             )
             # 将交叉验真结果注入每个推荐项的 evidence_strength
             stock_check_map = {
@@ -1625,12 +919,12 @@ class ReportGenerator:
             )
 
         # 构建语料
-        candidate_evidence_audit = self._build_candidate_evidence_audit(
+        candidate_evidence_audit = build_candidate_evidence_audit(
             candidate_stocks=candidate_stocks,
             stock_payload=stock_payload,
             rejected_false_positive_mentions=rejected_false_positive_mentions,
         )
-        scoring_calibration = self._build_scoring_calibration(stock_payload)
+        scoring_calibration = build_scoring_calibration(stock_payload)
         start_stage('构建语料', step=3, total=6, detail='拼接文章语料与来源统计')
         pairs, total_len = build_corpus(selected, max_chars, per_chunk_chars=3000, content_field=content_field)
         current_len = sum(len(c) for _, chunks in pairs for c in chunks)
@@ -1643,34 +937,34 @@ class ReportGenerator:
         # 构建统计信息
         data_quality_stats = summarize_content_quality(selected)
         stats_info = build_source_stats_block(selected, content_field, start_date, end_date)
-        source_references = self._build_source_reference_payload(selected)
-        coverage_matrix = self._build_coverage_matrix(
+        source_references = build_source_reference_payload(selected)
+        coverage_matrix = build_coverage_matrix(
             selected,
-            market=stock_market,
+            market=stock_market_code,
             realtime_data=realtime_data,
         )
-        evidence_diversity = self._build_evidence_diversity(selected, market=stock_market)
-        counter_evidence_ledger = self._build_counter_evidence_ledger(
+        evidence_diversity = build_evidence_diversity(selected, market=stock_market_code)
+        counter_evidence_ledger = build_counter_evidence_ledger(
             selected,
             judgment_candidates,
-            market=stock_market,
+            market=stock_market_code,
         )
-        prompt_signal_context = self._build_prompt_signal_context(
+        prompt_signal_context = build_prompt_signal_context(
             judgment_candidates=judgment_candidates,
             stock_payload=stock_payload,
             data_quality_stats=data_quality_stats,
             cross_verification_result=cv_result,
         )
-        source_reference_context = self._build_source_reference_prompt(selected)
-        coverage_context = self._build_coverage_prompt(coverage_matrix)
-        diversity_context = self._build_diversity_prompt(evidence_diversity)
-        counter_evidence_context = self._build_counter_evidence_prompt(counter_evidence_ledger)
+        source_reference_context = build_source_reference_prompt(selected)
+        coverage_context = build_coverage_prompt(coverage_matrix)
+        diversity_context = build_diversity_prompt(evidence_diversity)
+        counter_evidence_context = build_counter_evidence_prompt(counter_evidence_ledger)
 
         # 注入实时数据（如果有）
         if realtime_data:
             update_stage('注入实时市场数据到提示词')
             print_progress('注入实时市场数据到提示词...')
-            realtime_block = self._format_realtime_data(realtime_data)
+            realtime_block = format_realtime_data(realtime_data)
             stats_info = realtime_block + "\n\n" + stats_info
 
         joined = '\n\n'.join(c for _, chunks in pairs for c in chunks)
@@ -1712,7 +1006,7 @@ class ReportGenerator:
             traceback.print_exc()
             return {'success': False, 'error': str(e)}
 
-        structured_summary = self._render_structured_recommendation_summary(
+        structured_summary = render_structured_recommendation_summary(
             judgment_candidates=judgment_candidates,
             stock_payload=stock_payload,
             cross_verification_result=cv_result,
@@ -1724,7 +1018,7 @@ class ReportGenerator:
                 scoring_config=stock_payload['scoring_config'],
             )
             summary_md = f"{summary_md.rstrip()}\n\n{stock_section}\n"
-        summary_md = self._attach_realtime_source_annotation(summary_md, realtime_data)
+        summary_md = attach_realtime_source_annotation(summary_md, realtime_data)
 
         # 事实核查（如果启用验证）
         verified_claims, verification_report = self._run_fact_check(summary_md, realtime_data)
@@ -1753,15 +1047,15 @@ class ReportGenerator:
             quality_result['stats']['implausible_signals'] = FactChecker().collect_implausible_signals(verified_claims)
         claim_ledger = FactChecker.build_claim_ledger(
             verified_claims,
-            market=stock_market,
+            market=stock_market_code,
             selected_articles=selected,
         )
 
         # 保存报告
-        meta_quality_fields = self._quality_metadata_fields(quality_result)
+        meta_quality_fields = quality_metadata_fields(quality_result)
         meta = {
             'date_range': {'start': start_date, 'end': end_date},
-            'market': stock_market,
+            'market': stock_market_code,
             'articles_used': len(selected),
             'chunks': sum(len(ch) for _, ch in pairs),
             'model_usage': usage,
@@ -1795,14 +1089,14 @@ class ReportGenerator:
             'cross_verification_required': cv_result is not None,
         }
         meta.update(meta_quality_fields)
-        enhanced_context_payload = self._build_enhanced_context_payload(
+        enhanced_context_payload = build_enhanced_context_payload(
             selected=selected,
             judgment_candidates=judgment_candidates,
             candidate_stocks=candidate_stocks,
             stock_payload=stock_payload,
             analysis_mode='markdown-report',
             date_range=meta['date_range'],
-            market=stock_market,
+            market=stock_market_code,
             cross_verification_result=cv_result,
             source_references=source_references,
             claim_ledger=claim_ledger,
@@ -1813,9 +1107,9 @@ class ReportGenerator:
             scoring_calibration=scoring_calibration,
             rejected_false_positive_mentions=rejected_false_positive_mentions,
         )
-        evidence_audit_payload = self._build_evidence_audit_payload(
+        evidence_audit_payload = build_evidence_audit_payload(
             analysis_mode='markdown-report',
-            market=stock_market,
+            market=stock_market_code,
             date_range=meta['date_range'],
             source_references=source_references,
             claim_ledger=claim_ledger,
@@ -1831,7 +1125,7 @@ class ReportGenerator:
         )
         summary_md = (
             f"{summary_md.rstrip()}\n\n"
-            + self._build_evidence_audit_markdown(
+            + build_evidence_audit_markdown(
                 source_references=source_references,
                 coverage_matrix=coverage_matrix,
                 evidence_diversity=evidence_diversity,
@@ -1861,7 +1155,7 @@ class ReportGenerator:
             'scoring_calibration': scoring_calibration,
             'rejected_false_positive_mentions': rejected_false_positive_mentions,
         }
-        summary_md = ReportGenerator._prepend_trust_card(summary_md, meta)
+        summary_md = prepend_trust_card(summary_md, meta)
         start_stage('保存报告与元数据', step=6, total=6, detail='准备写入报告归档与 metadata')
         saved_path = self._save_result(
             end_date,
@@ -1872,7 +1166,7 @@ class ReportGenerator:
             export_payload,
             enhanced_context_payload,
             evidence_audit_payload,
-            artifact_suffix=f'markdown-report-{stock_market.lower()}',
+            artifact_suffix=f'markdown-report-{stock_market_code.lower()}',
         )
 
         print_success('分析完成！')
@@ -1895,116 +1189,3 @@ class ReportGenerator:
             'metadata': meta,
             'quality_result': quality_result
         }
-
-    @staticmethod
-    def _serialize_selected_articles(selected: list) -> list:
-        """输出时序判断需要的最小文章特征集。"""
-        fields = (
-            'id', 'title', 'source', 'published', 'collection_date',
-            'source_tier', 'investment_relevance', 'primary_topic',
-            'content_quality_status', 'is_original_source',
-        )
-        result = []
-        for article in selected:
-            result.append({field: article.get(field) for field in fields})
-        return result
-
-    def _build_enhanced_context_payload(
-        self,
-        *,
-        selected: list,
-        judgment_candidates: list,
-        candidate_stocks: list,
-        stock_payload: Optional[Dict[str, Any]],
-        analysis_mode: str,
-        date_range: Dict[str, str],
-        market: str = 'CN',
-        cross_verification_result: Dict[str, Any] | None = None,
-        source_references: Optional[Dict[str, Any]] = None,
-        claim_ledger: Optional[Dict[str, Any]] = None,
-        coverage_matrix: Optional[Dict[str, Any]] = None,
-        evidence_diversity: Optional[Dict[str, Any]] = None,
-        counter_evidence_ledger: Optional[Dict[str, Any]] = None,
-        candidate_evidence_audit: Optional[Dict[str, Any]] = None,
-        scoring_calibration: Optional[Dict[str, Any]] = None,
-        rejected_false_positive_mentions: Optional[List[Dict[str, Any]]] = None,
-    ) -> Dict[str, Any]:
-        """构建增强特征归档，供次日回看与后续时序统计。"""
-        return {
-            'analysis_mode': analysis_mode,
-            'market': market,
-            'date_range': date_range,
-            'selected_articles': self._serialize_selected_articles(selected),
-            'judgment_candidates': judgment_candidates,
-            'candidate_stocks': [item.to_dict() for item in candidate_stocks],
-            'stock_recommendations': (stock_payload or {}).get('recommendations') or [],
-            'decision_views': (stock_payload or {}).get('decision_views') or {},
-            'score_distribution': (stock_payload or {}).get('score_distribution') or {},
-            'scoring_config': (stock_payload or {}).get('scoring_config') or {},
-            'cross_verification': cross_verification_result if cross_verification_result else {},
-            'source_references': source_references or {},
-            'claim_ledger': claim_ledger or {},
-            'coverage_matrix': coverage_matrix or {},
-            'evidence_diversity': evidence_diversity or {},
-            'counter_evidence_ledger': counter_evidence_ledger or {},
-            'candidate_evidence_audit': candidate_evidence_audit or {},
-            'scoring_calibration': scoring_calibration or {},
-            'rejected_false_positive_mentions': rejected_false_positive_mentions or [],
-        }
-
-    @staticmethod
-    def _build_evidence_audit_payload(
-        *,
-        analysis_mode: str,
-        market: str,
-        date_range: Dict[str, str],
-        source_references: Dict[str, Any],
-        claim_ledger: Dict[str, Any],
-        coverage_matrix: Dict[str, Any],
-        evidence_diversity: Dict[str, Any],
-        counter_evidence_ledger: Dict[str, Any],
-        cross_verification_result: Dict[str, Any] | None = None,
-        stock_payload: Optional[Dict[str, Any]] = None,
-        quality_result: Optional[Dict[str, Any]] = None,
-        candidate_evidence_audit: Optional[Dict[str, Any]] = None,
-        scoring_calibration: Optional[Dict[str, Any]] = None,
-        rejected_false_positive_mentions: Optional[List[Dict[str, Any]]] = None,
-    ) -> Dict[str, Any]:
-        """集中落盘可信度证据，便于人工审计和自动化回放。"""
-        return {
-            'required': True,
-            'analysis_mode': analysis_mode,
-            'market': market,
-            'date_range': date_range,
-            'source_references': source_references,
-            'claim_ledger': claim_ledger,
-            'coverage_matrix': coverage_matrix,
-            'evidence_diversity': evidence_diversity,
-            'counter_evidence_ledger': counter_evidence_ledger,
-            'cross_verification': cross_verification_result or {},
-            'decision_views': (stock_payload or {}).get('decision_views') or {},
-            'stock_recommendations': (stock_payload or {}).get('recommendations') or [],
-            'quality_check': quality_result or {},
-            'candidate_evidence_audit': candidate_evidence_audit or {},
-            'scoring_calibration': scoring_calibration or {},
-            'rejected_false_positive_mentions': rejected_false_positive_mentions or [],
-        }
-
-    def _format_realtime_data(self, realtime_data: Dict[str, Any]) -> str:
-        """格式化实时数据为Markdown块"""
-        prompt_block = realtime_data.get('prompt')
-        if isinstance(prompt_block, str) and prompt_block.strip():
-            return prompt_block.strip()
-
-        lines = ["## 📊 实时市场数据", ""]
-
-        for key, value in realtime_data.items():
-            if isinstance(value, dict):
-                lines.append(f"### {key}")
-                for k, v in value.items():
-                    lines.append(f"- **{k}**: {v}")
-                lines.append("")
-            else:
-                lines.append(f"- **{key}**: {value}")
-
-        return "\n".join(lines)

@@ -7,7 +7,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 
-from scripts.utils.investment_signal import (
+from scripts.domain.investment_signal import (
     build_retry_feedback,
     build_judgment_candidates,
     enforce_judgment_rules,

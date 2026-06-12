@@ -17,7 +17,7 @@ from enum import Enum
 from datetime import datetime
 import logging
 
-from .realtime_data_fetcher import RealtimeDataFetcher, StockData, GoldData
+from scripts.infrastructure.realtime_data_fetcher import RealtimeDataFetcher, StockData, GoldData
 
 logger = logging.getLogger(__name__)
 

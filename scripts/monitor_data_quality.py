@@ -19,12 +19,19 @@ from dataclasses import dataclass
 from typing import Dict, List, Any, Optional
 import json
 
-from utils.print_utils import (
+try:
+    from scripts.bootstrap import ensure_project_root
+except ModuleNotFoundError:
+    from bootstrap import ensure_project_root
+
+PROJECT_ROOT = ensure_project_root(__file__)
+
+from scripts.infrastructure.print_utils import (
     print_header, print_success, print_warning, print_error,
     print_info, print_statistics, print_table_header, print_table_row
 )
-from utils.logger import get_logger
-from utils.config_manager import get_db_path
+from scripts.infrastructure.logger import get_logger
+from scripts.infrastructure.config_manager import get_db_path
 
 logger = get_logger('data_quality')
 

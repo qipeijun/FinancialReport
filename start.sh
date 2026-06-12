@@ -282,7 +282,7 @@ case $choice in
         print_log ""
         status_update "执行 AI 分析，字段模式: ${content_field}，市场: ${stock_market}"
         print_log "🚀 使用DeepSeek完整报告模式，字段模式：${content_field}，市场：${stock_market}"
-        python3 scripts/ai_analyze_deepseek_verified.py --mode markdown-report --content-field "$content_field" --stock-market "$stock_market"
+        python3 scripts/ai_analyze_deepseek.py --verify --mode markdown-report --content-field "$content_field" --stock-market "$stock_market"
         ;;
     3)
         status_update "准备执行 RSS 财经抓取"

@@ -32,10 +32,10 @@
 python3 scripts/rss_finance_analyzer.py --fetch-content
 
 # 生成完整报告
-python3 scripts/ai_analyze_deepseek_verified.py --date $(date +%Y-%m-%d) --mode markdown-report
+python3 scripts/ai_analyze_deepseek.py --date $(date +%Y-%m-%d) --mode markdown-report
 
 # 生成判断卡片
-python3 scripts/ai_analyze_deepseek_verified.py --date $(date +%Y-%m-%d) --mode judgment-cards
+python3 scripts/ai_analyze_deepseek.py --date $(date +%Y-%m-%d) --mode judgment-cards
 ```
 
 ### 3. 查看报告
@@ -68,7 +68,7 @@ api_keys:
 ## 当前推荐模型与入口
 
 - AI 主模型：DeepSeek
-- 主分析脚本：`scripts/ai_analyze_deepseek_verified.py`
+- 主分析脚本：`scripts/ai_analyze_deepseek.py`
 - 交互式入口：`scripts/interactive_runner.py`
 - 验收入口：`scripts/run_acceptance.py`
 

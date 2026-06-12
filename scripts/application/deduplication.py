@@ -15,7 +15,7 @@ from difflib import SequenceMatcher
 from typing import List, Tuple, Dict, Any, Set
 from collections import defaultdict
 
-from .logger import get_logger
+from scripts.infrastructure.logger import get_logger
 
 logger = get_logger('deduplication')
 

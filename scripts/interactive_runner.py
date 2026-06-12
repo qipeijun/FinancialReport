@@ -29,7 +29,7 @@ LAST_RUN_FILE = PROJECT_ROOT / '.last_run'
 
 # ── print_utils 导入 ────────────────────────────────────────────
 try:
-    from utils.print_utils import (
+    from scripts.infrastructure.print_utils import (
         print_header, print_success, print_warning, print_error,
         print_info, print_progress, print_plain,
         configure_dashboard, start_stage, update_stage, finish_stage,
@@ -37,7 +37,7 @@ try:
         prompt_input, prompt_yes_no,
     )
 except ModuleNotFoundError:
-    from scripts.utils.print_utils import (  # type: ignore
+    from scripts.infrastructure.print_utils import (  # type: ignore
         print_header, print_success, print_warning, print_error,
         print_info, print_progress, print_plain,
         configure_dashboard, start_stage, update_stage, finish_stage,
@@ -47,15 +47,15 @@ except ModuleNotFoundError:
 
 # ── preflight 导入 ───────────────────────────────────────────────
 try:
-    from utils.preflight import run_preflight, print_preflight_panel
+    from scripts.application.preflight import run_preflight, print_preflight_panel
 except ModuleNotFoundError:
-    from scripts.utils.preflight import run_preflight, print_preflight_panel  # type: ignore
+    from scripts.application.preflight import run_preflight, print_preflight_panel  # type: ignore
 
 # ── 失败分类（复用 daily_digest） ──────────────────────────────────
 try:
-    from utils.daily_digest import classify_failure_text
+    from scripts.application.daily_digest import classify_failure_text
 except ModuleNotFoundError:
-    from scripts.utils.daily_digest import classify_failure_text  # type: ignore
+    from scripts.application.daily_digest import classify_failure_text  # type: ignore
 
 
 # ══════════════════════════════════════════════════════════════════
@@ -287,11 +287,12 @@ def _run_ai_analysis(
     """运行 AI 分析"""
     cmd = [
         _venv_python(),
-        str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek_verified.py'),
+        str(PROJECT_ROOT / 'scripts' / 'ai_analyze_deepseek.py'),
         '--date', date_str,
         '--mode', mode,
         '--content-field', content_field,
         '--stock-market', market,
+        '--verify',
         '--enable-stock-scoring',
     ]
     if extra_args:
@@ -318,7 +319,7 @@ def _run_acceptance(date_str: str, markets: str) -> tuple[int, str]:
 
 def _get_latest_report_paths(date_str: str) -> dict[str, str | None]:
     """扫描当天 archive，返回 {market: report_path}"""
-    from scripts.utils.daily_digest import archive_dirs_for_date, find_mode_artifacts
+    from scripts.application.daily_digest import archive_dirs_for_date, find_mode_artifacts
     result: dict[str, str | None] = {}
     for market in ('CN', 'US'):
         artifacts = find_mode_artifacts(date_str, 'markdown-report', market=market)
@@ -680,7 +681,7 @@ def run_preview_only(today: str) -> int:
 
     # 扫描最近 7 天
     from datetime import datetime, timedelta
-    from scripts.utils.daily_digest import archive_dirs_for_date, find_mode_artifacts
+    from scripts.application.daily_digest import archive_dirs_for_date, find_mode_artifacts
 
     print_plain('最近报告:')
     print_plain()

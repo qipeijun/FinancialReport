@@ -1,16 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AI分析脚本 - DeepSeek版
+AI分析脚本 - DeepSeek统一版
 
-功能：
-- 从数据库读取指定日期范围内的文章
-- 调用 DeepSeek 模型生成 Markdown 分析
-- 保存报告到 docs/archive/ 目录
+基础模式与验证模式共用同一个入口：
+- 默认模式：从数据库读取新闻，调用 DeepSeek 生成报告
+- 验证模式：通过 --verify 启用实时数据、事实核查、质量评分和自动重试
 
 使用方法:
     python3 scripts/ai_analyze_deepseek.py --date 2026-01-07
-    python3 scripts/ai_analyze_deepseek.py --start 2026-01-10 --end 2026-01-11
+    python3 scripts/ai_analyze_deepseek.py --date 2026-01-07 --verify --mode markdown-report
 """
 
 import argparse
@@ -18,54 +17,74 @@ import os
 import sys
 from pathlib import Path
 
-# 添加项目根目录到路径
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(PROJECT_ROOT))
+try:
+    from scripts.bootstrap import ensure_project_root
+except ModuleNotFoundError:
+    from bootstrap import ensure_project_root
 
-from scripts.utils.report_generator import ReportGenerator
-from scripts.utils.providers import DeepSeekProvider
-from scripts.utils.print_utils import print_error
+PROJECT_ROOT = ensure_project_root(__file__)
+
+from scripts.application.report_generator import ReportGenerator
+from scripts.infrastructure.providers import DeepSeekProvider
+from scripts.infrastructure.print_utils import print_error
 
 
 def parse_args() -> argparse.Namespace:
-    """解析命令行参数"""
+    """解析命令行参数。"""
     parser = argparse.ArgumentParser(description='从数据库读取新闻并调用 DeepSeek 生成分析报告')
+
     date_group = parser.add_mutually_exclusive_group()
     date_group.add_argument('--date', type=str, help='指定单日（YYYY-MM-DD）')
     parser.add_argument('--start', type=str, help='开始日期（YYYY-MM-DD）')
     parser.add_argument('--end', type=str, help='结束日期（YYYY-MM-DD）')
+
     parser.add_argument('--limit', type=int, default=0, help='最多读取多少条记录')
     parser.add_argument('--max-articles', type=int, help='参与分析的文章数量上限')
     parser.add_argument('--filter-source', type=str, help='仅分析指定来源（逗号分隔）')
     parser.add_argument('--filter-keyword', type=str, help='关键词过滤（逗号分隔）')
     parser.add_argument('--order', choices=['asc', 'desc'], default='desc', help='排序方向')
+    parser.add_argument('--content-field', choices=['summary', 'content', 'auto'], default='summary', help='分析字段选择')
     parser.add_argument('--max-chars', type=int, default=500000, help='传入模型的最大字符数上限')
+
     parser.add_argument('--api-key', type=str, help='DeepSeek API Key')
     parser.add_argument('--config', type=str, help='配置文件路径')
     parser.add_argument('--model', type=str, default='deepseek-v4-pro', help='DeepSeek 模型名称')
     parser.add_argument('--base-url', type=str, default='https://api.deepseek.com', help='DeepSeek API Base URL')
-    parser.add_argument('--prompt', choices=['safe', 'pro'], default='pro', help='提示词版本')
+    parser.add_argument('--prompt', choices=['safe', 'pro', 'pro_v2'], default='pro_v2', help='提示词版本')
+
+    parser.add_argument('--verify', action='store_true', help='启用完整验证模式')
     parser.add_argument('--quality-check', action='store_true', default=False, help='启用质量检查')
     parser.add_argument('--max-retries', type=int, default=0, help='质量检查不通过时的最大重试次数')
-    parser.add_argument('--content-field', choices=['summary', 'content', 'auto'], default='summary', help='分析字段选择')
+    parser.add_argument('--min-score', type=int, default=80, help='最低质量评分(0-100)')
+    parser.add_argument('--mode', choices=['judgment-cards', 'markdown-report'], default='markdown-report', help='输出模式')
+    parser.add_argument('--max-theses', type=int, default=5, help='最多输出多少条判断卡片')
+    parser.add_argument('--min-source-tier', choices=['aggregator', 'industry', 'mainstream', 'official'], default='mainstream', help='最小来源等级')
+    parser.add_argument('--min-independent-evidence', type=int, default=2, help='形成判断卡片所需的最少独立证据数')
+    parser.add_argument('--degrade-on-weak-evidence', action='store_true', default=True, help='证据不足时自动降级为观察项')
+    parser.add_argument('--output-observation-only-when-weak', action='store_true', default=True, help='弱证据时仅输出观察项')
+
+    parser.add_argument('--enable-stock-scoring', action='store_true', help='启用结构化推荐评分')
+    parser.add_argument('--disable-stock-scoring', action='store_true', help='禁用结构化推荐评分')
+    parser.add_argument('--stock-market', choices=['CN', 'US'], default='CN', help='股票市场: CN=A股, US=美股')
+    parser.add_argument('--max-stock-picks', type=int, default=10, help='最多输出多少只股票评分结果')
+
+    parser.add_argument('--output', type=str, help='输出文件路径')
     parser.add_argument('--output-json', type=str, help='导出为 JSON 文件')
+    parser.add_argument('--verbose', action='store_true', help='详细日志')
     return parser.parse_args()
 
 
 def load_api_key(args: argparse.Namespace) -> str:
-    """加载DeepSeek API Key"""
+    """加载 DeepSeek API Key。"""
     import yaml
 
-    # 1. 命令行参数
     if args.api_key:
         return args.api_key
 
-    # 2. 环境变量
     env_key = os.getenv('DEEPSEEK_API_KEY')
     if env_key:
         return env_key
 
-    # 3. 配置文件
     config_path = Path(args.config) if args.config else (PROJECT_ROOT / 'config' / 'config.yml')
     if config_path.exists():
         try:
@@ -85,28 +104,26 @@ def load_api_key(args: argparse.Namespace) -> str:
     )
 
 
-def main():
-    """主函数"""
+def main() -> int:
+    """主函数。"""
     args = parse_args()
-
-    # 加载API Key
     api_key = load_api_key(args)
 
-    # 创建DeepSeek提供商
     provider = DeepSeekProvider(
         api_key=api_key,
         base_url=args.base_url,
-        model=args.model
+        model=args.model,
     )
-
-    # 创建报告生成器（不启用验证）
     generator = ReportGenerator(
         provider=provider,
-        enable_verification=False
+        enable_verification=args.verify,
     )
 
-    # 生成报告
     try:
+        enable_stock_scoring = args.enable_stock_scoring or args.mode == 'markdown-report'
+        if args.disable_stock_scoring:
+            enable_stock_scoring = False
+
         result = generator.generate(
             date=args.date,
             start=args.start,
@@ -117,27 +134,38 @@ def main():
             filter_keyword=args.filter_keyword,
             order=args.order,
             max_chars=args.max_chars,
-            quality_check=args.quality_check,
+            quality_check=args.verify or args.quality_check,
             max_retries=args.max_retries,
+            min_score=args.min_score,
             content_field=args.content_field,
             prompt_version=args.prompt,
-            output_json=args.output_json,
-            model=args.model
+            output_json=args.output_json or args.output,
+            mode=args.mode,
+            max_theses=args.max_theses,
+            min_source_tier=args.min_source_tier,
+            min_independent_evidence=args.min_independent_evidence,
+            degrade_on_weak_evidence=args.degrade_on_weak_evidence,
+            output_observation_only_when_weak=args.output_observation_only_when_weak,
+            enable_stock_scoring=enable_stock_scoring,
+            stock_market=args.stock_market,
+            max_stock_picks=args.max_stock_picks,
+            model=args.model,
         )
 
         if not result['success']:
             print_error(f"报告生成失败: {result.get('error', '未知错误')}")
-            sys.exit(1)
+            return 1
+        return 0
 
     except KeyboardInterrupt:
         print("\n\n用户中断")
-        sys.exit(0)
+        return 130
     except Exception as e:
         print_error(f"发生错误: {e}")
         import traceback
         traceback.print_exc()
-        sys.exit(1)
+        return 1
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

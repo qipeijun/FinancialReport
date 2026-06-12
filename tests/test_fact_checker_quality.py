@@ -9,9 +9,9 @@ if str(PROJECT_ROOT / 'scripts') not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT / 'scripts'))
 
 
-from scripts.utils.fact_checker import Claim, ClaimScope, ClaimType, FactChecker
-from scripts.utils.quality_checker_v2 import check_report_quality_v2
-from scripts.utils.ai_analyzer_common import build_source_stats_block, summarize_content_quality
+from scripts.application.fact_checker import Claim, ClaimScope, ClaimType, FactChecker
+from scripts.application.quality_checker_v2 import check_report_quality_v2
+from scripts.application.ai_analyzer_common import build_source_stats_block, summarize_content_quality
 
 
 def test_extract_claims_separates_realtime_market_from_news_facts():
