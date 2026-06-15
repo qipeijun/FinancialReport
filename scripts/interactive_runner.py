@@ -23,39 +23,30 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+# ── 路径初始化（兼容 python3 scripts/xxx.py 方式执行）───────────
+try:
+    from scripts.bootstrap import ensure_project_root
+except ModuleNotFoundError:
+    from bootstrap import ensure_project_root
+
+PROJECT_ROOT = ensure_project_root(__file__)
 DB_PATH = PROJECT_ROOT / 'data' / 'news_data.db'
 LAST_RUN_FILE = PROJECT_ROOT / '.last_run'
 
 # ── print_utils 导入 ────────────────────────────────────────────
-try:
-    from scripts.infrastructure.print_utils import (
-        print_header, print_success, print_warning, print_error,
-        print_info, print_progress, print_plain,
-        configure_dashboard, start_stage, update_stage, finish_stage,
-        note_event, heartbeat, suspend_status, resume_status,
-        prompt_input, prompt_yes_no,
-    )
-except ModuleNotFoundError:
-    from scripts.infrastructure.print_utils import (  # type: ignore
-        print_header, print_success, print_warning, print_error,
-        print_info, print_progress, print_plain,
-        configure_dashboard, start_stage, update_stage, finish_stage,
-        note_event, heartbeat, suspend_status, resume_status,
-        prompt_input, prompt_yes_no,
-    )
+from scripts.infrastructure.print_utils import (
+    print_header, print_success, print_warning, print_error,
+    print_info, print_progress, print_plain,
+    configure_dashboard, start_stage, update_stage, finish_stage,
+    note_event, heartbeat, suspend_status, resume_status,
+    prompt_input, prompt_yes_no,
+)
 
 # ── preflight 导入 ───────────────────────────────────────────────
-try:
-    from scripts.application.preflight import run_preflight, print_preflight_panel
-except ModuleNotFoundError:
-    from scripts.application.preflight import run_preflight, print_preflight_panel  # type: ignore
+from scripts.application.preflight import run_preflight, print_preflight_panel
 
 # ── 失败分类（复用 daily_digest） ──────────────────────────────────
-try:
-    from scripts.application.daily_digest import classify_failure_text
-except ModuleNotFoundError:
-    from scripts.application.daily_digest import classify_failure_text  # type: ignore
+from scripts.application.daily_digest import classify_failure_text
 
 
 # ══════════════════════════════════════════════════════════════════
