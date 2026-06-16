@@ -1,0 +1,3366 @@
+{
+  "required": true,
+  "analysis_mode": "markdown-report",
+  "market": "US",
+  "date_range": {
+    "start": "2026-06-15",
+    "end": "2026-06-15"
+  },
+  "source_references": {
+    "required": true,
+    "article_ids": [
+      6120,
+      6121,
+      6122,
+      6123,
+      6090,
+      6093,
+      6124,
+      6091,
+      6126,
+      6127,
+      6128,
+      6092,
+      6125,
+      6129,
+      6098,
+      6099,
+      6140,
+      6144,
+      6142,
+      6143,
+      6141,
+      6146,
+      6147,
+      6148,
+      6145,
+      6115,
+      6116,
+      6149,
+      6118,
+      6095,
+      6097,
+      6094,
+      6159,
+      6117,
+      6130,
+      6131,
+      6132,
+      6133,
+      6134,
+      6100,
+      6096
+    ],
+    "articles": [
+      {
+        "article_id": 6120,
+        "source": "ZeroHedge",
+        "title": "UBS Checks With Major Restaurant Franchisees Reveal Troubling Consumer Trends",
+        "published": "Sun, 14 Jun 2026 23:15:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6121,
+        "source": "ZeroHedge",
+        "title": "Trump Says Hormuz To Reopen Friday After Signing Of \"Great Peace Deal\" With Iran",
+        "published": "Sun, 14 Jun 2026 22:48:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6122,
+        "source": "ZeroHedge",
+        "title": "Waste Of The Day: Disaster In Small NM Village",
+        "published": "Sun, 14 Jun 2026 22:40:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6123,
+        "source": "ZeroHedge",
+        "title": "Fear Of The Signal: Why The State Urgently Wants To Bind Prediction Markets",
+        "published": "Sun, 14 Jun 2026 21:30:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6090,
+        "source": "CNBC",
+        "title": "U.S. and Iran agree on peace deal to end the war, Trump and Pakistan say",
+        "published": "Sun, 14 Jun 2026 23:23:42 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6093,
+        "source": "CNBC",
+        "title": "Trump heads to G7 summit in France after reaching deal to end war with Iran",
+        "published": "Sun, 14 Jun 2026 22:30:57 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6124,
+        "source": "ZeroHedge",
+        "title": "Anthropic Rushes Staff To D.C. After A National-Security Order Yanked Fable In Three Days",
+        "published": "Sun, 14 Jun 2026 20:55:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6091,
+        "source": "CNBC",
+        "title": "World leaders welcome U.S.-Iran deal as Europe signals sanctions relief, urges Hormuz reopening",
+        "published": "Mon, 15 Jun 2026 00:57:12 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6126,
+        "source": "ETF Trends",
+        "title": "Searching For New Lows",
+        "published": "Sat, 13 Jun 2026 12:20:53 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6127,
+        "source": "ETF Trends",
+        "title": "S&P 500 Snapshot: Late Week Rally Pushes Index Into Green",
+        "published": "Fri, 12 Jun 2026 21:56:25 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6128,
+        "source": "ETF Trends",
+        "title": "Treasury Yields Snapshot: June 12, 2026",
+        "published": "Fri, 12 Jun 2026 21:37:52 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6092,
+        "source": "CNBC",
+        "title": "A year after Meta tapped Alexandr Wang to build a new AI model, Zuckerberg has to sell it",
+        "published": "Sun, 14 Jun 2026 15:02:35 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6125,
+        "source": "ETF Trends",
+        "title": "Trends with Benefits #155: Space, AI, & Private Equity Trends",
+        "published": "Sun, 14 Jun 2026 12:52:30 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6129,
+        "source": "ETF Trends",
+        "title": "Main Management Market Note: June 12, 2026",
+        "published": "Fri, 12 Jun 2026 21:30:50 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6098,
+        "source": "FT中文网",
+        "title": "一周世界舆论聚焦：美伊战争即将结束与韩国的明智决策",
+        "published": "Sun, 14 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6099,
+        "source": "FT中文网",
+        "title": "标普500集中度达历史高点，这样的美股有哪些风险？",
+        "published": "Sun, 14 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6140,
+        "source": "Yahoo Finance",
+        "title": "Oil executives send a blunt message to Americans on gas prices",
+        "published": "2026-06-14T20:07:00Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6144,
+        "source": "Yahoo Finance",
+        "title": "Jim Cramer Reveals Big Trend For Palo Alto’s (PANW) Shares",
+        "published": "2026-06-13T14:07:13Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6142,
+        "source": "Yahoo Finance",
+        "title": "CrowdStrike Holdings, Inc. (CRWD) Dropped Because Of Panic & Fear, Says Jim Cramer",
+        "published": "2026-06-13T14:06:36Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6143,
+        "source": "Yahoo Finance",
+        "title": "Jim Cramer Wasn’t Selling Eli Lilly (LLY)",
+        "published": "2026-06-13T14:06:27Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6141,
+        "source": "Yahoo Finance",
+        "title": "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock.",
+        "published": "2026-06-13T14:00:02Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6146,
+        "source": "BBC全球经济",
+        "title": "Millions of people can get discounts on their bills - here's how",
+        "published": "Sun, 14 Jun 2026 23:25:30 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6147,
+        "source": "BBC全球经济",
+        "title": "Surge in scams as fraudsters use AI to target people",
+        "published": "Sun, 14 Jun 2026 23:25:15 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6148,
+        "source": "BBC全球经济",
+        "title": "Is the convertible heading into the sunset?",
+        "published": "Sun, 14 Jun 2026 23:25:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6145,
+        "source": "BBC全球经济",
+        "title": "Oil prices slide after Pakistan announces deal between US and Iran",
+        "published": "Mon, 15 Jun 2026 00:54:15 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6115,
+        "source": "MarketWatch",
+        "title": "Stock futures jump, oil prices fall as Trump says U.S. has reached peace deal with Iran",
+        "published": "Mon, 15 Jun 2026 00:29:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6116,
+        "source": "MarketWatch",
+        "title": "Will the real Kevin Warsh please stand up? Ahead of his first Fed meeting, economists honestly don’t know what to expect.",
+        "published": "Sun, 14 Jun 2026 21:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6149,
+        "source": "BBC全球经济",
+        "title": "UK electric car sales target set to be weakened",
+        "published": "Sun, 14 Jun 2026 17:56:07 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6118,
+        "source": "MarketWatch",
+        "title": "Defaults in debt markets are starting again, warns Pimco. Here’s the bond giant’s game plan.",
+        "published": "Sun, 14 Jun 2026 17:34:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6095,
+        "source": "FT中文网",
+        "title": "“机器能否胜任这项工作？”——这个问题问错了",
+        "published": "Sun, 14 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6097,
+        "source": "FT中文网",
+        "title": "FT社评：凯文•沃什正式登场",
+        "published": "Sun, 14 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6094,
+        "source": "CNBC",
+        "title": "Elon Musk drifted from Larry Page over a decade ago, but their companies are closer than ever",
+        "published": "Sun, 14 Jun 2026 11:30:01 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6159,
+        "source": "美国证监会-新闻发布",
+        "title": "SEC Appoints John Moses as Director of the Office of Investor Education and Assistance",
+        "published": "Fri, 12 Jun 2026 12:30:00 -0400",
+        "source_tier": "official"
+      },
+      {
+        "article_id": 6117,
+        "source": "MarketWatch",
+        "title": "‘It seems too good to be true’: At a steak-dinner retirement seminar, the guy said annuities can outperform the market. Is that true?",
+        "published": "Sun, 14 Jun 2026 20:17:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6130,
+        "source": "Seeking Alpha",
+        "title": "BNP Paribas sees credit ratings tailwind supporting further spread tightening",
+        "published": "Sun, 14 Jun 2026 19:54:58 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6131,
+        "source": "Seeking Alpha",
+        "title": "Stocks rally, oil slides as U.S.-Iran peace deal lifts market mood",
+        "published": "Sun, 14 Jun 2026 19:12:30 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6132,
+        "source": "Seeking Alpha",
+        "title": "Trump says Strait of Hormuz to reopen Friday following Iran agreement",
+        "published": "Sun, 14 Jun 2026 18:59:47 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6133,
+        "source": "Seeking Alpha",
+        "title": "Here are the major earnings before the open Monday",
+        "published": "Sun, 14 Jun 2026 18:00:08 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6134,
+        "source": "Seeking Alpha",
+        "title": "Dave &amp; Buster's Q1 2027 Earnings Preview",
+        "published": "Sun, 14 Jun 2026 17:35:00 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6100,
+        "source": "经济学人 Economist",
+        "title": "Does Donald Trump make Latin America a good bet?",
+        "published": "Sun, 14 Jun 2026 17:14:46 +0000",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6096,
+        "source": "FT中文网",
+        "title": "调查：能源危机促使企业加快电气化",
+        "published": "Sun, 14 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      }
+    ]
+  },
+  "claim_ledger": {
+    "required": true,
+    "market": "US",
+    "summary": {
+      "total_claims": 4,
+      "realtime_claims": 3,
+      "verified_realtime_claims": 3,
+      "news_fact_claims": 1,
+      "failed_claims": 0
+    },
+    "claims": [
+      {
+        "claim_id": "us-claim-001",
+        "market": "US",
+        "claim_type": "股价断言",
+        "scope": "实时行情断言",
+        "content": "报7431.46",
+        "context": "S&P 500报7431.46（+0.65%）",
+        "asset_hint": "^GSPC",
+        "extracted_value": "7431.46",
+        "verified": true,
+        "verification_status": "verified",
+        "confidence": 1.0,
+        "source": "Yahoo Finance",
+        "realtime_source": "Yahoo Finance",
+        "timestamp": "2026-06-13 04:54:28",
+        "freshness_status": "timestamped",
+        "evidence": "实时数据验证: 7431.46 (误差 0.0%)",
+        "failure_reason": "",
+        "source_articles": []
+      },
+      {
+        "claim_id": "us-claim-002",
+        "market": "US",
+        "claim_type": "股价断言",
+        "scope": "实时行情断言",
+        "content": "报25888.84",
+        "context": "NASDAQ报25888.84（+0.70%）",
+        "asset_hint": "^IXIC",
+        "extracted_value": "25888.84",
+        "verified": true,
+        "verification_status": "verified",
+        "confidence": 0.9999998454932943,
+        "source": "Yahoo Finance",
+        "realtime_source": "Yahoo Finance",
+        "timestamp": "2026-06-13 05:15:59",
+        "freshness_status": "timestamped",
+        "evidence": "实时数据验证: 25888.84 (误差 0.0%)",
+        "failure_reason": "",
+        "source_articles": []
+      },
+      {
+        "claim_id": "us-claim-003",
+        "market": "US",
+        "claim_type": "股价断言",
+        "scope": "实时行情断言",
+        "content": "报51202.26",
+        "context": "道指报51202.26（+0.66%）",
+        "asset_hint": "^DJI",
+        "extracted_value": "51202.26",
+        "verified": true,
+        "verification_status": "verified",
+        "confidence": 1.0,
+        "source": "Yahoo Finance",
+        "realtime_source": "Yahoo Finance",
+        "timestamp": "2026-06-13 04:54:27",
+        "freshness_status": "timestamped",
+        "evidence": "实时数据验证: 51202.26 (误差 0.0%)",
+        "failure_reason": "",
+        "source_articles": []
+      },
+      {
+        "claim_id": "us-claim-004",
+        "market": "US",
+        "claim_type": "市场趋势断言",
+        "scope": "新闻事实断言",
+        "content": "20%",
+        "context": "- **能源成本预期骤降**: 美伊停战协议核心指向霍尔木兹海峡重启，结束了长达数月威胁全球20%石油供应的航运阻塞。据报道，原油期货价格已在盘后大幅下跌【新闻6145】，能源板块面临显著的下行压力。",
+        "asset_hint": null,
+        "extracted_value": "20",
+        "verified": false,
+        "verification_status": "failed",
+        "confidence": 0.0,
+        "source": "",
+        "realtime_source": "",
+        "timestamp": "",
+        "freshness_status": "not_applicable",
+        "evidence": "新闻事实断言，不纳入实时行情校验",
+        "failure_reason": "新闻事实断言，不纳入实时行情校验",
+        "source_articles": [
+          {
+            "article_id": 6145,
+            "source": "BBC全球经济",
+            "title": "Oil prices slide after Pakistan announces deal between US and Iran",
+            "published": "Mon, 15 Jun 2026 00:54:15 GMT"
+          }
+        ]
+      }
+    ]
+  },
+  "coverage_matrix": {
+    "required": true,
+    "market": "US",
+    "categories": {
+      "macro_liquidity": {
+        "article_count": 5,
+        "source_count": 4,
+        "status": "sufficient"
+      },
+      "policy_regulation": {
+        "article_count": 14,
+        "source_count": 5,
+        "status": "sufficient"
+      },
+      "company_earnings": {
+        "article_count": 1,
+        "source_count": 1,
+        "status": "partial"
+      },
+      "industry_theme": {
+        "article_count": 18,
+        "source_count": 7,
+        "status": "sufficient"
+      },
+      "risk_event": {
+        "article_count": 3,
+        "source_count": 1,
+        "status": "partial"
+      },
+      "realtime_market": {
+        "article_count": 0,
+        "source_count": 1,
+        "status": "sufficient"
+      }
+    },
+    "coverage_gaps": [
+      "company_earnings",
+      "risk_event"
+    ]
+  },
+  "evidence_diversity": {
+    "required": true,
+    "market": "US",
+    "total_articles": 41,
+    "source_count": 10,
+    "topic_count": 6,
+    "explicit_entity_count": 0,
+    "explicit_entity_observation_count": 0,
+    "source_tier_known_count": 41,
+    "mainstream_or_better_count": 26,
+    "aggregator_count": 15,
+    "original_source_known_count": 41,
+    "original_source_count": 21,
+    "max_source_share": 0.12195121951219512,
+    "max_topic_share": 0.36585365853658536,
+    "max_entity_share": 0.0,
+    "max_aggregator_share": 0.36585365853658536,
+    "original_source_share": 0.5121951219512195,
+    "source_distribution": [
+      {
+        "name": "ZeroHedge",
+        "count": 5,
+        "share": 0.12195121951219512
+      },
+      {
+        "name": "CNBC",
+        "count": 5,
+        "share": 0.12195121951219512
+      },
+      {
+        "name": "ETF Trends",
+        "count": 5,
+        "share": 0.12195121951219512
+      },
+      {
+        "name": "FT中文网",
+        "count": 5,
+        "share": 0.12195121951219512
+      },
+      {
+        "name": "Yahoo Finance",
+        "count": 5,
+        "share": 0.12195121951219512
+      },
+      {
+        "name": "BBC全球经济",
+        "count": 5,
+        "share": 0.12195121951219512
+      },
+      {
+        "name": "Seeking Alpha",
+        "count": 5,
+        "share": 0.12195121951219512
+      },
+      {
+        "name": "MarketWatch",
+        "count": 4,
+        "share": 0.0975609756097561
+      },
+      {
+        "name": "美国证监会-新闻发布",
+        "count": 1,
+        "share": 0.024390243902439025
+      },
+      {
+        "name": "经济学人 Economist",
+        "count": 1,
+        "share": 0.024390243902439025
+      }
+    ],
+    "topic_distribution": [
+      {
+        "name": "科技与产业主题",
+        "count": 15,
+        "share": 0.36585365853658536
+      },
+      {
+        "name": "政策与监管",
+        "count": 14,
+        "share": 0.34146341463414637
+      },
+      {
+        "name": "未分类",
+        "count": 7,
+        "share": 0.17073170731707318
+      },
+      {
+        "name": "风险事件",
+        "count": 2,
+        "share": 0.04878048780487805
+      },
+      {
+        "name": "其他观察",
+        "count": 2,
+        "share": 0.04878048780487805
+      },
+      {
+        "name": "宏观与流动性",
+        "count": 1,
+        "share": 0.024390243902439025
+      }
+    ],
+    "entity_distribution": [],
+    "source_tier_distribution": [
+      {
+        "name": "mainstream",
+        "count": 25,
+        "share": 0.6097560975609756
+      },
+      {
+        "name": "aggregator",
+        "count": 15,
+        "share": 0.36585365853658536
+      },
+      {
+        "name": "official",
+        "count": 1,
+        "share": 0.024390243902439025
+      }
+    ],
+    "concentration_flags": [],
+    "passed": true
+  },
+  "counter_evidence_ledger": {
+    "required": true,
+    "market": "US",
+    "topics": [
+      {
+        "topic": "政策与监管",
+        "market": "US",
+        "high_confidence_topic": true,
+        "evidence_article_ids": [
+          6159,
+          6090,
+          6140,
+          6141
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      },
+      {
+        "topic": "科技与产业主题",
+        "market": "US",
+        "high_confidence_topic": true,
+        "evidence_article_ids": [
+          6099,
+          6092,
+          6091,
+          6143
+        ],
+        "supporting_article_ids": [
+          6099
+        ],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [
+          "分红"
+        ],
+        "negative_keywords": [],
+        "status": "support_only"
+      },
+      {
+        "topic": "其他观察",
+        "market": "US",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          6146,
+          6094
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      },
+      {
+        "topic": "风险事件",
+        "market": "US",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          6098,
+          6096
+        ],
+        "supporting_article_ids": [
+          6096
+        ],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [
+          "调查"
+        ],
+        "status": "support_only"
+      },
+      {
+        "topic": "宏观与流动性",
+        "market": "US",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          6097
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      }
+    ],
+    "summary": {
+      "topic_count": 5,
+      "topics_with_counter_evidence": 0,
+      "high_confidence_topics_with_counter_evidence": 0
+    },
+    "passed": true
+  },
+  "cross_verification": {
+    "topic_checks": [
+      {
+        "topic": "政策与监管",
+        "status": "confirmed",
+        "evidence_article_ids": [
+          6159,
+          6090,
+          6140,
+          6141
+        ],
+        "independent_source_count": 3,
+        "mainstream_or_better_count": 7,
+        "has_fresh_evidence": true,
+        "conflict_detail": null
+      },
+      {
+        "topic": "科技与产业主题",
+        "status": "conflicted",
+        "evidence_article_ids": [
+          6099,
+          6092,
+          6091,
+          6143
+        ],
+        "independent_source_count": 4,
+        "mainstream_or_better_count": 13,
+        "has_fresh_evidence": true,
+        "conflict_detail": "数值方向矛盾: 「revenue growth in the first quarter, the fastest rate of expansion for any perio」vs「利润率和竞争风险。但如果它们的股价越来越受同一个主题影响，那么分散效果就会下降。投资者以为自己买了十家公司，实际上可能买的是同一个大方向：那就是期望AI和科技资」"
+      },
+      {
+        "topic": "其他观察",
+        "status": "weak",
+        "evidence_article_ids": [
+          6146,
+          6094
+        ],
+        "independent_source_count": 1,
+        "mainstream_or_better_count": 2,
+        "has_fresh_evidence": false,
+        "conflict_detail": null
+      },
+      {
+        "topic": "风险事件",
+        "status": "weak",
+        "evidence_article_ids": [
+          6098,
+          6096
+        ],
+        "independent_source_count": 1,
+        "mainstream_or_better_count": 2,
+        "has_fresh_evidence": false,
+        "conflict_detail": null
+      },
+      {
+        "topic": "宏观与流动性",
+        "status": "weak",
+        "evidence_article_ids": [
+          6097
+        ],
+        "independent_source_count": 1,
+        "mainstream_or_better_count": 1,
+        "has_fresh_evidence": false,
+        "conflict_detail": null
+      }
+    ],
+    "stock_checks": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "status": "weak",
+        "evidence_article_ids": [
+          6159,
+          6090,
+          6140,
+          6141
+        ],
+        "direct_mentions": 0,
+        "independent_source_count": 3,
+        "has_fresh_evidence": true,
+        "source_type": "theme_mapping",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase",
+        "status": "weak",
+        "evidence_article_ids": [
+          6159,
+          6090,
+          6140,
+          6141
+        ],
+        "direct_mentions": 0,
+        "independent_source_count": 3,
+        "has_fresh_evidence": true,
+        "source_type": "theme_mapping",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "BAC",
+        "name": "Bank of America",
+        "status": "weak",
+        "evidence_article_ids": [
+          6159,
+          6090,
+          6140,
+          6141
+        ],
+        "direct_mentions": 0,
+        "independent_source_count": 3,
+        "has_fresh_evidence": true,
+        "source_type": "theme_mapping",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "status": "confirmed",
+        "evidence_article_ids": [
+          6124,
+          6092,
+          6141
+        ],
+        "direct_mentions": 3,
+        "independent_source_count": 2,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "META",
+        "name": "Meta",
+        "status": "confirmed",
+        "evidence_article_ids": [
+          6092,
+          6141
+        ],
+        "direct_mentions": 2,
+        "independent_source_count": 2,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "XOM",
+        "name": "Exxon Mobil",
+        "status": "weak",
+        "evidence_article_ids": [
+          6140
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 1,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "status": "weak",
+        "evidence_article_ids": [
+          6124,
+          6141
+        ],
+        "direct_mentions": 2,
+        "independent_source_count": 1,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA",
+        "status": "weak",
+        "evidence_article_ids": [
+          6141
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 1,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "status": "weak",
+        "evidence_article_ids": [
+          6141
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 1,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      }
+    ],
+    "summary": {
+      "topics_confirmed": 1,
+      "topics_weak": 3,
+      "topics_conflicted": 1,
+      "stocks_confirmed": 2,
+      "stocks_weak": 7,
+      "stocks_conflicted": 0
+    },
+    "issues": [],
+    "warnings": []
+  },
+  "decision_views": {
+    "actionable_candidates": [],
+    "conditional_watchlist": [
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "industry": "软件与云服务",
+        "candidate_confidence": "high",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 55,
+        "scores": {
+          "news_catalyst": 25,
+          "technical": 8,
+          "valuation": 10,
+          "quality_risk": 6,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "recall",
+          "downgrade",
+          "新闻风险信号: recall",
+          "新闻风险信号: downgrade",
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_article_ids": [
+          6124,
+          6092,
+          6141
+        ],
+        "evidence_summaries": [
+          "Anthropic Rushes Staff To D.C. After A National-Security Order Yanked Fable In Three Days",
+          "A year after Meta tapped Alexandr Wang to build a new AI model, Zuckerberg has to sell it",
+          "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock."
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:order",
+          "material_keyword:launch",
+          "material_keyword:product",
+          "material_keyword:revenue",
+          "material_keyword:investment",
+          "material_keyword:earnings",
+          "material_keyword:guidance"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 3,
+          "independent_evidence_count": 2,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "confirmed",
+          "cross_verified_source_count": 2,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "META",
+        "name": "Meta",
+        "industry": "互联网",
+        "candidate_confidence": "high",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 55,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 8,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6092,
+          6141
+        ],
+        "evidence_summaries": [
+          "A year after Meta tapped Alexandr Wang to build a new AI model, Zuckerberg has to sell it",
+          "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock."
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:revenue",
+          "material_keyword:order",
+          "material_keyword:investment",
+          "material_keyword:earnings",
+          "material_keyword:guidance"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 2,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "confirmed",
+          "cross_verified_source_count": 2,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "XOM",
+        "name": "Exxon Mobil",
+        "industry": "石油石化",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 54,
+        "scores": {
+          "news_catalyst": 18,
+          "technical": 8,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6140
+        ],
+        "evidence_summaries": [
+          "Oil executives send a blunt message to Americans on gas prices"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:product",
+          "material_keyword:sec",
+          "material_keyword:stock"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 1,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "industry": "电商与云服务",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 51,
+        "scores": {
+          "news_catalyst": 23,
+          "technical": 6,
+          "valuation": 10,
+          "quality_risk": 6,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "recall",
+          "downgrade",
+          "新闻风险信号: recall",
+          "新闻风险信号: downgrade",
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_article_ids": [
+          6124,
+          6141
+        ],
+        "evidence_summaries": [
+          "Anthropic Rushes Staff To D.C. After A National-Security Order Yanked Fable In Three Days",
+          "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock."
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:order",
+          "material_keyword:launch",
+          "material_keyword:product",
+          "material_keyword:earnings",
+          "material_keyword:revenue",
+          "material_keyword:guidance"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 1,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA",
+        "industry": "半导体",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 51,
+        "scores": {
+          "news_catalyst": 17,
+          "technical": 5,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6141
+        ],
+        "evidence_summaries": [
+          "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock."
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:stock",
+          "material_keyword:earnings",
+          "material_keyword:revenue"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 1,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 1,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "industry": "互联网",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 50,
+        "scores": {
+          "news_catalyst": 17,
+          "technical": 5,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6141
+        ],
+        "evidence_summaries": [
+          "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock."
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:earnings",
+          "material_keyword:revenue",
+          "material_keyword:guidance"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 1,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "stale_or_rejected": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "industry": "投行",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "missing_valuation_baseline",
+          "no_direct_stock_evidence",
+          "score_gate_not_met",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 73,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 25,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若后续补齐估值基准，应重新评估估值与等级"
+        ],
+        "evidence_article_ids": [
+          6159,
+          6090,
+          6140,
+          6141
+        ],
+        "evidence_summaries": [
+          "SEC Appoints John Moses as Director of the Office of Investor Education and Assistance",
+          "U.S. and Iran agree on peace deal to end the war, Trump and Pakistan say",
+          "Oil executives send a blunt message to Americans on gas prices",
+          "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock."
+        ],
+        "data_completeness": 0.87,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若后续补齐估值基准，应重新评估估值与等级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 3,
+          "source_tier_max": "official",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 3,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase",
+        "industry": "银行",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "missing_valuation_baseline",
+          "no_direct_stock_evidence",
+          "score_gate_not_met",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 70,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 22,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若后续补齐估值基准，应重新评估估值与等级"
+        ],
+        "evidence_article_ids": [
+          6159,
+          6090,
+          6140,
+          6141
+        ],
+        "evidence_summaries": [
+          "SEC Appoints John Moses as Director of the Office of Investor Education and Assistance",
+          "U.S. and Iran agree on peace deal to end the war, Trump and Pakistan say",
+          "Oil executives send a blunt message to Americans on gas prices",
+          "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock."
+        ],
+        "data_completeness": 0.87,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若后续补齐估值基准，应重新评估估值与等级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 3,
+          "source_tier_max": "official",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 3,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "BAC",
+        "name": "Bank of America",
+        "industry": "银行",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "missing_valuation_baseline",
+          "no_direct_stock_evidence",
+          "score_gate_not_met",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 67,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 19,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "近20日与60日均线呈多头排列",
+          "MACD 维持多头结构",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若后续补齐估值基准，应重新评估估值与等级"
+        ],
+        "evidence_article_ids": [
+          6159,
+          6090,
+          6140,
+          6141
+        ],
+        "evidence_summaries": [
+          "SEC Appoints John Moses as Director of the Office of Investor Education and Assistance",
+          "U.S. and Iran agree on peace deal to end the war, Trump and Pakistan say",
+          "Oil executives send a blunt message to Americans on gas prices",
+          "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock."
+        ],
+        "data_completeness": 0.87,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若后续补齐估值基准，应重新评估估值与等级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 3,
+          "source_tier_max": "official",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 3,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ]
+  },
+  "stock_recommendations": [
+    {
+      "symbol": "GS",
+      "name": "Goldman Sachs",
+      "industry": "投行",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "missing_valuation_baseline",
+        "no_direct_stock_evidence",
+        "score_gate_not_met",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 73,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 25,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若后续补齐估值基准，应重新评估估值与等级"
+      ],
+      "evidence_article_ids": [
+        6159,
+        6090,
+        6140,
+        6141
+      ],
+      "evidence_summaries": [
+        "SEC Appoints John Moses as Director of the Office of Investor Education and Assistance",
+        "U.S. and Iran agree on peace deal to end the war, Trump and Pakistan say",
+        "Oil executives send a blunt message to Americans on gas prices",
+        "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock."
+      ],
+      "data_completeness": 0.87,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若后续补齐估值基准，应重新评估估值与等级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 3,
+        "source_tier_max": "official",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 3,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "JPM",
+      "name": "JPMorgan Chase",
+      "industry": "银行",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "missing_valuation_baseline",
+        "no_direct_stock_evidence",
+        "score_gate_not_met",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 70,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 22,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若后续补齐估值基准，应重新评估估值与等级"
+      ],
+      "evidence_article_ids": [
+        6159,
+        6090,
+        6140,
+        6141
+      ],
+      "evidence_summaries": [
+        "SEC Appoints John Moses as Director of the Office of Investor Education and Assistance",
+        "U.S. and Iran agree on peace deal to end the war, Trump and Pakistan say",
+        "Oil executives send a blunt message to Americans on gas prices",
+        "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock."
+      ],
+      "data_completeness": 0.87,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若后续补齐估值基准，应重新评估估值与等级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 3,
+        "source_tier_max": "official",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 3,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America",
+      "industry": "银行",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "missing_valuation_baseline",
+        "no_direct_stock_evidence",
+        "score_gate_not_met",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 67,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 19,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "近20日与60日均线呈多头排列",
+        "MACD 维持多头结构",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若后续补齐估值基准，应重新评估估值与等级"
+      ],
+      "evidence_article_ids": [
+        6159,
+        6090,
+        6140,
+        6141
+      ],
+      "evidence_summaries": [
+        "SEC Appoints John Moses as Director of the Office of Investor Education and Assistance",
+        "U.S. and Iran agree on peace deal to end the war, Trump and Pakistan say",
+        "Oil executives send a blunt message to Americans on gas prices",
+        "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock."
+      ],
+      "data_completeness": 0.87,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若后续补齐估值基准，应重新评估估值与等级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 3,
+        "source_tier_max": "official",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 3,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "industry": "软件与云服务",
+      "candidate_confidence": "high",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 55,
+      "scores": {
+        "news_catalyst": 25,
+        "technical": 8,
+        "valuation": 10,
+        "quality_risk": 6,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "recall",
+        "downgrade",
+        "新闻风险信号: recall",
+        "新闻风险信号: downgrade",
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        6124,
+        6092,
+        6141
+      ],
+      "evidence_summaries": [
+        "Anthropic Rushes Staff To D.C. After A National-Security Order Yanked Fable In Three Days",
+        "A year after Meta tapped Alexandr Wang to build a new AI model, Zuckerberg has to sell it",
+        "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock."
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:order",
+        "material_keyword:launch",
+        "material_keyword:product",
+        "material_keyword:revenue",
+        "material_keyword:investment",
+        "material_keyword:earnings",
+        "material_keyword:guidance"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 3,
+        "independent_evidence_count": 2,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "confirmed",
+        "cross_verified_source_count": 2,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "META",
+      "name": "Meta",
+      "industry": "互联网",
+      "candidate_confidence": "high",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 55,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 8,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6092,
+        6141
+      ],
+      "evidence_summaries": [
+        "A year after Meta tapped Alexandr Wang to build a new AI model, Zuckerberg has to sell it",
+        "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock."
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:revenue",
+        "material_keyword:order",
+        "material_keyword:investment",
+        "material_keyword:earnings",
+        "material_keyword:guidance"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 2,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "confirmed",
+        "cross_verified_source_count": 2,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "XOM",
+      "name": "Exxon Mobil",
+      "industry": "石油石化",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 54,
+      "scores": {
+        "news_catalyst": 18,
+        "technical": 8,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6140
+      ],
+      "evidence_summaries": [
+        "Oil executives send a blunt message to Americans on gas prices"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:product",
+        "material_keyword:sec",
+        "material_keyword:stock"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 1,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "industry": "电商与云服务",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 51,
+      "scores": {
+        "news_catalyst": 23,
+        "technical": 6,
+        "valuation": 10,
+        "quality_risk": 6,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "recall",
+        "downgrade",
+        "新闻风险信号: recall",
+        "新闻风险信号: downgrade",
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        6124,
+        6141
+      ],
+      "evidence_summaries": [
+        "Anthropic Rushes Staff To D.C. After A National-Security Order Yanked Fable In Three Days",
+        "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock."
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:order",
+        "material_keyword:launch",
+        "material_keyword:product",
+        "material_keyword:earnings",
+        "material_keyword:revenue",
+        "material_keyword:guidance"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 1,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "industry": "半导体",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 51,
+      "scores": {
+        "news_catalyst": 17,
+        "technical": 5,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6141
+      ],
+      "evidence_summaries": [
+        "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock."
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:stock",
+        "material_keyword:earnings",
+        "material_keyword:revenue"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 1,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 1,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "industry": "互联网",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 50,
+      "scores": {
+        "news_catalyst": 17,
+        "technical": 5,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6141
+      ],
+      "evidence_summaries": [
+        "Nvidia CEO Jensen Huang Isn’t Worried About the Chip Rout. The Numbers Back Him Up on NVDA Stock."
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:earnings",
+        "material_keyword:revenue",
+        "material_keyword:guidance"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 1,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    }
+  ],
+  "quality_check": {
+    "score": 100,
+    "passed": false,
+    "accuracy_score": 60.0,
+    "timeliness_score": 20,
+    "reliability_score": 20,
+    "claim_coverage_score": 15,
+    "time_source": "report_text",
+    "source_annotation_missing": false,
+    "narrative_consistency_passed": true,
+    "data_integrity_statement_passed": true,
+    "issues": [
+      "❌ 存在未回溯的新闻占位引用: 【新闻X】 2处"
+    ],
+    "warnings": [],
+    "stats": {
+      "has_realtime_data": true,
+      "data_age_hours": 0.011999905,
+      "time_source": "report_text",
+      "source_annotation_missing": false,
+      "claim_coverage_score": 15,
+      "citation_count": 24,
+      "placeholder_citation_count": 2,
+      "verified_claims": 3,
+      "total_claims": 3,
+      "realtime_verified_claims": 3,
+      "realtime_total_claims": 3,
+      "news_fact_claims": 1,
+      "analytical_judgment_count": 0,
+      "fabrication_detected": false,
+      "watchlist_promoted_in_narrative_count": 0,
+      "verification_boundary_overclaim_count": 0,
+      "cross_verification_overclaim_count": 0,
+      "coverage_gap_count": 2,
+      "coverage_boundary_overclaim_count": 0,
+      "evidence_diversity_issue_count": 0,
+      "evidence_source_count": 10,
+      "evidence_topic_count": 6,
+      "evidence_max_source_share": 0.12195121951219512,
+      "evidence_max_topic_share": 0.36585365853658536,
+      "evidence_max_aggregator_share": 0.36585365853658536,
+      "evidence_original_source_share": 0.5121951219512195,
+      "counter_evidence_issue_count": 0,
+      "counter_evidence_high_confidence_topics": 0,
+      "implausible_signals": {
+        "over_precision_count": 0,
+        "rounded_ratio": 0.0,
+        "cross_asset_repeated_value_count": 0
+      }
+    },
+    "timestamp": "2026-06-15T09:04:43.200467"
+  },
+  "candidate_evidence_audit": {
+    "required": true,
+    "candidate_count": 9,
+    "recommendation_count": 9,
+    "status_counts": {
+      "theme_proxy": 3,
+      "direct_material_news": 6
+    },
+    "candidates": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "source_type": "theme_mapping",
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "evidence_article_ids": [
+          6159,
+          6090,
+          6140,
+          6141
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase",
+        "source_type": "theme_mapping",
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "evidence_article_ids": [
+          6159,
+          6090,
+          6140,
+          6141
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "BAC",
+        "name": "Bank of America",
+        "source_type": "theme_mapping",
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "evidence_article_ids": [
+          6159,
+          6090,
+          6140,
+          6141
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:order",
+          "material_keyword:launch",
+          "material_keyword:product",
+          "material_keyword:revenue",
+          "material_keyword:investment",
+          "material_keyword:earnings",
+          "material_keyword:guidance"
+        ],
+        "evidence_article_ids": [
+          6124,
+          6092,
+          6141
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "META",
+        "name": "Meta",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:revenue",
+          "material_keyword:order",
+          "material_keyword:investment",
+          "material_keyword:earnings",
+          "material_keyword:guidance"
+        ],
+        "evidence_article_ids": [
+          6092,
+          6141
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "XOM",
+        "name": "Exxon Mobil",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:product",
+          "material_keyword:sec",
+          "material_keyword:stock"
+        ],
+        "evidence_article_ids": [
+          6140
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:order",
+          "material_keyword:launch",
+          "material_keyword:product",
+          "material_keyword:earnings",
+          "material_keyword:revenue",
+          "material_keyword:guidance"
+        ],
+        "evidence_article_ids": [
+          6124,
+          6141
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:stock",
+          "material_keyword:earnings",
+          "material_keyword:revenue"
+        ],
+        "evidence_article_ids": [
+          6141
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:earnings",
+          "material_keyword:revenue",
+          "material_keyword:guidance"
+        ],
+        "evidence_article_ids": [
+          6141
+        ],
+        "actionability_passed": false
+      }
+    ],
+    "rejected_false_positive_mentions": [
+      {
+        "article_id": 6093,
+        "title": "Trump heads to G7 summit in France after reaching deal to end war with Iran",
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6091,
+        "title": "World leaders welcome U.S.-Iran deal as Europe signals sanctions relief, urges Hormuz reopening",
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6092,
+        "title": "A year after Meta tapped Alexandr Wang to build a new AI model, Zuckerberg has to sell it",
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6099,
+        "title": "标普500集中度达历史高点，这样的美股有哪些风险？",
+        "symbol": "AAPL",
+        "name": "Apple",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6099,
+        "title": "标普500集中度达历史高点，这样的美股有哪些风险？",
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6099,
+        "title": "标普500集中度达历史高点，这样的美股有哪些风险？",
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6099,
+        "title": "标普500集中度达历史高点，这样的美股有哪些风险？",
+        "symbol": "META",
+        "name": "Meta",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6099,
+        "title": "标普500集中度达历史高点，这样的美股有哪些风险？",
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6099,
+        "title": "标普500集中度达历史高点，这样的美股有哪些风险？",
+        "symbol": "NVDA",
+        "name": "NVIDIA",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6099,
+        "title": "标普500集中度达历史高点，这样的美股有哪些风险？",
+        "symbol": "TSLA",
+        "name": "Tesla",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6144,
+        "title": "Jim Cramer Reveals Big Trend For Palo Alto’s (PANW) Shares",
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6143,
+        "title": "Jim Cramer Wasn’t Selling Eli Lilly (LLY)",
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6094,
+        "title": "Elon Musk drifted from Larry Page over a decade ago, but their companies are closer than ever",
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      }
+    ]
+  },
+  "scoring_calibration": {
+    "required": true,
+    "status_counts": {
+      "样本不足": 9
+    },
+    "items": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "BAC",
+        "name": "Bank of America",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "META",
+        "name": "Meta",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "XOM",
+        "name": "Exxon Mobil",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      }
+    ]
+  },
+  "rejected_false_positive_mentions": [
+    {
+      "article_id": 6093,
+      "title": "Trump heads to G7 summit in France after reaching deal to end war with Iran",
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6091,
+      "title": "World leaders welcome U.S.-Iran deal as Europe signals sanctions relief, urges Hormuz reopening",
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6092,
+      "title": "A year after Meta tapped Alexandr Wang to build a new AI model, Zuckerberg has to sell it",
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6099,
+      "title": "标普500集中度达历史高点，这样的美股有哪些风险？",
+      "symbol": "AAPL",
+      "name": "Apple",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6099,
+      "title": "标普500集中度达历史高点，这样的美股有哪些风险？",
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6099,
+      "title": "标普500集中度达历史高点，这样的美股有哪些风险？",
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6099,
+      "title": "标普500集中度达历史高点，这样的美股有哪些风险？",
+      "symbol": "META",
+      "name": "Meta",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6099,
+      "title": "标普500集中度达历史高点，这样的美股有哪些风险？",
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6099,
+      "title": "标普500集中度达历史高点，这样的美股有哪些风险？",
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6099,
+      "title": "标普500集中度达历史高点，这样的美股有哪些风险？",
+      "symbol": "TSLA",
+      "name": "Tesla",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6144,
+      "title": "Jim Cramer Reveals Big Trend For Palo Alto’s (PANW) Shares",
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6143,
+      "title": "Jim Cramer Wasn’t Selling Eli Lilly (LLY)",
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6094,
+      "title": "Elon Musk drifted from Larry Page over a decade ago, but their companies are closer than ever",
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    }
+  ],
+  "session": "morning",
+  "session_time": "2026-06-15 09:04:43"
+}

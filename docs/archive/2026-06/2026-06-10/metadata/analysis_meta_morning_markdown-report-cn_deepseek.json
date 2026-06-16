@@ -1,22 +1,22 @@
 {
   "date_range": {
-    "start": "2026-06-09",
-    "end": "2026-06-09"
+    "start": "2026-06-10",
+    "end": "2026-06-10"
   },
   "market": "CN",
-  "articles_used": 62,
-  "chunks": 96,
+  "articles_used": 59,
+  "chunks": 101,
   "model_usage": {
     "model": "deepseek-v4-pro",
     "provider": "deepseek",
-    "prompt_tokens": 65266,
-    "completion_tokens": 1957,
-    "total_tokens": 67223
+    "prompt_tokens": 70861,
+    "completion_tokens": 1961,
+    "total_tokens": 72822
   },
   "quality_check": {
-    "score": 90.0,
-    "passed": true,
-    "accuracy_score": 60.0,
+    "score": 66.0,
+    "passed": false,
+    "accuracy_score": 36.0,
     "timeliness_score": 10,
     "reliability_score": 20,
     "claim_coverage_score": 20,
@@ -26,22 +26,23 @@
     "data_integrity_statement_passed": true,
     "issues": [],
     "warnings": [
+      "⚠️ 准确性偏低: 60%的断言得到验证 (3/5)",
       "⚠️ 报告更新时间与系统实时数据时间不一致,已按更保守时间计算时效性",
-      "⚠️ 数据更新于5.6小时前,时效性一般"
+      "⚠️ 数据更新于18.6小时前,时效性一般"
     ],
     "stats": {
       "has_realtime_data": true,
-      "data_age_hours": 5.578712623333333,
+      "data_age_hours": 18.642166633333336,
       "time_source": "report_text",
       "source_annotation_missing": false,
       "claim_coverage_score": 20,
-      "citation_count": 27,
+      "citation_count": 36,
       "placeholder_citation_count": 0,
-      "verified_claims": 2,
-      "total_claims": 2,
-      "realtime_verified_claims": 2,
-      "realtime_total_claims": 2,
-      "news_fact_claims": 6,
+      "verified_claims": 3,
+      "total_claims": 5,
+      "realtime_verified_claims": 3,
+      "realtime_total_claims": 5,
+      "news_fact_claims": 2,
       "analytical_judgment_count": 0,
       "fabrication_detected": false,
       "watchlist_promoted_in_narrative_count": 0,
@@ -51,75 +52,82 @@
       "coverage_boundary_overclaim_count": 0,
       "evidence_diversity_issue_count": 0,
       "evidence_source_count": 14,
-      "evidence_topic_count": 8,
-      "evidence_max_source_share": 0.08064516129032258,
-      "evidence_max_topic_share": 0.3548387096774194,
-      "evidence_max_aggregator_share": 0.24193548387096775,
-      "evidence_original_source_share": 0.3709677419354839,
+      "evidence_topic_count": 7,
+      "evidence_max_source_share": 0.0847457627118644,
+      "evidence_max_topic_share": 0.4745762711864407,
+      "evidence_max_aggregator_share": 0.2542372881355932,
+      "evidence_original_source_share": 0.3728813559322034,
       "counter_evidence_issue_count": 0,
-      "counter_evidence_high_confidence_topics": 1,
+      "counter_evidence_high_confidence_topics": 2,
       "implausible_signals": {
-        "over_precision_count": 0,
-        "rounded_ratio": 0.0,
-        "cross_asset_repeated_value_count": 1
+        "over_precision_count": 1,
+        "rounded_ratio": 0.143,
+        "cross_asset_repeated_value_count": 0
       }
     },
-    "timestamp": "2026-06-09T20:34:43.366931"
+    "timestamp": "2026-06-10T09:38:31.800572"
   },
   "verification_enabled": true,
   "output_mode": "markdown-report",
   "live_data_degraded": false,
   "stock_recommendations": [
     {
-      "symbol": "sh600036",
-      "name": "招商银行",
-      "industry": "银行",
-      "candidate_confidence": "medium",
-      "base_grade": "观察",
+      "symbol": "sz002594",
+      "name": "比亚迪",
+      "industry": "新能源车",
+      "candidate_confidence": "low",
+      "base_grade": "关注",
       "grade": "观察",
-      "grade_caps": [],
-      "total_score": 64,
+      "grade_caps": [
+        "insufficient_independent_confirmation",
+        "risk_flag_present"
+      ],
+      "total_score": 66,
       "scores": {
-        "news_catalyst": 23,
-        "technical": 15,
-        "valuation": 10,
-        "quality_risk": 12,
-        "market_regime": 4
+        "news_catalyst": 26,
+        "technical": 11,
+        "valuation": 17,
+        "quality_risk": 9,
+        "market_regime": 3
       },
       "signals": [
-        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
-        "MACD 维持多头结构",
+        "新闻直接提及个股，催化关联度较高",
+        "RSI 处于健康区间，趋势未明显过热",
         "估值层已纳入行业相对比较"
       ],
       "risks": [
+        "召回",
+        "新闻风险信号: 召回",
+        "估值处于相对合理或偏低区间",
         "大盘风险偏好一般",
         "行业趋势缺失，按中性环境处理"
       ],
       "invalidators": [
         "若后续催化未兑现或证据链减弱，需要下调关注度",
-        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
       ],
       "evidence_article_ids": [
-        5860,
-        5776,
-        5777,
-        5843
+        5875,
+        5880,
+        5881
       ],
       "evidence_summaries": [
-        "SEC Establishes Joint Data Standards as Required Under the Financial Data Transparency Act of 2022",
-        "全球市场：美股三大指数收盘涨跌不一 纳指涨近1% 半导体板块大涨",
-        "6月9日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
-        "Stock market today: Dow, S&P 500, Nasdaq futures rise as AI trade takes center stage"
+        "8点1氪丨致3人永久失明，膳魔师紧急召回百万件产品；发布会后苹果市值蒸发超1.587万亿；Anthropic发布最强模型：Claude Fable 5正式上线",
+        "6月10日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "6月9日东方财富财经晚报（附新闻联播）"
       ],
       "data_completeness": 1.0,
-      "source_type": "theme_mapping",
-      "topic": "政策与监管",
-      "theme_topics": [
-        "政策与监管"
-      ],
-      "evidence_relevance_status": "theme_proxy",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
       "evidence_relevance_reasons": [
-        "mapped_from_high_confidence_topic"
+        "material_keyword:产品",
+        "material_keyword:召回",
+        "material_keyword:涨",
+        "material_keyword:stock",
+        "material_keyword:盈利"
       ],
       "historical_calibration_status": "样本不足",
       "historical_forward_stats": {
@@ -132,35 +140,35 @@
         "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
       },
       "stale_opportunity_flag": false,
-      "crowding_flag": true,
+      "crowding_flag": false,
       "fresh_evidence_flag": false,
       "actionability_passed": false,
       "actionability_reasons": [
         "grade_not_actionable",
         "no_fresh_evidence",
-        "stale_or_crowded",
-        "theme_only_not_actionable",
+        "insufficient_independent_confirmation",
         "cross_verification_not_confirmed"
       ],
       "forward_window": "1-4周",
       "catalyst_path": [
-        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "跟踪个股级直接催化是否继续被主流来源确认",
         "若后续缺少新增个股证据，需警惕题材已被交易完成"
       ],
       "validation_points": [
-        "等待主题催化转化为个股级新增证据",
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
         "观察价格是否继续站稳 20 日均线并维持健康量能"
       ],
       "failure_triggers": [
         "若后续催化未兑现或证据链减弱，需要下调关注度",
-        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
       ],
       "evidence_strength": {
-        "direct_mentions": 0,
-        "independent_evidence_count": 3,
-        "source_tier_max": "official",
+        "direct_mentions": 3,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream",
         "cross_verification_status": "weak",
-        "cross_verified_source_count": 3,
+        "cross_verified_source_count": 0,
         "cross_verification_reasons": []
       },
       "industry_trend": {
@@ -172,49 +180,51 @@
       }
     },
     {
-      "symbol": "sh688981",
-      "name": "中芯国际",
-      "industry": "半导体",
+      "symbol": "sh600941",
+      "name": "中国移动",
+      "industry": "通信运营",
       "candidate_confidence": "medium",
       "base_grade": "观察",
       "grade": "观察",
       "grade_caps": [],
-      "total_score": 63,
+      "total_score": 64,
       "scores": {
-        "news_catalyst": 19,
-        "technical": 11,
+        "news_catalyst": 24,
+        "technical": 8,
         "valuation": 17,
         "quality_risk": 12,
-        "market_regime": 4
+        "market_regime": 3
       },
       "signals": [
         "新闻直接提及个股，催化关联度较高",
-        "RSI 处于健康区间，趋势未明显过热",
         "估值层已纳入行业相对比较"
       ],
       "risks": [
         "估值处于相对合理或偏低区间",
-        "大盘风险偏好一般"
+        "大盘风险偏好一般",
+        "行业趋势缺失，按中性环境处理"
       ],
       "invalidators": [
         "若后续催化未兑现或证据链减弱，需要下调关注度",
         "若价格跌破20日均线且量能同步走弱，技术评分应重算"
       ],
       "evidence_article_ids": [
-        5788
+        5880,
+        5881
       ],
       "evidence_summaries": [
-        "沪指收复4000点，创业板涨近4%，芯片半导体大爆发，双焦大跌、焦煤一度跌停"
+        "6月10日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "6月9日东方财富财经晚报（附新闻联播）"
       ],
       "data_completeness": 1.0,
       "source_type": "direct_news",
       "topic": "新闻直接提及",
       "theme_topics": [
-        "科技与产业主题"
+        "政策与监管"
       ],
       "evidence_relevance_status": "direct_material_news",
       "evidence_relevance_reasons": [
-        "material_keyword:涨"
+        "material_keyword:stock"
       ],
       "historical_calibration_status": "样本不足",
       "historical_forward_stats": {
@@ -249,11 +259,112 @@
         "若价格跌破20日均线且量能同步走弱，技术评分应重算"
       ],
       "evidence_strength": {
-        "direct_mentions": 1,
+        "direct_mentions": 2,
         "independent_evidence_count": 0,
         "source_tier_max": "mainstream",
         "cross_verification_status": "weak",
         "cross_verified_source_count": 0,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh688981",
+      "name": "中芯国际",
+      "industry": "半导体",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 60,
+      "scores": {
+        "news_catalyst": 16,
+        "technical": 11,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 4
+      },
+      "signals": [
+        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+        "RSI 处于健康区间，趋势未明显过热",
+        "估值层已纳入行业相对比较"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间",
+        "大盘风险偏好一般"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        5950,
+        5883,
+        5875,
+        5880
+      ],
+      "evidence_summaries": [
+        "Federal Reserve Board announces that results from its annual bank stress test will be released on Wednesday, June 24, at",
+        "6月9日晚间沪深上市公司重大事项公告最新快递",
+        "8点1氪丨致3人永久失明，膳魔师紧急召回百万件产品；发布会后苹果市值蒸发超1.587万亿；Anthropic发布最强模型：Claude Fable 5正式上线",
+        "6月10日国内四大证券报纸、重要财经媒体头版头条内容精华摘要"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 5,
+        "source_tier_max": "official",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 5,
         "cross_verification_reasons": []
       },
       "industry_trend": {
@@ -265,27 +376,27 @@
       }
     },
     {
-      "symbol": "sh600941",
-      "name": "中国移动",
-      "industry": "通信运营",
+      "symbol": "sh600036",
+      "name": "招商银行",
+      "industry": "银行",
       "candidate_confidence": "medium",
       "base_grade": "观察",
       "grade": "观察",
       "grade_caps": [],
-      "total_score": 63,
+      "total_score": 58,
       "scores": {
-        "news_catalyst": 23,
-        "technical": 8,
-        "valuation": 17,
+        "news_catalyst": 17,
+        "technical": 15,
+        "valuation": 10,
         "quality_risk": 12,
-        "market_regime": 3
+        "market_regime": 4
       },
       "signals": [
         "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "MACD 维持多头结构",
         "估值层已纳入行业相对比较"
       ],
       "risks": [
-        "估值处于相对合理或偏低区间",
         "大盘风险偏好一般",
         "行业趋势缺失，按中性环境处理"
       ],
@@ -294,16 +405,16 @@
         "若价格跌破20日均线且量能同步走弱，技术评分应重算"
       ],
       "evidence_article_ids": [
-        5860,
-        5776,
-        5777,
-        5843
+        5870,
+        5935,
+        5911,
+        5913
       ],
       "evidence_summaries": [
-        "SEC Establishes Joint Data Standards as Required Under the Financial Data Transparency Act of 2022",
-        "全球市场：美股三大指数收盘涨跌不一 纳指涨近1% 半导体板块大涨",
-        "6月9日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
-        "Stock market today: Dow, S&P 500, Nasdaq futures rise as AI trade takes center stage"
+        "抹黑中国，救不了欧洲产业",
+        "56-year-old beloved fast-food chain closes over 700 locations",
+        "U.S. military launches strikes in retaliation for Iran downing helicopter",
+        "Oil prices fall after U.S. Energy secretary says Hormuz ship traffic is increasing"
       ],
       "data_completeness": 1.0,
       "source_type": "theme_mapping",
@@ -351,10 +462,10 @@
       ],
       "evidence_strength": {
         "direct_mentions": 0,
-        "independent_evidence_count": 3,
-        "source_tier_max": "official",
+        "independent_evidence_count": 4,
+        "source_tier_max": "mainstream",
         "cross_verification_status": "weak",
-        "cross_verified_source_count": 3,
+        "cross_verified_source_count": 4,
         "cross_verification_reasons": []
       },
       "industry_trend": {
@@ -366,50 +477,54 @@
       }
     },
     {
-      "symbol": "sz002594",
-      "name": "比亚迪",
-      "industry": "新能源车",
-      "candidate_confidence": "low",
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "industry": "算力基础设施",
+      "candidate_confidence": "medium",
       "base_grade": "观察",
       "grade": "观察",
       "grade_caps": [],
-      "total_score": 62,
+      "total_score": 56,
       "scores": {
-        "news_catalyst": 19,
-        "technical": 11,
-        "valuation": 17,
+        "news_catalyst": 16,
+        "technical": 4,
+        "valuation": 19,
         "quality_risk": 12,
-        "market_regime": 3
+        "market_regime": 5
       },
       "signals": [
-        "新闻直接提及个股，催化关联度较高",
-        "RSI 处于健康区间，趋势未明显过热",
+        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
         "估值层已纳入行业相对比较"
       ],
       "risks": [
         "估值处于相对合理或偏低区间",
-        "大盘风险偏好一般",
-        "行业趋势缺失，按中性环境处理"
+        "大盘风险偏好一般"
       ],
       "invalidators": [
         "若后续催化未兑现或证据链减弱，需要下调关注度",
         "若价格跌破20日均线且量能同步走弱，技术评分应重算"
       ],
       "evidence_article_ids": [
-        5786
+        5950,
+        5883,
+        5875,
+        5880
       ],
       "evidence_summaries": [
-        "王传福给比亚迪股东们打了把气"
+        "Federal Reserve Board announces that results from its annual bank stress test will be released on Wednesday, June 24, at",
+        "6月9日晚间沪深上市公司重大事项公告最新快递",
+        "8点1氪丨致3人永久失明，膳魔师紧急召回百万件产品；发布会后苹果市值蒸发超1.587万亿；Anthropic发布最强模型：Claude Fable 5正式上线",
+        "6月10日国内四大证券报纸、重要财经媒体头版头条内容精华摘要"
       ],
       "data_completeness": 1.0,
-      "source_type": "direct_news",
-      "topic": "新闻直接提及",
-      "theme_topics": [],
-      "evidence_relevance_status": "direct_material_news",
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_relevance_status": "theme_proxy",
       "evidence_relevance_reasons": [
-        "material_keyword:涨",
-        "material_keyword:产能",
-        "material_keyword:盈利"
+        "mapped_from_high_confidence_topic"
       ],
       "historical_calibration_status": "样本不足",
       "historical_forward_stats": {
@@ -422,22 +537,23 @@
         "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
       },
       "stale_opportunity_flag": false,
-      "crowding_flag": false,
+      "crowding_flag": true,
       "fresh_evidence_flag": false,
       "actionability_passed": false,
       "actionability_reasons": [
         "grade_not_actionable",
         "no_fresh_evidence",
-        "insufficient_independent_confirmation",
-        "cross_verification_conflicted"
+        "stale_or_crowded",
+        "theme_only_not_actionable",
+        "cross_verification_not_confirmed"
       ],
       "forward_window": "1-4周",
       "catalyst_path": [
-        "跟踪个股级直接催化是否继续被主流来源确认",
+        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
         "若后续缺少新增个股证据，需警惕题材已被交易完成"
       ],
       "validation_points": [
-        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "等待主题催化转化为个股级新增证据",
         "观察价格是否继续站稳 20 日均线并维持健康量能"
       ],
       "failure_triggers": [
@@ -445,18 +561,18 @@
         "若价格跌破20日均线且量能同步走弱，技术评分应重算"
       ],
       "evidence_strength": {
-        "direct_mentions": 1,
-        "independent_evidence_count": 0,
-        "source_tier_max": "mainstream",
-        "cross_verification_status": "conflicted",
-        "cross_verified_source_count": 0,
+        "direct_mentions": 0,
+        "independent_evidence_count": 5,
+        "source_tier_max": "official",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 5,
         "cross_verification_reasons": []
       },
       "industry_trend": {
-        "status": "missing",
-        "direction": "flat",
-        "score": 0,
-        "as_of": null,
+        "status": "available",
+        "direction": "up",
+        "score": 2,
+        "as_of": "2026-05-07",
         "source": "local_snapshot"
       }
     },
@@ -468,9 +584,9 @@
       "base_grade": "观察",
       "grade": "观察",
       "grade_caps": [],
-      "total_score": 61,
+      "total_score": 55,
       "scores": {
-        "news_catalyst": 23,
+        "news_catalyst": 17,
         "technical": 13,
         "valuation": 10,
         "quality_risk": 12,
@@ -490,16 +606,16 @@
         "若价格跌破20日均线且量能同步走弱，技术评分应重算"
       ],
       "evidence_article_ids": [
-        5860,
-        5776,
-        5777,
-        5843
+        5870,
+        5935,
+        5911,
+        5913
       ],
       "evidence_summaries": [
-        "SEC Establishes Joint Data Standards as Required Under the Financial Data Transparency Act of 2022",
-        "全球市场：美股三大指数收盘涨跌不一 纳指涨近1% 半导体板块大涨",
-        "6月9日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
-        "Stock market today: Dow, S&P 500, Nasdaq futures rise as AI trade takes center stage"
+        "抹黑中国，救不了欧洲产业",
+        "56-year-old beloved fast-food chain closes over 700 locations",
+        "U.S. military launches strikes in retaliation for Iran downing helicopter",
+        "Oil prices fall after U.S. Energy secretary says Hormuz ship traffic is increasing"
       ],
       "data_completeness": 1.0,
       "source_type": "theme_mapping",
@@ -547,106 +663,6 @@
       ],
       "evidence_strength": {
         "direct_mentions": 0,
-        "independent_evidence_count": 3,
-        "source_tier_max": "official",
-        "cross_verification_status": "weak",
-        "cross_verified_source_count": 3,
-        "cross_verification_reasons": []
-      },
-      "industry_trend": {
-        "status": "available",
-        "direction": "flat",
-        "score": 0,
-        "as_of": "2026-05-07",
-        "source": "local_snapshot"
-      }
-    },
-    {
-      "symbol": "sz000977",
-      "name": "浪潮信息",
-      "industry": "算力基础设施",
-      "candidate_confidence": "medium",
-      "base_grade": "观察",
-      "grade": "观察",
-      "grade_caps": [],
-      "total_score": 60,
-      "scores": {
-        "news_catalyst": 20,
-        "technical": 4,
-        "valuation": 19,
-        "quality_risk": 12,
-        "market_regime": 5
-      },
-      "signals": [
-        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
-        "估值层已纳入行业相对比较"
-      ],
-      "risks": [
-        "估值处于相对合理或偏低区间",
-        "大盘风险偏好一般"
-      ],
-      "invalidators": [
-        "若后续催化未兑现或证据链减弱，需要下调关注度",
-        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
-      ],
-      "evidence_article_ids": [
-        5788,
-        5784,
-        5775,
-        5778
-      ],
-      "evidence_summaries": [
-        "沪指收复4000点，创业板涨近4%，芯片半导体大爆发，双焦大跌、焦煤一度跌停",
-        "36氪首发 | 国内唯一POD材料产业化团队再创业，布局3C与AI芯片散热，技术积累全球领先",
-        "沪指收复4000点 创业板指大涨近4% 逾140只股涨停",
-        "OpenAI官宣已递交IPO申请文件 AI巨头资本大战或全面打响"
-      ],
-      "data_completeness": 1.0,
-      "source_type": "theme_mapping",
-      "topic": "科技与产业主题",
-      "theme_topics": [
-        "科技与产业主题"
-      ],
-      "evidence_relevance_status": "theme_proxy",
-      "evidence_relevance_reasons": [
-        "mapped_from_high_confidence_topic"
-      ],
-      "historical_calibration_status": "样本不足",
-      "historical_forward_stats": {
-        "sample_count": 0,
-        "horizons": [
-          5,
-          10,
-          20
-        ],
-        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
-      },
-      "stale_opportunity_flag": false,
-      "crowding_flag": true,
-      "fresh_evidence_flag": false,
-      "actionability_passed": false,
-      "actionability_reasons": [
-        "grade_not_actionable",
-        "no_fresh_evidence",
-        "stale_or_crowded",
-        "theme_only_not_actionable",
-        "cross_verification_not_confirmed"
-      ],
-      "forward_window": "1-4周",
-      "catalyst_path": [
-        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
-        "若后续缺少新增个股证据，需警惕题材已被交易完成"
-      ],
-      "validation_points": [
-        "等待主题催化转化为个股级新增证据",
-        "观察价格是否继续站稳 20 日均线并维持健康量能"
-      ],
-      "failure_triggers": [
-        "若后续催化未兑现或证据链减弱，需要下调关注度",
-        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
-      ],
-      "evidence_strength": {
-        "direct_mentions": 0,
         "independent_evidence_count": 4,
         "source_tier_max": "mainstream",
         "cross_verification_status": "weak",
@@ -655,8 +671,8 @@
       },
       "industry_trend": {
         "status": "available",
-        "direction": "up",
-        "score": 2,
+        "direction": "flat",
+        "score": 0,
         "as_of": "2026-05-07",
         "source": "local_snapshot"
       }
@@ -669,9 +685,9 @@
       "base_grade": "观察",
       "grade": "观察",
       "grade_caps": [],
-      "total_score": 58,
+      "total_score": 54,
       "scores": {
-        "news_catalyst": 20,
+        "news_catalyst": 16,
         "technical": 4,
         "valuation": 17,
         "quality_risk": 12,
@@ -690,16 +706,16 @@
         "若价格跌破20日均线且量能同步走弱，技术评分应重算"
       ],
       "evidence_article_ids": [
-        5788,
-        5784,
-        5775,
-        5778
+        5950,
+        5883,
+        5875,
+        5880
       ],
       "evidence_summaries": [
-        "沪指收复4000点，创业板涨近4%，芯片半导体大爆发，双焦大跌、焦煤一度跌停",
-        "36氪首发 | 国内唯一POD材料产业化团队再创业，布局3C与AI芯片散热，技术积累全球领先",
-        "沪指收复4000点 创业板指大涨近4% 逾140只股涨停",
-        "OpenAI官宣已递交IPO申请文件 AI巨头资本大战或全面打响"
+        "Federal Reserve Board announces that results from its annual bank stress test will be released on Wednesday, June 24, at",
+        "6月9日晚间沪深上市公司重大事项公告最新快递",
+        "8点1氪丨致3人永久失明，膳魔师紧急召回百万件产品；发布会后苹果市值蒸发超1.587万亿；Anthropic发布最强模型：Claude Fable 5正式上线",
+        "6月10日国内四大证券报纸、重要财经媒体头版头条内容精华摘要"
       ],
       "data_completeness": 1.0,
       "source_type": "theme_mapping",
@@ -747,10 +763,10 @@
       ],
       "evidence_strength": {
         "direct_mentions": 0,
-        "independent_evidence_count": 4,
-        "source_tier_max": "mainstream",
+        "independent_evidence_count": 5,
+        "source_tier_max": "official",
         "cross_verification_status": "weak",
-        "cross_verified_source_count": 4,
+        "cross_verified_source_count": 5,
         "cross_verification_reasons": []
       },
       "industry_trend": {
@@ -769,9 +785,9 @@
       "base_grade": "观察",
       "grade": "观察",
       "grade_caps": [],
-      "total_score": 52,
+      "total_score": 50,
       "scores": {
-        "news_catalyst": 12,
+        "news_catalyst": 10,
         "technical": 8,
         "valuation": 17,
         "quality_risk": 12,
@@ -790,14 +806,16 @@
         "若价格跌破20日均线且量能同步走弱，技术评分应重算"
       ],
       "evidence_article_ids": [
-        5813,
-        5793,
-        5831
+        5893,
+        5914,
+        5912,
+        5938
       ],
       "evidence_summaries": [
-        "51% of U.S. adults say the American Dream is out of reach for most people right now: CNBC survey",
-        "AI、货币政策与格林斯潘的1996（中）",
-        "Since Lockdowns, A 12% GDP Loss; Half Of US Dollar Purchasing Power Stolen"
+        "“三强三弱“的中国经济：政策如何应对？",
+        "The May inflation numbers are due out Wednesday morning. Here's what to expect",
+        "Super Micro stock tumbles on $7 billion financing plans as company touts AI server orders",
+        "Reddit’s (RDDT) AI Search Push and Ad Momentum Support Bullish Wall Street View"
       ],
       "data_completeness": 1.0,
       "source_type": "theme_mapping",
@@ -820,12 +838,13 @@
         "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
       },
       "stale_opportunity_flag": false,
-      "crowding_flag": false,
+      "crowding_flag": true,
       "fresh_evidence_flag": false,
       "actionability_passed": false,
       "actionability_reasons": [
         "grade_not_actionable",
         "no_fresh_evidence",
+        "stale_or_crowded",
         "theme_only_not_actionable",
         "cross_verification_not_confirmed"
       ],
@@ -844,10 +863,10 @@
       ],
       "evidence_strength": {
         "direct_mentions": 0,
-        "independent_evidence_count": 2,
+        "independent_evidence_count": 3,
         "source_tier_max": "mainstream",
         "cross_verification_status": "weak",
-        "cross_verified_source_count": 2,
+        "cross_verified_source_count": 3,
         "cross_verification_reasons": []
       },
       "industry_trend": {
@@ -866,9 +885,9 @@
       "base_grade": "观察",
       "grade": "观察",
       "grade_caps": [],
-      "total_score": 52,
+      "total_score": 50,
       "scores": {
-        "news_catalyst": 12,
+        "news_catalyst": 10,
         "technical": 6,
         "valuation": 19,
         "quality_risk": 12,
@@ -888,14 +907,16 @@
         "若价格跌破20日均线且量能同步走弱，技术评分应重算"
       ],
       "evidence_article_ids": [
-        5813,
-        5793,
-        5831
+        5893,
+        5914,
+        5912,
+        5938
       ],
       "evidence_summaries": [
-        "51% of U.S. adults say the American Dream is out of reach for most people right now: CNBC survey",
-        "AI、货币政策与格林斯潘的1996（中）",
-        "Since Lockdowns, A 12% GDP Loss; Half Of US Dollar Purchasing Power Stolen"
+        "“三强三弱“的中国经济：政策如何应对？",
+        "The May inflation numbers are due out Wednesday morning. Here's what to expect",
+        "Super Micro stock tumbles on $7 billion financing plans as company touts AI server orders",
+        "Reddit’s (RDDT) AI Search Push and Ad Momentum Support Bullish Wall Street View"
       ],
       "data_completeness": 1.0,
       "source_type": "theme_mapping",
@@ -918,12 +939,13 @@
         "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
       },
       "stale_opportunity_flag": false,
-      "crowding_flag": false,
+      "crowding_flag": true,
       "fresh_evidence_flag": false,
       "actionability_passed": false,
       "actionability_reasons": [
         "grade_not_actionable",
         "no_fresh_evidence",
+        "stale_or_crowded",
         "theme_only_not_actionable",
         "cross_verification_not_confirmed"
       ],
@@ -942,10 +964,10 @@
       ],
       "evidence_strength": {
         "direct_mentions": 0,
-        "independent_evidence_count": 2,
+        "independent_evidence_count": 3,
         "source_tier_max": "mainstream",
         "cross_verification_status": "weak",
-        "cross_verified_source_count": 2,
+        "cross_verified_source_count": 3,
         "cross_verification_reasons": []
       },
       "industry_trend": {
@@ -978,20 +1000,23 @@
     "actionable_candidates": [],
     "conditional_watchlist": [
       {
-        "symbol": "sh688981",
-        "name": "中芯国际",
-        "industry": "半导体",
-        "candidate_confidence": "medium",
-        "base_grade": "观察",
+        "symbol": "sz002594",
+        "name": "比亚迪",
+        "industry": "新能源车",
+        "candidate_confidence": "low",
+        "base_grade": "关注",
         "grade": "观察",
-        "grade_caps": [],
-        "total_score": 63,
+        "grade_caps": [
+          "insufficient_independent_confirmation",
+          "risk_flag_present"
+        ],
+        "total_score": 66,
         "scores": {
-          "news_catalyst": 19,
+          "news_catalyst": 26,
           "technical": 11,
           "valuation": 17,
-          "quality_risk": 12,
-          "market_regime": 4
+          "quality_risk": 9,
+          "market_regime": 3
         },
         "signals": [
           "新闻直接提及个股，催化关联度较高",
@@ -999,28 +1024,135 @@
           "估值层已纳入行业相对比较"
         ],
         "risks": [
+          "召回",
+          "新闻风险信号: 召回",
           "估值处于相对合理或偏低区间",
-          "大盘风险偏好一般"
+          "大盘风险偏好一般",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_article_ids": [
+          5875,
+          5880,
+          5881
+        ],
+        "evidence_summaries": [
+          "8点1氪丨致3人永久失明，膳魔师紧急召回百万件产品；发布会后苹果市值蒸发超1.587万亿；Anthropic发布最强模型：Claude Fable 5正式上线",
+          "6月10日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "6月9日东方财富财经晚报（附新闻联播）"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:产品",
+          "material_keyword:召回",
+          "material_keyword:涨",
+          "material_keyword:stock",
+          "material_keyword:盈利"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "insufficient_independent_confirmation",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 3,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 0,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh600941",
+        "name": "中国移动",
+        "industry": "通信运营",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 64,
+        "scores": {
+          "news_catalyst": 24,
+          "technical": 8,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 3
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间",
+          "大盘风险偏好一般",
+          "行业趋势缺失，按中性环境处理"
         ],
         "invalidators": [
           "若后续催化未兑现或证据链减弱，需要下调关注度",
           "若价格跌破20日均线且量能同步走弱，技术评分应重算"
         ],
         "evidence_article_ids": [
-          5788
+          5880,
+          5881
         ],
         "evidence_summaries": [
-          "沪指收复4000点，创业板涨近4%，芯片半导体大爆发，双焦大跌、焦煤一度跌停"
+          "6月10日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "6月9日东方财富财经晚报（附新闻联播）"
         ],
         "data_completeness": 1.0,
         "source_type": "direct_news",
         "topic": "新闻直接提及",
         "theme_topics": [
-          "科技与产业主题"
+          "政策与监管"
         ],
         "evidence_relevance_status": "direct_material_news",
         "evidence_relevance_reasons": [
-          "material_keyword:涨"
+          "material_keyword:stock"
         ],
         "historical_calibration_status": "样本不足",
         "historical_forward_stats": {
@@ -1055,11 +1187,114 @@
           "若价格跌破20日均线且量能同步走弱，技术评分应重算"
         ],
         "evidence_strength": {
-          "direct_mentions": 1,
+          "direct_mentions": 2,
           "independent_evidence_count": 0,
           "source_tier_max": "mainstream",
           "cross_verification_status": "weak",
           "cross_verified_source_count": 0,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "stale_or_rejected": [
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "industry": "半导体",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 60,
+        "scores": {
+          "news_catalyst": 16,
+          "technical": 11,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 4
+        },
+        "signals": [
+          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+          "RSI 处于健康区间，趋势未明显过热",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间",
+          "大盘风险偏好一般"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          5950,
+          5883,
+          5875,
+          5880
+        ],
+        "evidence_summaries": [
+          "Federal Reserve Board announces that results from its annual bank stress test will be released on Wednesday, June 24, at",
+          "6月9日晚间沪深上市公司重大事项公告最新快递",
+          "8点1氪丨致3人永久失明，膳魔师紧急召回百万件产品；发布会后苹果市值蒸发超1.587万亿；Anthropic发布最强模型：Claude Fable 5正式上线",
+          "6月10日国内四大证券报纸、重要财经媒体头版头条内容精华摘要"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "科技与产业主题",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 5,
+          "source_tier_max": "official",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 5,
           "cross_verification_reasons": []
         },
         "industry_trend": {
@@ -1071,203 +1306,6 @@
         }
       },
       {
-        "symbol": "sh600519",
-        "name": "贵州茅台",
-        "industry": "白酒",
-        "candidate_confidence": "medium",
-        "base_grade": "观察",
-        "grade": "观察",
-        "grade_caps": [],
-        "total_score": 52,
-        "scores": {
-          "news_catalyst": 12,
-          "technical": 8,
-          "valuation": 17,
-          "quality_risk": 12,
-          "market_regime": 3
-        },
-        "signals": [
-          "来自“宏观与流动性”主题映射，适合作为代表标的跟踪",
-          "估值层已纳入行业相对比较"
-        ],
-        "risks": [
-          "估值处于相对合理或偏低区间",
-          "大盘风险偏好一般"
-        ],
-        "invalidators": [
-          "若后续催化未兑现或证据链减弱，需要下调关注度",
-          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
-        ],
-        "evidence_article_ids": [
-          5813,
-          5793,
-          5831
-        ],
-        "evidence_summaries": [
-          "51% of U.S. adults say the American Dream is out of reach for most people right now: CNBC survey",
-          "AI、货币政策与格林斯潘的1996（中）",
-          "Since Lockdowns, A 12% GDP Loss; Half Of US Dollar Purchasing Power Stolen"
-        ],
-        "data_completeness": 1.0,
-        "source_type": "theme_mapping",
-        "topic": "宏观与流动性",
-        "theme_topics": [
-          "宏观与流动性"
-        ],
-        "evidence_relevance_status": "theme_proxy",
-        "evidence_relevance_reasons": [
-          "mapped_from_high_confidence_topic"
-        ],
-        "historical_calibration_status": "样本不足",
-        "historical_forward_stats": {
-          "sample_count": 0,
-          "horizons": [
-            5,
-            10,
-            20
-          ],
-          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
-        },
-        "stale_opportunity_flag": false,
-        "crowding_flag": false,
-        "fresh_evidence_flag": false,
-        "actionability_passed": false,
-        "actionability_reasons": [
-          "grade_not_actionable",
-          "no_fresh_evidence",
-          "theme_only_not_actionable",
-          "cross_verification_not_confirmed"
-        ],
-        "forward_window": "1-4周",
-        "catalyst_path": [
-          "跟踪“宏观与流动性”主题是否从主题扩散走向个股兑现",
-          "若后续缺少新增个股证据，需警惕题材已被交易完成"
-        ],
-        "validation_points": [
-          "等待主题催化转化为个股级新增证据",
-          "观察价格是否继续站稳 20 日均线并维持健康量能"
-        ],
-        "failure_triggers": [
-          "若后续催化未兑现或证据链减弱，需要下调关注度",
-          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
-        ],
-        "evidence_strength": {
-          "direct_mentions": 0,
-          "independent_evidence_count": 2,
-          "source_tier_max": "mainstream",
-          "cross_verification_status": "weak",
-          "cross_verified_source_count": 2,
-          "cross_verification_reasons": []
-        },
-        "industry_trend": {
-          "status": "available",
-          "direction": "flat",
-          "score": 0,
-          "as_of": "2026-05-07",
-          "source": "local_snapshot"
-        }
-      },
-      {
-        "symbol": "sz000858",
-        "name": "五粮液",
-        "industry": "白酒",
-        "candidate_confidence": "medium",
-        "base_grade": "观察",
-        "grade": "观察",
-        "grade_caps": [],
-        "total_score": 52,
-        "scores": {
-          "news_catalyst": 12,
-          "technical": 6,
-          "valuation": 19,
-          "quality_risk": 12,
-          "market_regime": 3
-        },
-        "signals": [
-          "来自“宏观与流动性”主题映射，适合作为代表标的跟踪",
-          "MACD 维持多头结构",
-          "估值层已纳入行业相对比较"
-        ],
-        "risks": [
-          "估值处于相对合理或偏低区间",
-          "大盘风险偏好一般"
-        ],
-        "invalidators": [
-          "若后续催化未兑现或证据链减弱，需要下调关注度",
-          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
-        ],
-        "evidence_article_ids": [
-          5813,
-          5793,
-          5831
-        ],
-        "evidence_summaries": [
-          "51% of U.S. adults say the American Dream is out of reach for most people right now: CNBC survey",
-          "AI、货币政策与格林斯潘的1996（中）",
-          "Since Lockdowns, A 12% GDP Loss; Half Of US Dollar Purchasing Power Stolen"
-        ],
-        "data_completeness": 1.0,
-        "source_type": "theme_mapping",
-        "topic": "宏观与流动性",
-        "theme_topics": [
-          "宏观与流动性"
-        ],
-        "evidence_relevance_status": "theme_proxy",
-        "evidence_relevance_reasons": [
-          "mapped_from_high_confidence_topic"
-        ],
-        "historical_calibration_status": "样本不足",
-        "historical_forward_stats": {
-          "sample_count": 0,
-          "horizons": [
-            5,
-            10,
-            20
-          ],
-          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
-        },
-        "stale_opportunity_flag": false,
-        "crowding_flag": false,
-        "fresh_evidence_flag": false,
-        "actionability_passed": false,
-        "actionability_reasons": [
-          "grade_not_actionable",
-          "no_fresh_evidence",
-          "theme_only_not_actionable",
-          "cross_verification_not_confirmed"
-        ],
-        "forward_window": "1-4周",
-        "catalyst_path": [
-          "跟踪“宏观与流动性”主题是否从主题扩散走向个股兑现",
-          "若后续缺少新增个股证据，需警惕题材已被交易完成"
-        ],
-        "validation_points": [
-          "等待主题催化转化为个股级新增证据",
-          "观察价格是否继续站稳 20 日均线并维持健康量能"
-        ],
-        "failure_triggers": [
-          "若后续催化未兑现或证据链减弱，需要下调关注度",
-          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
-        ],
-        "evidence_strength": {
-          "direct_mentions": 0,
-          "independent_evidence_count": 2,
-          "source_tier_max": "mainstream",
-          "cross_verification_status": "weak",
-          "cross_verified_source_count": 2,
-          "cross_verification_reasons": []
-        },
-        "industry_trend": {
-          "status": "available",
-          "direction": "flat",
-          "score": 0,
-          "as_of": "2026-05-07",
-          "source": "local_snapshot"
-        }
-      }
-    ],
-    "stale_or_rejected": [
-      {
         "symbol": "sh600036",
         "name": "招商银行",
         "industry": "银行",
@@ -1275,9 +1313,9 @@
         "base_grade": "观察",
         "grade": "观察",
         "grade_caps": [],
-        "total_score": 64,
+        "total_score": 58,
         "scores": {
-          "news_catalyst": 23,
+          "news_catalyst": 17,
           "technical": 15,
           "valuation": 10,
           "quality_risk": 12,
@@ -1297,16 +1335,16 @@
           "若价格跌破20日均线且量能同步走弱，技术评分应重算"
         ],
         "evidence_article_ids": [
-          5860,
-          5776,
-          5777,
-          5843
+          5870,
+          5935,
+          5911,
+          5913
         ],
         "evidence_summaries": [
-          "SEC Establishes Joint Data Standards as Required Under the Financial Data Transparency Act of 2022",
-          "全球市场：美股三大指数收盘涨跌不一 纳指涨近1% 半导体板块大涨",
-          "6月9日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
-          "Stock market today: Dow, S&P 500, Nasdaq futures rise as AI trade takes center stage"
+          "抹黑中国，救不了欧洲产业",
+          "56-year-old beloved fast-food chain closes over 700 locations",
+          "U.S. military launches strikes in retaliation for Iran downing helicopter",
+          "Oil prices fall after U.S. Energy secretary says Hormuz ship traffic is increasing"
         ],
         "data_completeness": 1.0,
         "source_type": "theme_mapping",
@@ -1354,10 +1392,10 @@
         ],
         "evidence_strength": {
           "direct_mentions": 0,
-          "independent_evidence_count": 3,
-          "source_tier_max": "official",
+          "independent_evidence_count": 4,
+          "source_tier_max": "mainstream",
           "cross_verification_status": "weak",
-          "cross_verified_source_count": 3,
+          "cross_verified_source_count": 4,
           "cross_verification_reasons": []
         },
         "industry_trend": {
@@ -1369,51 +1407,50 @@
         }
       },
       {
-        "symbol": "sh600941",
-        "name": "中国移动",
-        "industry": "通信运营",
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "industry": "算力基础设施",
         "candidate_confidence": "medium",
         "base_grade": "观察",
         "grade": "观察",
         "grade_caps": [],
-        "total_score": 63,
+        "total_score": 56,
         "scores": {
-          "news_catalyst": 23,
-          "technical": 8,
-          "valuation": 17,
+          "news_catalyst": 16,
+          "technical": 4,
+          "valuation": 19,
           "quality_risk": 12,
-          "market_regime": 3
+          "market_regime": 5
         },
         "signals": [
-          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
           "估值层已纳入行业相对比较"
         ],
         "risks": [
           "估值处于相对合理或偏低区间",
-          "大盘风险偏好一般",
-          "行业趋势缺失，按中性环境处理"
+          "大盘风险偏好一般"
         ],
         "invalidators": [
           "若后续催化未兑现或证据链减弱，需要下调关注度",
           "若价格跌破20日均线且量能同步走弱，技术评分应重算"
         ],
         "evidence_article_ids": [
-          5860,
-          5776,
-          5777,
-          5843
+          5950,
+          5883,
+          5875,
+          5880
         ],
         "evidence_summaries": [
-          "SEC Establishes Joint Data Standards as Required Under the Financial Data Transparency Act of 2022",
-          "全球市场：美股三大指数收盘涨跌不一 纳指涨近1% 半导体板块大涨",
-          "6月9日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
-          "Stock market today: Dow, S&P 500, Nasdaq futures rise as AI trade takes center stage"
+          "Federal Reserve Board announces that results from its annual bank stress test will be released on Wednesday, June 24, at",
+          "6月9日晚间沪深上市公司重大事项公告最新快递",
+          "8点1氪丨致3人永久失明，膳魔师紧急召回百万件产品；发布会后苹果市值蒸发超1.587万亿；Anthropic发布最强模型：Claude Fable 5正式上线",
+          "6月10日国内四大证券报纸、重要财经媒体头版头条内容精华摘要"
         ],
         "data_completeness": 1.0,
         "source_type": "theme_mapping",
-        "topic": "政策与监管",
+        "topic": "科技与产业主题",
         "theme_topics": [
-          "政策与监管"
+          "科技与产业主题"
         ],
         "evidence_relevance_status": "theme_proxy",
         "evidence_relevance_reasons": [
@@ -1442,7 +1479,7 @@
         ],
         "forward_window": "1-4周",
         "catalyst_path": [
-          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
           "若后续缺少新增个股证据，需警惕题材已被交易完成"
         ],
         "validation_points": [
@@ -1455,112 +1492,17 @@
         ],
         "evidence_strength": {
           "direct_mentions": 0,
-          "independent_evidence_count": 3,
+          "independent_evidence_count": 5,
           "source_tier_max": "official",
           "cross_verification_status": "weak",
-          "cross_verified_source_count": 3,
+          "cross_verified_source_count": 5,
           "cross_verification_reasons": []
         },
         "industry_trend": {
-          "status": "missing",
-          "direction": "flat",
-          "score": 0,
-          "as_of": null,
-          "source": "local_snapshot"
-        }
-      },
-      {
-        "symbol": "sz002594",
-        "name": "比亚迪",
-        "industry": "新能源车",
-        "candidate_confidence": "low",
-        "base_grade": "观察",
-        "grade": "观察",
-        "grade_caps": [],
-        "total_score": 62,
-        "scores": {
-          "news_catalyst": 19,
-          "technical": 11,
-          "valuation": 17,
-          "quality_risk": 12,
-          "market_regime": 3
-        },
-        "signals": [
-          "新闻直接提及个股，催化关联度较高",
-          "RSI 处于健康区间，趋势未明显过热",
-          "估值层已纳入行业相对比较"
-        ],
-        "risks": [
-          "估值处于相对合理或偏低区间",
-          "大盘风险偏好一般",
-          "行业趋势缺失，按中性环境处理"
-        ],
-        "invalidators": [
-          "若后续催化未兑现或证据链减弱，需要下调关注度",
-          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
-        ],
-        "evidence_article_ids": [
-          5786
-        ],
-        "evidence_summaries": [
-          "王传福给比亚迪股东们打了把气"
-        ],
-        "data_completeness": 1.0,
-        "source_type": "direct_news",
-        "topic": "新闻直接提及",
-        "theme_topics": [],
-        "evidence_relevance_status": "direct_material_news",
-        "evidence_relevance_reasons": [
-          "material_keyword:涨",
-          "material_keyword:产能",
-          "material_keyword:盈利"
-        ],
-        "historical_calibration_status": "样本不足",
-        "historical_forward_stats": {
-          "sample_count": 0,
-          "horizons": [
-            5,
-            10,
-            20
-          ],
-          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
-        },
-        "stale_opportunity_flag": false,
-        "crowding_flag": false,
-        "fresh_evidence_flag": false,
-        "actionability_passed": false,
-        "actionability_reasons": [
-          "grade_not_actionable",
-          "no_fresh_evidence",
-          "insufficient_independent_confirmation",
-          "cross_verification_conflicted"
-        ],
-        "forward_window": "1-4周",
-        "catalyst_path": [
-          "跟踪个股级直接催化是否继续被主流来源确认",
-          "若后续缺少新增个股证据，需警惕题材已被交易完成"
-        ],
-        "validation_points": [
-          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
-          "观察价格是否继续站稳 20 日均线并维持健康量能"
-        ],
-        "failure_triggers": [
-          "若后续催化未兑现或证据链减弱，需要下调关注度",
-          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
-        ],
-        "evidence_strength": {
-          "direct_mentions": 1,
-          "independent_evidence_count": 0,
-          "source_tier_max": "mainstream",
-          "cross_verification_status": "conflicted",
-          "cross_verified_source_count": 0,
-          "cross_verification_reasons": []
-        },
-        "industry_trend": {
-          "status": "missing",
-          "direction": "flat",
-          "score": 0,
-          "as_of": null,
+          "status": "available",
+          "direction": "up",
+          "score": 2,
+          "as_of": "2026-05-07",
           "source": "local_snapshot"
         }
       },
@@ -1572,9 +1514,9 @@
         "base_grade": "观察",
         "grade": "观察",
         "grade_caps": [],
-        "total_score": 61,
+        "total_score": 55,
         "scores": {
-          "news_catalyst": 23,
+          "news_catalyst": 17,
           "technical": 13,
           "valuation": 10,
           "quality_risk": 12,
@@ -1594,16 +1536,16 @@
           "若价格跌破20日均线且量能同步走弱，技术评分应重算"
         ],
         "evidence_article_ids": [
-          5860,
-          5776,
-          5777,
-          5843
+          5870,
+          5935,
+          5911,
+          5913
         ],
         "evidence_summaries": [
-          "SEC Establishes Joint Data Standards as Required Under the Financial Data Transparency Act of 2022",
-          "全球市场：美股三大指数收盘涨跌不一 纳指涨近1% 半导体板块大涨",
-          "6月9日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
-          "Stock market today: Dow, S&P 500, Nasdaq futures rise as AI trade takes center stage"
+          "抹黑中国，救不了欧洲产业",
+          "56-year-old beloved fast-food chain closes over 700 locations",
+          "U.S. military launches strikes in retaliation for Iran downing helicopter",
+          "Oil prices fall after U.S. Energy secretary says Hormuz ship traffic is increasing"
         ],
         "data_completeness": 1.0,
         "source_type": "theme_mapping",
@@ -1651,106 +1593,6 @@
         ],
         "evidence_strength": {
           "direct_mentions": 0,
-          "independent_evidence_count": 3,
-          "source_tier_max": "official",
-          "cross_verification_status": "weak",
-          "cross_verified_source_count": 3,
-          "cross_verification_reasons": []
-        },
-        "industry_trend": {
-          "status": "available",
-          "direction": "flat",
-          "score": 0,
-          "as_of": "2026-05-07",
-          "source": "local_snapshot"
-        }
-      },
-      {
-        "symbol": "sz000977",
-        "name": "浪潮信息",
-        "industry": "算力基础设施",
-        "candidate_confidence": "medium",
-        "base_grade": "观察",
-        "grade": "观察",
-        "grade_caps": [],
-        "total_score": 60,
-        "scores": {
-          "news_catalyst": 20,
-          "technical": 4,
-          "valuation": 19,
-          "quality_risk": 12,
-          "market_regime": 5
-        },
-        "signals": [
-          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
-          "估值层已纳入行业相对比较"
-        ],
-        "risks": [
-          "估值处于相对合理或偏低区间",
-          "大盘风险偏好一般"
-        ],
-        "invalidators": [
-          "若后续催化未兑现或证据链减弱，需要下调关注度",
-          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
-        ],
-        "evidence_article_ids": [
-          5788,
-          5784,
-          5775,
-          5778
-        ],
-        "evidence_summaries": [
-          "沪指收复4000点，创业板涨近4%，芯片半导体大爆发，双焦大跌、焦煤一度跌停",
-          "36氪首发 | 国内唯一POD材料产业化团队再创业，布局3C与AI芯片散热，技术积累全球领先",
-          "沪指收复4000点 创业板指大涨近4% 逾140只股涨停",
-          "OpenAI官宣已递交IPO申请文件 AI巨头资本大战或全面打响"
-        ],
-        "data_completeness": 1.0,
-        "source_type": "theme_mapping",
-        "topic": "科技与产业主题",
-        "theme_topics": [
-          "科技与产业主题"
-        ],
-        "evidence_relevance_status": "theme_proxy",
-        "evidence_relevance_reasons": [
-          "mapped_from_high_confidence_topic"
-        ],
-        "historical_calibration_status": "样本不足",
-        "historical_forward_stats": {
-          "sample_count": 0,
-          "horizons": [
-            5,
-            10,
-            20
-          ],
-          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
-        },
-        "stale_opportunity_flag": false,
-        "crowding_flag": true,
-        "fresh_evidence_flag": false,
-        "actionability_passed": false,
-        "actionability_reasons": [
-          "grade_not_actionable",
-          "no_fresh_evidence",
-          "stale_or_crowded",
-          "theme_only_not_actionable",
-          "cross_verification_not_confirmed"
-        ],
-        "forward_window": "1-4周",
-        "catalyst_path": [
-          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
-          "若后续缺少新增个股证据，需警惕题材已被交易完成"
-        ],
-        "validation_points": [
-          "等待主题催化转化为个股级新增证据",
-          "观察价格是否继续站稳 20 日均线并维持健康量能"
-        ],
-        "failure_triggers": [
-          "若后续催化未兑现或证据链减弱，需要下调关注度",
-          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
-        ],
-        "evidence_strength": {
-          "direct_mentions": 0,
           "independent_evidence_count": 4,
           "source_tier_max": "mainstream",
           "cross_verification_status": "weak",
@@ -1759,8 +1601,8 @@
         },
         "industry_trend": {
           "status": "available",
-          "direction": "up",
-          "score": 2,
+          "direction": "flat",
+          "score": 0,
           "as_of": "2026-05-07",
           "source": "local_snapshot"
         }
@@ -1773,9 +1615,9 @@
         "base_grade": "观察",
         "grade": "观察",
         "grade_caps": [],
-        "total_score": 58,
+        "total_score": 54,
         "scores": {
-          "news_catalyst": 20,
+          "news_catalyst": 16,
           "technical": 4,
           "valuation": 17,
           "quality_risk": 12,
@@ -1794,16 +1636,16 @@
           "若价格跌破20日均线且量能同步走弱，技术评分应重算"
         ],
         "evidence_article_ids": [
-          5788,
-          5784,
-          5775,
-          5778
+          5950,
+          5883,
+          5875,
+          5880
         ],
         "evidence_summaries": [
-          "沪指收复4000点，创业板涨近4%，芯片半导体大爆发，双焦大跌、焦煤一度跌停",
-          "36氪首发 | 国内唯一POD材料产业化团队再创业，布局3C与AI芯片散热，技术积累全球领先",
-          "沪指收复4000点 创业板指大涨近4% 逾140只股涨停",
-          "OpenAI官宣已递交IPO申请文件 AI巨头资本大战或全面打响"
+          "Federal Reserve Board announces that results from its annual bank stress test will be released on Wednesday, June 24, at",
+          "6月9日晚间沪深上市公司重大事项公告最新快递",
+          "8点1氪丨致3人永久失明，膳魔师紧急召回百万件产品；发布会后苹果市值蒸发超1.587万亿；Anthropic发布最强模型：Claude Fable 5正式上线",
+          "6月10日国内四大证券报纸、重要财经媒体头版头条内容精华摘要"
         ],
         "data_completeness": 1.0,
         "source_type": "theme_mapping",
@@ -1851,10 +1693,10 @@
         ],
         "evidence_strength": {
           "direct_mentions": 0,
-          "independent_evidence_count": 4,
-          "source_tier_max": "mainstream",
+          "independent_evidence_count": 5,
+          "source_tier_max": "official",
           "cross_verification_status": "weak",
-          "cross_verified_source_count": 4,
+          "cross_verified_source_count": 5,
           "cross_verification_reasons": []
         },
         "industry_trend": {
@@ -1864,12 +1706,213 @@
           "as_of": "2026-05-07",
           "source": "local_snapshot"
         }
+      },
+      {
+        "symbol": "sh600519",
+        "name": "贵州茅台",
+        "industry": "白酒",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 50,
+        "scores": {
+          "news_catalyst": 10,
+          "technical": 8,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 3
+        },
+        "signals": [
+          "来自“宏观与流动性”主题映射，适合作为代表标的跟踪",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间",
+          "大盘风险偏好一般"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          5893,
+          5914,
+          5912,
+          5938
+        ],
+        "evidence_summaries": [
+          "“三强三弱“的中国经济：政策如何应对？",
+          "The May inflation numbers are due out Wednesday morning. Here's what to expect",
+          "Super Micro stock tumbles on $7 billion financing plans as company touts AI server orders",
+          "Reddit’s (RDDT) AI Search Push and Ad Momentum Support Bullish Wall Street View"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "宏观与流动性",
+        "theme_topics": [
+          "宏观与流动性"
+        ],
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“宏观与流动性”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 3,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 3,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "flat",
+          "score": 0,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sz000858",
+        "name": "五粮液",
+        "industry": "白酒",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 50,
+        "scores": {
+          "news_catalyst": 10,
+          "technical": 6,
+          "valuation": 19,
+          "quality_risk": 12,
+          "market_regime": 3
+        },
+        "signals": [
+          "来自“宏观与流动性”主题映射，适合作为代表标的跟踪",
+          "MACD 维持多头结构",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间",
+          "大盘风险偏好一般"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          5893,
+          5914,
+          5912,
+          5938
+        ],
+        "evidence_summaries": [
+          "“三强三弱“的中国经济：政策如何应对？",
+          "The May inflation numbers are due out Wednesday morning. Here's what to expect",
+          "Super Micro stock tumbles on $7 billion financing plans as company touts AI server orders",
+          "Reddit’s (RDDT) AI Search Push and Ad Momentum Support Bullish Wall Street View"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "宏观与流动性",
+        "theme_topics": [
+          "宏观与流动性"
+        ],
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“宏观与流动性”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 3,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 3,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "flat",
+          "score": 0,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
       }
     ]
   },
   "judgment_candidates": [
     {
-      "candidate_id": "C03",
+      "candidate_id": "C01",
       "topic": "科技与产业主题",
       "market_scope": [
         "A股",
@@ -1877,56 +1920,56 @@
         "美股"
       ],
       "time_horizon": "2-6周",
-      "evidence_count": 11,
-      "independent_evidence_count": 4,
-      "high_relevance_article_count": 4,
-      "source_tier_max": "mainstream",
-      "original_source_count": 4,
-      "mainstream_or_better_count": 18,
+      "evidence_count": 12,
+      "independent_evidence_count": 5,
+      "high_relevance_article_count": 10,
+      "source_tier_max": "official",
+      "original_source_count": 5,
+      "mainstream_or_better_count": 24,
       "articles": [
         {
-          "id": 5788,
-          "title": "沪指收复4000点，创业板涨近4%，芯片半导体大爆发，双焦大跌、焦煤一度跌停",
-          "source": "华尔街见闻",
-          "summary": "<p>6月9日，A股全天震荡拉升，午后进一步上涨，三大股指集体扩大涨幅，沪指涨超1%，收复4000点，创业板大涨近4%。芯片半导体、算力硬件股集体反弹，光模块、光芯片、光通信等纷纷走强。煤炭、油气、白酒、零售板块走弱。</p> <p>港股全天震荡分化，，恒指午后转涨，尾盘再度翻绿，恒科指一度涨超1%，科网股多数走强，半导体板块反弹，中芯国际、华虹宏力涨幅居前",
-          "source_tier": "mainstream",
+          "id": 5950,
+          "title": "Federal Reserve Board announces that results from its annual bank stress test will be released on Wednesday, June 24, at 4 p.m. EDT.",
+          "source": "Federal Reserve Board",
+          "summary": "Federal Reserve Board announces that results from its annual bank stress test will be released on Wednesday, June 24, at 4 p.m. EDT.",
+          "source_tier": "official",
           "content_quality_status": "full",
-          "published": "Tue, 09 Jun 2026 18:18:58 +0800",
-          "collection_date": "2026-06-09"
+          "published": "Tue, 9 Jun 2026 20:00:00 GMT",
+          "collection_date": "2026-06-10"
         },
         {
-          "id": 5784,
-          "title": "36氪首发 | 国内唯一POD材料产业化团队再创业，布局3C与AI芯片散热，技术积累全球领先",
+          "id": 5883,
+          "title": "6月9日晚间沪深上市公司重大事项公告最新快递",
+          "source": "东方财富网",
+          "summary": "<p> 沪深两市多家上市公司6月9日晚间发布公司公告，以下为重要公告汇总。</p><p> <strong>【品大事】</strong></p><p> <strong><span id=\"stock_0.000997\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.000997\">新大",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 09 Jun 2026 19:32:59 +0800",
+          "collection_date": "2026-06-10"
+        },
+        {
+          "id": 5875,
+          "title": "8点1氪丨致3人永久失明，膳魔师紧急召回百万件产品；发布会后苹果市值蒸发超1.587万亿；Anthropic发布最强模型：Claude Fable 5正式上线",
           "source": "36氪",
-          "summary": "<p>作者&nbsp;|&nbsp;乔钰杰</p> <p>编辑&nbsp;|&nbsp;袁斯来</p> <p>硬氪获悉，苏州墨锋新材料科技有限公司（下称“墨锋科技”）近日完成新一轮千万元融资，由险峰基金、成都科创投集团投资，资金将主要用于产线扩建与产能扩张。</p> <p>墨锋科技成立于2023年，技术源自四川大学近20年高分子材料研究成果，聚焦高性能POD",
+          "summary": "<h2>今日热点导览</h2> <p>清仓美高梅国际持股，何超琼套现逾1.4亿美元</p> <p>任天堂在法国遭2.7亿元重罚</p> <p>王传福回应股价被低估：还没能反映比亚迪潜力</p> <p>5月汽车销量公布：前十已无燃油车</p> <h2>TOP3大新闻</h2> <p><strong>已致3人永久失明，膳魔师紧急召回百万件产品</strong><",
           "source_tier": "mainstream",
           "content_quality_status": "full",
-          "published": "2026-06-09 09:58:22  +0800",
-          "collection_date": "2026-06-09"
+          "published": "2026-06-10 08:08:16  +0800",
+          "collection_date": "2026-06-10"
         },
         {
-          "id": 5775,
-          "title": "沪指收复4000点 创业板指大涨近4% 逾140只股涨停",
+          "id": 5880,
+          "title": "6月10日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
           "source": "东方财富网",
-          "summary": "<p style=\"display: none; height: 1px; overflow: hidden;\"><br /></p><!-- EM_StockImg_Start --><p style=\"text-align: center;\"><a class=\"EmImageRemark\" href=\"http://quote.eastmoney.co",
+          "summary": "<p> 6月10日(星期三)，今日报刊头条主要内容精华如下：</p><h3 class=\"emh3\"> 中国证券报</h3><p> <a href=\"http://finance.eastmoney.com/a/202606103765544859.html\"><strong>两部门：服务业发展资金实施期限至2028年</strong></a></p><p>",
           "source_tier": "mainstream",
           "content_quality_status": "full",
-          "published": "Tue, 09 Jun 2026 15:00:25 +0800",
-          "collection_date": "2026-06-09"
-        },
-        {
-          "id": 5778,
-          "title": "OpenAI官宣已递交IPO申请文件 AI巨头资本大战或全面打响",
-          "source": "东方财富网",
-          "summary": "<p> OpenAI官宣已秘密递交IPO申请，这意味着该公司有望加入<span id=\"bk_90.BK0800\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/90.BK0800\">人工智能</a></span><span id=\"bkquote_90.BK0800\"></span>（",
-          "source_tier": "mainstream",
-          "content_quality_status": "full",
-          "published": "Tue, 09 Jun 2026 05:16:17 +0800",
-          "collection_date": "2026-06-09"
+          "published": "Wed, 10 Jun 2026 06:03:29 +0800",
+          "collection_date": "2026-06-10"
         }
       ],
-      "topic_article_count": 22,
-      "priority_score": 79,
+      "topic_article_count": 28,
+      "priority_score": 96,
       "high_confidence_topic": true
     },
     {
@@ -1939,59 +1982,59 @@
       ],
       "time_horizon": "1-4周",
       "evidence_count": 8,
-      "independent_evidence_count": 3,
-      "high_relevance_article_count": 2,
-      "source_tier_max": "official",
-      "original_source_count": 3,
-      "mainstream_or_better_count": 9,
+      "independent_evidence_count": 4,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "mainstream",
+      "original_source_count": 4,
+      "mainstream_or_better_count": 7,
       "articles": [
         {
-          "id": 5860,
-          "title": "SEC Establishes Joint Data Standards as Required Under the Financial Data Transparency Act of 2022",
-          "source": "美国证监会-新闻发布",
-          "summary": "The U.S. Securities and Exchange Commission established joint data standards under the Financial Data Transparency Act of 2022. The final rule establishes technical standards for d",
-          "source_tier": "official",
-          "content_quality_status": "partial",
-          "published": "Mon, 08 Jun 2026 10:36:00 -0400",
-          "collection_date": "2026-06-09"
-        },
-        {
-          "id": 5776,
-          "title": "全球市场：美股三大指数收盘涨跌不一 纳指涨近1% 半导体板块大涨",
-          "source": "东方财富网",
-          "summary": "<p style=\"text-align: center;\"> <img src=\"https://np-newspic.dfcfw.com/download/D225B753029027CEB60992A8CAC3064EC0_w750h1762.jpg\" /><br /></p><p><span style=\"font-weight: bold;\"> 美",
+          "id": 5870,
+          "title": "抹黑中国，救不了欧洲产业",
+          "source": "中新网",
+          "summary": "近来，西方舆论场上又出现了一波所谓的“中国冲击2.0”论调，言之凿凿地断言中国制造业的“过剩产能”正在威胁全球经济。",
           "source_tier": "mainstream",
           "content_quality_status": "full",
-          "published": "Tue, 09 Jun 2026 06:15:58 +0800",
-          "collection_date": "2026-06-09"
+          "published": "Wed, 10 Jun 2026 08:52:11 +0800",
+          "collection_date": "2026-06-10"
         },
         {
-          "id": 5777,
-          "title": "6月9日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
-          "source": "东方财富网",
-          "summary": "<p> 6月9日(星期二)，今日报刊头条主要内容精华如下：</p><h3 class=\"emh3\"> 中国证券报</h3><p> <a href=\"http://finance.eastmoney.com/a/202606083763853146.html\"><strong>电子布“年内已实现5轮涨价”刷屏 上市公司独家回应</strong></a></p>",
-          "source_tier": "mainstream",
-          "content_quality_status": "full",
-          "published": "Tue, 09 Jun 2026 06:03:15 +0800",
-          "collection_date": "2026-06-09"
-        },
-        {
-          "id": 5843,
-          "title": "Stock market today: Dow, S&P 500, Nasdaq futures rise as AI trade takes center stage",
+          "id": 5935,
+          "title": "56-year-old beloved fast-food chain closes over 700 locations",
           "source": "Yahoo Finance",
           "summary": "N/A",
           "source_tier": "mainstream",
           "content_quality_status": "full",
-          "published": "2026-06-08T22:56:40Z",
-          "collection_date": "2026-06-09"
+          "published": "2026-06-09T00:55:00Z",
+          "collection_date": "2026-06-10"
+        },
+        {
+          "id": 5911,
+          "title": "U.S. military launches strikes in retaliation for Iran downing helicopter",
+          "source": "CNBC",
+          "summary": "The latest clash with Iran over the Strait of Hormuz came as President Donald Trump repeated that a deal with Tehran could be reached within days.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 09 Jun 2026 22:06:45 GMT",
+          "collection_date": "2026-06-10"
+        },
+        {
+          "id": 5913,
+          "title": "Oil prices fall after U.S. Energy secretary says Hormuz ship traffic is increasing",
+          "source": "CNBC",
+          "summary": "President Donald Trump has repeatedly said a deal with Tehran to reopen Hormuz is close, but such an agreement still has not materialized.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 09 Jun 2026 18:50:48 GMT",
+          "collection_date": "2026-06-10"
         }
       ],
       "topic_article_count": 14,
-      "priority_score": 76,
+      "priority_score": 70,
       "high_confidence_topic": true
     },
     {
-      "candidate_id": "C05",
+      "candidate_id": "C03",
       "topic": "宏观与流动性",
       "market_scope": [
         "美股",
@@ -2001,102 +2044,60 @@
         "利率"
       ],
       "time_horizon": "1-4周",
-      "evidence_count": 3,
-      "independent_evidence_count": 2,
-      "high_relevance_article_count": 2,
+      "evidence_count": 5,
+      "independent_evidence_count": 3,
+      "high_relevance_article_count": 5,
       "source_tier_max": "mainstream",
-      "original_source_count": 2,
-      "mainstream_or_better_count": 2,
+      "original_source_count": 3,
+      "mainstream_or_better_count": 6,
       "articles": [
         {
-          "id": 5813,
-          "title": "51% of U.S. adults say the American Dream is out of reach for most people right now: CNBC survey",
-          "source": "CNBC",
-          "summary": "In an exclusive CNBC survey, 81% of respondents said the cost of living is their biggest financial hurdle to achieving the American Dream.",
-          "source_tier": "mainstream",
-          "content_quality_status": "full",
-          "published": "Tue, 09 Jun 2026 10:30:01 GMT",
-          "collection_date": "2026-06-09"
-        },
-        {
-          "id": 5793,
-          "title": "AI、货币政策与格林斯潘的1996（中）",
+          "id": 5893,
+          "title": "“三强三弱“的中国经济：政策如何应对？",
           "source": "FT中文网",
-          "summary": "陈稻田：AI总体上趋于导致工资增速的下降、劳动收入份额的下降，这和流行的“K型”经济假说相一致。AI对失业率的影响则有正有负，如何看待其冲击？",
+          "summary": "沈建光：从短期看，货币与财政政策应该为提振总需求做好准备；就中期看，还需要大力推进体制改革，加大投资于人的力度。",
           "source_tier": "mainstream",
           "content_quality_status": "full",
-          "published": "Mon, 08 Jun 2026 16:00:00 GMT",
-          "collection_date": "2026-06-09"
+          "published": "Tue, 09 Jun 2026 16:00:00 GMT",
+          "collection_date": "2026-06-10"
         },
         {
-          "id": 5831,
-          "title": "Since Lockdowns, A 12% GDP Loss; Half Of US Dollar Purchasing Power Stolen",
-          "source": "ZeroHedge",
-          "summary": "<span class=\"field field--name-title field--type-string field--label-hidden\">Since Lockdowns, A 12% GDP Loss; Half Of US Dollar Purchasing Power Stolen</span> <div class=\"clearfix ",
-          "source_tier": "aggregator",
+          "id": 5914,
+          "title": "The May inflation numbers are due out Wednesday morning. Here's what to expect",
+          "source": "CNBC",
+          "summary": "If the Wall Street consensus is correct, the consumer price index is expected to show inflation running at a 4.2% annual rate.",
+          "source_tier": "mainstream",
           "content_quality_status": "full",
-          "published": "Tue, 09 Jun 2026 10:30:00 +0000",
-          "collection_date": "2026-06-09"
+          "published": "Tue, 09 Jun 2026 19:49:59 GMT",
+          "collection_date": "2026-06-10"
+        },
+        {
+          "id": 5912,
+          "title": "Super Micro stock tumbles on $7 billion financing plans as company touts AI server orders",
+          "source": "CNBC",
+          "summary": "Super Micro is the latest company tied to the AI boom to announce that it's tapping the capital markets.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 09 Jun 2026 22:29:25 GMT",
+          "collection_date": "2026-06-10"
+        },
+        {
+          "id": 5938,
+          "title": "Reddit’s (RDDT) AI Search Push and Ad Momentum Support Bullish Wall Street View",
+          "source": "Yahoo Finance",
+          "summary": "N/A",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-06-08T13:08:55Z",
+          "collection_date": "2026-06-10"
         }
       ],
-      "topic_article_count": 3,
-      "priority_score": 47,
+      "topic_article_count": 6,
+      "priority_score": 57,
       "high_confidence_topic": true
     },
     {
       "candidate_id": "C06",
-      "topic": "风险事件",
-      "market_scope": [
-        "A股",
-        "港股",
-        "美股",
-        "商品"
-      ],
-      "time_horizon": "1-3周",
-      "evidence_count": 3,
-      "independent_evidence_count": 1,
-      "high_relevance_article_count": 1,
-      "source_tier_max": "mainstream",
-      "original_source_count": 1,
-      "mainstream_or_better_count": 3,
-      "articles": [
-        {
-          "id": 5791,
-          "title": "如何理解国民党主席郑丽文在两岸问题上的新言论？",
-          "source": "FT中文网",
-          "summary": "林原：郑丽文试图在国际社会塑造“和平维护者”“和平巩固者”形象。她访美也旨在说明国民党“维护台海和平、支持区域稳定”等立场。",
-          "source_tier": "mainstream",
-          "content_quality_status": "full",
-          "published": "Mon, 08 Jun 2026 16:00:00 GMT",
-          "collection_date": "2026-06-09"
-        },
-        {
-          "id": 5782,
-          "title": "康养地产的“闭环”，北京山谷找到了",
-          "source": "36氪",
-          "summary": "<p>当一个行业的概念产出远超实际交付时，外界的审视就变得格外重要。</p> <p>环京康养地产就是典型。过去几年，打着康养旗号的项目遍地开花。但绝大多数最终倒在同一个地方——交付。配套缩水、运营停滞、社区空置，成了这个赛道的常态。</p> <p>但这不代表市场没有需求。恰恰相反，北京康养市场的供需矛盾相当尖锐。据《北京市老龄事业发展报告（2024）》，20",
-          "source_tier": "mainstream",
-          "content_quality_status": "full",
-          "published": "2026-06-09 14:19:43  +0800",
-          "collection_date": "2026-06-09"
-        },
-        {
-          "id": 5771,
-          "title": "15台国产工程机械从广西北部湾港启航 驶向阿曼",
-          "source": "中新网",
-          "summary": "中新网钦州6月9日电 (李浩宇 黄荣冠 玉升辰)广西北部湾国际港务集团9日介绍，近日“芙蓉松”轮从北部湾港钦州港区大榄坪作业区北1号泊位启航，驶向阿曼杜克姆，船内装载了“中国智造”三一重工生产的一批挖掘机、装载机、正面吊等工程机械。这也是三一重工首次在北部湾港开展装载业务作业。",
-          "source_tier": "mainstream",
-          "content_quality_status": "partial",
-          "published": "Tue, 9 Jun 2026 18:08:18 +0800",
-          "collection_date": "2026-06-09"
-        }
-      ],
-      "topic_article_count": 3,
-      "priority_score": 43,
-      "high_confidence_topic": false
-    },
-    {
-      "candidate_id": "C07",
       "topic": "其他观察",
       "market_scope": [
         "A股",
@@ -2104,60 +2105,40 @@
         "美股"
       ],
       "time_horizon": "1-2周",
-      "evidence_count": 3,
+      "evidence_count": 2,
       "independent_evidence_count": 1,
       "high_relevance_article_count": 0,
       "source_tier_max": "mainstream",
       "original_source_count": 1,
-      "mainstream_or_better_count": 4,
+      "mainstream_or_better_count": 2,
       "articles": [
         {
-          "id": 5770,
-          "title": "“人宠共生”绿道投用 吉林多业态激活宠物经济新动能",
-          "source": "中新网",
-          "summary": "中新网吉林6月9日电 (记者 苍雁 石洪宇)记者9日探访吉林市最新启用的首条“人宠共生”南山慢行绿道看到，不少市民、游客携宠物在此休闲漫步。全线配套宠物乐园、多处萌宠主题休闲广场，该绿道已成为“北国江城”新晋文旅打卡地标。",
-          "source_tier": "mainstream",
-          "content_quality_status": "full",
-          "published": "Tue, 9 Jun 2026 18:45:40 +0800",
-          "collection_date": "2026-06-09"
-        },
-        {
-          "id": 5817,
-          "title": "SpaceX's stock market blast-off could be Musk's biggest gamble yet",
+          "id": 5916,
+          "title": "How to enjoy the World Cup - and keep your boss on side",
           "source": "BBC全球经济",
-          "summary": "SpaceX is preparing for a stock market debut that could transform the company, the wider market and Elon Musk's fortune.",
+          "summary": "Football fans and bosses share their strategies to balance late night kick offs with work the next day.",
           "source_tier": "mainstream",
           "content_quality_status": "partial",
-          "published": "Mon, 08 Jun 2026 23:22:17 GMT",
-          "collection_date": "2026-06-09"
+          "published": "Tue, 09 Jun 2026 23:03:08 GMT",
+          "collection_date": "2026-06-10"
         },
         {
-          "id": 5816,
-          "title": "Driving test booking rules tightened after thousands of no shows",
-          "source": "BBC全球经济",
-          "summary": "Learner drivers can only swap their test to the three centres nearest to their original booking.",
-          "source_tier": "mainstream",
-          "content_quality_status": "summary_only",
-          "published": "Mon, 08 Jun 2026 23:05:32 GMT",
-          "collection_date": "2026-06-09"
-        },
-        {
-          "id": 5837,
-          "title": "I’m 60, retired with $3 million. My fiancée, 55, has $1 million but plans to work for the next 10 years. Are we compatible?",
+          "id": 5934,
+          "title": "AST SpaceMobile’s stock experiences rocky trading as SpaceX plans to launch its satellites into orbit",
           "source": "MarketWatch",
-          "summary": "“Although she is quite frugal, she has not been particularly diligent with investing.”",
+          "summary": "The company is developing a space-based broadband cellular network that could rival Elon Musk’s Starlink.",
           "source_tier": "mainstream",
           "content_quality_status": "summary_only",
-          "published": "Tue, 09 Jun 2026 10:15:00 GMT",
-          "collection_date": "2026-06-09"
+          "published": "Tue, 09 Jun 2026 21:55:00 GMT",
+          "collection_date": "2026-06-10"
         }
       ],
-      "topic_article_count": 4,
-      "priority_score": 43,
+      "topic_article_count": 2,
+      "priority_score": 40,
       "high_confidence_topic": false
     },
     {
-      "candidate_id": "C01",
+      "candidate_id": "C02",
       "topic": "汇率与大宗",
       "market_scope": [
         "汇率",
@@ -2167,49 +2148,39 @@
       ],
       "time_horizon": "1-3周",
       "evidence_count": 2,
-      "independent_evidence_count": 1,
+      "independent_evidence_count": 0,
       "high_relevance_article_count": 2,
       "source_tier_max": "mainstream",
-      "original_source_count": 1,
-      "mainstream_or_better_count": 3,
+      "original_source_count": 0,
+      "mainstream_or_better_count": 2,
       "articles": [
         {
-          "id": 5790,
-          "title": "崇高美学之追寻：纪念袁运生",
-          "source": "FT中文网",
-          "summary": "赵寻：指出袁对崇高之美的情有独钟与毕生追寻，将使他绘画中的世界主义倾向更早被人发现，更将使他对中国艺术传统的运用不至于被国家主义利用。",
+          "id": 5886,
+          "title": "如果霍尔木兹海峡“永远回不到过去”",
+          "source": "华尔街见闻",
+          "summary": "<p style=\"text-align: left;\">布伦特原油自5月中旬以来已累计下跌近20美元/桶，市场在押注美伊谈判将带来转机。但停火是一回事，航道恢复冲突前的自由通行是另一回事。</p> <p style=\"text-align: left;\">汇丰银行大宗商品研究Kim Fustier分析师团队最新发布研究提出一个核心问题：</p> <bloc",
           "source_tier": "mainstream",
           "content_quality_status": "full",
-          "published": "Mon, 08 Jun 2026 16:00:00 GMT",
-          "collection_date": "2026-06-09"
+          "published": "Wed, 10 Jun 2026 08:21:35 +0800",
+          "collection_date": "2026-06-10"
         },
         {
-          "id": 5789,
-          "title": "特朗普：美伊协议可能在“两三天内”达成，霍尔木兹将“立即”重开",
-          "source": "华尔街见闻",
-          "summary": "<p style=\"text-align: left;\">美伊局势牵动全球市场神经，特朗普称美伊谈判进入“最后关头”，将在“两到三天内”达成协议。</p> <p style=\"text-align: left;\">据新华社，特朗普9日在纽约肯尼迪国际机场接受记者采访时说，以色列和伊朗此前“来回交锋”，如今“同意停火”，“我们正处在最后关头，将达成一份非常、非",
+          "id": 5874,
+          "title": "“双子星”联手，东北格局要变？",
+          "source": "中新网",
+          "summary": "每经记者｜刘旭强",
           "source_tier": "mainstream",
           "content_quality_status": "full",
-          "published": "Tue, 09 Jun 2026 17:54:22 +0800",
-          "collection_date": "2026-06-09"
-        },
-        {
-          "id": 5785,
-          "title": "37次“即将达成”！特朗普不断预告伊朗协议，却一次次落空",
-          "source": "华尔街见闻",
-          "summary": "<p style=\"text-align: left;\">当地时间6月9日，特朗普再度表示，美伊谈判已进入“最后关头”。</p> <p style=\"text-align: left;\">据新华社，特朗普9日在纽约肯尼迪国际机场接受记者采访时说，“我们正处在最后关头，将达成一份非常、非常棒的协议”。<strong>当被问及谈判还需耗时多久，特朗普回答：“两到",
-          "source_tier": "mainstream",
-          "content_quality_status": "full",
-          "published": "Tue, 09 Jun 2026 18:58:01 +0800",
-          "collection_date": "2026-06-09"
+          "published": "Wed, 10 Jun 2026 07:16:17 +0800",
+          "collection_date": "2026-06-10"
         }
       ],
-      "topic_article_count": 3,
-      "priority_score": 40,
+      "topic_article_count": 2,
+      "priority_score": 36,
       "high_confidence_topic": false
     },
     {
-      "candidate_id": "C02",
+      "candidate_id": "C05",
       "topic": "财报与公司经营",
       "market_scope": [
         "A股",
@@ -2217,563 +2188,519 @@
         "美股"
       ],
       "time_horizon": "1-2周",
-      "evidence_count": 3,
+      "evidence_count": 1,
       "independent_evidence_count": 0,
-      "high_relevance_article_count": 3,
+      "high_relevance_article_count": 1,
       "source_tier_max": "mainstream",
       "original_source_count": 0,
-      "mainstream_or_better_count": 3,
+      "mainstream_or_better_count": 1,
       "articles": [
         {
-          "id": 5780,
-          "title": "累计在轨23万小时零失效，星载光电赛道跑出一匹黑马｜36氪首发",
-          "source": "36氪",
-          "summary": "<p>文&nbsp;|&nbsp;阿至</p> <p>封面来源｜Pexels</p> <p>星载组合光纤放大器，一个藏在卫星激光通信终端里的“隐形赛道”，随着国内低轨星座进入规模化部署倒计时，正在悄然升温。</p> <p>36氪获悉，星载光电核心部组件供应商天津寰宇星通科技有限公司（以下简称“寰宇星通”）<strong>近期已完成数千万元Pre-A+轮融资，",
+          "id": 5882,
+          "title": "6月9日晚间上市公司利好消息一览(附名单)",
+          "source": "东方财富网",
+          "summary": "<p> 沪深两市多家上市公司6月9日晚间发布重要公告，以下为利好的消息汇总：</p><p> <strong><span id=\"stock_0.000997\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.000997\">新大陆</a></span><span id=\"quote_0",
           "source_tier": "mainstream",
           "content_quality_status": "full",
-          "published": "2026-06-09 18:51:58  +0800",
-          "collection_date": "2026-06-09"
-        },
-        {
-          "id": 5786,
-          "title": "王传福给比亚迪股东们打了把气",
-          "source": "华尔街见闻",
-          "summary": "<div> <p style=\"text-align: right;\"><span>作者 | 周智宇</span></p> <p>中国新能源汽车市场在经历了数年高速增长后，进入了一段不那么舒服的调整期。</p> <p>曾经凭借技术代差一路领跑的比亚迪，如今面对的是一群正快速拉平差距的追赶者。2026年5月，零跑首次月销量突破8万辆，同比增速超过80%，小米稳",
-          "source_tier": "mainstream",
-          "content_quality_status": "full",
-          "published": "Tue, 09 Jun 2026 18:40:08 +0800",
-          "collection_date": "2026-06-09"
-        },
-        {
-          "id": 5773,
-          "title": "机器人没有一部手机贵了",
-          "source": "中新网",
-          "summary": "中新经纬6月9日电 (谢婧雯)近日，多个机器人品牌官宣发布新品，价格相较一年前“大跳水”。甚至有机型官方定价不到万元，几乎和一部高端手机售价持平。",
-          "source_tier": "mainstream",
-          "content_quality_status": "full",
-          "published": "Tue, 9 Jun 2026 17:44:46 +0800",
-          "collection_date": "2026-06-09"
+          "published": "Tue, 09 Jun 2026 20:38:35 +0800",
+          "collection_date": "2026-06-10"
         }
       ],
-      "topic_article_count": 3,
-      "priority_score": 39,
+      "topic_article_count": 1,
+      "priority_score": 33,
       "high_confidence_topic": false
     }
   ],
   "data_quality_stats": {
     "counts": {
-      "full": 39,
-      "partial": 13,
-      "summary_only": 3,
-      "other": 7
+      "full": 41,
+      "partial": 7,
+      "summary_only": 6,
+      "other": 5
     },
     "ratios": {
-      "full": 62.903225806451616,
-      "partial": 20.967741935483872,
-      "summary_only": 4.838709677419355,
-      "other": 11.29032258064516
+      "full": 69.49152542372882,
+      "partial": 11.864406779661017,
+      "summary_only": 10.16949152542373,
+      "other": 8.47457627118644
     },
-    "total": 62
+    "total": 59
   },
   "source_references": {
     "required": true,
     "article_ids": [
-      5785,
-      5786,
-      5787,
-      5788,
-      5789,
-      5780,
-      5775,
-      5781,
-      5820,
-      5830,
-      5831,
-      5832,
-      5833,
-      5782,
-      5783,
-      5784,
-      5812,
-      5813,
-      5811,
-      5810,
-      5834,
-      5776,
-      5777,
-      5821,
-      5822,
-      5823,
-      5824,
-      5770,
-      5771,
-      5773,
-      5778,
-      5779,
-      5814,
-      5840,
-      5841,
-      5842,
-      5844,
-      5772,
-      5774,
-      5817,
-      5843,
-      5790,
-      5791,
-      5793,
-      5836,
-      5794,
-      5860,
-      5835,
-      5837,
-      5838,
-      5839,
-      5815,
-      5818,
-      5845,
-      5846,
-      5847,
-      5848,
-      5849,
-      5816,
-      5805,
-      5806,
-      5792
+      5885,
+      5886,
+      5887,
+      5888,
+      5889,
+      5875,
+      5880,
+      5925,
+      5926,
+      5927,
+      5928,
+      5929,
+      5876,
+      5870,
+      5912,
+      5911,
+      5881,
+      5920,
+      5882,
+      5883,
+      5921,
+      5922,
+      5923,
+      5924,
+      5877,
+      5872,
+      5873,
+      5874,
+      5950,
+      5910,
+      5914,
+      5913,
+      5871,
+      5890,
+      5891,
+      5892,
+      5893,
+      5935,
+      5937,
+      5938,
+      5936,
+      5931,
+      5917,
+      5918,
+      5916,
+      5915,
+      5932,
+      5933,
+      5934,
+      5941,
+      5919,
+      5894,
+      5930,
+      5940,
+      5942,
+      5943,
+      5905,
+      5944,
+      5939
     ],
     "articles": [
       {
-        "article_id": 5785,
+        "article_id": 5885,
         "source": "华尔街见闻",
-        "title": "37次“即将达成”！特朗普不断预告伊朗协议，却一次次落空",
-        "published": "Tue, 09 Jun 2026 18:58:01 +0800",
+        "title": "月销前十首次没有燃油车",
+        "published": "Wed, 10 Jun 2026 08:54:02 +0800",
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5786,
+        "article_id": 5886,
         "source": "华尔街见闻",
-        "title": "王传福给比亚迪股东们打了把气",
-        "published": "Tue, 09 Jun 2026 18:40:08 +0800",
+        "title": "如果霍尔木兹海峡“永远回不到过去”",
+        "published": "Wed, 10 Jun 2026 08:21:35 +0800",
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5787,
+        "article_id": 5887,
         "source": "华尔街见闻",
-        "title": "美股刚松口气，技术派就泼冷水：周一反弹只是“死猫跳”而已！",
-        "published": "Tue, 09 Jun 2026 18:30:54 +0800",
+        "title": "Token烧不动了？这可能是全市场最重要的一张图",
+        "published": "Wed, 10 Jun 2026 08:18:04 +0800",
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5788,
+        "article_id": 5888,
         "source": "华尔街见闻",
-        "title": "沪指收复4000点，创业板涨近4%，芯片半导体大爆发，双焦大跌、焦煤一度跌停",
-        "published": "Tue, 09 Jun 2026 18:18:58 +0800",
+        "title": "拉高股价？SpaceX上市15天后，预计指数基金将持有30%流通股！",
+        "published": "Wed, 10 Jun 2026 08:02:56 +0800",
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5789,
+        "article_id": 5889,
         "source": "华尔街见闻",
-        "title": "特朗普：美伊协议可能在“两三天内”达成，霍尔木兹将“立即”重开",
-        "published": "Tue, 09 Jun 2026 17:54:22 +0800",
+        "title": "新Siri将引发换机潮，市场低估了苹果？",
+        "published": "Wed, 10 Jun 2026 08:01:44 +0800",
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5780,
+        "article_id": 5875,
         "source": "36氪",
-        "title": "累计在轨23万小时零失效，星载光电赛道跑出一匹黑马｜36氪首发",
-        "published": "2026-06-09 18:51:58  +0800",
+        "title": "8点1氪丨致3人永久失明，膳魔师紧急召回百万件产品；发布会后苹果市值蒸发超1.587万亿；Anthropic发布最强模型：Claude Fable 5正式上线",
+        "published": "2026-06-10 08:08:16  +0800",
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5775,
+        "article_id": 5880,
         "source": "东方财富网",
-        "title": "沪指收复4000点 创业板指大涨近4% 逾140只股涨停",
-        "published": "Tue, 09 Jun 2026 15:00:25 +0800",
+        "title": "6月10日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "published": "Wed, 10 Jun 2026 06:03:29 +0800",
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5781,
+        "article_id": 5925,
+        "source": "ZeroHedge",
+        "title": "Memos Show Anti-Trump Nonprofit Assisted State Prosecutions Of Trump Supporters",
+        "published": "Wed, 10 Jun 2026 00:55:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5926,
+        "source": "ZeroHedge",
+        "title": "Mystery Car Bombing Near Moscow May Have Taken Out A Top General",
+        "published": "Wed, 10 Jun 2026 00:30:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5927,
+        "source": "ZeroHedge",
+        "title": "4 California School Districts Under DoJ Review Over Gender Ideology, Sex Ed Policies",
+        "published": "Wed, 10 Jun 2026 00:05:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5928,
+        "source": "ZeroHedge",
+        "title": "Kuwait Turns To Anduril For $2 Billion Counter-Drone Shield After Horrifying Airport Attack",
+        "published": "Tue, 09 Jun 2026 23:40:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5929,
+        "source": "ZeroHedge",
+        "title": "Bitcoin Perps' Algorithmic '0.01%' Scythe: How The Funding-Rate Mechanism Explains Your \"Mystery\" Liquidations",
+        "published": "Tue, 09 Jun 2026 23:15:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5876,
         "source": "36氪",
-        "title": "登顶GitHub Hacker News，这个开源项目让AI编程成本降低 98%｜涌现新项目",
-        "published": "2026-06-09 15:53:19  +0800",
+        "title": "在反外挂前线，游戏厂商开启了“军备竞赛”",
+        "published": "2026-06-09 22:48:11  +0800",
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5820,
+        "article_id": 5870,
+        "source": "中新网",
+        "title": "抹黑中国，救不了欧洲产业",
+        "published": "Wed, 10 Jun 2026 08:52:11 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5912,
+        "source": "CNBC",
+        "title": "Super Micro stock tumbles on $7 billion financing plans as company touts AI server orders",
+        "published": "Tue, 09 Jun 2026 22:29:25 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5911,
+        "source": "CNBC",
+        "title": "U.S. military launches strikes in retaliation for Iran downing helicopter",
+        "published": "Tue, 09 Jun 2026 22:06:45 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5881,
+        "source": "东方财富网",
+        "title": "6月9日东方财富财经晚报（附新闻联播）",
+        "published": "Tue, 09 Jun 2026 21:00:58 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5920,
         "source": "ETF Trends",
-        "title": "2026 Midstream M&A: Deal Flow Slows",
-        "published": "Tue, 09 Jun 2026 11:00:08 +0000",
+        "title": "Week of June 1’s Top Stories Covered SpaceX IPO, First Autism ETF",
+        "published": "Tue, 09 Jun 2026 20:42:08 +0000",
         "source_tier": "aggregator"
       },
       {
-        "article_id": 5830,
-        "source": "ZeroHedge",
-        "title": "Goldman Hikes Obesity Drug Market Forecast As Oral GLP-1s Go Mass Market",
-        "published": "Tue, 09 Jun 2026 10:55:00 +0000",
+        "article_id": 5882,
+        "source": "东方财富网",
+        "title": "6月9日晚间上市公司利好消息一览(附名单)",
+        "published": "Tue, 09 Jun 2026 20:38:35 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5883,
+        "source": "东方财富网",
+        "title": "6月9日晚间沪深上市公司重大事项公告最新快递",
+        "published": "Tue, 09 Jun 2026 19:32:59 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5921,
+        "source": "ETF Trends",
+        "title": "QINT Stands Out Amid International Interest",
+        "published": "Tue, 09 Jun 2026 19:22:53 +0000",
         "source_tier": "aggregator"
       },
       {
-        "article_id": 5831,
-        "source": "ZeroHedge",
-        "title": "Since Lockdowns, A 12% GDP Loss; Half Of US Dollar Purchasing Power Stolen",
-        "published": "Tue, 09 Jun 2026 10:30:00 +0000",
+        "article_id": 5922,
+        "source": "ETF Trends",
+        "title": "NEOS Talks Tax-Efficient Approach to Options-Based Income ETFs",
+        "published": "Tue, 09 Jun 2026 19:06:23 +0000",
         "source_tier": "aggregator"
       },
       {
-        "article_id": 5832,
-        "source": "ZeroHedge",
-        "title": "These Are The World's Most Prosperous Countries",
-        "published": "Tue, 09 Jun 2026 09:45:00 +0000",
+        "article_id": 5923,
+        "source": "ETF Trends",
+        "title": "Top Performing Leveraged/Inverse ETFs: 06/07/2026",
+        "published": "Tue, 09 Jun 2026 18:28:13 +0000",
         "source_tier": "aggregator"
       },
       {
-        "article_id": 5833,
-        "source": "ZeroHedge",
-        "title": "5 Future Scenarios For Post-Conflict Iran",
-        "published": "Tue, 09 Jun 2026 09:00:00 +0000",
+        "article_id": 5924,
+        "source": "ETF Trends",
+        "title": "S&P Shake-Up: Marvell Technology & Flex to Join the S&P 500",
+        "published": "Tue, 09 Jun 2026 18:22:41 +0000",
         "source_tier": "aggregator"
       },
       {
-        "article_id": 5782,
+        "article_id": 5877,
         "source": "36氪",
-        "title": "康养地产的“闭环”，北京山谷找到了",
-        "published": "2026-06-09 14:19:43  +0800",
+        "title": "氪星晚报 ｜腾讯、阿里等入股脑机接口研发商阶梯医疗；飞猪：端午假期入境游预订量同比增长超6倍；1—5月全国期货市场累计成交额同比增长40.13%",
+        "published": "2026-06-09 20:48:30  +0800",
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5783,
-        "source": "36氪",
-        "title": "硬氪观察 | WWDC 2026：苹果终于在AI上迈出一小步，国内iPhone还是用不上",
-        "published": "2026-06-09 11:01:37  +0800",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5784,
-        "source": "36氪",
-        "title": "36氪首发 | 国内唯一POD材料产业化团队再创业，布局3C与AI芯片散热，技术积累全球领先",
-        "published": "2026-06-09 09:58:22  +0800",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5812,
-        "source": "CNBC",
-        "title": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet",
-        "published": "Tue, 09 Jun 2026 11:10:08 GMT",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5813,
-        "source": "CNBC",
-        "title": "51% of U.S. adults say the American Dream is out of reach for most people right now: CNBC survey",
-        "published": "Tue, 09 Jun 2026 10:30:01 GMT",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5811,
-        "source": "CNBC",
-        "title": "Nuvalent shares surge 39% after UK's GSK agrees to buy the cancer drugmaker for $10.6 billion",
-        "published": "Tue, 09 Jun 2026 10:13:52 GMT",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5810,
-        "source": "CNBC",
-        "title": "Trump says Iran deal could be reached in 'two or three days' and Strait of Hormuz will reopen 'immediately'",
-        "published": "Tue, 09 Jun 2026 09:56:44 GMT",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5834,
-        "source": "ZeroHedge",
-        "title": "Watch: French Fighter Jets Shoot Down Kamikaze Drone Over Latvia",
-        "published": "Tue, 09 Jun 2026 08:15:00 +0000",
-        "source_tier": "aggregator"
-      },
-      {
-        "article_id": 5776,
-        "source": "东方财富网",
-        "title": "全球市场：美股三大指数收盘涨跌不一 纳指涨近1% 半导体板块大涨",
-        "published": "Tue, 09 Jun 2026 06:15:58 +0800",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5777,
-        "source": "东方财富网",
-        "title": "6月9日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
-        "published": "Tue, 09 Jun 2026 06:03:15 +0800",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5821,
-        "source": "ETF Trends",
-        "title": "World Markets Watchlist: June 8, 2026",
-        "published": "Mon, 08 Jun 2026 21:03:21 +0000",
-        "source_tier": "aggregator"
-      },
-      {
-        "article_id": 5822,
-        "source": "ETF Trends",
-        "title": "American Century’s Greenblath Talks Spring Corporate Bond Shifts",
-        "published": "Mon, 08 Jun 2026 19:20:28 +0000",
-        "source_tier": "aggregator"
-      },
-      {
-        "article_id": 5823,
-        "source": "ETF Trends",
-        "title": "VIDEO: ETF of the Week: CSHI",
-        "published": "Mon, 08 Jun 2026 18:35:30 +0000",
-        "source_tier": "aggregator"
-      },
-      {
-        "article_id": 5824,
-        "source": "ETF Trends",
-        "title": "Apple’s WWDC 2026 Creates Buy Opportunity for XLK",
-        "published": "Mon, 08 Jun 2026 18:21:29 +0000",
-        "source_tier": "aggregator"
-      },
-      {
-        "article_id": 5770,
+        "article_id": 5872,
         "source": "中新网",
-        "title": "“人宠共生”绿道投用 吉林多业态激活宠物经济新动能",
-        "published": "Tue, 9 Jun 2026 18:45:40 +0800",
+        "title": "产品迭代、场景创新……儿童消费市场“长高”了",
+        "published": "Wed, 10 Jun 2026 07:44:27 +0800",
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5771,
+        "article_id": 5873,
         "source": "中新网",
-        "title": "15台国产工程机械从广西北部湾港启航 驶向阿曼",
-        "published": "Tue, 9 Jun 2026 18:08:18 +0800",
+        "title": "美股收盘：大型科技股普跌，苹果跌超3%；芯片股多数下跌，ARM跌逾6%",
+        "published": "Wed, 10 Jun 2026 07:33:38 +0800",
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5773,
+        "article_id": 5874,
         "source": "中新网",
-        "title": "机器人没有一部手机贵了",
-        "published": "Tue, 9 Jun 2026 17:44:46 +0800",
+        "title": "“双子星”联手，东北格局要变？",
+        "published": "Wed, 10 Jun 2026 07:16:17 +0800",
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5778,
-        "source": "东方财富网",
-        "title": "OpenAI官宣已递交IPO申请文件 AI巨头资本大战或全面打响",
-        "published": "Tue, 09 Jun 2026 05:16:17 +0800",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5779,
-        "source": "东方财富网",
-        "title": "金融监管总局：整治无序竞争 多渠道补充资本",
-        "published": "Tue, 09 Jun 2026 04:52:45 +0800",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5814,
-        "source": "CNBC",
-        "title": "Apple partnering with Google and Nvidia for most advanced AI model",
-        "published": "Mon, 08 Jun 2026 21:12:45 GMT",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5840,
-        "source": "Yahoo Finance",
-        "title": "G-III reports ‘better-than-expected’ Q1 2027",
-        "published": "2026-06-09T11:01:10Z",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5841,
-        "source": "Yahoo Finance",
-        "title": "Gold prices today, Tuesday, June 9: Prices settling into a lower range ahead of inflation reports",
-        "published": "2026-06-09T10:57:21Z",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5842,
-        "source": "Yahoo Finance",
-        "title": "The $600/month Medicare mistake too many 65-year-old retirees make. Don’t fall for the same trap",
-        "published": "2026-06-09T10:55:00Z",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5844,
-        "source": "Yahoo Finance",
-        "title": "Morning Bid: Buy the chip",
-        "published": "2026-06-09T10:33:51Z",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5772,
-        "source": "中新网",
-        "title": "香港媒体达人海南采风：逐梦航天，共探自贸港新机遇",
-        "published": "Tue, 9 Jun 2026 18:00:07 +0800",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5774,
-        "source": "中新网",
-        "title": "全国已规划建设国家质检中心880家 解决技术难题近两千项",
-        "published": "Tue, 9 Jun 2026 17:35:54 +0800",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5817,
-        "source": "BBC全球经济",
-        "title": "SpaceX's stock market blast-off could be Musk's biggest gamble yet",
-        "published": "Mon, 08 Jun 2026 23:22:17 GMT",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5843,
-        "source": "Yahoo Finance",
-        "title": "Stock market today: Dow, S&P 500, Nasdaq futures rise as AI trade takes center stage",
-        "published": "2026-06-08T22:56:40Z",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5790,
-        "source": "FT中文网",
-        "title": "崇高美学之追寻：纪念袁运生",
-        "published": "Mon, 08 Jun 2026 16:00:00 GMT",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5791,
-        "source": "FT中文网",
-        "title": "如何理解国民党主席郑丽文在两岸问题上的新言论？",
-        "published": "Mon, 08 Jun 2026 16:00:00 GMT",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5793,
-        "source": "FT中文网",
-        "title": "AI、货币政策与格林斯潘的1996（中）",
-        "published": "Mon, 08 Jun 2026 16:00:00 GMT",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5836,
-        "source": "MarketWatch",
-        "title": "A massive 16% market swing just rocked South Korea over 24 hours. The retail ‘ants’ holding the wheel are driving dangerously.",
-        "published": "Tue, 09 Jun 2026 10:16:00 GMT",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5794,
-        "source": "FT中文网",
-        "title": "古巴裔美国人怀念不再存在的故乡",
-        "published": "Mon, 08 Jun 2026 16:00:00 GMT",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5860,
-        "source": "美国证监会-新闻发布",
-        "title": "SEC Establishes Joint Data Standards as Required Under the Financial Data Transparency Act of 2022",
-        "published": "Mon, 08 Jun 2026 10:36:00 -0400",
+        "article_id": 5950,
+        "source": "Federal Reserve Board",
+        "title": "Federal Reserve Board announces that results from its annual bank stress test will be released on Wednesday, June 24, at 4 p.m. EDT.",
+        "published": "Tue, 9 Jun 2026 20:00:00 GMT",
         "source_tier": "official"
       },
       {
-        "article_id": 5835,
-        "source": "MarketWatch",
-        "title": "How a former lawyer is beating the stock market with these 11 picks",
-        "published": "Tue, 09 Jun 2026 10:59:00 GMT",
+        "article_id": 5910,
+        "source": "CNBC",
+        "title": "SpaceX IPO explained: The price is set, but retail allocation still up in the air",
+        "published": "Tue, 09 Jun 2026 20:43:46 GMT",
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5837,
-        "source": "MarketWatch",
-        "title": "I’m 60, retired with $3 million. My fiancée, 55, has $1 million but plans to work for the next 10 years. Are we compatible?",
-        "published": "Tue, 09 Jun 2026 10:15:00 GMT",
+        "article_id": 5914,
+        "source": "CNBC",
+        "title": "The May inflation numbers are due out Wednesday morning. Here's what to expect",
+        "published": "Tue, 09 Jun 2026 19:49:59 GMT",
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5838,
-        "source": "MarketWatch",
-        "title": "The latest rally may be only a dead-cat bounce, warns normally bullish boutique",
-        "published": "Tue, 09 Jun 2026 09:20:00 GMT",
+        "article_id": 5913,
+        "source": "CNBC",
+        "title": "Oil prices fall after U.S. Energy secretary says Hormuz ship traffic is increasing",
+        "published": "Tue, 09 Jun 2026 18:50:48 GMT",
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5839,
-        "source": "MarketWatch",
-        "title": "‘We pay $100 per month’: My husband is in his mid-60s and has a $500,000 life-insurance policy. Is it time to cancel it?",
-        "published": "Tue, 09 Jun 2026 09:15:00 GMT",
+        "article_id": 5871,
+        "source": "中新网",
+        "title": "AI智能体市场规模快速攀升 软件行业迎来这些新变化",
+        "published": "Wed, 10 Jun 2026 07:52:29 +0800",
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5815,
-        "source": "BBC全球经济",
-        "title": "AI giants' race to raise funds heats up as ChatGPT-owner plans stock market debut",
-        "published": "Tue, 09 Jun 2026 08:02:43 GMT",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5818,
-        "source": "BBC全球经济",
-        "title": "US adds BYD to list of firms with alleged Chinese military ties",
-        "published": "Tue, 09 Jun 2026 07:20:59 GMT",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5845,
-        "source": "Seeking Alpha",
-        "title": "AST SpaceMobile sets June 17 launch for BlueBird 8, 9, and 10 satellites",
-        "published": "Tue, 09 Jun 2026 07:10:42 -0400",
-        "source_tier": "aggregator"
-      },
-      {
-        "article_id": 5846,
-        "source": "Seeking Alpha",
-        "title": "SailPoint Non-GAAP EPS of $0.05 beats by $0.01, revenue of $280.14M beats by $4.05M",
-        "published": "Tue, 09 Jun 2026 07:10:20 -0400",
-        "source_tier": "aggregator"
-      },
-      {
-        "article_id": 5847,
-        "source": "Seeking Alpha",
-        "title": "J. M. Smucker Non-GAAP EPS of $2.77 beats by $0.13, revenue of $2.27B beats by $10M",
-        "published": "Tue, 09 Jun 2026 07:05:03 -0400",
-        "source_tier": "aggregator"
-      },
-      {
-        "article_id": 5848,
-        "source": "Seeking Alpha",
-        "title": "These financial companies have maintained Strong Buy ratings the longest",
-        "published": "Tue, 09 Jun 2026 07:03:17 -0400",
-        "source_tier": "aggregator"
-      },
-      {
-        "article_id": 5849,
-        "source": "Seeking Alpha",
-        "title": "United Natural Foods Non-GAAP EPS of $0.77 in-line, revenue of $7.7B misses by $100M",
-        "published": "Tue, 09 Jun 2026 07:03:01 -0400",
-        "source_tier": "aggregator"
-      },
-      {
-        "article_id": 5816,
-        "source": "BBC全球经济",
-        "title": "Driving test booking rules tightened after thousands of no shows",
-        "published": "Mon, 08 Jun 2026 23:05:32 GMT",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5805,
-        "source": "经济学人 Economist",
-        "title": "China is innovative. Its economy is a mess. Which will win out?",
-        "published": "Mon, 08 Jun 2026 19:17:35 +0000",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5806,
-        "source": "经济学人 Economist",
-        "title": "A bidding war erupts for the world’s oldest bank",
-        "published": "Mon, 08 Jun 2026 18:37:54 +0000",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5792,
+        "article_id": 5890,
         "source": "FT中文网",
-        "title": "五角大楼重新将阿里巴巴、百度和比亚迪列入“涉军企业”黑名单",
-        "published": "Mon, 08 Jun 2026 16:00:00 GMT",
+        "title": "超级IPO潮临近：好公司还是好价格？",
+        "published": "Tue, 09 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5891,
+        "source": "FT中文网",
+        "title": "AI繁荣背后的现实与解药",
+        "published": "Tue, 09 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5892,
+        "source": "FT中文网",
+        "title": "当AI牛市开始自我反噬：韩国股市的启示",
+        "published": "Tue, 09 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5893,
+        "source": "FT中文网",
+        "title": "“三强三弱“的中国经济：政策如何应对？",
+        "published": "Tue, 09 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5935,
+        "source": "Yahoo Finance",
+        "title": "56-year-old beloved fast-food chain closes over 700 locations",
+        "published": "2026-06-09T00:55:00Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5937,
+        "source": "Yahoo Finance",
+        "title": "JPMorgan Sees Qualcomm (QCOM) Investor Day as Potential AI Growth Catalyst",
+        "published": "2026-06-08T13:09:02Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5938,
+        "source": "Yahoo Finance",
+        "title": "Reddit’s (RDDT) AI Search Push and Ad Momentum Support Bullish Wall Street View",
+        "published": "2026-06-08T13:08:55Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5936,
+        "source": "Yahoo Finance",
+        "title": "Benchmark Sees Snowflake (SNOW) as Mission-Critical AI Control Plane",
+        "published": "2026-06-08T13:08:14Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5931,
+        "source": "MarketWatch",
+        "title": "This stock-market strategy has cheap exposure to AI and points to an advantage for closed-end funds",
+        "published": "Tue, 09 Jun 2026 23:17:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5917,
+        "source": "BBC全球经济",
+        "title": "Bill debt soars but many don't know help is available",
+        "published": "Tue, 09 Jun 2026 23:03:32 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5918,
+        "source": "BBC全球经济",
+        "title": "Beauty Pie LED mask ad banned over misleading anti-wrinkle claim",
+        "published": "Tue, 09 Jun 2026 23:03:20 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5916,
+        "source": "BBC全球经济",
+        "title": "How to enjoy the World Cup - and keep your boss on side",
+        "published": "Tue, 09 Jun 2026 23:03:08 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5915,
+        "source": "BBC全球经济",
+        "title": "World's largest chipmaker does not rule out price rises as costs increase",
+        "published": "Tue, 09 Jun 2026 22:00:24 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5932,
+        "source": "MarketWatch",
+        "title": "Apple’s AI could usher in a historic upgrade cycle that investors are overlooking",
+        "published": "Tue, 09 Jun 2026 22:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5933,
+        "source": "MarketWatch",
+        "title": "Micron and other memory makers are driving a ‘supercycle’ for this corner of the chip sector",
+        "published": "Tue, 09 Jun 2026 21:58:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5934,
+        "source": "MarketWatch",
+        "title": "AST SpaceMobile’s stock experiences rocky trading as SpaceX plans to launch its satellites into orbit",
+        "published": "Tue, 09 Jun 2026 21:55:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5941,
+        "source": "Seeking Alpha",
+        "title": "Lands' End outlines $68M-$78M adjusted EBITDA outlook with $1.3B-$1.4B revenue range following WHP joint venture reset",
+        "published": "Tue, 09 Jun 2026 20:13:00 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5919,
+        "source": "BBC全球经济",
+        "title": "Version of AI tool 'too powerful for public' released to public",
+        "published": "Tue, 09 Jun 2026 18:35:59 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5894,
+        "source": "FT中文网",
+        "title": "德国为何未能当选安理会非常任理事国？",
+        "published": "Tue, 09 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5930,
+        "source": "MarketWatch",
+        "title": "Super Micro stock plunges as $7 billion equity raise overshadows booming backlog",
+        "published": "Wed, 10 Jun 2026 00:12:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5940,
+        "source": "Seeking Alpha",
+        "title": "Skillsoft outlines FY 2027 revenue of $388M-$406M with focus on Global Knowledge divestiture and debt refinancing",
+        "published": "Tue, 09 Jun 2026 20:53:15 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5942,
+        "source": "Seeking Alpha",
+        "title": "Oil rises modestly after U.S. military hits back at Iran over helicopter attack",
+        "published": "Tue, 09 Jun 2026 19:45:20 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5943,
+        "source": "Seeking Alpha",
+        "title": "Limoneira targets positive adjusted EBITDA in Q3 and Q4 as it raises avocado volume guidance to 5.5M-6.5M lbs",
+        "published": "Tue, 09 Jun 2026 19:43:12 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5905,
+        "source": "经济学人 Economist",
+        "title": "Wall Street’s undignified SpaceX mania",
+        "published": "Tue, 09 Jun 2026 19:16:00 +0000",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5944,
+        "source": "Seeking Alpha",
+        "title": "Devon Energy forecasts 1.38M boe/day in 2026 production following Coterra takeover",
+        "published": "Tue, 09 Jun 2026 18:37:42 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5939,
+        "source": "Yahoo Finance",
+        "title": "Here’s Why Argosy Investors Trimmed Allient (ALNT) in Q1",
+        "published": "2026-06-08T13:09:57Z",
         "source_tier": "mainstream"
       }
     ]
@@ -2783,11 +2710,11 @@
     "required": true,
     "market": "CN",
     "summary": {
-      "total_claims": 8,
-      "realtime_claims": 2,
-      "verified_realtime_claims": 2,
-      "news_fact_claims": 6,
-      "failed_claims": 0
+      "total_claims": 7,
+      "realtime_claims": 5,
+      "verified_realtime_claims": 3,
+      "news_fact_claims": 2,
+      "failed_claims": 2
     },
     "claims": [
       {
@@ -2795,19 +2722,19 @@
         "market": "CN",
         "claim_type": "涨跌幅断言",
         "scope": "实时行情断言",
-        "content": "涨3.93%",
-        "context": "- 创业板指大涨3.93%",
-        "asset_hint": "sz399006",
-        "extracted_value": "3.93",
-        "verified": true,
-        "verification_status": "verified",
-        "confidence": 0.95,
-        "source": "Yahoo Finance",
-        "realtime_source": "Yahoo Finance",
-        "timestamp": "2026-06-09 16:29:16",
-        "freshness_status": "timestamped",
-        "evidence": "实时涨跌幅: +3.93%",
-        "failure_reason": "",
+        "content": "跌2.51%",
+        "context": "深证成指跌2.51%",
+        "asset_hint": "sz399001",
+        "extracted_value": "2.51",
+        "verified": false,
+        "verification_status": "failed",
+        "confidence": 0.0,
+        "source": "",
+        "realtime_source": "",
+        "timestamp": "",
+        "freshness_status": "missing_timestamp",
+        "evidence": "实时涨跌幅数据不符",
+        "failure_reason": "实时涨跌幅数据不符",
         "source_articles": []
       },
       {
@@ -2816,7 +2743,7 @@
         "claim_type": "涨跌幅断言",
         "scope": "实时行情断言",
         "content": "涨3.93%",
-        "context": "创业板指涨3.93%",
+        "context": "创业板指逆势涨3.93%",
         "asset_hint": "sz399006",
         "extracted_value": "3.93",
         "verified": true,
@@ -2833,99 +2760,86 @@
       {
         "claim_id": "cn-claim-003",
         "market": "CN",
-        "claim_type": "市场趋势断言",
-        "scope": "新闻事实断言",
-        "content": "3.93%",
-        "context": "- 创业板指大涨3.93%，芯片半导体产业链全面爆发，逾140只股涨停。【新闻5788】",
-        "asset_hint": null,
-        "extracted_value": "3.93",
+        "claim_type": "涨跌幅断言",
+        "scope": "实时行情断言",
+        "content": "跌0.97%",
+        "context": "纳指跌0.97%【新闻5873】",
+        "asset_hint": "^IXIC",
+        "extracted_value": "0.97",
         "verified": false,
         "verification_status": "failed",
         "confidence": 0.0,
         "source": "",
         "realtime_source": "",
         "timestamp": "",
-        "freshness_status": "not_applicable",
-        "evidence": "新闻事实断言，不纳入实时行情校验",
-        "failure_reason": "新闻事实断言，不纳入实时行情校验",
+        "freshness_status": "missing_timestamp",
+        "evidence": "实时涨跌幅数据不符",
+        "failure_reason": "实时涨跌幅数据不符",
         "source_articles": [
           {
-            "article_id": 5788,
-            "source": "华尔街见闻",
-            "title": "沪指收复4000点，创业板涨近4%，芯片半导体大爆发，双焦大跌、焦煤一度跌停",
-            "published": "Tue, 09 Jun 2026 18:18:58 +0800"
+            "article_id": 5873,
+            "source": "中新网",
+            "title": "美股收盘：大型科技股普跌，苹果跌超3%；芯片股多数下跌，ARM跌逾6%",
+            "published": "Wed, 10 Jun 2026 07:33:38 +0800"
           }
         ]
       },
       {
         "claim_id": "cn-claim-004",
         "market": "CN",
-        "claim_type": "市场趋势断言",
-        "scope": "新闻事实断言",
-        "content": "指数涨5.6%",
-        "context": "- **证据矛盾，待进一步确认**: 美股基本面与技术面存在分歧——费城半导体指数涨5.6%，但整体市场广度偏负，下跌个股多于上涨个股。【新闻5787】【新闻5776】",
-        "asset_hint": null,
-        "extracted_value": "5.6",
-        "verified": false,
-        "verification_status": "failed",
-        "confidence": 0.0,
-        "source": "",
-        "realtime_source": "",
-        "timestamp": "",
-        "freshness_status": "not_applicable",
-        "evidence": "新闻事实断言，不纳入实时行情校验",
-        "failure_reason": "新闻事实断言，不纳入实时行情校验",
+        "claim_type": "金价断言",
+        "scope": "实时行情断言",
+        "content": "黄金报4202.50美元",
+        "context": "- **国际金价持续回落**: 基于实时数据，现货黄金报4202.50美元/盎司。据报道，金价已较高点下跌超23%，进入技术性熊市【新闻5875】。",
+        "asset_hint": "gold",
+        "extracted_value": "4202.50",
+        "verified": true,
+        "verification_status": "verified",
+        "confidence": 1.0,
+        "source": "Gold-API / Yahoo Finance",
+        "realtime_source": "Gold-API / Yahoo Finance",
+        "timestamp": "2026-06-10T01:33:40Z",
+        "freshness_status": "timestamped",
+        "evidence": "实时金价: $4202.50/盎司 (误差 0.0%)",
+        "failure_reason": "",
         "source_articles": [
           {
-            "article_id": 5787,
-            "source": "华尔街见闻",
-            "title": "美股刚松口气，技术派就泼冷水：周一反弹只是“死猫跳”而已！",
-            "published": "Tue, 09 Jun 2026 18:30:54 +0800"
-          },
-          {
-            "article_id": 5776,
-            "source": "东方财富网",
-            "title": "全球市场：美股三大指数收盘涨跌不一 纳指涨近1% 半导体板块大涨",
-            "published": "Tue, 09 Jun 2026 06:15:58 +0800"
+            "article_id": 5875,
+            "source": "36氪",
+            "title": "8点1氪丨致3人永久失明，膳魔师紧急召回百万件产品；发布会后苹果市值蒸发超1.587万亿；Anthropic发布最强模型：Claude Fable 5正式上线",
+            "published": "2026-06-10 08:08:16  +0800"
           }
         ]
       },
       {
         "claim_id": "cn-claim-005",
         "market": "CN",
-        "claim_type": "市场趋势断言",
-        "scope": "新闻事实断言",
-        "content": "2%",
-        "context": "- **风险事件**: 特朗普第37次宣称美伊协议“即将达成”，承诺屡次落空，市场对时间表保持审慎，此类声明信号价值严重侵蚀。油价走低，布伦特原油跌超2%至92美元/桶。【新闻5789】",
-        "asset_hint": null,
-        "extracted_value": "2",
-        "verified": false,
-        "verification_status": "failed",
-        "confidence": 0.0,
-        "source": "",
-        "realtime_source": "",
-        "timestamp": "",
-        "freshness_status": "not_applicable",
-        "evidence": "新闻事实断言，不纳入实时行情校验",
-        "failure_reason": "新闻事实断言，不纳入实时行情校验",
-        "source_articles": [
-          {
-            "article_id": 5789,
-            "source": "华尔街见闻",
-            "title": "特朗普：美伊协议可能在“两三天内”达成，霍尔木兹将“立即”重开",
-            "published": "Tue, 09 Jun 2026 17:54:22 +0800"
-          }
-        ]
+        "claim_type": "汇率断言",
+        "scope": "实时行情断言",
+        "content": "美元兑人民币为6.7715",
+        "context": "- **汇率与大宗**: 现货黄金进入技术性熊市，美元兑人民币为6.7715（实时数据）。地缘紧张与通胀博弈下的资产价格波动剧烈，但缺乏明确方向性线索，暂列观察。",
+        "asset_hint": "USD/CNY",
+        "extracted_value": "6.7715",
+        "verified": true,
+        "verification_status": "verified",
+        "confidence": 1.0,
+        "source": "Frankfurter",
+        "realtime_source": "Frankfurter",
+        "timestamp": "2026-06-09 00:00:00",
+        "freshness_status": "timestamped",
+        "evidence": "实时汇率: 6.7715",
+        "failure_reason": "",
+        "source_articles": []
       },
       {
         "claim_id": "cn-claim-006",
         "market": "CN",
         "claim_type": "市场趋势断言",
         "scope": "新闻事实断言",
-        "content": "0.94%",
-        "context": "- **汇率与大宗**: 贵金属全线下跌，沪银跌0.94%；焦煤期货主力合约一度跌停。黄金在高位震荡，市场等待通胀数据指引。【新闻5788】",
+        "content": "同比增长15.3%",
+        "context": "- **证据**: 前5个月中国货物贸易进出口同比增长15.3%【新闻5877】。5月CPI数据即将公布，市场预期通胀年率仍在4.2%高位【新闻5914】。美联储宣布6月24日公布银行压力测试结果【新闻5950】。",
         "asset_hint": null,
-        "extracted_value": "0.94",
+        "extracted_value": "15.3",
         "verified": false,
         "verification_status": "failed",
         "confidence": 0.0,
@@ -2937,10 +2851,22 @@
         "failure_reason": "新闻事实断言，不纳入实时行情校验",
         "source_articles": [
           {
-            "article_id": 5788,
-            "source": "华尔街见闻",
-            "title": "沪指收复4000点，创业板涨近4%，芯片半导体大爆发，双焦大跌、焦煤一度跌停",
-            "published": "Tue, 09 Jun 2026 18:18:58 +0800"
+            "article_id": 5877,
+            "source": "36氪",
+            "title": "氪星晚报 ｜腾讯、阿里等入股脑机接口研发商阶梯医疗；飞猪：端午假期入境游预订量同比增长超6倍；1—5月全国期货市场累计成交额同比增长40.13%",
+            "published": "2026-06-09 20:48:30  +0800"
+          },
+          {
+            "article_id": 5914,
+            "source": "CNBC",
+            "title": "The May inflation numbers are due out Wednesday morning. Here's what to expect",
+            "published": "Tue, 09 Jun 2026 19:49:59 GMT"
+          },
+          {
+            "article_id": 5950,
+            "source": "Federal Reserve Board",
+            "title": "Federal Reserve Board announces that results from its annual bank stress test will be released on Wednesday, June 24, at 4 p.m. EDT.",
+            "published": "Tue, 9 Jun 2026 20:00:00 GMT"
           }
         ]
       },
@@ -2949,10 +2875,10 @@
         "market": "CN",
         "claim_type": "市场趋势断言",
         "scope": "新闻事实断言",
-        "content": "同比下滑55%",
-        "context": "- **财报与公司经营**: 比亚迪一季度利润同比下滑55%，王传福将销量压力归因于二代刀片电池产能爬坡。海外销量创新高，盈利重心快速向外转移，但国内市场竞争加剧，正反证据并存。【新闻5786】",
+        "content": "4.2%",
+        "context": "- **证据**: 前5个月中国货物贸易进出口同比增长15.3%【新闻5877】。5月CPI数据即将公布，市场预期通胀年率仍在4.2%高位【新闻5914】。美联储宣布6月24日公布银行压力测试结果【新闻5950】。",
         "asset_hint": null,
-        "extracted_value": "55",
+        "extracted_value": "4.2",
         "verified": false,
         "verification_status": "failed",
         "confidence": 0.0,
@@ -2964,37 +2890,22 @@
         "failure_reason": "新闻事实断言，不纳入实时行情校验",
         "source_articles": [
           {
-            "article_id": 5786,
-            "source": "华尔街见闻",
-            "title": "王传福给比亚迪股东们打了把气",
-            "published": "Tue, 09 Jun 2026 18:40:08 +0800"
-          }
-        ]
-      },
-      {
-        "claim_id": "cn-claim-008",
-        "market": "CN",
-        "claim_type": "市场趋势断言",
-        "scope": "新闻事实断言",
-        "content": "3%",
-        "context": "- **中芯国际（sh688981）**: 受益半导体板块整体走强，港股中芯国际涨超3%，但属板块联动而非独立催化，暂列观察。【新闻5788】",
-        "asset_hint": null,
-        "extracted_value": "3",
-        "verified": false,
-        "verification_status": "failed",
-        "confidence": 0.0,
-        "source": "",
-        "realtime_source": "",
-        "timestamp": "",
-        "freshness_status": "not_applicable",
-        "evidence": "新闻事实断言，不纳入实时行情校验",
-        "failure_reason": "新闻事实断言，不纳入实时行情校验",
-        "source_articles": [
+            "article_id": 5877,
+            "source": "36氪",
+            "title": "氪星晚报 ｜腾讯、阿里等入股脑机接口研发商阶梯医疗；飞猪：端午假期入境游预订量同比增长超6倍；1—5月全国期货市场累计成交额同比增长40.13%",
+            "published": "2026-06-09 20:48:30  +0800"
+          },
           {
-            "article_id": 5788,
-            "source": "华尔街见闻",
-            "title": "沪指收复4000点，创业板涨近4%，芯片半导体大爆发，双焦大跌、焦煤一度跌停",
-            "published": "Tue, 09 Jun 2026 18:18:58 +0800"
+            "article_id": 5914,
+            "source": "CNBC",
+            "title": "The May inflation numbers are due out Wednesday morning. Here's what to expect",
+            "published": "Tue, 09 Jun 2026 19:49:59 GMT"
+          },
+          {
+            "article_id": 5950,
+            "source": "Federal Reserve Board",
+            "title": "Federal Reserve Board announces that results from its annual bank stress test will be released on Wednesday, June 24, at 4 p.m. EDT.",
+            "published": "Tue, 9 Jun 2026 20:00:00 GMT"
           }
         ]
       }
@@ -3006,28 +2917,28 @@
     "market": "CN",
     "categories": {
       "macro_liquidity": {
-        "article_count": 9,
+        "article_count": 8,
         "source_count": 6,
         "status": "sufficient"
       },
       "policy_regulation": {
-        "article_count": 18,
-        "source_count": 10,
-        "status": "sufficient"
-      },
-      "company_earnings": {
-        "article_count": 6,
-        "source_count": 4,
-        "status": "sufficient"
-      },
-      "industry_theme": {
-        "article_count": 31,
+        "article_count": 20,
         "source_count": 11,
         "status": "sufficient"
       },
-      "risk_event": {
-        "article_count": 10,
+      "company_earnings": {
+        "article_count": 8,
         "source_count": 5,
+        "status": "sufficient"
+      },
+      "industry_theme": {
+        "article_count": 36,
+        "source_count": 12,
+        "status": "sufficient"
+      },
+      "risk_event": {
+        "article_count": 7,
+        "source_count": 3,
         "status": "sufficient"
       },
       "realtime_market": {
@@ -3042,151 +2953,146 @@
   "evidence_diversity": {
     "required": true,
     "market": "CN",
-    "total_articles": 62,
+    "total_articles": 59,
     "source_count": 14,
-    "topic_count": 8,
+    "topic_count": 7,
     "explicit_entity_count": 0,
     "explicit_entity_observation_count": 0,
-    "source_tier_known_count": 62,
-    "mainstream_or_better_count": 47,
+    "source_tier_known_count": 59,
+    "mainstream_or_better_count": 44,
     "aggregator_count": 15,
-    "original_source_known_count": 62,
-    "original_source_count": 23,
-    "max_source_share": 0.08064516129032258,
-    "max_topic_share": 0.3548387096774194,
+    "original_source_known_count": 59,
+    "original_source_count": 22,
+    "max_source_share": 0.0847457627118644,
+    "max_topic_share": 0.4745762711864407,
     "max_entity_share": 0.0,
-    "max_aggregator_share": 0.24193548387096775,
-    "original_source_share": 0.3709677419354839,
+    "max_aggregator_share": 0.2542372881355932,
+    "original_source_share": 0.3728813559322034,
     "source_distribution": [
       {
         "name": "华尔街见闻",
         "count": 5,
-        "share": 0.08064516129032258
-      },
-      {
-        "name": "36氪",
-        "count": 5,
-        "share": 0.08064516129032258
-      },
-      {
-        "name": "东方财富网",
-        "count": 5,
-        "share": 0.08064516129032258
-      },
-      {
-        "name": "ETF Trends",
-        "count": 5,
-        "share": 0.08064516129032258
+        "share": 0.0847457627118644
       },
       {
         "name": "ZeroHedge",
         "count": 5,
-        "share": 0.08064516129032258
-      },
-      {
-        "name": "CNBC",
-        "count": 5,
-        "share": 0.08064516129032258
+        "share": 0.0847457627118644
       },
       {
         "name": "中新网",
         "count": 5,
-        "share": 0.08064516129032258
+        "share": 0.0847457627118644
       },
       {
-        "name": "Yahoo Finance",
+        "name": "CNBC",
         "count": 5,
-        "share": 0.08064516129032258
+        "share": 0.0847457627118644
+      },
+      {
+        "name": "ETF Trends",
+        "count": 5,
+        "share": 0.0847457627118644
       },
       {
         "name": "FT中文网",
         "count": 5,
-        "share": 0.08064516129032258
+        "share": 0.0847457627118644
+      },
+      {
+        "name": "Yahoo Finance",
+        "count": 5,
+        "share": 0.0847457627118644
       },
       {
         "name": "MarketWatch",
         "count": 5,
-        "share": 0.08064516129032258
+        "share": 0.0847457627118644
+      },
+      {
+        "name": "BBC全球经济",
+        "count": 5,
+        "share": 0.0847457627118644
       },
       {
         "name": "Seeking Alpha",
         "count": 5,
-        "share": 0.08064516129032258
+        "share": 0.0847457627118644
       },
       {
-        "name": "BBC全球经济",
+        "name": "东方财富网",
         "count": 4,
-        "share": 0.06451612903225806
+        "share": 0.06779661016949153
+      },
+      {
+        "name": "36氪",
+        "count": 3,
+        "share": 0.05084745762711865
+      },
+      {
+        "name": "Federal Reserve Board",
+        "count": 1,
+        "share": 0.01694915254237288
       },
       {
         "name": "经济学人 Economist",
-        "count": 2,
-        "share": 0.03225806451612903
-      },
-      {
-        "name": "美国证监会-新闻发布",
         "count": 1,
-        "share": 0.016129032258064516
+        "share": 0.01694915254237288
       }
     ],
     "topic_distribution": [
       {
         "name": "科技与产业主题",
-        "count": 22,
-        "share": 0.3548387096774194
+        "count": 28,
+        "share": 0.4745762711864407
       },
       {
         "name": "政策与监管",
         "count": 14,
-        "share": 0.22580645161290322
-      },
-      {
-        "name": "未分类",
-        "count": 10,
-        "share": 0.16129032258064516
-      },
-      {
-        "name": "其他观察",
-        "count": 4,
-        "share": 0.06451612903225806
-      },
-      {
-        "name": "汇率与大宗",
-        "count": 3,
-        "share": 0.04838709677419355
-      },
-      {
-        "name": "财报与公司经营",
-        "count": 3,
-        "share": 0.04838709677419355
+        "share": 0.23728813559322035
       },
       {
         "name": "宏观与流动性",
-        "count": 3,
-        "share": 0.04838709677419355
+        "count": 6,
+        "share": 0.1016949152542373
       },
       {
-        "name": "风险事件",
-        "count": 3,
-        "share": 0.04838709677419355
+        "name": "未分类",
+        "count": 6,
+        "share": 0.1016949152542373
+      },
+      {
+        "name": "汇率与大宗",
+        "count": 2,
+        "share": 0.03389830508474576
+      },
+      {
+        "name": "其他观察",
+        "count": 2,
+        "share": 0.03389830508474576
+      },
+      {
+        "name": "财报与公司经营",
+        "count": 1,
+        "share": 0.01694915254237288
       }
     ],
     "entity_distribution": [],
     "source_tier_distribution": [
       {
         "name": "mainstream",
-        "count": 46,
-        "share": 0.7419354838709677
+        "count": 43,
+        "share": 0.7288135593220338
       },
       {
         "name": "aggregator",
         "count": 15,
-        "share": 0.24193548387096775
+        "share": 0.2542372881355932
       },
       {
         "name": "official",
         "count": 1,
-        "share": 0.016129032258064516
+        "share": 0.01694915254237288
       }
     ],
     "concentration_flags": [],
@@ -3202,53 +3108,62 @@
         "market": "CN",
         "high_confidence_topic": true,
         "evidence_article_ids": [
-          5788,
-          5784,
-          5775,
-          5778
+          5950,
+          5883,
+          5875,
+          5880
         ],
         "supporting_article_ids": [
-          5775,
-          5778,
-          5784,
-          5788
+          5875,
+          5880,
+          5883
         ],
-        "counter_article_ids": [],
-        "counter_evidence_count": 0,
+        "counter_article_ids": [
+          5883
+        ],
+        "counter_evidence_count": 1,
         "positive_keywords": [
+          "中标",
           "产能",
+          "出海",
           "利好",
-          "大幅增长",
+          "回购",
           "突破",
-          "订单"
+          "订单",
+          "超预期"
         ],
-        "negative_keywords": [],
-        "status": "support_only"
+        "negative_keywords": [
+          "停牌",
+          "减持",
+          "处罚",
+          "警告",
+          "调查",
+          "退市"
+        ],
+        "status": "mixed"
       },
       {
         "topic": "政策与监管",
         "market": "CN",
         "high_confidence_topic": true,
         "evidence_article_ids": [
-          5860,
-          5776,
-          5777,
-          5843
+          5870,
+          5935,
+          5911,
+          5913
         ],
         "supporting_article_ids": [
-          5777
+          5870
         ],
         "counter_article_ids": [
-          5776
+          5870
         ],
         "counter_evidence_count": 1,
         "positive_keywords": [
-          "产能",
-          "突破"
+          "产能"
         ],
         "negative_keywords": [
-          "警告",
-          "调查"
+          "亏损"
         ],
         "status": "mixed"
       },
@@ -3257,78 +3172,55 @@
         "market": "CN",
         "high_confidence_topic": true,
         "evidence_article_ids": [
-          5813,
-          5793,
-          5831
+          5893,
+          5914,
+          5912,
+          5938
         ],
         "supporting_article_ids": [
-          5793
+          5893
         ],
         "counter_article_ids": [],
         "counter_evidence_count": 0,
         "positive_keywords": [
-          "产能"
+          "产能",
+          "超预期"
         ],
         "negative_keywords": [],
         "status": "support_only"
-      },
-      {
-        "topic": "风险事件",
-        "market": "CN",
-        "high_confidence_topic": false,
-        "evidence_article_ids": [
-          5791,
-          5782,
-          5771
-        ],
-        "supporting_article_ids": [],
-        "counter_article_ids": [
-          5782
-        ],
-        "counter_evidence_count": 1,
-        "positive_keywords": [
-          "突破"
-        ],
-        "negative_keywords": [],
-        "status": "counter_only"
       },
       {
         "topic": "其他观察",
         "market": "CN",
         "high_confidence_topic": false,
         "evidence_article_ids": [
-          5770,
-          5817,
-          5816,
-          5837
+          5916,
+          5934
         ],
-        "supporting_article_ids": [
-          5770
-        ],
+        "supporting_article_ids": [],
         "counter_article_ids": [],
         "counter_evidence_count": 0,
-        "positive_keywords": [
-          "突破"
-        ],
+        "positive_keywords": [],
         "negative_keywords": [],
-        "status": "support_only"
+        "status": "balanced"
       },
       {
         "topic": "汇率与大宗",
         "market": "CN",
         "high_confidence_topic": false,
         "evidence_article_ids": [
-          5790,
-          5789,
-          5785
+          5886,
+          5874
         ],
         "supporting_article_ids": [
-          5790
+          5874,
+          5886
         ],
         "counter_article_ids": [],
         "counter_evidence_count": 0,
         "positive_keywords": [
-          "突破"
+          "产能",
+          "出海"
         ],
         "negative_keywords": [],
         "status": "support_only"
@@ -3338,30 +3230,27 @@
         "market": "CN",
         "high_confidence_topic": false,
         "evidence_article_ids": [
-          5780,
-          5786,
-          5773
+          5882
         ],
         "supporting_article_ids": [
-          5773,
-          5780,
-          5786
+          5882
         ],
         "counter_article_ids": [],
         "counter_evidence_count": 0,
         "positive_keywords": [
+          "中标",
           "产能",
-          "突破",
-          "订单"
+          "利好",
+          "回购"
         ],
         "negative_keywords": [],
         "status": "support_only"
       }
     ],
     "summary": {
-      "topic_count": 7,
-      "topics_with_counter_evidence": 1,
-      "high_confidence_topics_with_counter_evidence": 1
+      "topic_count": 6,
+      "topics_with_counter_evidence": 2,
+      "high_confidence_topics_with_counter_evidence": 2
     },
     "passed": false
   },
@@ -3372,10 +3261,59 @@
     "candidate_count": 9,
     "recommendation_count": 9,
     "status_counts": {
-      "theme_proxy": 7,
-      "direct_material_news": 2
+      "direct_material_news": 2,
+      "theme_proxy": 7
     },
     "candidates": [
+      {
+        "symbol": "sz002594",
+        "name": "比亚迪",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:产品",
+          "material_keyword:召回",
+          "material_keyword:涨",
+          "material_keyword:stock",
+          "material_keyword:盈利"
+        ],
+        "evidence_article_ids": [
+          5875,
+          5880,
+          5881
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "sh600941",
+        "name": "中国移动",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:stock"
+        ],
+        "evidence_article_ids": [
+          5880,
+          5881
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "source_type": "theme_mapping",
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "evidence_article_ids": [
+          5950,
+          5883,
+          5875,
+          5880
+        ],
+        "actionability_passed": false
+      },
       {
         "symbol": "sh600036",
         "name": "招商银行",
@@ -3385,70 +3323,10 @@
           "mapped_from_high_confidence_topic"
         ],
         "evidence_article_ids": [
-          5860,
-          5776,
-          5777,
-          5843
-        ],
-        "actionability_passed": false
-      },
-      {
-        "symbol": "sh688981",
-        "name": "中芯国际",
-        "source_type": "direct_news",
-        "evidence_relevance_status": "direct_material_news",
-        "evidence_relevance_reasons": [
-          "material_keyword:涨"
-        ],
-        "evidence_article_ids": [
-          5788
-        ],
-        "actionability_passed": false
-      },
-      {
-        "symbol": "sh600941",
-        "name": "中国移动",
-        "source_type": "theme_mapping",
-        "evidence_relevance_status": "theme_proxy",
-        "evidence_relevance_reasons": [
-          "mapped_from_high_confidence_topic"
-        ],
-        "evidence_article_ids": [
-          5860,
-          5776,
-          5777,
-          5843
-        ],
-        "actionability_passed": false
-      },
-      {
-        "symbol": "sz002594",
-        "name": "比亚迪",
-        "source_type": "direct_news",
-        "evidence_relevance_status": "direct_material_news",
-        "evidence_relevance_reasons": [
-          "material_keyword:涨",
-          "material_keyword:产能",
-          "material_keyword:盈利"
-        ],
-        "evidence_article_ids": [
-          5786
-        ],
-        "actionability_passed": false
-      },
-      {
-        "symbol": "sh601318",
-        "name": "中国平安",
-        "source_type": "theme_mapping",
-        "evidence_relevance_status": "theme_proxy",
-        "evidence_relevance_reasons": [
-          "mapped_from_high_confidence_topic"
-        ],
-        "evidence_article_ids": [
-          5860,
-          5776,
-          5777,
-          5843
+          5870,
+          5935,
+          5911,
+          5913
         ],
         "actionability_passed": false
       },
@@ -3461,10 +3339,26 @@
           "mapped_from_high_confidence_topic"
         ],
         "evidence_article_ids": [
-          5788,
-          5784,
-          5775,
-          5778
+          5950,
+          5883,
+          5875,
+          5880
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "sh601318",
+        "name": "中国平安",
+        "source_type": "theme_mapping",
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "evidence_article_ids": [
+          5870,
+          5935,
+          5911,
+          5913
         ],
         "actionability_passed": false
       },
@@ -3477,10 +3371,10 @@
           "mapped_from_high_confidence_topic"
         ],
         "evidence_article_ids": [
-          5788,
-          5784,
-          5775,
-          5778
+          5950,
+          5883,
+          5875,
+          5880
         ],
         "actionability_passed": false
       },
@@ -3493,9 +3387,10 @@
           "mapped_from_high_confidence_topic"
         ],
         "evidence_article_ids": [
-          5813,
-          5793,
-          5831
+          5893,
+          5914,
+          5912,
+          5938
         ],
         "actionability_passed": false
       },
@@ -3508,22 +3403,23 @@
           "mapped_from_high_confidence_topic"
         ],
         "evidence_article_ids": [
-          5813,
-          5793,
-          5831
+          5893,
+          5914,
+          5912,
+          5938
         ],
         "actionability_passed": false
       }
     ],
     "rejected_false_positive_mentions": [
       {
-        "article_id": 5792,
-        "title": "五角大楼重新将阿里巴巴、百度和比亚迪列入“涉军企业”黑名单",
-        "symbol": "sz002594",
-        "name": "比亚迪",
-        "status": "incidental_mention",
+        "article_id": 5891,
+        "title": "AI繁荣背后的现实与解药",
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "status": "irrelevant_match",
         "reasons": [
-          "sentence_mentions_symbol_but_no_material_catalyst"
+          "no_sentence_level_mention"
         ]
       }
     ]
@@ -3535,23 +3431,8 @@
     },
     "items": [
       {
-        "symbol": "sh600036",
-        "name": "招商银行",
-        "grade": "观察",
-        "historical_calibration_status": "样本不足",
-        "historical_forward_stats": {
-          "sample_count": 0,
-          "horizons": [
-            5,
-            10,
-            20
-          ],
-          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
-        }
-      },
-      {
-        "symbol": "sh688981",
-        "name": "中芯国际",
+        "symbol": "sz002594",
+        "name": "比亚迪",
         "grade": "观察",
         "historical_calibration_status": "样本不足",
         "historical_forward_stats": {
@@ -3580,8 +3461,8 @@
         }
       },
       {
-        "symbol": "sz002594",
-        "name": "比亚迪",
+        "symbol": "sh688981",
+        "name": "中芯国际",
         "grade": "观察",
         "historical_calibration_status": "样本不足",
         "historical_forward_stats": {
@@ -3595,8 +3476,8 @@
         }
       },
       {
-        "symbol": "sh601318",
-        "name": "中国平安",
+        "symbol": "sh600036",
+        "name": "招商银行",
         "grade": "观察",
         "historical_calibration_status": "样本不足",
         "historical_forward_stats": {
@@ -3612,6 +3493,21 @@
       {
         "symbol": "sz000977",
         "name": "浪潮信息",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "sh601318",
+        "name": "中国平安",
         "grade": "观察",
         "historical_calibration_status": "样本不足",
         "historical_forward_stats": {
@@ -3673,140 +3569,109 @@
   },
   "rejected_false_positive_mentions": [
     {
-      "article_id": 5792,
-      "title": "五角大楼重新将阿里巴巴、百度和比亚迪列入“涉军企业”黑名单",
-      "symbol": "sz002594",
-      "name": "比亚迪",
-      "status": "incidental_mention",
+      "article_id": 5891,
+      "title": "AI繁荣背后的现实与解药",
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "status": "irrelevant_match",
       "reasons": [
-        "sentence_mentions_symbol_but_no_material_catalyst"
+        "no_sentence_level_mention"
       ]
     }
   ],
   "backtest_ready": true,
-  "backtest_generated_at": "2026-06-09T20:34:43.367652",
+  "backtest_generated_at": "2026-06-10T09:38:31.800951",
   "cross_verification": {
     "topic_checks": [
       {
         "topic": "科技与产业主题",
-        "status": "confirmed",
+        "status": "conflicted",
         "evidence_article_ids": [
-          5788,
-          5784,
-          5775,
-          5778
+          5950,
+          5883,
+          5875,
+          5880
         ],
-        "independent_source_count": 4,
-        "mainstream_or_better_count": 18,
+        "independent_source_count": 5,
+        "mainstream_or_better_count": 24,
         "has_fresh_evidence": true,
-        "conflict_detail": null
+        "conflict_detail": "数值方向矛盾: 「净利润将降至230亿美元，远低于2025年的450亿美元。（央视财经）&nbsp;</p> <p><strong>5月汽车销量公布：前十已无燃油车</stron」vs「收入主要来源于政务及特种、城市管理、智慧金融领域的<span id=\"bk_90.BK0800\"><a class=\"keytip\" href=\"http://」"
       },
       {
         "topic": "政策与监管",
-        "status": "conflicted",
+        "status": "confirmed",
         "evidence_article_ids": [
-          5860,
-          5776,
-          5777,
-          5843
+          5870,
+          5935,
+          5911,
+          5913
         ],
-        "independent_source_count": 3,
-        "mainstream_or_better_count": 9,
+        "independent_source_count": 4,
+        "mainstream_or_better_count": 7,
         "has_fresh_evidence": true,
-        "conflict_detail": "跨文章关键词冲突: 正面关键词 ['产能', '突破'] (文章 [5777]) vs 负面关键词 ['警告', '调查'] (文章 [5776])"
+        "conflict_detail": null
       },
       {
         "topic": "宏观与流动性",
         "status": "conflicted",
         "evidence_article_ids": [
-          5813,
-          5793,
-          5831
+          5893,
+          5914,
+          5912,
+          5938
         ],
-        "independent_source_count": 2,
-        "mainstream_or_better_count": 2,
+        "independent_source_count": 3,
+        "mainstream_or_better_count": 6,
         "has_fresh_evidence": true,
-        "conflict_detail": "数值方向矛盾: 「income-and-output-have-fallen-overall-for-four-years/\">commissioned a study</a> 」vs「income. The labor participation rate and worker/population ratio never fully rec」"
-      },
-      {
-        "topic": "风险事件",
-        "status": "weak",
-        "evidence_article_ids": [
-          5791,
-          5782,
-          5771
-        ],
-        "independent_source_count": 1,
-        "mainstream_or_better_count": 3,
-        "has_fresh_evidence": true,
-        "conflict_detail": null
+        "conflict_detail": "数值方向矛盾: 「revenue in the March quarter over 100% from a year earlier. Dell said revenue fr」vs「2.4%下滑」"
       },
       {
         "topic": "其他观察",
         "status": "weak",
         "evidence_article_ids": [
-          5770,
-          5817,
-          5816,
-          5837
+          5916,
+          5934
         ],
         "independent_source_count": 1,
-        "mainstream_or_better_count": 4,
-        "has_fresh_evidence": true,
+        "mainstream_or_better_count": 2,
+        "has_fresh_evidence": false,
         "conflict_detail": null
       },
       {
         "topic": "汇率与大宗",
         "status": "weak",
         "evidence_article_ids": [
-          5790,
-          5789,
-          5785
+          5886,
+          5874
         ],
-        "independent_source_count": 1,
-        "mainstream_or_better_count": 3,
+        "independent_source_count": 0,
+        "mainstream_or_better_count": 2,
         "has_fresh_evidence": true,
         "conflict_detail": null
       },
       {
         "topic": "财报与公司经营",
-        "status": "conflicted",
+        "status": "weak",
         "evidence_article_ids": [
-          5780,
-          5786,
-          5773
+          5882
         ],
         "independent_source_count": 0,
-        "mainstream_or_better_count": 3,
+        "mainstream_or_better_count": 1,
         "has_fresh_evidence": true,
-        "conflict_detail": "数值方向矛盾: 「利润端有约40亿元汇兑损失的一次性拖累，但量上的收缩是真的。毛利率环比回升到18.8%，算是为数不多的亮点，可挡不住量跌带来的利润坍缩。</p> <p>5月的数」vs「营收1502亿元，利润40.85亿元，分别下滑12%」"
+        "conflict_detail": null
       }
     ],
     "stock_checks": [
       {
-        "symbol": "sh600036",
-        "name": "招商银行",
+        "symbol": "sz002594",
+        "name": "比亚迪",
         "status": "weak",
         "evidence_article_ids": [
-          5860,
-          5776,
-          5777,
-          5843
+          5875,
+          5880,
+          5881
         ],
-        "direct_mentions": 0,
-        "independent_source_count": 3,
-        "has_fresh_evidence": true,
-        "source_type": "theme_mapping",
-        "conflict_detail": null
-      },
-      {
-        "symbol": "sh688981",
-        "name": "中芯国际",
-        "status": "weak",
-        "evidence_article_ids": [
-          5788
-        ],
-        "direct_mentions": 1,
+        "direct_mentions": 3,
         "independent_source_count": 0,
         "has_fresh_evidence": true,
         "source_type": "direct_news",
@@ -3817,42 +3682,43 @@
         "name": "中国移动",
         "status": "weak",
         "evidence_article_ids": [
-          5860,
-          5776,
-          5777,
-          5843
+          5880,
+          5881
+        ],
+        "direct_mentions": 2,
+        "independent_source_count": 0,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "status": "weak",
+        "evidence_article_ids": [
+          5950,
+          5883,
+          5875,
+          5880
         ],
         "direct_mentions": 0,
-        "independent_source_count": 3,
+        "independent_source_count": 5,
         "has_fresh_evidence": true,
         "source_type": "theme_mapping",
         "conflict_detail": null
       },
       {
-        "symbol": "sz002594",
-        "name": "比亚迪",
-        "status": "conflicted",
-        "evidence_article_ids": [
-          5786
-        ],
-        "direct_mentions": 1,
-        "independent_source_count": 0,
-        "has_fresh_evidence": true,
-        "source_type": "direct_news",
-        "conflict_detail": "数值方向矛盾: 「利润端有约40亿元汇兑损失的一次性拖累，但量上的收缩是真的。毛利率环比回升到18.8%，算是为数不多的亮点，可挡不住量跌带来的利润坍缩。</p> <p>5月的数」vs「营收1502亿元，利润40.85亿元，分别下滑12%」"
-      },
-      {
-        "symbol": "sh601318",
-        "name": "中国平安",
+        "symbol": "sh600036",
+        "name": "招商银行",
         "status": "weak",
         "evidence_article_ids": [
-          5860,
-          5776,
-          5777,
-          5843
+          5870,
+          5935,
+          5911,
+          5913
         ],
         "direct_mentions": 0,
-        "independent_source_count": 3,
+        "independent_source_count": 4,
         "has_fresh_evidence": true,
         "source_type": "theme_mapping",
         "conflict_detail": null
@@ -3862,10 +3728,26 @@
         "name": "浪潮信息",
         "status": "weak",
         "evidence_article_ids": [
-          5788,
-          5784,
-          5775,
-          5778
+          5950,
+          5883,
+          5875,
+          5880
+        ],
+        "direct_mentions": 0,
+        "independent_source_count": 5,
+        "has_fresh_evidence": true,
+        "source_type": "theme_mapping",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "sh601318",
+        "name": "中国平安",
+        "status": "weak",
+        "evidence_article_ids": [
+          5870,
+          5935,
+          5911,
+          5913
         ],
         "direct_mentions": 0,
         "independent_source_count": 4,
@@ -3878,13 +3760,13 @@
         "name": "中科曙光",
         "status": "weak",
         "evidence_article_ids": [
-          5788,
-          5784,
-          5775,
-          5778
+          5950,
+          5883,
+          5875,
+          5880
         ],
         "direct_mentions": 0,
-        "independent_source_count": 4,
+        "independent_source_count": 5,
         "has_fresh_evidence": true,
         "source_type": "theme_mapping",
         "conflict_detail": null
@@ -3894,12 +3776,13 @@
         "name": "贵州茅台",
         "status": "weak",
         "evidence_article_ids": [
-          5813,
-          5793,
-          5831
+          5893,
+          5914,
+          5912,
+          5938
         ],
         "direct_mentions": 0,
-        "independent_source_count": 2,
+        "independent_source_count": 3,
         "has_fresh_evidence": true,
         "source_type": "theme_mapping",
         "conflict_detail": null
@@ -3909,12 +3792,13 @@
         "name": "五粮液",
         "status": "weak",
         "evidence_article_ids": [
-          5813,
-          5793,
-          5831
+          5893,
+          5914,
+          5912,
+          5938
         ],
         "direct_mentions": 0,
-        "independent_source_count": 2,
+        "independent_source_count": 3,
         "has_fresh_evidence": true,
         "source_type": "theme_mapping",
         "conflict_detail": null
@@ -3923,29 +3807,29 @@
     "summary": {
       "topics_confirmed": 1,
       "topics_weak": 3,
-      "topics_conflicted": 3,
+      "topics_conflicted": 2,
       "stocks_confirmed": 0,
-      "stocks_weak": 8,
-      "stocks_conflicted": 1
+      "stocks_weak": 9,
+      "stocks_conflicted": 0
     },
     "issues": [],
     "warnings": []
   },
   "cross_verification_required": true,
-  "quality_score": 90.0,
+  "quality_score": 66.0,
   "quality_stats": {
     "has_realtime_data": true,
-    "data_age_hours": 5.578712623333333,
+    "data_age_hours": 18.642166633333336,
     "time_source": "report_text",
     "source_annotation_missing": false,
     "claim_coverage_score": 20,
-    "citation_count": 27,
+    "citation_count": 36,
     "placeholder_citation_count": 0,
-    "verified_claims": 2,
-    "total_claims": 2,
-    "realtime_verified_claims": 2,
-    "realtime_total_claims": 2,
-    "news_fact_claims": 6,
+    "verified_claims": 3,
+    "total_claims": 5,
+    "realtime_verified_claims": 3,
+    "realtime_total_claims": 5,
+    "news_fact_claims": 2,
     "analytical_judgment_count": 0,
     "fabrication_detected": false,
     "watchlist_promoted_in_narrative_count": 0,
@@ -3955,29 +3839,30 @@
     "coverage_boundary_overclaim_count": 0,
     "evidence_diversity_issue_count": 0,
     "evidence_source_count": 14,
-    "evidence_topic_count": 8,
-    "evidence_max_source_share": 0.08064516129032258,
-    "evidence_max_topic_share": 0.3548387096774194,
-    "evidence_max_aggregator_share": 0.24193548387096775,
-    "evidence_original_source_share": 0.3709677419354839,
+    "evidence_topic_count": 7,
+    "evidence_max_source_share": 0.0847457627118644,
+    "evidence_max_topic_share": 0.4745762711864407,
+    "evidence_max_aggregator_share": 0.2542372881355932,
+    "evidence_original_source_share": 0.3728813559322034,
     "counter_evidence_issue_count": 0,
-    "counter_evidence_high_confidence_topics": 1,
+    "counter_evidence_high_confidence_topics": 2,
     "implausible_signals": {
-      "over_precision_count": 0,
-      "rounded_ratio": 0.0,
-      "cross_asset_repeated_value_count": 1
+      "over_precision_count": 1,
+      "rounded_ratio": 0.143,
+      "cross_asset_repeated_value_count": 0
     }
   },
   "quality_issues": [],
   "quality_warnings": [
+    "⚠️ 准确性偏低: 60%的断言得到验证 (3/5)",
     "⚠️ 报告更新时间与系统实时数据时间不一致,已按更保守时间计算时效性",
-    "⚠️ 数据更新于5.6小时前,时效性一般"
+    "⚠️ 数据更新于18.6小时前,时效性一般"
   ],
   "time_source": "report_text",
   "source_annotation_missing": false,
   "claim_coverage_score": 20,
-  "enhanced_context_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-06/2026-06-09/metadata/evening_enhanced-context_markdown-report-cn_deepseek.json",
-  "evidence_audit_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-06/2026-06-09/metadata/evening_evidence-audit_markdown-report-cn_deepseek.json",
-  "session": "evening",
-  "session_time": "2026-06-09 20:34:43"
+  "enhanced_context_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-06/2026-06-10/metadata/morning_enhanced-context_markdown-report-cn_deepseek.json",
+  "evidence_audit_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-06/2026-06-10/metadata/morning_evidence-audit_markdown-report-cn_deepseek.json",
+  "session": "morning",
+  "session_time": "2026-06-10 09:38:31"
 }

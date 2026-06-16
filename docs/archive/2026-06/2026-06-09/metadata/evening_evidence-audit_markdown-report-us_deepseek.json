@@ -14,11 +14,11 @@
       5831,
       5832,
       5833,
-      5834,
       5812,
       5813,
       5811,
       5810,
+      5834,
       5821,
       5822,
       5823,
@@ -89,13 +89,6 @@
         "source_tier": "aggregator"
       },
       {
-        "article_id": 5834,
-        "source": "ZeroHedge",
-        "title": "Watch: French Fighter Jets Shoot Down Kamikaze Drone Over Latvia",
-        "published": "Tue, 09 Jun 2026 08:15:00 +0000",
-        "source_tier": "aggregator"
-      },
-      {
         "article_id": 5812,
         "source": "CNBC",
         "title": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet",
@@ -122,6 +115,13 @@
         "title": "Trump says Iran deal could be reached in 'two or three days' and Strait of Hormuz will reopen 'immediately'",
         "published": "Tue, 09 Jun 2026 09:56:44 GMT",
         "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5834,
+        "source": "ZeroHedge",
+        "title": "Watch: French Fighter Jets Shoot Down Kamikaze Drone Over Latvia",
+        "published": "Tue, 09 Jun 2026 08:15:00 +0000",
+        "source_tier": "aggregator"
       },
       {
         "article_id": 5821,
@@ -353,11 +353,11 @@
     "required": true,
     "market": "US",
     "summary": {
-      "total_claims": 8,
-      "realtime_claims": 6,
-      "verified_realtime_claims": 3,
-      "news_fact_claims": 2,
-      "failed_claims": 3
+      "total_claims": 6,
+      "realtime_claims": 2,
+      "verified_realtime_claims": 2,
+      "news_fact_claims": 4,
+      "failed_claims": 0
     },
     "claims": [
       {
@@ -365,28 +365,8 @@
         "market": "US",
         "claim_type": "股价断言",
         "scope": "实时行情断言",
-        "content": "至 25929.66",
-        "context": "美股三大指数全线下挫：NASDAQ 收跌 4.27% 至 25929.66",
-        "asset_hint": "^IXIC",
-        "extracted_value": "25929.66",
-        "verified": true,
-        "verification_status": "verified",
-        "confidence": 0.999999922868258,
-        "source": "Yahoo Finance",
-        "realtime_source": "Yahoo Finance",
-        "timestamp": "2026-06-09 05:15:59",
-        "freshness_status": "timestamped",
-        "evidence": "实时数据验证: 25929.66 (误差 0.0%)",
-        "failure_reason": "",
-        "source_articles": []
-      },
-      {
-        "claim_id": "us-claim-002",
-        "market": "US",
-        "claim_type": "股价断言",
-        "scope": "实时行情断言",
-        "content": "至 7405.73",
-        "context": "S&P 500 跌 2.56% 至 7405.73",
+        "content": "报7405.73",
+        "context": "标普500指数报7405.73点",
         "asset_hint": "^GSPC",
         "extracted_value": "7405.73",
         "verified": true,
@@ -401,82 +381,22 @@
         "source_articles": []
       },
       {
-        "claim_id": "us-claim-003",
-        "market": "US",
-        "claim_type": "涨跌幅断言",
-        "scope": "实时行情断言",
-        "content": "跌 4.27%",
-        "context": "美股三大指数全线下挫：NASDAQ 收跌 4.27% 至 25929.66",
-        "asset_hint": "^IXIC",
-        "extracted_value": "4.27",
-        "verified": false,
-        "verification_status": "failed",
-        "confidence": 0.0,
-        "source": "",
-        "realtime_source": "",
-        "timestamp": "",
-        "freshness_status": "missing_timestamp",
-        "evidence": "实时涨跌幅数据不符",
-        "failure_reason": "实时涨跌幅数据不符",
-        "source_articles": []
-      },
-      {
-        "claim_id": "us-claim-004",
-        "market": "US",
-        "claim_type": "涨跌幅断言",
-        "scope": "实时行情断言",
-        "content": "跌 2.56%",
-        "context": "S&P 500 跌 2.56% 至 7405.73",
-        "asset_hint": "^GSPC",
-        "extracted_value": "2.56",
-        "verified": false,
-        "verification_status": "failed",
-        "confidence": 0.0,
-        "source": "",
-        "realtime_source": "",
-        "timestamp": "",
-        "freshness_status": "missing_timestamp",
-        "evidence": "实时涨跌幅数据不符",
-        "failure_reason": "实时涨跌幅数据不符",
-        "source_articles": []
-      },
-      {
-        "claim_id": "us-claim-005",
-        "market": "US",
-        "claim_type": "涨跌幅断言",
-        "scope": "实时行情断言",
-        "content": "跌幅 4.27%",
-        "context": "- NASDAQ 单日跌幅 4.27% 对应科技成长股集中出逃",
-        "asset_hint": "^IXIC",
-        "extracted_value": "4.27",
-        "verified": false,
-        "verification_status": "failed",
-        "confidence": 0.0,
-        "source": "",
-        "realtime_source": "",
-        "timestamp": "",
-        "freshness_status": "missing_timestamp",
-        "evidence": "实时涨跌幅数据不符",
-        "failure_reason": "实时涨跌幅数据不符",
-        "source_articles": []
-      },
-      {
-        "claim_id": "us-claim-006",
+        "claim_id": "us-claim-002",
         "market": "US",
         "claim_type": "金价断言",
         "scope": "实时行情断言",
-        "content": "黄金报 4338.50 美元",
-        "context": "- **汇率与大宗**：基于实时数据，国际黄金报 4338.50 美元/盎司（更新：2026-06-09 11:18），据报道金价在通胀报告公布前进入较低区间整固【新闻5841】，反应市场观望情绪浓重。",
+        "content": "黄金报4338.40美元",
+        "context": "- **汇率与大宗**: 基于实时数据（更新时间：2026-06-09 12:34），国际现货黄金报4338.40美元/盎司；据报道，金价在通胀报告发布前处于低位盘整【新闻5841】。缺乏明确方向性信号。",
         "asset_hint": "gold",
-        "extracted_value": "4338.50",
+        "extracted_value": "4338.40",
         "verified": true,
         "verification_status": "verified",
-        "confidence": 1.0,
+        "confidence": 0.9999999774110268,
         "source": "Gold-API / Yahoo Finance",
         "realtime_source": "Gold-API / Yahoo Finance",
-        "timestamp": "2026-06-09T11:18:09Z",
+        "timestamp": "2026-06-09T12:34:39Z",
         "freshness_status": "timestamped",
-        "evidence": "实时金价: $4338.50/盎司 (误差 0.0%)",
+        "evidence": "实时金价: $4338.40/盎司 (误差 0.0%)",
         "failure_reason": "",
         "source_articles": [
           {
@@ -488,14 +408,14 @@
         ]
       },
       {
-        "claim_id": "us-claim-007",
+        "claim_id": "us-claim-003",
         "market": "US",
         "claim_type": "市场趋势断言",
         "scope": "新闻事实断言",
-        "content": "39%",
-        "context": "- 据报道，GSK 同意以 106 亿美元收购癌症药物制造商 Nuvalent，后者股价飙升 39%【新闻5811】，反映出尽管大盘承压，生物技术并购交易仍维持热度，大型药企正在利用活跃的公开市场补充管线。",
+        "content": "81%",
+        "context": "- **宏观与流动性**: 该主题证据矛盾，待进一步确认。新闻显示消费者对经济前景极度悲观，81%受访者将生活成本视为实现“美国梦”的最大障碍【新闻5813】；同时有非官方测算认为，自疫情封锁以来美元购买力已损失近一半，GDP累计损失或达12%【新闻5831】。这与官方数据形成显著冲突，宏观经济的真实运行状况存在高度不确定性。",
         "asset_hint": null,
-        "extracted_value": "39",
+        "extracted_value": "81",
         "verified": false,
         "verification_status": "failed",
         "confidence": 0.0,
@@ -507,20 +427,26 @@
         "failure_reason": "新闻事实断言，不纳入实时行情校验",
         "source_articles": [
           {
-            "article_id": 5811,
+            "article_id": 5813,
             "source": "CNBC",
-            "title": "Nuvalent shares surge 39% after UK's GSK agrees to buy the cancer drugmaker for $10.6 billion",
-            "published": "Tue, 09 Jun 2026 10:13:52 GMT"
+            "title": "51% of U.S. adults say the American Dream is out of reach for most people right now: CNBC survey",
+            "published": "Tue, 09 Jun 2026 10:30:01 GMT"
+          },
+          {
+            "article_id": 5831,
+            "source": "ZeroHedge",
+            "title": "Since Lockdowns, A 12% GDP Loss; Half Of US Dollar Purchasing Power Stolen",
+            "published": "Tue, 09 Jun 2026 10:30:00 +0000"
           }
         ]
       },
       {
-        "claim_id": "us-claim-008",
+        "claim_id": "us-claim-004",
         "market": "US",
         "claim_type": "市场趋势断言",
         "scope": "新闻事实断言",
         "content": "12%",
-        "context": "- **证据**：Yahoo Finance 报道美股期货因 AI 交易而上涨【新闻5843】，但 MarketWatch 引述 Fundstrat 技术分析警告近期反弹可能是“死猫跳”，夏季存在下滑风险【新闻5838】。ZeroHedge 报告自封锁以来美国 GDP 实际损失或达 12%，美元购买力减半【新闻5831】。",
+        "context": "- **宏观与流动性**: 该主题证据矛盾，待进一步确认。新闻显示消费者对经济前景极度悲观，81%受访者将生活成本视为实现“美国梦”的最大障碍【新闻5813】；同时有非官方测算认为，自疫情封锁以来美元购买力已损失近一半，GDP累计损失或达12%【新闻5831】。这与官方数据形成显著冲突，宏观经济的真实运行状况存在高度不确定性。",
         "asset_hint": null,
         "extracted_value": "12",
         "verified": false,
@@ -534,22 +460,82 @@
         "failure_reason": "新闻事实断言，不纳入实时行情校验",
         "source_articles": [
           {
-            "article_id": 5843,
-            "source": "Yahoo Finance",
-            "title": "Stock market today: Dow, S&P 500, Nasdaq futures rise as AI trade takes center stage",
-            "published": "2026-06-08T22:56:40Z"
-          },
-          {
-            "article_id": 5838,
-            "source": "MarketWatch",
-            "title": "The latest rally may be only a dead-cat bounce, warns normally bullish boutique",
-            "published": "Tue, 09 Jun 2026 09:20:00 GMT"
+            "article_id": 5813,
+            "source": "CNBC",
+            "title": "51% of U.S. adults say the American Dream is out of reach for most people right now: CNBC survey",
+            "published": "Tue, 09 Jun 2026 10:30:01 GMT"
           },
           {
             "article_id": 5831,
             "source": "ZeroHedge",
             "title": "Since Lockdowns, A 12% GDP Loss; Half Of US Dollar Purchasing Power Stolen",
             "published": "Tue, 09 Jun 2026 10:30:00 +0000"
+          }
+        ]
+      },
+      {
+        "claim_id": "us-claim-005",
+        "market": "US",
+        "claim_type": "市场趋势断言",
+        "scope": "新闻事实断言",
+        "content": "51%",
+        "context": "- **证据**: CNBC调查显示51%的美国成年人认为“美国梦”对大多数人遥不可及【新闻5813】；基于RealityIndex的测算质疑官方通胀与GDP数据，认为经济衰退从未真正结束【新闻5831】。美国在最新全球繁荣指数中仅排第38位，虽为最大经济体但生活质量指标落后【新闻5832】。",
+        "asset_hint": null,
+        "extracted_value": "51",
+        "verified": false,
+        "verification_status": "failed",
+        "confidence": 0.0,
+        "source": "",
+        "realtime_source": "",
+        "timestamp": "",
+        "freshness_status": "not_applicable",
+        "evidence": "新闻事实断言，不纳入实时行情校验",
+        "failure_reason": "新闻事实断言，不纳入实时行情校验",
+        "source_articles": [
+          {
+            "article_id": 5813,
+            "source": "CNBC",
+            "title": "51% of U.S. adults say the American Dream is out of reach for most people right now: CNBC survey",
+            "published": "Tue, 09 Jun 2026 10:30:01 GMT"
+          },
+          {
+            "article_id": 5831,
+            "source": "ZeroHedge",
+            "title": "Since Lockdowns, A 12% GDP Loss; Half Of US Dollar Purchasing Power Stolen",
+            "published": "Tue, 09 Jun 2026 10:30:00 +0000"
+          },
+          {
+            "article_id": 5832,
+            "source": "ZeroHedge",
+            "title": "These Are The World's Most Prosperous Countries",
+            "published": "Tue, 09 Jun 2026 09:45:00 +0000"
+          }
+        ]
+      },
+      {
+        "claim_id": "us-claim-006",
+        "market": "US",
+        "claim_type": "市场趋势断言",
+        "scope": "新闻事实断言",
+        "content": "4.27%",
+        "context": "- **市场动能崩塌风险**: 纳斯达克单日暴跌4.27%，技术分析机构警告此为“死猫反弹”，存在继续下滑的重大风险【新闻5838】。",
+        "asset_hint": null,
+        "extracted_value": "4.27",
+        "verified": false,
+        "verification_status": "failed",
+        "confidence": 0.0,
+        "source": "",
+        "realtime_source": "",
+        "timestamp": "",
+        "freshness_status": "not_applicable",
+        "evidence": "新闻事实断言，不纳入实时行情校验",
+        "failure_reason": "新闻事实断言，不纳入实时行情校验",
+        "source_articles": [
+          {
+            "article_id": 5838,
+            "source": "MarketWatch",
+            "title": "The latest rally may be only a dead-cat bounce, warns normally bullish boutique",
+            "published": "Tue, 09 Jun 2026 09:20:00 GMT"
           }
         ]
       }
@@ -1978,9 +1964,9 @@
     }
   ],
   "quality_check": {
-    "score": 60.0,
+    "score": 90.0,
     "passed": false,
-    "accuracy_score": 30.0,
+    "accuracy_score": 60.0,
     "timeliness_score": 10,
     "reliability_score": 20,
     "claim_coverage_score": 20,
@@ -1988,25 +1974,26 @@
     "source_annotation_missing": false,
     "narrative_consistency_passed": true,
     "data_integrity_statement_passed": true,
-    "issues": [],
+    "issues": [
+      "❌ 存在未回溯的新闻占位引用: 【新闻X】 2处"
+    ],
     "warnings": [
-      "⚠️ 准确性偏低: 50%的断言得到验证 (3/6)",
       "⚠️ 报告更新时间与系统实时数据时间不一致,已按更保守时间计算时效性",
-      "⚠️ 数据更新于14.4小时前,时效性一般"
+      "⚠️ 数据更新于15.7小时前,时效性一般"
     ],
     "stats": {
       "has_realtime_data": true,
-      "data_age_hours": 14.419180486111111,
+      "data_age_hours": 15.696784331111111,
       "time_source": "report_text",
       "source_annotation_missing": false,
       "claim_coverage_score": 20,
-      "citation_count": 23,
-      "placeholder_citation_count": 0,
-      "verified_claims": 3,
-      "total_claims": 6,
-      "realtime_verified_claims": 3,
-      "realtime_total_claims": 6,
-      "news_fact_claims": 2,
+      "citation_count": 38,
+      "placeholder_citation_count": 2,
+      "verified_claims": 2,
+      "total_claims": 2,
+      "realtime_verified_claims": 2,
+      "realtime_total_claims": 2,
+      "news_fact_claims": 4,
       "analytical_judgment_count": 0,
       "fabrication_detected": false,
       "watchlist_promoted_in_narrative_count": 0,
@@ -2025,11 +2012,11 @@
       "counter_evidence_high_confidence_topics": 0,
       "implausible_signals": {
         "over_precision_count": 0,
-        "rounded_ratio": 0.125,
+        "rounded_ratio": 0.0,
         "cross_asset_repeated_value_count": 0
       }
     },
-    "timestamp": "2026-06-09T19:21:09.050649"
+    "timestamp": "2026-06-09T20:37:48.424743"
   },
   "candidate_evidence_audit": {
     "required": true,
@@ -2251,5 +2238,5 @@
     }
   ],
   "session": "evening",
-  "session_time": "2026-06-09 19:21:09"
+  "session_time": "2026-06-09 20:37:48"
 }

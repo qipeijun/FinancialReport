@@ -55,18 +55,6 @@
       "is_original_source": 0
     },
     {
-      "id": 5780,
-      "title": "累计在轨23万小时零失效，星载光电赛道跑出一匹黑马｜36氪首发",
-      "source": "36氪",
-      "published": "2026-06-09 18:51:58  +0800",
-      "collection_date": "2026-06-09",
-      "source_tier": "mainstream",
-      "investment_relevance": "high",
-      "primary_topic": "财报与公司经营",
-      "content_quality_status": "full",
-      "is_original_source": 0
-    },
-    {
       "id": 5789,
       "title": "特朗普：美伊协议可能在“两三天内”达成，霍尔木兹将“立即”重开",
       "source": "华尔街见闻",
@@ -75,6 +63,18 @@
       "source_tier": "mainstream",
       "investment_relevance": "high",
       "primary_topic": "汇率与大宗",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 5780,
+      "title": "累计在轨23万小时零失效，星载光电赛道跑出一匹黑马｜36氪首发",
+      "source": "36氪",
+      "published": "2026-06-09 18:51:58  +0800",
+      "collection_date": "2026-06-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "财报与公司经营",
       "content_quality_status": "full",
       "is_original_source": 0
     },
@@ -99,18 +99,6 @@
       "source_tier": "mainstream",
       "investment_relevance": "medium",
       "primary_topic": "科技与产业主题",
-      "content_quality_status": "full",
-      "is_original_source": 0
-    },
-    {
-      "id": 5782,
-      "title": "康养地产的“闭环”，北京山谷找到了",
-      "source": "36氪",
-      "published": "2026-06-09 14:19:43  +0800",
-      "collection_date": "2026-06-09",
-      "source_tier": "mainstream",
-      "investment_relevance": "medium",
-      "primary_topic": "风险事件",
       "content_quality_status": "full",
       "is_original_source": 0
     },
@@ -175,14 +163,14 @@
       "is_original_source": 0
     },
     {
-      "id": 5834,
-      "title": "Watch: French Fighter Jets Shoot Down Kamikaze Drone Over Latvia",
-      "source": "ZeroHedge",
-      "published": "Tue, 09 Jun 2026 08:15:00 +0000",
+      "id": 5782,
+      "title": "康养地产的“闭环”，北京山谷找到了",
+      "source": "36氪",
+      "published": "2026-06-09 14:19:43  +0800",
       "collection_date": "2026-06-09",
-      "source_tier": "aggregator",
+      "source_tier": "mainstream",
       "investment_relevance": "medium",
-      "primary_topic": "科技与产业主题",
+      "primary_topic": "风险事件",
       "content_quality_status": "full",
       "is_original_source": 0
     },
@@ -207,18 +195,6 @@
       "source_tier": "mainstream",
       "investment_relevance": "high",
       "primary_topic": "科技与产业主题",
-      "content_quality_status": "full",
-      "is_original_source": 0
-    },
-    {
-      "id": 5770,
-      "title": "“人宠共生”绿道投用 吉林多业态激活宠物经济新动能",
-      "source": "中新网",
-      "published": "Tue, 9 Jun 2026 18:45:40 +0800",
-      "collection_date": "2026-06-09",
-      "source_tier": "mainstream",
-      "investment_relevance": "medium",
-      "primary_topic": "其他观察",
       "content_quality_status": "full",
       "is_original_source": 0
     },
@@ -269,6 +245,18 @@
       "primary_topic": "科技与产业主题",
       "content_quality_status": "full",
       "is_original_source": 1
+    },
+    {
+      "id": 5834,
+      "title": "Watch: French Fighter Jets Shoot Down Kamikaze Drone Over Latvia",
+      "source": "ZeroHedge",
+      "published": "Tue, 09 Jun 2026 08:15:00 +0000",
+      "collection_date": "2026-06-09",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
     },
     {
       "id": 5776,
@@ -339,6 +327,18 @@
       "source_tier": "aggregator",
       "investment_relevance": "medium",
       "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 5770,
+      "title": "“人宠共生”绿道投用 吉林多业态激活宠物经济新动能",
+      "source": "中新网",
+      "published": "Tue, 9 Jun 2026 18:45:40 +0800",
+      "collection_date": "2026-06-09",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
       "content_quality_status": "full",
       "is_original_source": 0
     },
@@ -814,7 +814,7 @@
       "high_confidence_topic": true
     },
     {
-      "candidate_id": "C05",
+      "candidate_id": "C04",
       "topic": "政策与监管",
       "market_scope": [
         "A股",
@@ -875,7 +875,7 @@
       "high_confidence_topic": true
     },
     {
-      "candidate_id": "C06",
+      "candidate_id": "C05",
       "topic": "宏观与流动性",
       "market_scope": [
         "美股",
@@ -928,7 +928,7 @@
       "high_confidence_topic": true
     },
     {
-      "candidate_id": "C04",
+      "candidate_id": "C06",
       "topic": "风险事件",
       "market_scope": [
         "A股",
@@ -3570,30 +3570,30 @@
       5786,
       5787,
       5788,
-      5780,
       5789,
+      5780,
       5775,
       5781,
-      5782,
       5820,
       5830,
       5831,
       5832,
       5833,
-      5834,
+      5782,
       5783,
       5784,
-      5770,
       5812,
       5813,
       5811,
       5810,
+      5834,
       5776,
       5777,
       5821,
       5822,
       5823,
       5824,
+      5770,
       5771,
       5773,
       5778,
@@ -3659,17 +3659,17 @@
         "source_tier": "mainstream"
       },
       {
-        "article_id": 5780,
-        "source": "36氪",
-        "title": "累计在轨23万小时零失效，星载光电赛道跑出一匹黑马｜36氪首发",
-        "published": "2026-06-09 18:51:58  +0800",
-        "source_tier": "mainstream"
-      },
-      {
         "article_id": 5789,
         "source": "华尔街见闻",
         "title": "特朗普：美伊协议可能在“两三天内”达成，霍尔木兹将“立即”重开",
         "published": "Tue, 09 Jun 2026 17:54:22 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5780,
+        "source": "36氪",
+        "title": "累计在轨23万小时零失效，星载光电赛道跑出一匹黑马｜36氪首发",
+        "published": "2026-06-09 18:51:58  +0800",
         "source_tier": "mainstream"
       },
       {
@@ -3684,13 +3684,6 @@
         "source": "36氪",
         "title": "登顶GitHub Hacker News，这个开源项目让AI编程成本降低 98%｜涌现新项目",
         "published": "2026-06-09 15:53:19  +0800",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5782,
-        "source": "36氪",
-        "title": "康养地产的“闭环”，北京山谷找到了",
-        "published": "2026-06-09 14:19:43  +0800",
         "source_tier": "mainstream"
       },
       {
@@ -3729,11 +3722,11 @@
         "source_tier": "aggregator"
       },
       {
-        "article_id": 5834,
-        "source": "ZeroHedge",
-        "title": "Watch: French Fighter Jets Shoot Down Kamikaze Drone Over Latvia",
-        "published": "Tue, 09 Jun 2026 08:15:00 +0000",
-        "source_tier": "aggregator"
+        "article_id": 5782,
+        "source": "36氪",
+        "title": "康养地产的“闭环”，北京山谷找到了",
+        "published": "2026-06-09 14:19:43  +0800",
+        "source_tier": "mainstream"
       },
       {
         "article_id": 5783,
@@ -3747,13 +3740,6 @@
         "source": "36氪",
         "title": "36氪首发 | 国内唯一POD材料产业化团队再创业，布局3C与AI芯片散热，技术积累全球领先",
         "published": "2026-06-09 09:58:22  +0800",
-        "source_tier": "mainstream"
-      },
-      {
-        "article_id": 5770,
-        "source": "中新网",
-        "title": "“人宠共生”绿道投用 吉林多业态激活宠物经济新动能",
-        "published": "Tue, 9 Jun 2026 18:45:40 +0800",
         "source_tier": "mainstream"
       },
       {
@@ -3783,6 +3769,13 @@
         "title": "Trump says Iran deal could be reached in 'two or three days' and Strait of Hormuz will reopen 'immediately'",
         "published": "Tue, 09 Jun 2026 09:56:44 GMT",
         "source_tier": "mainstream"
+      },
+      {
+        "article_id": 5834,
+        "source": "ZeroHedge",
+        "title": "Watch: French Fighter Jets Shoot Down Kamikaze Drone Over Latvia",
+        "published": "Tue, 09 Jun 2026 08:15:00 +0000",
+        "source_tier": "aggregator"
       },
       {
         "article_id": 5776,
@@ -3825,6 +3818,13 @@
         "title": "Apple’s WWDC 2026 Creates Buy Opportunity for XLK",
         "published": "Mon, 08 Jun 2026 18:21:29 +0000",
         "source_tier": "aggregator"
+      },
+      {
+        "article_id": 5770,
+        "source": "中新网",
+        "title": "“人宠共生”绿道投用 吉林多业态激活宠物经济新动能",
+        "published": "Tue, 9 Jun 2026 18:45:40 +0800",
+        "source_tier": "mainstream"
       },
       {
         "article_id": 5771,
@@ -4070,15 +4070,35 @@
     "required": true,
     "market": "CN",
     "summary": {
-      "total_claims": 6,
-      "realtime_claims": 4,
-      "verified_realtime_claims": 4,
-      "news_fact_claims": 2,
+      "total_claims": 8,
+      "realtime_claims": 2,
+      "verified_realtime_claims": 2,
+      "news_fact_claims": 6,
       "failed_claims": 0
     },
     "claims": [
       {
         "claim_id": "cn-claim-001",
+        "market": "CN",
+        "claim_type": "涨跌幅断言",
+        "scope": "实时行情断言",
+        "content": "涨3.93%",
+        "context": "- 创业板指大涨3.93%",
+        "asset_hint": "sz399006",
+        "extracted_value": "3.93",
+        "verified": true,
+        "verification_status": "verified",
+        "confidence": 0.95,
+        "source": "Yahoo Finance",
+        "realtime_source": "Yahoo Finance",
+        "timestamp": "2026-06-09 16:29:16",
+        "freshness_status": "timestamped",
+        "evidence": "实时涨跌幅: +3.93%",
+        "failure_reason": "",
+        "source_articles": []
+      },
+      {
+        "claim_id": "cn-claim-002",
         "market": "CN",
         "claim_type": "涨跌幅断言",
         "scope": "实时行情断言",
@@ -4098,76 +4118,62 @@
         "source_articles": []
       },
       {
-        "claim_id": "cn-claim-002",
+        "claim_id": "cn-claim-003",
         "market": "CN",
-        "claim_type": "金价断言",
-        "scope": "实时行情断言",
-        "content": "黄金报4338.50美元",
-        "context": "- 基于实时数据（2026-06-09 11:18），国际黄金报4338.50美元/盎司，美元兑人民币为6.7819（2026-06-08更新）。【新闻5789】报道，特朗普表态后布伦特原油跌超2%至92美元/桶。",
-        "asset_hint": "gold",
-        "extracted_value": "4338.50",
-        "verified": true,
-        "verification_status": "verified",
-        "confidence": 1.0,
-        "source": "Gold-API / Yahoo Finance",
-        "realtime_source": "Gold-API / Yahoo Finance",
-        "timestamp": "2026-06-09T11:18:09Z",
-        "freshness_status": "timestamped",
-        "evidence": "实时金价: $4338.50/盎司 (误差 0.0%)",
-        "failure_reason": "",
+        "claim_type": "市场趋势断言",
+        "scope": "新闻事实断言",
+        "content": "3.93%",
+        "context": "- 创业板指大涨3.93%，芯片半导体产业链全面爆发，逾140只股涨停。【新闻5788】",
+        "asset_hint": null,
+        "extracted_value": "3.93",
+        "verified": false,
+        "verification_status": "failed",
+        "confidence": 0.0,
+        "source": "",
+        "realtime_source": "",
+        "timestamp": "",
+        "freshness_status": "not_applicable",
+        "evidence": "新闻事实断言，不纳入实时行情校验",
+        "failure_reason": "新闻事实断言，不纳入实时行情校验",
         "source_articles": [
           {
-            "article_id": 5789,
+            "article_id": 5788,
             "source": "华尔街见闻",
-            "title": "特朗普：美伊协议可能在“两三天内”达成，霍尔木兹将“立即”重开",
-            "published": "Tue, 09 Jun 2026 17:54:22 +0800"
+            "title": "沪指收复4000点，创业板涨近4%，芯片半导体大爆发，双焦大跌、焦煤一度跌停",
+            "published": "Tue, 09 Jun 2026 18:18:58 +0800"
           }
         ]
       },
       {
-        "claim_id": "cn-claim-003",
-        "market": "CN",
-        "claim_type": "金价断言",
-        "scope": "实时行情断言",
-        "content": "黄金基于实时数据报4338.50美元",
-        "context": "- **汇率与大宗**: 中东局势推升能源价格，但口头信号反复导致油价波动加剧。黄金基于实时数据报4338.50美元/盎司，高位震荡。",
-        "asset_hint": "gold",
-        "extracted_value": "4338.50",
-        "verified": true,
-        "verification_status": "verified",
-        "confidence": 1.0,
-        "source": "Gold-API / Yahoo Finance",
-        "realtime_source": "Gold-API / Yahoo Finance",
-        "timestamp": "2026-06-09T11:18:09Z",
-        "freshness_status": "timestamped",
-        "evidence": "实时金价: $4338.50/盎司 (误差 0.0%)",
-        "failure_reason": "",
-        "source_articles": []
-      },
-      {
         "claim_id": "cn-claim-004",
         "market": "CN",
-        "claim_type": "汇率断言",
-        "scope": "实时行情断言",
-        "content": "美元兑人民币为6.7819",
-        "context": "- 基于实时数据（2026-06-09 11:18），国际黄金报4338.50美元/盎司，美元兑人民币为6.7819（2026-06-08更新）。【新闻5789】报道，特朗普表态后布伦特原油跌超2%至92美元/桶。",
-        "asset_hint": "USD/CNY",
-        "extracted_value": "6.7819",
-        "verified": true,
-        "verification_status": "verified",
-        "confidence": 1.0,
-        "source": "Frankfurter",
-        "realtime_source": "Frankfurter",
-        "timestamp": "2026-06-08 00:00:00",
-        "freshness_status": "timestamped",
-        "evidence": "实时汇率: 6.7819",
-        "failure_reason": "",
+        "claim_type": "市场趋势断言",
+        "scope": "新闻事实断言",
+        "content": "指数涨5.6%",
+        "context": "- **证据矛盾，待进一步确认**: 美股基本面与技术面存在分歧——费城半导体指数涨5.6%，但整体市场广度偏负，下跌个股多于上涨个股。【新闻5787】【新闻5776】",
+        "asset_hint": null,
+        "extracted_value": "5.6",
+        "verified": false,
+        "verification_status": "failed",
+        "confidence": 0.0,
+        "source": "",
+        "realtime_source": "",
+        "timestamp": "",
+        "freshness_status": "not_applicable",
+        "evidence": "新闻事实断言，不纳入实时行情校验",
+        "failure_reason": "新闻事实断言，不纳入实时行情校验",
         "source_articles": [
           {
-            "article_id": 5789,
+            "article_id": 5787,
             "source": "华尔街见闻",
-            "title": "特朗普：美伊协议可能在“两三天内”达成，霍尔木兹将“立即”重开",
-            "published": "Tue, 09 Jun 2026 17:54:22 +0800"
+            "title": "美股刚松口气，技术派就泼冷水：周一反弹只是“死猫跳”而已！",
+            "published": "Tue, 09 Jun 2026 18:30:54 +0800"
+          },
+          {
+            "article_id": 5776,
+            "source": "东方财富网",
+            "title": "全球市场：美股三大指数收盘涨跌不一 纳指涨近1% 半导体板块大涨",
+            "published": "Tue, 09 Jun 2026 06:15:58 +0800"
           }
         ]
       },
@@ -4176,10 +4182,10 @@
         "market": "CN",
         "claim_type": "市场趋势断言",
         "scope": "新闻事实断言",
-        "content": "12%",
-        "context": "- **证据**: 【新闻5789】和【新闻5785】显示中东局势反复，霍尔木兹海峡通行前景不明；【新闻5776】报道中东冲突推升通胀，欧元区和日本或被迫加息；【新闻5831】指出美元购买力自封锁以来损失近半，GDP累计损失达12%。证据矛盾，待进一步确认。",
+        "content": "2%",
+        "context": "- **风险事件**: 特朗普第37次宣称美伊协议“即将达成”，承诺屡次落空，市场对时间表保持审慎，此类声明信号价值严重侵蚀。油价走低，布伦特原油跌超2%至92美元/桶。【新闻5789】",
         "asset_hint": null,
-        "extracted_value": "12",
+        "extracted_value": "2",
         "verified": false,
         "verification_status": "failed",
         "confidence": 0.0,
@@ -4195,24 +4201,6 @@
             "source": "华尔街见闻",
             "title": "特朗普：美伊协议可能在“两三天内”达成，霍尔木兹将“立即”重开",
             "published": "Tue, 09 Jun 2026 17:54:22 +0800"
-          },
-          {
-            "article_id": 5785,
-            "source": "华尔街见闻",
-            "title": "37次“即将达成”！特朗普不断预告伊朗协议，却一次次落空",
-            "published": "Tue, 09 Jun 2026 18:58:01 +0800"
-          },
-          {
-            "article_id": 5776,
-            "source": "东方财富网",
-            "title": "全球市场：美股三大指数收盘涨跌不一 纳指涨近1% 半导体板块大涨",
-            "published": "Tue, 09 Jun 2026 06:15:58 +0800"
-          },
-          {
-            "article_id": 5831,
-            "source": "ZeroHedge",
-            "title": "Since Lockdowns, A 12% GDP Loss; Half Of US Dollar Purchasing Power Stolen",
-            "published": "Tue, 09 Jun 2026 10:30:00 +0000"
           }
         ]
       },
@@ -4221,10 +4209,37 @@
         "market": "CN",
         "claim_type": "市场趋势断言",
         "scope": "新闻事实断言",
-        "content": "销量同比下滑超20%",
-        "context": "- **财报与公司经营**: 比亚迪一季度利润大幅下滑，王传福归因于产能切换。【新闻5786】报道前5月累计销量同比下滑超20%，尽管5月出现拐点信号，但销量回升的持续性待验证。",
+        "content": "0.94%",
+        "context": "- **汇率与大宗**: 贵金属全线下跌，沪银跌0.94%；焦煤期货主力合约一度跌停。黄金在高位震荡，市场等待通胀数据指引。【新闻5788】",
         "asset_hint": null,
-        "extracted_value": "20",
+        "extracted_value": "0.94",
+        "verified": false,
+        "verification_status": "failed",
+        "confidence": 0.0,
+        "source": "",
+        "realtime_source": "",
+        "timestamp": "",
+        "freshness_status": "not_applicable",
+        "evidence": "新闻事实断言，不纳入实时行情校验",
+        "failure_reason": "新闻事实断言，不纳入实时行情校验",
+        "source_articles": [
+          {
+            "article_id": 5788,
+            "source": "华尔街见闻",
+            "title": "沪指收复4000点，创业板涨近4%，芯片半导体大爆发，双焦大跌、焦煤一度跌停",
+            "published": "Tue, 09 Jun 2026 18:18:58 +0800"
+          }
+        ]
+      },
+      {
+        "claim_id": "cn-claim-007",
+        "market": "CN",
+        "claim_type": "市场趋势断言",
+        "scope": "新闻事实断言",
+        "content": "同比下滑55%",
+        "context": "- **财报与公司经营**: 比亚迪一季度利润同比下滑55%，王传福将销量压力归因于二代刀片电池产能爬坡。海外销量创新高，盈利重心快速向外转移，但国内市场竞争加剧，正反证据并存。【新闻5786】",
+        "asset_hint": null,
+        "extracted_value": "55",
         "verified": false,
         "verification_status": "failed",
         "confidence": 0.0,
@@ -4240,6 +4255,33 @@
             "source": "华尔街见闻",
             "title": "王传福给比亚迪股东们打了把气",
             "published": "Tue, 09 Jun 2026 18:40:08 +0800"
+          }
+        ]
+      },
+      {
+        "claim_id": "cn-claim-008",
+        "market": "CN",
+        "claim_type": "市场趋势断言",
+        "scope": "新闻事实断言",
+        "content": "3%",
+        "context": "- **中芯国际（sh688981）**: 受益半导体板块整体走强，港股中芯国际涨超3%，但属板块联动而非独立催化，暂列观察。【新闻5788】",
+        "asset_hint": null,
+        "extracted_value": "3",
+        "verified": false,
+        "verification_status": "failed",
+        "confidence": 0.0,
+        "source": "",
+        "realtime_source": "",
+        "timestamp": "",
+        "freshness_status": "not_applicable",
+        "evidence": "新闻事实断言，不纳入实时行情校验",
+        "failure_reason": "新闻事实断言，不纳入实时行情校验",
+        "source_articles": [
+          {
+            "article_id": 5788,
+            "source": "华尔街见闻",
+            "title": "沪指收复4000点，创业板涨近4%，芯片半导体大爆发，双焦大跌、焦煤一度跌停",
+            "published": "Tue, 09 Jun 2026 18:18:58 +0800"
           }
         ]
       }
@@ -4327,12 +4369,12 @@
         "share": 0.08064516129032258
       },
       {
-        "name": "中新网",
+        "name": "CNBC",
         "count": 5,
         "share": 0.08064516129032258
       },
       {
-        "name": "CNBC",
+        "name": "中新网",
         "count": 5,
         "share": 0.08064516129032258
       },
@@ -4404,12 +4446,12 @@
         "share": 0.04838709677419355
       },
       {
-        "name": "风险事件",
+        "name": "宏观与流动性",
         "count": 3,
         "share": 0.04838709677419355
       },
       {
-        "name": "宏观与流动性",
+        "name": "风险事件",
         "count": 3,
         "share": 0.04838709677419355
       }
@@ -4924,5 +4966,5 @@
     }
   ],
   "session": "evening",
-  "session_time": "2026-06-09 19:20:50"
+  "session_time": "2026-06-09 20:34:43"
 }
