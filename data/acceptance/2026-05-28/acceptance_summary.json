@@ -1,0 +1,90 @@
+{
+  "markets": {
+    "CN": {
+      "acceptance_report_path": "/Users/qipeijun/code/githubProject/Financial-report/data/acceptance/2026-05-28/acceptance_report-cn.json",
+      "passed": false,
+      "report_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-05/2026-05-28/reports/📅 2026-05-28 财经分析报告_morning_markdown-report-cn_deepseek.md",
+      "metadata_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-05/2026-05-28/metadata/analysis_meta_morning_markdown-report-cn_deepseek.json",
+      "fresh_artifacts": true,
+      "quality_passed": false,
+      "stock_scoring_passed": false,
+      "cross_verification_required": true,
+      "source_citations_required": false,
+      "source_citations_passed": null,
+      "claim_ledger_required": false,
+      "claim_ledger_passed": null,
+      "coverage_matrix_required": false,
+      "coverage_matrix_passed": null,
+      "evidence_diversity_required": false,
+      "evidence_diversity_passed": null,
+      "counter_evidence_required": false,
+      "counter_evidence_passed": null,
+      "evidence_audit_required": false,
+      "evidence_audit_passed": null,
+      "failure_reasons": [
+        "quality: 质量门禁未通过",
+        "stock_scoring: 结构化推荐门禁未通过",
+        "quality: ❌ 准确性严重不足: 仅0%的断言得到验证 (0/1)",
+        "quality: ❌ 存在未回溯的新闻占位引用: 【新闻X】 20处",
+        "stock_scoring: sh688981 高等级推荐缺少最小独立证据",
+        "stock_scoring: sz000977 高等级推荐缺少最小独立证据"
+      ]
+    },
+    "US": {
+      "acceptance_report_path": "/Users/qipeijun/code/githubProject/Financial-report/data/acceptance/2026-05-28/acceptance_report-us.json",
+      "passed": false,
+      "report_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-05/2026-05-28/reports/📅 2026-05-28 财经分析报告_morning_markdown-report-us_deepseek.md",
+      "metadata_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-05/2026-05-28/metadata/analysis_meta_morning_markdown-report-us_deepseek.json",
+      "fresh_artifacts": true,
+      "quality_passed": false,
+      "stock_scoring_passed": false,
+      "cross_verification_required": true,
+      "source_citations_required": false,
+      "source_citations_passed": null,
+      "claim_ledger_required": false,
+      "claim_ledger_passed": null,
+      "coverage_matrix_required": false,
+      "coverage_matrix_passed": null,
+      "evidence_diversity_required": false,
+      "evidence_diversity_passed": null,
+      "counter_evidence_required": false,
+      "counter_evidence_passed": null,
+      "evidence_audit_required": false,
+      "evidence_audit_passed": null,
+      "failure_reasons": [
+        "quality: 质量门禁未通过",
+        "stock_scoring: 结构化推荐门禁未通过",
+        "quality: ❌ 准确性严重不足: 仅0%的断言得到验证 (0/3)",
+        "quality: ❌ 存在未回溯的新闻占位引用: 【新闻X】 1处",
+        "stock_scoring: TSLA 高等级推荐缺少最小独立证据",
+        "stock_scoring: GS 高等级推荐缺少最小独立证据",
+        "stock_scoring: AAPL cross_verification_status 未 confirmed，不得进入 actionable_candidates"
+      ]
+    }
+  },
+  "date": "2026-05-28",
+  "generated_at": "2026-05-28 14:39:15",
+  "passed": false,
+  "market_runs": {
+    "CN": {
+      "command": {
+        "returncode": 1,
+        "passed": false,
+        "stdout_tail": "{\"acceptance_report\": \"/Users/qipeijun/code/githubProject/Financial-report/data/acceptance/2026-05-28/acceptance_report-cn.json\", \"acceptance_summary\": \"/Users/qipeijun/code/githubProject/Financial-report/data/acceptance/2026-05-28/acceptance_summary.json\", \"passed\": false, \"markets\": [\"CN\", \"US\"]}\n",
+        "stderr_tail": ""
+      },
+      "report_path": "/Users/qipeijun/code/githubProject/Financial-report/data/acceptance/2026-05-28/acceptance_report-cn.json",
+      "passed": false
+    },
+    "US": {
+      "command": {
+        "returncode": 1,
+        "passed": false,
+        "stdout_tail": "{\"acceptance_report\": \"/Users/qipeijun/code/githubProject/Financial-report/data/acceptance/2026-05-28/acceptance_report-us.json\", \"acceptance_summary\": \"/Users/qipeijun/code/githubProject/Financial-report/data/acceptance/2026-05-28/acceptance_summary.json\", \"passed\": false, \"markets\": [\"CN\", \"US\"]}\n",
+        "stderr_tail": ""
+      },
+      "report_path": "/Users/qipeijun/code/githubProject/Financial-report/data/acceptance/2026-05-28/acceptance_report-us.json",
+      "passed": false
+    }
+  }
+}

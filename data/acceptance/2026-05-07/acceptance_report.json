@@ -1,0 +1,123 @@
+{
+  "date": "2026-05-07",
+  "generated_at": "2026-05-07 11:28:05",
+  "automation": {
+    "checks": [
+      {
+        "name": "pytest",
+        "cmd": [
+          "/Users/qipeijun/code/githubProject/Financial-report/venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "tests/test_fact_checker_quality.py",
+          "tests/test_investment_signal.py",
+          "tests/test_run_acceptance.py",
+          "tests/test_stock_recommendation.py"
+        ],
+        "returncode": 0,
+        "passed": true,
+        "stdout_tail": "......................                                                   [100%]\n22 passed in 0.20s\n",
+        "stderr_tail": ""
+      },
+      {
+        "name": "compileall",
+        "cmd": [
+          "/Users/qipeijun/code/githubProject/Financial-report/venv/bin/python",
+          "-m",
+          "compileall",
+          "scripts",
+          "tests"
+        ],
+        "returncode": 0,
+        "passed": true,
+        "stdout_tail": "Listing 'scripts'...\nListing 'scripts/archive'...\nListing 'scripts/config'...\nListing 'scripts/utils'...\nListing 'scripts/utils/providers'...\nListing 'tests'...\n",
+        "stderr_tail": ""
+      }
+    ],
+    "passed": true
+  },
+  "database": {
+    "db_exists": true,
+    "row_count": 46,
+    "extended_fields": {
+      "source_tier": 46,
+      "content_quality_status": 46,
+      "investment_relevance": 46,
+      "is_original_source": 46
+    },
+    "passed": true
+  },
+  "entrypoints": {
+    "checks": {
+      "interactive_runner_markdown": true,
+      "interactive_runner_judgment": true,
+      "interactive_runner_entrypoint": true,
+      "start_sh_markdown": true,
+      "start_sh_entrypoint": true
+    },
+    "passed": true
+  },
+  "artifacts": {
+    "modes": {
+      "markdown-report": {
+        "passed": false,
+        "error": "未找到本次新鲜 markdown-report 产物",
+        "report_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-05/2026-05-07/reports/📅 2026-05-07 财经分析报告_morning_markdown-report_deepseek.md",
+        "metadata_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-05/2026-05-07/metadata/analysis_meta_morning_markdown-report_deepseek.json",
+        "report_mtime": 1778124005.6445298,
+        "metadata_mtime": 1778124005.645785,
+        "fresh_report": false,
+        "fresh_metadata": false,
+        "fresh_artifacts": false,
+        "artifact_session_match": true,
+        "stale_artifacts": true,
+        "complete": false,
+        "session": "morning",
+        "live_data_degraded": false
+      }
+    },
+    "same_session_overlap": {},
+    "degrade": {},
+    "freshness": {
+      "markdown-report": {
+        "report_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-05/2026-05-07/reports/📅 2026-05-07 财经分析报告_morning_markdown-report_deepseek.md",
+        "metadata_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-05/2026-05-07/metadata/analysis_meta_morning_markdown-report_deepseek.json",
+        "report_mtime": 1778124005.6445298,
+        "metadata_mtime": 1778124005.645785,
+        "fresh_report": false,
+        "fresh_metadata": false,
+        "fresh_artifacts": false,
+        "artifact_session_match": true,
+        "stale_artifacts": true,
+        "complete": false,
+        "session": "morning",
+        "live_data_degraded": false
+      },
+      "judgment-cards": {
+        "report_path": null,
+        "metadata_path": null,
+        "report_mtime": null,
+        "metadata_mtime": null,
+        "fresh_report": false,
+        "fresh_metadata": false,
+        "fresh_artifacts": false,
+        "artifact_session_match": false,
+        "stale_artifacts": false,
+        "complete": false,
+        "session": null,
+        "live_data_degraded": false
+      }
+    }
+  },
+  "manual_checklist": [
+    "确认 Markdown 报告不是简单复述新闻，而是有清晰结论提炼。",
+    "确认没有把新闻中的旧行情数字包装成“基于实时数据”或“现价”。",
+    "确认没有把同比、环比、财报增速写成当前实时涨跌。",
+    "确认 Judgment Cards 区分了事实、推断、风险。",
+    "确认观察项承接了证据不足内容，而不是强行输出确定性结论。",
+    "确认建议具有跟踪价值，不是模板化、空泛表述。",
+    "确认股票推荐评分章节包含总分、子分、等级、数据完整度与失效条件。"
+  ],
+  "passed": false
+}

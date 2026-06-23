@@ -1,0 +1,84 @@
+{
+  "markets": {
+    "CN": {
+      "acceptance_report_path": "/Users/qipeijun/code/githubProject/Financial-report/data/acceptance/2026-06-09/acceptance_report-cn.json",
+      "passed": false,
+      "report_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-06/2026-06-09/reports/📅 2026-06-09 财经分析报告_evening_markdown-report-cn_deepseek.md",
+      "metadata_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-06/2026-06-09/metadata/analysis_meta_evening_markdown-report-cn_deepseek.json",
+      "fresh_artifacts": true,
+      "quality_passed": false,
+      "stock_scoring_passed": true,
+      "cross_verification_required": true,
+      "source_citations_required": true,
+      "source_citations_passed": true,
+      "claim_ledger_required": true,
+      "claim_ledger_passed": true,
+      "coverage_matrix_required": true,
+      "coverage_matrix_passed": true,
+      "evidence_diversity_required": true,
+      "evidence_diversity_passed": true,
+      "counter_evidence_required": true,
+      "counter_evidence_passed": true,
+      "evidence_audit_required": true,
+      "evidence_audit_passed": true,
+      "failure_reasons": [
+        "quality: 质量门禁未通过",
+        "quality: ❌ 准确性严重不足: 仅0%的断言得到验证 (0/2)"
+      ]
+    },
+    "US": {
+      "acceptance_report_path": "/Users/qipeijun/code/githubProject/Financial-report/data/acceptance/2026-06-09/acceptance_report-us.json",
+      "passed": false,
+      "report_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-06/2026-06-09/reports/📅 2026-06-09 财经分析报告_evening_markdown-report-us_deepseek.md",
+      "metadata_path": "/Users/qipeijun/code/githubProject/Financial-report/docs/archive/2026-06/2026-06-09/metadata/analysis_meta_evening_markdown-report-us_deepseek.json",
+      "fresh_artifacts": true,
+      "quality_passed": false,
+      "stock_scoring_passed": true,
+      "cross_verification_required": true,
+      "source_citations_required": true,
+      "source_citations_passed": false,
+      "claim_ledger_required": true,
+      "claim_ledger_passed": true,
+      "coverage_matrix_required": true,
+      "coverage_matrix_passed": true,
+      "evidence_diversity_required": true,
+      "evidence_diversity_passed": true,
+      "counter_evidence_required": true,
+      "counter_evidence_passed": true,
+      "evidence_audit_required": true,
+      "evidence_audit_passed": true,
+      "failure_reasons": [
+        "quality: 质量门禁未通过",
+        "quality: ❌ 准确性严重不足: 仅0%的断言得到验证 (0/2)",
+        "quality: ❌ 存在未回溯的新闻占位引用: 【新闻X】 2处",
+        "source_citations: 存在未回溯的新闻占位引用: 【新闻X】 2处",
+        "source_citations: 存在未登记 source_references 的新闻引用: 4885"
+      ]
+    }
+  },
+  "date": "2026-06-09",
+  "generated_at": "2026-06-09 20:37:50",
+  "passed": false,
+  "market_runs": {
+    "CN": {
+      "command": {
+        "returncode": 1,
+        "passed": false,
+        "stdout_tail": "{\"acceptance_report\": \"/Users/qipeijun/code/githubProject/Financial-report/data/acceptance/2026-06-09/acceptance_report-cn.json\", \"acceptance_summary\": \"/Users/qipeijun/code/githubProject/Financial-report/data/acceptance/2026-06-09/acceptance_summary.json\", \"passed\": false, \"markets\": [\"CN\"]}\n",
+        "stderr_tail": ""
+      },
+      "report_path": "/Users/qipeijun/code/githubProject/Financial-report/data/acceptance/2026-06-09/acceptance_report-cn.json",
+      "passed": false
+    },
+    "US": {
+      "command": {
+        "returncode": 1,
+        "passed": false,
+        "stdout_tail": "{\"acceptance_report\": \"/Users/qipeijun/code/githubProject/Financial-report/data/acceptance/2026-06-09/acceptance_report-us.json\", \"acceptance_summary\": \"/Users/qipeijun/code/githubProject/Financial-report/data/acceptance/2026-06-09/acceptance_summary.json\", \"passed\": false, \"markets\": [\"CN\", \"US\"]}\n",
+        "stderr_tail": ""
+      },
+      "report_path": "/Users/qipeijun/code/githubProject/Financial-report/data/acceptance/2026-06-09/acceptance_report-us.json",
+      "passed": false
+    }
+  }
+}
