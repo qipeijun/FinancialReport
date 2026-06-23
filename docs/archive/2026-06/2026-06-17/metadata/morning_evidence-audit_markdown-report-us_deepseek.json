@@ -1,0 +1,2415 @@
+{
+  "required": true,
+  "analysis_mode": "markdown-report",
+  "market": "US",
+  "date_range": {
+    "start": "2026-06-17",
+    "end": "2026-06-17"
+  },
+  "source_references": {
+    "required": true,
+    "article_ids": [
+      6309,
+      6310,
+      6311,
+      6312,
+      6313,
+      6306,
+      6308,
+      6359,
+      6360,
+      6361,
+      6362,
+      6363,
+      6307,
+      6304,
+      6305,
+      6277,
+      6324,
+      6327,
+      6326,
+      6325,
+      6328,
+      6319,
+      6320,
+      6321,
+      6322,
+      6316,
+      6315,
+      6274,
+      6275,
+      6276,
+      6278,
+      6314,
+      6323,
+      6329,
+      6330,
+      6299,
+      6331,
+      6332,
+      6300,
+      6333,
+      6318
+    ],
+    "articles": [
+      {
+        "article_id": 6309,
+        "source": "ZeroHedge",
+        "title": "Iranian Tankers Cross US Naval Blockade After Trump Deal Allows Iran To Restart Oil Sales",
+        "published": "Tue, 16 Jun 2026 23:40:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6310,
+        "source": "ZeroHedge",
+        "title": "15 Tied To Antifa Charged With Violently Interfering With ICE Operations In Minnesota",
+        "published": "Tue, 16 Jun 2026 23:15:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6311,
+        "source": "ZeroHedge",
+        "title": "Supreme Court Rejects Challenge To Trump's First-Term Tariff On China",
+        "published": "Tue, 16 Jun 2026 22:25:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6312,
+        "source": "ZeroHedge",
+        "title": "Wyoming And Spokane Data Center Pauses Show NIMBY Fury Has Shifted From Nuclear To AI",
+        "published": "Tue, 16 Jun 2026 22:00:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6313,
+        "source": "ZeroHedge",
+        "title": "SPLC Official Shared Bank Accounts With Neo-Nazi Informant",
+        "published": "Tue, 16 Jun 2026 21:40:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6306,
+        "source": "CNBC",
+        "title": "Japan May exports grow at fastest pace in over three years, beating estimates, as chip demand soars",
+        "published": "Wed, 17 Jun 2026 01:02:10 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6308,
+        "source": "CNBC",
+        "title": "Bill limiting investors from buying homes set to speed through Congress",
+        "published": "Tue, 16 Jun 2026 22:34:21 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6359,
+        "source": "ETF Trends",
+        "title": "AI’s Exponential Power Demands Could Make This ETF a Winner",
+        "published": "Tue, 16 Jun 2026 21:04:51 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6360,
+        "source": "ETF Trends",
+        "title": "Microsoft Woes Hide Opportunity With This ETF",
+        "published": "Tue, 16 Jun 2026 20:47:02 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6361,
+        "source": "ETF Trends",
+        "title": "JPMorgan Converts $950M to Active NY, CA Muni ETFs",
+        "published": "Tue, 16 Jun 2026 19:39:58 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6362,
+        "source": "ETF Trends",
+        "title": "WisdomTree Celebrates 20 Years of Modern Alpha",
+        "published": "Tue, 16 Jun 2026 18:35:43 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6363,
+        "source": "ETF Trends",
+        "title": "Q2 Symposium: The CLO Retail Renaissance With Reckoner Capital",
+        "published": "Tue, 16 Jun 2026 18:09:14 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6307,
+        "source": "CNBC",
+        "title": "Michael Burry says he's tempted to bet against SpaceX, but passes on expensive options",
+        "published": "Tue, 16 Jun 2026 20:55:45 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6304,
+        "source": "CNBC",
+        "title": "Fed Chair Warsh expected to withhold 'dot' from central bank's interest rate outlook",
+        "published": "Tue, 16 Jun 2026 19:12:13 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6305,
+        "source": "CNBC",
+        "title": "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+        "published": "Tue, 16 Jun 2026 15:51:53 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6277,
+        "source": "FT中文网",
+        "title": "欧洲人能把命运掌握在自己手中吗？",
+        "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6324,
+        "source": "Yahoo Finance",
+        "title": "Cathie Wood buys $529.7 million of popular new stock",
+        "published": "2026-06-15T13:33:00Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6327,
+        "source": "Yahoo Finance",
+        "title": "Baron Real Estate Fund Sold Its Position in Blackstone (BX). Here’s Why",
+        "published": "2026-06-15T13:15:54Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6326,
+        "source": "Yahoo Finance",
+        "title": "Is Rollins Stock Underperforming the Nasdaq?",
+        "published": "2026-06-15T13:13:28Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6325,
+        "source": "Yahoo Finance",
+        "title": "Solid Results Lifted Equinix (EQIX) in Q1",
+        "published": "2026-06-15T13:10:24Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6328,
+        "source": "Yahoo Finance",
+        "title": "Mirae Asset apologizes to investors over failed SpaceX IPO allocation",
+        "published": "2026-06-15T13:07:46Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6319,
+        "source": "MarketWatch",
+        "title": "America’s fertility rate has never been lower. Blame smartphones — and these 4 financial realities.",
+        "published": "Wed, 17 Jun 2026 01:03:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6320,
+        "source": "MarketWatch",
+        "title": "Oil may move through the Strait of Hormuz first, leaving fertilizer supplies stranded",
+        "published": "Wed, 17 Jun 2026 00:46:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6321,
+        "source": "MarketWatch",
+        "title": "Intel takes a major step toward turning around a business that’s bleeding cash",
+        "published": "Tue, 16 Jun 2026 22:49:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6322,
+        "source": "MarketWatch",
+        "title": "I’m spending $170,000 to upgrade my home for my aging parents. Can I get tax breaks?",
+        "published": "Tue, 16 Jun 2026 22:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6316,
+        "source": "BBC全球经济",
+        "title": "Struggling Pizza Hut chain to be sold for $2.7bn",
+        "published": "Tue, 16 Jun 2026 21:00:30 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6315,
+        "source": "BBC全球经济",
+        "title": "Musk's SpaceX overtakes Amazon to become world's fifth most valuable firm",
+        "published": "Tue, 16 Jun 2026 16:38:14 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6274,
+        "source": "FT中文网",
+        "title": "特朗普提议由叙利亚代替以色列打击真主党",
+        "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6275,
+        "source": "FT中文网",
+        "title": "SpaceX 600亿美元收购AI初创公司",
+        "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6276,
+        "source": "FT中文网",
+        "title": "如果欧盟发动贸易战，如何收场将由中国说了算",
+        "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6278,
+        "source": "FT中文网",
+        "title": "欧洲议会批准欧美贸易协议",
+        "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6314,
+        "source": "BBC全球经济",
+        "title": "Cadbury chocolate-owner Mondelez defends staying in Russia",
+        "published": "Tue, 16 Jun 2026 23:05:23 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6323,
+        "source": "MarketWatch",
+        "title": "Chicken tenders are taking over the world, and KFC is rushing to keep up",
+        "published": "Tue, 16 Jun 2026 21:53:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6329,
+        "source": "Seeking Alpha",
+        "title": "Developing world should not completely entrust energy security to U.S., Cheniere CFO says",
+        "published": "Tue, 16 Jun 2026 20:24:18 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6330,
+        "source": "Seeking Alpha",
+        "title": "Exxon to supply LNG to help South Africa cut reliance on coal - Bloomberg",
+        "published": "Tue, 16 Jun 2026 20:05:30 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6299,
+        "source": "经济学人 Economist",
+        "title": "Deal or no deal, oil prices will stay high for months",
+        "published": "Tue, 16 Jun 2026 19:55:31 +0000",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6331,
+        "source": "Seeking Alpha",
+        "title": "Wall Street banks cut oil price predictions as Persian Gulf flows now seen recovering quickly",
+        "published": "Tue, 16 Jun 2026 19:30:16 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6332,
+        "source": "Seeking Alpha",
+        "title": "FMC, Corteva to partner on herbicide technology supply and license deal",
+        "published": "Tue, 16 Jun 2026 18:26:17 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6300,
+        "source": "经济学人 Economist",
+        "title": "America’s bull market has entered its manic phase",
+        "published": "Tue, 16 Jun 2026 18:19:00 +0000",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6333,
+        "source": "Seeking Alpha",
+        "title": "Surge Energy targets $9.7M share buyback as TSX approves NCIB renewal",
+        "published": "Tue, 16 Jun 2026 18:10:19 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6318,
+        "source": "BBC全球经济",
+        "title": "What is Helium-3 and could we get it from the moon?",
+        "published": "Tue, 16 Jun 2026 00:11:13 GMT",
+        "source_tier": "mainstream"
+      }
+    ]
+  },
+  "claim_ledger": {
+    "required": true,
+    "market": "US",
+    "summary": {
+      "total_claims": 1,
+      "realtime_claims": 1,
+      "verified_realtime_claims": 1,
+      "news_fact_claims": 0,
+      "failed_claims": 0
+    },
+    "claims": [
+      {
+        "claim_id": "us-claim-001",
+        "market": "US",
+        "claim_type": "涨跌幅断言",
+        "scope": "实时行情断言",
+        "content": "涨 +2.72%",
+        "context": "美股三大指数全线收涨：纳斯达克领涨 +2.72%",
+        "asset_hint": "^IXIC",
+        "extracted_value": "+2.72",
+        "verified": true,
+        "verification_status": "verified",
+        "confidence": 0.95,
+        "source": "Yahoo Finance",
+        "realtime_source": "Yahoo Finance",
+        "timestamp": "2026-06-17 05:15:59",
+        "freshness_status": "timestamped",
+        "evidence": "实时涨跌幅: +2.72%",
+        "failure_reason": "",
+        "source_articles": []
+      }
+    ]
+  },
+  "coverage_matrix": {
+    "required": true,
+    "market": "US",
+    "categories": {
+      "macro_liquidity": {
+        "article_count": 3,
+        "source_count": 3,
+        "status": "sufficient"
+      },
+      "policy_regulation": {
+        "article_count": 17,
+        "source_count": 5,
+        "status": "sufficient"
+      },
+      "company_earnings": {
+        "article_count": 0,
+        "source_count": 0,
+        "status": "missing"
+      },
+      "industry_theme": {
+        "article_count": 14,
+        "source_count": 6,
+        "status": "sufficient"
+      },
+      "risk_event": {
+        "article_count": 1,
+        "source_count": 1,
+        "status": "partial"
+      },
+      "realtime_market": {
+        "article_count": 0,
+        "source_count": 1,
+        "status": "sufficient"
+      }
+    },
+    "coverage_gaps": [
+      "company_earnings",
+      "risk_event"
+    ]
+  },
+  "evidence_diversity": {
+    "required": true,
+    "market": "US",
+    "total_articles": 41,
+    "source_count": 9,
+    "topic_count": 6,
+    "explicit_entity_count": 0,
+    "explicit_entity_observation_count": 0,
+    "source_tier_known_count": 41,
+    "mainstream_or_better_count": 26,
+    "aggregator_count": 15,
+    "original_source_known_count": 41,
+    "original_source_count": 22,
+    "max_source_share": 0.12195121951219512,
+    "max_topic_share": 0.4146341463414634,
+    "max_entity_share": 0.0,
+    "max_aggregator_share": 0.36585365853658536,
+    "original_source_share": 0.5365853658536586,
+    "source_distribution": [
+      {
+        "name": "ZeroHedge",
+        "count": 5,
+        "share": 0.12195121951219512
+      },
+      {
+        "name": "CNBC",
+        "count": 5,
+        "share": 0.12195121951219512
+      },
+      {
+        "name": "ETF Trends",
+        "count": 5,
+        "share": 0.12195121951219512
+      },
+      {
+        "name": "FT中文网",
+        "count": 5,
+        "share": 0.12195121951219512
+      },
+      {
+        "name": "Yahoo Finance",
+        "count": 5,
+        "share": 0.12195121951219512
+      },
+      {
+        "name": "MarketWatch",
+        "count": 5,
+        "share": 0.12195121951219512
+      },
+      {
+        "name": "Seeking Alpha",
+        "count": 5,
+        "share": 0.12195121951219512
+      },
+      {
+        "name": "BBC全球经济",
+        "count": 4,
+        "share": 0.0975609756097561
+      },
+      {
+        "name": "经济学人 Economist",
+        "count": 2,
+        "share": 0.04878048780487805
+      }
+    ],
+    "topic_distribution": [
+      {
+        "name": "政策与监管",
+        "count": 17,
+        "share": 0.4146341463414634
+      },
+      {
+        "name": "科技与产业主题",
+        "count": 10,
+        "share": 0.24390243902439024
+      },
+      {
+        "name": "未分类",
+        "count": 7,
+        "share": 0.17073170731707318
+      },
+      {
+        "name": "其他观察",
+        "count": 5,
+        "share": 0.12195121951219512
+      },
+      {
+        "name": "宏观与流动性",
+        "count": 1,
+        "share": 0.024390243902439025
+      },
+      {
+        "name": "汇率与大宗",
+        "count": 1,
+        "share": 0.024390243902439025
+      }
+    ],
+    "entity_distribution": [],
+    "source_tier_distribution": [
+      {
+        "name": "mainstream",
+        "count": 26,
+        "share": 0.6341463414634146
+      },
+      {
+        "name": "aggregator",
+        "count": 15,
+        "share": 0.36585365853658536
+      }
+    ],
+    "concentration_flags": [],
+    "passed": true
+  },
+  "counter_evidence_ledger": {
+    "required": true,
+    "market": "US",
+    "topics": [
+      {
+        "topic": "政策与监管",
+        "market": "US",
+        "high_confidence_topic": true,
+        "evidence_article_ids": [
+          6305,
+          6324,
+          6277,
+          6325
+        ],
+        "supporting_article_ids": [
+          6324
+        ],
+        "counter_article_ids": [
+          6277
+        ],
+        "counter_evidence_count": 1,
+        "positive_keywords": [
+          "breakthrough"
+        ],
+        "negative_keywords": [
+          "警告"
+        ],
+        "status": "mixed"
+      },
+      {
+        "topic": "科技与产业主题",
+        "market": "US",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          6304,
+          6307,
+          6308,
+          6274
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      },
+      {
+        "topic": "其他观察",
+        "market": "US",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          6318,
+          6321,
+          6322,
+          6319
+        ],
+        "supporting_article_ids": [
+          6322
+        ],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [
+          "upgrade"
+        ],
+        "negative_keywords": [],
+        "status": "support_only"
+      },
+      {
+        "topic": "汇率与大宗",
+        "market": "US",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          6275
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      },
+      {
+        "topic": "宏观与流动性",
+        "market": "US",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          6361
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      }
+    ],
+    "summary": {
+      "topic_count": 5,
+      "topics_with_counter_evidence": 1,
+      "high_confidence_topics_with_counter_evidence": 1
+    },
+    "passed": false
+  },
+  "cross_verification": {
+    "topic_checks": [
+      {
+        "topic": "政策与监管",
+        "status": "conflicted",
+        "evidence_article_ids": [
+          6305,
+          6324,
+          6277,
+          6325
+        ],
+        "independent_source_count": 3,
+        "mainstream_or_better_count": 10,
+        "has_fresh_evidence": true,
+        "conflict_detail": "跨文章关键词冲突: 正面关键词 ['breakthrough'] (文章 [6324]) vs 负面关键词 ['警告'] (文章 [6277])"
+      },
+      {
+        "topic": "科技与产业主题",
+        "status": "weak",
+        "evidence_article_ids": [
+          6304,
+          6307,
+          6308,
+          6274
+        ],
+        "independent_source_count": 3,
+        "mainstream_or_better_count": 8,
+        "has_fresh_evidence": false,
+        "conflict_detail": null
+      },
+      {
+        "topic": "其他观察",
+        "status": "weak",
+        "evidence_article_ids": [
+          6318,
+          6321,
+          6322,
+          6319
+        ],
+        "independent_source_count": 1,
+        "mainstream_or_better_count": 5,
+        "has_fresh_evidence": false,
+        "conflict_detail": null
+      },
+      {
+        "topic": "汇率与大宗",
+        "status": "weak",
+        "evidence_article_ids": [
+          6275
+        ],
+        "independent_source_count": 1,
+        "mainstream_or_better_count": 1,
+        "has_fresh_evidence": false,
+        "conflict_detail": null
+      },
+      {
+        "topic": "宏观与流动性",
+        "status": "weak",
+        "evidence_article_ids": [
+          6361
+        ],
+        "independent_source_count": 0,
+        "mainstream_or_better_count": 0,
+        "has_fresh_evidence": true,
+        "conflict_detail": null
+      }
+    ],
+    "stock_checks": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "status": "confirmed",
+        "evidence_article_ids": [
+          6361,
+          6304,
+          6324,
+          6328
+        ],
+        "direct_mentions": 4,
+        "independent_source_count": 3,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "BAC",
+        "name": "Bank of America",
+        "status": "weak",
+        "evidence_article_ids": [
+          6363,
+          6304
+        ],
+        "direct_mentions": 2,
+        "independent_source_count": 1,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase",
+        "status": "weak",
+        "evidence_article_ids": [
+          6328
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 1,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "status": "weak",
+        "evidence_article_ids": [
+          6305,
+          6275
+        ],
+        "direct_mentions": 2,
+        "independent_source_count": 2,
+        "has_fresh_evidence": false,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla",
+        "status": "confirmed",
+        "evidence_article_ids": [
+          6305,
+          6324
+        ],
+        "direct_mentions": 2,
+        "independent_source_count": 2,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "status": "weak",
+        "evidence_article_ids": [
+          6360
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 0,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      }
+    ],
+    "summary": {
+      "topics_confirmed": 0,
+      "topics_weak": 4,
+      "topics_conflicted": 1,
+      "stocks_confirmed": 2,
+      "stocks_weak": 4,
+      "stocks_conflicted": 0
+    },
+    "issues": [],
+    "warnings": []
+  },
+  "decision_views": {
+    "actionable_candidates": [],
+    "conditional_watchlist": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "industry": "投行",
+        "candidate_confidence": "high",
+        "base_grade": "强关注",
+        "grade": "关注",
+        "grade_caps": [
+          "missing_valuation_baseline"
+        ],
+        "total_score": 82,
+        "scores": {
+          "news_catalyst": 28,
+          "technical": 25,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若后续补齐估值基准，应重新评估估值与等级"
+        ],
+        "evidence_article_ids": [
+          6361,
+          6304,
+          6324,
+          6328
+        ],
+        "evidence_summaries": [
+          "JPMorgan Converts $950M to Active NY, CA Muni ETFs",
+          "Fed Chair Warsh expected to withhold 'dot' from central bank's interest rate outlook",
+          "Cathie Wood buys $529.7 million of popular new stock",
+          "Mirae Asset apologizes to investors over failed SpaceX IPO allocation"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:contract",
+          "material_keyword:investment",
+          "material_keyword:launch",
+          "material_keyword:guidance",
+          "material_keyword:product",
+          "material_keyword:profit",
+          "material_keyword:sec",
+          "material_keyword:shares",
+          "material_keyword:stock"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "no_fresh_evidence"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若后续补齐估值基准，应重新评估估值与等级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 4,
+          "independent_evidence_count": 3,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "confirmed",
+          "cross_verified_source_count": 3,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "BAC",
+        "name": "Bank of America",
+        "industry": "银行",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "关注",
+        "grade_caps": [],
+        "total_score": 66,
+        "scores": {
+          "news_catalyst": 20,
+          "technical": 17,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "RSI 偏高，趋势强但需留意短线过热",
+          "MACD 维持多头结构"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6363,
+          6304
+        ],
+        "evidence_summaries": [
+          "Q2 Symposium: The CLO Retail Renaissance With Reckoner Capital",
+          "Fed Chair Warsh expected to withhold 'dot' from central bank's interest rate outlook"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:dividend",
+          "material_keyword:investment",
+          "material_keyword:product",
+          "material_keyword:guidance"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "no_fresh_evidence",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 1,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase",
+        "industry": "银行",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 63,
+        "scores": {
+          "news_catalyst": 17,
+          "technical": 17,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "RSI 偏高，趋势强但需留意短线过热",
+          "MACD 维持多头结构"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6328
+        ],
+        "evidence_summaries": [
+          "Mirae Asset apologizes to investors over failed SpaceX IPO allocation"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:sec",
+          "material_keyword:shares",
+          "material_keyword:stock"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 1,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "industry": "电商与云服务",
+        "candidate_confidence": "high",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 60,
+        "scores": {
+          "news_catalyst": 25,
+          "technical": 7,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6305,
+          6275
+        ],
+        "evidence_summaries": [
+          "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+          "SpaceX 600亿美元收购AI初创公司"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:revenue",
+          "material_keyword:profit",
+          "material_keyword:sec",
+          "material_keyword:涨"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 2,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 2,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla",
+        "industry": "新能源车",
+        "candidate_confidence": "high",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 57,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 10,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6305,
+          6324
+        ],
+        "evidence_summaries": [
+          "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+          "Cathie Wood buys $529.7 million of popular new stock"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:revenue",
+          "material_keyword:profit",
+          "material_keyword:sec",
+          "material_keyword:investment",
+          "material_keyword:product"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 2,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "confirmed",
+          "cross_verified_source_count": 2,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "industry": "软件与云服务",
+        "candidate_confidence": "low",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 52,
+        "scores": {
+          "news_catalyst": 16,
+          "technical": 8,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6360
+        ],
+        "evidence_summaries": [
+          "Microsoft Woes Hide Opportunity With This ETF"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:shares",
+          "material_keyword:stock",
+          "material_keyword:revenue"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "insufficient_independent_confirmation",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "aggregator",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 0,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "stale_or_rejected": []
+  },
+  "stock_recommendations": [
+    {
+      "symbol": "GS",
+      "name": "Goldman Sachs",
+      "industry": "投行",
+      "candidate_confidence": "high",
+      "base_grade": "强关注",
+      "grade": "关注",
+      "grade_caps": [
+        "missing_valuation_baseline"
+      ],
+      "total_score": 82,
+      "scores": {
+        "news_catalyst": 28,
+        "technical": 25,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若后续补齐估值基准，应重新评估估值与等级"
+      ],
+      "evidence_article_ids": [
+        6361,
+        6304,
+        6324,
+        6328
+      ],
+      "evidence_summaries": [
+        "JPMorgan Converts $950M to Active NY, CA Muni ETFs",
+        "Fed Chair Warsh expected to withhold 'dot' from central bank's interest rate outlook",
+        "Cathie Wood buys $529.7 million of popular new stock",
+        "Mirae Asset apologizes to investors over failed SpaceX IPO allocation"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:contract",
+        "material_keyword:investment",
+        "material_keyword:launch",
+        "material_keyword:guidance",
+        "material_keyword:product",
+        "material_keyword:profit",
+        "material_keyword:sec",
+        "material_keyword:shares",
+        "material_keyword:stock"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "no_fresh_evidence"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若后续补齐估值基准，应重新评估估值与等级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 4,
+        "independent_evidence_count": 3,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "confirmed",
+        "cross_verified_source_count": 3,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America",
+      "industry": "银行",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "关注",
+      "grade_caps": [],
+      "total_score": 66,
+      "scores": {
+        "news_catalyst": 20,
+        "technical": 17,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "RSI 偏高，趋势强但需留意短线过热",
+        "MACD 维持多头结构"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6363,
+        6304
+      ],
+      "evidence_summaries": [
+        "Q2 Symposium: The CLO Retail Renaissance With Reckoner Capital",
+        "Fed Chair Warsh expected to withhold 'dot' from central bank's interest rate outlook"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:dividend",
+        "material_keyword:investment",
+        "material_keyword:product",
+        "material_keyword:guidance"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "no_fresh_evidence",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 1,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "JPM",
+      "name": "JPMorgan Chase",
+      "industry": "银行",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 63,
+      "scores": {
+        "news_catalyst": 17,
+        "technical": 17,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "RSI 偏高，趋势强但需留意短线过热",
+        "MACD 维持多头结构"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6328
+      ],
+      "evidence_summaries": [
+        "Mirae Asset apologizes to investors over failed SpaceX IPO allocation"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:sec",
+        "material_keyword:shares",
+        "material_keyword:stock"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 1,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "industry": "电商与云服务",
+      "candidate_confidence": "high",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 60,
+      "scores": {
+        "news_catalyst": 25,
+        "technical": 7,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6305,
+        6275
+      ],
+      "evidence_summaries": [
+        "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+        "SpaceX 600亿美元收购AI初创公司"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:revenue",
+        "material_keyword:profit",
+        "material_keyword:sec",
+        "material_keyword:涨"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 2,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 2,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla",
+      "industry": "新能源车",
+      "candidate_confidence": "high",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 57,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 10,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6305,
+        6324
+      ],
+      "evidence_summaries": [
+        "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+        "Cathie Wood buys $529.7 million of popular new stock"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:revenue",
+        "material_keyword:profit",
+        "material_keyword:sec",
+        "material_keyword:investment",
+        "material_keyword:product"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 2,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "confirmed",
+        "cross_verified_source_count": 2,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "industry": "软件与云服务",
+      "candidate_confidence": "low",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 52,
+      "scores": {
+        "news_catalyst": 16,
+        "technical": 8,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6360
+      ],
+      "evidence_summaries": [
+        "Microsoft Woes Hide Opportunity With This ETF"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:shares",
+        "material_keyword:stock",
+        "material_keyword:revenue"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "insufficient_independent_confirmation",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "aggregator",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 0,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    }
+  ],
+  "quality_check": {
+    "score": 90.0,
+    "passed": false,
+    "accuracy_score": 60.0,
+    "timeliness_score": 10,
+    "reliability_score": 20,
+    "claim_coverage_score": 0,
+    "time_source": "report_text",
+    "source_annotation_missing": false,
+    "narrative_consistency_passed": true,
+    "data_integrity_statement_passed": true,
+    "issues": [
+      "❌ 报告篇幅较长，但可验证断言覆盖过少",
+      "❌ 存在未回溯的新闻占位引用: 【新闻X】 2处"
+    ],
+    "warnings": [
+      "⚠️ 报告更新时间与系统实时数据时间不一致,已按更保守时间计算时效性",
+      "⚠️ 数据更新于9.2小时前,时效性一般"
+    ],
+    "stats": {
+      "has_realtime_data": true,
+      "data_age_hours": 9.178725776944443,
+      "time_source": "report_text",
+      "source_annotation_missing": false,
+      "claim_coverage_score": 0,
+      "citation_count": 21,
+      "placeholder_citation_count": 2,
+      "verified_claims": 1,
+      "total_claims": 1,
+      "realtime_verified_claims": 1,
+      "realtime_total_claims": 1,
+      "news_fact_claims": 0,
+      "analytical_judgment_count": 0,
+      "fabrication_detected": false,
+      "watchlist_promoted_in_narrative_count": 0,
+      "verification_boundary_overclaim_count": 0,
+      "cross_verification_overclaim_count": 0,
+      "coverage_gap_count": 2,
+      "coverage_boundary_overclaim_count": 0,
+      "evidence_diversity_issue_count": 0,
+      "evidence_source_count": 9,
+      "evidence_topic_count": 6,
+      "evidence_max_source_share": 0.12195121951219512,
+      "evidence_max_topic_share": 0.4146341463414634,
+      "evidence_max_aggregator_share": 0.36585365853658536,
+      "evidence_original_source_share": 0.5365853658536586,
+      "counter_evidence_issue_count": 0,
+      "counter_evidence_high_confidence_topics": 1,
+      "implausible_signals": {
+        "over_precision_count": 0,
+        "rounded_ratio": 0.0,
+        "cross_asset_repeated_value_count": 0
+      }
+    },
+    "timestamp": "2026-06-17T09:10:43.413345"
+  },
+  "candidate_evidence_audit": {
+    "required": true,
+    "candidate_count": 6,
+    "recommendation_count": 6,
+    "status_counts": {
+      "direct_material_news": 6
+    },
+    "candidates": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:contract",
+          "material_keyword:investment",
+          "material_keyword:launch",
+          "material_keyword:guidance",
+          "material_keyword:product",
+          "material_keyword:profit",
+          "material_keyword:sec",
+          "material_keyword:shares",
+          "material_keyword:stock"
+        ],
+        "evidence_article_ids": [
+          6361,
+          6304,
+          6324,
+          6328
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "BAC",
+        "name": "Bank of America",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:dividend",
+          "material_keyword:investment",
+          "material_keyword:product",
+          "material_keyword:guidance"
+        ],
+        "evidence_article_ids": [
+          6363,
+          6304
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:sec",
+          "material_keyword:shares",
+          "material_keyword:stock"
+        ],
+        "evidence_article_ids": [
+          6328
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:revenue",
+          "material_keyword:profit",
+          "material_keyword:sec",
+          "material_keyword:涨"
+        ],
+        "evidence_article_ids": [
+          6305,
+          6275
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:revenue",
+          "material_keyword:profit",
+          "material_keyword:sec",
+          "material_keyword:investment",
+          "material_keyword:product"
+        ],
+        "evidence_article_ids": [
+          6305,
+          6324
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:shares",
+          "material_keyword:stock",
+          "material_keyword:revenue"
+        ],
+        "evidence_article_ids": [
+          6360
+        ],
+        "actionability_passed": false
+      }
+    ],
+    "rejected_false_positive_mentions": [
+      {
+        "article_id": 6361,
+        "title": "JPMorgan Converts $950M to Active NY, CA Muni ETFs",
+        "symbol": "JPM",
+        "name": "JPMorgan Chase",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6277,
+        "title": "欧洲人能把命运掌握在自己手中吗？",
+        "symbol": "AAPL",
+        "name": "Apple",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6277,
+        "title": "欧洲人能把命运掌握在自己手中吗？",
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6277,
+        "title": "欧洲人能把命运掌握在自己手中吗？",
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6277,
+        "title": "欧洲人能把命运掌握在自己手中吗？",
+        "symbol": "META",
+        "name": "Meta",
+        "status": "incidental_mention",
+        "reasons": [
+          "sentence_mentions_symbol_but_no_material_catalyst"
+        ]
+      },
+      {
+        "article_id": 6277,
+        "title": "欧洲人能把命运掌握在自己手中吗？",
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6315,
+        "title": "Musk's SpaceX overtakes Amazon to become world's fifth most valuable firm",
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "status": "incidental_mention",
+        "reasons": [
+          "sentence_mentions_symbol_but_no_material_catalyst"
+        ]
+      },
+      {
+        "article_id": 6330,
+        "title": "Exxon to supply LNG to help South Africa cut reliance on coal - Bloomberg",
+        "symbol": "XOM",
+        "name": "Exxon Mobil",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      }
+    ]
+  },
+  "scoring_calibration": {
+    "required": true,
+    "status_counts": {
+      "样本不足": 6
+    },
+    "items": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "grade": "关注",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "BAC",
+        "name": "Bank of America",
+        "grade": "关注",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      }
+    ]
+  },
+  "rejected_false_positive_mentions": [
+    {
+      "article_id": 6361,
+      "title": "JPMorgan Converts $950M to Active NY, CA Muni ETFs",
+      "symbol": "JPM",
+      "name": "JPMorgan Chase",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6277,
+      "title": "欧洲人能把命运掌握在自己手中吗？",
+      "symbol": "AAPL",
+      "name": "Apple",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6277,
+      "title": "欧洲人能把命运掌握在自己手中吗？",
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6277,
+      "title": "欧洲人能把命运掌握在自己手中吗？",
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6277,
+      "title": "欧洲人能把命运掌握在自己手中吗？",
+      "symbol": "META",
+      "name": "Meta",
+      "status": "incidental_mention",
+      "reasons": [
+        "sentence_mentions_symbol_but_no_material_catalyst"
+      ]
+    },
+    {
+      "article_id": 6277,
+      "title": "欧洲人能把命运掌握在自己手中吗？",
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6315,
+      "title": "Musk's SpaceX overtakes Amazon to become world's fifth most valuable firm",
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "status": "incidental_mention",
+      "reasons": [
+        "sentence_mentions_symbol_but_no_material_catalyst"
+      ]
+    },
+    {
+      "article_id": 6330,
+      "title": "Exxon to supply LNG to help South Africa cut reliance on coal - Bloomberg",
+      "symbol": "XOM",
+      "name": "Exxon Mobil",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    }
+  ],
+  "session": "morning",
+  "session_time": "2026-06-17 09:10:43"
+}

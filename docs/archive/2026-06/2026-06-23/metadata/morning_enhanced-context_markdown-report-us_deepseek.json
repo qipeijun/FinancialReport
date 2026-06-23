@@ -1,0 +1,4328 @@
+{
+  "analysis_mode": "markdown-report",
+  "market": "US",
+  "date_range": {
+    "start": "2026-06-23",
+    "end": "2026-06-23"
+  },
+  "selected_articles": [
+    {
+      "id": 6614,
+      "title": "Biden Judge Sparkle Sooknanan Blocks Trump Admin SAVE Act Database",
+      "source": "ZeroHedge",
+      "published": "Mon, 22 Jun 2026 23:40:00 +0000",
+      "collection_date": "2026-06-23",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6615,
+      "title": "Waymo Recalls Robotaxis After Cars Drive Into Construction Zones",
+      "source": "ZeroHedge",
+      "published": "Mon, 22 Jun 2026 23:15:00 +0000",
+      "collection_date": "2026-06-23",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6616,
+      "title": "China Gold Imports Soar To Two Year High, As Hong Kong Gold Bar Imports Surge Ahead Of Clearing System Launch",
+      "source": "ZeroHedge",
+      "published": "Mon, 22 Jun 2026 22:50:00 +0000",
+      "collection_date": "2026-06-23",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6617,
+      "title": "Ron Paul: Trump's Attempt To End The Iran War Infuriates The Uniparty",
+      "source": "ZeroHedge",
+      "published": "Mon, 22 Jun 2026 22:25:00 +0000",
+      "collection_date": "2026-06-23",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6618,
+      "title": "JD CEO Warns 700,000 Delivery Workers Will Be Replaced By Robots \"Sooner Or Later\"",
+      "source": "ZeroHedge",
+      "published": "Mon, 22 Jun 2026 22:00:00 +0000",
+      "collection_date": "2026-06-23",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6607,
+      "title": "Tesla faces federal probe after Model 3 slams into Texas home, killing 76-year-old",
+      "source": "CNBC",
+      "published": "Tue, 23 Jun 2026 00:44:14 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6608,
+      "title": "Ro Khanna challenges Elon Musk to televised debate after online DOGE battle",
+      "source": "CNBC",
+      "published": "Mon, 22 Jun 2026 23:22:22 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6606,
+      "title": "'We'll see' — Trump hedges on guarantee Iran won't use oil profits to rebuild military",
+      "source": "CNBC",
+      "published": "Mon, 22 Jun 2026 23:09:43 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6620,
+      "title": "VIDEO: ETF of the Week: VFLO",
+      "source": "ETF Trends",
+      "published": "Mon, 22 Jun 2026 20:34:59 +0000",
+      "collection_date": "2026-06-23",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6621,
+      "title": "Emerging Markets to Spike as Oil Prices Dip? Try GSEE",
+      "source": "ETF Trends",
+      "published": "Mon, 22 Jun 2026 19:51:02 +0000",
+      "collection_date": "2026-06-23",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6622,
+      "title": "Look Beyond Market Euphoria After 3 FCF ETFs Rebalanced",
+      "source": "ETF Trends",
+      "published": "Mon, 22 Jun 2026 19:02:49 +0000",
+      "collection_date": "2026-06-23",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6623,
+      "title": "Private Credit Offers Viable Yield Path as Rates Stay Elevated",
+      "source": "ETF Trends",
+      "published": "Mon, 22 Jun 2026 18:37:38 +0000",
+      "collection_date": "2026-06-23",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6619,
+      "title": "World Markets Watchlist: June 22, 2026",
+      "source": "ETF Trends",
+      "published": "Mon, 22 Jun 2026 20:41:28 +0000",
+      "collection_date": "2026-06-23",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 6605,
+      "title": "Alphabet has its worst day in over a year on AI concerns after high-profile exits",
+      "source": "CNBC",
+      "published": "Mon, 22 Jun 2026 21:04:29 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6585,
+      "title": "英国教育系统是如何看待“性别差距”的？",
+      "source": "FT中文网",
+      "published": "Mon, 22 Jun 2026 16:00:00 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "风险事件",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6586,
+      "title": "政局动荡的诅咒再次笼罩伦敦：中国应以交易思维重构对英关系",
+      "source": "FT中文网",
+      "published": "Mon, 22 Jun 2026 16:00:00 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6587,
+      "title": "格林斯潘：听懂市场的古典主义行长",
+      "source": "FT中文网",
+      "published": "Mon, 22 Jun 2026 16:00:00 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "宏观与流动性",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6649,
+      "title": "Federal Reserve notes with deep sadness the passing of Alan Greenspan",
+      "source": "Federal Reserve Board",
+      "published": "Mon, 22 Jun 2026 12:45:00 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "official",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6633,
+      "title": "'It's that simple': Kevin O'Leary says this one number can turn your $65K salary into millions — will it work for you?",
+      "source": "Yahoo Finance",
+      "published": "2026-06-21T13:30:00Z",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "宏观与流动性",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6630,
+      "title": "SpaceX Is Buying Cursor for $60 Billion. What That Means for SPCX Stock.",
+      "source": "Yahoo Finance",
+      "published": "2026-06-21T13:15:02Z",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6631,
+      "title": "Alibaba Stock Is a Compelling Buy as It Drifts Toward 52-Week Lows. Here’s Why.",
+      "source": "Yahoo Finance",
+      "published": "2026-06-21T13:00:02Z",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6632,
+      "title": "A Short Squeeze Could Be Brewing in La-Z-Boy Stock",
+      "source": "Yahoo Finance",
+      "published": "2026-06-21T13:00:02Z",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6634,
+      "title": "These 6 fast-growing stocks sit at the cutting edge of space and military technology",
+      "source": "MarketWatch",
+      "published": "Tue, 23 Jun 2026 00:23:00 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "summary_only",
+      "is_original_source": 1
+    },
+    {
+      "id": 6610,
+      "title": "US eases oil sanctions as Iran denies Vance claim on nuclear inspectors",
+      "source": "BBC全球经济",
+      "published": "Mon, 22 Jun 2026 23:07:45 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 6635,
+      "title": "Trump may say he’s banning Wall Street from buying homes. Does the bipartisan housing bill actually do that?",
+      "source": "MarketWatch",
+      "published": "Mon, 22 Jun 2026 22:47:00 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "summary_only",
+      "is_original_source": 1
+    },
+    {
+      "id": 6609,
+      "title": "Tesla crash that killed a woman under US federal investigation",
+      "source": "BBC全球经济",
+      "published": "Mon, 22 Jun 2026 22:20:07 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "summary_only",
+      "is_original_source": 0
+    },
+    {
+      "id": 6638,
+      "title": "China’s weird new economic spark: toy elves and robocops",
+      "source": "MarketWatch",
+      "published": "Mon, 22 Jun 2026 22:14:00 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "summary_only",
+      "is_original_source": 1
+    },
+    {
+      "id": 6639,
+      "title": "MDU Resources inks electric service agreement for proposed Applied Digital AI factory",
+      "source": "Seeking Alpha",
+      "published": "Mon, 22 Jun 2026 20:28:58 -0400",
+      "collection_date": "2026-06-23",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 6642,
+      "title": "TechPrecision projects $35M-$37M fiscal 2027 revenue with $3M-$4M EBITDA as it targets Stadco margin recovery",
+      "source": "Seeking Alpha",
+      "published": "Mon, 22 Jun 2026 19:03:00 -0400",
+      "collection_date": "2026-06-23",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6595,
+      "title": "How to turn compute into a financial asset",
+      "source": "经济学人 Economist",
+      "published": "Mon, 22 Jun 2026 18:09:55 +0000",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "summary_only",
+      "is_original_source": 1
+    },
+    {
+      "id": 6584,
+      "title": "安迪•伯纳姆会将英国带向何方？",
+      "source": "FT中文网",
+      "published": "Mon, 22 Jun 2026 16:00:00 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 6588,
+      "title": "数百船舶在霍尔木兹海峡外侧等待通过",
+      "source": "FT中文网",
+      "published": "Mon, 22 Jun 2026 16:00:00 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 6636,
+      "title": "Big Tech has split into two artificial-intelligence camps — but the smart money isn’t chasing the next OpenAI",
+      "source": "MarketWatch",
+      "published": "Mon, 22 Jun 2026 22:21:00 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "summary_only",
+      "is_original_source": 1
+    },
+    {
+      "id": 6637,
+      "title": "A 40% market crash is lurking in the IPO pipeline. SpaceX and OpenAI could trigger it.",
+      "source": "MarketWatch",
+      "published": "Mon, 22 Jun 2026 22:18:00 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "summary_only",
+      "is_original_source": 1
+    },
+    {
+      "id": 6640,
+      "title": "California group sues gas station owners for allegedly using AI to boost prices",
+      "source": "Seeking Alpha",
+      "published": "Mon, 22 Jun 2026 20:14:54 -0400",
+      "collection_date": "2026-06-23",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 6641,
+      "title": "Crude oil adds to losses on potential progress in U.S.-Iran talks",
+      "source": "Seeking Alpha",
+      "published": "Mon, 22 Jun 2026 19:47:06 -0400",
+      "collection_date": "2026-06-23",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 0
+    },
+    {
+      "id": 6594,
+      "title": "Russia’s war economy has problems—but is not about to crash",
+      "source": "经济学人 Economist",
+      "published": "Mon, 22 Jun 2026 19:07:09 +0000",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 1
+    },
+    {
+      "id": 6643,
+      "title": "RWE plans $4.7B capital raise to take majority stake in power grid operator Amprion",
+      "source": "Seeking Alpha",
+      "published": "Mon, 22 Jun 2026 18:36:56 -0400",
+      "collection_date": "2026-06-23",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 6612,
+      "title": "Alan Greenspan, architect of the modern American economy, dies aged 100",
+      "source": "BBC全球经济",
+      "published": "Mon, 22 Jun 2026 11:55:36 GMT",
+      "collection_date": "2026-06-23",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    }
+  ],
+  "judgment_candidates": [
+    {
+      "candidate_id": "C02",
+      "topic": "科技与产业主题",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "2-6周",
+      "evidence_count": 8,
+      "independent_evidence_count": 5,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "official",
+      "original_source_count": 5,
+      "mainstream_or_better_count": 11,
+      "articles": [
+        {
+          "id": 6649,
+          "title": "Federal Reserve notes with deep sadness the passing of Alan Greenspan",
+          "source": "Federal Reserve Board",
+          "summary": "Federal Reserve notes with deep sadness the passing of Alan Greenspan",
+          "source_tier": "official",
+          "content_quality_status": "full",
+          "published": "Mon, 22 Jun 2026 12:45:00 GMT",
+          "collection_date": "2026-06-23"
+        },
+        {
+          "id": 6607,
+          "title": "Tesla faces federal probe after Model 3 slams into Texas home, killing 76-year-old",
+          "source": "CNBC",
+          "summary": "Harris County authorities said that the driver, Michael Butler, said that he had been using Tesla's partially automated driving systems.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 23 Jun 2026 00:44:14 GMT",
+          "collection_date": "2026-06-23"
+        },
+        {
+          "id": 6588,
+          "title": "数百船舶在霍尔木兹海峡外侧等待通过",
+          "source": "FT中文网",
+          "summary": "英国《金融时报》对欧洲航天局卫星数据进行的分析显示，441艘大型船舶聚集在霍尔木兹海峡东侧的主要港口苏哈尔和富查伊拉以外海域。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 22 Jun 2026 16:00:00 GMT",
+          "collection_date": "2026-06-23"
+        },
+        {
+          "id": 6610,
+          "title": "US eases oil sanctions as Iran denies Vance claim on nuclear inspectors",
+          "source": "BBC全球经济",
+          "summary": "Iran's foreign ministry says it made \"no new commitments\" on nuclear inspections after talks in Switzerland.",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 22 Jun 2026 23:07:45 GMT",
+          "collection_date": "2026-06-23"
+        }
+      ],
+      "topic_article_count": 13,
+      "priority_score": 84,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C01",
+      "topic": "政策与监管",
+      "market_scope": [
+        "A股",
+        "港股",
+        "宏观"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 6,
+      "independent_evidence_count": 3,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "mainstream",
+      "original_source_count": 3,
+      "mainstream_or_better_count": 7,
+      "articles": [
+        {
+          "id": 6586,
+          "title": "政局动荡的诅咒再次笼罩伦敦：中国应以交易思维重构对英关系",
+          "source": "FT中文网",
+          "summary": "曾敬涵：面对一个政治周期不断缩短的英国，中国需要更成熟的风险管理，构建能够穿越领导人更替周期的利益安排。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 22 Jun 2026 16:00:00 GMT",
+          "collection_date": "2026-06-23"
+        },
+        {
+          "id": 6631,
+          "title": "Alibaba Stock Is a Compelling Buy as It Drifts Toward 52-Week Lows. Here’s Why.",
+          "source": "Yahoo Finance",
+          "summary": "N/A",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-06-21T13:00:02Z",
+          "collection_date": "2026-06-23"
+        },
+        {
+          "id": 6630,
+          "title": "SpaceX Is Buying Cursor for $60 Billion. What That Means for SPCX Stock.",
+          "source": "Yahoo Finance",
+          "summary": "N/A",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-06-21T13:15:02Z",
+          "collection_date": "2026-06-23"
+        },
+        {
+          "id": 6632,
+          "title": "A Short Squeeze Could Be Brewing in La-Z-Boy Stock",
+          "source": "Yahoo Finance",
+          "summary": "N/A",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-06-21T13:00:02Z",
+          "collection_date": "2026-06-23"
+        }
+      ],
+      "topic_article_count": 15,
+      "priority_score": 60,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C04",
+      "topic": "宏观与流动性",
+      "market_scope": [
+        "美股",
+        "A股",
+        "港股",
+        "美元",
+        "利率"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 2,
+      "independent_evidence_count": 2,
+      "high_relevance_article_count": 2,
+      "source_tier_max": "mainstream",
+      "original_source_count": 2,
+      "mainstream_or_better_count": 2,
+      "articles": [
+        {
+          "id": 6633,
+          "title": "'It's that simple': Kevin O'Leary says this one number can turn your $65K salary into millions — will it work for you?",
+          "source": "Yahoo Finance",
+          "summary": "N/A",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-06-21T13:30:00Z",
+          "collection_date": "2026-06-23"
+        },
+        {
+          "id": 6587,
+          "title": "格林斯潘：听懂市场的古典主义行长",
+          "source": "FT中文网",
+          "summary": "徐瑾：如何评价格林斯潘不仅关系其个人得失，更是映射我们对于货币以及现实经济实际的理解。他的街头智慧，或者所谓常识，在今天尤其宝贵。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 22 Jun 2026 16:00:00 GMT",
+          "collection_date": "2026-06-23"
+        }
+      ],
+      "topic_article_count": 2,
+      "priority_score": 44,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C05",
+      "topic": "其他观察",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 2,
+      "independent_evidence_count": 2,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 2,
+      "mainstream_or_better_count": 2,
+      "articles": [
+        {
+          "id": 6584,
+          "title": "安迪•伯纳姆会将英国带向何方？",
+          "source": "FT中文网",
+          "summary": "罗伯特•施里姆斯利：工党内定的新首相怀念撒切尔之前的时代。除了比斯塔默更左之外，看不出他对未来挑战与可能性有什么思考。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Mon, 22 Jun 2026 16:00:00 GMT",
+          "collection_date": "2026-06-23"
+        },
+        {
+          "id": 6638,
+          "title": "China’s weird new economic spark: toy elves and robocops",
+          "source": "MarketWatch",
+          "summary": "Young Chinese aren’t buying status symbols. They’re spending money on things that make them feel something — anything.",
+          "source_tier": "mainstream",
+          "content_quality_status": "summary_only",
+          "published": "Mon, 22 Jun 2026 22:14:00 GMT",
+          "collection_date": "2026-06-23"
+        }
+      ],
+      "topic_article_count": 2,
+      "priority_score": 44,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C03",
+      "topic": "风险事件",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股",
+        "商品"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 1,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 1,
+      "articles": [
+        {
+          "id": 6585,
+          "title": "英国教育系统是如何看待“性别差距”的？",
+          "source": "FT中文网",
+          "summary": "勾尧：一个成熟社会真正需要的，并不是否认差异，也不是放大对立，而是建立足够多的制度化渠道，让差异不必最终演变成对立。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Mon, 22 Jun 2026 16:00:00 GMT",
+          "collection_date": "2026-06-23"
+        }
+      ],
+      "topic_article_count": 1,
+      "priority_score": 37,
+      "high_confidence_topic": false
+    }
+  ],
+  "candidate_stocks": [
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "industry": "半导体",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        6618,
+        6620,
+        6630,
+        6631
+      ],
+      "evidence_summaries": [
+        "JD CEO Warns 700,000 Delivery Workers Will Be Replaced By Robots \"Sooner Or Later\"",
+        "VIDEO: ETF of the Week: VFLO",
+        "SpaceX Is Buying Cursor for $60 Billion. What That Means for SPCX Stock.",
+        "Alibaba Stock Is a Compelling Buy as It Drifts Toward 52-Week Lows. Here’s Why."
+      ],
+      "source_tiers": [
+        "aggregator",
+        "aggregator",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 2,
+      "direct_mentions": 4,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "Mon, 22 Jun 2026 22:00:00 +0000",
+        "Mon, 22 Jun 2026 20:34:59 +0000",
+        "2026-06-21T13:15:02Z",
+        "2026-06-21T13:00:02Z"
+      ],
+      "topic_article_count": 0,
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:order",
+        "material_keyword:product",
+        "material_keyword:sec",
+        "material_keyword:earnings",
+        "material_keyword:dividend",
+        "material_keyword:revenue",
+        "material_keyword:acquisition",
+        "material_keyword:launch",
+        "material_keyword:profit"
+      ],
+      "rejected_false_positive_mentions": []
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "industry": "软件与云服务",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        6620,
+        6605
+      ],
+      "evidence_summaries": [
+        "VIDEO: ETF of the Week: VFLO",
+        "Alphabet has its worst day in over a year on AI concerns after high-profile exits"
+      ],
+      "source_tiers": [
+        "aggregator",
+        "mainstream"
+      ],
+      "independent_evidence_count": 1,
+      "direct_mentions": 2,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "Mon, 22 Jun 2026 20:34:59 +0000",
+        "Mon, 22 Jun 2026 21:04:29 GMT"
+      ],
+      "topic_article_count": 0,
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:earnings",
+        "material_keyword:order",
+        "material_keyword:dividend",
+        "material_keyword:partnership",
+        "material_keyword:product",
+        "material_keyword:shares"
+      ],
+      "rejected_false_positive_mentions": []
+    },
+    {
+      "symbol": "GS",
+      "name": "Goldman Sachs",
+      "industry": "投行",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        6616,
+        6621
+      ],
+      "evidence_summaries": [
+        "China Gold Imports Soar To Two Year High, As Hong Kong Gold Bar Imports Surge Ahead Of Clearing System Launch",
+        "Emerging Markets to Spike as Oil Prices Dip? Try GSEE"
+      ],
+      "source_tiers": [
+        "aggregator",
+        "aggregator"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 2,
+      "risk_flags": [],
+      "source_tier_max": "aggregator",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "Mon, 22 Jun 2026 22:50:00 +0000",
+        "Mon, 22 Jun 2026 19:51:02 +0000"
+      ],
+      "topic_article_count": 0,
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:order",
+        "material_keyword:investment",
+        "material_keyword:launch",
+        "material_keyword:product",
+        "material_keyword:sec",
+        "material_keyword:stock"
+      ],
+      "rejected_false_positive_mentions": []
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla",
+      "industry": "新能源车",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        6607
+      ],
+      "evidence_summaries": [
+        "Tesla faces federal probe after Model 3 slams into Texas home, killing 76-year-old"
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 1,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "Tue, 23 Jun 2026 00:44:14 GMT"
+      ],
+      "topic_article_count": 0,
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:shares"
+      ],
+      "rejected_false_positive_mentions": []
+    },
+    {
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "industry": "互联网",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        6605
+      ],
+      "evidence_summaries": [
+        "Alphabet has its worst day in over a year on AI concerns after high-profile exits"
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 1,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "Mon, 22 Jun 2026 21:04:29 GMT"
+      ],
+      "topic_article_count": 0,
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:sec",
+        "material_keyword:partnership",
+        "material_keyword:product"
+      ],
+      "rejected_false_positive_mentions": []
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "industry": "电商与云服务",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        6630
+      ],
+      "evidence_summaries": [
+        "SpaceX Is Buying Cursor for $60 Billion. What That Means for SPCX Stock."
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 1,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "2026-06-21T13:15:02Z"
+      ],
+      "topic_article_count": 0,
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:revenue",
+        "material_keyword:acquisition",
+        "material_keyword:launch"
+      ],
+      "rejected_false_positive_mentions": []
+    },
+    {
+      "symbol": "AAPL",
+      "name": "Apple",
+      "industry": "消费电子",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        6620
+      ],
+      "evidence_summaries": [
+        "VIDEO: ETF of the Week: VFLO"
+      ],
+      "source_tiers": [
+        "aggregator"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "aggregator",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "Mon, 22 Jun 2026 20:34:59 +0000"
+      ],
+      "topic_article_count": 0,
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:earnings",
+        "material_keyword:order",
+        "material_keyword:dividend"
+      ],
+      "rejected_false_positive_mentions": []
+    },
+    {
+      "symbol": "XOM",
+      "name": "Exxon Mobil",
+      "industry": "石油石化",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        6622
+      ],
+      "evidence_summaries": [
+        "Look Beyond Market Euphoria After 3 FCF ETFs Rebalanced"
+      ],
+      "source_tiers": [
+        "aggregator"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "aggregator",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "Mon, 22 Jun 2026 19:02:49 +0000"
+      ],
+      "topic_article_count": 0,
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:order",
+        "material_keyword:sec",
+        "material_keyword:shares"
+      ],
+      "rejected_false_positive_mentions": []
+    },
+    {
+      "symbol": "WMT",
+      "name": "Walmart",
+      "industry": "零售",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        6640
+      ],
+      "evidence_summaries": [
+        "California group sues gas station owners for allegedly using AI to boost prices"
+      ],
+      "source_tiers": [
+        "aggregator"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 1,
+      "risk_flags": [
+        "lawsuit"
+      ],
+      "source_tier_max": "aggregator",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "Mon, 22 Jun 2026 20:14:54 -0400"
+      ],
+      "topic_article_count": 0,
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:lawsuit"
+      ],
+      "rejected_false_positive_mentions": []
+    },
+    {
+      "symbol": "META",
+      "name": "Meta",
+      "industry": "互联网",
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "evidence_article_ids": [
+        6649,
+        6607,
+        6588,
+        6610
+      ],
+      "evidence_summaries": [
+        "Federal Reserve notes with deep sadness the passing of Alan Greenspan",
+        "Tesla faces federal probe after Model 3 slams into Texas home, killing 76-year-old",
+        "数百船舶在霍尔木兹海峡外侧等待通过",
+        "US eases oil sanctions as Iran denies Vance claim on nuclear inspectors"
+      ],
+      "source_tiers": [
+        "official",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 5,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "official",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "Mon, 22 Jun 2026 12:45:00 GMT",
+        "Tue, 23 Jun 2026 00:44:14 GMT",
+        "Mon, 22 Jun 2026 16:00:00 GMT",
+        "Mon, 22 Jun 2026 23:07:45 GMT"
+      ],
+      "topic_article_count": 13,
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "rejected_false_positive_mentions": []
+    }
+  ],
+  "stock_recommendations": [
+    {
+      "symbol": "GS",
+      "name": "Goldman Sachs",
+      "industry": "投行",
+      "candidate_confidence": "low",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "insufficient_independent_confirmation",
+        "missing_valuation_baseline"
+      ],
+      "total_score": 75,
+      "scores": {
+        "news_catalyst": 21,
+        "technical": 25,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "近20日与60日均线呈多头排列",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若后续补齐估值基准，应重新评估估值与等级"
+      ],
+      "evidence_article_ids": [
+        6616,
+        6621
+      ],
+      "evidence_summaries": [
+        "China Gold Imports Soar To Two Year High, As Hong Kong Gold Bar Imports Surge Ahead Of Clearing System Launch",
+        "Emerging Markets to Spike as Oil Prices Dip? Try GSEE"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:order",
+        "material_keyword:investment",
+        "material_keyword:launch",
+        "material_keyword:product",
+        "material_keyword:sec",
+        "material_keyword:stock"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "insufficient_independent_confirmation",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若后续补齐估值基准，应重新评估估值与等级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 0,
+        "source_tier_max": "aggregator",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 0,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "industry": "半导体",
+      "candidate_confidence": "high",
+      "base_grade": "关注",
+      "grade": "关注",
+      "grade_caps": [],
+      "total_score": 67,
+      "scores": {
+        "news_catalyst": 30,
+        "technical": 8,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6618,
+        6620,
+        6630,
+        6631
+      ],
+      "evidence_summaries": [
+        "JD CEO Warns 700,000 Delivery Workers Will Be Replaced By Robots \"Sooner Or Later\"",
+        "VIDEO: ETF of the Week: VFLO",
+        "SpaceX Is Buying Cursor for $60 Billion. What That Means for SPCX Stock.",
+        "Alibaba Stock Is a Compelling Buy as It Drifts Toward 52-Week Lows. Here’s Why."
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:order",
+        "material_keyword:product",
+        "material_keyword:sec",
+        "material_keyword:earnings",
+        "material_keyword:dividend",
+        "material_keyword:revenue",
+        "material_keyword:acquisition",
+        "material_keyword:launch",
+        "material_keyword:profit"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "no_fresh_evidence"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 4,
+        "independent_evidence_count": 2,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "confirmed",
+        "cross_verified_source_count": 2,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 1,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla",
+      "industry": "新能源车",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 58,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 11,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "RSI 处于健康区间，趋势未明显过热",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6607
+      ],
+      "evidence_summaries": [
+        "Tesla faces federal probe after Model 3 slams into Texas home, killing 76-year-old"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:shares"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 1,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "META",
+      "name": "Meta",
+      "industry": "互联网",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 57,
+      "scores": {
+        "news_catalyst": 21,
+        "technical": 8,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6649,
+        6607,
+        6588,
+        6610
+      ],
+      "evidence_summaries": [
+        "Federal Reserve notes with deep sadness the passing of Alan Greenspan",
+        "Tesla faces federal probe after Model 3 slams into Texas home, killing 76-year-old",
+        "数百船舶在霍尔木兹海峡外侧等待通过",
+        "US eases oil sanctions as Iran denies Vance claim on nuclear inspectors"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 5,
+        "source_tier_max": "official",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 5,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "industry": "软件与云服务",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 54,
+      "scores": {
+        "news_catalyst": 20,
+        "technical": 6,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6620,
+        6605
+      ],
+      "evidence_summaries": [
+        "VIDEO: ETF of the Week: VFLO",
+        "Alphabet has its worst day in over a year on AI concerns after high-profile exits"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:earnings",
+        "material_keyword:order",
+        "material_keyword:dividend",
+        "material_keyword:partnership",
+        "material_keyword:product",
+        "material_keyword:shares"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "cross_verification_conflicted"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 2,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "conflicted",
+        "cross_verified_source_count": 1,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "industry": "互联网",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 54,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 7,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6605
+      ],
+      "evidence_summaries": [
+        "Alphabet has its worst day in over a year on AI concerns after high-profile exits"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:sec",
+        "material_keyword:partnership",
+        "material_keyword:product"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 1,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "WMT",
+      "name": "Walmart",
+      "industry": "零售",
+      "candidate_confidence": "low",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 54,
+      "scores": {
+        "news_catalyst": 16,
+        "technical": 13,
+        "valuation": 10,
+        "quality_risk": 9,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "lawsuit",
+        "新闻风险信号: lawsuit",
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_article_ids": [
+        6640
+      ],
+      "evidence_summaries": [
+        "California group sues gas station owners for allegedly using AI to boost prices"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:lawsuit"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "insufficient_independent_confirmation",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若负面事件继续发酵，需从观察名单移出"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "aggregator",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 0,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "industry": "电商与云服务",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 52,
+      "scores": {
+        "news_catalyst": 17,
+        "technical": 7,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6630
+      ],
+      "evidence_summaries": [
+        "SpaceX Is Buying Cursor for $60 Billion. What That Means for SPCX Stock."
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:revenue",
+        "material_keyword:acquisition",
+        "material_keyword:launch"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 1,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 1,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "AAPL",
+      "name": "Apple",
+      "industry": "消费电子",
+      "candidate_confidence": "low",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 52,
+      "scores": {
+        "news_catalyst": 16,
+        "technical": 8,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6620
+      ],
+      "evidence_summaries": [
+        "VIDEO: ETF of the Week: VFLO"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:earnings",
+        "material_keyword:order",
+        "material_keyword:dividend"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "insufficient_independent_confirmation",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "aggregator",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 0,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "XOM",
+      "name": "Exxon Mobil",
+      "industry": "石油石化",
+      "candidate_confidence": "low",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 51,
+      "scores": {
+        "news_catalyst": 16,
+        "technical": 7,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值基准不足，按中性处理",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6622
+      ],
+      "evidence_summaries": [
+        "Look Beyond Market Euphoria After 3 FCF ETFs Rebalanced"
+      ],
+      "data_completeness": 0.87,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:order",
+        "material_keyword:sec",
+        "material_keyword:shares"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "insufficient_independent_confirmation",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "aggregator",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 0,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    }
+  ],
+  "decision_views": {
+    "actionable_candidates": [],
+    "conditional_watchlist": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "industry": "投行",
+        "candidate_confidence": "low",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "insufficient_independent_confirmation",
+          "missing_valuation_baseline"
+        ],
+        "total_score": 75,
+        "scores": {
+          "news_catalyst": 21,
+          "technical": 25,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "近20日与60日均线呈多头排列",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若后续补齐估值基准，应重新评估估值与等级"
+        ],
+        "evidence_article_ids": [
+          6616,
+          6621
+        ],
+        "evidence_summaries": [
+          "China Gold Imports Soar To Two Year High, As Hong Kong Gold Bar Imports Surge Ahead Of Clearing System Launch",
+          "Emerging Markets to Spike as Oil Prices Dip? Try GSEE"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:order",
+          "material_keyword:investment",
+          "material_keyword:launch",
+          "material_keyword:product",
+          "material_keyword:sec",
+          "material_keyword:stock"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "insufficient_independent_confirmation",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若后续补齐估值基准，应重新评估估值与等级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 0,
+          "source_tier_max": "aggregator",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 0,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA",
+        "industry": "半导体",
+        "candidate_confidence": "high",
+        "base_grade": "关注",
+        "grade": "关注",
+        "grade_caps": [],
+        "total_score": 67,
+        "scores": {
+          "news_catalyst": 30,
+          "technical": 8,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6618,
+          6620,
+          6630,
+          6631
+        ],
+        "evidence_summaries": [
+          "JD CEO Warns 700,000 Delivery Workers Will Be Replaced By Robots \"Sooner Or Later\"",
+          "VIDEO: ETF of the Week: VFLO",
+          "SpaceX Is Buying Cursor for $60 Billion. What That Means for SPCX Stock.",
+          "Alibaba Stock Is a Compelling Buy as It Drifts Toward 52-Week Lows. Here’s Why."
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:order",
+          "material_keyword:product",
+          "material_keyword:sec",
+          "material_keyword:earnings",
+          "material_keyword:dividend",
+          "material_keyword:revenue",
+          "material_keyword:acquisition",
+          "material_keyword:launch",
+          "material_keyword:profit"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "no_fresh_evidence"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 4,
+          "independent_evidence_count": 2,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "confirmed",
+          "cross_verified_source_count": 2,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 1,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla",
+        "industry": "新能源车",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 58,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 11,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "RSI 处于健康区间，趋势未明显过热",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6607
+        ],
+        "evidence_summaries": [
+          "Tesla faces federal probe after Model 3 slams into Texas home, killing 76-year-old"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:shares"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 1,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "industry": "互联网",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 54,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 7,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6605
+        ],
+        "evidence_summaries": [
+          "Alphabet has its worst day in over a year on AI concerns after high-profile exits"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:sec",
+          "material_keyword:partnership",
+          "material_keyword:product"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 1,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "WMT",
+        "name": "Walmart",
+        "industry": "零售",
+        "candidate_confidence": "low",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 54,
+        "scores": {
+          "news_catalyst": 16,
+          "technical": 13,
+          "valuation": 10,
+          "quality_risk": 9,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "lawsuit",
+          "新闻风险信号: lawsuit",
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_article_ids": [
+          6640
+        ],
+        "evidence_summaries": [
+          "California group sues gas station owners for allegedly using AI to boost prices"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:lawsuit"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "insufficient_independent_confirmation",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若负面事件继续发酵，需从观察名单移出"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "aggregator",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 0,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "industry": "电商与云服务",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 52,
+        "scores": {
+          "news_catalyst": 17,
+          "technical": 7,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6630
+        ],
+        "evidence_summaries": [
+          "SpaceX Is Buying Cursor for $60 Billion. What That Means for SPCX Stock."
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:revenue",
+          "material_keyword:acquisition",
+          "material_keyword:launch"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 1,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple",
+        "industry": "消费电子",
+        "candidate_confidence": "low",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 52,
+        "scores": {
+          "news_catalyst": 16,
+          "technical": 8,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6620
+        ],
+        "evidence_summaries": [
+          "VIDEO: ETF of the Week: VFLO"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:earnings",
+          "material_keyword:order",
+          "material_keyword:dividend"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "insufficient_independent_confirmation",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "aggregator",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 0,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "XOM",
+        "name": "Exxon Mobil",
+        "industry": "石油石化",
+        "candidate_confidence": "low",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 51,
+        "scores": {
+          "news_catalyst": 16,
+          "technical": 7,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6622
+        ],
+        "evidence_summaries": [
+          "Look Beyond Market Euphoria After 3 FCF ETFs Rebalanced"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:order",
+          "material_keyword:sec",
+          "material_keyword:shares"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "insufficient_independent_confirmation",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "aggregator",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 0,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "stale_or_rejected": [
+      {
+        "symbol": "META",
+        "name": "Meta",
+        "industry": "互联网",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 57,
+        "scores": {
+          "news_catalyst": 21,
+          "technical": 8,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6649,
+          6607,
+          6588,
+          6610
+        ],
+        "evidence_summaries": [
+          "Federal Reserve notes with deep sadness the passing of Alan Greenspan",
+          "Tesla faces federal probe after Model 3 slams into Texas home, killing 76-year-old",
+          "数百船舶在霍尔木兹海峡外侧等待通过",
+          "US eases oil sanctions as Iran denies Vance claim on nuclear inspectors"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "theme_mapping",
+        "topic": "科技与产业主题",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 5,
+          "source_tier_max": "official",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 5,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "industry": "软件与云服务",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 54,
+        "scores": {
+          "news_catalyst": 20,
+          "technical": 6,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值基准不足，按中性处理",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6620,
+          6605
+        ],
+        "evidence_summaries": [
+          "VIDEO: ETF of the Week: VFLO",
+          "Alphabet has its worst day in over a year on AI concerns after high-profile exits"
+        ],
+        "data_completeness": 0.87,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:earnings",
+          "material_keyword:order",
+          "material_keyword:dividend",
+          "material_keyword:partnership",
+          "material_keyword:product",
+          "material_keyword:shares"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "cross_verification_conflicted"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 2,
+          "independent_evidence_count": 1,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "conflicted",
+          "cross_verified_source_count": 1,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ]
+  },
+  "score_distribution": {
+    "strong_focus": 0,
+    "focus": 1,
+    "watch": 9,
+    "avoid": 0
+  },
+  "scoring_config": {
+    "market": "US",
+    "style": "balanced",
+    "lookback_days": 60,
+    "pool_mode": "strict",
+    "theme_mapping_max_grade": "watch",
+    "value_acceptance_enabled": true,
+    "industry_trend_enabled": true,
+    "evidence_relevance_enabled": true,
+    "historical_calibration_enabled": true
+  },
+  "cross_verification": {
+    "topic_checks": [
+      {
+        "topic": "科技与产业主题",
+        "status": "weak",
+        "evidence_article_ids": [
+          6649,
+          6607,
+          6588,
+          6610
+        ],
+        "independent_source_count": 5,
+        "mainstream_or_better_count": 11,
+        "has_fresh_evidence": false,
+        "conflict_detail": null
+      },
+      {
+        "topic": "政策与监管",
+        "status": "confirmed",
+        "evidence_article_ids": [
+          6586,
+          6631,
+          6630,
+          6632
+        ],
+        "independent_source_count": 3,
+        "mainstream_or_better_count": 7,
+        "has_fresh_evidence": true,
+        "conflict_detail": null
+      },
+      {
+        "topic": "宏观与流动性",
+        "status": "confirmed",
+        "evidence_article_ids": [
+          6633,
+          6587
+        ],
+        "independent_source_count": 2,
+        "mainstream_or_better_count": 2,
+        "has_fresh_evidence": true,
+        "conflict_detail": null
+      },
+      {
+        "topic": "其他观察",
+        "status": "weak",
+        "evidence_article_ids": [
+          6584,
+          6638
+        ],
+        "independent_source_count": 2,
+        "mainstream_or_better_count": 2,
+        "has_fresh_evidence": false,
+        "conflict_detail": null
+      },
+      {
+        "topic": "风险事件",
+        "status": "weak",
+        "evidence_article_ids": [
+          6585
+        ],
+        "independent_source_count": 1,
+        "mainstream_or_better_count": 1,
+        "has_fresh_evidence": false,
+        "conflict_detail": null
+      }
+    ],
+    "stock_checks": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "status": "weak",
+        "evidence_article_ids": [
+          6616,
+          6621
+        ],
+        "direct_mentions": 2,
+        "independent_source_count": 0,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA",
+        "status": "confirmed",
+        "evidence_article_ids": [
+          6618,
+          6620,
+          6630,
+          6631
+        ],
+        "direct_mentions": 4,
+        "independent_source_count": 2,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla",
+        "status": "weak",
+        "evidence_article_ids": [
+          6607
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 1,
+        "has_fresh_evidence": false,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "META",
+        "name": "Meta",
+        "status": "weak",
+        "evidence_article_ids": [
+          6649,
+          6607,
+          6588,
+          6610
+        ],
+        "direct_mentions": 0,
+        "independent_source_count": 5,
+        "has_fresh_evidence": false,
+        "source_type": "theme_mapping",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "status": "conflicted",
+        "evidence_article_ids": [
+          6620,
+          6605
+        ],
+        "direct_mentions": 2,
+        "independent_source_count": 1,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": "数值方向矛盾: 「income. This is not one of the high-income ETFs that we’ve been talking about, b」vs「7% decline」"
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "status": "weak",
+        "evidence_article_ids": [
+          6605
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 1,
+        "has_fresh_evidence": false,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "WMT",
+        "name": "Walmart",
+        "status": "weak",
+        "evidence_article_ids": [
+          6640
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 0,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "status": "weak",
+        "evidence_article_ids": [
+          6630
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 1,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple",
+        "status": "weak",
+        "evidence_article_ids": [
+          6620
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 0,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "XOM",
+        "name": "Exxon Mobil",
+        "status": "weak",
+        "evidence_article_ids": [
+          6622
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 0,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      }
+    ],
+    "summary": {
+      "topics_confirmed": 2,
+      "topics_weak": 3,
+      "topics_conflicted": 0,
+      "stocks_confirmed": 1,
+      "stocks_weak": 8,
+      "stocks_conflicted": 1
+    },
+    "issues": [],
+    "warnings": []
+  },
+  "source_references": {
+    "required": true,
+    "article_ids": [
+      6614,
+      6615,
+      6616,
+      6617,
+      6618,
+      6607,
+      6608,
+      6606,
+      6620,
+      6621,
+      6622,
+      6623,
+      6619,
+      6605,
+      6585,
+      6586,
+      6587,
+      6649,
+      6633,
+      6630,
+      6631,
+      6632,
+      6634,
+      6610,
+      6635,
+      6609,
+      6638,
+      6639,
+      6642,
+      6595,
+      6584,
+      6588,
+      6636,
+      6637,
+      6640,
+      6641,
+      6594,
+      6643,
+      6612
+    ],
+    "articles": [
+      {
+        "article_id": 6614,
+        "source": "ZeroHedge",
+        "title": "Biden Judge Sparkle Sooknanan Blocks Trump Admin SAVE Act Database",
+        "published": "Mon, 22 Jun 2026 23:40:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6615,
+        "source": "ZeroHedge",
+        "title": "Waymo Recalls Robotaxis After Cars Drive Into Construction Zones",
+        "published": "Mon, 22 Jun 2026 23:15:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6616,
+        "source": "ZeroHedge",
+        "title": "China Gold Imports Soar To Two Year High, As Hong Kong Gold Bar Imports Surge Ahead Of Clearing System Launch",
+        "published": "Mon, 22 Jun 2026 22:50:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6617,
+        "source": "ZeroHedge",
+        "title": "Ron Paul: Trump's Attempt To End The Iran War Infuriates The Uniparty",
+        "published": "Mon, 22 Jun 2026 22:25:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6618,
+        "source": "ZeroHedge",
+        "title": "JD CEO Warns 700,000 Delivery Workers Will Be Replaced By Robots \"Sooner Or Later\"",
+        "published": "Mon, 22 Jun 2026 22:00:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6607,
+        "source": "CNBC",
+        "title": "Tesla faces federal probe after Model 3 slams into Texas home, killing 76-year-old",
+        "published": "Tue, 23 Jun 2026 00:44:14 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6608,
+        "source": "CNBC",
+        "title": "Ro Khanna challenges Elon Musk to televised debate after online DOGE battle",
+        "published": "Mon, 22 Jun 2026 23:22:22 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6606,
+        "source": "CNBC",
+        "title": "'We'll see' — Trump hedges on guarantee Iran won't use oil profits to rebuild military",
+        "published": "Mon, 22 Jun 2026 23:09:43 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6620,
+        "source": "ETF Trends",
+        "title": "VIDEO: ETF of the Week: VFLO",
+        "published": "Mon, 22 Jun 2026 20:34:59 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6621,
+        "source": "ETF Trends",
+        "title": "Emerging Markets to Spike as Oil Prices Dip? Try GSEE",
+        "published": "Mon, 22 Jun 2026 19:51:02 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6622,
+        "source": "ETF Trends",
+        "title": "Look Beyond Market Euphoria After 3 FCF ETFs Rebalanced",
+        "published": "Mon, 22 Jun 2026 19:02:49 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6623,
+        "source": "ETF Trends",
+        "title": "Private Credit Offers Viable Yield Path as Rates Stay Elevated",
+        "published": "Mon, 22 Jun 2026 18:37:38 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6619,
+        "source": "ETF Trends",
+        "title": "World Markets Watchlist: June 22, 2026",
+        "published": "Mon, 22 Jun 2026 20:41:28 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6605,
+        "source": "CNBC",
+        "title": "Alphabet has its worst day in over a year on AI concerns after high-profile exits",
+        "published": "Mon, 22 Jun 2026 21:04:29 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6585,
+        "source": "FT中文网",
+        "title": "英国教育系统是如何看待“性别差距”的？",
+        "published": "Mon, 22 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6586,
+        "source": "FT中文网",
+        "title": "政局动荡的诅咒再次笼罩伦敦：中国应以交易思维重构对英关系",
+        "published": "Mon, 22 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6587,
+        "source": "FT中文网",
+        "title": "格林斯潘：听懂市场的古典主义行长",
+        "published": "Mon, 22 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6649,
+        "source": "Federal Reserve Board",
+        "title": "Federal Reserve notes with deep sadness the passing of Alan Greenspan",
+        "published": "Mon, 22 Jun 2026 12:45:00 GMT",
+        "source_tier": "official"
+      },
+      {
+        "article_id": 6633,
+        "source": "Yahoo Finance",
+        "title": "'It's that simple': Kevin O'Leary says this one number can turn your $65K salary into millions — will it work for you?",
+        "published": "2026-06-21T13:30:00Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6630,
+        "source": "Yahoo Finance",
+        "title": "SpaceX Is Buying Cursor for $60 Billion. What That Means for SPCX Stock.",
+        "published": "2026-06-21T13:15:02Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6631,
+        "source": "Yahoo Finance",
+        "title": "Alibaba Stock Is a Compelling Buy as It Drifts Toward 52-Week Lows. Here’s Why.",
+        "published": "2026-06-21T13:00:02Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6632,
+        "source": "Yahoo Finance",
+        "title": "A Short Squeeze Could Be Brewing in La-Z-Boy Stock",
+        "published": "2026-06-21T13:00:02Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6634,
+        "source": "MarketWatch",
+        "title": "These 6 fast-growing stocks sit at the cutting edge of space and military technology",
+        "published": "Tue, 23 Jun 2026 00:23:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6610,
+        "source": "BBC全球经济",
+        "title": "US eases oil sanctions as Iran denies Vance claim on nuclear inspectors",
+        "published": "Mon, 22 Jun 2026 23:07:45 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6635,
+        "source": "MarketWatch",
+        "title": "Trump may say he’s banning Wall Street from buying homes. Does the bipartisan housing bill actually do that?",
+        "published": "Mon, 22 Jun 2026 22:47:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6609,
+        "source": "BBC全球经济",
+        "title": "Tesla crash that killed a woman under US federal investigation",
+        "published": "Mon, 22 Jun 2026 22:20:07 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6638,
+        "source": "MarketWatch",
+        "title": "China’s weird new economic spark: toy elves and robocops",
+        "published": "Mon, 22 Jun 2026 22:14:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6639,
+        "source": "Seeking Alpha",
+        "title": "MDU Resources inks electric service agreement for proposed Applied Digital AI factory",
+        "published": "Mon, 22 Jun 2026 20:28:58 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6642,
+        "source": "Seeking Alpha",
+        "title": "TechPrecision projects $35M-$37M fiscal 2027 revenue with $3M-$4M EBITDA as it targets Stadco margin recovery",
+        "published": "Mon, 22 Jun 2026 19:03:00 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6595,
+        "source": "经济学人 Economist",
+        "title": "How to turn compute into a financial asset",
+        "published": "Mon, 22 Jun 2026 18:09:55 +0000",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6584,
+        "source": "FT中文网",
+        "title": "安迪•伯纳姆会将英国带向何方？",
+        "published": "Mon, 22 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6588,
+        "source": "FT中文网",
+        "title": "数百船舶在霍尔木兹海峡外侧等待通过",
+        "published": "Mon, 22 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6636,
+        "source": "MarketWatch",
+        "title": "Big Tech has split into two artificial-intelligence camps — but the smart money isn’t chasing the next OpenAI",
+        "published": "Mon, 22 Jun 2026 22:21:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6637,
+        "source": "MarketWatch",
+        "title": "A 40% market crash is lurking in the IPO pipeline. SpaceX and OpenAI could trigger it.",
+        "published": "Mon, 22 Jun 2026 22:18:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6640,
+        "source": "Seeking Alpha",
+        "title": "California group sues gas station owners for allegedly using AI to boost prices",
+        "published": "Mon, 22 Jun 2026 20:14:54 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6641,
+        "source": "Seeking Alpha",
+        "title": "Crude oil adds to losses on potential progress in U.S.-Iran talks",
+        "published": "Mon, 22 Jun 2026 19:47:06 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6594,
+        "source": "经济学人 Economist",
+        "title": "Russia’s war economy has problems—but is not about to crash",
+        "published": "Mon, 22 Jun 2026 19:07:09 +0000",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6643,
+        "source": "Seeking Alpha",
+        "title": "RWE plans $4.7B capital raise to take majority stake in power grid operator Amprion",
+        "published": "Mon, 22 Jun 2026 18:36:56 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6612,
+        "source": "BBC全球经济",
+        "title": "Alan Greenspan, architect of the modern American economy, dies aged 100",
+        "published": "Mon, 22 Jun 2026 11:55:36 GMT",
+        "source_tier": "mainstream"
+      }
+    ]
+  },
+  "claim_ledger": {
+    "required": true,
+    "market": "US",
+    "summary": {
+      "total_claims": 3,
+      "realtime_claims": 3,
+      "verified_realtime_claims": 3,
+      "news_fact_claims": 0,
+      "failed_claims": 0
+    },
+    "claims": [
+      {
+        "claim_id": "us-claim-001",
+        "market": "US",
+        "claim_type": "股价断言",
+        "scope": "实时行情断言",
+        "content": "报$7472.79",
+        "context": "美股三大指数小幅收涨：S&P 500报$7472.79（+0.56%）",
+        "asset_hint": "^GSPC",
+        "extracted_value": "7472.79",
+        "verified": true,
+        "verification_status": "verified",
+        "confidence": 1.0,
+        "source": "Yahoo Finance",
+        "realtime_source": "Yahoo Finance",
+        "timestamp": "2026-06-23 04:45:07",
+        "freshness_status": "timestamped",
+        "evidence": "实时数据验证: 7472.79 (误差 0.0%)",
+        "failure_reason": "",
+        "source_articles": []
+      },
+      {
+        "claim_id": "us-claim-002",
+        "market": "US",
+        "claim_type": "股价断言",
+        "scope": "实时行情断言",
+        "content": "报$26166.60",
+        "context": "NASDAQ报$26166.60（+1.07%）",
+        "asset_hint": "^IXIC",
+        "extracted_value": "26166.60",
+        "verified": true,
+        "verification_status": "verified",
+        "confidence": 0.9999999235666901,
+        "source": "Yahoo Finance",
+        "realtime_source": "Yahoo Finance",
+        "timestamp": "2026-06-23 05:15:59",
+        "freshness_status": "timestamped",
+        "evidence": "实时数据验证: 26166.60 (误差 0.0%)",
+        "failure_reason": "",
+        "source_articles": []
+      },
+      {
+        "claim_id": "us-claim-003",
+        "market": "US",
+        "claim_type": "股价断言",
+        "scope": "实时行情断言",
+        "content": "报$51712.71",
+        "context": "Dow Jones报$51712.71（+1.00%）",
+        "asset_hint": "^DJI",
+        "extracted_value": "51712.71",
+        "verified": true,
+        "verification_status": "verified",
+        "confidence": 1.0,
+        "source": "Yahoo Finance",
+        "realtime_source": "Yahoo Finance",
+        "timestamp": "2026-06-23 04:54:51",
+        "freshness_status": "timestamped",
+        "evidence": "实时数据验证: 51712.71 (误差 0.0%)",
+        "failure_reason": "",
+        "source_articles": []
+      }
+    ]
+  },
+  "coverage_matrix": {
+    "required": true,
+    "market": "US",
+    "categories": {
+      "macro_liquidity": {
+        "article_count": 5,
+        "source_count": 5,
+        "status": "sufficient"
+      },
+      "policy_regulation": {
+        "article_count": 15,
+        "source_count": 6,
+        "status": "sufficient"
+      },
+      "company_earnings": {
+        "article_count": 1,
+        "source_count": 1,
+        "status": "partial"
+      },
+      "industry_theme": {
+        "article_count": 17,
+        "source_count": 9,
+        "status": "sufficient"
+      },
+      "risk_event": {
+        "article_count": 2,
+        "source_count": 1,
+        "status": "partial"
+      },
+      "realtime_market": {
+        "article_count": 0,
+        "source_count": 1,
+        "status": "sufficient"
+      }
+    },
+    "coverage_gaps": [
+      "company_earnings",
+      "risk_event"
+    ]
+  },
+  "evidence_diversity": {
+    "required": true,
+    "market": "US",
+    "total_articles": 39,
+    "source_count": 10,
+    "topic_count": 6,
+    "explicit_entity_count": 0,
+    "explicit_entity_observation_count": 0,
+    "source_tier_known_count": 39,
+    "mainstream_or_better_count": 24,
+    "aggregator_count": 15,
+    "original_source_known_count": 39,
+    "original_source_count": 21,
+    "max_source_share": 0.1282051282051282,
+    "max_topic_share": 0.38461538461538464,
+    "max_entity_share": 0.0,
+    "max_aggregator_share": 0.38461538461538464,
+    "original_source_share": 0.5384615384615384,
+    "source_distribution": [
+      {
+        "name": "ZeroHedge",
+        "count": 5,
+        "share": 0.1282051282051282
+      },
+      {
+        "name": "ETF Trends",
+        "count": 5,
+        "share": 0.1282051282051282
+      },
+      {
+        "name": "FT中文网",
+        "count": 5,
+        "share": 0.1282051282051282
+      },
+      {
+        "name": "MarketWatch",
+        "count": 5,
+        "share": 0.1282051282051282
+      },
+      {
+        "name": "Seeking Alpha",
+        "count": 5,
+        "share": 0.1282051282051282
+      },
+      {
+        "name": "CNBC",
+        "count": 4,
+        "share": 0.10256410256410256
+      },
+      {
+        "name": "Yahoo Finance",
+        "count": 4,
+        "share": 0.10256410256410256
+      },
+      {
+        "name": "BBC全球经济",
+        "count": 3,
+        "share": 0.07692307692307693
+      },
+      {
+        "name": "经济学人 Economist",
+        "count": 2,
+        "share": 0.05128205128205128
+      },
+      {
+        "name": "Federal Reserve Board",
+        "count": 1,
+        "share": 0.02564102564102564
+      }
+    ],
+    "topic_distribution": [
+      {
+        "name": "政策与监管",
+        "count": 15,
+        "share": 0.38461538461538464
+      },
+      {
+        "name": "科技与产业主题",
+        "count": 13,
+        "share": 0.3333333333333333
+      },
+      {
+        "name": "未分类",
+        "count": 6,
+        "share": 0.15384615384615385
+      },
+      {
+        "name": "宏观与流动性",
+        "count": 2,
+        "share": 0.05128205128205128
+      },
+      {
+        "name": "其他观察",
+        "count": 2,
+        "share": 0.05128205128205128
+      },
+      {
+        "name": "风险事件",
+        "count": 1,
+        "share": 0.02564102564102564
+      }
+    ],
+    "entity_distribution": [],
+    "source_tier_distribution": [
+      {
+        "name": "mainstream",
+        "count": 23,
+        "share": 0.5897435897435898
+      },
+      {
+        "name": "aggregator",
+        "count": 15,
+        "share": 0.38461538461538464
+      },
+      {
+        "name": "official",
+        "count": 1,
+        "share": 0.02564102564102564
+      }
+    ],
+    "concentration_flags": [],
+    "passed": true
+  },
+  "counter_evidence_ledger": {
+    "required": true,
+    "market": "US",
+    "topics": [
+      {
+        "topic": "科技与产业主题",
+        "market": "US",
+        "high_confidence_topic": true,
+        "evidence_article_ids": [
+          6649,
+          6607,
+          6588,
+          6610
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      },
+      {
+        "topic": "政策与监管",
+        "market": "US",
+        "high_confidence_topic": true,
+        "evidence_article_ids": [
+          6586,
+          6631,
+          6630,
+          6632
+        ],
+        "supporting_article_ids": [
+          6632
+        ],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [
+          "beat estimates",
+          "upgrade"
+        ],
+        "negative_keywords": [],
+        "status": "support_only"
+      },
+      {
+        "topic": "宏观与流动性",
+        "market": "US",
+        "high_confidence_topic": true,
+        "evidence_article_ids": [
+          6633,
+          6587
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      },
+      {
+        "topic": "其他观察",
+        "market": "US",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          6584,
+          6638
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      },
+      {
+        "topic": "风险事件",
+        "market": "US",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          6585
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [],
+        "negative_keywords": [],
+        "status": "balanced"
+      }
+    ],
+    "summary": {
+      "topic_count": 5,
+      "topics_with_counter_evidence": 0,
+      "high_confidence_topics_with_counter_evidence": 0
+    },
+    "passed": true
+  },
+  "candidate_evidence_audit": {
+    "required": true,
+    "candidate_count": 10,
+    "recommendation_count": 10,
+    "status_counts": {
+      "direct_material_news": 9,
+      "theme_proxy": 1
+    },
+    "candidates": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:order",
+          "material_keyword:investment",
+          "material_keyword:launch",
+          "material_keyword:product",
+          "material_keyword:sec",
+          "material_keyword:stock"
+        ],
+        "evidence_article_ids": [
+          6616,
+          6621
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:order",
+          "material_keyword:product",
+          "material_keyword:sec",
+          "material_keyword:earnings",
+          "material_keyword:dividend",
+          "material_keyword:revenue",
+          "material_keyword:acquisition",
+          "material_keyword:launch",
+          "material_keyword:profit"
+        ],
+        "evidence_article_ids": [
+          6618,
+          6620,
+          6630,
+          6631
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:shares"
+        ],
+        "evidence_article_ids": [
+          6607
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "META",
+        "name": "Meta",
+        "source_type": "theme_mapping",
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "evidence_article_ids": [
+          6649,
+          6607,
+          6588,
+          6610
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:earnings",
+          "material_keyword:order",
+          "material_keyword:dividend",
+          "material_keyword:partnership",
+          "material_keyword:product",
+          "material_keyword:shares"
+        ],
+        "evidence_article_ids": [
+          6620,
+          6605
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:sec",
+          "material_keyword:partnership",
+          "material_keyword:product"
+        ],
+        "evidence_article_ids": [
+          6605
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "WMT",
+        "name": "Walmart",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:lawsuit"
+        ],
+        "evidence_article_ids": [
+          6640
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:revenue",
+          "material_keyword:acquisition",
+          "material_keyword:launch"
+        ],
+        "evidence_article_ids": [
+          6630
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:earnings",
+          "material_keyword:order",
+          "material_keyword:dividend"
+        ],
+        "evidence_article_ids": [
+          6620
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "XOM",
+        "name": "Exxon Mobil",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:order",
+          "material_keyword:sec",
+          "material_keyword:shares"
+        ],
+        "evidence_article_ids": [
+          6622
+        ],
+        "actionability_passed": false
+      }
+    ],
+    "rejected_false_positive_mentions": [
+      {
+        "article_id": 6616,
+        "title": "China Gold Imports Soar To Two Year High, As Hong Kong Gold Bar Imports Surge Ahead Of Clearing System Launch",
+        "symbol": "META",
+        "name": "Meta",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6609,
+        "title": "Tesla crash that killed a woman under US federal investigation",
+        "symbol": "TSLA",
+        "name": "Tesla",
+        "status": "incidental_mention",
+        "reasons": [
+          "sentence_mentions_symbol_but_no_material_catalyst"
+        ]
+      },
+      {
+        "article_id": 6636,
+        "title": "Big Tech has split into two artificial-intelligence camps — but the smart money isn’t chasing the next OpenAI",
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "status": "incidental_mention",
+        "reasons": [
+          "sentence_mentions_symbol_but_no_material_catalyst"
+        ]
+      },
+      {
+        "article_id": 6636,
+        "title": "Big Tech has split into two artificial-intelligence camps — but the smart money isn’t chasing the next OpenAI",
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "status": "incidental_mention",
+        "reasons": [
+          "sentence_mentions_symbol_but_no_material_catalyst"
+        ]
+      }
+    ]
+  },
+  "scoring_calibration": {
+    "required": true,
+    "status_counts": {
+      "样本不足": 10
+    },
+    "items": [
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA",
+        "grade": "关注",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "META",
+        "name": "Meta",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "WMT",
+        "name": "Walmart",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "XOM",
+        "name": "Exxon Mobil",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      }
+    ]
+  },
+  "rejected_false_positive_mentions": [
+    {
+      "article_id": 6616,
+      "title": "China Gold Imports Soar To Two Year High, As Hong Kong Gold Bar Imports Surge Ahead Of Clearing System Launch",
+      "symbol": "META",
+      "name": "Meta",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6609,
+      "title": "Tesla crash that killed a woman under US federal investigation",
+      "symbol": "TSLA",
+      "name": "Tesla",
+      "status": "incidental_mention",
+      "reasons": [
+        "sentence_mentions_symbol_but_no_material_catalyst"
+      ]
+    },
+    {
+      "article_id": 6636,
+      "title": "Big Tech has split into two artificial-intelligence camps — but the smart money isn’t chasing the next OpenAI",
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "status": "incidental_mention",
+      "reasons": [
+        "sentence_mentions_symbol_but_no_material_catalyst"
+      ]
+    },
+    {
+      "article_id": 6636,
+      "title": "Big Tech has split into two artificial-intelligence camps — but the smart money isn’t chasing the next OpenAI",
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "status": "incidental_mention",
+      "reasons": [
+        "sentence_mentions_symbol_but_no_material_catalyst"
+      ]
+    }
+  ],
+  "session": "morning",
+  "session_time": "2026-06-23 09:20:44"
+}

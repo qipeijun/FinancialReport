@@ -1,0 +1,4559 @@
+{
+  "analysis_mode": "markdown-report",
+  "market": "CN",
+  "date_range": {
+    "start": "2026-06-17",
+    "end": "2026-06-17"
+  },
+  "selected_articles": [
+    {
+      "id": 6279,
+      "title": "悬在市场上空的“三大利空”：沃什“鹰鸽不明”，AI“武器化监管”，美股史上最大股票发行潮",
+      "source": "华尔街见闻",
+      "published": "Wed, 17 Jun 2026 08:46:00 +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6280,
+      "title": "美伊协议核心条款曝光：伊朗石油出口即刻解禁，核项目维持现状，海峡快速重启仍存变数",
+      "source": "华尔街见闻",
+      "published": "Wed, 17 Jun 2026 08:42:39 +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "风险事件",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6281,
+      "title": "市场“草木皆兵”：微软被曝终止与甲骨文30亿美元云基础设施谈判，加剧芯片股回调",
+      "source": "华尔街见闻",
+      "published": "Wed, 17 Jun 2026 08:31:44 +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6269,
+      "title": "「逆矩阵」完成超亿美元融资，创始人：通用世界基座模型窗口期已压至18个月",
+      "source": "36氪",
+      "published": "2026-06-17 09:00:00  +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6270,
+      "title": "8点1氪丨连涨3天，SpaceX超越亚马逊跻身全球前五；支付宝启动史上最大改版；微信支付“AI专属卡”最快本周内上线",
+      "source": "36氪",
+      "published": "2026-06-17 08:22:06  +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6282,
+      "title": "SpaceX期权上市首日就被热捧，看涨期权交易量排美股第五",
+      "source": "华尔街见闻",
+      "published": "Wed, 17 Jun 2026 08:01:57 +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6283,
+      "title": "美国“前沿模型武器化”思路“昭然若揭”--美商务部长致信Anthropic导致Fable 5模型全球下架",
+      "source": "华尔街见闻",
+      "published": "Wed, 17 Jun 2026 07:57:53 +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6289,
+      "title": "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+      "source": "东方财富网",
+      "published": "Wed, 17 Jun 2026 06:03:32 +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6309,
+      "title": "Iranian Tankers Cross US Naval Blockade After Trump Deal Allows Iran To Restart Oil Sales",
+      "source": "ZeroHedge",
+      "published": "Tue, 16 Jun 2026 23:40:00 +0000",
+      "collection_date": "2026-06-17",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6310,
+      "title": "15 Tied To Antifa Charged With Violently Interfering With ICE Operations In Minnesota",
+      "source": "ZeroHedge",
+      "published": "Tue, 16 Jun 2026 23:15:00 +0000",
+      "collection_date": "2026-06-17",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6311,
+      "title": "Supreme Court Rejects Challenge To Trump's First-Term Tariff On China",
+      "source": "ZeroHedge",
+      "published": "Tue, 16 Jun 2026 22:25:00 +0000",
+      "collection_date": "2026-06-17",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6312,
+      "title": "Wyoming And Spokane Data Center Pauses Show NIMBY Fury Has Shifted From Nuclear To AI",
+      "source": "ZeroHedge",
+      "published": "Tue, 16 Jun 2026 22:00:00 +0000",
+      "collection_date": "2026-06-17",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6313,
+      "title": "SPLC Official Shared Bank Accounts With Neo-Nazi Informant",
+      "source": "ZeroHedge",
+      "published": "Tue, 16 Jun 2026 21:40:00 +0000",
+      "collection_date": "2026-06-17",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6271,
+      "title": "鸿蒙智行全面引入电池二供，国轩高科将上车问界｜36氪独家",
+      "source": "36氪",
+      "published": "2026-06-16 21:24:26  +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6306,
+      "title": "Japan May exports grow at fastest pace in over three years, beating estimates, as chip demand soars",
+      "source": "CNBC",
+      "published": "Wed, 17 Jun 2026 01:02:10 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6308,
+      "title": "Bill limiting investors from buying homes set to speed through Congress",
+      "source": "CNBC",
+      "published": "Tue, 16 Jun 2026 22:34:21 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6359,
+      "title": "AI’s Exponential Power Demands Could Make This ETF a Winner",
+      "source": "ETF Trends",
+      "published": "Tue, 16 Jun 2026 21:04:51 +0000",
+      "collection_date": "2026-06-17",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6290,
+      "title": "6月16日东方财富财经晚报（附新闻联播）",
+      "source": "东方财富网",
+      "published": "Tue, 16 Jun 2026 21:00:00 +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "汇率与大宗",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6360,
+      "title": "Microsoft Woes Hide Opportunity With This ETF",
+      "source": "ETF Trends",
+      "published": "Tue, 16 Jun 2026 20:47:02 +0000",
+      "collection_date": "2026-06-17",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6291,
+      "title": "6月16日晚间上市公司利好消息一览(附名单)",
+      "source": "东方财富网",
+      "published": "Tue, 16 Jun 2026 20:33:22 +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6361,
+      "title": "JPMorgan Converts $950M to Active NY, CA Muni ETFs",
+      "source": "ETF Trends",
+      "published": "Tue, 16 Jun 2026 19:39:58 +0000",
+      "collection_date": "2026-06-17",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "宏观与流动性",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6292,
+      "title": "6月16日晚间沪深上市公司重大事项公告最新快递",
+      "source": "东方财富网",
+      "published": "Tue, 16 Jun 2026 19:32:13 +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6362,
+      "title": "WisdomTree Celebrates 20 Years of Modern Alpha",
+      "source": "ETF Trends",
+      "published": "Tue, 16 Jun 2026 18:35:43 +0000",
+      "collection_date": "2026-06-17",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6363,
+      "title": "Q2 Symposium: The CLO Retail Renaissance With Reckoner Capital",
+      "source": "ETF Trends",
+      "published": "Tue, 16 Jun 2026 18:09:14 +0000",
+      "collection_date": "2026-06-17",
+      "source_tier": "aggregator",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6293,
+      "title": "A股三大指数涨跌不一 创业板指涨1.72% 近140只股涨停",
+      "source": "东方财富网",
+      "published": "Tue, 16 Jun 2026 15:00:47 +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6272,
+      "title": "乘新浪潮之势，建智造创新之城，2026年番禺产业高质量发展招商大会圆满举行",
+      "source": "36氪",
+      "published": "2026-06-16 17:31:45  +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6273,
+      "title": "融了数亿美金的「大晓机器人」，其创始人揭开了具身行业的割裂一面",
+      "source": "36氪",
+      "published": "2026-06-16 16:31:50  +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6264,
+      "title": "警惕“钓鱼房源”！毕业季租房该注意什么？",
+      "source": "中新网",
+      "published": "Wed, 17 Jun 2026 07:48:56 +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6266,
+      "title": "小区公共收益不能成为一笔“糊涂账”",
+      "source": "中新网",
+      "published": "Wed, 17 Jun 2026 07:38:35 +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6267,
+      "title": "“黑黄金”撬动百亿级大市场 这些硬实力够硬气",
+      "source": "中新网",
+      "published": "Wed, 17 Jun 2026 07:17:34 +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "汇率与大宗",
+      "content_quality_status": "full",
+      "is_original_source": 0
+    },
+    {
+      "id": 6307,
+      "title": "Michael Burry says he's tempted to bet against SpaceX, but passes on expensive options",
+      "source": "CNBC",
+      "published": "Tue, 16 Jun 2026 20:55:45 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6304,
+      "title": "Fed Chair Warsh expected to withhold 'dot' from central bank's interest rate outlook",
+      "source": "CNBC",
+      "published": "Tue, 16 Jun 2026 19:12:13 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6305,
+      "title": "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+      "source": "CNBC",
+      "published": "Tue, 16 Jun 2026 15:51:53 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6265,
+      "title": "“云养牛”案宣判 给“云养经济”投资者哪些警示？",
+      "source": "中新网",
+      "published": "Wed, 17 Jun 2026 07:40:39 +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "宏观与流动性",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 6268,
+      "title": "2025年度个税汇算6月30日结束 这两种情况要注意",
+      "source": "中新网",
+      "published": "Wed, 17 Jun 2026 07:11:54 +0800",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 6277,
+      "title": "欧洲人能把命运掌握在自己手中吗？",
+      "source": "FT中文网",
+      "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6324,
+      "title": "Cathie Wood buys $529.7 million of popular new stock",
+      "source": "Yahoo Finance",
+      "published": "2026-06-15T13:33:00Z",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "high",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6327,
+      "title": "Baron Real Estate Fund Sold Its Position in Blackstone (BX). Here’s Why",
+      "source": "Yahoo Finance",
+      "published": "2026-06-15T13:15:54Z",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6326,
+      "title": "Is Rollins Stock Underperforming the Nasdaq?",
+      "source": "Yahoo Finance",
+      "published": "2026-06-15T13:13:28Z",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6325,
+      "title": "Solid Results Lifted Equinix (EQIX) in Q1",
+      "source": "Yahoo Finance",
+      "published": "2026-06-15T13:10:24Z",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6328,
+      "title": "Mirae Asset apologizes to investors over failed SpaceX IPO allocation",
+      "source": "Yahoo Finance",
+      "published": "2026-06-15T13:07:46Z",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "full",
+      "is_original_source": 1
+    },
+    {
+      "id": 6319,
+      "title": "America’s fertility rate has never been lower. Blame smartphones — and these 4 financial realities.",
+      "source": "MarketWatch",
+      "published": "Wed, 17 Jun 2026 01:03:00 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "summary_only",
+      "is_original_source": 1
+    },
+    {
+      "id": 6320,
+      "title": "Oil may move through the Strait of Hormuz first, leaving fertilizer supplies stranded",
+      "source": "MarketWatch",
+      "published": "Wed, 17 Jun 2026 00:46:00 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 6321,
+      "title": "Intel takes a major step toward turning around a business that’s bleeding cash",
+      "source": "MarketWatch",
+      "published": "Tue, 16 Jun 2026 22:49:00 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "summary_only",
+      "is_original_source": 1
+    },
+    {
+      "id": 6322,
+      "title": "I’m spending $170,000 to upgrade my home for my aging parents. Can I get tax breaks?",
+      "source": "MarketWatch",
+      "published": "Tue, 16 Jun 2026 22:00:00 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "summary_only",
+      "is_original_source": 1
+    },
+    {
+      "id": 6316,
+      "title": "Struggling Pizza Hut chain to be sold for $2.7bn",
+      "source": "BBC全球经济",
+      "published": "Tue, 16 Jun 2026 21:00:30 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "summary_only",
+      "is_original_source": 0
+    },
+    {
+      "id": 6315,
+      "title": "Musk's SpaceX overtakes Amazon to become world's fifth most valuable firm",
+      "source": "BBC全球经济",
+      "published": "Tue, 16 Jun 2026 16:38:14 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "summary_only",
+      "is_original_source": 0
+    },
+    {
+      "id": 6274,
+      "title": "特朗普提议由叙利亚代替以色列打击真主党",
+      "source": "FT中文网",
+      "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 6275,
+      "title": "SpaceX 600亿美元收购AI初创公司",
+      "source": "FT中文网",
+      "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "汇率与大宗",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 6276,
+      "title": "如果欧盟发动贸易战，如何收场将由中国说了算",
+      "source": "FT中文网",
+      "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 6278,
+      "title": "欧洲议会批准欧美贸易协议",
+      "source": "FT中文网",
+      "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "政策与监管",
+      "content_quality_status": "partial",
+      "is_original_source": 1
+    },
+    {
+      "id": 6314,
+      "title": "Cadbury chocolate-owner Mondelez defends staying in Russia",
+      "source": "BBC全球经济",
+      "published": "Tue, 16 Jun 2026 23:05:23 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "科技与产业主题",
+      "content_quality_status": "summary_only",
+      "is_original_source": 0
+    },
+    {
+      "id": 6323,
+      "title": "Chicken tenders are taking over the world, and KFC is rushing to keep up",
+      "source": "MarketWatch",
+      "published": "Tue, 16 Jun 2026 21:53:00 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "summary_only",
+      "is_original_source": 1
+    },
+    {
+      "id": 6329,
+      "title": "Developing world should not completely entrust energy security to U.S., Cheniere CFO says",
+      "source": "Seeking Alpha",
+      "published": "Tue, 16 Jun 2026 20:24:18 -0400",
+      "collection_date": "2026-06-17",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 0
+    },
+    {
+      "id": 6330,
+      "title": "Exxon to supply LNG to help South Africa cut reliance on coal - Bloomberg",
+      "source": "Seeking Alpha",
+      "published": "Tue, 16 Jun 2026 20:05:30 -0400",
+      "collection_date": "2026-06-17",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 0
+    },
+    {
+      "id": 6299,
+      "title": "Deal or no deal, oil prices will stay high for months",
+      "source": "经济学人 Economist",
+      "published": "Tue, 16 Jun 2026 19:55:31 +0000",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 1
+    },
+    {
+      "id": 6331,
+      "title": "Wall Street banks cut oil price predictions as Persian Gulf flows now seen recovering quickly",
+      "source": "Seeking Alpha",
+      "published": "Tue, 16 Jun 2026 19:30:16 -0400",
+      "collection_date": "2026-06-17",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 0
+    },
+    {
+      "id": 6332,
+      "title": "FMC, Corteva to partner on herbicide technology supply and license deal",
+      "source": "Seeking Alpha",
+      "published": "Tue, 16 Jun 2026 18:26:17 -0400",
+      "collection_date": "2026-06-17",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 0
+    },
+    {
+      "id": 6300,
+      "title": "America’s bull market has entered its manic phase",
+      "source": "经济学人 Economist",
+      "published": "Tue, 16 Jun 2026 18:19:00 +0000",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "failed",
+      "is_original_source": 1
+    },
+    {
+      "id": 6333,
+      "title": "Surge Energy targets $9.7M share buyback as TSX approves NCIB renewal",
+      "source": "Seeking Alpha",
+      "published": "Tue, 16 Jun 2026 18:10:19 -0400",
+      "collection_date": "2026-06-17",
+      "source_tier": "aggregator",
+      "investment_relevance": "low",
+      "primary_topic": null,
+      "content_quality_status": "partial",
+      "is_original_source": 0
+    },
+    {
+      "id": 6318,
+      "title": "What is Helium-3 and could we get it from the moon?",
+      "source": "BBC全球经济",
+      "published": "Tue, 16 Jun 2026 00:11:13 GMT",
+      "collection_date": "2026-06-17",
+      "source_tier": "mainstream",
+      "investment_relevance": "medium",
+      "primary_topic": "其他观察",
+      "content_quality_status": "summary_only",
+      "is_original_source": 0
+    }
+  ],
+  "judgment_candidates": [
+    {
+      "candidate_id": "C03",
+      "topic": "科技与产业主题",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "2-6周",
+      "evidence_count": 8,
+      "independent_evidence_count": 3,
+      "high_relevance_article_count": 7,
+      "source_tier_max": "mainstream",
+      "original_source_count": 3,
+      "mainstream_or_better_count": 18,
+      "articles": [
+        {
+          "id": 6292,
+          "title": "6月16日晚间沪深上市公司重大事项公告最新快递",
+          "source": "东方财富网",
+          "summary": "<p> 沪深两市多家上市公司6月16日晚间发布公司公告，以下为重要公告汇总。</p><p> <strong>【品大事】</strong></p><p> <strong><span id=\"stock_0.002384\"><a class=\"keytip\" href=\"http://quote.eastmoney.com/unify/r/0.002384\">东",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 16 Jun 2026 19:32:13 +0800",
+          "collection_date": "2026-06-17"
+        },
+        {
+          "id": 6270,
+          "title": "8点1氪丨连涨3天，SpaceX超越亚马逊跻身全球前五；支付宝启动史上最大改版；微信支付“AI专属卡”最快本周内上线",
+          "source": "36氪",
+          "summary": "<h2>今日热点导览</h2> <ul> <li>山姆中国变更董事长</li> <li>海康威视7月1日上调硬盘价</li> <li>5月份全球纯电和插电式混动汽车销量连续三个月增长</li> <li>美国零售经纪商处的SpaceX投资者每人至少分得一股IPO股票</li> <li>传苹果首款折叠屏将延期发布，产业链人士：假的</li> </ul> <h2>",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-06-17 08:22:06  +0800",
+          "collection_date": "2026-06-17"
+        },
+        {
+          "id": 6289,
+          "title": "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "source": "东方财富网",
+          "summary": "<p> 6月17日(星期三)，今日报刊头条主要内容精华如下：</p><h3 class=\"emh3\"> 中国证券报</h3><p> <a href=\"http://finance.eastmoney.com/a/202606173773482689.html\"><strong>国家发展改革委： 积极吸引社会资本参与“六张网”建设</strong></a></",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Wed, 17 Jun 2026 06:03:32 +0800",
+          "collection_date": "2026-06-17"
+        },
+        {
+          "id": 6272,
+          "title": "乘新浪潮之势，建智造创新之城，2026年番禺产业高质量发展招商大会圆满举行",
+          "source": "36氪",
+          "summary": "<p>潮起湾区新机遇，科创赋能新番禺。6月16日上午，2026年番禺产业高质量发展招商大会在广州番禺良仓新造创意园举行，大会以“新浪潮·新番禺”为主题，旨在搭建高效政企对接、企企交流、资本赋能平台。</p> <p>大会由广州市番禺信息技术投资发展有限公司（下称“番禺信投”）、广州市番禺交通建设投资集团有限公司（下称“番禺交投”）、广州市番禺区新造镇房地产开发",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-06-16 17:31:45  +0800",
+          "collection_date": "2026-06-17"
+        }
+      ],
+      "topic_article_count": 20,
+      "priority_score": 66,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C01",
+      "topic": "政策与监管",
+      "market_scope": [
+        "A股",
+        "港股",
+        "宏观"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 7,
+      "independent_evidence_count": 3,
+      "high_relevance_article_count": 8,
+      "source_tier_max": "mainstream",
+      "original_source_count": 3,
+      "mainstream_or_better_count": 15,
+      "articles": [
+        {
+          "id": 6305,
+          "title": "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+          "source": "CNBC",
+          "summary": "Carvana has bought seven new vehicle franchises since last year that primarily sell Stellantis' Chrysler, Dodge, Jeep and Ram brands.",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 16 Jun 2026 15:51:53 GMT",
+          "collection_date": "2026-06-17"
+        },
+        {
+          "id": 6324,
+          "title": "Cathie Wood buys $529.7 million of popular new stock",
+          "source": "Yahoo Finance",
+          "summary": "N/A",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "2026-06-15T13:33:00Z",
+          "collection_date": "2026-06-17"
+        },
+        {
+          "id": 6279,
+          "title": "悬在市场上空的“三大利空”：沃什“鹰鸽不明”，AI“武器化监管”，美股史上最大股票发行潮",
+          "source": "华尔街见闻",
+          "summary": "<p style=\"text-align: left;\">6月16日，彭博记者兼策略师Jan-Patrick Barnert发表了一篇深度分析文章。文章标题直白犀利——《伊朗协议之后，三件事可能搅乱市场派对》，核心论点是：<strong>地缘政治风险的消退，只不过是市场解决了一道\"送分题\"，而真正的硬骨头还在后面。</strong></p> <p style",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Wed, 17 Jun 2026 08:46:00 +0800",
+          "collection_date": "2026-06-17"
+        },
+        {
+          "id": 6277,
+          "title": "欧洲人能把命运掌握在自己手中吗？",
+          "source": "FT中文网",
+          "summary": "袁杰：要实现欧洲人掌握自己命运这一目标，在防务、军备、数字技术等方面，至今仍然存在十分严峻的挑战，任重道远，不可能一蹴而就。",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+          "collection_date": "2026-06-17"
+        }
+      ],
+      "topic_article_count": 22,
+      "priority_score": 63,
+      "high_confidence_topic": true
+    },
+    {
+      "candidate_id": "C04",
+      "topic": "汇率与大宗",
+      "market_scope": [
+        "汇率",
+        "商品",
+        "A股",
+        "港股"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 3,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 2,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 3,
+      "articles": [
+        {
+          "id": 6290,
+          "title": "6月16日东方财富财经晚报（附新闻联播）",
+          "source": "东方财富网",
+          "summary": "<center><img src=\"https://np-newspic.dfcfw.com/download/D25510031021569784298_w1240h918.jpg\" width=\"580\" /></center><h3 class=\"emh3\"> <strong>热点聚焦</strong></h3><p> <strong>郑栅洁主持召开座",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Tue, 16 Jun 2026 21:00:00 +0800",
+          "collection_date": "2026-06-17"
+        },
+        {
+          "id": 6267,
+          "title": "“黑黄金”撬动百亿级大市场 这些硬实力够硬气",
+          "source": "中新网",
+          "summary": "近期，中国科技三大突破同时落地：",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Wed, 17 Jun 2026 07:17:34 +0800",
+          "collection_date": "2026-06-17"
+        },
+        {
+          "id": 6275,
+          "title": "SpaceX 600亿美元收购AI初创公司",
+          "source": "FT中文网",
+          "summary": "马斯克的火箭公司近日股价强劲上涨，市值有望超越亚马逊。收购“氛围编程”公司Cursor将拓展其Grok模型的能力。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+          "collection_date": "2026-06-17"
+        }
+      ],
+      "topic_article_count": 3,
+      "priority_score": 43,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C06",
+      "topic": "其他观察",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股"
+      ],
+      "time_horizon": "1-2周",
+      "evidence_count": 3,
+      "independent_evidence_count": 1,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 1,
+      "mainstream_or_better_count": 6,
+      "articles": [
+        {
+          "id": 6268,
+          "title": "2025年度个税汇算6月30日结束 这两种情况要注意",
+          "source": "中新网",
+          "summary": "2025年度个税综合所得汇算办理将于6月30日结束。记者从税务部门收集整理了一些纳税人在办理个税汇算时咨询较多的问题。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Wed, 17 Jun 2026 07:11:54 +0800",
+          "collection_date": "2026-06-17"
+        },
+        {
+          "id": 6318,
+          "title": "What is Helium-3 and could we get it from the moon?",
+          "source": "BBC全球经济",
+          "summary": "Helium-3 is expensive and demand is forecast to soar, so some are planning to mine it on the moon.",
+          "source_tier": "mainstream",
+          "content_quality_status": "summary_only",
+          "published": "Tue, 16 Jun 2026 00:11:13 GMT",
+          "collection_date": "2026-06-17"
+        },
+        {
+          "id": 6321,
+          "title": "Intel takes a major step toward turning around a business that’s bleeding cash",
+          "source": "MarketWatch",
+          "summary": "Intel’s new manufacturing process has entered a stage that signals the company is confident in its ability to bring on external customers, analysts say.",
+          "source_tier": "mainstream",
+          "content_quality_status": "summary_only",
+          "published": "Tue, 16 Jun 2026 22:49:00 GMT",
+          "collection_date": "2026-06-17"
+        },
+        {
+          "id": 6322,
+          "title": "I’m spending $170,000 to upgrade my home for my aging parents. Can I get tax breaks?",
+          "source": "MarketWatch",
+          "summary": "“Given that at least half of the remodeling cost is to accommodate my disabled mother, I’m wondering if some of this may be tax deductible.”",
+          "source_tier": "mainstream",
+          "content_quality_status": "summary_only",
+          "published": "Tue, 16 Jun 2026 22:00:00 GMT",
+          "collection_date": "2026-06-17"
+        }
+      ],
+      "topic_article_count": 6,
+      "priority_score": 43,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C05",
+      "topic": "宏观与流动性",
+      "market_scope": [
+        "美股",
+        "A股",
+        "港股",
+        "美元",
+        "利率"
+      ],
+      "time_horizon": "1-4周",
+      "evidence_count": 2,
+      "independent_evidence_count": 0,
+      "high_relevance_article_count": 0,
+      "source_tier_max": "mainstream",
+      "original_source_count": 0,
+      "mainstream_or_better_count": 1,
+      "articles": [
+        {
+          "id": 6265,
+          "title": "“云养牛”案宣判 给“云养经济”投资者哪些警示？",
+          "source": "中新网",
+          "summary": "近年来，一些地方出现了以“云种菜”“代养殖”等为名，许诺高额回报的“云养经济”，吸引用户通过线上平台投资特定的养殖项目。但“云养经济”领域的非法集资、诈骗等违法犯罪活动也需要公众加强防范。",
+          "source_tier": "mainstream",
+          "content_quality_status": "partial",
+          "published": "Wed, 17 Jun 2026 07:40:39 +0800",
+          "collection_date": "2026-06-17"
+        },
+        {
+          "id": 6361,
+          "title": "JPMorgan Converts $950M to Active NY, CA Muni ETFs",
+          "source": "ETF Trends",
+          "summary": "<p>This week J.P. Morgan Asset Management launched two actively managed municipal bond ETFs focused on California and New York debt, offering investors a way to earn tax-free incom",
+          "source_tier": "aggregator",
+          "content_quality_status": "full",
+          "published": "Tue, 16 Jun 2026 19:39:58 +0000",
+          "collection_date": "2026-06-17"
+        }
+      ],
+      "topic_article_count": 2,
+      "priority_score": 36,
+      "high_confidence_topic": false
+    },
+    {
+      "candidate_id": "C02",
+      "topic": "风险事件",
+      "market_scope": [
+        "A股",
+        "港股",
+        "美股",
+        "商品"
+      ],
+      "time_horizon": "1-3周",
+      "evidence_count": 1,
+      "independent_evidence_count": 0,
+      "high_relevance_article_count": 1,
+      "source_tier_max": "mainstream",
+      "original_source_count": 0,
+      "mainstream_or_better_count": 1,
+      "articles": [
+        {
+          "id": 6280,
+          "title": "美伊协议核心条款曝光：伊朗石油出口即刻解禁，核项目维持现状，海峡快速重启仍存变数",
+          "source": "华尔街见闻",
+          "summary": "<p>美国与伊朗即将正式签署一项包含14点要点的谅解备忘录，以期永久结束双方冲突，该临时和平协议将立即解除对伊朗石油出口的封锁，并为未来60天的最终核协议谈判铺平道路。</p> <p>据媒体报道，美伊预计将于6月19日在瑞士正式签署谅解备忘录。美国副总统JD Vance与伊朗议会议长Mohammad Bagher Ghalibaf将率团出席签署仪式。美国总统",
+          "source_tier": "mainstream",
+          "content_quality_status": "full",
+          "published": "Wed, 17 Jun 2026 08:42:39 +0800",
+          "collection_date": "2026-06-17"
+        }
+      ],
+      "topic_article_count": 1,
+      "priority_score": 33,
+      "high_confidence_topic": false
+    }
+  ],
+  "candidate_stocks": [
+    {
+      "symbol": "sz300750",
+      "name": "宁德时代",
+      "industry": "锂电池",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        6289,
+        6271,
+        6290
+      ],
+      "evidence_summaries": [
+        "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "鸿蒙智行全面引入电池二供，国轩高科将上车问界｜36氪独家",
+        "6月16日东方财富财经晚报（附新闻联播）"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 3,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "Wed, 17 Jun 2026 06:03:32 +0800",
+        "2026-06-16 21:24:26  +0800",
+        "Tue, 16 Jun 2026 21:00:00 +0800"
+      ],
+      "topic_article_count": 0,
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:上市",
+        "material_keyword:stock",
+        "material_keyword:合作",
+        "material_keyword:订单",
+        "material_keyword:投资"
+      ],
+      "rejected_false_positive_mentions": []
+    },
+    {
+      "symbol": "sh601857",
+      "name": "中国石油",
+      "industry": "石油石化",
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "evidence_article_ids": [
+        6267
+      ],
+      "evidence_summaries": [
+        "“黑黄金”撬动百亿级大市场 这些硬实力够硬气"
+      ],
+      "source_tiers": [
+        "mainstream"
+      ],
+      "independent_evidence_count": 0,
+      "direct_mentions": 1,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": false,
+      "theme_topics": [],
+      "evidence_published_dates": [
+        "Wed, 17 Jun 2026 07:17:34 +0800"
+      ],
+      "topic_article_count": 0,
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:产能"
+      ],
+      "rejected_false_positive_mentions": []
+    },
+    {
+      "symbol": "sh688981",
+      "name": "中芯国际",
+      "industry": "半导体",
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "evidence_article_ids": [
+        6292,
+        6270,
+        6289,
+        6272
+      ],
+      "evidence_summaries": [
+        "6月16日晚间沪深上市公司重大事项公告最新快递",
+        "8点1氪丨连涨3天，SpaceX超越亚马逊跻身全球前五；支付宝启动史上最大改版；微信支付“AI专属卡”最快本周内上线",
+        "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "乘新浪潮之势，建智造创新之城，2026年番禺产业高质量发展招商大会圆满举行"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 3,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "Tue, 16 Jun 2026 19:32:13 +0800",
+        "2026-06-17 08:22:06  +0800",
+        "Wed, 17 Jun 2026 06:03:32 +0800",
+        "2026-06-16 17:31:45  +0800"
+      ],
+      "topic_article_count": 20,
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "rejected_false_positive_mentions": []
+    },
+    {
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "industry": "算力基础设施",
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "evidence_article_ids": [
+        6292,
+        6270,
+        6289,
+        6272
+      ],
+      "evidence_summaries": [
+        "6月16日晚间沪深上市公司重大事项公告最新快递",
+        "8点1氪丨连涨3天，SpaceX超越亚马逊跻身全球前五；支付宝启动史上最大改版；微信支付“AI专属卡”最快本周内上线",
+        "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "乘新浪潮之势，建智造创新之城，2026年番禺产业高质量发展招商大会圆满举行"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 3,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "Tue, 16 Jun 2026 19:32:13 +0800",
+        "2026-06-17 08:22:06  +0800",
+        "Wed, 17 Jun 2026 06:03:32 +0800",
+        "2026-06-16 17:31:45  +0800"
+      ],
+      "topic_article_count": 20,
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "rejected_false_positive_mentions": []
+    },
+    {
+      "symbol": "sh603019",
+      "name": "中科曙光",
+      "industry": "算力基础设施",
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "evidence_article_ids": [
+        6292,
+        6270,
+        6289,
+        6272
+      ],
+      "evidence_summaries": [
+        "6月16日晚间沪深上市公司重大事项公告最新快递",
+        "8点1氪丨连涨3天，SpaceX超越亚马逊跻身全球前五；支付宝启动史上最大改版；微信支付“AI专属卡”最快本周内上线",
+        "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "乘新浪潮之势，建智造创新之城，2026年番禺产业高质量发展招商大会圆满举行"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 3,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_published_dates": [
+        "Tue, 16 Jun 2026 19:32:13 +0800",
+        "2026-06-17 08:22:06  +0800",
+        "Wed, 17 Jun 2026 06:03:32 +0800",
+        "2026-06-16 17:31:45  +0800"
+      ],
+      "topic_article_count": 20,
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "rejected_false_positive_mentions": []
+    },
+    {
+      "symbol": "sh600036",
+      "name": "招商银行",
+      "industry": "银行",
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "evidence_article_ids": [
+        6305,
+        6324,
+        6279,
+        6277
+      ],
+      "evidence_summaries": [
+        "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+        "Cathie Wood buys $529.7 million of popular new stock",
+        "悬在市场上空的“三大利空”：沃什“鹰鸽不明”，AI“武器化监管”，美股史上最大股票发行潮",
+        "欧洲人能把命运掌握在自己手中吗？"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 3,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_published_dates": [
+        "Tue, 16 Jun 2026 15:51:53 GMT",
+        "2026-06-15T13:33:00Z",
+        "Wed, 17 Jun 2026 08:46:00 +0800",
+        "Tue, 16 Jun 2026 16:00:00 GMT"
+      ],
+      "topic_article_count": 22,
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "rejected_false_positive_mentions": []
+    },
+    {
+      "symbol": "sh601318",
+      "name": "中国平安",
+      "industry": "保险",
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "evidence_article_ids": [
+        6305,
+        6324,
+        6279,
+        6277
+      ],
+      "evidence_summaries": [
+        "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+        "Cathie Wood buys $529.7 million of popular new stock",
+        "悬在市场上空的“三大利空”：沃什“鹰鸽不明”，AI“武器化监管”，美股史上最大股票发行潮",
+        "欧洲人能把命运掌握在自己手中吗？"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 3,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_published_dates": [
+        "Tue, 16 Jun 2026 15:51:53 GMT",
+        "2026-06-15T13:33:00Z",
+        "Wed, 17 Jun 2026 08:46:00 +0800",
+        "Tue, 16 Jun 2026 16:00:00 GMT"
+      ],
+      "topic_article_count": 22,
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "rejected_false_positive_mentions": []
+    },
+    {
+      "symbol": "sh600941",
+      "name": "中国移动",
+      "industry": "通信运营",
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "evidence_article_ids": [
+        6305,
+        6324,
+        6279,
+        6277
+      ],
+      "evidence_summaries": [
+        "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+        "Cathie Wood buys $529.7 million of popular new stock",
+        "悬在市场上空的“三大利空”：沃什“鹰鸽不明”，AI“武器化监管”，美股史上最大股票发行潮",
+        "欧洲人能把命运掌握在自己手中吗？"
+      ],
+      "source_tiers": [
+        "mainstream",
+        "mainstream",
+        "mainstream",
+        "mainstream"
+      ],
+      "independent_evidence_count": 3,
+      "direct_mentions": 0,
+      "risk_flags": [],
+      "source_tier_max": "mainstream",
+      "high_confidence_topic": true,
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_published_dates": [
+        "Tue, 16 Jun 2026 15:51:53 GMT",
+        "2026-06-15T13:33:00Z",
+        "Wed, 17 Jun 2026 08:46:00 +0800",
+        "Tue, 16 Jun 2026 16:00:00 GMT"
+      ],
+      "topic_article_count": 22,
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "rejected_false_positive_mentions": []
+    }
+  ],
+  "stock_recommendations": [
+    {
+      "symbol": "sz300750",
+      "name": "宁德时代",
+      "industry": "锂电池",
+      "candidate_confidence": "low",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "insufficient_independent_confirmation"
+      ],
+      "total_score": 72,
+      "scores": {
+        "news_catalyst": 26,
+        "technical": 11,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "RSI 处于健康区间，趋势未明显过热",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6289,
+        6271,
+        6290
+      ],
+      "evidence_summaries": [
+        "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "鸿蒙智行全面引入电池二供，国轩高科将上车问界｜36氪独家",
+        "6月16日东方财富财经晚报（附新闻联播）"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:上市",
+        "material_keyword:stock",
+        "material_keyword:合作",
+        "material_keyword:订单",
+        "material_keyword:投资"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "insufficient_independent_confirmation",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 3,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 0,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600036",
+      "name": "招商银行",
+      "industry": "银行",
+      "candidate_confidence": "medium",
+      "base_grade": "关注",
+      "grade": "观察",
+      "grade_caps": [
+        "no_direct_stock_evidence",
+        "score_gate_not_met",
+        "theme_mapping_watch_only"
+      ],
+      "total_score": 65,
+      "scores": {
+        "news_catalyst": 16,
+        "technical": 20,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 7
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构",
+        "估值层已纳入行业相对比较"
+      ],
+      "risks": [
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_article_ids": [
+        6305,
+        6324,
+        6279,
+        6277
+      ],
+      "evidence_summaries": [
+        "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+        "Cathie Wood buys $529.7 million of popular new stock",
+        "悬在市场上空的“三大利空”：沃什“鹰鸽不明”，AI“武器化监管”，美股史上最大股票发行潮",
+        "欧洲人能把命运掌握在自己手中吗？"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+        "若出现个股级直接催化证据，可重新评估是否升级"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 3,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 3,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh688981",
+      "name": "中芯国际",
+      "industry": "半导体",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 61,
+      "scores": {
+        "news_catalyst": 15,
+        "technical": 8,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 9
+      },
+      "signals": [
+        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6292,
+        6270,
+        6289,
+        6272
+      ],
+      "evidence_summaries": [
+        "6月16日晚间沪深上市公司重大事项公告最新快递",
+        "8点1氪丨连涨3天，SpaceX超越亚马逊跻身全球前五；支付宝启动史上最大改版；微信支付“AI专属卡”最快本周内上线",
+        "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "乘新浪潮之势，建智造创新之城，2026年番禺产业高质量发展招商大会圆满举行"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 3,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 3,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 1,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "industry": "算力基础设施",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 61,
+      "scores": {
+        "news_catalyst": 15,
+        "technical": 5,
+        "valuation": 19,
+        "quality_risk": 12,
+        "market_regime": 10
+      },
+      "signals": [
+        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6292,
+        6270,
+        6289,
+        6272
+      ],
+      "evidence_summaries": [
+        "6月16日晚间沪深上市公司重大事项公告最新快递",
+        "8点1氪丨连涨3天，SpaceX超越亚马逊跻身全球前五；支付宝启动史上最大改版；微信支付“AI专属卡”最快本周内上线",
+        "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "乘新浪潮之势，建智造创新之城，2026年番禺产业高质量发展招商大会圆满举行"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 3,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 3,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 2,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh603019",
+      "name": "中科曙光",
+      "industry": "算力基础设施",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 59,
+      "scores": {
+        "news_catalyst": 15,
+        "technical": 5,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 10
+      },
+      "signals": [
+        "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6292,
+        6270,
+        6289,
+        6272
+      ],
+      "evidence_summaries": [
+        "6月16日晚间沪深上市公司重大事项公告最新快递",
+        "8点1氪丨连涨3天，SpaceX超越亚马逊跻身全球前五；支付宝启动史上最大改版；微信支付“AI专属卡”最快本周内上线",
+        "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "乘新浪潮之势，建智造创新之城，2026年番禺产业高质量发展招商大会圆满举行"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "科技与产业主题",
+      "theme_topics": [
+        "科技与产业主题"
+      ],
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 3,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 3,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "up",
+        "score": 2,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh601318",
+      "name": "中国平安",
+      "industry": "保险",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 59,
+      "scores": {
+        "news_catalyst": 16,
+        "technical": 15,
+        "valuation": 10,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "RSI 处于健康区间，趋势未明显过热",
+        "MACD 维持多头结构",
+        "估值层已纳入行业相对比较"
+      ],
+      "risks": [],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6305,
+        6324,
+        6279,
+        6277
+      ],
+      "evidence_summaries": [
+        "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+        "Cathie Wood buys $529.7 million of popular new stock",
+        "悬在市场上空的“三大利空”：沃什“鹰鸽不明”，AI“武器化监管”，美股史上最大股票发行潮",
+        "欧洲人能把命运掌握在自己手中吗？"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 3,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 3,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "available",
+        "direction": "flat",
+        "score": 0,
+        "as_of": "2026-05-07",
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh600941",
+      "name": "中国移动",
+      "industry": "通信运营",
+      "candidate_confidence": "medium",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 59,
+      "scores": {
+        "news_catalyst": 16,
+        "technical": 8,
+        "valuation": 17,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "估值处于相对合理或偏低区间",
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6305,
+        6324,
+        6279,
+        6277
+      ],
+      "evidence_summaries": [
+        "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+        "Cathie Wood buys $529.7 million of popular new stock",
+        "悬在市场上空的“三大利空”：沃什“鹰鸽不明”，AI“武器化监管”，美股史上最大股票发行潮",
+        "欧洲人能把命运掌握在自己手中吗？"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "theme_mapping",
+      "topic": "政策与监管",
+      "theme_topics": [
+        "政策与监管"
+      ],
+      "evidence_relevance_status": "theme_proxy",
+      "evidence_relevance_reasons": [
+        "mapped_from_high_confidence_topic"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": true,
+      "fresh_evidence_flag": false,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "no_fresh_evidence",
+        "stale_or_crowded",
+        "theme_only_not_actionable",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+        "若后续缺少新增个股证据，需警惕题材已被交易完成"
+      ],
+      "validation_points": [
+        "等待主题催化转化为个股级新增证据",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 0,
+        "independent_evidence_count": 3,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 3,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    },
+    {
+      "symbol": "sh601857",
+      "name": "中国石油",
+      "industry": "石油石化",
+      "candidate_confidence": "low",
+      "base_grade": "观察",
+      "grade": "观察",
+      "grade_caps": [],
+      "total_score": 58,
+      "scores": {
+        "news_catalyst": 19,
+        "technical": 7,
+        "valuation": 14,
+        "quality_risk": 12,
+        "market_regime": 6
+      },
+      "signals": [
+        "新闻直接提及个股，催化关联度较高",
+        "估值层已纳入行业相对比较",
+        "当前市场风险偏好未明显转弱"
+      ],
+      "risks": [
+        "行业趋势缺失，按中性环境处理"
+      ],
+      "invalidators": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_article_ids": [
+        6267
+      ],
+      "evidence_summaries": [
+        "“黑黄金”撬动百亿级大市场 这些硬实力够硬气"
+      ],
+      "data_completeness": 1.0,
+      "source_type": "direct_news",
+      "topic": "新闻直接提及",
+      "theme_topics": [],
+      "evidence_relevance_status": "direct_material_news",
+      "evidence_relevance_reasons": [
+        "material_keyword:产能"
+      ],
+      "historical_calibration_status": "样本不足",
+      "historical_forward_stats": {
+        "sample_count": 0,
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+      },
+      "stale_opportunity_flag": false,
+      "crowding_flag": false,
+      "fresh_evidence_flag": true,
+      "actionability_passed": false,
+      "actionability_reasons": [
+        "grade_not_actionable",
+        "insufficient_independent_confirmation",
+        "cross_verification_not_confirmed"
+      ],
+      "forward_window": "1-4周",
+      "catalyst_path": [
+        "跟踪个股级直接催化是否继续被主流来源确认",
+        "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+      ],
+      "validation_points": [
+        "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+        "观察价格是否继续站稳 20 日均线并维持健康量能"
+      ],
+      "failure_triggers": [
+        "若后续催化未兑现或证据链减弱，需要下调关注度",
+        "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+      ],
+      "evidence_strength": {
+        "direct_mentions": 1,
+        "independent_evidence_count": 0,
+        "source_tier_max": "mainstream",
+        "cross_verification_status": "weak",
+        "cross_verified_source_count": 0,
+        "cross_verification_reasons": []
+      },
+      "industry_trend": {
+        "status": "missing",
+        "direction": "flat",
+        "score": 0,
+        "as_of": null,
+        "source": "local_snapshot"
+      }
+    }
+  ],
+  "decision_views": {
+    "actionable_candidates": [],
+    "conditional_watchlist": [
+      {
+        "symbol": "sz300750",
+        "name": "宁德时代",
+        "industry": "锂电池",
+        "candidate_confidence": "low",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "insufficient_independent_confirmation"
+        ],
+        "total_score": 72,
+        "scores": {
+          "news_catalyst": 26,
+          "technical": 11,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "RSI 处于健康区间，趋势未明显过热",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6289,
+          6271,
+          6290
+        ],
+        "evidence_summaries": [
+          "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "鸿蒙智行全面引入电池二供，国轩高科将上车问界｜36氪独家",
+          "6月16日东方财富财经晚报（附新闻联播）"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:上市",
+          "material_keyword:stock",
+          "material_keyword:合作",
+          "material_keyword:订单",
+          "material_keyword:投资"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "insufficient_independent_confirmation",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 3,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 0,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh601857",
+        "name": "中国石油",
+        "industry": "石油石化",
+        "candidate_confidence": "low",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 58,
+        "scores": {
+          "news_catalyst": 19,
+          "technical": 7,
+          "valuation": 14,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "新闻直接提及个股，催化关联度较高",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6267
+        ],
+        "evidence_summaries": [
+          "“黑黄金”撬动百亿级大市场 这些硬实力够硬气"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "direct_news",
+        "topic": "新闻直接提及",
+        "theme_topics": [],
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:产能"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": false,
+        "fresh_evidence_flag": true,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "insufficient_independent_confirmation",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪个股级直接催化是否继续被主流来源确认",
+          "观察新增证据能否在未来 1-4 周继续扩散并转化为业绩/订单/政策兑现"
+        ],
+        "validation_points": [
+          "确认后续是否出现第二条独立个股证据或进一步官方/主流跟进",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 1,
+          "independent_evidence_count": 0,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 0,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ],
+    "stale_or_rejected": [
+      {
+        "symbol": "sh600036",
+        "name": "招商银行",
+        "industry": "银行",
+        "candidate_confidence": "medium",
+        "base_grade": "关注",
+        "grade": "观察",
+        "grade_caps": [
+          "no_direct_stock_evidence",
+          "score_gate_not_met",
+          "theme_mapping_watch_only"
+        ],
+        "total_score": 65,
+        "scores": {
+          "news_catalyst": 16,
+          "technical": 20,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 7
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_article_ids": [
+          6305,
+          6324,
+          6279,
+          6277
+        ],
+        "evidence_summaries": [
+          "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+          "Cathie Wood buys $529.7 million of popular new stock",
+          "悬在市场上空的“三大利空”：沃什“鹰鸽不明”，AI“武器化监管”，美股史上最大股票发行潮",
+          "欧洲人能把命运掌握在自己手中吗？"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算",
+          "若出现个股级直接催化证据，可重新评估是否升级"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 3,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 3,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "industry": "半导体",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 61,
+        "scores": {
+          "news_catalyst": 15,
+          "technical": 8,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 9
+        },
+        "signals": [
+          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6292,
+          6270,
+          6289,
+          6272
+        ],
+        "evidence_summaries": [
+          "6月16日晚间沪深上市公司重大事项公告最新快递",
+          "8点1氪丨连涨3天，SpaceX超越亚马逊跻身全球前五；支付宝启动史上最大改版；微信支付“AI专属卡”最快本周内上线",
+          "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "乘新浪潮之势，建智造创新之城，2026年番禺产业高质量发展招商大会圆满举行"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "科技与产业主题",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 3,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 3,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 1,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "industry": "算力基础设施",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 61,
+        "scores": {
+          "news_catalyst": 15,
+          "technical": 5,
+          "valuation": 19,
+          "quality_risk": 12,
+          "market_regime": 10
+        },
+        "signals": [
+          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6292,
+          6270,
+          6289,
+          6272
+        ],
+        "evidence_summaries": [
+          "6月16日晚间沪深上市公司重大事项公告最新快递",
+          "8点1氪丨连涨3天，SpaceX超越亚马逊跻身全球前五；支付宝启动史上最大改版；微信支付“AI专属卡”最快本周内上线",
+          "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "乘新浪潮之势，建智造创新之城，2026年番禺产业高质量发展招商大会圆满举行"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "科技与产业主题",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 3,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 3,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 2,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh603019",
+        "name": "中科曙光",
+        "industry": "算力基础设施",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 59,
+        "scores": {
+          "news_catalyst": 15,
+          "technical": 5,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 10
+        },
+        "signals": [
+          "来自“科技与产业主题”主题映射，适合作为代表标的跟踪",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6292,
+          6270,
+          6289,
+          6272
+        ],
+        "evidence_summaries": [
+          "6月16日晚间沪深上市公司重大事项公告最新快递",
+          "8点1氪丨连涨3天，SpaceX超越亚马逊跻身全球前五；支付宝启动史上最大改版；微信支付“AI专属卡”最快本周内上线",
+          "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+          "乘新浪潮之势，建智造创新之城，2026年番禺产业高质量发展招商大会圆满举行"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "科技与产业主题",
+        "theme_topics": [
+          "科技与产业主题"
+        ],
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“科技与产业主题”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 3,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 3,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "up",
+          "score": 2,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh601318",
+        "name": "中国平安",
+        "industry": "保险",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 59,
+        "scores": {
+          "news_catalyst": 16,
+          "technical": 15,
+          "valuation": 10,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "RSI 处于健康区间，趋势未明显过热",
+          "MACD 维持多头结构",
+          "估值层已纳入行业相对比较"
+        ],
+        "risks": [],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6305,
+          6324,
+          6279,
+          6277
+        ],
+        "evidence_summaries": [
+          "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+          "Cathie Wood buys $529.7 million of popular new stock",
+          "悬在市场上空的“三大利空”：沃什“鹰鸽不明”，AI“武器化监管”，美股史上最大股票发行潮",
+          "欧洲人能把命运掌握在自己手中吗？"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 3,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 3,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "available",
+          "direction": "flat",
+          "score": 0,
+          "as_of": "2026-05-07",
+          "source": "local_snapshot"
+        }
+      },
+      {
+        "symbol": "sh600941",
+        "name": "中国移动",
+        "industry": "通信运营",
+        "candidate_confidence": "medium",
+        "base_grade": "观察",
+        "grade": "观察",
+        "grade_caps": [],
+        "total_score": 59,
+        "scores": {
+          "news_catalyst": 16,
+          "technical": 8,
+          "valuation": 17,
+          "quality_risk": 12,
+          "market_regime": 6
+        },
+        "signals": [
+          "来自“政策与监管”主题映射，适合作为代表标的跟踪",
+          "估值层已纳入行业相对比较",
+          "当前市场风险偏好未明显转弱"
+        ],
+        "risks": [
+          "估值处于相对合理或偏低区间",
+          "行业趋势缺失，按中性环境处理"
+        ],
+        "invalidators": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_article_ids": [
+          6305,
+          6324,
+          6279,
+          6277
+        ],
+        "evidence_summaries": [
+          "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+          "Cathie Wood buys $529.7 million of popular new stock",
+          "悬在市场上空的“三大利空”：沃什“鹰鸽不明”，AI“武器化监管”，美股史上最大股票发行潮",
+          "欧洲人能把命运掌握在自己手中吗？"
+        ],
+        "data_completeness": 1.0,
+        "source_type": "theme_mapping",
+        "topic": "政策与监管",
+        "theme_topics": [
+          "政策与监管"
+        ],
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        },
+        "stale_opportunity_flag": false,
+        "crowding_flag": true,
+        "fresh_evidence_flag": false,
+        "actionability_passed": false,
+        "actionability_reasons": [
+          "grade_not_actionable",
+          "no_fresh_evidence",
+          "stale_or_crowded",
+          "theme_only_not_actionable",
+          "cross_verification_not_confirmed"
+        ],
+        "forward_window": "1-4周",
+        "catalyst_path": [
+          "跟踪“政策与监管”主题是否从主题扩散走向个股兑现",
+          "若后续缺少新增个股证据，需警惕题材已被交易完成"
+        ],
+        "validation_points": [
+          "等待主题催化转化为个股级新增证据",
+          "观察价格是否继续站稳 20 日均线并维持健康量能"
+        ],
+        "failure_triggers": [
+          "若后续催化未兑现或证据链减弱，需要下调关注度",
+          "若价格跌破20日均线且量能同步走弱，技术评分应重算"
+        ],
+        "evidence_strength": {
+          "direct_mentions": 0,
+          "independent_evidence_count": 3,
+          "source_tier_max": "mainstream",
+          "cross_verification_status": "weak",
+          "cross_verified_source_count": 3,
+          "cross_verification_reasons": []
+        },
+        "industry_trend": {
+          "status": "missing",
+          "direction": "flat",
+          "score": 0,
+          "as_of": null,
+          "source": "local_snapshot"
+        }
+      }
+    ]
+  },
+  "score_distribution": {
+    "strong_focus": 0,
+    "focus": 0,
+    "watch": 8,
+    "avoid": 0
+  },
+  "scoring_config": {
+    "market": "CN",
+    "style": "balanced",
+    "lookback_days": 60,
+    "pool_mode": "strict",
+    "theme_mapping_max_grade": "watch",
+    "value_acceptance_enabled": true,
+    "industry_trend_enabled": true,
+    "evidence_relevance_enabled": true,
+    "historical_calibration_enabled": true
+  },
+  "cross_verification": {
+    "topic_checks": [
+      {
+        "topic": "科技与产业主题",
+        "status": "confirmed",
+        "evidence_article_ids": [
+          6292,
+          6270,
+          6289,
+          6272
+        ],
+        "independent_source_count": 3,
+        "mainstream_or_better_count": 18,
+        "has_fresh_evidence": true,
+        "conflict_detail": null
+      },
+      {
+        "topic": "政策与监管",
+        "status": "conflicted",
+        "evidence_article_ids": [
+          6305,
+          6324,
+          6279,
+          6277
+        ],
+        "independent_source_count": 3,
+        "mainstream_or_better_count": 15,
+        "has_fresh_evidence": true,
+        "conflict_detail": "跨文章关键词冲突: 正面关键词 ['breakthrough'] (文章 [6324]) vs 负面关键词 ['警告'] (文章 [6277, 6279])"
+      },
+      {
+        "topic": "汇率与大宗",
+        "status": "weak",
+        "evidence_article_ids": [
+          6290,
+          6267,
+          6275
+        ],
+        "independent_source_count": 1,
+        "mainstream_or_better_count": 3,
+        "has_fresh_evidence": true,
+        "conflict_detail": null
+      },
+      {
+        "topic": "其他观察",
+        "status": "weak",
+        "evidence_article_ids": [
+          6268,
+          6318,
+          6321,
+          6322
+        ],
+        "independent_source_count": 1,
+        "mainstream_or_better_count": 6,
+        "has_fresh_evidence": true,
+        "conflict_detail": null
+      },
+      {
+        "topic": "宏观与流动性",
+        "status": "weak",
+        "evidence_article_ids": [
+          6265,
+          6361
+        ],
+        "independent_source_count": 0,
+        "mainstream_or_better_count": 1,
+        "has_fresh_evidence": true,
+        "conflict_detail": null
+      },
+      {
+        "topic": "风险事件",
+        "status": "weak",
+        "evidence_article_ids": [
+          6280
+        ],
+        "independent_source_count": 0,
+        "mainstream_or_better_count": 1,
+        "has_fresh_evidence": true,
+        "conflict_detail": null
+      }
+    ],
+    "stock_checks": [
+      {
+        "symbol": "sz300750",
+        "name": "宁德时代",
+        "status": "weak",
+        "evidence_article_ids": [
+          6289,
+          6271,
+          6290
+        ],
+        "direct_mentions": 3,
+        "independent_source_count": 0,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "sh600036",
+        "name": "招商银行",
+        "status": "weak",
+        "evidence_article_ids": [
+          6305,
+          6324,
+          6279,
+          6277
+        ],
+        "direct_mentions": 0,
+        "independent_source_count": 3,
+        "has_fresh_evidence": true,
+        "source_type": "theme_mapping",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "status": "weak",
+        "evidence_article_ids": [
+          6292,
+          6270,
+          6289,
+          6272
+        ],
+        "direct_mentions": 0,
+        "independent_source_count": 3,
+        "has_fresh_evidence": true,
+        "source_type": "theme_mapping",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "status": "weak",
+        "evidence_article_ids": [
+          6292,
+          6270,
+          6289,
+          6272
+        ],
+        "direct_mentions": 0,
+        "independent_source_count": 3,
+        "has_fresh_evidence": true,
+        "source_type": "theme_mapping",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "sh603019",
+        "name": "中科曙光",
+        "status": "weak",
+        "evidence_article_ids": [
+          6292,
+          6270,
+          6289,
+          6272
+        ],
+        "direct_mentions": 0,
+        "independent_source_count": 3,
+        "has_fresh_evidence": true,
+        "source_type": "theme_mapping",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "sh601318",
+        "name": "中国平安",
+        "status": "weak",
+        "evidence_article_ids": [
+          6305,
+          6324,
+          6279,
+          6277
+        ],
+        "direct_mentions": 0,
+        "independent_source_count": 3,
+        "has_fresh_evidence": true,
+        "source_type": "theme_mapping",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "sh600941",
+        "name": "中国移动",
+        "status": "weak",
+        "evidence_article_ids": [
+          6305,
+          6324,
+          6279,
+          6277
+        ],
+        "direct_mentions": 0,
+        "independent_source_count": 3,
+        "has_fresh_evidence": true,
+        "source_type": "theme_mapping",
+        "conflict_detail": null
+      },
+      {
+        "symbol": "sh601857",
+        "name": "中国石油",
+        "status": "weak",
+        "evidence_article_ids": [
+          6267
+        ],
+        "direct_mentions": 1,
+        "independent_source_count": 0,
+        "has_fresh_evidence": true,
+        "source_type": "direct_news",
+        "conflict_detail": null
+      }
+    ],
+    "summary": {
+      "topics_confirmed": 1,
+      "topics_weak": 4,
+      "topics_conflicted": 1,
+      "stocks_confirmed": 0,
+      "stocks_weak": 8,
+      "stocks_conflicted": 0
+    },
+    "issues": [],
+    "warnings": []
+  },
+  "source_references": {
+    "required": true,
+    "article_ids": [
+      6279,
+      6280,
+      6281,
+      6269,
+      6270,
+      6282,
+      6283,
+      6289,
+      6309,
+      6310,
+      6311,
+      6312,
+      6313,
+      6271,
+      6306,
+      6308,
+      6359,
+      6290,
+      6360,
+      6291,
+      6361,
+      6292,
+      6362,
+      6363,
+      6293,
+      6272,
+      6273,
+      6264,
+      6266,
+      6267,
+      6307,
+      6304,
+      6305,
+      6265,
+      6268,
+      6277,
+      6324,
+      6327,
+      6326,
+      6325,
+      6328,
+      6319,
+      6320,
+      6321,
+      6322,
+      6316,
+      6315,
+      6274,
+      6275,
+      6276,
+      6278,
+      6314,
+      6323,
+      6329,
+      6330,
+      6299,
+      6331,
+      6332,
+      6300,
+      6333,
+      6318
+    ],
+    "articles": [
+      {
+        "article_id": 6279,
+        "source": "华尔街见闻",
+        "title": "悬在市场上空的“三大利空”：沃什“鹰鸽不明”，AI“武器化监管”，美股史上最大股票发行潮",
+        "published": "Wed, 17 Jun 2026 08:46:00 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6280,
+        "source": "华尔街见闻",
+        "title": "美伊协议核心条款曝光：伊朗石油出口即刻解禁，核项目维持现状，海峡快速重启仍存变数",
+        "published": "Wed, 17 Jun 2026 08:42:39 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6281,
+        "source": "华尔街见闻",
+        "title": "市场“草木皆兵”：微软被曝终止与甲骨文30亿美元云基础设施谈判，加剧芯片股回调",
+        "published": "Wed, 17 Jun 2026 08:31:44 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6269,
+        "source": "36氪",
+        "title": "「逆矩阵」完成超亿美元融资，创始人：通用世界基座模型窗口期已压至18个月",
+        "published": "2026-06-17 09:00:00  +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6270,
+        "source": "36氪",
+        "title": "8点1氪丨连涨3天，SpaceX超越亚马逊跻身全球前五；支付宝启动史上最大改版；微信支付“AI专属卡”最快本周内上线",
+        "published": "2026-06-17 08:22:06  +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6282,
+        "source": "华尔街见闻",
+        "title": "SpaceX期权上市首日就被热捧，看涨期权交易量排美股第五",
+        "published": "Wed, 17 Jun 2026 08:01:57 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6283,
+        "source": "华尔街见闻",
+        "title": "美国“前沿模型武器化”思路“昭然若揭”--美商务部长致信Anthropic导致Fable 5模型全球下架",
+        "published": "Wed, 17 Jun 2026 07:57:53 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6289,
+        "source": "东方财富网",
+        "title": "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "published": "Wed, 17 Jun 2026 06:03:32 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6309,
+        "source": "ZeroHedge",
+        "title": "Iranian Tankers Cross US Naval Blockade After Trump Deal Allows Iran To Restart Oil Sales",
+        "published": "Tue, 16 Jun 2026 23:40:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6310,
+        "source": "ZeroHedge",
+        "title": "15 Tied To Antifa Charged With Violently Interfering With ICE Operations In Minnesota",
+        "published": "Tue, 16 Jun 2026 23:15:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6311,
+        "source": "ZeroHedge",
+        "title": "Supreme Court Rejects Challenge To Trump's First-Term Tariff On China",
+        "published": "Tue, 16 Jun 2026 22:25:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6312,
+        "source": "ZeroHedge",
+        "title": "Wyoming And Spokane Data Center Pauses Show NIMBY Fury Has Shifted From Nuclear To AI",
+        "published": "Tue, 16 Jun 2026 22:00:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6313,
+        "source": "ZeroHedge",
+        "title": "SPLC Official Shared Bank Accounts With Neo-Nazi Informant",
+        "published": "Tue, 16 Jun 2026 21:40:00 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6271,
+        "source": "36氪",
+        "title": "鸿蒙智行全面引入电池二供，国轩高科将上车问界｜36氪独家",
+        "published": "2026-06-16 21:24:26  +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6306,
+        "source": "CNBC",
+        "title": "Japan May exports grow at fastest pace in over three years, beating estimates, as chip demand soars",
+        "published": "Wed, 17 Jun 2026 01:02:10 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6308,
+        "source": "CNBC",
+        "title": "Bill limiting investors from buying homes set to speed through Congress",
+        "published": "Tue, 16 Jun 2026 22:34:21 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6359,
+        "source": "ETF Trends",
+        "title": "AI’s Exponential Power Demands Could Make This ETF a Winner",
+        "published": "Tue, 16 Jun 2026 21:04:51 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6290,
+        "source": "东方财富网",
+        "title": "6月16日东方财富财经晚报（附新闻联播）",
+        "published": "Tue, 16 Jun 2026 21:00:00 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6360,
+        "source": "ETF Trends",
+        "title": "Microsoft Woes Hide Opportunity With This ETF",
+        "published": "Tue, 16 Jun 2026 20:47:02 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6291,
+        "source": "东方财富网",
+        "title": "6月16日晚间上市公司利好消息一览(附名单)",
+        "published": "Tue, 16 Jun 2026 20:33:22 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6361,
+        "source": "ETF Trends",
+        "title": "JPMorgan Converts $950M to Active NY, CA Muni ETFs",
+        "published": "Tue, 16 Jun 2026 19:39:58 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6292,
+        "source": "东方财富网",
+        "title": "6月16日晚间沪深上市公司重大事项公告最新快递",
+        "published": "Tue, 16 Jun 2026 19:32:13 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6362,
+        "source": "ETF Trends",
+        "title": "WisdomTree Celebrates 20 Years of Modern Alpha",
+        "published": "Tue, 16 Jun 2026 18:35:43 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6363,
+        "source": "ETF Trends",
+        "title": "Q2 Symposium: The CLO Retail Renaissance With Reckoner Capital",
+        "published": "Tue, 16 Jun 2026 18:09:14 +0000",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6293,
+        "source": "东方财富网",
+        "title": "A股三大指数涨跌不一 创业板指涨1.72% 近140只股涨停",
+        "published": "Tue, 16 Jun 2026 15:00:47 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6272,
+        "source": "36氪",
+        "title": "乘新浪潮之势，建智造创新之城，2026年番禺产业高质量发展招商大会圆满举行",
+        "published": "2026-06-16 17:31:45  +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6273,
+        "source": "36氪",
+        "title": "融了数亿美金的「大晓机器人」，其创始人揭开了具身行业的割裂一面",
+        "published": "2026-06-16 16:31:50  +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6264,
+        "source": "中新网",
+        "title": "警惕“钓鱼房源”！毕业季租房该注意什么？",
+        "published": "Wed, 17 Jun 2026 07:48:56 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6266,
+        "source": "中新网",
+        "title": "小区公共收益不能成为一笔“糊涂账”",
+        "published": "Wed, 17 Jun 2026 07:38:35 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6267,
+        "source": "中新网",
+        "title": "“黑黄金”撬动百亿级大市场 这些硬实力够硬气",
+        "published": "Wed, 17 Jun 2026 07:17:34 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6307,
+        "source": "CNBC",
+        "title": "Michael Burry says he's tempted to bet against SpaceX, but passes on expensive options",
+        "published": "Tue, 16 Jun 2026 20:55:45 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6304,
+        "source": "CNBC",
+        "title": "Fed Chair Warsh expected to withhold 'dot' from central bank's interest rate outlook",
+        "published": "Tue, 16 Jun 2026 19:12:13 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6305,
+        "source": "CNBC",
+        "title": "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+        "published": "Tue, 16 Jun 2026 15:51:53 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6265,
+        "source": "中新网",
+        "title": "“云养牛”案宣判 给“云养经济”投资者哪些警示？",
+        "published": "Wed, 17 Jun 2026 07:40:39 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6268,
+        "source": "中新网",
+        "title": "2025年度个税汇算6月30日结束 这两种情况要注意",
+        "published": "Wed, 17 Jun 2026 07:11:54 +0800",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6277,
+        "source": "FT中文网",
+        "title": "欧洲人能把命运掌握在自己手中吗？",
+        "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6324,
+        "source": "Yahoo Finance",
+        "title": "Cathie Wood buys $529.7 million of popular new stock",
+        "published": "2026-06-15T13:33:00Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6327,
+        "source": "Yahoo Finance",
+        "title": "Baron Real Estate Fund Sold Its Position in Blackstone (BX). Here’s Why",
+        "published": "2026-06-15T13:15:54Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6326,
+        "source": "Yahoo Finance",
+        "title": "Is Rollins Stock Underperforming the Nasdaq?",
+        "published": "2026-06-15T13:13:28Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6325,
+        "source": "Yahoo Finance",
+        "title": "Solid Results Lifted Equinix (EQIX) in Q1",
+        "published": "2026-06-15T13:10:24Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6328,
+        "source": "Yahoo Finance",
+        "title": "Mirae Asset apologizes to investors over failed SpaceX IPO allocation",
+        "published": "2026-06-15T13:07:46Z",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6319,
+        "source": "MarketWatch",
+        "title": "America’s fertility rate has never been lower. Blame smartphones — and these 4 financial realities.",
+        "published": "Wed, 17 Jun 2026 01:03:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6320,
+        "source": "MarketWatch",
+        "title": "Oil may move through the Strait of Hormuz first, leaving fertilizer supplies stranded",
+        "published": "Wed, 17 Jun 2026 00:46:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6321,
+        "source": "MarketWatch",
+        "title": "Intel takes a major step toward turning around a business that’s bleeding cash",
+        "published": "Tue, 16 Jun 2026 22:49:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6322,
+        "source": "MarketWatch",
+        "title": "I’m spending $170,000 to upgrade my home for my aging parents. Can I get tax breaks?",
+        "published": "Tue, 16 Jun 2026 22:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6316,
+        "source": "BBC全球经济",
+        "title": "Struggling Pizza Hut chain to be sold for $2.7bn",
+        "published": "Tue, 16 Jun 2026 21:00:30 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6315,
+        "source": "BBC全球经济",
+        "title": "Musk's SpaceX overtakes Amazon to become world's fifth most valuable firm",
+        "published": "Tue, 16 Jun 2026 16:38:14 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6274,
+        "source": "FT中文网",
+        "title": "特朗普提议由叙利亚代替以色列打击真主党",
+        "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6275,
+        "source": "FT中文网",
+        "title": "SpaceX 600亿美元收购AI初创公司",
+        "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6276,
+        "source": "FT中文网",
+        "title": "如果欧盟发动贸易战，如何收场将由中国说了算",
+        "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6278,
+        "source": "FT中文网",
+        "title": "欧洲议会批准欧美贸易协议",
+        "published": "Tue, 16 Jun 2026 16:00:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6314,
+        "source": "BBC全球经济",
+        "title": "Cadbury chocolate-owner Mondelez defends staying in Russia",
+        "published": "Tue, 16 Jun 2026 23:05:23 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6323,
+        "source": "MarketWatch",
+        "title": "Chicken tenders are taking over the world, and KFC is rushing to keep up",
+        "published": "Tue, 16 Jun 2026 21:53:00 GMT",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6329,
+        "source": "Seeking Alpha",
+        "title": "Developing world should not completely entrust energy security to U.S., Cheniere CFO says",
+        "published": "Tue, 16 Jun 2026 20:24:18 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6330,
+        "source": "Seeking Alpha",
+        "title": "Exxon to supply LNG to help South Africa cut reliance on coal - Bloomberg",
+        "published": "Tue, 16 Jun 2026 20:05:30 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6299,
+        "source": "经济学人 Economist",
+        "title": "Deal or no deal, oil prices will stay high for months",
+        "published": "Tue, 16 Jun 2026 19:55:31 +0000",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6331,
+        "source": "Seeking Alpha",
+        "title": "Wall Street banks cut oil price predictions as Persian Gulf flows now seen recovering quickly",
+        "published": "Tue, 16 Jun 2026 19:30:16 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6332,
+        "source": "Seeking Alpha",
+        "title": "FMC, Corteva to partner on herbicide technology supply and license deal",
+        "published": "Tue, 16 Jun 2026 18:26:17 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6300,
+        "source": "经济学人 Economist",
+        "title": "America’s bull market has entered its manic phase",
+        "published": "Tue, 16 Jun 2026 18:19:00 +0000",
+        "source_tier": "mainstream"
+      },
+      {
+        "article_id": 6333,
+        "source": "Seeking Alpha",
+        "title": "Surge Energy targets $9.7M share buyback as TSX approves NCIB renewal",
+        "published": "Tue, 16 Jun 2026 18:10:19 -0400",
+        "source_tier": "aggregator"
+      },
+      {
+        "article_id": 6318,
+        "source": "BBC全球经济",
+        "title": "What is Helium-3 and could we get it from the moon?",
+        "published": "Tue, 16 Jun 2026 00:11:13 GMT",
+        "source_tier": "mainstream"
+      }
+    ]
+  },
+  "claim_ledger": {
+    "required": true,
+    "market": "CN",
+    "summary": {
+      "total_claims": 3,
+      "realtime_claims": 1,
+      "verified_realtime_claims": 1,
+      "news_fact_claims": 2,
+      "failed_claims": 0
+    },
+    "claims": [
+      {
+        "claim_id": "cn-claim-001",
+        "market": "CN",
+        "claim_type": "金价断言",
+        "scope": "实时行情断言",
+        "content": "黄金报4349.20美元",
+        "context": "- 基于实时数据，国际黄金报4349.20美元/盎司，维持高位运行；世界黄金协会调查显示89%的储备管理者预计全球央行将继续增持黄金【新闻6289】。",
+        "asset_hint": "gold",
+        "extracted_value": "4349.20",
+        "verified": true,
+        "verification_status": "verified",
+        "confidence": 0.9999999551641701,
+        "source": "Gold-API / Yahoo Finance",
+        "realtime_source": "Gold-API / Yahoo Finance",
+        "timestamp": "2026-06-17T01:09:37Z",
+        "freshness_status": "timestamped",
+        "evidence": "实时金价: $4349.20/盎司 (误差 0.0%)",
+        "failure_reason": "",
+        "source_articles": [
+          {
+            "article_id": 6289,
+            "source": "东方财富网",
+            "title": "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+            "published": "Wed, 17 Jun 2026 06:03:32 +0800"
+          }
+        ]
+      },
+      {
+        "claim_id": "cn-claim-002",
+        "market": "CN",
+        "claim_type": "市场趋势断言",
+        "scope": "新闻事实断言",
+        "content": "14%",
+        "context": "- 据报道，美伊预计6月19日签署谅解备忘录，伊朗石油出口即刻解禁，至少三艘伊朗油轮已穿越美国封锁区【新闻6280】【新闻6309】。此预期已传导至国内大宗商品市场，甲醇期货两日累计跌幅超14%【新闻6289】。",
+        "asset_hint": null,
+        "extracted_value": "14",
+        "verified": false,
+        "verification_status": "failed",
+        "confidence": 0.0,
+        "source": "",
+        "realtime_source": "",
+        "timestamp": "",
+        "freshness_status": "not_applicable",
+        "evidence": "新闻事实断言，不纳入实时行情校验",
+        "failure_reason": "新闻事实断言，不纳入实时行情校验",
+        "source_articles": [
+          {
+            "article_id": 6280,
+            "source": "华尔街见闻",
+            "title": "美伊协议核心条款曝光：伊朗石油出口即刻解禁，核项目维持现状，海峡快速重启仍存变数",
+            "published": "Wed, 17 Jun 2026 08:42:39 +0800"
+          },
+          {
+            "article_id": 6309,
+            "source": "ZeroHedge",
+            "title": "Iranian Tankers Cross US Naval Blockade After Trump Deal Allows Iran To Restart Oil Sales",
+            "published": "Tue, 16 Jun 2026 23:40:00 +0000"
+          },
+          {
+            "article_id": 6289,
+            "source": "东方财富网",
+            "title": "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+            "published": "Wed, 17 Jun 2026 06:03:32 +0800"
+          }
+        ]
+      },
+      {
+        "claim_id": "cn-claim-003",
+        "market": "CN",
+        "claim_type": "市场趋势断言",
+        "scope": "新闻事实断言",
+        "content": "80%",
+        "context": "- **汇率与大宗**: 美伊协议带来伊朗原油回归预期，布伦特原油回吐战争涨幅约80%【新闻6279】。然而，《经济学人》分析认为油价数月内仍将维持高位【新闻6299】。霍尔木兹海峡全面通航条件及时间仍存分歧【新闻6280】。油价供给侧变数与央行购金需求【新闻6289】构成复杂格局，需持续观察，不宜简单下方向结论。",
+        "asset_hint": null,
+        "extracted_value": "80",
+        "verified": false,
+        "verification_status": "failed",
+        "confidence": 0.0,
+        "source": "",
+        "realtime_source": "",
+        "timestamp": "",
+        "freshness_status": "not_applicable",
+        "evidence": "新闻事实断言，不纳入实时行情校验",
+        "failure_reason": "新闻事实断言，不纳入实时行情校验",
+        "source_articles": [
+          {
+            "article_id": 6279,
+            "source": "华尔街见闻",
+            "title": "悬在市场上空的“三大利空”：沃什“鹰鸽不明”，AI“武器化监管”，美股史上最大股票发行潮",
+            "published": "Wed, 17 Jun 2026 08:46:00 +0800"
+          },
+          {
+            "article_id": 6299,
+            "source": "经济学人 Economist",
+            "title": "Deal or no deal, oil prices will stay high for months",
+            "published": "Tue, 16 Jun 2026 19:55:31 +0000"
+          },
+          {
+            "article_id": 6280,
+            "source": "华尔街见闻",
+            "title": "美伊协议核心条款曝光：伊朗石油出口即刻解禁，核项目维持现状，海峡快速重启仍存变数",
+            "published": "Wed, 17 Jun 2026 08:42:39 +0800"
+          },
+          {
+            "article_id": 6289,
+            "source": "东方财富网",
+            "title": "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+            "published": "Wed, 17 Jun 2026 06:03:32 +0800"
+          }
+        ]
+      }
+    ]
+  },
+  "coverage_matrix": {
+    "required": true,
+    "market": "CN",
+    "categories": {
+      "macro_liquidity": {
+        "article_count": 7,
+        "source_count": 6,
+        "status": "sufficient"
+      },
+      "policy_regulation": {
+        "article_count": 29,
+        "source_count": 9,
+        "status": "sufficient"
+      },
+      "company_earnings": {
+        "article_count": 5,
+        "source_count": 2,
+        "status": "sufficient"
+      },
+      "industry_theme": {
+        "article_count": 29,
+        "source_count": 10,
+        "status": "sufficient"
+      },
+      "risk_event": {
+        "article_count": 9,
+        "source_count": 4,
+        "status": "sufficient"
+      },
+      "realtime_market": {
+        "article_count": 0,
+        "source_count": 1,
+        "status": "sufficient"
+      }
+    },
+    "coverage_gaps": []
+  },
+  "evidence_diversity": {
+    "required": true,
+    "market": "CN",
+    "total_articles": 61,
+    "source_count": 13,
+    "topic_count": 7,
+    "explicit_entity_count": 0,
+    "explicit_entity_observation_count": 0,
+    "source_tier_known_count": 61,
+    "mainstream_or_better_count": 46,
+    "aggregator_count": 15,
+    "original_source_known_count": 61,
+    "original_source_count": 22,
+    "max_source_share": 0.08196721311475409,
+    "max_topic_share": 0.36065573770491804,
+    "max_entity_share": 0.0,
+    "max_aggregator_share": 0.2459016393442623,
+    "original_source_share": 0.36065573770491804,
+    "source_distribution": [
+      {
+        "name": "华尔街见闻",
+        "count": 5,
+        "share": 0.08196721311475409
+      },
+      {
+        "name": "36氪",
+        "count": 5,
+        "share": 0.08196721311475409
+      },
+      {
+        "name": "东方财富网",
+        "count": 5,
+        "share": 0.08196721311475409
+      },
+      {
+        "name": "ZeroHedge",
+        "count": 5,
+        "share": 0.08196721311475409
+      },
+      {
+        "name": "CNBC",
+        "count": 5,
+        "share": 0.08196721311475409
+      },
+      {
+        "name": "ETF Trends",
+        "count": 5,
+        "share": 0.08196721311475409
+      },
+      {
+        "name": "中新网",
+        "count": 5,
+        "share": 0.08196721311475409
+      },
+      {
+        "name": "FT中文网",
+        "count": 5,
+        "share": 0.08196721311475409
+      },
+      {
+        "name": "Yahoo Finance",
+        "count": 5,
+        "share": 0.08196721311475409
+      },
+      {
+        "name": "MarketWatch",
+        "count": 5,
+        "share": 0.08196721311475409
+      },
+      {
+        "name": "Seeking Alpha",
+        "count": 5,
+        "share": 0.08196721311475409
+      },
+      {
+        "name": "BBC全球经济",
+        "count": 4,
+        "share": 0.06557377049180328
+      },
+      {
+        "name": "经济学人 Economist",
+        "count": 2,
+        "share": 0.03278688524590164
+      }
+    ],
+    "topic_distribution": [
+      {
+        "name": "政策与监管",
+        "count": 22,
+        "share": 0.36065573770491804
+      },
+      {
+        "name": "科技与产业主题",
+        "count": 20,
+        "share": 0.32786885245901637
+      },
+      {
+        "name": "未分类",
+        "count": 7,
+        "share": 0.11475409836065574
+      },
+      {
+        "name": "其他观察",
+        "count": 6,
+        "share": 0.09836065573770492
+      },
+      {
+        "name": "汇率与大宗",
+        "count": 3,
+        "share": 0.04918032786885246
+      },
+      {
+        "name": "宏观与流动性",
+        "count": 2,
+        "share": 0.03278688524590164
+      },
+      {
+        "name": "风险事件",
+        "count": 1,
+        "share": 0.01639344262295082
+      }
+    ],
+    "entity_distribution": [],
+    "source_tier_distribution": [
+      {
+        "name": "mainstream",
+        "count": 46,
+        "share": 0.7540983606557377
+      },
+      {
+        "name": "aggregator",
+        "count": 15,
+        "share": 0.2459016393442623
+      }
+    ],
+    "concentration_flags": [],
+    "passed": true
+  },
+  "counter_evidence_ledger": {
+    "required": true,
+    "market": "CN",
+    "topics": [
+      {
+        "topic": "科技与产业主题",
+        "market": "CN",
+        "high_confidence_topic": true,
+        "evidence_article_ids": [
+          6292,
+          6270,
+          6289,
+          6272
+        ],
+        "supporting_article_ids": [
+          6270,
+          6289,
+          6292
+        ],
+        "counter_article_ids": [
+          6270,
+          6292
+        ],
+        "counter_evidence_count": 2,
+        "positive_keywords": [
+          "中标",
+          "产能",
+          "出海",
+          "利好",
+          "回购",
+          "突破",
+          "订单"
+        ],
+        "negative_keywords": [
+          "亏损",
+          "停牌",
+          "减持",
+          "诉讼",
+          "调查",
+          "退市"
+        ],
+        "status": "mixed"
+      },
+      {
+        "topic": "政策与监管",
+        "market": "CN",
+        "high_confidence_topic": true,
+        "evidence_article_ids": [
+          6305,
+          6324,
+          6279,
+          6277
+        ],
+        "supporting_article_ids": [
+          6324
+        ],
+        "counter_article_ids": [
+          6277,
+          6279
+        ],
+        "counter_evidence_count": 2,
+        "positive_keywords": [
+          "breakthrough"
+        ],
+        "negative_keywords": [
+          "警告"
+        ],
+        "status": "mixed"
+      },
+      {
+        "topic": "汇率与大宗",
+        "market": "CN",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          6290,
+          6267,
+          6275
+        ],
+        "supporting_article_ids": [
+          6267,
+          6290
+        ],
+        "counter_article_ids": [
+          6290
+        ],
+        "counter_evidence_count": 1,
+        "positive_keywords": [
+          "产能",
+          "扩产",
+          "突破",
+          "订单"
+        ],
+        "negative_keywords": [
+          "停牌",
+          "减持",
+          "调查"
+        ],
+        "status": "mixed"
+      },
+      {
+        "topic": "其他观察",
+        "market": "CN",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          6268,
+          6318,
+          6321,
+          6322
+        ],
+        "supporting_article_ids": [
+          6322
+        ],
+        "counter_article_ids": [],
+        "counter_evidence_count": 0,
+        "positive_keywords": [
+          "upgrade"
+        ],
+        "negative_keywords": [],
+        "status": "support_only"
+      },
+      {
+        "topic": "宏观与流动性",
+        "market": "CN",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          6265,
+          6361
+        ],
+        "supporting_article_ids": [],
+        "counter_article_ids": [
+          6265
+        ],
+        "counter_evidence_count": 1,
+        "positive_keywords": [],
+        "negative_keywords": [
+          "处罚",
+          "调查"
+        ],
+        "status": "counter_only"
+      },
+      {
+        "topic": "风险事件",
+        "market": "CN",
+        "high_confidence_topic": false,
+        "evidence_article_ids": [
+          6280
+        ],
+        "supporting_article_ids": [
+          6280
+        ],
+        "counter_article_ids": [
+          6280
+        ],
+        "counter_evidence_count": 1,
+        "positive_keywords": [
+          "利好"
+        ],
+        "negative_keywords": [
+          "警告"
+        ],
+        "status": "mixed"
+      }
+    ],
+    "summary": {
+      "topic_count": 6,
+      "topics_with_counter_evidence": 2,
+      "high_confidence_topics_with_counter_evidence": 2
+    },
+    "passed": false
+  },
+  "candidate_evidence_audit": {
+    "required": true,
+    "candidate_count": 8,
+    "recommendation_count": 8,
+    "status_counts": {
+      "direct_material_news": 2,
+      "theme_proxy": 6
+    },
+    "candidates": [
+      {
+        "symbol": "sz300750",
+        "name": "宁德时代",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:上市",
+          "material_keyword:stock",
+          "material_keyword:合作",
+          "material_keyword:订单",
+          "material_keyword:投资"
+        ],
+        "evidence_article_ids": [
+          6289,
+          6271,
+          6290
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "sh600036",
+        "name": "招商银行",
+        "source_type": "theme_mapping",
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "evidence_article_ids": [
+          6305,
+          6324,
+          6279,
+          6277
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "source_type": "theme_mapping",
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "evidence_article_ids": [
+          6292,
+          6270,
+          6289,
+          6272
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "source_type": "theme_mapping",
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "evidence_article_ids": [
+          6292,
+          6270,
+          6289,
+          6272
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "sh603019",
+        "name": "中科曙光",
+        "source_type": "theme_mapping",
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "evidence_article_ids": [
+          6292,
+          6270,
+          6289,
+          6272
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "sh601318",
+        "name": "中国平安",
+        "source_type": "theme_mapping",
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "evidence_article_ids": [
+          6305,
+          6324,
+          6279,
+          6277
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "sh600941",
+        "name": "中国移动",
+        "source_type": "theme_mapping",
+        "evidence_relevance_status": "theme_proxy",
+        "evidence_relevance_reasons": [
+          "mapped_from_high_confidence_topic"
+        ],
+        "evidence_article_ids": [
+          6305,
+          6324,
+          6279,
+          6277
+        ],
+        "actionability_passed": false
+      },
+      {
+        "symbol": "sh601857",
+        "name": "中国石油",
+        "source_type": "direct_news",
+        "evidence_relevance_status": "direct_material_news",
+        "evidence_relevance_reasons": [
+          "material_keyword:产能"
+        ],
+        "evidence_article_ids": [
+          6267
+        ],
+        "actionability_passed": false
+      }
+    ],
+    "rejected_false_positive_mentions": [
+      {
+        "article_id": 6269,
+        "title": "「逆矩阵」完成超亿美元融资，创始人：通用世界基座模型窗口期已压至18个月",
+        "symbol": "sh603019",
+        "name": "中科曙光",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6289,
+        "title": "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+        "symbol": "sh601318",
+        "name": "中国平安",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6293,
+        "title": "A股三大指数涨跌不一 创业板指涨1.72% 近140只股涨停",
+        "symbol": "sh603019",
+        "name": "中科曙光",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      },
+      {
+        "article_id": 6272,
+        "title": "乘新浪潮之势，建智造创新之城，2026年番禺产业高质量发展招商大会圆满举行",
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "status": "irrelevant_match",
+        "reasons": [
+          "no_sentence_level_mention"
+        ]
+      }
+    ]
+  },
+  "scoring_calibration": {
+    "required": true,
+    "status_counts": {
+      "样本不足": 8
+    },
+    "items": [
+      {
+        "symbol": "sz300750",
+        "name": "宁德时代",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "sh600036",
+        "name": "招商银行",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "sh603019",
+        "name": "中科曙光",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "sh601318",
+        "name": "中国平安",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "sh600941",
+        "name": "中国移动",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      },
+      {
+        "symbol": "sh601857",
+        "name": "中国石油",
+        "grade": "观察",
+        "historical_calibration_status": "样本不足",
+        "historical_forward_stats": {
+          "sample_count": 0,
+          "horizons": [
+            5,
+            10,
+            20
+          ],
+          "note": "尚无已完成前向收益样本，当前评分只作解释，不作已验证方向"
+        }
+      }
+    ]
+  },
+  "rejected_false_positive_mentions": [
+    {
+      "article_id": 6269,
+      "title": "「逆矩阵」完成超亿美元融资，创始人：通用世界基座模型窗口期已压至18个月",
+      "symbol": "sh603019",
+      "name": "中科曙光",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6289,
+      "title": "6月17日国内四大证券报纸、重要财经媒体头版头条内容精华摘要",
+      "symbol": "sh601318",
+      "name": "中国平安",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6293,
+      "title": "A股三大指数涨跌不一 创业板指涨1.72% 近140只股涨停",
+      "symbol": "sh603019",
+      "name": "中科曙光",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    },
+    {
+      "article_id": 6272,
+      "title": "乘新浪潮之势，建智造创新之城，2026年番禺产业高质量发展招商大会圆满举行",
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "status": "irrelevant_match",
+      "reasons": [
+        "no_sentence_level_mention"
+      ]
+    }
+  ],
+  "session": "morning",
+  "session_time": "2026-06-17 09:10:45"
+}
