@@ -44,7 +44,7 @@ venv\Scripts\activate.bat
 
 ## 📦 已安装的依赖
 
-- **AI分析**: `google-generativeai` - Gemini API客户端
+- **AI分析**: `openai` - DeepSeek API 客户端
 - **文档生成**: `mkdocs-material` - 现代化文档站点
 - **数据处理**: `pyyaml`, `requests`, `feedparser`, `pytz`
 - **其他工具**: 完整的依赖树已安装
@@ -57,8 +57,8 @@ venv\Scripts\activate.bat
 # 交互式运行器（推荐新手使用）
 python scripts/interactive_runner.py
 
-# AI分析脚本
-python scripts/ai_analyze.py --help
+# AI分析脚本 (DeepSeek)
+python scripts/ai_analyze_deepseek.py --help
 
 # RSS抓取脚本
 python scripts/rss_finance_analyzer.py --help

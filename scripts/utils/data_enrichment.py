@@ -24,7 +24,7 @@ class DataEnricher:
     def __init__(self, ai_client=None):
         """
         Args:
-            ai_client: AI客户端（Gemini或DeepSeek），用于提取投资建议
+            ai_client: AI客户端（如DeepSeek），用于提取投资建议
         """
         self.ai_client = ai_client
         self.cache = {}
@@ -92,7 +92,7 @@ class DataEnricher:
         这里提供一个简化版本，实际使用时需要传入真实的AI客户端
         """
         if hasattr(self.ai_client, 'generate_content'):
-            # Gemini客户端
+            # AI客户端 (generate_content 接口)
             response = self.ai_client.generate_content(prompt)
             return response.text
         elif hasattr(self.ai_client, 'chat'):

@@ -198,13 +198,13 @@ def build_source_stats_block(selected: List[Dict[str, Any]], content_field: str,
     return stats_info
 
 
-def save_markdown(date_str: str, markdown_text: str, model_suffix: str = 'gemini') -> Path:
+def save_markdown(date_str: str, markdown_text: str, model_suffix: str = 'deepseek') -> Path:
     """保存Markdown报告
-    
+
     Args:
         date_str: 日期字符串（YYYY-MM-DD）
         markdown_text: 报告内容
-        model_suffix: 模型后缀（gemini/deepseek）
+        model_suffix: 模型后缀（deepseek）
         
     Returns:
         报告文件路径
@@ -247,11 +247,11 @@ def save_markdown(date_str: str, markdown_text: str, model_suffix: str = 'gemini
 
 def save_metadata(date_str: str, meta: Dict[str, Any], model_suffix: str = ''):
     """保存元数据
-    
+
     Args:
         date_str: 日期字符串
         meta: 元数据字典
-        model_suffix: 模型后缀（如 'gemini', 'deepseek'）
+        model_suffix: 模型后缀（如 'deepseek'）
     """
     year_month = date_str[:7]
     # 元数据单独存放在 metadata 目录

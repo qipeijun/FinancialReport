@@ -159,11 +159,10 @@ jobs:
           path: data/news_data.db
           retention-days: 1
 
-  # ========================================
-  # Job 2: AI分析（串行执行：Gemini → DeepSeek）  （TODO: 改为并行执行）  
+  # Job 2: AI分析（DeepSeek）
   # ========================================
   ai-analysis:
-    name: 🤖 AI分析报告
+    name: 🤖 AI分析报告 (DeepSeek)
     runs-on: ubuntu-latest
     needs: fetch-news
     # 条件：不是手动跳过分析 且 满足以下任一条件：
@@ -206,35 +205,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
-      - name: 🤖 运行AI分析 - Gemini
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          # 使用北京时间
-          TODAY=$(date '+%Y-%m-%d')
-          BEIJING_TIME=$(date '+%Y-%m-%d %H:%M:%S %Z')
-          
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "📅 当前北京时间: $BEIJING_TIME"
-          echo "📅 分析日期: $TODAY"
-          echo "🤖 模型: Gemini (步骤 1/2)"
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo ""
-          
-          echo "🚀 使用 Gemini 模型分析..."
-          if python3 scripts/ai_analyze.py \
-            --date $TODAY \
-            --max-chars 500000; then
-            echo ""
-            echo "✅ Gemini 分析成功"
-          else
-            EXIT_CODE=$?
-            echo ""
-            echo "❌ Gemini 分析失败，退出码: $EXIT_CODE"
-            echo "⚠️ 继续执行 DeepSeek 分析..."
-            # 不退出，继续执行 DeepSeek
-          fi
-      
       - name: 🤖 运行AI分析 - DeepSeek
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -242,15 +212,14 @@ jobs:
           # 使用北京时间
           TODAY=$(date '+%Y-%m-%d')
           BEIJING_TIME=$(date '+%Y-%m-%d %H:%M:%S %Z')
-          
-          echo ""
+
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "📅 当前北京时间: $BEIJING_TIME"
           echo "📅 分析日期: $TODAY"
-          echo "🤖 模型: DeepSeek (步骤 2/2)"
+          echo "🤖 模型: DeepSeek"
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo ""
-          
+
           echo "🚀 使用 DeepSeek 模型分析..."
           if python3 scripts/ai_analyze_deepseek.py \
             --date $TODAY \
@@ -282,18 +251,7 @@ jobs:
           if [ -d "$REPORT_DIR" ]; then
             echo "✅ 报告目录存在"
             echo ""
-            
-            # 检查 Gemini 报告
-            GEMINI_FILES=$(find "$REPORT_DIR" -name "*gemini*.md" 2>/dev/null | wc -l)
-            if [ "$GEMINI_FILES" -gt 0 ]; then
-              echo "✅ Gemini 报告 ($GEMINI_FILES 个文件):"
-              ls -lh "$REPORT_DIR"/*gemini*.md
-            else
-              echo "⚠️ 未找到 Gemini 报告"
-            fi
-            
-            echo ""
-            
+
             # 检查 DeepSeek 报告
             DEEPSEEK_FILES=$(find "$REPORT_DIR" -name "*deepseek*.md" 2>/dev/null | wc -l)
             if [ "$DEEPSEEK_FILES" -gt 0 ]; then
@@ -302,7 +260,7 @@ jobs:
             else
               echo "⚠️ 未找到 DeepSeek 报告"
             fi
-            
+
             echo ""
             echo "📊 所有报告文件:"
             ls -lh "$REPORT_DIR"/*.md 2>/dev/null || echo "  未找到任何 .md 文件"
@@ -362,14 +320,13 @@ jobs:
           
           # 统计并提交
           TODAY=$(date '+%Y-%m-%d')
-          GEMINI_COUNT=$(git diff --cached --name-only | grep -c "gemini" || echo "0")
           DEEPSEEK_COUNT=$(git diff --cached --name-only | grep -c "deepseek" || echo "0")
           
           echo "提交文件:"
           git diff --cached --name-status
           echo ""
           
-          git commit -m "🤖 自动生成财经分析报告 - $TODAY (Gemini: ${GEMINI_COUNT}, DeepSeek: ${DEEPSEEK_COUNT})"
+          git commit -m "🤖 自动生成财经分析报告 - $TODAY (DeepSeek: ${DEEPSEEK_COUNT})"
           echo "✅ 完成"
           echo ""
           

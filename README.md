@@ -3,7 +3,7 @@
 > 🎯 多源RSS采集 → 智能去重 → 实时数据注入 → AI分析 → 质量验证 → 自动部署
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org)
-[![Gemini](https://img.shields.io/badge/AI-Gemini%203.0-orange.svg)](https://ai.google.dev)
+[![DeepSeek](https://img.shields.io/badge/AI-DeepSeek-blue.svg)](https://www.deepseek.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 
 ---
@@ -11,7 +11,7 @@
 ## ✨ 核心特性
 
 ### 🤖 AI智能分析
-- **Gemini 3.0** - 速度提升3倍，成本更低
+- **DeepSeek** - 高性能低成本推理
 - **实时数据注入** - 股票/黄金/外汇实时行情
 - **事实核查** - 自动验证AI生成的数据
 - **质量评分** - 多维度评分，80分以上才发布
@@ -58,10 +58,10 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 # 4. 配置API密钥
-export GEMINI_API_KEY="your-gemini-api-key"
+export DEEPSEEK_API_KEY="your-deepseek-api-key"
 
 # 5. 生成报告
-python3 scripts/ai_analyze_verified.py --date $(date +%Y-%m-%d)
+python3 scripts/ai_analyze_deepseek.py --date $(date +%Y-%m-%d)
 ```
 
 报告保存在: `docs/archive/YYYY-MM/YYYY-MM-DD/reports/`
@@ -83,7 +83,7 @@ python3 scripts/ai_analyze_verified.py --date $(date +%Y-%m-%d)
 - 🚀 [部署指南](./docs/DEPLOYMENT.md) - GitHub Actions部署
 
 ### 更新日志
-- 🆕 [Gemini 3.0升级](./docs/README.md#更新日志) - 最新模型升级
+- 🆕 [DeepSeek 升级](./docs/README.md#更新日志) - 最新模型升级
 - 📝 [完整变更日志](./docs/README.md#更新日志) - 版本历史
 
 ---
@@ -107,18 +107,12 @@ python3 scripts/rss_finance_analyzer.py \
 
 ```bash
 # 标准模式
-python3 scripts/ai_analyze_verified.py --date 2026-01-07
+python3 scripts/ai_analyze_deepseek.py --date 2026-01-07
 
-# 高质量模式(评分90+)
-python3 scripts/ai_analyze_verified.py \
+# 指定内容字段
+python3 scripts/ai_analyze_deepseek.py \
   --date 2026-01-07 \
-  --min-score 90 \
-  --max-retries 5
-
-# 测试模式(跳过验证)
-python3 scripts/ai_analyze_verified.py \
-  --date 2026-01-07 \
-  --skip-verification
+  --content-field content
 ```
 
 ### 数据库维护
@@ -142,7 +136,7 @@ python3 scripts/utils/db_maintenance.py --cleanup 90
 Financial-report/
 ├── scripts/                # 核心脚本
 │   ├── rss_finance_analyzer.py         # RSS采集
-│   ├── ai_analyze_verified.py          # AI分析(主版本)
+│   ├── ai_analyze_deepseek.py          # AI分析(DeepSeek)
 │   ├── test_verification_system.py     # 测试工具
 │   └── utils/                          # 工具模块
 │       ├── realtime_data_fetcher.py    # 实时数据
@@ -151,7 +145,7 @@ Financial-report/
 │       └── db_maintenance.py           # 数据库维护
 │
 ├── .github/workflows/      # 自动化工作流
-│   ├── daily-financial-report-verified.yml
+│   ├── daily-financial-report.yml
 │   └── database-maintenance.yml
 │
 ├── docs/                   # 文档
@@ -172,7 +166,7 @@ Financial-report/
 
 | 组件 | 技术 | 用途 |
 |------|------|------|
-| AI模型 | Gemini 3.0 Flash/Pro | 报告生成 |
+| AI模型 | DeepSeek | 报告生成 |
 | 数据库 | SQLite 3 | 数据存储 |
 | 文档 | MkDocs | 静态网站 |
 | CI/CD | GitHub Actions | 自动化 |
@@ -185,8 +179,8 @@ Financial-report/
 
 ### v2.0 核心升级
 
-- ⚡ **性能**: AI生成速度提升3倍
-- 💰 **成本**: Token使用成本降低
+- ⚡ **性能**: DeepSeek 高性能推理
+- 💰 **成本**: Token 使用成本降低
 - 🎯 **准确性**: 事实核查+质量评分
 - 📊 **可靠性**: 实时数据注入
 - 🔄 **自动化**: 自动重试+自动维护
@@ -221,8 +215,7 @@ Financial-report/
 
 ## 🙏 致谢
 
-- [Google Gemini API](https://ai.google.dev/) - AI模型支持
-- [DeepSeek API](https://www.deepseek.com/) - 备用AI模型
+- [DeepSeek API](https://www.deepseek.com/) - AI模型支持
 - [MkDocs](https://www.mkdocs.org/) - 文档生成
 - [GitHub Actions](https://github.com/features/actions) - CI/CD平台
 

@@ -45,15 +45,16 @@ echo "  启动选项"
 echo "========================================"
 echo
 echo "1. 交互式运行器 (推荐)"
-echo "2. AI分析脚本"
+echo "2. AI分析脚本 (DeepSeek)"
 echo "3. RSS财经抓取器"
 echo "4. 数据质量监控"
 echo "5. 启动文档网站 (本地预览)"
 echo "6. 构建部署文档 (生成静态网站)"
-echo "7. 退出"
+echo "7. 一键执行每日流程 (抓取+分析+文档)"
+echo "8. 退出"
 echo
 
-read -p "请选择功能 (1-7): " choice
+read -p "请选择功能 (1-8): " choice
 
 case $choice in
     1)
@@ -61,22 +62,16 @@ case $choice in
         python3 scripts/interactive_runner.py
         ;;
     2)
-        echo "🤖 启动AI分析脚本..."
+        echo "🤖 启动AI分析脚本 (DeepSeek)..."
         echo
-        echo "🤖 选择AI模型："
-        echo "  • 1 = Gemini（默认）"
-        echo "  • 2 = DeepSeek"
-        echo
-        read -p "请选择模型 [1/2，默认1]: " model_choice
-        
-        echo
+
         echo "📝 选择分析字段："
         echo "  • 1 = summary - 摘要优先（推荐，速度快，成功率85.7%）"
         echo "  • 2 = content - 正文优先（信息详细，但成功率76.5%）"
         echo "  • 3 = auto - 智能选择"
         echo
         read -p "请选择字段 [1/2/3，默认1]: " field_choice
-        
+
         content_field="summary"
         if [ "$field_choice" = "2" ]; then
             content_field="content"
@@ -87,18 +82,10 @@ case $choice in
         else
             echo "✅ 已选择：摘要优先"
         fi
-        
+
         echo
-        if [ -z "$model_choice" ] || [ "$model_choice" = "1" ]; then
-            echo "🚀 使用Gemini模型，字段模式：$content_field"
-            python3 scripts/ai_analyze.py --content-field "$content_field"
-        elif [ "$model_choice" = "2" ]; then
-            echo "🚀 使用DeepSeek模型，字段模式：$content_field"
-            python3 scripts/ai_analyze_deepseek.py --content-field "$content_field"
-        else
-            echo "❌ 无效选择，使用默认Gemini + 摘要模式"
-            python3 scripts/ai_analyze.py --content-field summary
-        fi
+        echo "🚀 使用DeepSeek模型，字段模式：$content_field"
+        python3 scripts/ai_analyze_deepseek.py --content-field "$content_field"
         ;;
     3)
         echo "📰 启动RSS财经抓取器..."
@@ -170,6 +157,22 @@ case $choice in
         bash scripts/deploy.sh
         ;;
     7)
+        echo "🚀 一键执行每日流程..."
+        echo "📋 流程：数据抓取 → AI分析 → 文档构建"
+        echo
+
+        if [ -f "scripts/daily_run.py" ]; then
+            python3 scripts/daily_run.py
+        else
+            echo "❌ scripts/daily_run.py 不存在，请先创建该脚本"
+            echo ""
+            echo "💡 您也可以手动分步执行："
+            echo "  1. python3 scripts/rss_finance_analyzer.py --fetch-content --deduplicate"
+            echo "  2. python3 scripts/ai_analyze_deepseek.py --content-field summary"
+            echo "  3. bash scripts/deploy.sh"
+        fi
+        ;;
+    8)
         echo "👋 再见！"
         exit 0
         ;;

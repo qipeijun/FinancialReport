@@ -24,7 +24,7 @@ pip list
 echo ""
 echo "🚀 可用的命令："
 echo "  python3 scripts/interactive_runner.py  # 交互式运行器"
-echo "  python3 scripts/ai_analyze.py --help   # AI分析脚本帮助"
+echo "  python3 scripts/ai_analyze_deepseek.py --help   # DeepSeek AI分析脚本帮助"
 echo "  python3 scripts/rss_finance_analyzer.py --help  # RSS抓取脚本帮助"
 echo ""
 echo "💡 提示：使用 'deactivate' 退出虚拟环境"

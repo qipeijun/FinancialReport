@@ -68,6 +68,11 @@ markdown_extensions:
 nav:
 - 首页: index.md
 - 分析报告:
+  - 2026年06月:
+    - '2026-06-24':
+      - AM DeepSeek报告: archive/2026-06/2026-06-24/reports/📅 2026-06-24 财经分析报告_morning_deepseek.md
+    - '2026-06-23':
+      - AM DeepSeek报告: archive/2026-06/2026-06-23/reports/📅 2026-06-23 财经分析报告_morning_deepseek.md
   - 2026年04月:
     - '2026-04-21':
       - AM DeepSeek报告: archive/2026-04/2026-04-21/reports/📅 2026-04-21 财经分析报告_morning_deepseek.md

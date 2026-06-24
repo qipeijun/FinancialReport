@@ -13,10 +13,10 @@
 
 使用示例:
     from utils.report_generator import ReportGenerator
-    from utils.providers import GeminiProvider
+    from utils.providers import DeepSeekProvider
 
     generator = ReportGenerator(
-        provider=GeminiProvider(api_key='your-key'),
+        provider=DeepSeekProvider(api_key='your-key'),
         enable_verification=True
     )
 
