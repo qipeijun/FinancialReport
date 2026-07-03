@@ -68,7 +68,22 @@ markdown_extensions:
 nav:
 - 首页: index.md
 - 分析报告:
+  - 2026年07月:
+    - '2026-07-03':
+      - AM DeepSeek报告: archive/2026-07/2026-07-03/reports/📅 2026-07-03 财经分析报告_morning_deepseek.md
+    - '2026-07-02':
+      - AM DeepSeek报告: archive/2026-07/2026-07-02/reports/📅 2026-07-02 财经分析报告_morning_deepseek.md
+    - '2026-07-01':
+      - AM DeepSeek报告: archive/2026-07/2026-07-01/reports/📅 2026-07-01 财经分析报告_morning_deepseek.md
   - 2026年06月:
+    - '2026-06-29':
+      - AM DeepSeek报告: archive/2026-06/2026-06-29/reports/📅 2026-06-29 财经分析报告_morning_deepseek.md
+    - '2026-06-27':
+      - AM DeepSeek报告: archive/2026-06/2026-06-27/reports/📅 2026-06-27 财经分析报告_morning_deepseek.md
+    - '2026-06-26':
+      - AM DeepSeek报告: archive/2026-06/2026-06-26/reports/📅 2026-06-26 财经分析报告_morning_deepseek.md
+    - '2026-06-25':
+      - AM DeepSeek报告: archive/2026-06/2026-06-25/reports/📅 2026-06-25 财经分析报告_morning_deepseek.md
     - '2026-06-24':
       - AM DeepSeek报告: archive/2026-06/2026-06-24/reports/📅 2026-06-24 财经分析报告_morning_deepseek.md
     - '2026-06-23':

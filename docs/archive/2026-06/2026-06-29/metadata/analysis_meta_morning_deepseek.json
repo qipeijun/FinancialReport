@@ -1,0 +1,19 @@
+{
+  "date_range": {
+    "start": "2026-06-29",
+    "end": "2026-06-29"
+  },
+  "articles_used": 39,
+  "chunks": 68,
+  "model_usage": {
+    "model": "deepseek-v4-flash",
+    "provider": "deepseek",
+    "prompt_tokens": 55444,
+    "completion_tokens": 3464,
+    "total_tokens": 58908
+  },
+  "quality_check": null,
+  "verification_enabled": false,
+  "session": "morning",
+  "session_time": "2026-06-29 09:50:03"
+}
