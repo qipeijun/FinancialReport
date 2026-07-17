@@ -1,0 +1,40 @@
+{
+  "date_range": {
+    "start": "2026-07-09",
+    "end": "2026-07-09"
+  },
+  "articles_used": 60,
+  "chunks": 115,
+  "model_usage": {
+    "model": "deepseek-v4-flash",
+    "provider": "deepseek",
+    "prompt_tokens": 81133,
+    "completion_tokens": 4067,
+    "total_tokens": 85200
+  },
+  "quality_check": {
+    "score": 50,
+    "passed": false,
+    "accuracy_score": 30,
+    "timeliness_score": 0,
+    "reliability_score": 20,
+    "issues": [
+      "❌ 缺少实时数据注入,报告时效性差"
+    ],
+    "warnings": [
+      "⚠️ 未进行事实核查,准确性无法保证"
+    ],
+    "stats": {
+      "has_realtime_data": false,
+      "data_age_hours": null,
+      "citation_count": 104,
+      "verified_claims": 0,
+      "total_claims": 0,
+      "fabrication_detected": false
+    },
+    "timestamp": "2026-07-09T15:49:53.301369"
+  },
+  "verification_enabled": true,
+  "session": "afternoon",
+  "session_time": "2026-07-09 15:49:53"
+}
