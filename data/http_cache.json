@@ -1,7 +1,7 @@
 {
   "http://rss.eastmoney.com/rss_partener.xml": {
-    "etag": "\"80c2b64ab18dd1:0\"",
-    "last_modified": "Tue, 21 Jul 2026 00:53:49 GMT"
+    "etag": "\"065ce2e6a1ddd1:0\"",
+    "last_modified": "Mon, 27 Jul 2026 01:49:38 GMT"
   },
   "https://36kr.com/feed": {
     "etag": null,
@@ -20,16 +20,16 @@
     "last_modified": null
   },
   "https://www.chinanews.com.cn/rss/finance.xml": {
-    "etag": "\"6a5eba43-4555\"",
-    "last_modified": "Tue, 21 Jul 2026 00:16:03 GMT"
+    "etag": "\"6a66b6b8-3cf8\"",
+    "last_modified": "Mon, 27 Jul 2026 01:39:04 GMT"
   },
   "https://www.ftchinese.com/rss/feed": {
-    "etag": "W/\"2c12-O1jNgpgm5YmaoNLMZO7kxfa7BPc\"",
+    "etag": "W/\"2d24-J2yQAch1FiyY1RhaMjMw28gamwg\"",
     "last_modified": null
   },
   "https://www.economist.com/finance-and-economics/rss.xml": {
-    "etag": "W/\"84d2342eb332a7606a13b8404b0ffb53\"",
-    "last_modified": "Mon, 20 Jul 2026 14:09:46 GMT"
+    "etag": "W/\"6b9d920fbf5c472e6e0b1c59311dd425\"",
+    "last_modified": "Sun, 26 Jul 2026 17:54:31 GMT"
   },
   "https://www.investing.com/rss/news.rss": {
     "etag": "W/\"10d8-640dd64ac9b17\"",
@@ -45,7 +45,7 @@
   },
   "https://www.etftrends.com/feed/": {
     "etag": null,
-    "last_modified": "Mon, 20 Jul 2026 22:31:15 GMT"
+    "last_modified": "Sun, 26 Jul 2026 12:59:53 GMT"
   },
   "https://www.cnbc.com/id/100003114/device/rss/rss.html": {
     "etag": null,
@@ -53,7 +53,7 @@
   },
   "https://feeds.feedburner.com/zerohedge/feed": {
     "etag": null,
-    "last_modified": "Tue, 21 Jul 2026 00:33:53 GMT"
+    "last_modified": "Mon, 27 Jul 2026 00:16:45 GMT"
   },
   "https://www.bloomberg.com/feed/podcast/etf-report.xml": {
     "etag": null,
@@ -64,12 +64,12 @@
     "last_modified": "Thu, 16 Jul 2026 18:00:15 GMT"
   },
   "https://www.sec.gov/news/pressreleases.rss": {
-    "etag": "\"1784587117\"",
-    "last_modified": "Mon, 20 Jul 2026 22:38:37 GMT"
+    "etag": "\"1785071335\"",
+    "last_modified": "Sun, 26 Jul 2026 13:08:55 GMT"
   },
   "https://www.stats.gov.cn/sj/zxfb/rss.xml": {
-    "etag": "\"6a583427-4607aa\"",
-    "last_modified": "Thu, 16 Jul 2026 01:30:15 GMT"
+    "etag": "\"6a66b4a7-45dce5\"",
+    "last_modified": "Mon, 27 Jul 2026 01:30:15 GMT"
   },
   "https://www.huxiu.com/rss/0.xml": {
     "etag": null,
@@ -88,7 +88,7 @@
     "last_modified": null
   },
   "https://ir.thomsonreuters.com/rss/news-releases.xml": {
-    "etag": "\"1784030148\"",
-    "last_modified": "Tue, 14 Jul 2026 11:55:48 GMT"
+    "etag": "\"1784755392\"",
+    "last_modified": "Wed, 22 Jul 2026 21:23:12 GMT"
   }
 }
